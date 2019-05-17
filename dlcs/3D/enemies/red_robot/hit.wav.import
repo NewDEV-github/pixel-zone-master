@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit.wav-b519ba6cb0dbce390bdc67d29913a5e7.sample"
+
+[deps]
+
+source_file="res://dlcs/3D/enemies/red_robot/hit.wav"
+dest_files=[ "res://.import/hit.wav-b519ba6cb0dbce390bdc67d29913a5e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

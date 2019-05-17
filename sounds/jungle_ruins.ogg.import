@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jungle_ruins.ogg-d68514033b5ebea26f00e1ba235561ad.oggstr"
+
+[deps]
+
+source_file="res://sounds/jungle_ruins.ogg"
+dest_files=[ "res://.import/jungle_ruins.ogg-d68514033b5ebea26f00e1ba235561ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,6 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "loading"
+length = 7.0
+

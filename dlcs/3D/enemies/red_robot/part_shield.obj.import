@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/part_shield.obj-958ac7f1ee0dd4285cda48884e6f83af.mesh"
+
+[deps]
+
+files=[ "res://.import/part_shield.obj-958ac7f1ee0dd4285cda48884e6f83af.mesh" ]
+
+source_file="res://dlcs/3D/enemies/red_robot/part_shield.obj"
+dest_files=[ "res://.import/part_shield.obj-958ac7f1ee0dd4285cda48884e6f83af.mesh", "res://.import/part_shield.obj-958ac7f1ee0dd4285cda48884e6f83af.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/part_head.obj-a15393657b1721a2bd16b7298c887392.mesh"
+
+[deps]
+
+files=[ "res://.import/part_head.obj-a15393657b1721a2bd16b7298c887392.mesh" ]
+
+source_file="res://dlcs/3D/enemies/red_robot/part_head.obj"
+dest_files=[ "res://.import/part_head.obj-a15393657b1721a2bd16b7298c887392.mesh", "res://.import/part_head.obj-a15393657b1721a2bd16b7298c887392.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

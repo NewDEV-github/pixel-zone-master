@@ -1,0 +1,780 @@
+[gd_scene load_steps=64 format=2]
+
+[ext_resource path="res://dlcs/3D/enemies/red_robot/red_robot.gd" type="Script" id=1]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/badrobot_large.dae" type="PackedScene" id=2]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/ray.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/ray.shader" type="Shader" id=4]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/ray_texture.png" type="Texture" id=5]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/ray_smoke_texture.png" type="Texture" id=6]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/particle.png" type="Texture" id=7]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/explosion.png" type="Texture" id=8]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/charge.wav" type="AudioStream" id=9]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/shoot.wav" type="AudioStream" id=10]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/part_shield.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/EvilRobo.material" type="Material" id=12]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/part_head.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/EvilRobo-BaseColor.png" type="Texture" id=14]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/EvilRobo-RoughnessOclussionMetallic.png" type="Texture" id=15]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/EvilRobo-Normal.png" type="Texture" id=16]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/explosion.wav" type="AudioStream" id=17]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/hit.wav" type="AudioStream" id=18]
+[ext_resource path="res://dlcs/3D/enemies/red_robot/walk.wav" type="AudioStream" id=19]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/deform = 2.0
+shader_param/transparency = 0.0
+shader_param/energy = 1.0
+shader_param/smoke = 1.0
+shader_param/clip = 20.0
+shader_param/ray_texture = ExtResource( 5 )
+shader_param/smoke_texture = ExtResource( 6 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.870588, 0.294118, 0.294118, 1 )
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.283019, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.283019, 1, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 8 )
+proximity_fade_enable = true
+proximity_fade_distance = 0.2
+
+[sub_resource type="QuadMesh" id=6]
+material = SubResource( 5 )
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 1, 1, 1, 0.961538, 0.960784, 0.960784, 0.960784, 0 )
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+resource_local_to_scene = true
+animation = "TurnRight-cycle"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+resource_local_to_scene = true
+animation = "TurnLeft-cycle"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+resource_local_to_scene = true
+animation = "Walk-cycle"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+resource_local_to_scene = true
+animation = "Damage_take1"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+resource_local_to_scene = true
+animation = "Damage_take2"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+resource_local_to_scene = true
+animation = "Damage_heavy"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+resource_local_to_scene = true
+animation = "Idle-cycle"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+resource_local_to_scene = true
+animation = "Cannon-U"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+resource_local_to_scene = true
+animation = "Cannon-D"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+resource_local_to_scene = true
+animation = "Cannon-R"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+resource_local_to_scene = true
+animation = "Cannon-L"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+resource_local_to_scene = true
+animation = "Cannon-N"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=20]
+resource_local_to_scene = true
+blend_point_0/node = SubResource( 15 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 16 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 17 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 18 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_point_4/node = SubResource( 19 )
+blend_point_4/pos = Vector2( 0, 0 )
+
+[sub_resource type="AnimationNodeBlend2" id=21]
+resource_local_to_scene = true
+filter_enabled = true
+filters = [ "Armature/Skeleton:Cannon-TrackTurret", "Armature/Skeleton:CannonAnimRecoil" ]
+
+[sub_resource type="AnimationNodeOneShot" id=22]
+resource_local_to_scene = true
+fadeout_time = 0.5
+
+[sub_resource type="AnimationNodeOneShot" id=23]
+resource_local_to_scene = true
+fadeout_time = 0.5
+
+[sub_resource type="AnimationNodeOneShot" id=24]
+resource_local_to_scene = true
+fadeout_time = 0.5
+
+[sub_resource type="AnimationNodeTransition" id=25]
+resource_local_to_scene = true
+input_count = 4
+xfade_time = 0.5
+input_0/name = "idle"
+input_0/auto_advance = false
+input_1/name = "turn_left"
+input_1/auto_advance = false
+input_2/name = "turn_right"
+input_2/auto_advance = false
+input_3/name = "walk"
+input_3/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=26]
+resource_local_to_scene = true
+graph_offset = Vector2( 0, 196.5 )
+nodes/Animation/node = SubResource( 14 )
+nodes/Animation/position = Vector2( -200, 100 )
+"nodes/Animation 2/node" = SubResource( 8 )
+"nodes/Animation 2/position" = Vector2( -200, 340 )
+"nodes/Animation 3/node" = SubResource( 9 )
+"nodes/Animation 3/position" = Vector2( -200, 220 )
+"nodes/Animation 4/node" = SubResource( 10 )
+"nodes/Animation 4/position" = Vector2( -160, 460 )
+"nodes/Animation 5/node" = SubResource( 11 )
+"nodes/Animation 5/position" = Vector2( 200, 440 )
+"nodes/Animation 6/node" = SubResource( 12 )
+"nodes/Animation 6/position" = Vector2( 500, 440 )
+"nodes/Animation 7/node" = SubResource( 13 )
+"nodes/Animation 7/position" = Vector2( 740, 440 )
+nodes/aim/node = SubResource( 20 )
+nodes/aim/position = Vector2( 80, 320 )
+nodes/aiming/node = SubResource( 21 )
+nodes/aiming/position = Vector2( 320, 200 )
+nodes/hit1/node = SubResource( 22 )
+nodes/hit1/position = Vector2( 540, 240 )
+nodes/hit2/node = SubResource( 23 )
+nodes/hit2/position = Vector2( 760, 240 )
+nodes/hit3/node = SubResource( 24 )
+nodes/hit3/position = Vector2( 980, 240 )
+nodes/output/position = Vector2( 1180, 200 )
+nodes/state/node = SubResource( 25 )
+nodes/state/position = Vector2( 60, 100 )
+node_connections = [ "output", 0, "hit3", "state", 0, "Animation", "state", 1, "Animation 3", "state", 2, "Animation 2", "state", 3, "Animation 4", "aiming", 0, "state", "aiming", 1, "aim", "hit3", 0, "hit2", "hit3", 1, "Animation 7", "hit1", 0, "aiming", "hit1", 1, "Animation 5", "hit2", 0, "hit1", "hit2", 1, "Animation 6" ]
+
+[sub_resource type="SphereShape" id=27]
+radius = 1.11815
+
+[sub_resource type="SphereShape" id=28]
+radius = 18.1337
+
+[sub_resource type="Animation" id=29]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root/Armature/Skeleton/ray_from/ray:material/0:shader_param/energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0, 5.0, 1.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scene Root/Armature/Skeleton/ray_from/ray:material/0:shader_param/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Scene Root/Armature/Skeleton/ray_from/ray:material/0:shader_param/deform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 2.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Scene Root/Armature/Skeleton/ray_from/ray:material/0:shader_param/smoke")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 2.2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("shoot_light:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 1.6, 2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("shoot_light:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2, 0.9, 1.6, 2, 2.1, 2.6 ),
+"transitions": PoolRealArray( 1, -2, 4.28709, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 0.0, 0.0, 5.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Scene Root/Armature/Skeleton/ray_from/Particles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Scene Root/Armature/Skeleton/ray_from/explosion:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AnimationTree:active")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2.6, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1.9, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot_check"
+}, {
+"args": [  ],
+"method": "resume_approach"
+} ]
+}
+tracks/10/type = "audio"
+tracks/10/path = NodePath("sfx/cannon")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0, 2.1 )
+}
+
+[sub_resource type="PhysicsMaterial" id=30]
+
+[sub_resource type="BoxShape" id=31]
+extents = Vector3( 0.445466, 0.622832, 0.0474423 )
+
+[sub_resource type="BoxShape" id=32]
+extents = Vector3( 0.432293, 0.514522, 0.0474423 )
+
+[sub_resource type="SpatialMaterial" id=33]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 8 )
+proximity_fade_enable = true
+proximity_fade_distance = 0.2
+
+[sub_resource type="QuadMesh" id=34]
+material = SubResource( 33 )
+
+[sub_resource type="Gradient" id=35]
+colors = PoolColorArray( 1, 1, 1, 0.961538, 0.960784, 0.960784, 0.960784, 0 )
+
+[sub_resource type="PhysicsMaterial" id=36]
+
+[sub_resource type="BoxShape" id=37]
+extents = Vector3( 0.411196, 0.514522, 0.0474423 )
+
+[sub_resource type="BoxShape" id=38]
+extents = Vector3( 0.403063, 0.514522, 0.0474423 )
+
+[sub_resource type="PhysicsMaterial" id=39]
+
+[sub_resource type="SpatialMaterial" id=40]
+albedo_texture = ExtResource( 14 )
+metallic = 1.0
+metallic_texture = ExtResource( 15 )
+metallic_texture_channel = 2
+roughness_texture = ExtResource( 15 )
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 16 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 15 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="SphereShape" id=41]
+
+[sub_resource type="BoxShape" id=42]
+extents = Vector3( 0.0885272, 0.514522, 0.0474423 )
+
+[sub_resource type="Animation" id=43]
+tracks/0/type = "value"
+tracks/0/path = NodePath("part_shield3/col2:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("part_shield3/col1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("part_shield2/col2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("part_shield2/col1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("part_shield1/col2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("part_shield1/col1:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../CollisionShape:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Scene Root:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("particles:one_shot")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("particles:emitting")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=44]
+audio_stream = ExtResource( 18 )
+
+[node name="big_robot" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 2 )]
+
+[node name="ray_from" type="BoneAttachment" parent="Scene Root/Armature/Skeleton" index="4"]
+transform = Transform( -0.999877, 0.000978532, -0.0156807, 0.00430646, 0.976903, -0.213637, 0.0151095, -0.213679, -0.976787, 0.0187125, 1.66502, 0.143448 )
+bone_name = "CannonAnimRecoil"
+
+[node name="ray" type="MeshInstance" parent="Scene Root/Armature/Skeleton/ray_from"]
+transform = Transform( 1, 8.40737e-009, -9.31323e-010, -6.55928e-009, 1, -9.31323e-010, 4.65661e-010, 0, 1, 1.67638e-008, 0, -1.21376 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("")
+material/0 = SubResource( 1 )
+
+[node name="Particles" type="CPUParticles" parent="Scene Root/Armature/Skeleton/ray_from"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.07273 )
+emitting = false
+amount = 64
+mesh = SubResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
+angular_velocity = -0.381543
+linear_accel = 1.0
+linear_accel_random = 1.0
+radial_accel = -1.0
+tangential_accel = 1.0
+color_ramp = SubResource( 4 )
+
+[node name="explosion" type="CPUParticles" parent="Scene Root/Armature/Skeleton/ray_from"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0332087, -10.283 )
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource( 6 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+angular_velocity = 35.2
+angular_velocity_random = 1.0
+color_ramp = SubResource( 7 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 26 )
+anim_player = NodePath("../Scene Root/AnimationPlayer")
+active = true
+process_mode = 0
+root_motion_track = NodePath("Armature/Skeleton:MASTER")
+parameters/aim/blend_position = Vector2( 0, 0 )
+parameters/aiming/blend_amount = 0
+parameters/hit1/active = false
+parameters/hit2/active = false
+parameters/hit3/active = false
+parameters/state/current = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11655, -0.0212681 )
+shape = SubResource( 27 )
+
+[node name="area" type="Area" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="area"]
+shape = SubResource( 28 )
+
+[node name="RootMotionView" type="RootMotionView" parent="."]
+animation_path = NodePath("../AnimationTree")
+
+[node name="shoot_anim" type="AnimationPlayer" parent="."]
+anims/shoot = SubResource( 29 )
+
+[node name="shoot_light" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82358, 2.06607 )
+visible = false
+light_color = Color( 0.992157, 0.713726, 0.713726, 1 )
+light_energy = 0.0
+shadow_enabled = true
+omni_range = 8.68993
+omni_shadow_mode = 0
+
+[node name="death" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49858, 0 )
+visible = false
+
+[node name="part_shield1" type="RigidBody" parent="death"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37822, 1.11034, 1.09121 )
+mode = 1
+physics_material_override = SubResource( 30 )
+
+[node name="mesh" type="MeshInstance" parent="death/part_shield1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28307, -1.35778, -0.789012 )
+mesh = ExtResource( 11 )
+material/0 = ExtResource( 12 )
+
+[node name="col1" type="CollisionShape" parent="death/part_shield1"]
+transform = Transform( 1, 0, 0, 0, 0.908425, 0.418048, 0, -0.418048, 0.908425, -0.0167698, 0.5788, -0.122978 )
+shape = SubResource( 31 )
+disabled = true
+
+[node name="col2" type="CollisionShape" parent="death/part_shield1"]
+transform = Transform( 1, 0, 0, 0, 0.994888, 0.100984, 0, -0.100984, 0.994888, 0.0804193, -0.63062, 0.179012 )
+shape = SubResource( 32 )
+disabled = true
+
+[node name="fire" type="CPUParticles" parent="death/part_shield1"]
+transform = Transform( -0.999594, 0.0284228, 0.00205158, 0.0284288, 0.999592, 0.00296096, -0.0019666, 0.00301808, -0.999993, -0.196335, 0.103942, -0.0579731 )
+amount = 32
+lifetime = 0.2
+local_coords = false
+mesh = SubResource( 34 )
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3( 0, 2, 0 )
+initial_velocity = 0.3
+angular_velocity = 84.86
+angular_velocity_random = 1.0
+color_ramp = SubResource( 35 )
+
+[node name="part_shield2" type="RigidBody" parent="death"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75083, 1.02975, 0.162546 )
+mode = 1
+physics_material_override = SubResource( 36 )
+
+[node name="mesh" type="MeshInstance" parent="death/part_shield2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28307, -1.35778, -0.789012 )
+mesh = ExtResource( 11 )
+material/0 = ExtResource( 12 )
+
+[node name="col1" type="CollisionShape" parent="death/part_shield2"]
+transform = Transform( 1, 0, 0, 0, 0.908425, 0.418048, 0, -0.418048, 0.908425, -0.0150018, 0.599786, -0.170673 )
+shape = SubResource( 37 )
+disabled = true
+
+[node name="col2" type="CollisionShape" parent="death/part_shield2"]
+transform = Transform( 1, 0, 0, 0, 0.999275, -0.038063, 0, 0.038063, 0.999275, 0.0207567, -0.47267, 0.0351334 )
+shape = SubResource( 38 )
+disabled = true
+
+[node name="fire" type="CPUParticles" parent="death/part_shield2"]
+transform = Transform( -0.999594, 0.0284228, 0.00205158, 0.0284288, 0.999592, 0.00296096, -0.0019666, 0.00301808, -0.999993, -0.196335, 0.103942, -0.0579731 )
+amount = 32
+lifetime = 0.2
+local_coords = false
+mesh = SubResource( 34 )
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3( 0, 2, 0 )
+initial_velocity = 0.3
+angular_velocity = 84.86
+angular_velocity_random = 1.0
+color_ramp = SubResource( 35 )
+
+[node name="part_shield3" type="RigidBody" parent="death"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0374503, 1.02975, 0.162546 )
+mode = 1
+physics_material_override = SubResource( 39 )
+angular_damp = 0.3
+
+[node name="mesh" type="MeshInstance" parent="death/part_shield3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18159, -1.2457, -0.130535 )
+mesh = ExtResource( 13 )
+material/0 = SubResource( 40 )
+material/1 = null
+
+[node name="col1" type="CollisionShape" parent="death/part_shield3"]
+shape = SubResource( 41 )
+disabled = true
+
+[node name="col2" type="CollisionShape" parent="death/part_shield3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -0.0753293, 0.680746, 0.945143 )
+shape = SubResource( 42 )
+disabled = true
+
+[node name="fire" type="CPUParticles" parent="death/part_shield3"]
+transform = Transform( -0.999594, 0.0284228, 0.00205158, 0.0284288, 0.999592, 0.00296096, -0.0019666, 0.00301808, -0.999993, -0.196335, 0.103942, -0.0579731 )
+amount = 32
+lifetime = 0.2
+local_coords = false
+mesh = SubResource( 34 )
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3( 0, 2, 0 )
+initial_velocity = 0.3
+angular_velocity = 84.86
+angular_velocity_random = 1.0
+color_ramp = SubResource( 35 )
+
+[node name="explosion" type="AnimationPlayer" parent="death"]
+anims/kaboom = SubResource( 43 )
+
+[node name="particles" type="CPUParticles" parent="death"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213713, 0.763735, 0 )
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource( 6 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+angular_velocity = 35.2
+angular_velocity_random = 1.0
+linear_accel = 1.0
+color_ramp = SubResource( 7 )
+
+[node name="sfx" type="Spatial" parent="."]
+
+[node name="cannon" type="AudioStreamPlayer3D" parent="sfx"]
+stream = ExtResource( 10 )
+unit_size = 15.0
+
+[node name="explosion" type="AudioStreamPlayer3D" parent="sfx"]
+stream = ExtResource( 17 )
+unit_db = 12.0
+unit_size = 15.0
+
+[node name="hit" type="AudioStreamPlayer3D" parent="sfx"]
+stream = SubResource( 44 )
+unit_db = 3.0
+unit_size = 15.0
+
+[node name="walk" type="AudioStreamPlayer3D" parent="sfx"]
+stream = ExtResource( 19 )
+unit_db = 3.0
+unit_size = 15.0
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="area" to="." method="_on_area_body_exited"]
+
+[editable path="Scene Root"]

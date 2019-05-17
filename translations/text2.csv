@@ -1,0 +1,43 @@
+,en,es,de,pl,it,pt,fr
+KEY_AP,Awaiting Players…,A la espera de jugadores ...,Spieler erwarten…,Oczekujący Gracze…,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente…
+KEY_Host,Host,Anfitrión,Wirt,Hostuj,Ospite,Hospedeiro,Hôte
+KEY_Join,Join,Unirse,Beitreten,Dołącz,Aderire,Junte-se,Joindre
+KEY_IP_Adress,IP Address,Dirección IP,IP Adresse,Adres IP,Indirizzo IP,Endereço de IP,Adresse IP
+KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,prénom
+KEY_ERR,"Oops…
+
+It seems there was an error. Debug file was created at ‘user://logs/*.log’.
+
+Pixel Zone will exit now","Vaya …
+
+Parece que hubo un error. El archivo de depuración se creó en 'user: //logs/*.log'.
+
+Pixel Zone saldrá ahora","Hoppla …
+
+Es scheint, dass ein Fehler aufgetreten ist. Die Debug-Datei wurde unter 'user: //logs/*.log' erstellt.
+
+Pixel Zone wird jetzt beendet","Ups...
+
+To wygląda na błąd. Log błędu został utworzony w ‘user://logs/*.log’
+
+Pixel Zone wyłączy się teraz","Oops …
+
+Sembra che ci sia stato un errore. Il file di debug è stato creato su ""user://logs/.log"".
+
+Pixel Zone uscirà ora","Oops …
+
+Parece que houve um erro. O arquivo de depuração foi criado em 'user: //logs/*.log'.
+
+A Pixel Zone sairá agora","Oups…
+
+Il semble qu'il y ait eu une erreur. Le fichier de débogage a été créé à l'adresse 'user: //logs/*.log'.
+
+Pixel Zone va quitter maintenant"
+KEY_SKIP,SKIP,OMITIR,ÜBERSPRINGEN,POMIŃ,SALTA,PULAR,SAUTER
+KEY_MOD,Import modification,Modificación de importación,Änderung importieren,Importuj modyfikację,Modifica delle importazioni,Modificação de importação,Modification d'importation
+KEY_DIS,Disabled,Discapacitado,Deaktiviert,Wyłącz,Disabilitato,Desativado,désactivé
+KEY_High,High,Alto,Hoch,Wysoka,Alto,Alto,Haute
+KEY_Low,Low,Bajo,Niedrig,Niska,Basso,Baixo,Faible
+KEY_CONFIG,Please configure settings before starting the game.,"Por favor, configure los ajustes antes de comenzar el juego.","Bitte konfigurieren Sie die Einstellungen, bevor Sie das Spiel starten.","Proszę skonfigurować ustawienia, przed rozpoczęciem gry.",Si prega di configurare le impostazioni prima di iniziare il gioco.,"Por favor, defina as configurações antes de iniciar o jogo.",Veuillez configurer les paramètres avant de commencer le jeu.
+KEY_3D_NW,*Not working in 3D DLC,*No funciona en DLC 3D,*Funktioniert nicht in 3D DLC,*Nie działa w 3D DLC,*Non funziona in 3D DLC,*Não funciona em DLC 3D,*Ne fonctionne pas en 3D DLC
+KEY_FPS,Show FPS,Mostrar FPS,FPS anzeigen,Pokaż FPS,Mostra FPS,Mostrar FPS,Afficher FPS

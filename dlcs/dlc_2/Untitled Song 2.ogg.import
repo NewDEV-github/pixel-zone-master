@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Untitled Song 2.ogg-ab76c6870b126861677d8e37eec446ad.oggstr"
+
+[deps]
+
+source_file="res://dlcs/dlc_2/Untitled Song 2.ogg"
+dest_files=[ "res://.import/Untitled Song 2.ogg-ab76c6870b126861677d8e37eec446ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

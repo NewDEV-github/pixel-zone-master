@@ -1,0 +1,195 @@
+,en,es,de,pl,it,pt,fr
+KEY_APPLY,Apply,Aplicar,Einreichen,Zastosuj,Applicare,Aplique,Appliquer
+KEY_CONTROLS,"W/Up - Jump
+A/Left - Left
+D/Right - Right
+Space-  Shoot
+Shift - Speed  ","W / Up - Salto
+A / Izquierda - Izquierda
+D / Derecha - Derecha
+Espacio - disparar
+Cambio - velocidad","W / Up - Jump
+A / Links - Links
+D / rechts - richtig
+Weltraum – schieen
+Shift - Geschwindigkeit","W/Up - Skok
+A/Left - Lewo
+D/Right - Prawo
+Space – Strzał
+Shift - Przyspieszenie  ","W / Up - Salta
+A / Sinistra - Sinistra
+D / Destra - Destra
+Spazio - Spara
+Maiusc - Velocit?","W / Up - Jump
+A / esquerda - esquerda
+D / Direita - Direita
+Espaço - Atirar
+Deslocamento - Velocidade","W / Up - Jump
+A / Gauche - Gauche
+D / Droite - Droite
+Space - Shoot
+Shift - Vitesse"
+KEY_GRAPHICS,Graphics,Gráficos,Grafik,Grafika,Grafica,Gráficos,Graphique
+KEY_WINDOW_TYPE,Window Type,Tipo de ventana,Fenstertyp,Typ Okna,Tipo di finestra,Tipo de janela,Type de fenêtre
+KEY_RESOLUTION,Resolution,Resolución,Auflösung,Rozdzielczość,Risoluzione,Resolução,Résolution
+KEY_MUSIC,Music,Música,Musik,Muzyka,Musica,Música,La musique
+KEY_VOLUME,Volume,Volumen,Volumen,Głośność,Volume,Volume,Le volume
+KEY_BACKGROUND,Background,Fondo,Hintergrund,Muzyka z tła,Sfondo,Fundo,Contexte
+KEY_SFX,SFX,SFX,SFX,Efekty,SFX,SFX,SFX
+KEY_OFF,Off,De,Aus,Wył,Via,Fora,De
+KEY_On,On,En,Auf,Wł,Sopra,Em,Sur
+KEY_SAVE,Save,Salvar,Sparen,Zapisz,Salvare,Guardar,Sauvegarder
+KEY_Return,Return,Regreso,Rückkehr,Wróć do gry,Ritorno,Retorna,Revenir
+KEY_Load,Load,Carga,Belastung,Załaduj,Caricare,Carga,Charge
+KEY_Options,Options,Opciones,Optionen,Opcje,Opzioni,Opções,Les options
+KEY_Stats,Stats,Estadísticas,Statistiken,Statystyki,Statistiche,Estatísticos,Statistiques
+KEY_Quit,Quit,Dejar,Verlassen,Wyjdź,Smettere,Sair,Quitter
+KEY_Play,Play,Jugar,Abspielen,Graj,Giocare,Toque,Jouer
+KEY_MODE1,Normal Mode,Modo normal,Normaler Modus,Tryb Normalny,Modalit? normale,Modo normal,Mode normal
+KEY_TUT1,"Enter places like this,
+to go to the next levels","Entra en lugares como este,
+Para pasar a los siguientes niveles.","Orte wie diese eingeben,
+Um zu den nächsten Stufen zu gelangen","Wchodź do miejsc takich jak te,
+by dostać się do następnych poziomów","Inserisci posti come questo,
+Per passare ai livelli successivi","Insira lugares como este
+Para ir para os próximos níveis","Entrez dans des endroits comme celui-ci,
+Pour passer aux niveaux suivants"
+KEY_WINDOWED,Windowed,Windowed,Windowed,W oknie,Windowed,Windowed,Venteux
+KEY_MAXIMIZED,Maximized,Maximizado,Maximiert,Maksymalizacja,Massima,Maximizado,Maximisé
+KEY_FULLSCREEN,Fullscreen,Pantalla completa,Vollbildschirm,Pełny Ekran,A schermo intero,Tela cheia,Plein écran
+KEY_PLAY_AWAY,Continue Playing,Sigue jugando,Spielen Sie weiter,Graj dalej,Continua a giocare,Continue jogando,Rejouer
+KEY_EXP,Experience,Experiencia,Erfahrung,Punkty doświadczenia,Esperienza,Experiência,Expérience
+KEY_ENEMIES,Killed Enemies,Enemigos muertos,Getötete Feinde,Pokonani przeciwnicy,Nemici uccisi,Inimigos mortos,Ennemis tués
+KEY_COINS,Coins,Monedas,Münzen,Monety,Monete,Moedas,Pièces de monnaie
+KEY_THANKS,Thanks,Gracias,Vielen Dank,Dzięki,Grazie,Obrigado,Merci
+LANG_EN,English,Inglés,Englisch,Angielski,Inglese,Inglês,Anglais
+LANG_ES,Spanish,Español,Spanisch,Hiszpański,Spagnolo,Espanhol,Espanol
+LANG_DE,Deutsch,Deutsch,Deutsch,Niemiecki,Tedesco,Deutsch,Deutsch
+LANG_PL,Polish,Polaco,Polieren,Polski,Polacco,Polonês,Polonais
+LANG_IT,Italiano,Italiano,Italiano,Włoski,Italiano,Italiano,Italiano
+LANG_PT,Portuguese,Portugués,Portugiesisch,Portugalski,Portoghese,Português,Portugues
+KEY_LANG,Language,Idioma,Sprache,Język,Linguaggio,Língua,La langue
+KEY_G_A,Graphics & Audio,Gráficos y Audio,Grafik & Audio,Grafika i Audio,Grafica e audio,Gráficos e ?udio,Graphiques et audio
+KEY_CON_TAB,Controls,Controles,Steuerelemente,Sterowanie,Controlli,Controles,Les contrôles
+LANG_FR,French,Francés,Französisch,Francuski,Francese,Francês,Français
+KEY_CONTROLLER,Check controller settings,Verifique la configuración del controlador,?berprüfen Sie die Controller-Einstellungen,Sprawdź ustawienia kontrolera,Controlla le impostazioni del controller,Verifique as configurações do controlador,Vérifier les paramètres du contrôleur
+KEY_DEVICE,Device,Dispositivo,Gerät,Urządzenie,Dispositivo,Dispositivo,Dispositif
+KEY_Axis0,Axis 0,Eje 0,Achse 0,Oś 0,Asse 0,Eixo 0,Axe 0
+KEY_Axis1,Axis 1,Eje 1,Achse 1,Oś 1,Asse 1,Eixo 1,Axe 1
+KEY_Axis2,Axis 2,Eje 2,Achse 2,Oś 2,Asse 2,Eixo 2,Axe 2
+KEY_Axis3,Axis 3,Eje 3,Achse 3,Oś 3,Asse 3,Eixo 3,Axe 3
+KEY_Axis4,Axis 4,Eje 4,Achse 4,Oś 4,Asse 4,Eixo 4,Axe 4
+KEY_Axis5,Axis 5,Eje 5,Achse 5,Oś 5,Asse 5,Eixo 5,Axe 5
+KEY_Axis6,Axis 6,Eje 6,Achse 6,Oś 6,Asse 6,Eixo 6,Axe 6
+KEY_Axis7,Axis 7,Eje 7,Achse 7,Oś 7,Asse 7,Eixo 7,Axe 7
+KEY_Axis8,Axis 8,Eje 8,Achse 8,Oś 8,Asse 8,Eixo 8,Axe 8
+KEY_Axis9,Axis 9,Eje 9,Achse 9,Oś 9,Asse 9,Eixo 9,Axe 9
+KEY_Axis10,Axis 10,Eje 10,Achse 10,Oś 10,Asse 10,Eixo 10,Axe 10
+KEY_Buttons,Buttons:,Botones:,Tasten:,Przyciski:,Pulsanti:,Botões:,Boutons:
+KEY_WIB_3,Vibration Duration,Duración de la vibración,Vibrationsdauer,Długość wibracji,Durata delle vibrazioni,Duração da vibração,Durée de vibration
+KEY_WIB_START,Start Vibration,Iniciar vibración,Vibration starten,Rozpocznij wibracje,Inizia la vibrazione,Comece a vibração,Démarrer les vibrations
+KEY_WIB_STOP,Stop Vibration,Detener la vibración,Vibrationsstopp,Zatrzymaj wibracje,Fermare le vibrazioni,Pare a vibração,Arrêter les vibrations
+KEY_START,START!,¡COMIENZO!,START!,START!,INIZIO!,COME?AR!,D?BUT!
+KEY_ACH_YOU,Your Achievements,Sus logros,Deine Erfolge,Twoje Osiągniecia,I tuoi obiettivi,Suas conquistas,Vos réalisations
+KEY_ACH_BACK,Back To Game,Volver al juego,Zurück zum Spiel,Wróć do gry,Ritorno al gioco,De volta ao jogo,Retour au jeu
+KEY_ACH,Achievements,Logros,Erfolge,Osiagniecia,realizzazioni,Conquistas,Réalisations
+KEY_DLCS,Show list of installed DLCs,Mostrar lista de DLC instalados,Liste der installierten DLCs anzeigen,Pokaż listę zainstalowanych dodatków,Mostra l'elenco dei DLC installati,Mostrar lista de DLCs instalados,Afficher la liste des DLC installés
+KEY_REPORT_BUG,Report a bug,Reportar un error,Melde einen technischen Fehler,Zgłoś problem,Segnalare un bug,Reportar um erro,Signaler un bug
+KEY_THEME,Theme,Tema,Thema,Motyw,Tema,Tema,Thème
+KEY_Yellow,Yellow,Amarillo,Gelb,Żółty,Giallo,Amarelo,Jaune
+KEY_Grey,Grey,Gris,Grau,Szary,Grigio,Cinzento,Gris
+KEY_Red,Red,Rojo,rot,Czerwony,Rosso,Vermelho,Rouge
+KEY_Green,Green,Verde,Grün,Zielony,Verde,Verde,Vert
+KEY_Blue,Blue,Azul,Blau,Niebieski,Blu,Azul,Bleu
+KEY_Default,Modern,Moderno,Modern,Nowoczesny,Moderno,Moderno,Moderne
+KEY_Old,Old,Antiguo,Alt,Stary,Vecchio,Velho,Vieux
+KEY_UI_THEME,Select Interface Theme,Seleccione el tema de la interfaz,Wählen Sie Interface Theme,Wybierz motyw interfejsu,Seleziona il tema dell'interfaccia,Selecione o tema da interface,Sélectionnez le thème d'interface
+KEY_Neon,Neon,Neón,Neon,Neon,Neon,Néon,Néon
+KEY_Alien,Alien,Extraterrestre,Ausländer,Obcy,Alieno,Estrangeiro,Extraterrestre
+KEY_Light,Light,Brillante,Hell,Jasny,Luminoso,Brilhante,Brillant
+KEY_Solarized_dark,Solarized Dark,Oscuridad solarizada,Solarized Dark,Solaryzowany Ciemny,Solarized Dark,Escuro Solarizado,Dark Solarized
+KEY_Solarized_light,Solarized Light,Luz solarizada,Solarisiertes Licht,Solaryzowany Jasny,Solarized Bright,Brilhante Solarizado,Lumineux Solarisé
+KEY_FULL_HEALTH,Full Health,Salud completa,Volle Gesundheit,Pełne Zdrowie,Piena salute,Saúde Máxima,Pleine santé
+KEY_Continue,Continue (BETA!!!),Continuar (BETA!!!),Fortsetzen (BETA!!!),Kontynuuj (BETA!!!),Continua (BETA!!!),Continuar (BETA!!!),Continuer (BETA!!!)
+KEY_Licenses,Licenses,Licencias,Lizenzen,Licencje,Licenze,Licenças,Les licences
+KEY_AUTOSAVE_NOT,"This game uses the autosave function. This function is not containing DLCs - Only base game (for now)
+The files are saved on the disk and the removal
+of one of them may result in a loss of
+The game's state
+
+Do not turn off the game,
+While this icon is visible","Este juego utiliza la función de guardado automático. Esta función no contiene DLC: solo juego base (por ahora)
+Los archivos se guardan en el disco y la
+eliminación de uno de ellos puede
+Provocar la pérdida del estado del juego.
+
+
+No apague el juego cuando este icono est? visible","Dieses Spiel verwendet die automatische Speicherfunktion. Diese Funktion enthält keine DLCs - Nur Basisspiel (vorerst)
+Die Dateien werden auf der Festplatte gespeichert.
+Wenn Sie eine davon entfernen, kann der Status des Spiels verloren gehen.
+
+
+Schalten Sie das Spiel nicht aus,
+wenn dieses Symbol sichtbar ist","Ta gra używa funkcji autozapisu. Ta funkcja nie dotyczy DLC – tylko gra podstawowa jest zapisywana
+Pliki zapisywane są na dysku i
+usunięcie chociaż jednego z nich może zaskutkować
+Utratą zapisu stanu gry
+
+
+Nie wyłączaj gry,
+Gdy ta ikona jest widoczna","Questo gioco utilizza la funzione di salvataggio automatico. Questa funzione non contiene DLC - Solo gioco base (per ora)
+I file vengono salvati sul disco e la rimozione
+di uno di essi può comportare la
+perdita dello stato del gioco
+
+
+Non spegnere il gioco
+Uando questa icona ? visibile","Este jogo usa a função de salvamento automático. Esta função não contém DLCs - Somente jogo base (por enquanto)
+Os arquivos são salvos no disco e a remoção
+de um deles pode resultar na
+Perda do estado do jogo
+
+
+N?o desligue o jogo quando
+Este ?cone estiver vis?vel","Ce jeu utilise la fonction de sauvegarde automatique. Cette fonction ne contient pas de DLC - Uniquement un jeu de base (pour l'instant)
+Les fichiers sont enregistrés sur le disque et la suppression 
+de l'un d'eux peut entraîner une perte de
+L'état du jeu
+
+
+N'éteignez pas le jeu,
+Tant que cette icône est visible"
+KEY_AP,Awaiting Players�,A la espera de jugadores ...,Spieler erwarten�,Oczekuj�cy Gracze�,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente�
+KEY_Host,Host,Anfitri�n,Wirt,Hostuj,Ospite,Hospedeiro,H�te
+KEY_Join,Join,Unirse,Beitreten,Do��cz,Aderire,Junte-se,Joindre
+KEY_IP_Adress,IP Address,Direcci�n IP,IP Adresse,Adres IP,Indirizzo IP,Endere�o de IP,Adresse IP
+KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,pr�nom
+KEY_ERR,"Oops�
+
+It seems there was an error. Debug file was created at �user://logs/*.log�.
+
+Pixel Zone will exit now","Vaya �
+
+Parece que hubo un error. El archivo de depuraci�n se cre� en �usuario: //logs/*.log�.
+
+Pixel Zone saldr� ahora","Hoppla�
+
+Es scheint einen Fehler zu geben. Die Debug-Datei wurde unter ""user: //logs/*.log"" erstellt.
+
+Pixel Zone wird jetzt beendet","Ups�
+
+To wygl�da na b��d. Log b��du zosta� utworzony w �user://logs/*.log�
+
+Pixel Zone wy��czy si� teraz","Oops �
+
+Sembra che ci sia stato un errore. Il file di debug ? stato creato su ""utente: //logs/*.log"".
+
+Pixel Zone uscir? ora","Oops �
+
+Parece que houve um erro. O arquivo de depura�?o foi criado em ""user: //logs/*.log"".
+
+A Pixel Zone sair� agora","Oups�
+
+Il semble qu'il y ait eu une erreur. Le fichier de d�bogage a �t� cr�� ? ""user: //logs/*.log"".
+
+Pixel Zone va quitter maintenant"

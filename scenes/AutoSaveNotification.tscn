@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/AutoSaveNotification.gd" type="Script" id=2]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
+[ext_resource path="res://textures/saving.png" type="Texture" id=4]
+[ext_resource path="res://animations/saving.tres" type="Animation" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_AUTOSAVE_NOT"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -23.0
+margin_top = -38.0
+margin_right = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "OK"
+flat = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509.625, 519.751 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "saving"
+anims/saving = ExtResource( 5 )
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

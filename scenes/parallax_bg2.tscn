@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://textures/scroll_bg_sky.png" type="Texture" id=1]
+[ext_resource path="res://textures/Tiles/jungle_ruins/palm_tree.png" type="Texture" id=2]
+
+[node name="parallax_bg" type="ParallaxBackground"]
+scroll_base_scale = Vector2( 0.7, 0 )
+
+[node name="sky" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="sky"]
+position = Vector2( -2.53125, -10.8732 )
+scale = Vector2( 45.3049, 2.56652 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="mount_ 2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1050, 0 )
+
+[node name="Sprite" type="Sprite" parent="mount_ 2"]
+position = Vector2( 0, 396.405 )
+scale = Vector2( 1, 1.39551 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+
+[node name="mount_1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1050, 0 )
+
+[node name="Sprite2" type="Sprite" parent="mount_1"]
+position = Vector2( 0, 396.405 )
+scale = Vector2( 1, 1.39551 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+

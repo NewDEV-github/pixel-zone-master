@@ -1,0 +1,58 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+margin_left = 10.0
+margin_top = 210.0
+margin_right = 50.0
+margin_bottom = 250.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -10.0
+margin_top = -210.0
+margin_right = 30.0
+margin_bottom = -170.0
+
+[node name="Button_save" type="Button" parent="VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 20.0
+text = "Save silly material"
+
+[node name="Button_load" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 44.0
+clip_text = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Button_load"]
+margin_right = 200.0
+margin_bottom = 60.0
+text = "Load silly material
+and apply to selected node(s)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Save_FileDialog" type="FileDialog" parent="."]
+margin_left = 140.0
+margin_top = -190.0
+margin_right = 590.0
+margin_bottom = 150.0
+resizable = true
+access = 2
+filters = PoolStringArray( "*.silly_mat" )
+current_dir = "C:/Users/Karol Tomaszewski/Documents/Pixel Zone"
+current_path = "C:/Users/Karol Tomaszewski/Documents/Pixel Zone/"
+
+[node name="Load_FileDialog" type="FileDialog" parent="."]
+margin_left = 140.0
+margin_top = -190.0
+margin_right = 590.0
+margin_bottom = 150.0
+window_title = "Otwórz plik"
+resizable = true
+mode = 0
+filters = PoolStringArray( "*.silly_mat" )
+
