@@ -86,3 +86,37 @@ func _on_apply_pressed():
 func _on_cancel_pressed():
 	$ui/main.show()
 	$ui/settings.hide()
+func _process(delta):
+	if $ui/settings/CheckBox.pressed == true:
+		ProjectSettings.set("low_processor_mode", true)
+		#ssao
+		$ui/settings/ssao_low.set_disabled(true)
+		$ui/settings/ssao_high.set_disabled(true)
+		$ui/settings/ssao_disabled.set_pressed(true)
+		#Global Illumination
+		$ui/settings/gi_low.set_disabled(true)
+		$ui/settings/gi_high.set_disabled(true)
+		$ui/settings/gi_disabled.set_pressed(true)
+		#Anti Aliasing
+		$ui/settings/aa_8x.set_disabled(true)
+		$ui/settings/aa_4x.set_disabled(true)
+		$ui/settings/aa_2x.set_disabled(true)
+		$ui/settings/aa_disabled.set_pressed(true)
+	if $ui/settings/CheckBox.pressed == false:
+		ProjectSettings.set("low_processor_mode", false)
+		#ssao
+		$ui/settings/ssao_low.set_disabled(false)
+		$ui/settings/ssao_high.set_disabled(false)
+		$ui/settings/ssao_disabled.set_pressed(false)
+		$ui/settings/ssao_high.set_pressed(true)
+		#Global Illumination
+		$ui/settings/gi_low.set_disabled(false)
+		$ui/settings/gi_high.set_disabled(false)
+		$ui/settings/gi_high.set_pressed(true)
+		$ui/settings/gi_disabled.set_pressed(false)
+		#Anti Aliasing
+		$ui/settings/aa_8x.set_disabled(false)
+		$ui/settings/aa_4x.set_disabled(false)
+		$ui/settings/aa_2x.set_disabled(false)
+		$ui/settings/aa_disabled.set_pressed(false)
+		$ui/settings/aa_8x.set_pressed(true)

@@ -1,9 +1,6 @@
 extends Control
 func _on_Play_pressed():
-	if $TextureRect/VBoxContainer/CheckBox.pressed == true:
-		$TextureRect/WindowDialog2.hide()
-		$TextureRect/WindowDialog3.popup_centered()
-	if 
+	$TextureRect/WindowDialog2.show()
 	
 	var a = File.new()
 	if a.file_exists("user://dlc_3/stage.tscn"):
@@ -31,11 +28,6 @@ func _process(delta):
 		$TextureRect/VBoxContainer/Continue.disabled = false
 	if not b.file_exists("user://1.save"):
 		$TextureRect/VBoxContainer/Continue.disabled = true
-func _ready():
-	var a = File.new()
-	if a.file_exists("user://3d.pck"):
-		ProjectSettings.load_resource_pack("user://3d.pck")
-		get_tree().change_scene("res://scenes/Main Menu/GUI3D.tscn")
 	
 	settings.connect("window_size_changed", self, "_on_window_size_changeds")
 	var c = File.new()
@@ -83,7 +75,12 @@ func _on_MITLicense_pressed():
 
 func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
-
+	
+func _ready():
+	var dlc = File.new()
+	if dlc.file_exists("user://3d.pck"):
+		ProjectSettings.load_resource_pack("user://3d.pck")
+		get_tree().change_scene("res://scenes/Main Menu/GUI3D.tscn")
 
 func _on_Continue_pressed():
 	var con = File.new()
@@ -114,15 +111,18 @@ func _on_Play8_pressed():
 func _on_WindowDialog3_popup_hide():
 	$TextureRect/WindowDialog2.hide()
 
-
 func _on_close_pressed():
 	$TextureRect/WindowDialog2.hide()
 
 
 func _on_ImportMod_pressed():
-	$ModSlector.popup_centered()
+	$ModeSlector.popup_centered()
 
 
-func _on_ModSlector_file_selected(path):
+func _on_ModeSelect_file_selected(path):
 	ProjectSettings.load_resource_pack(path)
 	get_tree().change_scene("res://mod.tscn")
+
+
+func _on_WindowDialog3_about_to_show():
+	$TextureRect/WindowDialog2.hide()

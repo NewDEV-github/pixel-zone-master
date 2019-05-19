@@ -1,3 +1,5 @@
+
+
 extends KinematicBody
 var timer = 0.0
 var aiming = false
