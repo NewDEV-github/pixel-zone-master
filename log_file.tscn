@@ -23,30 +23,4 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -513.0
-margin_top = -299.0
-margin_right = 509.0
-margin_bottom = 283.0
-dialog_text = "KEY_ERR"
-
-[node name="Label2" type="Label" parent="AcceptDialog"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -503.0
-margin_top = -244.0
-margin_right = 503.0
-margin_bottom = 236.0
-autowrap = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="about_to_show" from="AcceptDialog" to="." method="_on_AcceptDialog_about_to_show"]
-[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
-[connection signal="popup_hide" from="AcceptDialog" to="." method="_on_AcceptDialog_popup_hide"]

@@ -123,3 +123,4 @@ func _on_ModeSelect_file_selected(path):
 
 func _on_WindowDialog3_about_to_show():
 	$TextureRect/WindowDialog2.hide()
+

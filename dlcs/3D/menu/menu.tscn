@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://dlcs/3D/menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://dlcs/3D/music/intro.ogg" type="AudioStream" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://dlcs/3D/menu/button_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://dlcs/3D/menu/button_pressed.tres" type="StyleBox" id=10]
 [ext_resource path="res://dlcs/3D/menu/button_normal.tres" type="StyleBox" id=11]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=12]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 resource_local_to_scene = true
@@ -495,10 +496,30 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "Cancel"
 
-[node name="CheckBox" type="CheckBox" parent="ui/settings"]
-margin_right = 622.0
-margin_bottom = 24.0
-rect_scale = Vector2( 2, 2 )
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/settings"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 860.0
+margin_right = 1021.0
+margin_bottom = 940.0
+rect_scale = Vector2( 1.5, 1.5 )
+theme = ExtResource( 12 )
+
+[node name="CheckBox3" type="CheckBox" parent="ui/settings/VBoxContainer"]
+margin_right = 1021.0
+margin_bottom = 39.0
+text = "GLES2 Use Nvidia Rect Flicker Workaround"
+
+[node name="CheckBox2" type="CheckBox" parent="ui/settings/VBoxContainer"]
+margin_top = 43.0
+margin_right = 1021.0
+margin_bottom = 82.0
+text = "GLES2 Fallback"
+
+[node name="CheckBox" type="CheckBox" parent="ui/settings/VBoxContainer"]
+margin_top = 86.0
+margin_right = 1021.0
+margin_bottom = 125.0
 text = "Low Processor mode"
 
 [node name="loading" type="Control" parent="ui"]

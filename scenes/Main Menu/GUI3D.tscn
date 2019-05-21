@@ -495,6 +495,7 @@ current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="about_to_show" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_about_to_show"]
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
+[connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/License" to="." method="_on_License_pressed"]
 [connection signal="pressed" from="TextureRect/WindowDialog2/close" to="." method="_on_close_pressed"]

@@ -14,6 +14,11 @@ func _init(console):
 	var exitCommand = Command.new('exit',  exitRef, [], 'Closes the console.', ConsoleRights.CallRights.DEV)
 	console.add_command(exitCommand)
 	
+	var alertRef = CommandRef.new(self, "alert", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var alertCommand = Command.new('alert', alertRef, [], 'Simulate an alert.', ConsoleRights.CallRights.USER)
+	console.add_command(alertCommand)
+
+	
 	var clearRef = CommandRef.new(self, "clear", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var clearCommand = Command.new('clear', clearRef, [], 'Clears the console.', ConsoleRights.CallRights.USER)
 	console.add_command(clearCommand)
@@ -29,10 +34,6 @@ func _init(console):
 	var aboutRef = CommandRef.new(self, "about", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var aboutCommand = Command.new('about', aboutRef, [], 'shows info about game and its creators', ConsoleRights.CallRights.USER)
 	console.add_command(aboutCommand)
-	
-	var commandRef = CommandRef.new(self, "command", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var commandCommand = Command.new('command',commandRef, [], 'exit game', ConsoleRights.CallRights.USER)
-	console.add_command(commandCommand)
 	
 	var helpAllRef = CommandRef.new(self, "help_all", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var helpAllCommand = Command.new('helpAll', helpAllRef, [], 'shows all commands.', ConsoleRights.CallRights.USER)
@@ -170,9 +171,6 @@ func alias(input : Array):
 		command.get_ref().set_expected_arguments([command.get_ref().get_expected_arguments().size() - (input.size() - 2)])
 		
 	_consoleRef.add_command(command)
-	
-func command(input : Array):
-	_consoleRef.append_message('Custom Text')
 
 func set_default_text_color(input : Array):
 	if input.size() == 1:
@@ -277,7 +275,8 @@ func clear(_input : Array):
 func exit(_input : Array):
 	_consoleRef.toggle_console()
 	
-	
+func alert(input : Array):
+	log_file.error()
 func man(input : Array):
 	var command = input[0]
 	

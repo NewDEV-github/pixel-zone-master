@@ -1,5 +1,5 @@
 extends Control
-
+signal warning
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -87,7 +87,7 @@ func _on_cancel_pressed():
 	$ui/main.show()
 	$ui/settings.hide()
 func _process(delta):
-	if $ui/settings/CheckBox.pressed == true:
+	if $ui/settings/VBoxContainer/CheckBox.pressed == true:
 		ProjectSettings.set("low_processor_mode", true)
 		#ssao
 		$ui/settings/ssao_low.set_disabled(true)
@@ -102,7 +102,7 @@ func _process(delta):
 		$ui/settings/aa_4x.set_disabled(true)
 		$ui/settings/aa_2x.set_disabled(true)
 		$ui/settings/aa_disabled.set_pressed(true)
-	if $ui/settings/CheckBox.pressed == false:
+	if $ui/settings/VBoxContainer/CheckBox.pressed == false:
 		ProjectSettings.set("low_processor_mode", false)
 		#ssao
 		$ui/settings/ssao_low.set_disabled(false)
@@ -120,3 +120,13 @@ func _process(delta):
 		$ui/settings/aa_2x.set_disabled(false)
 		$ui/settings/aa_disabled.set_pressed(false)
 		$ui/settings/aa_8x.set_pressed(true)
+	if $ui/settings/VBoxContainer/CheckBox2.pressed == true:
+		ProjectSettings.set("rendering/quality/driver/fallback_to_gles2", true)
+	if $ui/settings/VBoxContainer/CheckBox2.pressed == false:
+		ProjectSettings.set("rendering/quality/driver/fallback_to_gles2", false)
+	if $ui/settings/VBoxContainer/CheckBox3.pressed == true:
+		if $ui/settings/VBoxContainer/CheckBox2.pressed == false:
+			$ui/settings/VBoxContainer/CheckBox2.set_pressed(true)
+		ProjectSettings.set("rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround", true)
+	if $ui/settings/VBoxContainer/CheckBox3.pressed == false:
+		ProjectSettings.set("rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround", false)

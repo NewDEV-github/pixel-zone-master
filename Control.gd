@@ -17,16 +17,16 @@ func print_log():
 	b.close()
 func error():
 	print_log()
-	$AcceptDialog.popup_centered()
+	OS.alert("There has been an error \n log file was created at:\n" + str(OS.get_user_data_dir()) +"/" + str(OS.get_unix_time())+".log\nPlease attach it to any bug report")
 
 func _on_Timer_timeout():
 	print_log()
 	$Timer.start()
 
-func _on_AcceptDialog_confirmed():
-	get_tree().quit()
-
-func _on_AcceptDialog_popup_hide():
-	get_tree().quit()
-func _on_AcceptDialog_about_to_show():
-	$AcceptDialog/Label2.set_text(str(OS.get_user_data_dir()) + "/" + str(OS.get_unix_time()) + ".log")
+#func _on_AcceptDialog_confirmed():
+#	get_tree().quit()
+#
+#func _on_AcceptDialog_popup_hide():
+#	get_tree().quit()
+#func _on_AcceptDialog_about_to_show():
+#	$AcceptDialog/Label2.set_text(str(OS.get_user_data_dir()) + "/" + str(OS.get_unix_time()) + ".log")
