@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://addons/godot-notes/save.png" type="Texture" id=1]
-[ext_resource path="res://addons/godot-notes/refresh.png" type="Texture" id=2]
+[ext_resource path="res://addons/godot_notes-b1672067c8ae7d220d4563cf6dd6a8677c594b4a/save.png" type="Texture" id=1]
+[ext_resource path="res://addons/godot_notes-b1672067c8ae7d220d4563cf6dd6a8677c594b4a/refresh.png" type="Texture" id=2]
+
+
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4

@@ -1,5 +1,7 @@
 extends Control
-
+func _process(delta):
+	if Input.is_action_just_pressed("debug_alert"):
+		error()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,7 +19,7 @@ func print_log():
 	b.close()
 func error():
 	print_log()
-	OS.alert("There has been an error \n log file was created at:\n" + str(OS.get_user_data_dir()) +"/" + str(OS.get_unix_time())+".log\nPlease attach it to any bug report")
+	OS.alert("There has been an error \n log file was created at:\n" + str(OS.get_user_data_dir()) +"/" + str(OS.get_unix_time())+".log\nPlease attach it to any bug report", "Error")
 
 func _on_Timer_timeout():
 	print_log()

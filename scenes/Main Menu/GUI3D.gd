@@ -3,14 +3,7 @@ func _on_Play_pressed():
 	if $TextureRect/VBoxContainer/CheckBox.pressed == true:
 		$TextureRect/WindowDialog2.hide()
 		$TextureRect/WindowDialog3.popup_centered()
-	
-	var a = File.new()
-	if a.file_exists("user://dlc_3/stage.tscn"):
-		$TextureRect/WindowDialog2.show()
-		return
-	if a.file_exists("user://dlc_1/stage_dlc1.tscn"):
-		background_load.load_scene("user://dlc_1/stage_dlc1.tscn")
-	if not a.file_exists("user://dlc_1/stage_dlc1.tscn"):
+	if $TextureRect/VBoxContainer/CheckBox.pressed == false:
 		background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
 
 func _on_Quit_pressed():

@@ -5,3 +5,6 @@ func _on_bullet_body_enter(body):
 
 func _on_Timer_timeout():
 	$animation.play("shutdown")
+
+func _on_player_size():
+	set_scale(Vector2(0.5, 0.5))

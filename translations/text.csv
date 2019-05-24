@@ -110,7 +110,7 @@ KEY_Light,Light,Brillante,Hell,Jasny,Luminoso,Brilhante,Brillant
 KEY_Solarized_dark,Solarized Dark,Oscuridad solarizada,Solarized Dark,Solaryzowany Ciemny,Solarized Dark,Escuro Solarizado,Dark Solarized
 KEY_Solarized_light,Solarized Light,Luz solarizada,Solarisiertes Licht,Solaryzowany Jasny,Solarized Bright,Brilhante Solarizado,Lumineux SolarisÃ©
 KEY_FULL_HEALTH,Full Health,Salud completa,Volle Gesundheit,PeÅ‚ne Zdrowie,Piena salute,SaÃºde MÃ¡xima,Pleine santÃ©
-KEY_Continue,Continue (BETA!!!),Continuar (BETA!!!),Fortsetzen (BETA!!!),Kontynuuj (BETA!!!),Continua (BETA!!!),Continuar (BETA!!!),Continuer (BETA!!!)
+KEY_Continue,Continue,Continuar,Fortsetzen,Kontynuuj,Continua,Continuar,Continuer
 KEY_Licenses,Licenses,Licencias,Lizenzen,Licencje,Licenze,LicenÃ§as,Les licences
 KEY_AUTOSAVE_NOT,"This game uses the autosave function. This function is not containing DLCs - Only base game (for now)
 The files are saved on the disk and the removal
@@ -159,37 +159,37 @@ L'Ã©tat du jeu
 
 N'Ã©teignez pas le jeu,
 Tant que cette icÃ´ne est visible"
-KEY_AP,Awaiting Players…,A la espera de jugadores ...,Spieler erwarten…,Oczekuj¹cy Gracze…,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente…
-KEY_Host,Host,Anfitrión,Wirt,Hostuj,Ospite,Hospedeiro,Hôte
-KEY_Join,Join,Unirse,Beitreten,Do³¹cz,Aderire,Junte-se,Joindre
-KEY_IP_Adress,IP Address,Dirección IP,IP Adresse,Adres IP,Indirizzo IP,Endereço de IP,Adresse IP
-KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,prénom
-KEY_ERR,"Oops…
+KEY_AP,Awaiting Playersï¿½,A la espera de jugadores ...,Spieler erwartenï¿½,Oczekujï¿½cy Graczeï¿½,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attenteï¿½
+KEY_Host,Host,Anfitriï¿½n,Wirt,Hostuj,Ospite,Hospedeiro,Hï¿½te
+KEY_Join,Join,Unirse,Beitreten,Doï¿½ï¿½cz,Aderire,Junte-se,Joindre
+KEY_IP_Adress,IP Address,Direcciï¿½n IP,IP Adresse,Adres IP,Indirizzo IP,Endereï¿½o de IP,Adresse IP
+KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,prï¿½nom
+KEY_ERR,"Oopsï¿½
 
-It seems there was an error. Debug file was created at ‘user://logs/*.log’.
+It seems there was an error. Debug file was created at ï¿½user://logs/*.logï¿½.
 
-Pixel Zone will exit now","Vaya …
+Pixel Zone will exit now","Vaya ï¿½
 
-Parece que hubo un error. El archivo de depuración se creó en ‘usuario: //logs/*.log’.
+Parece que hubo un error. El archivo de depuraciï¿½n se creï¿½ en ï¿½usuario: //logs/*.logï¿½.
 
-Pixel Zone saldrá ahora","Hoppla…
+Pixel Zone saldrï¿½ ahora","Hopplaï¿½
 
 Es scheint einen Fehler zu geben. Die Debug-Datei wurde unter ""user: //logs/*.log"" erstellt.
 
-Pixel Zone wird jetzt beendet","Ups…
+Pixel Zone wird jetzt beendet","Upsï¿½
 
-To wygl¹da na b³¹d. Log b³êdu zosta³ utworzony w ‘user://logs/*.log’
+To wyglï¿½da na bï¿½ï¿½d. Log bï¿½ï¿½du zostaï¿½ utworzony w ï¿½user://logs/*.logï¿½
 
-Pixel Zone wy³¹czy siê teraz","Oops …
+Pixel Zone wyï¿½ï¿½czy siï¿½ teraz","Oops ï¿½
 
 Sembra che ci sia stato un errore. Il file di debug ? stato creato su ""utente: //logs/*.log"".
 
-Pixel Zone uscir? ora","Oops …
+Pixel Zone uscir? ora","Oops ï¿½
 
-Parece que houve um erro. O arquivo de depuraç?o foi criado em ""user: //logs/*.log"".
+Parece que houve um erro. O arquivo de depuraï¿½?o foi criado em ""user: //logs/*.log"".
 
-A Pixel Zone sairá agora","Oups…
+A Pixel Zone sairï¿½ agora","Oupsï¿½
 
-Il semble qu'il y ait eu une erreur. Le fichier de débogage a été créé ? ""user: //logs/*.log"".
+Il semble qu'il y ait eu une erreur. Le fichier de dï¿½bogage a ï¿½tï¿½ crï¿½ï¿½ ? ""user: //logs/*.log"".
 
 Pixel Zone va quitter maintenant"

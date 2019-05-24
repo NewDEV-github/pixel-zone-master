@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Inventory/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Inventory/Pixel Art Assets/Horizontal-Inventory-01.tres" type="TileSet" id=2]
+
+[node name="Inventory" type="Control"]
+margin_top = -1.79621
+margin_right = 1.0
+margin_bottom = -0.79621
+script = ExtResource( 1 )
+inventory_type = "H"
+cant_horizontal_cld = 7
+cant_vertical_cld = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 32 )
+format = 1
+

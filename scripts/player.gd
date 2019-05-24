@@ -71,6 +71,10 @@ func _physics_process(delta):
 		$sound_jump.play()
 	# Shooting
 	if Input.is_action_just_pressed("shoot"):
+		if (get_path()) == "/Characters/":
+			print("I have got any ammo")
+			return
+		
 		var weapon_up = preload("res://scenes/bullet_modified.tscn").instance()
 		var default_weapon = preload("res://scenes/bullet.tscn").instance()
 		var weapon_current = default_weapon
@@ -164,3 +168,6 @@ func _on_fps_show():
 	$ui/Control/fps.show()
 func _on_fps_hide():
 	$ui/Control/fps.hide()
+signal size
+func _on_SunnyLand_size():
+	emit_signal("size")

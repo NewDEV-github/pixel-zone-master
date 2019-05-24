@@ -30,7 +30,7 @@ anchor_bottom = 0.5
 margin_left = -254.5
 margin_top = -112.0
 margin_right = 254.5
-margin_bottom = 112.0
+margin_bottom = 213.0
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
 margin_right = 509.0
@@ -68,6 +68,7 @@ text = "KEY_Continue"
 flat = true
 
 [node name="Play6" type="Button" parent="TextureRect/VBoxContainer"]
+visible = false
 margin_top = 172.0
 margin_right = 509.0
 margin_bottom = 211.0
@@ -77,36 +78,36 @@ text = "KEY_DLCS"
 flat = true
 
 [node name="Play7" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 215.0
+margin_top = 172.0
 margin_right = 509.0
-margin_bottom = 254.0
+margin_bottom = 211.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "KEY_REPORT_BUG"
 flat = true
 
 [node name="Licenses" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 258.0
+margin_top = 215.0
 margin_right = 509.0
-margin_bottom = 297.0
+margin_bottom = 254.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
-text = "KEY_Licenses"
+text = "Downloadble Content"
 flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 301.0
+margin_top = 258.0
 margin_right = 509.0
-margin_bottom = 340.0
+margin_bottom = 297.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "KEY_Quit"
 flat = true
 
 [node name="CheckBox" type="CheckBox" parent="TextureRect/VBoxContainer"]
-margin_top = 344.0
+margin_top = 301.0
 margin_right = 509.0
-margin_bottom = 368.0
+margin_bottom = 325.0
 text = "Enter 3D stage."
 
 [node name="WindowDialog" type="WindowDialog" parent="TextureRect"]
@@ -125,7 +126,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="WindowDialog3" type="WindowDialog" parent="TextureRect"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 27.0
@@ -401,6 +401,7 @@ SOFTWARE.
 "
 
 [node name="LicenseSelector" type="WindowDialog" parent="TextureRect"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -411,18 +412,6 @@ margin_right = 201.0
 margin_bottom = 170.0
 theme = ExtResource( 3 )
 popup_exclusive = true
-
-[node name="Label" type="Label" parent="TextureRect/LicenseSelector"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 92.0
-theme = ExtResource( 3 )
-text = "
-Choose the license,
-you would like to see
-"
-align = 1
-valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/LicenseSelector"]
 anchor_right = 1.0
@@ -436,14 +425,8 @@ margin_bottom = 3.375
 margin_right = 341.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 4 )
-text = "Privacy Policy"
-
-[node name="License" type="Button" parent="TextureRect/LicenseSelector/VBoxContainer"]
-margin_top = 43.0
-margin_right = 341.0
-margin_bottom = 82.0
-custom_fonts/font = ExtResource( 4 )
-text = "Pixel Zone License"
+disabled = true
+text = "3D Mode (Downloaded)"
 
 [node name="WindowDialog2" type="Panel" parent="TextureRect"]
 visible = false
@@ -483,8 +466,8 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.pck", "*" )
 show_hidden_files = true
-current_dir = "C:/Users/Karol/Documents/pixel-zone-master"
-current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
+current_dir = "/home/godot/Pulpit/pixel-zone-master"
+current_path = "/home/godot/Pulpit/pixel-zone-master/"
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
@@ -497,6 +480,5 @@ current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
 [connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
-[connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/License" to="." method="_on_License_pressed"]
 [connection signal="pressed" from="TextureRect/WindowDialog2/close" to="." method="_on_close_pressed"]
 [connection signal="file_selected" from="ModeSelect" to="." method="_on_ModeSelect_file_selected"]

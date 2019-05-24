@@ -35,6 +35,10 @@ func _init(console):
 	var aboutCommand = Command.new('about', aboutRef, [], 'shows info about game and its creators', ConsoleRights.CallRights.USER)
 	console.add_command(aboutCommand)
 	
+	var errorRef = CommandRef.new(self, "error", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var errorCommand = Command.new('error', errorRef, [], 'simulate an error', ConsoleRights.CallRights.USER)
+	console.add_command(errorCommand)
+	
 	var helpAllRef = CommandRef.new(self, "help_all", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var helpAllCommand = Command.new('helpAll', helpAllRef, [], 'shows all commands.', ConsoleRights.CallRights.USER)
 	console.add_command(helpAllCommand)
@@ -126,6 +130,8 @@ func _init(console):
 func set_user_color(input : Array):
 	_consoleRef.update_user_name_color(input[0])
 
+func error(input : Array):
+	log_file.error()
 
 func show_default_commands(_input : Array):
 	_consoleRef.new_line()
