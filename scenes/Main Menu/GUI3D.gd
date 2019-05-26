@@ -3,7 +3,14 @@ func _on_Play_pressed():
 	if $TextureRect/VBoxContainer/CheckBox.pressed == true:
 		$TextureRect/WindowDialog2.hide()
 		$TextureRect/WindowDialog3.popup_centered()
-	if $TextureRect/VBoxContainer/CheckBox.pressed == false:
+	
+	var a = File.new()
+	if a.file_exists("user://dlc_3/stage.tscn"):
+		$TextureRect/WindowDialog2.show()
+		return
+	if a.file_exists("user://dlc_1/stage_dlc1.tscn"):
+		background_load.load_scene("user://dlc_1/stage_dlc1.tscn")
+	if not a.file_exists("user://dlc_1/stage_dlc1.tscn"):
 		background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
 
 func _on_Quit_pressed():
@@ -112,6 +119,8 @@ func _on_ImportMod_pressed():
 func _on_ModeSelect_file_selected(path):
 	ProjectSettings.load_resource_pack(path)
 	get_tree().change_scene("res://mod.tscn")
+	if FAILED:
+		log_file.error()
 
 
 func _on_WindowDialog3_about_to_show():

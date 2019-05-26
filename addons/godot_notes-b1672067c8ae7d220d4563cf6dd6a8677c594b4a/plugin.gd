@@ -7,7 +7,7 @@ var file:File = File.new()
 const savePath:String = "res://addons/godot-notes/notes.txt"
 
 func _enter_tree() -> void:
-	dock = preload("res://addons/godot_notes-b1672067c8ae7d220d4563cf6dd6a8677c594b4a/notes.tscn").instance()
+	dock = preload("res://addons/godot-notes/notes.tscn").instance()
 	add_control_to_dock(DOCK_SLOT_RIGHT_UR, dock)
 
 	dock.get_node("hBoxContainer/btn_save").connect("pressed", self, "_btn_save_click")

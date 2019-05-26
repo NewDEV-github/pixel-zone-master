@@ -3,6 +3,8 @@ extends Control
 
 func _on_Play_pressed():
 	background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
+	if FAILED:
+		log_file.error()
 
 func _on_Quit_pressed():
 	get_tree().quit()
@@ -22,9 +24,12 @@ func _on_Play6_pressed():
 	$TextureRect/WindowDialog.popup_centered()
 
 func _on_PP_pressed():
+	$TextureRect/DownloadNot.popup_centered()
 	$TextureRect/Label.show()
 	$HTTPRequest.set_download_file("user://3d.pck")
 	$HTTPRequest.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/v0.7.2.0.5/3d.pck")
+
+
 
 func _on_License_pressed():
 	$TextureRect/WindowDialog.hide()
@@ -56,7 +61,8 @@ func _ready():
 	if dlc.file_exists("user://3d.pck"):
 		ProjectSettings.load_resource_pack("user://3d.pck")
 		get_tree().change_scene("res://scenes/Main Menu/GUI3D.tscn")
-
+		if FAILED:
+			log_file.error()
 func _on_Continue_pressed():
 	var con = File.new()
 	if not con.file_exists("user://1.save") and not con.file_exists("user://2.save") and not con.file_exists("user://3.save") and not con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
@@ -91,12 +97,14 @@ func _on_close_pressed():
 
 
 func _on_ImportMod_pressed():
-	$ModeSlector.popup_centered()
+	$ModSelector.popup_centered()
 
 
 func _on_ModeSelect_file_selected(path):
 	ProjectSettings.load_resource_pack(path)
 	get_tree().change_scene("res://mod.tscn")
+	if FAILED:
+		log_file.error()
 
 
 func _on_WindowDialog3_about_to_show():

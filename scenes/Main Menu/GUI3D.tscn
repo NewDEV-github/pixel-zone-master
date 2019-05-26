@@ -28,9 +28,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -254.5
-margin_top = -112.0
+margin_top = -141.0
 margin_right = 254.5
-margin_bottom = 213.0
+margin_bottom = 141.0
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
 margin_right = 509.0
@@ -78,6 +78,7 @@ text = "KEY_DLCS"
 flat = true
 
 [node name="Play7" type="Button" parent="TextureRect/VBoxContainer"]
+visible = false
 margin_top = 172.0
 margin_right = 509.0
 margin_bottom = 211.0
@@ -87,27 +88,27 @@ text = "KEY_REPORT_BUG"
 flat = true
 
 [node name="Licenses" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 215.0
+margin_top = 172.0
 margin_right = 509.0
-margin_bottom = 254.0
+margin_bottom = 211.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
-text = "Downloadble Content"
+text = "KEY_DC"
 flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 258.0
+margin_top = 215.0
 margin_right = 509.0
-margin_bottom = 297.0
+margin_bottom = 254.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "KEY_Quit"
 flat = true
 
 [node name="CheckBox" type="CheckBox" parent="TextureRect/VBoxContainer"]
-margin_top = 301.0
+margin_top = 258.0
 margin_right = 509.0
-margin_bottom = 325.0
+margin_bottom = 282.0
 text = "Enter 3D stage."
 
 [node name="WindowDialog" type="WindowDialog" parent="TextureRect"]
@@ -401,7 +402,6 @@ SOFTWARE.
 "
 
 [node name="LicenseSelector" type="WindowDialog" parent="TextureRect"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -412,6 +412,18 @@ margin_right = 201.0
 margin_bottom = 170.0
 theme = ExtResource( 3 )
 popup_exclusive = true
+
+[node name="Label" type="Label" parent="TextureRect/LicenseSelector"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 92.0
+theme = ExtResource( 3 )
+text = "
+Choose the license,
+you would like to see
+"
+align = 1
+valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/LicenseSelector"]
 anchor_right = 1.0
@@ -426,7 +438,7 @@ margin_right = 341.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 4 )
 disabled = true
-text = "3D Mode (Downloaded)"
+text = "3D DLC"
 
 [node name="WindowDialog2" type="Panel" parent="TextureRect"]
 visible = false

@@ -17,6 +17,7 @@ func _get_collected():
 func play_bgm(id, value):
 	emit_signal("play_bgm", id, value)
 
+var dlc_name = ""
 
 
 
