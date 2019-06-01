@@ -50,23 +50,6 @@ margin_right = 622.375
 margin_bottom = 600.0
 script = ExtResource( 4 )
 
-[node name="eastereggtimer" type="Timer" parent="UIScaler/Menu"]
-wait_time = 5.0
-
-[node name="easteregg" type="Panel" parent="UIScaler/Menu"]
-visible = false
-margin_left = 413.0
-margin_right = 710.0
-margin_bottom = 40.0
-
-[node name="Label" type="Label" parent="UIScaler/Menu/easteregg"]
-margin_left = 1.0
-margin_top = 6.0
-margin_right = 293.0
-margin_bottom = 37.0
-text = "That game was made only with hardware from
-LENOVO"
-
 [node name="StatsPage" parent="UIScaler/Menu" instance=ExtResource( 5 )]
 visible = false
 margin_left = 1098.25
@@ -178,7 +161,6 @@ volume_db = -10.0
 autoplay = true
 script = ExtResource( 9 )
 id = "Menu"
-[connection signal="timeout" from="UIScaler/Menu/eastereggtimer" to="UIScaler/Menu" method="_on_eastereggtimer_timeout"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Return" to="UIScaler/Menu" method="_on_Return_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Options" to="UIScaler/Menu" method="_on_Options_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Stats" to="UIScaler/Menu" method="_on_Stats_pressed"]

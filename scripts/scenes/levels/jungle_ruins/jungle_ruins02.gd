@@ -9,18 +9,12 @@ func _ready():
 		var node_data = i.call("save");
 		a.store_line(to_json(node_data))
 	a.close()
-	var dlc = File.new()
-	if dlc.file_exists("user://dlc_2/brazil-fast.ogg"):
-		$AudioStreamPlayer2D.stop()
-		$AudioStreamPlayer2D2.play()
-	if not dlc.file_exists("user://dlc_2/brazil-fast.ogg"):
-		$AudioStreamPlayer2D.play()
-		$AudioStreamPlayer2D2.stop()
+	
 func _on_Area2D_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins03.tscn")
 
 
 func _on_Area2D2_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		get_tree().change_scene("scenes/GameOver.tscn")

@@ -1,34 +1,21 @@
 ,en,es,de,pl,it,pt,fr
 KEY_APPLY,Apply,Aplicar,Einreichen,Zastosuj,Applicare,Aplique,Appliquer
-KEY_CONTROLS,"W/Up - Jump
-A/Left - Left
+KEY_CONTROLS,"A/Left - Left
 D/Right - Right
-Space-  Shoot
-Shift - Speed  ","W / Up - Salto
-A / Izquierda - Izquierda
+Space -  Jump/SpinDash
+","A / Izquierda - Izquierda
 D / Derecha - Derecha
-Espacio - disparar
-Cambio - velocidad","W / Up - Jump
-A / Links - Links
+Espacio – Salto/SpinDash","A / Links - Links
 D / rechts - richtig
-Weltraum – schieen
-Shift - Geschwindigkeit","W/Up - Skok
-A/Left - Lewo
+Weltraum – Jump/SpinDash","A/Left - Lewo
 D/Right - Prawo
-Space – Strzał
-Shift - Przyspieszenie  ","W / Up - Salta
-A / Sinistra - Sinistra
+Space – Skok/SpinDash","A / Sinistra - Sinistra
 D / Destra - Destra
-Spazio - Spara
-Maiusc - Velocit?","W / Up - Jump
-A / esquerda - esquerda
+Spazio – Salta/SpinDash","A / esquerda - esquerda
 D / Direita - Direita
-Espaço - Atirar
-Deslocamento - Velocidade","W / Up - Jump
-A / Gauche - Gauche
+Espaço – Jump/SpinDash","A / Gauche - Gauche
 D / Droite - Droite
-Space - Shoot
-Shift - Vitesse"
+Space – Jump/SpinDash"
 KEY_GRAPHICS,Graphics,Gráficos,Grafik,Grafika,Grafica,Gráficos,Graphique
 KEY_WINDOW_TYPE,Window Type,Tipo de ventana,Fenstertyp,Typ Okna,Tipo di finestra,Tipo de janela,Type de fenêtre
 KEY_RESOLUTION,Resolution,Resolución,Auflösung,Rozdzielczość,Risoluzione,Resolução,Résolution

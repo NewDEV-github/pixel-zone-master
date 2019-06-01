@@ -1,4 +1,5 @@
 extends Panel
+class_name Options_Page
 onready var tab_container = get_node("TabContainer")
 func _process(delta):
 	tab_container.set_tab_title(0, "KEY_CON_TAB")

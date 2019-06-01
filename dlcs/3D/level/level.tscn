@@ -60,7 +60,7 @@ script = ExtResource( 1 )
 editor/display_folded = true
 
 [node name="Point" parent="Scene Root" index="109"]
-transform = Transform( 0.999986, -0.00522796, -2.28521e-010, 0, -4.37114e-008, 1, -0.00522796, -0.999986, -4.37108e-008, 8.46026, -4.73813, 85.4573 )
+transform = Transform( 0.999986, -0.00522796, -2.28521e-10, 0, -4.37114e-08, 1, -0.00522796, -0.999986, -4.37108e-08, 8.46026, -4.73813, 85.4573 )
 light_color = Color( 0.0666667, 0.239216, 0.235294, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.223529, 0.478431, 0.494118, 1 )
@@ -97,40 +97,40 @@ shadow_enabled = true
 omni_range = 15.0
 
 [node name="Spot000" parent="Scene Root" index="138"]
-transform = Transform( -0.607523, 0.277253, -0.744343, -3.70498e-009, 0.937103, 0.349052, 0.794302, 0.212058, -0.569312, 28.2569, -3.29872, 75.6575 )
+transform = Transform( -0.607523, 0.277253, -0.744343, -3.70498e-09, 0.937103, 0.349052, 0.794302, 0.212058, -0.569312, 28.2569, -3.29872, 75.6575 )
 light_energy = 2.26
 shadow_enabled = true
 spot_range = 26.2797
 
 [node name="Spot001" parent="Scene Root" index="139"]
-transform = Transform( 0.0776758, 0.347998, -0.934272, -3.70498e-009, 0.937103, 0.349052, 0.996979, -0.0271129, 0.0727902, 20.3872, 1.99402, 95.6067 )
+transform = Transform( 0.0776758, 0.347998, -0.934272, -3.70498e-09, 0.937103, 0.349052, 0.996979, -0.0271129, 0.0727902, 20.3872, 1.99402, 95.6067 )
 light_energy = 2.0
 shadow_enabled = true
 spot_range = 8.75991
 spot_angle = 28.8
 
 [node name="Spot002" parent="Scene Root" index="140"]
-transform = Transform( 0.811037, 0.204194, -0.548201, -3.70498e-009, 0.937103, 0.349052, 0.584995, -0.283094, 0.760025, 23.4435, 1.94828, 99.7339 )
+transform = Transform( 0.811037, 0.204194, -0.548201, -3.70498e-09, 0.937103, 0.349052, 0.584995, -0.283094, 0.760025, 23.4435, 1.94828, 99.7339 )
 light_energy = 2.0
 shadow_enabled = true
 spot_range = 12.0553
 
 [node name="Spot003" parent="Scene Root" index="141"]
-transform = Transform( 0.270754, 0.336015, -0.902101, -3.70498e-009, 0.937103, 0.349052, 0.962649, -0.0945072, 0.253724, 75.3359, -3.51153, 29.3609 )
+transform = Transform( 0.270754, 0.336015, -0.902101, -3.70498e-09, 0.937103, 0.349052, 0.962649, -0.0945072, 0.253724, 75.3359, -3.51153, 29.3609 )
 light_color = Color( 0.584314, 0.796078, 0.8, 1 )
 light_energy = 4.34
 shadow_enabled = true
 spot_range = 10.0
 
 [node name="Spot004" parent="Scene Root" index="142"]
-transform = Transform( -0.947825, 0.111275, -0.298741, -3.70498e-009, 0.937103, 0.349052, 0.318792, 0.330841, -0.88821, 79.4885, -3.55559, 17.7325 )
+transform = Transform( -0.947825, 0.111275, -0.298741, -3.70498e-09, 0.937103, 0.349052, 0.318792, 0.330841, -0.88821, 79.4885, -3.55559, 17.7325 )
 light_color = Color( 0.827451, 0.894118, 0.894118, 1 )
 light_energy = 2.0
 shadow_enabled = true
 spot_range = 10.0
 
 [node name="Spot005" parent="Scene Root" index="143"]
-transform = Transform( -0.266959, -0.336385, 0.903094, -3.70498e-009, 0.937103, 0.349052, -0.963708, 0.0931828, -0.250168, 83.6479, -3.51461, 39.2692 )
+transform = Transform( -0.266959, -0.336385, 0.903094, -3.70498e-09, 0.937103, 0.349052, -0.963708, 0.0931828, -0.250168, 83.6479, -3.51461, 39.2692 )
 light_color = Color( 0.827451, 0.894118, 0.894118, 1 )
 light_energy = 3.26
 shadow_enabled = true
@@ -165,30 +165,30 @@ spot_range = 26.2797
 spot_angle = 28.8
 
 [node name="Spot012" parent="Scene Root" index="149"]
-transform = Transform( 0.0710858, -0.348169, 0.934733, -3.70498e-009, 0.937103, 0.349052, -0.99747, -0.0248127, 0.0666148, 40.7131, -5.08587, 79.4903 )
+transform = Transform( 0.0710858, -0.348169, 0.934733, -3.70498e-09, 0.937103, 0.349052, -0.99747, -0.0248127, 0.0666148, 40.7131, -5.08587, 79.4903 )
 light_energy = 2.98
 shadow_enabled = true
 shadow_bias = 0.03
 spot_angle = 26.8
 
 [node name="Spot013" parent="Scene Root" index="150"]
-transform = Transform( 0.0710858, -0.348169, 0.934733, -3.70498e-009, 0.937103, 0.349052, -0.99747, -0.0248127, 0.0666148, 40.8719, -5.08675, 77.923 )
+transform = Transform( 0.0710858, -0.348169, 0.934733, -3.70498e-09, 0.937103, 0.349052, -0.99747, -0.0248127, 0.0666148, 40.8719, -5.08675, 77.923 )
 light_energy = 2.26
 shadow_enabled = true
 spot_angle = 30.8
 
 [node name="prop_container3door1005" parent="Scene Root/prop_container3007" index="1"]
-transform = Transform( 1, 0, 0, 3.86238e-012, 1, -9.59978e-010, 0, 0, 1, -1.22162, 1.55, 2.85 )
+transform = Transform( 1, 0, 0, 3.86238e-12, 1, -9.59978e-10, 0, 0, 1, -1.22162, 1.55, 2.85 )
 
 [node name="prop_gastank3009" parent="Scene Root/prop_gastriple002" index="5"]
-transform = Transform( 1, 0, 7.45058e-009, 5.72164e-011, 1, 8.73443e-011, -1.49012e-008, 0, 1, -65.7593, -8.26237, 12.077 )
+transform = Transform( 1, 0, 7.45058e-09, 5.72164e-11, 1, 8.73443e-11, -1.49012e-08, 0, 1, -65.7593, -8.26237, 12.077 )
 
 [node name="sound_outside" type="Area" parent="Scene Root"]
 collision_mask = 0
 audio_bus_override = true
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Scene Root/sound_outside"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 depth = 100.0
 polygon = PoolVector2Array( -75.798, 98.0935, -18.4854, 34.621, -6.1658, 39.1739, 6.95718, 39.4417, 23.0262, 32.7463, 36.9526, 17.7486, 31.5629, 13.7491, 33.7076, 6.64486, 40.9698, 3.55431, 36.417, -21.6204, 26.5078, -30.1905, 93.7297, -71.4343, 118.637, 0.608329, 70.4297, 120.322, -36.9647, 128.089 )
 
@@ -221,7 +221,7 @@ collision_mask = 0
 audio_bus_override = true
 
 [node name="CollisionShape" type="CollisionShape" parent="sound_reactor_room"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]

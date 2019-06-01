@@ -140,7 +140,7 @@ height = 21.4985
 [sub_resource type="CanvasItemMaterial" id=6]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 97.6669, 19.9999 )
+extents = Vector2( 24.3334, 19.9999 )
 
 [node name="enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -208,6 +208,7 @@ stream = ExtResource( 4 )
 bus = "SFX"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 margin_left = -31.5
 margin_top = -50.0
 margin_right = 39.5
@@ -216,9 +217,10 @@ theme = ExtResource( 5 )
 value = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 96.6668, 0.666656 )
+position = Vector2( 0.0834579, -1.41667 )
+rotation = 3.14159
 shape = SubResource( 7 )
-
+one_way_collision = true
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

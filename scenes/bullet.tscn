@@ -35,6 +35,5 @@ autostart = true
 anims/change = ExtResource( 3 )
 anims/shutdown = ExtResource( 4 )
 anims/shutdown_2 = ExtResource( 5 )
-
 [connection signal="body_entered" from="." to="." method="_on_bullet_body_enter"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,5 @@
 extends Control
+class_name Pause_Menu
 signal FPSHide
 signal FPSShow
 func _ready():

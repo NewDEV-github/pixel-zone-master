@@ -2,9 +2,11 @@ extends Control
 
 
 func _on_Play_pressed():
-	background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
-	if FAILED:
-		log_file.error()
+	var exists = File.new()
+	if not exists.file_exists(str(OS.get_executable_path()) + ".tut.data0"):
+		background_load.load_scene("res://scenes/stages/tutorial.tscn")
+	if exists.file_exists(str(OS.get_executable_path()) + ".tut.data0"):
+		background_load.load_scene("res://scenes/LevelSelect.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
@@ -26,31 +28,9 @@ func _on_Play6_pressed():
 func _on_PP_pressed():
 	$TextureRect/DownloadNot.popup_centered()
 	$TextureRect/Label.show()
+	globals.dlc_name == "3D DLC"
 	$HTTPRequest.set_download_file("user://3d.pck")
 	$HTTPRequest.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/v0.7.2.0.5/3d.pck")
-
-
-
-func _on_License_pressed():
-	$TextureRect/WindowDialog.hide()
-	$TextureRect/PixelZoneLicense.popup_centered()
-	$TextureRect/MITLicense.hide()
-	$TextureRect/GodotEngineLicense.hide()
-
-
-func _on_GELicense_pressed():
-	$TextureRect/WindowDialog.hide()
-	$TextureRect/PixelZoneLicense.hide()
-	$TextureRect/MITLicense.hide()
-	$TextureRect/GodotEngineLicense.popup_centered()
-
-
-func _on_MITLicense_pressed():
-	$TextureRect/WindowDialog.hide()
-	$TextureRect/PixelZoneLicense.hide()
-	$TextureRect/MITLicense.popup_centered()
-	$TextureRect/GodotEngineLicense.hide()
-
 
 func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
@@ -85,7 +65,7 @@ func _on_Continue_pressed():
 		background_load.load_scene("scenes/stages/jungle_ruins/jungle_ruins03.tscn")
 
 func _on_Play8_pressed():
-	get_tree().change_scene("user://multi/lobby.tscn")
+	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 
 
 

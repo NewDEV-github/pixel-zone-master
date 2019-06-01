@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI3D.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=3]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=4]
 [ext_resource path="res://dlcs/3D/menu/menu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://dlcs/dlc_3/char.tscn" type="PackedScene" id=6]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -23,6 +22,7 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -137,270 +137,6 @@ window_title = "Configure Your Settings"
 margin_top = -63.0
 margin_right = 20.0
 
-[node name="PixelZoneLicense" type="WindowDialog" parent="TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -140.0
-margin_top = -170.0
-margin_right = 140.0
-margin_bottom = 170.0
-theme = ExtResource( 3 )
-
-[node name="Label" type="RichTextLabel" parent="TextureRect/PixelZoneLicense"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-bbcode_enabled = true
-bbcode_text = "[center]
-Pixel Zone
-
-It's a simle platformer game made by Master - Games in Godot Engine 3.1 beta 4.
-End User Agreement (only applicable to Pixel Zone, not applicable to a project created using the source code):
-
-
-1. Bans / orders
-
-1a. Prohibition of creating modifications containing:
-- Blood
-
-- Violence
-
-- Adult content
-
-- Drugs
-
-1b. The game should be downloaded from the GitHub website, or the official project website.
-
-1c. Prohibition to sell the game. The game is an Open-Soruce project, however, its sale is forbidden to end users.
-1d. Telling false information about the game, or about the creators.
-
-2. Privileges
-
-2a. The user can join the project (Knowledge of Godot Engine required)
-
-2b. The user may establish a partnership with the creators, via e-mail, which is available on the manufacturer's website.
-
-2c. The user has the right to express his own opinion about the game, but not its creators.
-
-2d. The user can only record material from the game and publish it on the internet, but first you must inform the creators of the game, and only then publish the materials
-
-The creator is 'Master, Inc.'
-[/center]"
-text = "
-Pixel Zone
-
-It's a simle platformer game made by Master - Games in Godot Engine 3.1 beta 4.
-End User Agreement (only applicable to Pixel Zone, not applicable to a project created using the source code):
-
-
-1. Bans / orders
-
-1a. Prohibition of creating modifications containing:
-- Blood
-
-- Violence
-
-- Adult content
-
-- Drugs
-
-1b. The game should be downloaded from the GitHub website, or the official project website.
-
-1c. Prohibition to sell the game. The game is an Open-Soruce project, however, its sale is forbidden to end users.
-1d. Telling false information about the game, or about the creators.
-
-2. Privileges
-
-2a. The user can join the project (Knowledge of Godot Engine required)
-
-2b. The user may establish a partnership with the creators, via e-mail, which is available on the manufacturer's website.
-
-2c. The user has the right to express his own opinion about the game, but not its creators.
-
-2d. The user can only record material from the game and publish it on the internet, but first you must inform the creators of the game, and only then publish the materials
-
-The creator is 'Master, Inc.'
-"
-
-[node name="GodotEngineLicense" type="WindowDialog" parent="TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -140.0
-margin_top = -170.0
-margin_right = 140.0
-margin_bottom = 170.0
-theme = ExtResource( 3 )
-
-[node name="Label" type="RichTextLabel" parent="TextureRect/GodotEngineLicense"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-bbcode_enabled = true
-bbcode_text = "[center]
-All parts of this project that are not copyrighted or licensed by someone else are released under the MIT License:
-
-Copyright (c) 2017-2018 Jaccomo Lorenz (Maujoe)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-
-------------
-
-Some files caintained into this project may be generated by the Godot Engine version 2.1 that is covered by its own MIT license that is available on (https://github.com/godotengine/godot/blob/master/LICENSE.md:
-
-
-\"Copyright (c) 2007-2017 Juan Linietsky, Ariel Manzur.
-Copyright (c) 2014-2017 Godot Engine contributors (cf. AUTHORS.md)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-[/center]"
-text = "
-All parts of this project that are not copyrighted or licensed by someone else are released under the MIT License:
-
-Copyright (c) 2017-2018 Jaccomo Lorenz (Maujoe)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-
-------------
-
-Some files caintained into this project may be generated by the Godot Engine version 2.1 that is covered by its own MIT license that is available on (https://github.com/godotengine/godot/blob/master/LICENSE.md:
-
-
-\"Copyright (c) 2007-2017 Juan Linietsky, Ariel Manzur.
-Copyright (c) 2014-2017 Godot Engine contributors (cf. AUTHORS.md)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"
-
-[node name="MITLicense" type="WindowDialog" parent="TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -140.0
-margin_top = -170.0
-margin_right = 140.0
-margin_bottom = 170.0
-theme = ExtResource( 3 )
-
-[node name="Label" type="RichTextLabel" parent="TextureRect/MITLicense"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-bbcode_enabled = true
-bbcode_text = "[center]
-MIT License
-
-Copyright (c) 2019 Lee
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-[/center]"
-text = "
-MIT License
-
-Copyright (c) 2019 Lee
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the \"Software\"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"
-
 [node name="LicenseSelector" type="WindowDialog" parent="TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -440,25 +176,6 @@ custom_fonts/font = ExtResource( 4 )
 disabled = true
 text = "3D DLC"
 
-[node name="WindowDialog2" type="Panel" parent="TextureRect"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -195.5
-margin_top = -156.0
-margin_right = 195.5
-margin_bottom = 156.0
-
-[node name="char" parent="TextureRect/WindowDialog2" instance=ExtResource( 6 )]
-margin_right = 1.0
-
-[node name="close" type="Button" parent="TextureRect/WindowDialog2"]
-margin_right = 53.0
-margin_bottom = 20.0
-text = "Close"
-
 [node name="Label" type="Label" parent="."]
 margin_right = 60.0
 margin_bottom = 14.0
@@ -488,9 +205,7 @@ current_path = "/home/godot/Pulpit/pixel-zone-master/"
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play7" to="." method="_on_Play7_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Licenses" to="." method="_on_Licenses_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="about_to_show" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_about_to_show"]
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
 [connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
-[connection signal="pressed" from="TextureRect/WindowDialog2/close" to="." method="_on_close_pressed"]
 [connection signal="file_selected" from="ModeSelect" to="." method="_on_ModeSelect_file_selected"]

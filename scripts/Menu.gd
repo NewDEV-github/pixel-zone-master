@@ -30,10 +30,6 @@ func _on_Return_pressed():
 	hide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		if OS.get_name() == "X11":
-			$easteregg.show()
-			$eastereggtimer.start()
 	if Input.is_action_just_pressed("ui_cancel"):
 		visible = !visible
 

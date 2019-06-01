@@ -6,12 +6,12 @@
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/moving_platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/one_way_platform.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/players/player1/player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/parallax_bg.tscn" type="PackedScene" id=8]
-[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=9]
-[ext_resource path="res://sounds/music.ogg" type="AudioStream" id=10]
-[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=11]
-[ext_resource path="res://dlcs/dlc_2/Untitled Song 2.ogg" type="AudioStream" id=12]
+[ext_resource path="res://scenes/parallax_bg.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=8]
+[ext_resource path="res://sounds/music.ogg" type="AudioStream" id=9]
+[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.9733, 10 )
@@ -268,12 +268,7 @@ position = Vector2( 1039.29, 409.746 )
 [node name="one_way_platform12" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1187.79, 281.496 )
 
-[node name="player" parent="." groups=[
-"Persist",
-] instance=ExtResource( 7 )]
-position = Vector2( 279.383, 495.403 )
-
-[node name="parallax_bg" parent="." instance=ExtResource( 8 )]
+[node name="parallax_bg" parent="." instance=ExtResource( 7 )]
 
 [node name="Label" type="Label" parent="."]
 margin_left = 6723.65
@@ -282,13 +277,14 @@ margin_right = 7069.65
 margin_bottom = 2227.65
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
 text = "KEY_TUT1"
 autowrap = true
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 autoplay = true
+bus = "Music"
 
 [node name="nextlevel" type="Area2D" parent="."]
 position = Vector2( 7077.92, 2273.82 )
@@ -306,10 +302,12 @@ position = Vector2( 4431.85, 2772.19 )
 position = Vector2( 1450.41, -74.25 )
 shape = SubResource( 2 )
 
-[node name="next_level" parent="." instance=ExtResource( 11 )]
+[node name="next_level" parent="." instance=ExtResource( 10 )]
 position = Vector2( 7119.09, 2270.82 )
 
-[node name="music2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+[node name="Player" parent="." instance=ExtResource( 11 )]
+position = Vector2( 110, 304.92 )
+
+[node name="PlayerCamera" parent="." instance=ExtResource( 12 )]
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

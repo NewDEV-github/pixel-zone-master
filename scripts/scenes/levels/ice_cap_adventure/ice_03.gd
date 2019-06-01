@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins01.tscn")
 func _ready():
 	var a = File.new()
@@ -12,15 +12,8 @@ func _ready():
 		var node_data = i.call("save");
 		a.store_line(to_json(node_data))
 	a.close()
-	var dlc = File.new()
-	if dlc.file_exists("user://dlc_2/Drum & Bass.ogg"):
-		$music.stop()
-		$music2.play()
-	if not dlc.file_exists("user://dlc_2/Drum & Bass.ogg"):
-		$music.play()
-		$music2.stop()
-
+	
 func _on_Area2D2_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		get_tree().change_scene("res://scenes/GameOver.tscn")
 
