@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI3D.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=3]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=4]
 [ext_resource path="res://dlcs/3D/menu/menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelSelect3D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://animations/new.tres" type="Animation" id=7]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -22,15 +24,14 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -254.5
-margin_top = -141.0
-margin_right = 254.5
-margin_bottom = 141.0
+margin_left = -254.0
+margin_top = -131.0
+margin_right = 255.0
+margin_bottom = 151.0
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
 margin_right = 509.0
@@ -58,15 +59,6 @@ custom_fonts/font = ExtResource( 4 )
 text = "KEY_MOD"
 flat = true
 
-[node name="Continue" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 129.0
-margin_right = 509.0
-margin_bottom = 168.0
-theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 4 )
-text = "KEY_Continue"
-flat = true
-
 [node name="Play6" type="Button" parent="TextureRect/VBoxContainer"]
 visible = false
 margin_top = 172.0
@@ -88,28 +80,22 @@ text = "KEY_REPORT_BUG"
 flat = true
 
 [node name="Licenses" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 172.0
+margin_top = 129.0
 margin_right = 509.0
-margin_bottom = 211.0
+margin_bottom = 168.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "KEY_DC"
 flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 215.0
+margin_top = 172.0
 margin_right = 509.0
-margin_bottom = 254.0
+margin_bottom = 211.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "KEY_Quit"
 flat = true
-
-[node name="CheckBox" type="CheckBox" parent="TextureRect/VBoxContainer"]
-margin_top = 258.0
-margin_right = 509.0
-margin_bottom = 282.0
-text = "Enter 3D stage."
 
 [node name="WindowDialog" type="WindowDialog" parent="TextureRect"]
 anchor_left = 0.5
@@ -176,6 +162,16 @@ custom_fonts/font = ExtResource( 4 )
 disabled = true
 text = "3D DLC"
 
+[node name="Control" parent="TextureRect" instance=ExtResource( 6 )]
+margin_left = 1037.81
+margin_top = 5.0625
+margin_right = 1037.81
+margin_bottom = 5.0625
+
+[node name="VScrollBar" type="VScrollBar" parent="TextureRect/Control"]
+anchor_bottom = 1.0
+margin_right = 12.0
+
 [node name="Label" type="Label" parent="."]
 margin_right = 60.0
 margin_bottom = 14.0
@@ -195,12 +191,14 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.pck", "*" )
 show_hidden_files = true
-current_dir = "/home/godot/Pulpit/pixel-zone-master"
-current_path = "/home/godot/Pulpit/pixel-zone-master/"
+current_dir = "/home/godot/Pulpit/pixel-zone-master (kopia)"
+current_path = "/home/godot/Pulpit/pixel-zone-master (kopia)/"
+
+[node name="AnimationTree" type="AnimationPlayer" parent="."]
+anims/new = ExtResource( 7 )
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
-[connection signal="pressed" from="TextureRect/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play6" to="." method="_on_Play6_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play7" to="." method="_on_Play7_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Licenses" to="." method="_on_Licenses_pressed"]
@@ -208,4 +206,5 @@ current_path = "/home/godot/Pulpit/pixel-zone-master/"
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
 [connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
+[connection signal="value_changed" from="TextureRect/Control/VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="file_selected" from="ModeSelect" to="." method="_on_ModeSelect_file_selected"]

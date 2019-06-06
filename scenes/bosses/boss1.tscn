@@ -7,6 +7,8 @@
 [ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=5]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=6]
 
+
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 27.3689
 height = 58.7568

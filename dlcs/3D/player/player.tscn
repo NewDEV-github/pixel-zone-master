@@ -12,6 +12,8 @@
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=10]
 [ext_resource path="res://scenes/GameUI3D.tscn" type="PackedScene" id=11]
 
+
+
 [sub_resource type="AnimationNodeAdd3" id=1]
 resource_local_to_scene = true
 filter_enabled = true

@@ -7,10 +7,15 @@
 [ext_resource path="res://animations/cutscenes/intro_new.tres" type="Animation" id=5]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=6]
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" groups=[
+"config",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0

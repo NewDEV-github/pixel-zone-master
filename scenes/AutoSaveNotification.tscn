@@ -6,6 +6,8 @@
 [ext_resource path="res://textures/saving.png" type="Texture" id=4]
 [ext_resource path="res://animations/saving.tres" type="Animation" id=5]
 
+
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

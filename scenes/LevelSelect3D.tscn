@@ -1,0 +1,542 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scripts/LevelSelect3D.gd" type="Script" id=1]
+[ext_resource path="res://textures/background.png" type="Texture" id=2]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162031_3.png" type="Texture" id=3]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162149_0.png" type="Texture" id=4]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162255_2.png" type="Texture" id=5]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162344_0.png" type="Texture" id=6]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162423_0.png" type="Texture" id=7]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162630_0.png" type="Texture" id=8]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=9]
+[ext_resource path="res://dlcs/3D/menu/menu.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "IC_01"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "IC_02"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "IC_03"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.987225 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "JR_01"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "JR_02"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "JR_03"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "PA_01"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "PA_02"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="back" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/IC_01 = SubResource( 1 )
+anims/IC_02 = SubResource( 2 )
+anims/IC_03 = SubResource( 3 )
+anims/JR_01 = SubResource( 4 )
+anims/JR_02 = SubResource( 5 )
+anims/JR_03 = SubResource( 6 )
+anims/PA_01 = SubResource( 7 )
+anims/PA_02 = SubResource( 8 )
+
+[node name="control" type="Control" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+
+[node name="JungleRuins02" type="VBoxContainer" parent="control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -82.0
+margin_right = 247.0
+
+[node name="Label" type="Label" parent="control/JungleRuins02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 02"
+align = 1
+
+[node name="select7" type="Button" parent="control/JungleRuins02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="Hill01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -247.0
+margin_top = -82.0
+
+[node name="Label" type="Label" parent="control/Hill01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Hill 01"
+align = 1
+
+[node name="select10" type="Button" parent="control/Hill01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="PixelZone01" type="VBoxContainer" parent="control"]
+margin_right = 243.0
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/PixelZone01"]
+margin_right = 243.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Pixel Adventure 01"
+
+[node name="select" type="Button" parent="control/PixelZone01"]
+margin_top = 43.0
+margin_right = 243.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="Hill02" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1022.0
+margin_top = 175.5
+margin_right = -775.0
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/Hill02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Hill 02"
+align = 1
+
+[node name="select9" type="Button" parent="control/Hill02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="JungleRuins03" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -123.5
+margin_top = -82.0
+margin_right = 123.5
+
+[node name="Label" type="Label" parent="control/JungleRuins03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 03"
+align = 1
+
+[node name="select8" type="Button" parent="control/JungleRuins03"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="JungleRuins01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -247.0
+margin_top = -41.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/JungleRuins01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 01"
+align = 1
+
+[node name="select6" type="Button" parent="control/JungleRuins01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap03" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -41.0
+margin_right = 123.5
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/IceCap03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 03"
+align = 1
+
+[node name="select5" type="Button" parent="control/IceCap03"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -247.0
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/IceCap01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 01"
+align = 1
+
+[node name="select3" type="Button" parent="control/IceCap01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="PixelZone02" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -123.5
+margin_right = 123.5
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/PixelZone02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Pixel Adventure 02"
+
+[node name="select2" type="Button" parent="control/PixelZone02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="3D" type="VBoxContainer" parent="control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 387.5
+margin_top = 175.5
+margin_right = 634.5
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/3D"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "3D"
+align = 1
+
+[node name="3D" type="Button" parent="control/3D"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap02" type="VBoxContainer" parent="control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -41.0
+margin_right = 247.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/IceCap02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 02"
+align = 1
+
+[node name="select4" type="Button" parent="control/IceCap02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="WindowDialog3" type="WindowDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+theme = ExtResource( 9 )
+window_title = "Configure Your Settings"
+
+[node name="main" parent="WindowDialog3" instance=ExtResource( 10 )]
+margin_top = -63.0
+margin_right = 20.0
+[connection signal="pressed" from="control/JungleRuins02/select7" to="." method="_on_select7_pressed"]
+[connection signal="pressed" from="control/Hill01/select10" to="." method="_on_select10_pressed"]
+[connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="control/Hill02/select9" to="." method="_on_select9_pressed"]
+[connection signal="pressed" from="control/JungleRuins03/select8" to="." method="_on_select8_pressed"]
+[connection signal="pressed" from="control/JungleRuins01/select6" to="." method="_on_select6_pressed"]
+[connection signal="pressed" from="control/IceCap03/select5" to="." method="_on_select5_pressed"]
+[connection signal="pressed" from="control/IceCap01/select3" to="." method="_on_select3_pressed"]
+[connection signal="pressed" from="control/PixelZone02/select2" to="." method="_on_select2_pressed"]
+[connection signal="pressed" from="control/3D/3D" to="." method="_on_3D_pressed"]
+[connection signal="pressed" from="control/IceCap02/select4" to="." method="_on_select4_pressed"]

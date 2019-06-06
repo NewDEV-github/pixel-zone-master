@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://scripts/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://scripts/LevelSelect3D.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://textures/LevelSelect/2019_05_31_162031_3.png" type="Texture" id=3]
-[ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
-[ext_resource path="res://textures/LevelSelect/2019_05_31_162149_0.png" type="Texture" id=5]
-[ext_resource path="res://textures/LevelSelect/2019_05_31_162255_2.png" type="Texture" id=6]
-[ext_resource path="res://textures/LevelSelect/2019_05_31_162344_0.png" type="Texture" id=7]
-[ext_resource path="res://textures/LevelSelect/2019_05_31_162423_0.png" type="Texture" id=8]
-[ext_resource path="res://textures/LevelSelect/2019_05_31_162630_0.png" type="Texture" id=9]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162149_0.png" type="Texture" id=4]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162255_2.png" type="Texture" id=5]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162344_0.png" type="Texture" id=6]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162423_0.png" type="Texture" id=7]
+[ext_resource path="res://textures/LevelSelect/2019_05_31_162630_0.png" type="Texture" id=8]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "IC_01"
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:self_modulate")
@@ -63,7 +63,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -79,7 +79,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:self_modulate")
@@ -107,7 +107,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:self_modulate")
@@ -135,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:self_modulate")
@@ -163,7 +163,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:self_modulate")
@@ -237,217 +237,28 @@ tracks/1/keys = {
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_bottom = -1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="back" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
 expand = true
-
-[node name="PixelZone01" type="VBoxContainer" parent="."]
-margin_right = 243.0
-margin_bottom = 82.0
-
-[node name="Label" type="Label" parent="PixelZone01"]
-margin_right = 243.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Pixel Adventure 01"
-
-[node name="select" type="Button" parent="PixelZone01"]
-margin_top = 43.0
-margin_right = 243.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="PixelZone02" type="VBoxContainer" parent="."]
-margin_left = 390.5
-margin_right = 637.5
-margin_bottom = 82.0
-
-[node name="Label" type="Label" parent="PixelZone02"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Pixel Adventure 02"
-
-[node name="select2" type="Button" parent="PixelZone02"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="IceCap01" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -247.0
-margin_bottom = 82.0
-
-[node name="Label" type="Label" parent="IceCap01"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Ice Cap 01"
-align = 1
-
-[node name="select3" type="Button" parent="IceCap01"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="IceCap02" type="VBoxContainer" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -41.0
-margin_right = 247.0
-margin_bottom = 41.0
-
-[node name="Label" type="Label" parent="IceCap02"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Ice Cap 02"
-align = 1
-
-[node name="select4" type="Button" parent="IceCap02"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="IceCap03" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -123.5
-margin_top = -41.0
-margin_right = 123.5
-margin_bottom = 41.0
-
-[node name="Label" type="Label" parent="IceCap03"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Ice Cap 03"
-align = 1
-
-[node name="select5" type="Button" parent="IceCap03"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="JungleRuins01" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -247.0
-margin_top = -41.0
-margin_bottom = 41.0
-
-[node name="Label" type="Label" parent="JungleRuins01"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Jungle Ruins 01"
-align = 1
-
-[node name="select6" type="Button" parent="JungleRuins01"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="JungleRuins02" type="VBoxContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -82.0
-margin_right = 247.0
-
-[node name="Label" type="Label" parent="JungleRuins02"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Jungle Ruins 02"
-align = 1
-
-[node name="select7" type="Button" parent="JungleRuins02"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="JungleRuins03" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -123.5
-margin_top = -82.0
-margin_right = 123.5
-
-[node name="Label" type="Label" parent="JungleRuins03"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Jungle Ruins 03"
-align = 1
-
-[node name="select8" type="Button" parent="JungleRuins03"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
-
-[node name="Tutorial" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -247.0
-margin_top = -82.0
-
-[node name="Label" type="Label" parent="Tutorial"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 4 )
-text = "Tutorial Level"
-align = 1
-
-[node name="select9" type="Button" parent="Tutorial"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 4 )
-text = "Select"
-flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IC_01 = SubResource( 1 )
@@ -458,12 +269,255 @@ anims/JR_02 = SubResource( 5 )
 anims/JR_03 = SubResource( 6 )
 anims/PA_01 = SubResource( 7 )
 anims/PA_02 = SubResource( 8 )
-[connection signal="pressed" from="PixelZone01/select" to="." method="_on_select_pressed"]
-[connection signal="pressed" from="PixelZone02/select2" to="." method="_on_select2_pressed"]
-[connection signal="pressed" from="IceCap01/select3" to="." method="_on_select3_pressed"]
-[connection signal="pressed" from="IceCap02/select4" to="." method="_on_select4_pressed"]
-[connection signal="pressed" from="IceCap03/select5" to="." method="_on_select5_pressed"]
-[connection signal="pressed" from="JungleRuins01/select6" to="." method="_on_select6_pressed"]
-[connection signal="pressed" from="JungleRuins02/select7" to="." method="_on_select7_pressed"]
-[connection signal="pressed" from="JungleRuins03/select8" to="." method="_on_select8_pressed"]
-[connection signal="pressed" from="Tutorial/select9" to="." method="_on_select9_pressed"]
+
+[node name="control" type="Control" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+
+[node name="JungleRuins02" type="VBoxContainer" parent="control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -82.0
+margin_right = 247.0
+
+[node name="Label" type="Label" parent="control/JungleRuins02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 02"
+align = 1
+
+[node name="select7" type="Button" parent="control/JungleRuins02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="Hill01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -247.0
+margin_top = -82.0
+
+[node name="Label" type="Label" parent="control/Hill01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Hill 01"
+align = 1
+
+[node name="select10" type="Button" parent="control/Hill01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="PixelZone01" type="VBoxContainer" parent="control"]
+margin_right = 243.0
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/PixelZone01"]
+margin_right = 243.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Pixel Adventure 01"
+
+[node name="select" type="Button" parent="control/PixelZone01"]
+margin_top = 43.0
+margin_right = 243.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="Hill02" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1022.0
+margin_top = 175.5
+margin_right = -775.0
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/Hill02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Hill 02"
+align = 1
+
+[node name="select9" type="Button" parent="control/Hill02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="JungleRuins03" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -123.5
+margin_top = -82.0
+margin_right = 123.5
+
+[node name="Label" type="Label" parent="control/JungleRuins03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 03"
+align = 1
+
+[node name="select8" type="Button" parent="control/JungleRuins03"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="JungleRuins01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -247.0
+margin_top = -41.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/JungleRuins01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Jungle Ruins 01"
+align = 1
+
+[node name="select6" type="Button" parent="control/JungleRuins01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap03" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -41.0
+margin_right = 123.5
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/IceCap03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 03"
+align = 1
+
+[node name="select5" type="Button" parent="control/IceCap03"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -247.0
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/IceCap01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 01"
+align = 1
+
+[node name="select3" type="Button" parent="control/IceCap01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="PixelZone02" type="VBoxContainer" parent="control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -123.5
+margin_right = 123.5
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="control/PixelZone02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Pixel Adventure 02"
+
+[node name="select2" type="Button" parent="control/PixelZone02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="3D" type="VBoxContainer" parent="control"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 387.5
+margin_top = 175.5
+margin_right = 634.5
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/3D"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "3D"
+align = 1
+
+[node name="3D" type="Button" parent="control/3D"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="IceCap02" type="VBoxContainer" parent="control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -41.0
+margin_right = 247.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="control/IceCap02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Ice Cap 02"
+align = 1
+
+[node name="select4" type="Button" parent="control/IceCap02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true

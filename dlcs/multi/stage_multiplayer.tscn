@@ -13,6 +13,8 @@
 [ext_resource path="res://dlcs/multi/score.gd" type="Script" id=11]
 [ext_resource path="res://dlcs/multi/rock.tscn" type="PackedScene" id=12]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.9733, 10 )
 

@@ -36,6 +36,8 @@
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=34]
 [ext_resource path="res://scenes/timer.tscn" type="PackedScene" id=35]
 
+
+
 [sub_resource type="Animation" id=1]
 resource_name = "Braking"
 length = 0.1

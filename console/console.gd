@@ -857,7 +857,7 @@ func _get_color_by_name(colorName : String) -> Color:
 		"yellow":
 			return Color.yellow
 		_:
-			print("couldn't find color %s!" % colorName)
+			print("Couldn't find color %s!" % colorName)
 			return Color.pink
 
 func _on_logTimer_timeout():

@@ -3,6 +3,8 @@
 [ext_resource path="res://scripts/Gameplay Scripts/player_camera.gd" type="Script" id=1]
 
 
+
+
 [node name="PlayerCamera" type="Node2D"]
 editor/display_folded = true
 position = Vector2( 212, 120 )

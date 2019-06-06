@@ -2,18 +2,11 @@ extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
-# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if $PixelZone01/select.focus_mode:
-		$AnimationPlayer.play("PA_01")
-	if $PixelZone02/select2.focus_mode:
-		$AnimationPlayer.play("PA_02")
-	if $IceCap01/select3.focus_mode:
-		$AnimationPlayer.play("IC_01")
+
 
 
 
@@ -35,4 +28,9 @@ func _on_select8_pressed():
 	background_load.load_scene("res://scenes/stages/jungle_ruins/jungle_ruins03.tscn")
 func _on_select9_pressed():
 	background_load.load_scene("res://scenes/stages/tutorial.tscn")
+func _on_3D_pressed():
+	$WindowDialog3.popup_centered()
 
+
+func _on_VScrollBar_value_changed(value):
+	$control.set_position(Vector2(0, -(value*10)))

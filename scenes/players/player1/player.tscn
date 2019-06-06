@@ -25,6 +25,8 @@
 [ext_resource path="res://console/DebugConsole.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/bullet.tscn" type="PackedScene" id=24]
 
+
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
 height = 44.4787

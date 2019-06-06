@@ -10,6 +10,8 @@
 [ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=9]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1797.06, 10 )
 

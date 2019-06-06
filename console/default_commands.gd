@@ -14,10 +14,17 @@ func _init(console):
 	var exitCommand = Command.new('exit',  exitRef, [], 'Closes the console.', ConsoleRights.CallRights.DEV)
 	console.add_command(exitCommand)
 	
+	var updateRef = CommandRef.new(self, "update", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var updateCommand = Command.new('update',  updateRef, [], 'Brings you to an update scene.', ConsoleRights.CallRights.DEV)
+	console.add_command(updateCommand)
+	
 	var alertRef = CommandRef.new(self, "alert", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var alertCommand = Command.new('alert', alertRef, [], 'Simulate an alert.', ConsoleRights.CallRights.USER)
 	console.add_command(alertCommand)
-
+	
+	var surveyRef = CommandRef.new(self, "survey", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var surveyCommand = Command.new('survey', surveyRef, [], 'Brings You to a survey', ConsoleRights.CallRights.USER)
+	console.add_command(surveyCommand)
 	
 	var clearRef = CommandRef.new(self, "clear", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var clearCommand = Command.new('clear', clearRef, [], 'Clears the console.', ConsoleRights.CallRights.USER)
@@ -293,7 +300,10 @@ func man(input : Array):
 	
 	_consoleRef.append_message_no_event("[color=red]Couldn't find command '%s'[/color]" % command, false)
 		
-	
+func survey(input : Array):
+	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSclaofaWGhmlo3co5-j6T5MwdtQfMX4oJqIarXg8tAPVzyPnA/viewform")
+func update(input : Array):
+	background_load.load_scene("res://scenes/Update.tscn")
 func help(_input : Array):
 	_consoleRef.new_line()
 	if _firstHelp:

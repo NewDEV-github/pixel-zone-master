@@ -84,12 +84,14 @@ _global_script_class_icons={
 "PlayerPhysics": ""
 }
 
+[android]
+
+modules="org/godotengine/godot/GodotAdMob"
+
 [application]
 
 config/name="Pixel Zone"
 run/main_scene="res://scenes/intro.tscn"
-config/project_settings_override="user://config.cfg"
-boot_splash/image="res://cutscenes/rendered/image sequences/intro-godot/Choose output0000-0230 001.jpg"
 config/icon="res://icon.png"
 boot_splash/application/name_pl=""
 boot_splash/application/name_en=""
@@ -112,6 +114,7 @@ log_file="*res://log_file.tscn"
 background_load="*res://scenes/background_load.tscn"
 settings2="*res://globals/settings2.gd"
 DebugConsole="*res://console/DebugConsole.tscn"
+Ads="*res://globals/Ads.tscn"
 
 [compression]
 
@@ -120,6 +123,8 @@ formats/zstd/compression_level=1
 [debug]
 
 settings/stdout/print_fps=true
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_argument=false
 
 [display]
 
@@ -294,11 +299,14 @@ translation_remaps={
 }
 locale_filter=[ 1, [ "ar", "en", "es", "ms", "pl", "pl_PL" ] ]
 
+[memory]
+
+limits/message_queue/max_size_kb=4096
+
 [network]
 
 limits/packet_peer_stream/max_buffer_po2=64
-remote_fs/page_size=65538
-ssl/certificates="res://ca-bundle.crt"
+ssl/certificates="res://ca-certificates.crt"
 
 [rendering]
 

@@ -1,20 +1,14 @@
 extends Control
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_Play_pressed():
-	if $TextureRect/VBoxContainer/CheckBox.pressed == true:
-		$TextureRect/WindowDialog2.hide()
-		$TextureRect/WindowDialog3.popup_centered()
-	if $TextureRect/VBoxContainer/CheckBox.pressed == false:
-		background_load.load_scene("res://scenes/LevelSelect.tscn")
+	var exists = File.new()
+	if exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):):
+		$AnimationTree.play("new")
+	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):):
+		background_load.load_scene("res://scenes/stages/tutorial.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
-
-func _process(delta):
-	var b = File.new()
-	if b.file_exists("user://1.save"):
-		$TextureRect/VBoxContainer/Continue.disabled = false
-	if not b.file_exists("user://1.save"):
-		$TextureRect/VBoxContainer/Continue.disabled = true
 	
 	settings.connect("window_size_changed", self, "_on_window_size_changeds")
 	var c = File.new()
@@ -42,28 +36,6 @@ func _on_PP_pressed():
 func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
 
-
-func _on_Continue_pressed():
-	var con = File.new()
-	if not con.file_exists("user://1.save") and not con.file_exists("user://2.save") and not con.file_exists("user://3.save") and not con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		return
-	if con.file_exists("user://1.save") and not con.file_exists("user://2.save") and not con.file_exists("user://3.save") and not con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/pixel_adventure/stage.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and not con.file_exists("user://3.save") and not con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/pixel_adventure/stage2.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and not con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/ice_cap_adventure/ice_01.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and con.file_exists("user://4.save") and not con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/ice_cap_adventure/ice_02.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and con.file_exists("user://4.save") and con.file_exists("user://5.save") and not con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/ice_cap_adventure/ice_03.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and con.file_exists("user://4.save") and con.file_exists("user://5.save") and con.file_exists("user://6.save") and not con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/jungle_ruins/jungle_ruins01.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and con.file_exists("user://4.save") and con.file_exists("user://5.save") and con.file_exists("user://6.save") and con.file_exists("user://7.save") and not con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/jungle_ruins/jungle_ruins02.tscn")
-	if con.file_exists("user://1.save") and con.file_exists("user://2.save") and con.file_exists("user://3.save") and con.file_exists("user://4.save") and con.file_exists("user://5.save") and con.file_exists("user://6.save") and con.file_exists("user://7.save") and con.file_exists("user://8.save"):
-		background_load.load_scene("scenes/stages/jungle_ruins/jungle_ruins03.tscn")
-
 func _on_Play8_pressed():
 	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 
@@ -89,3 +61,7 @@ func _on_ModeSelect_file_selected(path):
 
 
 
+
+
+func _on_VScrollBar_value_changed(value):
+	$TextureRect/Control/control.set_position(Vector2(0, -(value*10)))
