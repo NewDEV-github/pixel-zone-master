@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/intro.gd" type="Script" id=1]
-[ext_resource path="res://cutscenes/rendered/image sequences/intro-godot/Choose output0000-0230 221.jpg" type="Texture" id=2]
+[ext_resource path="res://cutscenes/rendered/image sequences/intro/0001-0183 160.jpg" type="Texture" id=2]
 [ext_resource path="res://sounds/cutscenes/rendered/0001-0183.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/cutscenes/rendered/Choose-output0000-0230.wav" type="AudioStream" id=4]
 [ext_resource path="res://animations/cutscenes/intro_new.tres" type="Animation" id=5]
@@ -42,5 +42,6 @@ margin_bottom = 37.0
 custom_fonts/font = ExtResource( 6 )
 text = "KEY_SKIP"
 flat = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/hill/hill_1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/stages/Test Zone/loop_part.res" type="PackedScene" id=8]
 [ext_resource path="res://scenes/parallax_bg4.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76.9692, 359 )
@@ -122,5 +123,125 @@ position = Vector2( 4091.92, 1766.97 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 53.1416, 810.413 )
 shape = SubResource( 2 )
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 151.5, 426 )
+
+[node name="coin2" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 282, 613.5 )
+
+[node name="coin3" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 354, 688.5 )
+
+[node name="coin4" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 456, 688.5 )
+
+[node name="coin5" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 555, 688.5 )
+
+[node name="coin6" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 403.5, 688.5 )
+
+[node name="coin7" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 502.5, 688.5 )
+
+[node name="coin8" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 603, 688.5 )
+
+[node name="coin9" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1030.5, 721.5 )
+
+[node name="coin10" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1063.5, 688.5 )
+
+[node name="coin11" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1077, 640.5 )
+
+[node name="coin12" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1069.5, 589.5 )
+
+[node name="coin13" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1035, 555 )
+
+[node name="coin14" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 979.5, 532.5 )
+
+[node name="coin15" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 928.5, 532.5 )
+
+[node name="coin16" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 895.5, 558 )
+
+[node name="coin17" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 874.5, 598.5 )
+
+[node name="coin18" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 873, 658.5 )
+
+[node name="coin19" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 894, 700.5 )
+
+[node name="coin20" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 919.5, 735 )
+
+[node name="coin21" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 919.5, 735 )
+
+[node name="coin22" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1696.5, 670.5 )
+
+[node name="coin23" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1858.5, 556.5 )
+
+[node name="coin24" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1962, 486 )
+
+[node name="coin25" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 2076, 417 )
+
+[node name="coin26" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 2208, 417 )
+
+[node name="coin27" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 2140.5, 417 )
+
+[node name="coin28" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 2945.44, 401.813 )
+
+[node name="coin29" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 3120.09, 401.813 )
+
+[node name="coin30" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 3264.38, 401.813 )
+
+[node name="coin31" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 3674.44, 523.313 )
+
+[node name="coin32" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 3788.34, 523.313 )
+
+[node name="coin33" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 4608.47, 576.469 )
+
+[node name="coin34" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 4722.38, 637.219 )
+
+[node name="coin35" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 6954.94, 1351.03 )
+
+[node name="coin36" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 7152.38, 1351.03 )
+
+[node name="coin37" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 7053.66, 1351.03 )
+
+[node name="coin38" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 7251.09, 1351.03 )
+
+[node name="coin39" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 8921.72, 971.344 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

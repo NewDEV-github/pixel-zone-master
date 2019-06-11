@@ -36,8 +36,6 @@
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=34]
 [ext_resource path="res://scenes/timer.tscn" type="PackedScene" id=35]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Braking"
 length = 0.1
@@ -550,6 +548,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="Coins" type="Label" parent="ui"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -488.0
+margin_bottom = 87.0
+custom_fonts/font = ExtResource( 23 )
+align = 2
+
 [node name="Panel" type="Panel" parent="ui"]
 visible = false
 anchor_left = 0.5
@@ -569,13 +575,15 @@ valign = 1
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -60.0
-margin_right = 61.0
-margin_bottom = 41.0
+margin_left = -60.5
+margin_top = 0.0
+margin_right = 60.5
+margin_bottom = 31.0
 
 [node name="HP" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HP"]
 shape = SubResource( 19 )
+
 [connection signal="animation_finished" from="Characters/Sonic/AnimationPlayer" to="StateMachine" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="HP" to="." method="_on_HP_area_entered"]

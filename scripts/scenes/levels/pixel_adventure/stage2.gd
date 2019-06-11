@@ -8,8 +8,7 @@ func _ready():
 		var node_data = i.call("save");
 		a.store_line(to_json(node_data))
 	a.close()
-
-
+	var dlc = File.new()
 
 
 

@@ -10,8 +10,6 @@
 [ext_resource path="res://scenes/Achievements.tscn" type="PackedScene" id=8]
 [ext_resource path="res://globals/LevelBGMPlayer.gd" type="Script" id=9]
 
-
-
 [sub_resource type="ButtonGroup" id=1]
 
 [node name="GameUI" type="Control"]
@@ -163,6 +161,7 @@ volume_db = -10.0
 autoplay = true
 script = ExtResource( 9 )
 id = "Menu"
+
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Return" to="UIScaler/Menu" method="_on_Return_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Options" to="UIScaler/Menu" method="_on_Options_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Stats" to="UIScaler/Menu" method="_on_Stats_pressed"]

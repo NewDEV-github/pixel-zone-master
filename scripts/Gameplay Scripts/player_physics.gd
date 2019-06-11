@@ -55,6 +55,7 @@ func _ready():
 	control_unlock_timer = control_unlock_time
 
 func _process(delta):
+	$ui/Coins.set_text("All collected coins: " + str(game_state.points))
 	var roll_anim = animation.current_animation == 'Rolling'
 	high_collider.disabled = roll_anim
 	low_collider.disabled = !roll_anim
@@ -172,3 +173,4 @@ func get_ground_ray():
 func _on_HP_area_entered(area):
 	if area.name == "enemyarea":
 		$ui/Control/ProgressBar.value -= 5
+		$"/root/game_state".points -= 4

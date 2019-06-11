@@ -1,8 +1,8 @@
 extends Node
-
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("res://scenes/stages/hill/hill_2.tscn")
+
 func _ready():
 	var a = File.new()
 	a.open("user://9.save", File.WRITE)

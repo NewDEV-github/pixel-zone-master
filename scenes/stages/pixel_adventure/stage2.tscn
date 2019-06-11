@@ -10,8 +10,6 @@
 [ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=9]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1797.06, 10 )
 
@@ -250,6 +248,7 @@ shape = SubResource( 3 )
 position = Vector2( 117.375, 391.545 )
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 9 )]
+
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

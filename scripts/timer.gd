@@ -2,6 +2,7 @@ extends Label
 var ms = 0
 var s = 0
 var m = 0
+var time
 func _process(delta):
 	if ms > 9:
 		s += 1
@@ -10,7 +11,7 @@ func _process(delta):
 		m += 1
 		s = 0
 	set_text(str(m)+":"+str(s)+":"+str(ms))
-
+	time = set_text(str(m)+":"+str(s)+":"+str(ms))
 
 
 

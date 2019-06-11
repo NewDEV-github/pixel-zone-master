@@ -6,8 +6,6 @@
 [ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=4]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=5]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.9998
 
@@ -225,4 +223,5 @@ position = Vector2( 0.0834579, -1.41667 )
 rotation = 3.14159
 shape = SubResource( 7 )
 one_way_collision = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

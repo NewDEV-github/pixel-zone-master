@@ -529,6 +529,7 @@ window_title = "Configure Your Settings"
 [node name="main" parent="WindowDialog3" instance=ExtResource( 10 )]
 margin_top = -63.0
 margin_right = 20.0
+
 [connection signal="pressed" from="control/JungleRuins02/select7" to="." method="_on_select7_pressed"]
 [connection signal="pressed" from="control/Hill01/select10" to="." method="_on_select10_pressed"]
 [connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]

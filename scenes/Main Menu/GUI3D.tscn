@@ -191,11 +191,12 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.pck", "*" )
 show_hidden_files = true
-current_dir = "/home/godot/Pulpit/pixel-zone-master (kopia)"
-current_path = "/home/godot/Pulpit/pixel-zone-master (kopia)/"
+current_dir = "C:/Users/Karol/Documents/pixel-zone-master"
+current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 
 [node name="AnimationTree" type="AnimationPlayer" parent="."]
 anims/new = ExtResource( 7 )
+
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
