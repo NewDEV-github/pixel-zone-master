@@ -3,8 +3,6 @@
 [ext_resource path="res://scripts/scenes/StatsScene/StatsScene.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 
-
-
 [node name="StatsScene" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
@@ -74,4 +72,5 @@ margin_top = 175.0
 margin_right = 619.0
 margin_bottom = 206.0
 custom_fonts/font = ExtResource( 2 )
+
 [connection signal="pressed" from="Panel/Hide" to="." method="_on_Hide_pressed"]

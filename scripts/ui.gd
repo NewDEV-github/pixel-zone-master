@@ -11,45 +11,93 @@ var yellow = load("res://themes/yellow_theme.tres")
 var old = load("res://themes/2theme.tres")
 var blue = load("res://themes/blue_theme.tres")
 var default = load("res://themes/theme_test.tres")
-var ui_theme
+var ui_theme #= $theme.text
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+func _save():
+	var save = File.new()
+	save.open(str(documents) +"/Pixel Zone/.data/theme.save", File.WRITE)
+	save.store_line(to_json($theme.text))
+	save.close()
+func _load():
+	var load_ = File.new()
+	load_.open(str(documents) +"/Pixel Zone/.data/theme.save", File.READ)
+	var loaded_theme = parse_json(load_.get_line())
+	if loaded_theme == "yellow":
+		self.set_theme(yellow)
+	if loaded_theme == "neon":
+		self.set_theme(neon)
+	if loaded_theme == "blue":
+		self.set_theme(blue)
+	if loaded_theme == "default":
+		self.set_theme(default)
+	if loaded_theme == "old":
+		self.set_theme(old)
+	if loaded_theme == "grey":
+		self.set_theme(grey)
+	if loaded_theme == "red":
+		self.set_theme(red)
+	if loaded_theme == "green":
+		self.set_theme(green)
+	if loaded_theme == "alien":
+		self.set_theme(alien)
+	if loaded_theme == "light":
+		self.set_theme(light)
+	if loaded_theme == "solarized_light":
+		self.set_theme(solarized_light)
+	if loaded_theme == "solarized_dark":
+		self.set_theme(solarized_dark)
 func _on_Blue_pressed():
 	self.set_theme(blue)
-	ui_theme = blue
+	$theme.set_text("blue")
+	_save()
 func _on_Default_pressed():
 	self.set_theme(default)
-	ui_theme = default
+	$theme.set_text('default')
+	_save()
 func _on_Old_pressed():
 	self.set_theme(old)
-	ui_theme = old
+	$theme.set_text('old')
+	_save()
 func _on_Grey_pressed():
 	self.set_theme(grey)
-	ui_theme = grey
+	$theme.set_text('grey')
+	_save()
 func _on_Red_pressed():
 	self.set_theme(red)
-	ui_theme = red
+	$theme.set_text('red')
+	_save()
 func _on_Green_pressed():
 	self.set_theme(green)
-	ui_theme = green
+	$theme.set_text('green')
+	_save()
 func _on_Yellow_pressed():
 	self.set_theme(yellow)
-	ui_theme = yellow
+	$theme.set_text('yellow')
+	_save()
 func _on_Neon_pressed():
 	self.set_theme(neon)
-	ui_theme = neon
+	$theme.set_text('neon')
+	_save()
 func _on_Alien_pressed():
 	self.set_theme(alien)
-	ui_theme = alien
+	$theme.set_text('alien')
+	_save()
 func _on_Light_pressed():
 	self.set_theme(light)
-	ui_theme = light
+	$theme.set_text('light')
+	_save()
 func _on_Solarized_dark_pressed():
 	self.set_theme(solarized_dark)
-	ui_theme = solarized_dark
+	$theme.set_text('solarized_dark')
+	_save()
 func _on_Solarized_light_pressed():
 	self.set_theme(solarized_light)
-	ui_theme = solarized_light
+	$theme.set_text('solarized_light')
+	_save()
 
 func _ready():
+	_load()
+#	self.set_theme(default)
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Neon.connect("pressed", self, "_on_Neon_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Alien.connect("pressed", self, "_on_Alien_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Light.connect("pressed", self, "_on_Light_pressed")
@@ -66,3 +114,5 @@ func _on_Save_pressed():
 	save_load._on_Save()
 func _on_Load_pressed():
 	save_load._on_Load()
+func _on_theme_selected(path):
+	self.set_theme(path)

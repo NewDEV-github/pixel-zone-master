@@ -14,8 +14,6 @@
 [ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=13]
 
-
-
 [sub_resource type="InputEventAction" id=1]
 action = "ui_accept"
 
@@ -49,6 +47,7 @@ custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -87,15 +86,12 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
-theme = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Theme"]
 anchor_left = 0.5
@@ -109,7 +105,7 @@ margin_bottom = 278.5
 
 [node name="Label" type="Label" parent="TabContainer/Theme/VBoxContainer"]
 margin_right = 558.0
-margin_bottom = 39.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_UI_THEME"
 align = 1
@@ -123,87 +119,87 @@ margin_bottom = 82.0
 text = "Apply to Game's UI, not only of User's UI"
 
 [node name="Yellow" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 43.0
+margin_top = 35.0
 margin_right = 558.0
-margin_bottom = 82.0
+margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Yellow"
 
 [node name="Neon" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 86.0
+margin_top = 76.0
 margin_right = 558.0
-margin_bottom = 125.0
+margin_bottom = 113.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Neon"
 
 [node name="Alien" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 129.0
+margin_top = 117.0
 margin_right = 558.0
-margin_bottom = 168.0
+margin_bottom = 154.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Alien"
 
 [node name="Light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 172.0
+margin_top = 158.0
 margin_right = 558.0
-margin_bottom = 211.0
+margin_bottom = 195.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Light"
 
 [node name="Solarized_dark" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 215.0
+margin_top = 199.0
 margin_right = 558.0
-margin_bottom = 254.0
+margin_bottom = 236.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_dark"
 
 [node name="Solarized_light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 258.0
+margin_top = 240.0
 margin_right = 558.0
-margin_bottom = 297.0
+margin_bottom = 277.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_light"
 
 [node name="Grey" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 visible = false
-margin_top = 344.0
-margin_right = 558.0
-margin_bottom = 383.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Grey"
-
-[node name="Red" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 301.0
 margin_right = 558.0
 margin_bottom = 340.0
 custom_fonts/font = ExtResource( 2 )
+text = "Custom Theme"
+
+[node name="Red" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+margin_top = 281.0
+margin_right = 558.0
+margin_bottom = 318.0
+custom_fonts/font = ExtResource( 2 )
 text = "KEY_Red"
 
 [node name="Green" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 344.0
+margin_top = 322.0
 margin_right = 558.0
-margin_bottom = 383.0
+margin_bottom = 359.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Green"
 
 [node name="Blue" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 387.0
+margin_top = 363.0
 margin_right = 558.0
-margin_bottom = 426.0
+margin_bottom = 400.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Blue"
 
 [node name="Default" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 430.0
+margin_top = 404.0
 margin_right = 558.0
-margin_bottom = 469.0
+margin_bottom = 441.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Default"
 
 [node name="Old" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 473.0
+margin_top = 445.0
 margin_right = 558.0
-margin_bottom = 512.0
+margin_bottom = 482.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Old"
 
@@ -752,6 +748,7 @@ margin_bottom = -4.0
 
 [node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 12 )]
 script = ExtResource( 13 )
+
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/ApplyButton3" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Englisch" to="." method="_on_Englisch_pressed"]

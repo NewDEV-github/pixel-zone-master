@@ -480,9 +480,9 @@ flat = true
 visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 387.5
+margin_left = 775.0
 margin_top = 175.5
-margin_right = 634.5
+margin_right = 1022.0
 margin_bottom = 257.5
 
 [node name="Label" type="Label" parent="control/3D"]
@@ -515,6 +515,31 @@ text = "Ice Cap 02"
 align = 1
 
 [node name="select4" type="Button" parent="control/IceCap02"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "Select"
+flat = true
+
+[node name="Hill03" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -634.5
+margin_top = 175.5
+margin_right = -387.5
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/Hill03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Hill 03"
+align = 1
+
+[node name="select15" type="Button" parent="control/Hill03"]
 margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0

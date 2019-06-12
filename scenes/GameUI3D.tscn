@@ -10,8 +10,6 @@
 [ext_resource path="res://scenes/Achievements.tscn" type="PackedScene" id=8]
 [ext_resource path="res://globals/LevelBGMPlayer.gd" type="Script" id=9]
 
-
-
 [sub_resource type="ButtonGroup" id=1]
 
 [node name="GameUI" type="Control"]
@@ -77,7 +75,6 @@ margin_right = 943.251
 margin_bottom = 61.25
 
 [node name="OptionsPage" parent="UIScaler/Menu" instance=ExtResource( 6 )]
-visible = false
 margin_left = 413.0
 margin_right = 398.0
 
@@ -89,7 +86,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -106.5
 margin_top = -266.0
-margin_right = 123.5
+margin_right = 87.5
 margin_bottom = 301.0
 __meta__ = {
 "_edit_group_": true
@@ -107,7 +104,7 @@ text = "KEY_SAVE"
 flat = true
 
 [node name="Return" type="Button" parent="UIScaler/Menu/HBoxContainer"]
-margin_right = 230.0
+margin_right = 194.0
 margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -118,7 +115,7 @@ flat = true
 
 [node name="Options" type="Button" parent="UIScaler/Menu/HBoxContainer"]
 margin_top = 190.0
-margin_right = 230.0
+margin_right = 194.0
 margin_bottom = 376.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -159,7 +156,7 @@ flat = true
 
 [node name="Quit" type="Button" parent="UIScaler/Menu/HBoxContainer"]
 margin_top = 380.0
-margin_right = 230.0
+margin_right = 194.0
 margin_bottom = 567.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -182,6 +179,7 @@ volume_db = -10.0
 autoplay = true
 script = ExtResource( 9 )
 id = "Menu"
+
 [connection signal="timeout" from="UIScaler/Menu/eastereggtimer" to="UIScaler/Menu" method="_on_eastereggtimer_timeout"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Return" to="UIScaler/Menu" method="_on_Return_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Options" to="UIScaler/Menu" method="_on_Options_pressed"]

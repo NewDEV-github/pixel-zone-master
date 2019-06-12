@@ -525,6 +525,12 @@ margin_bottom = 66.5834
 custom_fonts/font = ExtResource( 23 )
 text = "Full Health!"
 
+[node name="theme" type="Label" parent="ui/Control"]
+margin_left = 112.5
+margin_top = -101.25
+margin_right = 120.5
+margin_bottom = -62.2501
+
 [node name="Sprite" type="Sprite" parent="ui"]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )

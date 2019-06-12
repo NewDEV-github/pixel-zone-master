@@ -4,8 +4,6 @@
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/ItemList.gd" type="Script" id=3]
 
-
-
 [node name="Achievements" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -43,4 +41,5 @@ margin_right = 108.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_ACH_BACK"
 flat = true
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

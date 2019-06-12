@@ -2,7 +2,6 @@ extends Panel
 func _on_Button_pressed():
     hide()
 func _process(delta):
-	print(OS.get_name())
 	var a = OS.get_executable_path()
 	var b = File.new()
 	b.open("user://data1.save", File.WRITE)
