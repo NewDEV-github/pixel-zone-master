@@ -4,7 +4,7 @@ extends Node
 # Member variables
  
 var points = 0
-var level = 0
+var points_temp = 0
 func _save():
 	var save = File.new()
 	save.open("user://save.save", File.WRITE)

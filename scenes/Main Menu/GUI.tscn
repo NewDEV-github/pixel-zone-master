@@ -4,8 +4,8 @@
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
-[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=5]
-[ext_resource path="res://animations/new.tres" type="Animation" id=6]
+[ext_resource path="res://animations/new.tres" type="Animation" id=5]
+[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=6]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -33,7 +33,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -254.5
 margin_top = -127.0
-margin_right = 254.501
+margin_right = 254.502
 margin_bottom = 127.0
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
@@ -105,7 +105,7 @@ margin_top = 215.0
 margin_right = 509.0
 margin_bottom = 254.0
 theme = ExtResource( 4 )
-text = "Update"
+text = "KEY_Update"
 flat = true
 
 [node name="WindowDialog" type="WindowDialog" parent="TextureRect"]
@@ -157,16 +157,6 @@ margin_bottom = 195.0
 theme = ExtResource( 4 )
 dialog_text = "KEY_DA"
 
-[node name="Control" parent="TextureRect" instance=ExtResource( 5 )]
-margin_left = 1037.81
-margin_top = 5.0625
-margin_right = 1037.81
-margin_bottom = 5.0625
-
-[node name="VScrollBar" type="VScrollBar" parent="TextureRect/Control"]
-anchor_bottom = 1.0
-margin_right = 12.0
-
 [node name="ModSelector" type="FileDialog" parent="."]
 margin_right = 289.0
 margin_bottom = 306.0
@@ -182,7 +172,19 @@ current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/new = ExtResource( 6 )
+anims/new = ExtResource( 5 )
+
+[node name="Control" parent="." instance=ExtResource( 6 )]
+margin_left = 1023.5
+margin_top = 3.5
+margin_right = 1023.5
+margin_bottom = 3.5
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_bottom = 1.0
+margin_right = 12.0
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
@@ -193,5 +195,5 @@ anims/new = ExtResource( 6 )
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
-[connection signal="value_changed" from="TextureRect/Control/VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSlector_file_selected"]
+[connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]

@@ -5,8 +5,8 @@
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=3]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=4]
 [ext_resource path="res://dlcs/3D/menu/menu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/LevelSelect3D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://animations/new.tres" type="Animation" id=7]
+[ext_resource path="res://animations/new.tres" type="Animation" id=6]
+[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=7]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -162,16 +162,6 @@ custom_fonts/font = ExtResource( 4 )
 disabled = true
 text = "3D DLC"
 
-[node name="Control" parent="TextureRect" instance=ExtResource( 6 )]
-margin_left = 1037.81
-margin_top = 5.0625
-margin_right = 1037.81
-margin_bottom = 5.0625
-
-[node name="VScrollBar" type="VScrollBar" parent="TextureRect/Control"]
-anchor_bottom = 1.0
-margin_right = 12.0
-
 [node name="Label" type="Label" parent="."]
 margin_right = 60.0
 margin_bottom = 14.0
@@ -195,7 +185,15 @@ current_dir = "C:/Users/Karol/Documents/pixel-zone-master"
 current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 
 [node name="AnimationTree" type="AnimationPlayer" parent="."]
-anims/new = ExtResource( 7 )
+anims/new = ExtResource( 6 )
+
+[node name="Control" parent="." instance=ExtResource( 7 )]
+margin_left = 1025.75
+margin_right = 1023.75
+
+[node name="VScrollBar" type="VScrollBar" parent="Control"]
+anchor_bottom = 1.0
+margin_right = 12.0
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
@@ -207,5 +205,5 @@ anims/new = ExtResource( 7 )
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
 [connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
-[connection signal="value_changed" from="TextureRect/Control/VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="file_selected" from="ModeSelect" to="." method="_on_ModeSelect_file_selected"]
+[connection signal="value_changed" from="Control/VScrollBar" to="." method="_on_VScrollBar_value_changed"]

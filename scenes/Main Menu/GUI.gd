@@ -36,6 +36,7 @@ func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
 	
 func _ready():
+	get_node("Control/control/3D").hide()
 	$TextureRect/Label.hide()
 	var dlc = File.new()
 	if dlc.file_exists(str(OS.get_executable_path()) + ".data/3d.pck"):
@@ -75,4 +76,4 @@ func _on_Update_pressed():
 
 
 func _on_VScrollBar_value_changed(value):
-	$TextureRect/Control/control.set_position(Vector2(0, -(value*10)))
+	$Control.set_position(Vector2(0, -(value*10)))

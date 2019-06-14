@@ -114,7 +114,6 @@ log_file="*res://log_file.tscn"
 background_load="*res://scenes/background_load.tscn"
 settings2="*res://globals/settings2.gd"
 DebugConsole="*res://console/DebugConsole.tscn"
-Ads="*res://globals/Ads.tscn"
 
 [compression]
 
@@ -123,6 +122,7 @@ formats/zstd/compression_level=1
 [debug]
 
 settings/stdout/print_fps=true
+gdscript/completion/autocomplete_setters_and_getters=true
 gdscript/warnings/unused_variable=false
 gdscript/warnings/unused_argument=false
 
@@ -136,7 +136,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "custom_import_plugin", "custom_node", "snippets_plugin", "zylann.project_stats" )
+enabled=PoolStringArray( "zylann.project_stats" )
 
 [gdnative]
 

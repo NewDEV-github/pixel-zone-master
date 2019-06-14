@@ -1,59 +1,77 @@
 ,en,es,de,pl,it,pt,fr
-KEY_AP,Awaiting Players…,A la espera de jugadores ...,Spieler erwarten…,Oczekujący Gracze…,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente…
+KEY_AP,Awaiting Players,Esperando jugadores,Warten auf Spieler,Oczekujący Gracze…,In attesa di giocatori,Aguardando Jogadores,Joueurs en attente
 KEY_Host,Host,Anfitrión,Wirt,Hostuj,Ospite,Hospedeiro,Hôte
 KEY_Join,Join,Unirse,Beitreten,Dołącz,Aderire,Junte-se,Joindre
 KEY_IP_Adress,IP Address,Dirección IP,IP Adresse,Adres IP,Indirizzo IP,Endereço de IP,Adresse IP
 KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,prénom
-KEY_ERR,"Oops…
+KEY_ERR,"Oops!
 
-It seems there was an error. Debug file was created at ‘user://logs/*.log’.
+It seems there was an error. Debug file was created at „user://logs/*.log”
 
-Pixel Zone will exit now","Vaya …
+Pixel Zone will exit now","Ups! Parece que hubo un error.
 
-Parece que hubo un error. El archivo de depuración se creó en 'user: //logs/*.log'.
+El archivo de depuración se creó en „usuario: //logs/*.log”
 
-Pixel Zone saldrá ahora","Hoppla …
+Pixel Zone se cerrará ahora","Hoppla!
 
-Es scheint, dass ein Fehler aufgetreten ist. Die Debug-Datei wurde unter 'user: //logs/*.log' erstellt.
+Es scheint, dass ein Fehler aufgetreten ist. Die Debug-Datei wurde unter „user: //logs/*.log” erstellt.
 
 Pixel Zone wird jetzt beendet","Ups...
 
-To wygląda na błąd. Log błędu został utworzony w ‘user://logs/*.log’
+To wygląda na błąd. Log błędu został utworzony w „user://logs/*.log”
 
-Pixel Zone wyłączy się teraz","Oops …
+Pixel Zone wyłączy się teraz.","Oops! Sembra che ci sia stato un errore.
 
-Sembra che ci sia stato un errore. Il file di debug è stato creato su ""user://logs/.log"".
+Il file di debug è stato creato su ""utente: //logs/*.log""
 
-Pixel Zone uscirà ora","Oops …
+Pixel Zone uscirà ora","Opa! Parece que houve um erro.
 
-Parece que houve um erro. O arquivo de depuração foi criado em 'user: //logs/*.log'.
+O arquivo de depuração foi criado em „user: //logs/*.log”
 
-A Pixel Zone sairá agora","Oups…
+A Pixel Zone sairá agora","Oops! Il semble qu'il y ait eu une erreur.
 
-Il semble qu'il y ait eu une erreur. Le fichier de débogage a été créé à l'adresse 'user: //logs/*.log'.
+Le fichier de débogage a été créé à l'adresse «utilisateur: //logs/*.log».
 
-Pixel Zone va quitter maintenant"
+Pixel Zone se ferme maintenant."
 KEY_SKIP,SKIP,OMITIR,ÜBERSPRINGEN,POMIŃ,SALTA,PULAR,SAUTER
 KEY_MOD,Import modification,Modificación de importación,Änderung importieren,Importuj modyfikację,Modifica delle importazioni,Modificação de importação,Modification d'importation
 KEY_DIS,Disabled,Discapacitado,Deaktiviert,Wyłącz,Disabilitato,Desativado,désactivé
-KEY_High,High,Alto,Hoch,Wysoka,Alto,Alto,Haute
+KEY_High,High,Alto,Hoch,Wysoka,alto,Alto,Haute
 KEY_Low,Low,Bajo,Niedrig,Niska,Basso,Baixo,Faible
-KEY_CONFIG,Please configure settings before starting the game.,"Por favor, configure los ajustes antes de comenzar el juego.","Bitte konfigurieren Sie die Einstellungen, bevor Sie das Spiel starten.","Proszę skonfigurować ustawienia, przed rozpoczęciem gry.",Si prega di configurare le impostazioni prima di iniziare il gioco.,"Por favor, defina as configurações antes de iniciar o jogo.",Veuillez configurer les paramètres avant de commencer le jeu.
-KEY_3D_NW,*Not working in 3D DLC,*No funciona en DLC 3D,*Funktioniert nicht in 3D DLC,*Nie działa w 3D DLC,*Non funziona in 3D DLC,*Não funciona em DLC 3D,*Ne fonctionne pas en 3D DLC
-KEY_FPS,Show FPS,Mostrar FPS,FPS anzeigen,Pokaż FPS,Mostra FPS,Mostrar FPS,Afficher FPS
+KEY_CONFIG,Please configure settings before starting the game.,"Por favor, configure los ajustes antes de comenzar el juego.","Bitte konfigurieren Sie die Einstellungen, bevor Sie das Spiel starten.",Proszę skonfigurować ustawienia przed rozpoczęciem gry.,Si prega di configurare le impostazioni prima di iniziare il gioco.,"Por favor, defina as configurações antes de iniciar o jogo.",Veuillez configurer les paramètres avant de commencer le jeu.
+KEY_3D_NW,*Not working in 3D DLC,* No funciona en DLC 3D,* Funktioniert nicht in 3D DLC,*Nie działa w 3D DLC,* Non funziona in 3D DLC,* Não funciona em DLC 3D,* Ne fonctionne pas en 3D DLC
+KEY_FPS,Show FPS,Mostrar fps,FPS anzeigen,Pokaż FPS,Mostra FPS,Mostrar FPS,Afficher fps
 KEY_DC,Downloadable Content,Contenido descargable,Downloadbarer Inhalt,Zawartość do pobrania,Contenuto scaricabile,Conteúdo disponível para download,Contenu téléchargeable
 KEY_DA,"After the download is complete, restart the game.
 If you have a problem starting the game after downloading dlc, see: 
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Una vez finalizada la descarga, reinicie el juego.
 Si tiene un problema al iniciar el juego después de descargar dlc, consulte:
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Nachdem der Download abgeschlossen ist, starte das Spiel neu.
-Wenn Sie nach dem Herunterladen von dlc ein Problem beim Starten des Spiels haben, lesen Sie
+Wenn Sie nach dem Herunterladen von dlc ein Problem beim Starten des Spiels haben, lesen Sie:
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Po zakończeniu pobierania uruchom grę ponownie.
-Jeśli będziesz miał problem z uruchomieniem gry po pobraniu dlc, patrz na:
+Jeśli będziesz problem z uruchomieniem gry po pobraniu dlc, patrz na:
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Al termine del download, riavvia il gioco.
 Se hai problemi a iniziare il gioco dopo aver scaricato dlc, vedi:
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Depois que o download estiver concluído, reinicie o jogo.
 Se você tiver um problema ao iniciar o jogo depois de baixar o dlc, consulte:
 https://karoltomaszewskimu.wixsite.com/mastergames/support","Une fois le téléchargement terminé, redémarrez le jeu.
-Si vous rencontrez des problèmes pour démarrer le jeu après le téléchargement de dlc, voir:
-https://karoltomaszewskimu.wixsite.com/mastergames/support"
+Si vous rencontrez des problèmes pour démarrer le jeu après le téléchargement de dlc,
+Voir: https://karoltomaszewskimu.wixsite.com/mastergames/support"
+KEY_SELECT,Select,Seleccionar,Wählen,Wybierz,Selezionare,Selecione,Sélectionner
+KEY_Download,Download,Descargar,Herunterladen,Pobierz,Scaricare,Baixar,Télécharger
+KEY_UPDATE,"Loading information about updates…
+This tool is in development mode.
+Please report any errors to karoltomaszewskimusic@gmail.com","Cargando información sobre actualizaciones…
+Esta herramienta está en modo de desarrollo. Por favor, informe de cualquier error a
+Karoltomaszewskimusic@gmail.com","Informationen zu Updates werden geladen…
+Dieses Tool befindet sich im Entwicklungsmodus.
+Bitte melden Sie Fehler an karoltomaszewskimusic@gmail.com","Ładowanie informacji o aktualizacjach...
+To narzędzie jest w trybie rozwoju.
+Wszelkie błędy prosimy zgłaszać na karoltomaszewskimusic@gmail.com","Caricamento informazioni sugli aggiornamenti…
+Questo strumento è in modalità sviluppo. Si prega di segnalare eventuali errori a
+Karoltomaszewskimusic@gmail.com","Carregando informações sobre atualizações…
+Esta ferramenta está em modo de desenvolvimento.
+Por favor relate quaisquer erros para karoltomaszewskimusic@gmail.com","Chargement d'informations sur les mises à jour…
+Cet outil est en mode développement.
+Veuillez signaler toute erreur à karoltomaszewskimusic@gmail.com"
+KEY_Update,Update,Actualizar,Aktualisieren,Aktualizuj,Aggiornare,Atualizar,Mettre à jour

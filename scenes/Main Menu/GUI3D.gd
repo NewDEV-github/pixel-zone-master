@@ -2,11 +2,12 @@ extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_Play_pressed():
 	var exists = File.new()
-	if exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):):
+	if exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
 		$AnimationTree.play("new")
-	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):):
+	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
 		background_load.load_scene("res://scenes/stages/tutorial.tscn")
-
+func _ready():
+	get_node("Control/control/3D").show()
 func _on_Quit_pressed():
 	get_tree().quit()
 	
@@ -64,4 +65,4 @@ func _on_ModeSelect_file_selected(path):
 
 
 func _on_VScrollBar_value_changed(value):
-	$TextureRect/Control/control.set_position(Vector2(0, -(value*10)))
+	$Control/control.set_position(Vector2(0, -(value*10)))

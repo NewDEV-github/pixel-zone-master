@@ -55,7 +55,7 @@ func _ready():
 	control_unlock_timer = control_unlock_time
 
 func _process(delta):
-	$ui/Coins.set_text("All collected coins: " + str(game_state.points))
+	$ui/Coins.set_text("KEY_COINS: " + str(game_state.points_temp))
 	var roll_anim = animation.current_animation == 'Rolling'
 	high_collider.disabled = roll_anim
 	low_collider.disabled = !roll_anim

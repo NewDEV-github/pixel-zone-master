@@ -292,7 +292,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="Hill01" type="VBoxContainer" parent="control"]
@@ -315,7 +315,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="PixelZone01" type="VBoxContainer" parent="control"]
@@ -333,7 +333,7 @@ margin_top = 43.0
 margin_right = 243.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="Hill02" type="VBoxContainer" parent="control"]
@@ -358,7 +358,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="JungleRuins03" type="VBoxContainer" parent="control"]
@@ -382,7 +382,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="JungleRuins01" type="VBoxContainer" parent="control"]
@@ -406,7 +406,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="IceCap03" type="VBoxContainer" parent="control"]
@@ -431,7 +431,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="IceCap01" type="VBoxContainer" parent="control"]
@@ -452,7 +452,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="PixelZone02" type="VBoxContainer" parent="control"]
@@ -473,7 +473,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="3D" type="VBoxContainer" parent="control"]
@@ -497,7 +497,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="IceCap02" type="VBoxContainer" parent="control"]
@@ -519,7 +519,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 
 [node name="Hill03" type="VBoxContainer" parent="control"]
@@ -544,6 +544,6 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
-text = "Select"
+text = "KEY_SELECT"
 flat = true
 

@@ -47,7 +47,6 @@ custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -86,6 +85,7 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -204,7 +204,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Old"
 
 [node name="Language" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -280,6 +279,12 @@ margin_top = 258.0
 margin_right = 131.0
 margin_bottom = 297.0
 text = "LANG_ES"
+
+[node name="Label" type="Label" parent="TabContainer/Language"]
+margin_left = 40.4999
+margin_top = -364.5
+margin_right = 80.4999
+margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
 visible = false
@@ -681,6 +686,7 @@ rounded = true
 ticks_on_borders = true
 
 [node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+editor/display_folded = true
 margin_top = 380.0
 margin_right = 366.0
 margin_bottom = 452.0

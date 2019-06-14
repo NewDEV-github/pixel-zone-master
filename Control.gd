@@ -6,8 +6,6 @@ extends Control
 func _ready():
 	print_log()
 func print_log():
-	print(OS.get_name())
-	var a = OS.get_executable_path()
 	var b = File.new()
 	b.open("user://logs/"+ str(OS.get_unix_time()) + ".log", File.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")

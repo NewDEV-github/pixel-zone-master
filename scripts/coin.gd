@@ -5,6 +5,7 @@ var taken=false
 func _on_coin_body_enter(body):
 	if body.name == "Player":
 		get_node("/root/game_state").points += 1
+		get_node("/root/game_state").points_temp +=1
 		get_node("/root/game_experience").points += 1
 		$anim.play("taken")
 		taken = true
