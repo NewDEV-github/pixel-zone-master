@@ -1,5 +1,7 @@
 extends Panel
 class_name Options_Page
+var music
+var custom_music
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 onready var tab_container = get_node("TabContainer")
 func _process(delta):
@@ -15,7 +17,9 @@ func _save():
 	save.open(str(documents) +"/Pixel Zone/.data/lang.save", File.WRITE)
 	save.store_line(to_json($TabContainer/Language/Label.text))
 	save.close()
-
+func _ready():
+	music = AudioServer.get_bus_index("Music")
+	custom_music = AudioServer.get_bus_index("Custom Music")
 func _on_Englisch_pressed():
 	TranslationServer.set_locale("en")
 	$TabContainer/Language/Label.set_text("en")
@@ -46,3 +50,14 @@ func _on_French_pressed():
 	_save()
 #func _ready():
 #	_load()
+
+
+func _on_MenuButton_pressed():
+	$"TabContainer/Graphics & Audio/FileDialog".popup_centered()
+
+
+func _on_FileDialog_file_selected(path):
+	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)
+	AudioServer.set_bus_mute(1, true)
+	$Custom_Music.set_stream(load(path))
+	$Custom_Music.play()

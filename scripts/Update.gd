@@ -18,15 +18,6 @@ func _ready():
 		$HTTPRequest5.request("https://github.com/MasterPolska123/pixel-zone-master/releases/tag/v0.7.2.0.9")
 func _initialize():
 	var exists = File.new()
-#	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version.html"):
-#		$ItemList.add_item("v0.7.2.0.5")
-#		$RichTextLabel.add_text("Detected version v0.7.2.0.5 to download")
-#	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version2.html"):
-#		$ItemList.add_item("v0.7.2.0.6")
-#		$RichTextLabel.add_text("\nDetected version v0.7.2.0.6 to download")
-#	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version3.html"):
-#		$ItemList.add_item("v0.7.2.0.7")
-#		$RichTextLabel.add_text("\nDetected version v0.7.2.0.7 to download")
 	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version4.html") and exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		$ItemList.add_item("v0.7.2.0.9")
 		$RichTextLabel.add_text("\nDetected version v0.7.2.0.9 to download")
@@ -34,6 +25,7 @@ func _initialize():
 func _on_Timer_timeout():
 	_initialize()
 	$Panel.hide()
+#	print(str($HTTPRequest5.get_body_size()))
 
 
 func _on_Button_pressed():
