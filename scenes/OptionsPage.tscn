@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -8,11 +8,9 @@
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=6]
 [ext_resource path="res://scripts/scenes/OptionsPage/PixelsnapBox.gd" type="Script" id=7]
 [ext_resource path="res://scripts/scenes/OptionsPage/QualityBox.gd" type="Script" id=8]
-[ext_resource path="res://scripts/scenes/OptionsPage/WindowBox.gd" type="Script" id=9]
-[ext_resource path="res://scripts/scenes/ResolutionBox.gd" type="Script" id=10]
-[ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=11]
-[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=13]
+[ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=9]
+[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=11]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_accept"
@@ -51,7 +49,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 49.0
+margin_top = 41.0
 margin_right = -4.0
 margin_bottom = -4.0
 theme = ExtResource( 3 )
@@ -86,12 +84,11 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 49.0
+margin_top = 41.0
 margin_right = -4.0
 margin_bottom = -4.0
 
@@ -311,7 +308,7 @@ script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 margin_right = 391.0
-margin_bottom = 200.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -332,7 +329,7 @@ align = 1
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 204.0
+margin_top = 161.0
 margin_right = 391.0
 margin_bottom = 329.0
 
@@ -407,149 +404,32 @@ margin_right = 391.0
 margin_bottom = 39.0
 
 [node name="QualityBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-visible = false
 margin_top = 129.0
-margin_right = 365.0
+margin_right = 391.0
 margin_bottom = 168.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_right = 307.0
+margin_right = 333.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
-text = "QUALITY"
+text = "Voxel Cone Tracing"
 align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_left = 311.0
-margin_right = 365.0
+margin_left = 337.0
+margin_right = 391.0
 margin_bottom = 39.0
-
-[node name="WindowBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-editor/display_folded = true
-visible = false
-margin_top = 107.0
-margin_right = 380.0
-margin_bottom = 210.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/WindowBox"]
-margin_right = 380.0
-margin_bottom = 49.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_WINDOW_TYPE"
-align = 1
-valign = 1
-
-[node name="HBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/WindowBox"]
-editor/display_folded = true
-margin_top = 53.0
-margin_right = 380.0
-margin_bottom = 103.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="PrevButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/WindowBox/HBox"]
-margin_right = 20.0
-margin_bottom = 50.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-text = "<"
-flat = true
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/WindowBox/HBox"]
-margin_left = 24.0
-margin_right = 356.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Window Type"
-align = 1
-valign = 1
-
-[node name="NextButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/WindowBox/HBox"]
-margin_left = 360.0
-margin_right = 380.0
-margin_bottom = 50.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-text = ">"
-flat = true
-
-[node name="ResolutionBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-editor/display_folded = true
-visible = false
-margin_top = 265.0
-margin_right = 365.0
-margin_bottom = 397.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ResolutionBox"]
-margin_right = 365.0
-margin_bottom = 132.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_RESOLUTION"
-align = 1
-valign = 1
-
-[node name="HBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ResolutionBox"]
-visible = false
-margin_top = 43.0
-margin_right = 380.0
-margin_bottom = 82.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="PrevButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ResolutionBox/HBox"]
-margin_right = 20.0
-margin_bottom = 39.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-text = "<"
-flat = true
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ResolutionBox/HBox"]
-margin_left = 24.0
-margin_right = 356.0
-margin_bottom = 39.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Resolution"
-align = 1
-valign = 1
-
-[node name="NextButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ResolutionBox/HBox"]
-margin_left = 360.0
-margin_right = 380.0
-margin_bottom = 39.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-text = ">"
-flat = true
 
 [node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 margin_top = 333.0
 margin_right = 391.0
-margin_bottom = 533.0
+margin_bottom = 490.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -558,13 +438,20 @@ shortcut = SubResource( 2 )
 text = "KEY_APPLY"
 flat = true
 
+[node name="Advanced" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+margin_top = 494.0
+margin_right = 391.0
+margin_bottom = 533.0
+text = "KEY_AO"
+align = 1
+
 [node name="MusicBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
 margin_left = 395.0
 margin_right = 786.0
 margin_bottom = 533.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 11 )
+script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_right = 391.0
@@ -688,7 +575,6 @@ rounded = true
 ticks_on_borders = true
 
 [node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-editor/display_folded = true
 margin_top = 320.0
 margin_right = 391.0
 margin_bottom = 380.0
@@ -748,12 +634,15 @@ ticks_on_borders = true
 margin_top = 448.0
 margin_right = 391.0
 margin_bottom = 487.0
-text = "import your own music"
+text = "Import your own music"
 
 [node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 491.0
 margin_right = 391.0
 margin_bottom = 530.0
+editable = false
+placeholder_text = "Path of selected file"
+caret_blink = true
 
 [node name="FileDialog" type="FileDialog" parent="TabContainer/Graphics & Audio"]
 margin_left = 395.0
@@ -778,12 +667,11 @@ margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 12 )]
-script = ExtResource( 13 )
+[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 10 )]
+script = ExtResource( 11 )
 
 [node name="Custom_Music" type="AudioStreamPlayer" parent="."]
 autoplay = true
-bus = "Custom Music"
 
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/ApplyButton3" to="." method="_on_ApplyButton_pressed"]

@@ -416,7 +416,7 @@ position = Vector2( 0, -5 )
 shape = SubResource( 15 )
 
 [node name="LowCollider" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( -1, 10 )
 shape = SubResource( 16 )
 
 [node name="RayShape" type="CollisionShape2D" parent="."]
@@ -509,13 +509,6 @@ custom_fonts/font = ExtResource( 23 )
 text = "Start!"
 align = 1
 
-[node name="fps" type="Label" parent="ui/Control"]
-visible = false
-margin_left = 77.0
-margin_top = 1.0
-margin_right = 367.0
-margin_bottom = 47.0
-
 [node name="Label" type="Label" parent="ui/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -0.666824
@@ -524,6 +517,12 @@ margin_right = 162.334
 margin_bottom = 66.5834
 custom_fonts/font = ExtResource( 23 )
 text = "Full Health!"
+
+[node name="fps" type="Label" parent="ui/Control"]
+margin_left = 77.0
+margin_top = 1.0
+margin_right = 367.0
+margin_bottom = 47.0
 
 [node name="theme" type="Label" parent="ui/Control"]
 margin_left = 112.5
@@ -560,6 +559,17 @@ anchor_right = 1.0
 margin_left = -488.0
 margin_bottom = 87.0
 custom_fonts/font = ExtResource( 23 )
+align = 2
+
+[node name="Coins2" type="Label" parent="ui"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -323.75
+margin_top = -1.0
+margin_right = -40.7498
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 23 )
+text = "KEY_COINS"
 align = 2
 
 [node name="Panel" type="Panel" parent="ui"]

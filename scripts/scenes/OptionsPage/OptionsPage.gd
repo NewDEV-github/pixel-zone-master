@@ -10,6 +10,12 @@ func _process(delta):
 	tab_container.set_tab_title(2, "KEY_LANG")
 	tab_container.set_tab_title(3, "KEY_G_A")
 	tab_container.set_tab_title(4, "KEY_CONTROLLER")
+	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
+	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
 func _on_ApplyButton_pressed():
 	hide()
 func _save():

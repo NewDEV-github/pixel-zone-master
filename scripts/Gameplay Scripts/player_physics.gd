@@ -53,9 +53,16 @@ var is_looking_up : bool
 
 func _ready():
 	control_unlock_timer = control_unlock_time
-
+	$ui/Control/GameUI.connect("FPSHide", self, "Hide_fps")
+	$ui/Control/GameUI.connect("FPSShow", self, "Show_fps")
+func Show_fps():
+	$ui/Control/fps.show()
+func Hide_fps():
+	$ui/Control/fps.hide()
 func _process(delta):
-	$ui/Coins.set_text("KEY_COINS: " + str(game_state.points_temp))
+	Engine.get_frames_per_second()
+	$ui/Control/fps.set_text(str(Engine.get_frames_per_second()))
+	$ui/Coins.set_text(": " + str(game_state.points_temp))
 	var roll_anim = animation.current_animation == 'Rolling'
 	high_collider.disabled = roll_anim
 	low_collider.disabled = !roll_anim
