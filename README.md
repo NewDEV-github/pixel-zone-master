@@ -16,7 +16,7 @@ Download and share your modifications - https://karoltomaszewskimu.wixsite.com/m
 
 Pixel Zone's official FORUM (you can login also via Facebook and Google+) - https://karoltomaszewskimu.wixsite.com/mastergames/forum
 
-List of members registered on Pixel Zone's official website - https://karoltomaszewskimu.wixsite.com/mastergames/
+List of members registered on Pixel Zone's official website - https://karoltomaszewskimu.wixsite.com/mastergames/members/
 
 You can register on Pixel Zone's official website without worrying about spam. You will only receive a mail with a greeting and 
 confirmation of registration :)
