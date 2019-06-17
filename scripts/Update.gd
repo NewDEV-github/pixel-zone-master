@@ -31,7 +31,7 @@ func _on_Timer_timeout():
 func _on_Button_pressed():
 	$HTTPRequest4.set_download_file(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	$HTTPRequest4.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/update.pck" % version_to_download)
-	$RichTextLabel.add_text("\nResolving host...\nConnecting to download server...\nReciving...\nDownloading... https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/3d.pck" % version_to_download)
+	$RichTextLabel.add_text("\nResolving host...\nConnecting to download server...\nReciving...\nDownloading... https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/update.pck" % version_to_download)
 func _on_ItemList_item_selected(index):
 	if index == 0:
 		return

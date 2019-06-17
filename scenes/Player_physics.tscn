@@ -293,7 +293,7 @@ tracks/0/keys = {
 radius = 18.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 33, 313.92 )
+position = Vector2( 28, 310.92 )
 z_index = 1
 collision/safe_margin = 0.1
 script = ExtResource( 1 )
@@ -321,11 +321,10 @@ script = ExtResource( 6 )
 position = Vector2( 0, -4 )
 
 [node name="Sonic" type="Sprite" parent="Characters"]
-editor/display_folded = true
 texture = ExtResource( 7 )
 vframes = 2
 hframes = 16
-frame = 4
+frame = 22
 region_rect = Rect2( 0, 0, 48, 48 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Sonic"]
@@ -344,21 +343,19 @@ anims/Walking = SubResource( 12 )
 script = ExtResource( 8 )
 
 [node name="VFX" type="Node2D" parent="Characters"]
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="ChargeDust" type="Sprite" parent="Characters/VFX"]
-editor/display_folded = true
 visible = false
-position = Vector2( -19, 13 )
+position = Vector2( -17, 16 )
 texture = ExtResource( 10 )
 hframes = 7
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/VFX/ChargeDust"]
 anims/ChargeDust = SubResource( 13 )
 
 [node name="InstaShield" type="Sprite" parent="Characters/VFX"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, 9 )
 texture = ExtResource( 11 )
@@ -597,6 +594,7 @@ margin_right = 60.5
 margin_bottom = 31.0
 
 [node name="HP" type="Area2D" parent="."]
+position = Vector2( -6, 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HP"]
 shape = SubResource( 19 )

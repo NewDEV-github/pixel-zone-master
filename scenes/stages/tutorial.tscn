@@ -3,11 +3,13 @@
 [ext_resource path="res://scripts/scenes/levels/tutorial.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/FullLoop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/stages/loops/FullLoop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/Audio/musics/sky_sanctuary_zone.ogg" type="AudioStream" id=5]
 [ext_resource path="res://titles/tileset.tres" type="TileSet" id=6]
-[ext_resource path="res://scenes/stages/Test Zone/loop_part.res" type="PackedScene" id=7]
+[ext_resource path="res://scenes/stages/loops/loop_part.res" type="PackedScene" id=7]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=8]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76.9692, 359 )

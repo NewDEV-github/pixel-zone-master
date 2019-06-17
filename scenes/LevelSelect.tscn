@@ -476,30 +476,6 @@ theme = ExtResource( 9 )
 text = "KEY_SELECT"
 flat = true
 
-[node name="3D" type="VBoxContainer" parent="control"]
-visible = false
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 775.0
-margin_top = 175.5
-margin_right = 1022.0
-margin_bottom = 257.5
-
-[node name="Label" type="Label" parent="control/3D"]
-margin_right = 247.0
-margin_bottom = 39.0
-theme = ExtResource( 9 )
-text = "3D"
-align = 1
-
-[node name="3D" type="Button" parent="control/3D"]
-margin_top = 43.0
-margin_right = 247.0
-margin_bottom = 82.0
-theme = ExtResource( 9 )
-text = "KEY_SELECT"
-flat = true
-
 [node name="IceCap02" type="VBoxContainer" parent="control"]
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -547,3 +523,14 @@ theme = ExtResource( 9 )
 text = "KEY_SELECT"
 flat = true
 
+[connection signal="pressed" from="control/JungleRuins02/select7" to="." method="_on_select7_pressed"]
+[connection signal="pressed" from="control/Hill01/select10" to="." method="_on_select10_pressed"]
+[connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="control/Hill02/select9" to="." method="_on_select9_pressed"]
+[connection signal="pressed" from="control/JungleRuins03/select8" to="." method="_on_select8_pressed"]
+[connection signal="pressed" from="control/JungleRuins01/select6" to="." method="_on_select6_pressed"]
+[connection signal="pressed" from="control/IceCap03/select5" to="." method="_on_select5_pressed"]
+[connection signal="pressed" from="control/IceCap01/select3" to="." method="_on_select3_pressed"]
+[connection signal="pressed" from="control/PixelZone02/select2" to="." method="_on_select2_pressed"]
+[connection signal="pressed" from="control/IceCap02/select4" to="." method="_on_select4_pressed"]
+[connection signal="pressed" from="control/Hill03/select15" to="." method="_on_select15_pressed"]

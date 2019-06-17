@@ -1,16 +1,6 @@
 extends Area2D
 
 var taken=false
-
-func _on_coin_body_enter(body):
-	if body.name == "Player":
-		get_node("/root/game_state").points += 1
-		get_node("/root/game_state").points_temp +=1
-		get_node("/root/game_experience").points += 1
-		$anim.play("taken")
-		taken = true
-		game_state._save()
-	
 	
 
 	
@@ -26,3 +16,14 @@ func save():
 		"pos_y" : get_position().y,
     }
     return save_dict
+
+
+func _on_coin_body_entered(body):
+	if body.name == "Player":
+		get_node("/root/game_state").points += 1
+		get_node("/root/game_state").points_temp +=1
+		get_node("/root/game_experience").points += 1
+		$anim.play("taken")
+		taken = true
+		game_state._save()
+	

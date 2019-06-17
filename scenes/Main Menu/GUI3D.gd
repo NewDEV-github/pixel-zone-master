@@ -7,7 +7,7 @@ func _on_Play_pressed():
 	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
 		background_load.load_scene("res://scenes/stages/tutorial.tscn")
 func _ready():
-	get_node("Control/control/3D").show()
+	
 func _on_Quit_pressed():
 	get_tree().quit()
 	

@@ -3,20 +3,6 @@ var master_bus
 var music_bus
 var sfx_bus
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-#func _process(delta):
-#	_save()
-#func _load():
-#	var load_ = File.new()
-#	load_.open(str(documents) +"/Pixel Zone/.data/settings_audio_master.save", File.READ)
-#	var loaded_volume = parse_json(load_.get_line())
-#	$VolumeBar.set_value(str(loaded_volume))
-#	load_.open(str(documents) +"/Pixel Zone/.data/settings_audio_music.save", File.READ)
-#	var loaded_music = parse_json(load_.get_line())
-#	$MusicBar.set_value(str(loaded_music))
-#	load_.open(str(documents) +"/Pixel Zone/.data/settings_audio_sfxr.save", File.READ)
-#	var loaded_sfx = parse_json(load_.get_line())
-#	$SFXBar.set_value(str(loaded_sfx))
-#func _save():
 #	var save = File.new()
 #	save.open(str(documents) +"/Pixel Zone/.data/settings_audio_master.save", File.WRITE)
 #	save.store_line(to_json($VolumeBar.value))
@@ -28,7 +14,7 @@ var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _ready():
 #	_load()
 	master_bus = AudioServer.get_bus_index("Master")
-	music_bus = AudioServer.get_bus_index("Music")
+	music_bus = AudioServer.get_bus_index("Music") #and AudioServer.get_bus_index("Custom")
 	sfx_bus = AudioServer.get_bus_index("SFX")
 	
 	set_controls_for_bus(
