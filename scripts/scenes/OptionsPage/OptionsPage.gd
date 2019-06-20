@@ -59,11 +59,21 @@ func _on_French_pressed():
 
 
 func _on_MenuButton_pressed():
-	$"TabContainer/Graphics & Audio/FileDialog".popup_centered()
+	$"TabContainer/Graphics & Audio/WindowDialog".popup_centered()
 
-
-func _on_FileDialog_file_selected(path):
-	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)
+func _on_ItemList_item_selected(index):
+	var path
+	if index == 0:
+		path = "res://sounds/music.ogg"
+	if index == 1:
+		path = "res://sounds/jungle_ruins.ogg"
+	if index == 2:
+		path = "res://sounds/brazil-fast.ogg"
+	if index == 3:
+		path = 'res://sounds/levels/Ice_Cap_Adventure/Ice_Cap_Adventure.ogg'
+	if index == 4:
+		path = "res://sounds/Audio/musics/sky_sanctuary_zone.ogg"
 	AudioServer.set_bus_mute(1, true)
 	$Custom_Music.set_stream(load(path))
 	$Custom_Music.play()
+	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)

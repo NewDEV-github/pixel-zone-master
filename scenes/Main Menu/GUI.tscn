@@ -185,7 +185,6 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0
-
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]

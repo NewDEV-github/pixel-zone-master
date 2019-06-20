@@ -12,8 +12,6 @@
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=11]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76.9692, 359 )
 
@@ -244,6 +242,5 @@ position = Vector2( 7251.09, 1351.03 )
 
 [node name="coin39" parent="coins" instance=ExtResource( 11 )]
 position = Vector2( 8921.72, 971.344 )
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
