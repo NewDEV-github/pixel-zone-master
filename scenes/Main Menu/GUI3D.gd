@@ -6,8 +6,6 @@ func _on_Play_pressed():
 		$AnimationTree.play("new")
 	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
 		background_load.load_scene("res://scenes/stages/tutorial.tscn")
-func _ready():
-	
 func _on_Quit_pressed():
 	get_tree().quit()
 	

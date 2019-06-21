@@ -91,7 +91,7 @@ modules="org/godotengine/godot/GodotAdMob"
 [application]
 
 config/name="Pixel Zone"
-run/main_scene="res://scenes/intro.tscn"
+run/main_scene="res://scenes/intro_low_size.tscn"
 config/icon="res://icon.png"
 boot_splash/application/name_pl=""
 boot_splash/application/name_en=""

@@ -6,13 +6,14 @@
 [ext_resource path="res://textures/saving.png" type="Texture" id=4]
 [ext_resource path="res://animations/saving.tres" type="Animation" id=5]
 
-
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
@@ -39,13 +40,17 @@ margin_right = 23.0
 custom_fonts/font = ExtResource( 3 )
 text = "OK"
 flat = true
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 509.625, 519.751 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "saving"
 anims/saving = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 514.125, 529.875 )
+rotation = 0.870631
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

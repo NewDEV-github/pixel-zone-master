@@ -8,6 +8,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel2" type="Panel" parent="."]
 modulate = Color( 0.768627, 0.768627, 0.768627, 1 )
@@ -29,6 +32,12 @@ margin_bottom = 253.0
 margin_left = 375.0
 margin_right = 1026.0
 margin_bottom = 251.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 372.75
+margin_top = 252.0
+margin_right = 1023.75
+margin_bottom = 503.0
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 1.0
@@ -77,7 +86,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "KEY_UPDATE"
 align = 1
 valign = 1
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]

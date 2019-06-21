@@ -8,8 +8,6 @@ func _on_Save():
 		var save_dict = {
 			"filename" : get_filename(),
 			"parent" : get_parent().get_path(),
-			"pos_x" : get_position().x, # Vector2 is not supported by JSON
-			"pos_y" : get_position().y,
 		}
 		return
 	save_game.close()
