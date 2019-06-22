@@ -6,7 +6,7 @@ var downloads = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
 var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 func _on_AnimationPlayer_animation_finished(intro_new):
-	background_load.load_scene("res://scenes/AutoSaveNotification.tscn")
+	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func _load():
 	var load_ = File.new()
 	load_.open(str(documents) +"/Pixel Zone/.data/lang.save", File.READ)

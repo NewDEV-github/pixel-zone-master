@@ -5,7 +5,8 @@ var thread = null
 onready var progress = $progress
 
 var SIMULATED_DELAY_SEC = 1.0
-
+func _ready():
+	progress.hide()
 func _thread_load(path):
 	var ril = ResourceLoader.load_interactive(path)
 	assert(ril)
@@ -54,13 +55,13 @@ func _thread_done(resource):
 	# Set as current scene
 	get_tree().current_scene = new_scene
 	
-	progress.visible = false
+	progress.hide()
 
 func load_scene(path):
 	
 	thread = Thread.new()
 	thread.start( self, "_thread_load", path)
 	raise() # show on top
-	progress.visible = true
+	progress.show()
 
 	

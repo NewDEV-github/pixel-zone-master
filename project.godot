@@ -84,19 +84,11 @@ _global_script_class_icons={
 "PlayerPhysics": ""
 }
 
-[android]
-
-modules="org/godotengine/godot/GodotAdMob"
-
 [application]
 
 config/name="Pixel Zone"
 run/main_scene="res://scenes/intro_low_size.tscn"
 config/icon="res://icon.png"
-boot_splash/application/name_pl=""
-boot_splash/application/name_en=""
-boot_splash/name_en=""
-boot_splash/name_pl=""
 
 [autoload]
 

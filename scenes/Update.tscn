@@ -86,6 +86,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "KEY_UPDATE"
 align = 1
 valign = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]

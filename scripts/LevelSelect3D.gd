@@ -78,9 +78,5 @@ func _on_select10_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_1.tscn")
 
 
-func _on_3D_pressed():
-	$WindowDialog3.popup_centered()
-
-
 func _on_select15_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_3.tscn")

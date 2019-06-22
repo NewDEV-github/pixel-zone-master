@@ -3,8 +3,8 @@
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/AutoSaveNotification.gd" type="Script" id=2]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
-[ext_resource path="res://textures/saving.png" type="Texture" id=4]
-[ext_resource path="res://animations/saving.tres" type="Animation" id=5]
+[ext_resource path="res://animations/saving.tres" type="Animation" id=4]
+[ext_resource path="res://textures/saving.png" type="Texture" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -46,11 +46,17 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "saving"
-anims/saving = ExtResource( 5 )
+anims/saving = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 514.125, 529.875 )
 rotation = 0.870631
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

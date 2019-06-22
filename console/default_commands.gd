@@ -22,6 +22,10 @@ func _init(console):
 	var alertCommand = Command.new('alert', alertRef, [], 'Simulate an alert.', ConsoleRights.CallRights.USER)
 	console.add_command(alertCommand)
 	
+	var loginRef = CommandRef.new(self, "login", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var loginCommand = Command.new('login', loginRef, [], '???.... ???? ', ConsoleRights.CallRights.USER)
+	console.add_command(loginCommand)
+	
 	var surveyRef = CommandRef.new(self, "survey", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var surveyCommand = Command.new('survey', surveyRef, [], 'Brings You to a survey', ConsoleRights.CallRights.USER)
 	console.add_command(surveyCommand)
@@ -300,6 +304,9 @@ func man(input : Array):
 	
 	_consoleRef.append_message_no_event("[color=red]Couldn't find command '%s'[/color]" % command, false)
 		
+signal login
+func login(input: Array):
+	DebugConsole._login()
 func survey(input : Array):
 	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSclaofaWGhmlo3co5-j6T5MwdtQfMX4oJqIarXg8tAPVzyPnA/viewform")
 func update(input : Array):

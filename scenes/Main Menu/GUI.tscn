@@ -185,6 +185,11 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
@@ -196,3 +201,4 @@ margin_right = 12.0
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSlector_file_selected"]
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

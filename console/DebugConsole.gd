@@ -14,7 +14,9 @@ func error(msg, addToLog = true):
 
 func warn(msg, addToLog = true):
 	$console.warn(msg, addToLog)
-
+signal login
+func _login():
+	emit_signal("login")
 func success(msg, addToLog = true):
 	$console.success(msg, addToLog)
 

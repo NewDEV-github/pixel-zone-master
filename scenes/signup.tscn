@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/signup.gd" type="Script" id=1]
+
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -169.5
+margin_top = -111.5
+margin_right = 173.5
+margin_bottom = 109.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -145.0
+
+[node name="name" type="LineEdit" parent="Panel/VBoxContainer"]
+margin_right = 343.0
+margin_bottom = 24.0
+placeholder_text = "UserName"
+
+[node name="password" type="LineEdit" parent="Panel/VBoxContainer"]
+margin_top = 28.0
+margin_right = 343.0
+margin_bottom = 52.0
+placeholder_text = "Password"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 56.0
+margin_right = 343.0
+margin_bottom = 76.0
+text = "Sign Up"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 115.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+margin_right = 24.0
+margin_bottom = 14.0
+text = "Our"
+
+[node name="LinkButton" type="LinkButton" parent="Panel/HBoxContainer"]
+margin_left = 28.0
+margin_right = 115.0
+margin_bottom = 14.0
+text = "Privacy Policy"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LinkButton" to="." method="_on_LinkButton_pressed"]

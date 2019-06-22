@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://dlcs/multi/lobby.gd" type="Script" id=2]
+[ext_resource path="res://scripts/log_in.gd" type="Script" id=3]
 
 [node name="lobby" type="Control"]
 anchor_right = 1.0
@@ -68,6 +69,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+
+[node name="Button" type="Button" parent="connect"]
+visible = false
+margin_right = 75.0
+margin_bottom = 39.0
+text = "Login"
 
 [node name="name_label" type="Label" parent="connect"]
 margin_left = 329.0
@@ -170,8 +177,129 @@ margin_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 window_title = "Alert!"
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="Control"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control2" type="Control" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 343.0
+margin_top = 189.0
+margin_right = 585.0
+margin_bottom = 274.0
+
+[node name="name" type="LineEdit" parent="Control/Control2/VBoxContainer"]
+margin_right = 282.0
+margin_bottom = 39.0
+placeholder_text = "UserName"
+
+[node name="password" type="LineEdit" parent="Control/Control2/VBoxContainer"]
+margin_top = 43.0
+margin_right = 282.0
+margin_bottom = 82.0
+secret = true
+placeholder_text = "Password"
+
+[node name="signup" type="Button" parent="Control/Control2/VBoxContainer"]
+margin_top = 86.0
+margin_right = 282.0
+margin_bottom = 125.0
+text = "Sign Up"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 342.5
+margin_top = 330.5
+margin_right = 569.5
+margin_bottom = 369.5
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Control2/HBoxContainer"]
+margin_right = 52.0
+margin_bottom = 39.0
+text = "Our"
+
+[node name="LinkButton" type="LinkButton" parent="Control/Control2/HBoxContainer"]
+margin_left = 56.0
+margin_right = 227.0
+margin_bottom = 39.0
+text = "Privacy Policy"
+
+[node name="Control" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -127.0
+margin_right = 184.0
+margin_bottom = 127.0
+
+[node name="username" type="LineEdit" parent="Control/Control/HBoxContainer"]
+margin_right = 368.0
+margin_bottom = 39.0
+max_length = 100
+placeholder_text = "Username"
+
+[node name="password" type="LineEdit" parent="Control/Control/HBoxContainer"]
+margin_top = 43.0
+margin_right = 368.0
+margin_bottom = 82.0
+max_length = 100
+secret = true
+placeholder_text = "Password"
+
+[node name="Button2" type="Button" parent="Control/Control/HBoxContainer"]
+margin_top = 86.0
+margin_right = 368.0
+margin_bottom = 125.0
+text = "Login"
+
+[node name="Button3" type="Button" parent="Control/Control/HBoxContainer"]
+margin_top = 129.0
+margin_right = 368.0
+margin_bottom = 168.0
+text = "Sign Up"
+
+[node name="Button" type="Button" parent="Control/Control/HBoxContainer"]
+margin_top = 172.0
+margin_right = 368.0
+margin_bottom = 211.0
+text = "Back"
+
+[node name="Label" type="Label" parent="Control/Control/HBoxContainer"]
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 215.0
+margin_right = 368.0
+margin_bottom = 254.0
+
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="players/back3" to="." method="_on_back3_pressed"]
+[connection signal="pressed" from="connect/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="connect/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/Control2/VBoxContainer/signup" to="." method="_on_signup_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button2" to="Control" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button3" to="Control" method="_on_Button3_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button" to="Control" method="_on_Button_pressed"]

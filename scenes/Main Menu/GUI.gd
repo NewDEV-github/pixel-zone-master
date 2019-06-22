@@ -8,9 +8,11 @@ var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 
 func _on_Play_pressed():
 	var exists = File.new()
-	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
+	exists.open(str(documents) + "/Pixel Zone/.data/tut.save", File.READ)
+	var data = parse_json(exists.get_line())
+	if data == "46 61 6c 73 65":
 		background_load.load_scene("res://scenes/stages/tutorial.tscn")
-	if exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
+	if data == "54 72 75 65":
 		$AnimationPlayer.play("new")
 
 func _on_Quit_pressed():
@@ -76,3 +78,7 @@ func _on_Update_pressed():
 
 func _on_VScrollBar_value_changed(value):
 	$Control.set_position(Vector2(0, -(value*10)))
+
+
+func _on_Timer_timeout():
+	_on_Play_pressed()
