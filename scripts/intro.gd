@@ -27,23 +27,34 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	var documents_dir = Directory.new()
+	if not documents_dir.dir_exists(str(documents)+ "/Pixel Zone/.data"):
+		documents_dir.open(str(documents)+ "/")
+		documents_dir.make_dir("Pixel Zone")
+		documents_dir.open(str(documents)+ "/Pixel Zone")
+		documents_dir.make_dir(".data")
+		documents_dir.open(str(documents)+ "/Pixel Zone/.data")
+		documents_dir.make_dir("settings")
+		documents_dir.make_dir("updates")
+		documents_dir.open(str(documents)+ "/Pixel Zone/.data/updates")
+		documents_dir.make_dir("config")
+	if not documents_dir.dir_exists("user://logs/"):
+		documents_dir.open('user://')
+		documents_dir.make_dir('logs')
 	_load()
 	var update = File.new()
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/update.pck"):
 		ProjectSettings.load_resource_pack(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	if not update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		update.open(str(documents) + "/Pixel Zone/.data/updates/config/config.ini", File.WRITE)
-		var save_nodes = get_tree().get_nodes_in_group("config")
-		for i in save_nodes:
-			var node_data = i.call("save");
-			update.store_line(to_json(node_data))
+		update.store_line(to_json(""))
 		update.close()
 	var dlc = File.new()
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		return
 func _on_Skip_pressed():
 	$AnimationPlayer.stop()
-	get_tree().change_scene("res://scenes/AutoSaveNotification.tscn")
+	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():
     var save_dict = {
         "filename" : get_filename(),

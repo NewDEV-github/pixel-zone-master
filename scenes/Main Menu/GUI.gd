@@ -7,13 +7,7 @@ var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 
 func _on_Play_pressed():
-	var exists = File.new()
-	exists.open(str(documents) + "/Pixel Zone/.data/tut.save", File.READ)
-	var data = parse_json(exists.get_line())
-	if data == "46 61 6c 73 65":
-		background_load.load_scene("res://scenes/stages/tutorial.tscn")
-	if data == "54 72 75 65":
-		$AnimationPlayer.play("new")
+	$AnimationPlayer.play("new")
 
 func _on_Quit_pressed():
 	get_tree().quit()

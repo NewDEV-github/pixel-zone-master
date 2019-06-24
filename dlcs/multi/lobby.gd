@@ -94,15 +94,8 @@ var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 
 
 func _on_signup_pressed():
-	var config = File.new()
-	var config2 = File.new()
-	var config3 = File.new()
-	config.open(str(documents)  + "/Pixel Zone/.data/user_name.save", File.WRITE)
-	config.store_line(str($Control/Control2/VBoxContainer/name.text))
-	config.close()
-	config2.open(str(documents)  + "/Pixel Zone/.data/user_pass.save", File.WRITE)
-	config2.store_line(str($Control/Control2/VBoxContainer/password.text))
-	config2.close()
-	config2.open(str(documents)  + "/Pixel Zone/.data/user_config.save", File.WRITE)
+	var email = $Control/Control2/VBoxContainer/email.text
+	var password = $Control/Control2/VBoxContainer/password.text
+	Firebase.Auth.signup_with_email_and_password(email, password)
 	$Control/Control2.hide()
 	$Control/Control.show()

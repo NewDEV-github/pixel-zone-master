@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -22,9 +22,8 @@
 [ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
 [ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
-
-
-
+[ext_resource path="res://MainTheme.tres" type="Theme" id=23]
+[ext_resource path="res://addons/GDFirebase/FirebaseVBoxContainer.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -585,6 +584,7 @@ margin_right = 42.8704
 margin_bottom = 33.8519
 
 [node name="Control" type="Control" parent="ui"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 10 )
@@ -703,9 +703,54 @@ text = "Achievement Unlocked!"
 align = 1
 valign = 1
 
+[node name="ChatControl" type="Control" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.000732422
+margin_top = -4.5
+margin_right = -702.001
+margin_bottom = -4.5
+theme = ExtResource( 23 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/ChatControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 123.75
+margin_right = 702.0
+margin_bottom = -47.2501
+rect_scale = Vector2( 0.3, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ui/ChatControl/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 1024, 400 )
+scroll_horizontal_enabled = false
+
+[node name="Chat" type="VBoxContainer" parent="ui/ChatControl/VBoxContainer/ScrollContainer" instance=ExtResource( 24 )]
+margin_left = 512.0
+margin_right = 512.0
+grow_vertical = 0
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="SubmitText" type="LineEdit" parent="ui/ChatControl/VBoxContainer"]
+margin_top = 404.0
+margin_right = 1024.0
+margin_bottom = 416.0
+placeholder_text = "Chat text"
+
+[node name="SubmitButton" type="Button" parent="ui/ChatControl/VBoxContainer"]
+margin_top = 420.0
+margin_right = 1024.0
+margin_bottom = 428.0
+text = "Submit"
+
+[node name="Tween" type="Tween" parent="ui/ChatControl"]
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
+[connection signal="pressed" from="ui/ChatControl/VBoxContainer/SubmitButton" to="ui/ChatControl" method="_on_SubmitButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

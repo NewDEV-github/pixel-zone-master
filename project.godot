@@ -49,6 +49,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://console/default_commands.gd"
 }, {
+"base": "Resource",
+"class": "FirebaseResource",
+"language": "GDScript",
+"path": "res://addons/GDFirebase/FirebaseResource.gd"
+}, {
+"base": "HTTPRequest",
+"class": "FirebaseStorage",
+"language": "GDScript",
+"path": "res://addons/GDFirebase/FirebaseStorage.gd"
+}, {
+"base": "Reference",
+"class": "FirebaseUserData",
+"language": "GDScript",
+"path": "res://addons/GDFirebase/FirebaseUserData.gd"
+}, {
 "base": "Panel",
 "class": "Options_Page",
 "language": "GDScript",
@@ -78,6 +93,9 @@ _global_script_class_icons={
 "ConsoleRights": "",
 "ConsoleUser": "",
 "DefaultCommands": "",
+"FirebaseResource": "",
+"FirebaseStorage": "",
+"FirebaseUserData": "",
 "Options_Page": "",
 "Pause_Menu": "",
 "PlayerCamera": "",
@@ -106,6 +124,7 @@ DebugConsole="*res://console/DebugConsole.tscn"
 save_load="*res://scenes/save_load.tscn"
 current_player="*res://globals/game_level.gd"
 game_health="*res://globals/game_health.gd"
+Firebase="*res://addons/GDFirebase/Firebase.gd"
 
 [compression]
 
@@ -128,7 +147,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "zylann.project_stats" )
+enabled=PoolStringArray( "GDFirebase", "zylann.project_stats" )
 
 [gdnative]
 
@@ -234,9 +253,6 @@ jump={
 shoot={
 "deadzone": 0.0,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
 speed={
