@@ -408,18 +408,20 @@ func set_default_text_color(color : Color):
 	$offset/richTextLabel.set("custom_colors/default_color", color)
 	$offset/lineEdit.set("custom_colors/font_color", color)
 	
-
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func toggle_console() -> void:
 	if isShown:
 		hide()
 	else:
-		show()
-		$offset/animation.playback_speed = 1.0
-		play_animation()
-		$offset/lineEdit.grab_focus()
-		
-	isShown = !isShown
-
+		var debug_mode = File.new()
+		debug_mode.open(str(documents) + "/Pixel Zone/Game_Settings.dll", File.READ)
+		var setting = debug_mode.get_line()
+		if setting == "console = 1":
+			show()
+			$offset/animation.playback_speed = 1
+			play_animation()
+			$offset/lineEdit.grab_focus()
+			isShown = !isShown
 
 func get_last_message() -> String:
 	return messages.back()

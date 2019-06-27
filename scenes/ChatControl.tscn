@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://themes/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ChatControl.gd" type="Script" id=2]
 [ext_resource path="res://addons/GDFirebase/FirebaseVBoxContainer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/ChatContainer.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ChatBox.tscn" type="PackedScene" id=5]
+
 
 [node name="ChatControl" type="Control"]
 anchor_right = 1.0

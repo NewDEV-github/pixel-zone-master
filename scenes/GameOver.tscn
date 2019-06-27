@@ -1,11 +1,62 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 
-
+[sub_resource type="Animation" id=1]
+resource_name = "game_over"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel/HBoxContainer/Button2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Panel/HBoxContainer/Button:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Control" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -25,6 +76,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Game Over"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -35,19 +87,22 @@ margin_right = 107.0
 margin_bottom = 20.0
 
 [node name="Button2" type="Button" parent="Panel/HBoxContainer"]
-margin_right = 239.0
+margin_right = 229.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_PLAY_AWAY"
 flat = true
 
 [node name="Button" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 243.0
-margin_right = 377.0
+margin_left = 233.0
+margin_right = 363.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Quit"
 flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/game_over = SubResource( 1 )
 
 [connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/hill/hill_3.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/stages/loops/FullLoop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/Audio/musics/sky_sanctuary_zone.ogg" type="AudioStream" id=5]
 [ext_resource path="res://titles/tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://titles/tile_set.tres" type="TileSet" id=7]
 [ext_resource path="res://scenes/stages/loops/loop_part.res" type="PackedScene" id=8]
-[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/parallax_bg4.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=11]
 
@@ -21,7 +21,7 @@ extents = Vector2( 3213.77, 170.453 )
 [node name="main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="PlayerCamera" parent="." instance=ExtResource( 9 )]
+[node name="PlayerCamera" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
@@ -75,7 +75,7 @@ scale = Vector2( -1.5, 1.1 )
 position = Vector2( 5059.74, 1308.91 )
 scale = Vector2( 1.5, -1.1 )
 
-[node name="enemy" parent="." instance=ExtResource( 2 )]
+[node name="enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2145.94, 384.469 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -320,31 +320,32 @@ position = Vector2( 9319.5, 1019.25 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 465.75, 678.376 )
 
-[node name="enemy2" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy2" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 1989.56, 663.188 )
 
-[node name="enemy3" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy3" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 3179.25, 582.188 )
 
-[node name="enemy4" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy4" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 4090.5, 1377 )
 
-[node name="enemy5" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy5" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 5123.25, 966.939 )
 
-[node name="enemy6" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy6" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 5690.26, 810.001 )
 
-[node name="enemy7" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy7" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 5609.26, 1215 )
 
-[node name="enemy8" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy8" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 7755.76, 1134 )
 
-[node name="enemy9" parent="enemies" instance=ExtResource( 2 )]
+[node name="enemy9" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 9709.88, 1301.06 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

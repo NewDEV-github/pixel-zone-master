@@ -22,8 +22,9 @@
 [ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
 [ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
-[ext_resource path="res://MainTheme.tres" type="Theme" id=23]
+[ext_resource path="res://themes/MainTheme.tres" type="Theme" id=23]
 [ext_resource path="res://addons/GDFirebase/FirebaseVBoxContainer.tscn" type="PackedScene" id=24]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836

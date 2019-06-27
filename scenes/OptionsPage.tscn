@@ -89,8 +89,6 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -103,10 +101,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -268.5
-margin_top = -276.5
-margin_right = 289.5
-margin_bottom = 278.5
+margin_left = -279.0
+margin_top = -159.0
+margin_right = 279.0
+margin_bottom = 159.0
 
 [node name="Label" type="Label" parent="TabContainer/Theme/VBoxContainer"]
 margin_right = 558.0
@@ -124,6 +122,7 @@ margin_bottom = 82.0
 text = "Apply to Game's UI, not only of User's UI"
 
 [node name="Yellow" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+visible = false
 margin_top = 35.0
 margin_right = 558.0
 margin_bottom = 72.0
@@ -131,37 +130,37 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Yellow"
 
 [node name="Neon" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 76.0
+margin_top = 35.0
 margin_right = 558.0
-margin_bottom = 113.0
+margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Neon"
 
 [node name="Alien" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 117.0
+margin_top = 76.0
 margin_right = 558.0
-margin_bottom = 154.0
+margin_bottom = 113.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Alien"
 
 [node name="Light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 158.0
+margin_top = 117.0
 margin_right = 558.0
-margin_bottom = 195.0
+margin_bottom = 154.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Light"
 
 [node name="Solarized_dark" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 199.0
+margin_top = 158.0
 margin_right = 558.0
-margin_bottom = 236.0
+margin_bottom = 195.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_dark"
 
 [node name="Solarized_light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 240.0
+margin_top = 199.0
 margin_right = 558.0
-margin_bottom = 277.0
+margin_bottom = 236.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_light"
 
@@ -174,6 +173,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Custom Theme"
 
 [node name="Red" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+visible = false
 margin_top = 281.0
 margin_right = 558.0
 margin_bottom = 318.0
@@ -181,6 +181,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Red"
 
 [node name="Green" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+visible = false
 margin_top = 322.0
 margin_right = 558.0
 margin_bottom = 359.0
@@ -188,6 +189,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Green"
 
 [node name="Blue" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+visible = false
 margin_top = 363.0
 margin_right = 558.0
 margin_bottom = 400.0
@@ -195,16 +197,16 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Blue"
 
 [node name="Default" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 404.0
+margin_top = 240.0
 margin_right = 558.0
-margin_bottom = 441.0
+margin_bottom = 277.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Default"
 
 [node name="Old" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 445.0
+margin_top = 281.0
 margin_right = 558.0
-margin_bottom = 482.0
+margin_bottom = 318.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Old"
 
@@ -293,6 +295,7 @@ margin_right = 80.4999
 margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -685,6 +688,7 @@ autoplay = true
 bus = "Custom Music"
 script = ExtResource( 16 )
 id = "Level"
+
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/ApplyButton3" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Englisch" to="." method="_on_Englisch_pressed"]
