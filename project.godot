@@ -124,9 +124,9 @@ DebugConsole="*res://console/DebugConsole.tscn"
 save_load="*res://scenes/save_load.tscn"
 current_player="*res://globals/game_level.gd"
 game_health="*res://globals/game_health.gd"
-Firebase="*res://addons/GDFirebase/Firebase.gd"
 GameOver="*res://scripts/GameOver.gd"
 GameOver_scene="*res://scenes/GameOver.tscn"
+Firebase="*res://addons/GDFirebase/Firebase.gd"
 
 [compression]
 

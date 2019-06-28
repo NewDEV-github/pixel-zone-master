@@ -307,7 +307,7 @@ func man(input : Array):
 signal login
 func login(input: Array):
 	DebugConsole._login()
-func survey(input : Array):
+func survery(input : Array):
 	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSclaofaWGhmlo3co5-j6T5MwdtQfMX4oJqIarXg8tAPVzyPnA/viewform")
 func update(input : Array):
 	background_load.load_scene("res://scenes/Update.tscn")
