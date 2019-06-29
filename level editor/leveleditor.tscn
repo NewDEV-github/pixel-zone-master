@@ -2,7 +2,6 @@
 
 [ext_resource path="res://level editor/LevelEditor.gd" type="Script" id=1]
 
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,34 +14,36 @@ format = 1
 margin_right = 157.0
 margin_bottom = 603.0
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Panel"]
 margin_right = 89.0
 margin_bottom = 20.0
 text = "Pick a tile"
 
-[node name="weigth" type="LineEdit" parent="."]
+[node name="weigth" type="LineEdit" parent="Panel"]
 margin_left = 9.0
 margin_top = 63.0
 margin_right = 67.0
 margin_bottom = 87.0
+placeholder_text = "Weigth"
 
-[node name="heigth" type="LineEdit" parent="."]
+[node name="heigth" type="LineEdit" parent="Panel"]
 margin_left = 13.5
 margin_top = 105.75
 margin_right = 71.5
 margin_bottom = 129.75
+placeholder_text = "Heigth"
 
-[node name="Control" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 160.0
-
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="Panel"]
 margin_left = 6.0
 margin_top = 27.0
 margin_right = 108.0
 margin_bottom = 47.0
 text = "save"
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]

@@ -72,8 +72,9 @@ func _on_ItemList_item_selected(index):
 	if index == 3:
 		path = 'res://sounds/levels/Ice_Cap_Adventure/Ice_Cap_Adventure.ogg'
 	if index == 4:
-		path = "res://sounds/Audio/musics/sky_sanctuary_zone.ogg"
+		path = "res://sounds/Hill.ogg"
 	AudioServer.set_bus_mute(1, true)
 	$Custom_Music.set_stream(load(path))
 	$Custom_Music.play()
 	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)
+	$"TabContainer/Graphics & Audio/WindowDialog".hide()

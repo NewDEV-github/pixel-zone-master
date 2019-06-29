@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/stages/loops/FullLoop.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sounds/Audio/musics/sky_sanctuary_zone.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/Hill.ogg" type="AudioStream" id=5]
 [ext_resource path="res://titles/tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://titles/tile_set.tres" type="TileSet" id=7]
 [ext_resource path="res://scenes/stages/loops/loop_part.res" type="PackedScene" id=8]
@@ -242,5 +242,6 @@ position = Vector2( 7251.09, 1351.03 )
 
 [node name="coin39" parent="coins" instance=ExtResource( 11 )]
 position = Vector2( 8921.72, 971.344 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

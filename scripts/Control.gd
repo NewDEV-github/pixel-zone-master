@@ -7,10 +7,13 @@ func _ready():
 func print_log():
 	var b = File.new()
 	b.open("user://logs/"+ str(OS.get_unix_time()) + ".log", File.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	for i in save_nodes:
-		var node_data = i.call("save");
-		b.store_line(to_json(node_data))
+	b.store_line("Number of log : " + str(OS.get_unix_time()) + ' \n Process ID : ' +str(OS.get_process_id())+ " \nTextures (by size) : " + str(OS.print_all_textures_by_size()) + " \nUsed Resources : "+ str(OS.print_resources_in_use()) + " \nThe number of processor cores : " + str(OS.get_processor_count()) + " \nThe nuber of audio drivers : " + str(OS.get_audio_driver_count()) + " \nStatic memory used : " + str(OS.get_static_memory_usage()) + " \nTime from starting the engine (seconds) : " +str(OS.get_ticks_msec()) +
+	" \nOperating System : "+str(OS.get_name()) +
+	" \nLocale : "+ str(OS.get_locale()) + 
+	" \nEnumeration : " + str($Label.text) +
+	" \nDate : " + str(OS.get_date()) +
+	" \nVideo Driver : " + str(OS.get_current_video_driver()) +
+	" \nDevice Type : " + str(OS.get_model_name()))
 	b.close()
 func error():
 	print_log()

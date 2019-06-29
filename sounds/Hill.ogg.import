@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Hill.ogg-bba0ce2984cef598efa306cf130b68bc.oggstr"
+
+[deps]
+
+source_file="res://sounds/Hill.ogg"
+dest_files=[ "res://.import/Hill.ogg-bba0ce2984cef598efa306cf130b68bc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
