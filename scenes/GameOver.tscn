@@ -56,7 +56,6 @@ tracks/3/keys = {
 }
 
 [node name="Control" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -102,6 +101,7 @@ text = "KEY_Quit"
 flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "game_over"
 anims/game_over = SubResource( 1 )
 
 [connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]

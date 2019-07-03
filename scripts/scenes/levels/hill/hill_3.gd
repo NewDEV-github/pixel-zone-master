@@ -14,4 +14,4 @@ func _ready():
 
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
-		GameOver._game_over()
+		get_tree().change_scene("res://scenes/GameOver.tscn")

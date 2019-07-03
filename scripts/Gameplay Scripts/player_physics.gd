@@ -52,6 +52,7 @@ var is_looking_down : bool
 var is_looking_up : bool
 
 func _ready():
+	
 	control_unlock_timer = control_unlock_time
 	$ui/Control/GameUI.connect("FPSHide", self, "Hide_fps")
 	$ui/Control/GameUI.connect("FPSShow", self, "Show_fps")
@@ -60,8 +61,7 @@ func Show_fps():
 func Hide_fps():
 	$ui/Control/fps.hide()
 func _process(delta):
-	if $ui/Control/ProgressBar.value == 0:
-		GameOver._game_over()
+	
 	Engine.get_frames_per_second()
 	$ui/Control/fps.set_text(str(Engine.get_frames_per_second()))
 	$ui/Coins.set_text(": " + str(game_state.points_temp))

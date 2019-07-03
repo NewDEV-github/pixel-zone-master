@@ -14,21 +14,9 @@ func _init(console):
 	var exitCommand = Command.new('exit',  exitRef, [], 'Closes the console.', ConsoleRights.CallRights.DEV)
 	console.add_command(exitCommand)
 	
-	var updateRef = CommandRef.new(self, "update", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var updateCommand = Command.new('update',  updateRef, [], 'Brings you to an update scene.', ConsoleRights.CallRights.DEV)
-	console.add_command(updateCommand)
-	
-	var alertRef = CommandRef.new(self, "alert", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var alertCommand = Command.new('alert', alertRef, [], 'Simulate an alert.', ConsoleRights.CallRights.USER)
-	console.add_command(alertCommand)
-	
-	var loginRef = CommandRef.new(self, "login", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var loginCommand = Command.new('login', loginRef, [], '???.... ???? ', ConsoleRights.CallRights.USER)
-	console.add_command(loginCommand)
-	
-	var surveyRef = CommandRef.new(self, "survey", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var surveyCommand = Command.new('survey', surveyRef, [], 'Brings You to a survey', ConsoleRights.CallRights.USER)
-	console.add_command(surveyCommand)
+	var ytRef = CommandRef.new(self, "yt", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var ytCommand = Command.new('yt',  ytRef, [], 'Brings You to my YouTube channel :) .', ConsoleRights.CallRights.DEV)
+	console.add_command(ytCommand)
 	
 	var clearRef = CommandRef.new(self, "clear", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var clearCommand = Command.new('clear', clearRef, [], 'Clears the console.', ConsoleRights.CallRights.USER)
@@ -41,10 +29,6 @@ func _init(console):
 	var helpRef = CommandRef.new(self, "help", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var helpCommand = Command.new('help', helpRef, [], 'shows all user defined commands.', ConsoleRights.CallRights.USER)
 	console.add_command(helpCommand)
-	
-	var aboutRef = CommandRef.new(self, "about", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
-	var aboutCommand = Command.new('about', aboutRef, [], 'shows info about game and its creators', ConsoleRights.CallRights.USER)
-	console.add_command(aboutCommand)
 	
 	var helpAllRef = CommandRef.new(self, "help_all", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var helpAllCommand = Command.new('helpAll', helpAllRef, [], 'shows all commands.', ConsoleRights.CallRights.USER)
@@ -152,7 +136,8 @@ func show_default_commands(_input : Array):
 func toggle_text_background(_input : Array):
 	_consoleRef.update_text_background(!_consoleRef.showTextBackground)
 
-
+func yt(input : Array):
+	OS.shell_open("https://www.youtube.com/channel/UC71U5GLMcpg5y6gKKhyQRLQ?view_as=subscriber")
 func set_console_size(input : Array):
 	_consoleRef.rect_size = Vector2(float(input[0]), float(input[1]))
 
@@ -182,6 +167,7 @@ func alias(input : Array):
 		command.get_ref().set_expected_arguments([command.get_ref().get_expected_arguments().size() - (input.size() - 2)])
 		
 	_consoleRef.add_command(command)
+	
 
 func set_default_text_color(input : Array):
 	if input.size() == 1:
@@ -199,9 +185,7 @@ func set_dock(input : Array):
 func set_theme(input : Array):
 	_consoleRef.update_theme(input[0])
 	
-func about(_input : Array):
-	_consoleRef.append_message(": That game was made only with hardware from Lenovo")
-	_consoleRef.new_line()
+
 func help_all(_input : Array):
 	_consoleRef.new_line()
 	for i in range(_consoleRef.commands.size()):
@@ -286,8 +270,7 @@ func clear(_input : Array):
 func exit(_input : Array):
 	_consoleRef.toggle_console()
 	
-func alert(input : Array):
-	log_file.error()
+	
 func man(input : Array):
 	var command = input[0]
 	
@@ -304,13 +287,7 @@ func man(input : Array):
 	
 	_consoleRef.append_message_no_event("[color=red]Couldn't find command '%s'[/color]" % command, false)
 		
-signal login
-func login(input: Array):
-	DebugConsole._login()
-func survery(input : Array):
-	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSclaofaWGhmlo3co5-j6T5MwdtQfMX4oJqIarXg8tAPVzyPnA/viewform")
-func update(input : Array):
-	background_load.load_scene("res://scenes/Update.tscn")
+	
 func help(_input : Array):
 	_consoleRef.new_line()
 	if _firstHelp:

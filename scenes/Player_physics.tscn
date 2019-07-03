@@ -318,6 +318,7 @@ script = ExtResource( 5 )
 script = ExtResource( 6 )
 
 [node name="Characters" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -4 )
 
 [node name="Sonic" type="Sprite" parent="Characters"]
@@ -366,6 +367,7 @@ frame = 5
 anims/InstaShield = SubResource( 14 )
 
 [node name="AudioPlayer" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="jump" type="AudioStreamPlayer" parent="AudioPlayer"]
@@ -480,7 +482,7 @@ visibility_mode = 1
 position = Vector2( 796.219, 490 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 27 )
-action = "speed"
+action = "ui_accept"
 visibility_mode = 1
 
 [node name="fire" type="TouchScreenButton" parent="ui/Control"]

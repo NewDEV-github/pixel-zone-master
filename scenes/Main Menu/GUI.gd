@@ -57,7 +57,7 @@ func _on_ImportMod_pressed():
 
 func _on_ModeSelect_file_selected(path):
 	ProjectSettings.load_resource_pack(path)
-	get_tree().change_scene("res://mod.tscn")
+	get_tree().reload_current_scene()
 	if FAILED:
 		log_file.error()
 
