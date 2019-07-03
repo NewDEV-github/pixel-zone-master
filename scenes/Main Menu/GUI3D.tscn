@@ -4,7 +4,7 @@
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=3]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=4]
-[ext_resource path="res://dlcs/3D/menu/menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/bullet_modified.tscn" type="PackedScene" id=5]
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
 [ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=7]
 
@@ -120,8 +120,6 @@ theme = ExtResource( 3 )
 window_title = "Configure Your Settings"
 
 [node name="main" parent="TextureRect/WindowDialog3" instance=ExtResource( 5 )]
-margin_top = -63.0
-margin_right = 20.0
 
 [node name="LicenseSelector" type="WindowDialog" parent="TextureRect"]
 anchor_left = 0.5
@@ -203,7 +201,6 @@ margin_right = 12.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/Licenses" to="." method="_on_Licenses_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="popup_hide" from="TextureRect/WindowDialog3" to="." method="_on_WindowDialog3_popup_hide"]
-[connection signal="warning" from="TextureRect/WindowDialog3/main" to="." method="_on_main_warning"]
 [connection signal="pressed" from="TextureRect/LicenseSelector/VBoxContainer/PP" to="." method="_on_PP_pressed"]
 [connection signal="file_selected" from="ModeSelect" to="." method="_on_ModeSelect_file_selected"]
 [connection signal="value_changed" from="Control/VScrollBar" to="." method="_on_VScrollBar_value_changed"]

@@ -26,6 +26,11 @@ func _init(console):
 	var manCommand = Command.new('man', manRef, [], 'shows command description.', ConsoleRights.CallRights.USER)
 	console.add_command(manCommand)
 	
+	var aboutRef = CommandRef.new(self, "about", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
+	var aboutCommand = Command.new('about', aboutRef, [], 'shows info about game.', ConsoleRights.CallRights.USER)
+	console.add_command(aboutCommand)
+	
+	
 	var helpRef = CommandRef.new(self, "help", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var helpCommand = Command.new('help', helpRef, [], 'shows all user defined commands.', ConsoleRights.CallRights.USER)
 	console.add_command(helpCommand)
@@ -135,7 +140,8 @@ func show_default_commands(_input : Array):
 
 func toggle_text_background(_input : Array):
 	_consoleRef.update_text_background(!_consoleRef.showTextBackground)
-
+func about(input : Array):
+	_consoleRef.append_message_no_event(": That game was made only with hardware from [color=white]LENOVO[/color]", false)
 func yt(input : Array):
 	OS.shell_open("https://www.youtube.com/channel/UC71U5GLMcpg5y6gKKhyQRLQ?view_as=subscriber")
 func set_console_size(input : Array):

@@ -1,11 +1,7 @@
 extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_Play_pressed():
-	var exists = File.new()
-	if exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
-		$AnimationTree.play("new")
-	if not exists.file_exists(str(documents) + "/Pixel Zone/.data/data1.data"):
-		background_load.load_scene("res://scenes/stages/tutorial.tscn")
+	background_load.load_scene("res://Control.tscn")
 func _on_Quit_pressed():
 	get_tree().quit()
 	

@@ -15,25 +15,25 @@ func _check():
 	var down = File.new()
 	down.open(str(documents) + "/Pixel Zone/.data/updates/version.save", File.READ)
 	var downloaded_version = parse_json(down.get_line())
-	if downloaded_version == "v0.7.2.0.8":
-		$ItemList.set_item_disabled(0, true)
 	if downloaded_version == "v0.7.2.0.9":
+		$ItemList.set_item_disabled(0, true)
+	if downloaded_version == "v0.7.2.1.0":
 		$ItemList.set_item_disabled(1, true)
 		$RichTextLabel.set_text("You have the nevest version of Pixel Zone")
 #add items to item list
 func _ready():
 	$RichTextLabel2.hide()
-	$ItemList.add_item("v0.7.2.0.9 - Current version")
+	$ItemList.add_item("v0.7.2.1.0 - Current version")
 	var config_updates = File.new()
 	if config_updates.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		$HTTPRequest5.set_download_file(str(documents) + "/Pixel Zone/.data/updates/version4.html")
-		$HTTPRequest5.request("https://github.com/MasterPolska123/pixel-zone-master/releases/tag/v0.7.2.0.9")
+		$HTTPRequest5.request("https://github.com/MasterPolska123/pixel-zone-master/releases/tag/v0.7.2.1.0")
 #get list of updates wich are able to download
 func _initialize():
 	var exists = File.new()
 	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version4.html") and exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		$ItemList.add_item("v0.7.2.0.9")
-		$RichTextLabel.add_text("\nDetected version v0.7.2.0.9 to download")
+		$ItemList.add_item("v0.7.2.1.0")
+		$RichTextLabel.add_text("\nDetected version v0.7.2.1.0 to download")
 	_check()
 #save name of downloaded version to file
 func _process(delta):
@@ -57,5 +57,5 @@ func _on_ItemList_item_selected(index):
 	if index == 0:
 		return
 	if index == 1:
-		version_to_download = "v0.7.2.0.9"
+		version_to_download = "v0.7.2.1.0"
 	$RichTextLabel.add_text("\nSelected version %s" % version_to_download)

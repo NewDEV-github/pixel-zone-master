@@ -5,7 +5,8 @@ var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
 var downloads = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
 var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
-
+var mod_path = ""
+var load_mod = "false"
 func _on_Play_pressed():
 	$AnimationPlayer.play("new")
 
@@ -32,6 +33,12 @@ func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
 	
 func _ready():
+	var mod = File.new()
+	var mod_path = File.new()
+	mod_path.open(str(documents) + "/Pixel Zone/.data/mod_path.save", File.READ)
+	var load_mod_path = mod_path.get_line()
+	ProjectSettings.load_resource_pack(load_mod_path)
+	get_tree().change_scene("res://mod.tscn")
 	$TextureRect/Label.hide()
 	var dlc = File.new()
 	if dlc.file_exists(str(OS.get_executable_path()) + ".data/3d.pck"):
@@ -52,14 +59,9 @@ func _on_close_pressed():
 
 
 func _on_ImportMod_pressed():
-	$ModSelector.popup_centered()
+	$ModSelector.popup()
+	$CheckBox.show()
 
-
-func _on_ModeSelect_file_selected(path):
-	ProjectSettings.load_resource_pack(path)
-	get_tree().reload_current_scene()
-	if FAILED:
-		log_file.error()
 
 
 func _on_WindowDialog3_about_to_show():
@@ -76,3 +78,19 @@ func _on_VScrollBar_value_changed(value):
 
 func _on_Timer_timeout():
 	_on_Play_pressed()
+
+func _on_ModSelector_file_selected(path):
+	var mod = File.new()
+	var mod_path = File.new()
+	if $CheckBox.pressed == true:
+		mod_path.open(str(documents) + "/Pixel Zone/.data/mod_path.save", File.WRITE)
+		mod_path.store_line(path)
+	ProjectSettings.load_resource_pack(path)
+	get_tree().change_scene("res://mod.tscn")
+
+func _on_ModSelector_popup_hide():
+	$CheckBox.hide()
+
+
+func _on_ModSelector_about_to_show():
+	$Timer.stop()
