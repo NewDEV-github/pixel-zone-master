@@ -26,8 +26,8 @@ func _on_PP_pressed():
 	$TextureRect/DownloadNot.popup_centered()
 	$TextureRect/Label.show()
 	globals.dlc_name == "3D DLC"
-	$HTTPRequest.set_download_file(str(OS.get_executable_path()) + ".data/3d.pck")
-	$HTTPRequest.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/v0.7.2.0.5/3d.pck")
+	$HTTPRequest.set_download_file("user://dlc_loops.pck")
+	$HTTPRequest.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/v0.7.2.1.0/dlc_loops.pck")
 
 func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
@@ -41,11 +41,9 @@ func _ready():
 	get_tree().change_scene("res://mod.tscn")
 	$TextureRect/Label.hide()
 	var dlc = File.new()
-	if dlc.file_exists(str(OS.get_executable_path()) + ".data/3d.pck"):
-		ProjectSettings.load_resource_pack(str(OS.get_executable_path()) + ".data/3d.pck")
-		get_tree().change_scene("res://scenes/Main Menu/GUI3D.tscn")
-		if FAILED:
-			log_file.error()
+	if dlc.file_exists("user://dlc_loops.pck"):
+		ProjectSettings.load_resource_pack("user://dlc_loops.pck")
+		get_tree().change_scene("res://scenes/Main Menu/GUI_loops.tscn")
 func _on_Play8_pressed():
 	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 

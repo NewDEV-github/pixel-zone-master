@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://textures/particle.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "game_over"
@@ -103,6 +104,11 @@ flat = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "game_over"
 anims/game_over = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 509.626, 313.875 )
+texture = ExtResource( 3 )
+texture_scale = 25.54
 
 [connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_Button_pressed"]

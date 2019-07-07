@@ -125,7 +125,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="LicenseSelector" type="WindowDialog" parent="TextureRect"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -149,7 +148,7 @@ margin_bottom = -5.625
 margin_right = 341.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 3 )
-text = "3D DLC"
+text = "Loops DLC"
 
 [node name="DownloadNot" type="AcceptDialog" parent="TextureRect"]
 margin_right = 565.0

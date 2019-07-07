@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/pixel_adventure/stage2.gd" type="Script" id=1]
 [ext_resource path="res://titles/pixel_adventure.tres" type="TileSet" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://scenes/parallax_bg.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sounds/music.ogg" type="AudioStream" id=6]
 [ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/players/player1/player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1797.06, 10 )
@@ -245,9 +244,7 @@ position = Vector2( 273.375, 106.313 )
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 117.375, 391.545 )
-
-[node name="PlayerCamera" parent="." instance=ExtResource( 9 )]
+position = Vector2( 84.375, 320.545 )
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/jungle_ruins/jungle_ruins01.gd" type="Script" id=1]
 [ext_resource path="res://titles/jungle_ruins_back.tres" type="TileSet" id=2]
@@ -7,10 +7,7 @@
 [ext_resource path="res://sounds/jungle_ruins.ogg" type="AudioStream" id=5]
 [ext_resource path="res://scenes/parallax_bg2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Player_physics.tscn" type="PackedScene" id=9]
-
-
+[ext_resource path="res://scenes/players/player1/player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 60 )
@@ -81,8 +78,7 @@ position = Vector2( 5480, 2500 )
 shape = SubResource( 2 )
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 8 )]
-position = Vector2( 245, 433.92 )
+position = Vector2( 249.5, 280.92 )
 
-[node name="Player" parent="." instance=ExtResource( 9 )]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
