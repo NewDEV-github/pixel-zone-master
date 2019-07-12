@@ -30,45 +30,45 @@ func _on_select9_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_2.tscn")
 func _process(delta):
 	var unlock = File.new()
-	if unlock.file_exists("user://2.save"):
+	if unlock.file_exists("user://2.save") or unlock.file_exists("user://dlc_loops/2.save"):
 		$control/PixelZone02/select2.set_disabled(false)
-	if not unlock.file_exists("user://2.save"):
+	if not unlock.file_exists("user://2.save") or unlock.file_exists("user://dlc_loops/2.save"):
 		$control/PixelZone02/select2.set_disabled(true)
-	if unlock.file_exists("user://3.save"):
+	if unlock.file_exists("user://3.save") or unlock.file_exists("user://dlc_loops/3.save"):
 		$control/IceCap01/select3.set_disabled(false)
-	if not unlock.file_exists("user://3.save"):
+	if not unlock.file_exists("user://3.save") or unlock.file_exists("user://dlc_loops/3.save"):
 		$control/IceCap01/select3.set_disabled(true)
-	if unlock.file_exists("user://4.save"):
+	if unlock.file_exists("user://4.save") or unlock.file_exists("user://dlc_loops/4.save"):
 		$control/IceCap02/select4.set_disabled(false)
-	if not unlock.file_exists("user://4.save"):
+	if not unlock.file_exists("user://4.save") or unlock.file_exists("user://dlc_loops/4.save"):
 		$control/IceCap02/select4.set_disabled(true)
-	if unlock.file_exists("user://5.save"):
+	if unlock.file_exists("user://5.save") or unlock.file_exists("user://dlc_loops/5.save"):
 		$control/IceCap03/select5.set_disabled(false)
-	if not unlock.file_exists("user://5.save"):
+	if not unlock.file_exists("user://5.save") or unlock.file_exists("user://dlc_loops/5.save"):
 		$control/IceCap03/select5.set_disabled(true)
-	if unlock.file_exists("user://6.save"):
+	if unlock.file_exists("user://6.save") or unlock.file_exists("user://dlc_loops/6.save"):
 		$control/JungleRuins01/select6.set_disabled(false)
-	if not unlock.file_exists("user://6.save"):
+	if not unlock.file_exists("user://6.save") or unlock.file_exists("user://dlc_loops/6.save"):
 		$control/JungleRuins01/select6.set_disabled(true)
-	if unlock.file_exists("user://7.save"):
+	if unlock.file_exists("user://7.save") or unlock.file_exists("user://dlc_loops/7.save"):
 		$control/JungleRuins02/select7.set_disabled(false)
-	if not unlock.file_exists("user://7.save"):
+	if not unlock.file_exists("user://7.save") or unlock.file_exists("user://dlc_loops/7.save"):
 		$control/JungleRuins02/select7.set_disabled(true)
-	if unlock.file_exists("user://8.save"):
+	if unlock.file_exists("user://8.save") or unlock.file_exists("user://dlc_loops/8.save"):
 		$control/JungleRuins03/select8.set_disabled(false)
-	if not unlock.file_exists("user://8.save"):
+	if not unlock.file_exists("user://8.save") or unlock.file_exists("user://dlc_loops/8.save"):
 		$control/JungleRuins03/select8.set_disabled(true)
-	if unlock.file_exists("user://9.save"):
+	if unlock.file_exists("user://9.save") or unlock.file_exists("user://dlc_loops/9.save"):
 		$control/Hill01/select10.set_disabled(false)
-	if not unlock.file_exists("user://9.save"):
+	if not unlock.file_exists("user://9.save") or unlock.file_exists("user://dlc_loops/9.save"):
 		$control/Hill01/select10.set_disabled(true)
-	if unlock.file_exists("user://10.save"):
+	if unlock.file_exists("user://10.save") or unlock.file_exists("user://dlc_loops/10.save"):
 		$control/Hill02/select9.set_disabled(false)
-	if not unlock.file_exists("user://10.save"):
+	if not unlock.file_exists("user://10.save") or unlock.file_exists("user://dlc_loops/10.save"):
 		$control/Hill02/select9.set_disabled(true)
-	if unlock.file_exists("user://11.save"):
+	if unlock.file_exists("user://11.save") or unlock.file_exists("user://dlc_loops/11.save"):
 		$control/Hill03/select15.set_disabled(false)
-	if not unlock.file_exists("user://10.save"):
+	if not unlock.file_exists("user://11.save") or unlock.file_exists("user://dlc_loops/11.save"):
 		$control/Hill03/select15.set_disabled(true)
 	
 func _on_VScrollBar_value_changed(value):

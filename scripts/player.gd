@@ -25,7 +25,6 @@ func _ready():
 	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
 	respawn_position = position
-	$"/root/game_health".points == 0
 	$ui/AnimationPlayer.play("saving_state")
 func _physics_process(delta):
 	if Input.is_action_just_pressed("console"):
@@ -70,22 +69,20 @@ func _physics_process(delta):
 		linear_vel.y = -JUMP_SPEED
 		$sound_jump.play()
 	# Shooting
-	if Input.is_action_just_pressed("shoot"):
-		if (get_path()) == "/Characters/":
-			print("I have got any ammo")
-			return
-		
-		var weapon_up = preload("res://scenes/bullet_modified.tscn").instance()
-		var default_weapon = preload("res://scenes/bullet.tscn").instance()
-		var weapon_current = default_weapon
-		if $"/root/game_health".points == 1:
-			weapon_current = weapon_up
-		weapon_current.position = $sprite/bullet_shoot.global_position #use node for shoot position
-		weapon_current.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
-		weapon_current.add_collision_exception_with(self) # don't want player to collide with bullet
-		get_parent().add_child(weapon_current) #don't want bullet to move with me, so add it as child of parent
-		$sound_shoot.play()
-		shoot_time = 0
+#	if Input.is_action_just_pressed("shoot"):
+#		if (get_path()) == "/Characters/":
+#			print("I have got any ammo")
+#			return
+#
+#		var weapon_up = preload("res://scenes/bullet_modified.tscn").instance()
+#		var default_weapon = preload("res://scenes/bullet.tscn").instance()
+#		var weapon_current = default_weapon
+#		weapon_current.position = $sprite/bullet_shoot.global_position #use node for shoot position
+#		weapon_current.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
+#		weapon_current.add_collision_exception_with(self) # don't want player to collide with bullet
+#		get_parent().add_child(weapon_current) #don't want bullet to move with me, so add it as child of parent
+#		$sound_shoot.play()
+#		shoot_time = 0
 
 	### ANIMATION ###
 

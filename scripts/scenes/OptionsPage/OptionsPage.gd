@@ -1,9 +1,25 @@
 extends Panel
 class_name Options_Page
+var current_tab = 0
 var music
 var custom_music
+
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 onready var tab_container = get_node("TabContainer")
+#func _input(event):
+#	if Input.is_action_pressed("tab_left") and not current_tab == 0:
+#		current_tab -= 1
+#		tab_container.set_current_tab(int(float(current_tab)))
+#	if Input.is_action_pressed("tab_left") and current_tab == 0:
+#		current_tab = 4
+#		tab_container.set_current_tab(int(float(current_tab)))
+#	if Input.is_action_pressed("tab_right") and current_tab == 4:
+#		current_tab = 0
+#		tab_container.set_current_tab(int(float(current_tab)))
+#	if Input.is_action_pressed("tab_right") and not current_tab == 4:
+#		current_tab += 1
+#		tab_container.set_current_tab(int(float(current_tab)))
+#	print(current_tab)
 func _process(delta):
 	tab_container.set_tab_title(0, "KEY_CON_TAB")
 	tab_container.set_tab_title(1, "KEY_THEME")
@@ -13,9 +29,11 @@ func _process(delta):
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
+		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB".set_visible(true)
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
+		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB".set_visible(false)
 func _on_ApplyButton_pressed():
 	hide()
 func _save():

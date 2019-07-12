@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -8,14 +8,15 @@
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=6]
 [ext_resource path="res://scripts/scenes/OptionsPage/PixelsnapBox.gd" type="Script" id=7]
 [ext_resource path="res://scripts/scenes/OptionsPage/QualityBox.gd" type="Script" id=8]
-[ext_resource path="res://scripts/scenes/OptionsPage/Advanced.gd" type="Script" id=9]
-[ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=10]
-[ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=11]
-[ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=12]
-[ext_resource path="res://scripts/scenes/OptionsPage/SFXBar.gd" type="Script" id=13]
-[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=15]
-[ext_resource path="res://scenes/Custom_Music.gd" type="Script" id=16]
+[ext_resource path="res://scripts/scenes/OptionsPage/LPMBox.gd" type="Script" id=9]
+[ext_resource path="res://scripts/scenes/OptionsPage/Advanced.gd" type="Script" id=10]
+[ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=11]
+[ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=12]
+[ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=13]
+[ext_resource path="res://scripts/scenes/OptionsPage/SFXBar.gd" type="Script" id=14]
+[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=16]
+[ext_resource path="res://scenes/Custom_Music.gd" type="Script" id=17]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_accept"
@@ -33,8 +34,10 @@ shortcut = SubResource( 1 )
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.5
-margin_right = -1.5
+margin_left = 0.75
+margin_top = -2.25
+margin_right = 0.75
+margin_bottom = -2.25
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -44,7 +47,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -301.0
 margin_top = 5.0
-margin_right = 493.0
+margin_right = 495.0
 margin_bottom = 591.0
 custom_fonts/font = ExtResource( 2 )
 
@@ -309,16 +312,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="GraphicsBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
-editor/display_folded = true
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 533.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_right = 391.0
-margin_bottom = 157.0
+margin_right = 392.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -339,19 +341,19 @@ align = 1
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 161.0
-margin_right = 391.0
-margin_bottom = 329.0
+margin_top = 118.0
+margin_right = 392.0
+margin_bottom = 372.0
 
 [node name="VSyncBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-margin_right = 333.0
+margin_right = 334.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -361,20 +363,20 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-margin_left = 337.0
-margin_right = 391.0
+margin_left = 338.0
+margin_right = 392.0
 margin_bottom = 39.0
 
 [node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 margin_top = 43.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-margin_right = 333.0
+margin_right = 334.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -384,20 +386,20 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-margin_left = 337.0
-margin_right = 391.0
+margin_left = 338.0
+margin_right = 392.0
 margin_bottom = 39.0
 
 [node name="PixelSnapBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 margin_top = 86.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-margin_right = 333.0
+margin_right = 334.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -407,20 +409,20 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-margin_left = 337.0
-margin_right = 391.0
+margin_left = 338.0
+margin_right = 392.0
 margin_bottom = 39.0
 
 [node name="QualityBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 margin_top = 129.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 168.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_right = 333.0
+margin_right = 334.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -430,13 +432,59 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_left = 337.0
-margin_right = 391.0
+margin_left = 338.0
+margin_right = 392.0
+margin_bottom = 39.0
+
+[node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+margin_top = 172.0
+margin_right = 392.0
+margin_bottom = 211.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+margin_right = 334.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_LPM"
+align = 1
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+margin_left = 338.0
+margin_right = 392.0
+margin_bottom = 39.0
+
+[node name="IFB" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+margin_top = 215.0
+margin_right = 392.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+margin_right = 334.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Image Filter"
+align = 1
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+margin_left = 338.0
+margin_right = 392.0
 margin_bottom = 39.0
 
 [node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 333.0
-margin_right = 391.0
+margin_top = 376.0
+margin_right = 392.0
 margin_bottom = 490.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -448,22 +496,22 @@ flat = true
 
 [node name="Advanced" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 margin_top = 494.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 533.0
 text = "KEY_AO"
 align = 1
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="MusicBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
-margin_left = 395.0
-margin_right = 786.0
+margin_left = 396.0
+margin_right = 788.0
 margin_bottom = 533.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -474,13 +522,13 @@ valign = 1
 
 [node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 64.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -517,7 +565,7 @@ flat = true
 
 [node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 128.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -525,19 +573,19 @@ min_value = -60.0
 max_value = 12.0
 rounded = true
 ticks_on_borders = true
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 editor/display_folded = true
 margin_top = 192.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 5
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -574,7 +622,7 @@ flat = true
 
 [node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 256.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -582,18 +630,18 @@ min_value = -60.0
 max_value = 12.0
 rounded = true
 ticks_on_borders = true
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 editor/display_folded = true
 margin_top = 320.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 380.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -630,7 +678,7 @@ flat = true
 
 [node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 384.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -640,24 +688,24 @@ rounded = true
 allow_greater = true
 allow_lesser = true
 ticks_on_borders = true
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 448.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 487.0
-text = "Import your own music"
+text = "KEY_OM"
 
 [node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_top = 491.0
-margin_right = 391.0
+margin_right = 392.0
 margin_bottom = 530.0
 editable = false
 placeholder_text = "Name of selected file"
 caret_blink = true
 
 [node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
-visible = true
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 14.7496
@@ -671,7 +719,6 @@ anchor_bottom = 1.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -680,13 +727,13 @@ margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 14 )]
-script = ExtResource( 15 )
+[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 15 )]
+script = ExtResource( 16 )
 
 [node name="Custom_Music" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = "Custom Music"
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 id = "Level"
 
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]

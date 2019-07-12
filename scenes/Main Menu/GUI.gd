@@ -43,7 +43,7 @@ func _ready():
 	var dlc = File.new()
 	if dlc.file_exists("user://dlc_loops.pck"):
 		ProjectSettings.load_resource_pack("user://dlc_loops.pck")
-		get_tree().change_scene("res://scenes/Main Menu/GUI_loops.tscn")
+		get_tree().change_scene("res://scenes/Main Menu/GUI_loop.tscn")
 func _on_Play8_pressed():
 	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 

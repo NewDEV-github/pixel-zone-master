@@ -3,9 +3,12 @@ extends Label
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func save():
+	print(OS.POWERSTATE_CHARGED)
+	OS.POWERSTATE_CHARGING
+	OS.POWERSTATE_NO_BATTERY
+	OS.POWERSTATE_ON_BATTERY
 	var save_dict = {
 		"Number of log" : OS.get_unix_time(),
 		
@@ -25,9 +28,5 @@ func save():
 		"Data" : OS.get_date(),
 		"Video Driver" : OS.get_current_video_driver(),
 		"Device Type" : OS.get_model_name(),
-		"Killed Enemies" : get_node("/root/killed_enemies").points,
-		"Game State" : get_node("/root/game_state").points,
-		"Game Experience" : get_node("/root/game_experience").points,
-		"Game Health" : get_node("/root/game_health").points
 	}
 	return save_dict

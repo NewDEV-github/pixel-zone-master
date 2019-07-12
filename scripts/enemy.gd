@@ -51,13 +51,9 @@ func hit_by_bullet():
 	$ProgressBar.value -= 4
 	if $ProgressBar.value == 0:
 		state = STATE_KILLED
-		get_node("/root/game_experience").points += 2
-		get_node("/root/killed_enemies").points += 1
 
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		state = STATE_KILLED
-		get_node("/root/game_experience").points += 2
-		get_node("/root/killed_enemies").points += 1
 		if body.has_method("jump"):
 			body.call("jump")

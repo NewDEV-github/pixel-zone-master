@@ -27,6 +27,7 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	OS.set_use_file_access_save_and_swap(true)
 	var documents_dir = Directory.new()
 	if not documents_dir.dir_exists(str(documents)+ "/Pixel Zone/.data"):
 		documents_dir.open(str(documents)+ "/")

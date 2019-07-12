@@ -11,17 +11,14 @@ func print_log():
 	" \nOperating System : "+str(OS.get_name()) +
 	" \nLocale : "+ str(OS.get_locale()) + 
 	" \nEnumeration : " + str($Label.text) +
-	" \nDate : " + str(OS.get_date()) +
-	" \nVideo Driver : " + str(OS.get_current_video_driver()) +
+	" \nDate : " + str(OS.get_date())+
+	" \nBattery : " + str(OS.POWERSTATE_CHARGED) +
+	" \nVideo Driver : " + str(OS.get_current_video_driver())+
 	" \nDevice Type : " + str(OS.get_model_name()))
-	b.close()
 func error():
 	print_log()
 	OS.alert("There has been an error. \n Log file was created at:\n" + str(OS.get_user_data_dir()) +"/" + str(OS.get_unix_time())+".log\nPlease attach it to any bug report\n\nContact support at https://karoltomaszewskimu.wixsite.com/mastergames/support")
 
-func _on_Timer_timeout():
-	print_log()
-	$Timer.start()
 
 #func _on_AcceptDialog_confirmed():
 #	get_tree().quit()

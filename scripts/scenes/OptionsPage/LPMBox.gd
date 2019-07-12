@@ -4,12 +4,12 @@ func _ready():
 	_load()
 func _save():
 	var save = File.new()
-	save.open(str(documents) +"/Pixel Zone/.data/settings_vsync.save", File.WRITE)
+	save.open(str(documents) +"/Pixel Zone/.data/settings_hq.save", File.WRITE)
 	save.store_line(to_json(str($CheckButton.pressed)))
 	save.close()
 func _load():
 	var load_ = File.new()
-	load_.open(str(documents) +"/Pixel Zone/.data/settings_vsync.save", File.READ)
+	load_.open(str(documents) +"/Pixel Zone/.data/settings_hq.save", File.READ)
 	var loaded_settings = parse_json(load_.get_line())
 	if loaded_settings == "True":
 		$CheckButton.set_pressed(true)
@@ -18,8 +18,11 @@ func _load():
 func _process(delta):
 	_save()
 	if $CheckButton.pressed == true:
-		OS.set_use_vsync(true)
-		ProjectSettings.set_setting("display/window/vsync/use_vsync", 1)
+		var aa = Image.new()
+		aa.set('Filter', true)
+		ProjectSettings.set_setting("application/run/low_processor_mode", true)
 	if $CheckButton.pressed == false:
-		OS.set_use_vsync(false)
-		ProjectSettings.set_setting("display/window/vsync/use_vsync", 0)
+		ProjectSettings.set_setting("application/run/low_processor_mode", false)
+		var aa = Image.new()
+		aa.set('Filter', false)
+

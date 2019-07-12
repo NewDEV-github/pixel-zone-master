@@ -510,6 +510,7 @@ align = 1
 valign = 1
 
 [node name="camera" type="Camera2D" parent="."]
+position = Vector2( 243, 70.8751 )
 current = true
 limit_left = 0
 limit_top = 0

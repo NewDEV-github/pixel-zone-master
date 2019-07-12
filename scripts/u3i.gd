@@ -66,7 +66,3 @@ func _ready():
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Blue.connect("pressed", self, "_on_Blue_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Default.connect("pressed", self, "_on_Default_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Old.connect("pressed", self, "_on_Old_pressed")
-func _on_Save_pressed():
-	save_load._on_Save()
-func _on_Load_pressed():
-	save_load._on_Load()
