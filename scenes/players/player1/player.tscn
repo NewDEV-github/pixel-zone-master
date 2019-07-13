@@ -514,8 +514,8 @@ position = Vector2( 243, 70.8751 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_smoothed = true
-smoothing_enabled = true
+limit_right = 20000005
+limit_bottom = 20000000
 smoothing_speed = 3.5
 script = ExtResource( 3 )
 
@@ -710,6 +710,20 @@ wait_time = 4.0
 autostart = true
 
 [node name="console" parent="." instance=ExtResource( 23 )]
+
+[node name="LeftGroundSensor" type="RayCast2D" parent="."]
+position = Vector2( 234, 70.5001 )
+
+[node name="RightGroundSensor" type="RayCast2D" parent="."]
+position = Vector2( 255, 70.5001 )
+
+[node name="LeftWallSensor" type="RayCast2D" parent="."]
+position = Vector2( 233.667, 70.6667 )
+rotation = 1.5708
+
+[node name="RightWallSensor" type="RayCast2D" parent="."]
+position = Vector2( 242.5, 71.0001 )
+rotation = 4.71239
 
 [connection signal="area_entered" from="sprite/Area2D2" to="." method="_on_Area2D2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

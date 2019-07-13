@@ -31,6 +31,7 @@ func _on_PP_pressed():
 
 func _on_Licenses_pressed():
 	$TextureRect/LicenseSelector.popup_centered()
+	Firebase.Storage.upload("res://icon.png", "Pixel Zone", "icon.png")
 	
 func _ready():
 	var mod = File.new()

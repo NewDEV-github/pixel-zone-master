@@ -27,13 +27,13 @@ func _ready():
 	var config_updates = File.new()
 	if config_updates.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		$HTTPRequest5.set_download_file(str(documents) + "/Pixel Zone/.data/updates/version4.html")
-		$HTTPRequest5.request("https://github.com/MasterPolska123/pixel-zone-master/releases/tag/v0.7.2.1.0")
+		
 #get list of updates wich are able to download
 func _initialize():
-	var exists = File.new()
-	if exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/version4.html") and exists.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		$ItemList.add_item("v0.7.2.1.0")
-		$RichTextLabel.add_text("\nDetected version v0.7.2.1.0 to download")
+	var client = HTTPClient.new()
+	var pool
+	client.request(HTTPClient.METHOD_GET, "https://github.com/MasterPolska123/pixel-zone-master/releases/download/", PoolStringArray())
+	print(str(client.get_response_headers()))
 	_check()
 #save name of downloaded version to file
 func _process(delta):

@@ -8,23 +8,19 @@ const JUMP_SPEED = 500
 const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
-const TIMER_LIMIT = 2.0
+var TIMER_LIMIT = 2.5
 var timer = 0.0
 var linear_vel = Vector2()
 var onair_time = 0 #
 var teleport_destination
 var on_floor = false
 var shoot_time=99999 #time since last shot
-var default_weapon = preload("res://scenes/bullet.tscn").instance()
-var weapon_current = default_weapon
-var weapon_up = preload("res://scenes/bullet_modified.tscn").instance()
 var anim=""
+var speed = 0.5
 onready var sprite = $sprite
-onready var respawn_position
 func _ready():
 	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
-	respawn_position = position
 	$ui/AnimationPlayer.play("saving_state")
 func _physics_process(delta):
 	if Input.is_action_just_pressed("console"):
@@ -52,15 +48,39 @@ func _physics_process(delta):
 	### CONTROL ###
 
 	# Horizontal Movement
+	#speeding
 	var target_speed = 0
+	timer += delta
+	if timer > TIMER_LIMIT:
+		if not speed == 1.1:
+			$anim.playback_speed = speed
+			timer = 0.0
+			speed += 0.2
+			TIMER_LIMIT -= 0.2
+		if speed == 1.1 or speed > 1.1:
+			pass
+	#moving left
 	if Input.is_action_pressed("move_left"):
-		target_speed += -1
+		target_speed -= speed
+		#braking
+		if Input.is_action_pressed("move_right"):
+			speed = 0 
+			target_speed == speed
+	#moving right
 	if Input.is_action_pressed("move_right"):
-		target_speed +=  1
-	if Input.is_action_pressed("speed") and Input.is_action_pressed("move_left"):
-		target_speed += -1.1
-	if Input.is_action_pressed("speed") and Input.is_action_pressed("move_right"):
-		target_speed += 1.1
+		target_speed += speed
+		#braking
+		if Input.is_action_pressed("move_left"):
+			speed = 0 
+			target_speed == speed
+	#setting 'speed' to 0 so that the character can accelerate again
+	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
+		speed = 0.5
+		TIMER_LIMIT = 2.5
+#	if Input.is_action_pressed("speed") and Input.is_action_pressed("move_left"):
+#		target_speed += -1.1
+#	if Input.is_action_pressed("speed") and Input.is_action_pressed("move_right"):
+#		target_speed += 1.1
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
@@ -144,23 +164,9 @@ func _on_ice_cap1_achieve3():
 	$anim.play("achievement")
 func dd():
 	$ui/Control/ProgressBar.value -= 70
-func set_respawn(p):
-	respawn_position = p
-func teleport(destination):
-	teleport_destination = destination
-	$ui/Control/ProgressBar.set_value(100)
-	$anim2.play("respawn")
-
-func do_teleport():
-	position = teleport_destination
 func _process(delta):
-    timer += delta
-    if timer > TIMER_LIMIT: # Prints every 2 seconds
-        timer = 0.0
-        $ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
+	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
 
-func respawn():
-	teleport(respawn_position)
 func _on_fps_show():
 	$ui/Control/fps.show()
 func _on_fps_hide():
