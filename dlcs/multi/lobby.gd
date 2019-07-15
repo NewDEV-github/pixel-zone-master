@@ -98,3 +98,6 @@ func _on_signup_pressed():
 	Firebase.Auth.signup_with_email_and_password(email, password)
 	$Control/Control2.hide()
 	$Control/Control.show()
+
+func _on_Button4_pressed():
+	OS.shell_open("https://masterpolska123.github.io/home/login.html")

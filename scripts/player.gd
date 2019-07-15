@@ -61,18 +61,18 @@ func _physics_process(delta):
 			pass
 	#moving left
 	if Input.is_action_pressed("move_left"):
-		target_speed -= speed
+		target_speed -= 1
 		#braking
 		if Input.is_action_pressed("move_right"):
 			speed = 0 
-			target_speed == speed
+			target_speed == 0
 	#moving right
 	if Input.is_action_pressed("move_right"):
-		target_speed += speed
+		target_speed += 1
 		#braking
 		if Input.is_action_pressed("move_left"):
 			speed = 0 
-			target_speed == speed
+			target_speed == 0
 	#setting 'speed' to 0 so that the character can accelerate again
 	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
 		speed = 0.5

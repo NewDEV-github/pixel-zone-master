@@ -181,7 +181,6 @@ resizable = true
 mode = 0
 access = 2
 filters = PoolStringArray( "*.pck" )
-show_hidden_files = true
 current_dir = "C:/Users/Karol/Documents/pixel-zone-master"
 current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
 
