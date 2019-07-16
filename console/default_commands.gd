@@ -18,6 +18,10 @@ func _init(console):
 	var ytCommand = Command.new('yt',  ytRef, [], 'Brings You to my YouTube channel :) .', ConsoleRights.CallRights.DEV)
 	console.add_command(ytCommand)
 	
+	var current_sceneRef = CommandRef.new(self, "current_scene", CommandRef.COMMAND_REF_TYPE.FUNC, 1)
+	var current_sceneCommand = Command.new('current_scene',  current_sceneRef, [], 'Changes current scene, to declared.', ConsoleRights.CallRights.DEV)
+	console.add_command(current_sceneCommand)
+	
 	var clearRef = CommandRef.new(self, "clear", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var clearCommand = Command.new('clear', clearRef, [], 'Clears the console.', ConsoleRights.CallRights.USER)
 	console.add_command(clearCommand)
@@ -150,6 +154,11 @@ func set_console_size(input : Array):
 
 func toggle_titlebar(_input : Array):
 	_consoleRef.update_visibility_titlebar(!_consoleRef.get_node("offset/titleBar").visible)
+
+func current_scene(input : String):
+	var path = input
+	print(path)
+	background_load.load_scene(path)
 
 
 func alias(input : Array):
