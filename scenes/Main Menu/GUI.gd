@@ -9,6 +9,7 @@ var mod_path = ""
 var load_mod = "false"
 func _on_Play_pressed():
 	$AnimationPlayer.play("new")
+	$Timer.stop()
 
 func _on_Quit_pressed():
 	get_tree().quit()

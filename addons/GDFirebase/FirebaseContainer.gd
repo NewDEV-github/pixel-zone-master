@@ -75,7 +75,3 @@ func on_data_delete(data):
         for key in data.keys():
             if tracked_values.has(key):
                 delete_child(key)
-
-
-func _on_SumbitButton_pressed():
-	pass # Replace with function body.

@@ -523,6 +523,30 @@ theme = ExtResource( 9 )
 text = "KEY_SELECT"
 flat = true
 
+[node name="SciFi01" type="VBoxContainer" parent="control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -247.0
+margin_top = 175.5
+margin_bottom = 257.5
+
+[node name="Label" type="Label" parent="control/SciFi01"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "Sci-Fi 01"
+align = 1
+
+[node name="select16" type="Button" parent="control/SciFi01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+text = "KEY_SELECT"
+flat = true
+
 [connection signal="pressed" from="control/JungleRuins02/select7" to="." method="_on_select7_pressed"]
 [connection signal="pressed" from="control/Hill01/select10" to="." method="_on_select10_pressed"]
 [connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]
@@ -534,3 +558,4 @@ flat = true
 [connection signal="pressed" from="control/PixelZone02/select2" to="." method="_on_select2_pressed"]
 [connection signal="pressed" from="control/IceCap02/select4" to="." method="_on_select4_pressed"]
 [connection signal="pressed" from="control/Hill03/select15" to="." method="_on_select15_pressed"]
+[connection signal="pressed" from="control/SciFi01/select16" to="." method="_on_select16_pressed"]

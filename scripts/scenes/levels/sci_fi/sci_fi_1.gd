@@ -17,3 +17,14 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		get_tree().change_scene("res://scenes/GameOver.tscn")
+
+
+func _on_toxic_body_entered(body):
+	if body.name == 'Player':
+		get_tree().change_scene("res://scenes/GameOver.tscn")
+
+
+func _on_Area2D2_body_entered(body):
+	if body.name == 'Player':
+		get_tree().change_scene("res://scenes/Credits.tscn")
+		File.new().open("user://12.save", File.WRITE)

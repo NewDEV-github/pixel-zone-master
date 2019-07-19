@@ -70,6 +70,10 @@ func _process(delta):
 		$control/Hill03/select15.set_disabled(false)
 	if not unlock.file_exists("user://11.save") or unlock.file_exists("user://dlc_loops/11.save"):
 		$control/Hill03/select15.set_disabled(true)
+	if unlock.file_exists("user://12.save") or unlock.file_exists("user://dlc_loops/12.save"):
+		$control/SciFi01/select16.set_disabled(false)
+	if not unlock.file_exists("user://12.save") or unlock.file_exists("user://dlc_loops/12.save"):
+		$control/SciFi01/select16.set_disabled(true)
 	
 func _on_VScrollBar_value_changed(value):
 	$control.set_position(Vector2(0, -(value*10)))
@@ -80,3 +84,7 @@ func _on_select10_pressed():
 
 func _on_select15_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_3.tscn")
+
+
+func _on_select16_pressed():
+	background_load.load_scene("res://scenes/stages/scifi/sci_fi_1.tscn")
