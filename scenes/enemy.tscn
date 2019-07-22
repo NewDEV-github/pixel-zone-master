@@ -1,10 +1,11 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
-[ext_resource path="res://textures/enemy.png" type="Texture" id=2]
-[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=3]
-[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=4]
-[ext_resource path="res://themes/theme_test.tres" type="Theme" id=5]
+[ext_resource path="res://animations/enemy_idle.tres" type="Animation" id=2]
+[ext_resource path="res://textures/enemy.png" type="Texture" id=3]
+[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=5]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.9998
@@ -43,10 +44,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2.6, 3.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.59809, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("sound_hit:playing")
@@ -99,23 +100,6 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-length = 6.75
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.75, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 5, 6, 5, 6, 7, 6, 7, 5 ]
-}
-
 [sub_resource type="Animation" id=4]
 length = 1.25
 loop = true
@@ -131,6 +115,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 1, 0, 1 ) ]
 }
 
 [sub_resource type="CapsuleShape2D" id=5]
@@ -157,9 +153,9 @@ position = Vector2( 7.25693, -8.99655 )
 scale = Vector2( 23.5056, 10.8629 )
 pause_particles = false
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim2" type="AnimationPlayer" parent="."]
 anims/explode = SubResource( 2 )
-anims/idle = SubResource( 3 )
+anims/idle = ExtResource( 2 )
 anims/walk = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -168,8 +164,9 @@ rotation = -1.5708
 shape = SubResource( 5 )
 
 [node name="sprite" type="Sprite" parent="."]
+self_modulate = Color( 0, 1, 0, 1 )
 material = SubResource( 6 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 flip_h = true
 hframes = 8
 
@@ -200,20 +197,21 @@ enabled = true
 cast_to = Vector2( 0, 45 )
 
 [node name="sound_hit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 bus = "SFX"
 
 [node name="sound_explode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 bus = "SFX"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -31.5
 margin_top = -50.0
 margin_right = 39.5
 margin_bottom = -19.0
-theme = ExtResource( 5 )
+theme = ExtResource( 6 )
 value = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]

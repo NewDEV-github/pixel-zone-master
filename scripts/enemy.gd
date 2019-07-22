@@ -43,7 +43,7 @@ func _physics_process(delta):
 
 	if anim != new_anim:
 		anim = new_anim
-		$anim.play(anim)
+		$anim2.play(anim)
 
 
 func hit_by_bullet():
