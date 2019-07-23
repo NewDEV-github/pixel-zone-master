@@ -10,52 +10,41 @@ var downloads = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
 var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 var version_to_download
-#check downloaded versions of game
-func _check():
-	var down = File.new()
-	down.open(str(documents) + "/Pixel Zone/.data/updates/version.save", File.READ)
-	var downloaded_version = parse_json(down.get_line())
-	if downloaded_version == "v0.7.2.0.9":
-		$ItemList.set_item_disabled(0, true)
-	if downloaded_version == "v0.7.2.1.0":
-		$ItemList.set_item_disabled(1, true)
-		$RichTextLabel.set_text("You have the nevest version of Pixel Zone")
-#add items to item list
+var latest_update
+var update_info
 func _ready():
-	$RichTextLabel2.hide()
-	$ItemList.add_item("v0.7.2.1.0 - Current version")
-	var config_updates = File.new()
-	if config_updates.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		$HTTPRequest5.set_download_file(str(documents) + "/Pixel Zone/.data/updates/version4.html")
-		
-#get list of updates wich are able to download
-func _initialize():
-	var client = HTTPClient.new()
-	var pool
-	client.request(HTTPClient.METHOD_GET, "https://github.com/MasterPolska123/pixel-zone-master/releases/download/", PoolStringArray())
-	print(str(client.get_response_headers()))
-	_check()
-#save name of downloaded version to file
-func _process(delta):
-	$RichTextLabel2.set_text("Downloaded " + str($HTTPRequest4.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest4.get_body_size()))
-	if $HTTPRequest4.get_downloaded_bytes() == $HTTPRequest4.get_body_size():
-		var down = File.new()
-		down.open(str(documents) + "/Pixel Zone/.data/updates/version.save", File.WRITE)
-		down.store_line(to_json(version_to_download))
-		down.close()
+	$ProgressBar.set_value(0)
+	$HTTPRequest.set_download_file("user://latest_version.txt")
+	$HTTPRequest2.set_download_file("user://version_info.txt")
+	$ProgressBar.set_value(1)
+	$HTTPRequest.request("https://github.com/MasterPolska123/home/raw/master/updates_info/latest_version.txt")
+	$HTTPRequest2.request("https://github.com/MasterPolska123/home/raw/master/updates_info/version_info.txt")
+	$ProgressBar.set_value(50)
+	initialize()
+func initialize():
+	$ProgressBar.set_value(75)
+	var update = File.new()
+	update.open("user://latest_version.txt", File.READ)
+	latest_update = update.get_line()
+	$ItemList.add_item(str(latest_update))
+	
+	
+	var update_description = File.new()
+	update_description.open("user://version_info.txt", File.READ)
+	update_info = update_description.get_as_text()
+	$RichTextLabel2.set_text(str(update_info))
+
 func _on_Timer_timeout():
-	_initialize()
 	$Panel.hide()
-#download update from server
-func _on_Button_pressed():
-	$RichTextLabel2.show()
-	$HTTPRequest4.set_download_file(str(documents) + "/Pixel Zone/.data/updates/update.pck")
-	$HTTPRequest4.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/update.pck" % version_to_download)
-	$RichTextLabel.add_text("\nResolving host...\nConnecting to download server...\nReciving...\nDownloading... https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/update.pck" % version_to_download)
-#select update to download
+	$ProgressBar.hide()
+
+
 func _on_ItemList_item_selected(index):
-	if index == 0:
-		return
-	if index == 1:
-		version_to_download = "v0.7.2.1.0"
-	$RichTextLabel.add_text("\nSelected version %s" % version_to_download)
+	$RichTextLabel2.show()
+	version_to_download = latest_update
+	print(str(version_to_download))
+
+func _on_Button_pressed():
+	$HTTPRequest2.set_download_file(str(documents) + "/Pixel Zone/.data/updates/update.pck")
+	$HTTPRequest2.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/%s/update.pck" % version_to_download)
+	$RichTextLabel.add_text("Downloading... version %s" % version_to_download)

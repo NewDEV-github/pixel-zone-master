@@ -34,10 +34,11 @@ margin_right = 1026.0
 margin_bottom = 251.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 372.75
-margin_top = 252.0
+margin_top = 249.75
 margin_right = 1023.75
-margin_bottom = 503.0
+margin_bottom = 500.75
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 1.0
@@ -76,6 +77,7 @@ margin_bottom = 601.0
 theme = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -86,6 +88,11 @@ custom_fonts/font = ExtResource( 3 )
 text = "KEY_UPDATE"
 align = 1
 valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_right = 202.0
+margin_bottom = 14.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
