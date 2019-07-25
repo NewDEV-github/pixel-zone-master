@@ -104,7 +104,6 @@ func _ready():
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_dark.connect("pressed", self, "_on_Solarized_dark_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_light.connect("pressed", self, "_on_Solarized_light_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Red.connect("pressed", self, "_on_Red_pressed")
-	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Yellow.connect("pressed", self, "_on_Yellow_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Grey.connect("pressed", self, "_on_Grey_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Green.connect("pressed", self, "_on_Green_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Blue.connect("pressed", self, "_on_Blue_pressed")

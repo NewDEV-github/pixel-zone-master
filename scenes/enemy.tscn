@@ -1,141 +1,24 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
-[ext_resource path="res://animations/enemy_idle.tres" type="Animation" id=2]
-[ext_resource path="res://textures/enemy.png" type="Texture" id=3]
-[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=4]
-[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=5]
-[ext_resource path="res://themes/theme_test.tres" type="Theme" id=6]
+[ext_resource path="res://scenes/explode.tres" type="Animation" id=2]
+[ext_resource path="res://animations/idle.tres" type="Animation" id=3]
+[ext_resource path="res://animations/walk.tres" type="Animation" id=4]
+[ext_resource path="res://textures/enemy.png" type="Texture" id=5]
+[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=7]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.9998
 
-[sub_resource type="Animation" id=2]
-length = 5.0
-step = 0.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ 0.0, 180.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("sprite:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2.59809, 3.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("sound_hit:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.00999999 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("sound_explode:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 2.9 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/5/type = "method"
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 3.6 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("ProgressBar:self_modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 2.6, 3.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 1.25
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("sprite:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 1, 0, 1 ) ]
-}
-
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 14.4965
 height = 21.4985
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=3]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24.3334, 19.9999 )
 
 [node name="enemy" type="KinematicBody2D"]
@@ -154,19 +37,18 @@ scale = Vector2( 23.5056, 10.8629 )
 pause_particles = false
 
 [node name="anim2" type="AnimationPlayer" parent="."]
-anims/explode = SubResource( 2 )
-anims/idle = ExtResource( 2 )
-anims/walk = SubResource( 4 )
+anims/explode = ExtResource( 2 )
+anims/idle = ExtResource( 3 )
+anims/walk = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.00525069, -0.727495 )
 rotation = -1.5708
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-self_modulate = Color( 0, 1, 0, 1 )
-material = SubResource( 6 )
-texture = ExtResource( 3 )
+material = SubResource( 3 )
+texture = ExtResource( 5 )
 flip_h = true
 hframes = 8
 
@@ -197,11 +79,11 @@ enabled = true
 cast_to = Vector2( 0, 45 )
 
 [node name="sound_hit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
 bus = "SFX"
 
 [node name="sound_explode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
 bus = "SFX"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -211,7 +93,7 @@ margin_left = -31.5
 margin_top = -50.0
 margin_right = 39.5
 margin_bottom = -19.0
-theme = ExtResource( 6 )
+theme = ExtResource( 8 )
 value = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -219,7 +101,7 @@ value = 100.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.0834579, -1.41667 )
 rotation = 3.14159
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

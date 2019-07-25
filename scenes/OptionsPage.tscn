@@ -92,7 +92,6 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -126,45 +125,44 @@ margin_bottom = 82.0
 text = "Apply to Game's UI, not only of User's UI"
 
 [node name="Yellow" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
 margin_top = 35.0
 margin_right = 558.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
-text = "KEY_Yellow"
+text = "Custom Theme"
 
 [node name="Neon" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 35.0
-margin_right = 558.0
-margin_bottom = 72.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Neon"
-
-[node name="Alien" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 76.0
 margin_right = 558.0
 margin_bottom = 113.0
 custom_fonts/font = ExtResource( 2 )
-text = "KEY_Alien"
+text = "KEY_Neon"
 
-[node name="Light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+[node name="Alien" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 117.0
 margin_right = 558.0
 margin_bottom = 154.0
 custom_fonts/font = ExtResource( 2 )
-text = "KEY_Light"
+text = "KEY_Alien"
 
-[node name="Solarized_dark" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+[node name="Light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 158.0
 margin_right = 558.0
 margin_bottom = 195.0
 custom_fonts/font = ExtResource( 2 )
-text = "KEY_Solarized_dark"
+text = "KEY_Light"
 
-[node name="Solarized_light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+[node name="Solarized_dark" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 199.0
 margin_right = 558.0
 margin_bottom = 236.0
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_Solarized_dark"
+
+[node name="Solarized_light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+margin_top = 240.0
+margin_right = 558.0
+margin_bottom = 277.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_light"
 
@@ -201,18 +199,28 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Blue"
 
 [node name="Default" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-margin_top = 240.0
-margin_right = 558.0
-margin_bottom = 277.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Default"
-
-[node name="Old" type="Button" parent="TabContainer/Theme/VBoxContainer"]
 margin_top = 281.0
 margin_right = 558.0
 margin_bottom = 318.0
 custom_fonts/font = ExtResource( 2 )
+text = "KEY_Default"
+
+[node name="Old" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+margin_top = 322.0
+margin_right = 558.0
+margin_bottom = 359.0
+custom_fonts/font = ExtResource( 2 )
 text = "KEY_Old"
+
+[node name="CustomTheme" type="WindowDialog" parent="TabContainer/Theme"]
+visible = true
+margin_right = 784.0
+margin_bottom = 535.0
+
+[node name="ThemeList" type="ItemList" parent="TabContainer/Theme/CustomTheme"]
+margin_left = -2.25
+margin_right = 786.75
+margin_bottom = 544.0
 
 [node name="Language" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
@@ -299,6 +307,7 @@ margin_right = 80.4999
 margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -737,6 +746,8 @@ script = ExtResource( 17 )
 id = "Level"
 
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
+[connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
+[connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]
 [connection signal="pressed" from="TabContainer/Language/ApplyButton3" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Englisch" to="." method="_on_Englisch_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Portuguese" to="." method="_on_Portuguese_pressed"]
