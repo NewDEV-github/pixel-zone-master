@@ -18,6 +18,8 @@ func _save():
 	save.open(str(documents) +"/Pixel Zone/.data/theme.save", File.WRITE)
 	save.store_line(to_json($theme.text))
 	save.close()
+func _load_user_theme(path):
+	self.set_theme(path)
 func _load():
 	var load_ = File.new()
 	load_.open(str(documents) +"/Pixel Zone/.data/theme.save", File.READ)
@@ -98,6 +100,7 @@ func _on_Solarized_light_pressed():
 func _ready():
 	_load()
 #	self.set_theme(default)
+	$GameUI/UIScaler/Menu/OptionsPage.connect("ready_to_load", self, "_load_user_theme")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Neon.connect("pressed", self, "_on_Neon_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Alien.connect("pressed", self, "_on_Alien_pressed")
 	$GameUI/UIScaler/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Light.connect("pressed", self, "_on_Light_pressed")

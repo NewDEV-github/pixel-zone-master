@@ -101,32 +101,37 @@ func _on_ItemList_item_selected(index):
 	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)
 	$"TabContainer/Graphics & Audio/WindowDialog".hide()
 
-
+var checked = false
 func _on_Yellow_pressed():
 	$TabContainer/Theme/CustomTheme.popup_centered()
 	var path = str(documents) +"/Pixel Zone/"
-	var dir = Directory.new()
-	if dir.open(path) == OK:
-		dir.list_dir_begin()
-		print(str(dir.list_dir_begin()))
-		var file_name = dir.get_next()
-		while (file_name != ""):
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
-				var extension = str(file_name).get_extension()
-				var path_finder = EditorFileSystem.new()
-				print(extension)
-				if extension == "tres":
-					$TabContainer/Theme/CustomTheme/ThemeList.add_item(file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
-
+	if checked == false:
+		var dir = Directory.new()
+		if dir.open(path) == OK:
+			dir.list_dir_begin()
+			print(str(dir.list_dir_begin()))
+			var file_name = dir.get_next()
+			while (file_name != ""):
+				if dir.current_is_dir():
+					print("Found directory: " + file_name)
+				else:
+					print("Found file: " + file_name)
+					var extension = str(file_name).get_extension()
+					print(extension)
+					if extension == "tres":
+						$TabContainer/Theme/CustomTheme/ThemeList.add_item(file_name)
+				file_name = dir.get_next()
+				checked = true
+		else:
+			print("An error occurred when trying to access the path.")
+signal ready_to_load
 func _on_ThemeList_item_selected(index):
 	var path = str(documents) + "/Pixel Zone/"
 	var item_name = $TabContainer/Theme/CustomTheme/ThemeList.get_item_text(index)
 	var full_theme_path = str(path) + str(item_name)
+	var load_path = load(full_theme_path)
 	print(full_theme_path)
-	self.set_theme(load(full_theme_path))
+	var ui_theme = preload("res://scripts/ui.gd")
+	ui_theme.new()._load_user_theme(load_path)
+	emit_signal("ready_to_load", load_path)
+#	self.set_theme(load(full_theme_path))
