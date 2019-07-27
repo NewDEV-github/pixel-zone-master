@@ -13,6 +13,6 @@ func _load():
 	var load_ = File.new()
 	load_.open("user://save.save", File.READ)
 	var loaded_coins = parse_json(load_.get_line())
-	points += loaded_coins
+	points += float(str(loaded_coins))
 func _ready():
 	_load()
