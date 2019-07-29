@@ -77,7 +77,6 @@ margin_bottom = 601.0
 theme = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -90,7 +89,6 @@ align = 1
 valign = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 margin_right = 202.0
 margin_bottom = 14.0
 

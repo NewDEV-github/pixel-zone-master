@@ -27,7 +27,6 @@ margin_right = 538.0
 custom_fonts/font = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -103,7 +102,6 @@ text = "KEY_Quit"
 flat = true
 
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
-visible = false
 margin_top = 172.0
 margin_right = 509.0
 margin_bottom = 211.0

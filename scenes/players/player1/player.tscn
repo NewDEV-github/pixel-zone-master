@@ -591,6 +591,12 @@ anchor_bottom = 1.0
 theme = ExtResource( 11 )
 script = ExtResource( 12 )
 
+[node name="theme" type="Label" parent="ui/Control"]
+margin_left = 615.094
+margin_top = -273.375
+margin_right = 655.094
+margin_bottom = -234.375
+
 [node name="ProgressBar" type="ProgressBar" parent="ui/Control"]
 pause_mode = 2
 margin_right = 76.0

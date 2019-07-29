@@ -91,6 +91,7 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -218,9 +219,17 @@ margin_right = 784.0
 margin_bottom = 535.0
 
 [node name="ThemeList" type="ItemList" parent="TabContainer/Theme/CustomTheme"]
-margin_left = -2.25
-margin_right = 786.75
-margin_bottom = 544.0
+margin_left = -2.0
+margin_right = 787.0
+margin_bottom = 501.0
+
+[node name="Label" type="Label" parent="TabContainer/Theme/CustomTheme"]
+margin_left = 2.0
+margin_top = 503.0
+margin_right = 784.0
+margin_bottom = 537.0
+custom_fonts/font = ExtResource( 2 )
+text = "Restart game to full reload list of detected themes"
 
 [node name="Language" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
@@ -231,7 +240,6 @@ margin_left = 4.0
 margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
-theme = ExtResource( 3 )
 
 [node name="ApplyButton3" type="Button" parent="TabContainer/Language"]
 anchor_left = 0.5
@@ -307,6 +315,7 @@ margin_right = 80.4999
 margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -314,7 +323,6 @@ margin_left = 4.0
 margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
-theme = ExtResource( 3 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Graphics & Audio"]
 anchor_right = 1.0
@@ -507,6 +515,7 @@ flat = true
 margin_top = 494.0
 margin_right = 392.0
 margin_bottom = 533.0
+custom_fonts/font = ExtResource( 2 )
 text = "KEY_AO"
 align = 1
 script = ExtResource( 10 )
@@ -714,7 +723,6 @@ placeholder_text = "Name of selected file"
 caret_blink = true
 
 [node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 14.7496
@@ -728,6 +736,7 @@ anchor_bottom = 1.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0

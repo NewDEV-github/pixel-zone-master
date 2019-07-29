@@ -8,18 +8,20 @@ var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 var load_mod = "false"
 var mod_temp
 func _on_Play_pressed():
-	var mod = File.new()
-	var mod_path = File.new()
-	mod_path.open(str(documents) + "/Pixel Zone/.data/mod_info.save", File.READ)
-	var load_mod_info = mod_path.get_line()
-	print(str(load_mod_info))
-	if load_mod_info == mod_temp:
-		get_tree().change_scene("res://mod.tscn")
-		$TextureRect/Label.hide()
-		$AnimationPlayer.play("new")
-		$Timer.stop()
-	if not load_mod_info == mod_temp:
-		$TextureRect/ConfirmationDialog.popup_centered()
+	$AnimationPlayer.play("new")
+	$Timer.stop()
+#	var mod = File.new()
+#	var mod_path = File.new()
+#	mod_path.open(str(documents) + "/Pixel Zone/.data/mod_info.save", File.READ)
+#	var load_mod_info = mod_path.get_line()
+#	print(str(load_mod_info))
+#	if load_mod_info == mod_temp:
+#		get_tree().change_scene("res://mod.tscn")
+#		$TextureRect/Label.hide()
+#		$AnimationPlayer.play("new")
+#		$Timer.stop()
+#	if not load_mod_info == mod_temp:
+#		$TextureRect/ConfirmationDialog.popup_centered()
 
 func _on_Quit_pressed():
 	get_tree().quit()
