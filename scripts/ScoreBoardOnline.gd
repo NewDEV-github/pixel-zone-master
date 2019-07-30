@@ -1,8 +1,6 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var score = File.new()
 var first
 var second 
@@ -15,12 +13,18 @@ var score_1
 var score_2
 var score_3
 var score_4
-func _process(delta):
+func _ready():
 	#load user's score
 	score.open("user://other_saves/0.save", File.READ)
 	score_0 = parse_json(score.get_line())
 	print(score_0)
 	score.close()
+	var save_file = File.new()
+	#Load current user's name
+	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.READ, str(2345654))
+	var loaded_name = save_file.get_line()
+	$Panel/Names.add_item(str(loaded_name) + " - You")
+	$Panel/Scores.add_item(str(score_0))
 	#load other user's scores
 	#1
 	score.open('user://other_saves/1.save', File.READ)
