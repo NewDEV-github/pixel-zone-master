@@ -53,6 +53,13 @@ bus = "Music"
 position = Vector2( 3946.86, 2631.24 )
 shape = SubResource( 1 )
 
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( 5484.59, 153.773 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 3946.86, 2631.24 )
+shape = SubResource( 1 )
+
 [node name="toxic" type="Area2D" parent="."]
 position = Vector2( 3360.43, 1473.09 )
 
@@ -346,6 +353,7 @@ position = Vector2( 6058.13, 2072.25 )
 position = Vector2( 6382.13, 2052 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="toxic" to="." method="_on_toxic_body_entered"]
 [connection signal="body_entered" from="toxic2" to="." method="_on_toxic_body_entered"]
 [connection signal="body_entered" from="toxic3" to="." method="_on_toxic_body_entered"]

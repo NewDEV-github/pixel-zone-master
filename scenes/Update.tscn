@@ -67,9 +67,8 @@ use_threads = true
 use_threads = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.2
+wait_time = 5.0
 one_shot = true
-autostart = true
 
 [node name="ItemList" type="ItemList" parent="."]
 margin_right = 374.0
@@ -93,5 +92,4 @@ margin_right = 202.0
 margin_bottom = 14.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]

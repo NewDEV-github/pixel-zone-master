@@ -2,7 +2,7 @@ tool
 extends EditorPlugin
 
 func _enter_tree():
-    add_custom_type("HTTPSSEClient", "Node", preload("HTTPSSEClient.gd"), preload("icon.png"))
+    add_custom_type("HTTPSSEClient", "Node", preload("HTTPSSEClient.gd"), preload("res://addons/GDFirebase/HTTPSSEClient/icon.png"))
     pass
 
 func _exit_tree():

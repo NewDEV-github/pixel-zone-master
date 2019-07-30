@@ -31,10 +31,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -256.75
-margin_top = -81.75
-margin_right = 252.25
-margin_bottom = 86.25
+margin_left = -254.5
+margin_top = -84.0
+margin_right = 254.5
+margin_bottom = 84.0
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
 margin_right = 509.0
@@ -102,6 +102,7 @@ text = "KEY_Quit"
 flat = true
 
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
+visible = false
 margin_top = 172.0
 margin_right = 509.0
 margin_bottom = 211.0

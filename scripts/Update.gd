@@ -19,11 +19,17 @@ func _ready():
 	$HTTPRequest.set_download_file("user://latest_version.txt")
 	$HTTPRequest2.set_download_file("user://version_info.txt")
 	$ProgressBar.set_value(20)
-	$HTTPRequest.request("https://github.com/MasterPolska123/home/raw/master/updates_info/latest_version.txt")
+	$HTTPRequest.request("masterpolska123.github.io/home/updates_info/latest_version.txt")
 	$ProgressBar.set_value(45)
-	$HTTPRequest2.request("https://github.com/MasterPolska123/home/raw/master/updates_info/version_info.txt")
+	$HTTPRequest2.request("masterpolska123.github.io/home/updates_info/version_info.txt")
 	$ProgressBar.set_value(50)
 	initialize()
+#var initialized = false
+#func _process(delta):
+#	if initialized == false:
+#		if $HTTPRequest.RESULT_SUCCESS:
+#			initialize()
+#			initialized = false
 func initialize():
 	$ProgressBar.set_value(55)
 	var update = File.new()
@@ -43,8 +49,6 @@ func initialize():
 	$ProgressBar.set_value(90)
 	$RichTextLabel2.set_text(str(update_info))
 	$ProgressBar.set_value(95)
-
-func _on_Timer_timeout():
 	$Panel.hide()
 	$ProgressBar.hide()
 

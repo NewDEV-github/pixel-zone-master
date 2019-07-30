@@ -50,15 +50,15 @@ func _physics_process(delta):
 	# Horizontal Movement
 	#speeding
 	var target_speed = 0
-	timer += delta
-	if timer > TIMER_LIMIT:
-		if not speed == 1.1:
-			$anim.playback_speed = speed
-			timer = 0.0
-			speed += 0.2
-			TIMER_LIMIT -= 0.2
-		if speed == 1.1 or speed > 1.1:
-			pass
+#	timer += delta
+#	if timer > TIMER_LIMIT:
+#		if not speed == 1.1:
+#			$anim.playback_speed = speed
+#			timer = 0.0
+#			speed += 0.2
+#			TIMER_LIMIT -= 0.2
+#		if speed == 1.1 or speed > 1.1:
+#			pass
 	#moving left
 	if Input.is_action_pressed("move_left"):
 		target_speed -= 1

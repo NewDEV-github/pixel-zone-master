@@ -26,6 +26,6 @@ func _on_toxic_body_entered(body):
 
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
-		get_tree().change_scene("res://scenes/Credits.tscn")
+		get_tree().change_scene("res://scenes/stages/scifi/sci_fi_3.tscn")
 		File.new().open("user://13.save", File.WRITE)
 
