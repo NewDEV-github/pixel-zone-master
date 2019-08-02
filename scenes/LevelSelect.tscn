@@ -374,7 +374,7 @@ margin_right = 510.997
 margin_bottom = 41.0
 
 [node name="Label" type="Label" parent="control/IceCap03"]
-margin_right = 246.0
+margin_right = 247.0
 margin_bottom = 39.0
 theme = ExtResource( 9 )
 text = "Ice Cap 03"
@@ -382,7 +382,7 @@ align = 1
 
 [node name="select5" type="Button" parent="control/IceCap03"]
 margin_top = 43.0
-margin_right = 246.0
+margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
 text = "KEY_SELECT"
@@ -570,7 +570,7 @@ margin_bottom = 813.5
 margin_right = 247.0
 margin_bottom = 39.0
 theme = ExtResource( 9 )
-text = "Sci-Fi 01"
+text = "Sci-Fi 02"
 align = 1
 
 [node name="select13" type="Button" parent="control/SciFi02"]
@@ -595,7 +595,7 @@ margin_bottom = 515.0
 margin_right = 247.0
 margin_bottom = 39.0
 theme = ExtResource( 9 )
-text = "Sci-Fi 01"
+text = "Sci-Fi 03"
 align = 1
 
 [node name="select14" type="Button" parent="control/SciFi03"]
@@ -605,7 +605,6 @@ margin_bottom = 82.0
 theme = ExtResource( 9 )
 text = "KEY_SELECT"
 flat = true
-
 [connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="control/PixelZone02/select2" to="." method="_on_select2_pressed"]
 [connection signal="pressed" from="control/IceCap01/select3" to="." method="_on_select3_pressed"]

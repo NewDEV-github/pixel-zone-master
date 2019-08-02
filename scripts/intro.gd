@@ -1,12 +1,10 @@
-extends Spatial
+extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
 var downloads = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
 var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
-func _on_AnimationPlayer_animation_finished(intro_new):
-	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func _load():
 	var load_ = File.new()
 	load_.open(str(documents) +"/Pixel Zone/.data/lang.save", File.READ)
@@ -54,7 +52,6 @@ func _ready():
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		return
 func _on_Skip_pressed():
-	$AnimationPlayer.stop()
 	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():
     var save_dict = {
@@ -63,3 +60,7 @@ func save():
 		"File ID" : OS.get_unix_time()
     }
     return save_dict
+
+
+func _on_VideoPlayer_finished():
+	_on_Skip_pressed()
