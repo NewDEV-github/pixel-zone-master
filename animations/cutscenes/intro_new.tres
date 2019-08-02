@@ -4,63 +4,38 @@
 resource_name = "intro_new"
 length = 3.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera:translation")
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.6, 1.1, 1.6, 1.7, 2.2, 2.3, 2.5, 2.8, 3, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( -7634.81, 0, 466.61 ), Vector3( -7600, 0, 466.61 ), Vector3( -100, 0, 466.61 ), Vector3( 0, 0, 466.61 ), Vector3( 100, 0, 466.61 ), Vector3( 7600, 0, 466.61 ), Vector3( 7700, 0, 466.61 ), Vector3( 15200, 0, 466.61 ), Vector3( 15269.6, 0, 466.61 ), Vector3( 15269.6, 0, 466.61 ), Vector3( 15269.6, 0, 200 ), Vector3( 15269.6, 0, -150 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationPlayer:playback_speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.5 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AudioStreamPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("AudioStreamPlayer2:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 1.7, 1.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("AudioStreamPlayer3:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 2.4, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-
