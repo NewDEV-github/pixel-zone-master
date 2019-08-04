@@ -31,7 +31,7 @@ region_rect = Rect2( 0, 0, 800, 256 )
 
 [node name="mount_ 2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 1.2, 1 )
-motion_mirroring = Vector2( 1111, 0 )
+motion_mirroring = Vector2( 1000, 0 )
 
 [node name="Sprite" type="Sprite" parent="mount_ 2"]
 position = Vector2( -7.59387, 1.52969 )
@@ -39,3 +39,4 @@ scale = Vector2( 2.37742, 2.61961 )
 texture = ExtResource( 3 )
 centered = false
 region_rect = Rect2( 0, 0, 800, 256 )
+

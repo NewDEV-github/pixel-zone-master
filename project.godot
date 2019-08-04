@@ -93,9 +93,9 @@ gamestate="*res://globals/gamestate.gd"
 log_file="*res://scenes/log_file.tscn"
 background_load="*res://scenes/background_load.tscn"
 Firebase="*res://addons/GDFirebase/Firebase.gd"
-DebugConsole="*res://console/DebugConsole.tscn"
 HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
 upload="*res://scenes/upload.tscn"
+DebugConsole="*res://console/DebugConsole.tscn"
 
 [compression]
 
@@ -236,11 +236,6 @@ shortcut_action={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777223,"unicode":0,"echo":false,"script":null)
  ]
 }
-console={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":96,"unicode":0,"echo":false,"script":null)
- ]
-}
 move_forward={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
@@ -284,6 +279,11 @@ tab_right_2={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+console={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":96,"unicode":0,"echo":false,"script":null)
  ]
 }
 

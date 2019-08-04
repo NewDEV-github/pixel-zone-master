@@ -1,5 +1,10 @@
 extends CanvasLayer
-
+#func _enter_tree():
+#    Engine.add_autoload_singleton("DebugConsole", "res://console/DebugConsole.tscn")
+#
+#func _exit_tree():
+#    Engine.remove_autoload_singleton("DebugConsole")
+	
 func write_line(msg, addToLog = true, userPrefix = false, messageSignPrefix = false,  clickableMeta = false, sendToConsole = true, flags = 0):
 	$console.write_line(str(msg), addToLog, userPrefix, messageSignPrefix, clickableMeta, sendToConsole, flags)
 

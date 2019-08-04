@@ -23,11 +23,11 @@ func _ready():
 	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
 	$ui/AnimationPlayer.play("saving_state")
 func _physics_process(delta):
-	if Input.is_action_just_pressed("console"):
-		if $console/console.visible == false:
-			$console/console.show()
-		if $console/console.visible == true:
-			$console/console.hide()
+#	if Input.is_action_just_pressed("console"):
+#		if $console/console.visible == false:
+#			$console/console.show()
+#		if $console/console.visible == true:
+#			$console/console.hide()
 	if $ui/Control/ProgressBar.value == 0:
 		get_tree().change_scene("scenes/GameOver.tscn")
 	onair_time += delta
