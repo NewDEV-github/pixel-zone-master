@@ -95,6 +95,8 @@ func _on_ItemList_item_selected(index):
 		path = "res://sounds/Hill.ogg"
 	if index == 5:
 		path = 'res://sounds/sci-fi.ogg'
+	if index == 6:
+		path = 'res://sounds/Castlemania.ogg'
 	AudioServer.set_bus_mute(1, true)
 	$Custom_Music.set_stream(load(path))
 	$Custom_Music.play()

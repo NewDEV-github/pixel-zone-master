@@ -315,7 +315,6 @@ margin_right = 80.4999
 margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -733,7 +732,7 @@ margin_bottom = -18.7504
 [node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false ]
+items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
@@ -753,7 +752,6 @@ autoplay = true
 bus = "Custom Music"
 script = ExtResource( 17 )
 id = "Level"
-
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]
