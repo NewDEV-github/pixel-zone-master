@@ -1,14 +1,5 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-
-# Called when the node enters the scene tree for the first time.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
-
 
 func _on_select_pressed():
 	background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
@@ -30,59 +21,39 @@ func _on_select9_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_2.tscn")
 func _process(delta):
 	var unlock = File.new()
-	if unlock.file_exists("user://2.save"):
-		$control/PixelZone02/select2.set_disabled(false)
-	if not unlock.file_exists("user://2.save"):
-		$control/PixelZone02/select2.set_disabled(true)
-	if unlock.file_exists("user://3.save"):
-		$control/IceCap01/select3.set_disabled(false)
-	if not unlock.file_exists("user://3.save"):
-		$control/IceCap01/select3.set_disabled(true)
-	if unlock.file_exists("user://4.save"):
-		$control/IceCap02/select4.set_disabled(false)
-	if not unlock.file_exists("user://4.save"):
-		$control/IceCap02/select4.set_disabled(true)
-	if unlock.file_exists("user://5.save"):
-		$control/IceCap03/select5.set_disabled(false)
-	if not unlock.file_exists("user://5.save"):
-		$control/IceCap03/select5.set_disabled(true)
-	if unlock.file_exists("user://6.save"):
-		$control/JungleRuins01/select6.set_disabled(false)
-	if not unlock.file_exists("user://6.save"):
-		$control/JungleRuins01/select6.set_disabled(true)
-	if unlock.file_exists("user://7.save"):
-		$control/JungleRuins02/select7.set_disabled(false)
-	if not unlock.file_exists("user://7.save"):
-		$control/JungleRuins02/select7.set_disabled(true)
-	if unlock.file_exists("user://8.save") :
-		$control/JungleRuins03/select8.set_disabled(false)
-	if not unlock.file_exists("user://8.save") :
-		$control/JungleRuins03/select8.set_disabled(true)
-	if unlock.file_exists("user://9.save") :
-		$control/Hill01/select10.set_disabled(false)
-	if not unlock.file_exists("user://9.save") :
-		$control/Hill01/select10.set_disabled(true)
-	if unlock.file_exists("user://10.save"):
-		$control/Hill02/select9.set_disabled(false)
-	if not unlock.file_exists("user://10.save") :
-		$control/Hill02/select9.set_disabled(true)
-	if unlock.file_exists("user://11.save") :
-		$control/Hill03/select11.set_disabled(false)
-	if not unlock.file_exists("user://11.save"): 
-		$control/Hill03/select11.set_disabled(true)
-	if unlock.file_exists("user://12.save"):
-		$control/SciFi01/select12.set_disabled(false)
-	if not unlock.file_exists("user://12.save"):
-		$control/SciFi01/select12.set_disabled(true)
-	if unlock.file_exists("user://13.save"):
-		$control/SciFi02/select13.set_disabled(false)
-	if not unlock.file_exists("user://13.save") :
-		$control/SciFi02/select13.set_disabled(true)
-	if unlock.file_exists("user://14.save"):
-		$control/SciFi03/select14.set_disabled(false)
-	if not unlock.file_exists("user://14.save") :
-		$control/SciFi03/select14.set_disabled(true)
-	
+	unlock.open_encrypted_with_pass("user://save_data.1", File.READ, str(34567865))
+	var decrypted_sav_1 = unlock.get_line()
+	unlock.close()
+	unlock.open_encrypted_with_pass("user://save_data.2", File.READ, str(34567865))
+	var decrypted_sav_2 = unlock.get_line()
+	unlock.close()
+	if decrypted_sav_1 == decrypted_sav_2:
+		if decrypted_sav_1 >= "2":
+			$control/PixelZone02/select2.set_disabled(false)
+		if decrypted_sav_1 >= "3":
+			$control/IceCap01/select3.set_disabled(false)
+		if decrypted_sav_1 >= "4":
+			$control/IceCap02/select4.set_disabled(false)
+		if decrypted_sav_1 >= "5":
+			$control/IceCap03/select5.set_disabled(false)
+		if decrypted_sav_1 >= "6":
+			$control/JungleRuins01/select6.set_disabled(false)
+		if decrypted_sav_1 >= "7":
+			$control/JungleRuins02/select7.set_disabled(false)
+		if decrypted_sav_1 >= "8":
+			$control/JungleRuins03/select8.set_disabled(false)
+		if decrypted_sav_1 >= "9":
+			$control/Hill01/select10.set_disabled(false)
+		if decrypted_sav_1 >= "10":
+			$control/Hill02/select9.set_disabled(false)
+		if decrypted_sav_1 >= "11":
+			$control/Hill03/select11.set_disabled(false)
+		if decrypted_sav_1 >= "12":
+			$control/SciFi01/select12.set_disabled(false)
+		if decrypted_sav_1 >= "13":
+			$control/SciFi02/select13.set_disabled(false)
+		if decrypted_sav_1 >= "14":
+			$control/SciFi03/select14.set_disabled(false)
 func _on_VScrollBar_value_changed(value):
 	$control.set_position(Vector2(0, -(value*10)))
 

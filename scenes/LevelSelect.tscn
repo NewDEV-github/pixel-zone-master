@@ -314,6 +314,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -337,6 +338,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -360,6 +362,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -385,6 +388,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -406,6 +410,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -430,6 +435,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -453,6 +459,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -478,6 +485,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -503,6 +511,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -528,6 +537,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -553,6 +563,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -578,6 +589,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 
@@ -603,6 +615,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 [connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]

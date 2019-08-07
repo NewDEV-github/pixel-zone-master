@@ -182,7 +182,6 @@ scale = Vector2( 0.5, 1 )
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]

@@ -306,6 +306,5 @@ position = Vector2( 7119.09, 2270.82 )
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2, 1.17001 )
-
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

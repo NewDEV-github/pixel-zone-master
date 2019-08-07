@@ -139,6 +139,5 @@ position = Vector2( 21.6421, 158.709 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

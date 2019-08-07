@@ -2,13 +2,12 @@ extends Node
 signal achieve1
 func _ready():
 	var a = File.new()
-	a.open("user://2.save", File.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	for i in save_nodes:
-		var node_data = i.call("save");
-		a.store_line(to_json(node_data))
+	a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))
+	a.store_line("2")
 	a.close()
-	var dlc = File.new()
+	a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
+	a.store_line("2")
+	a.close()
 
 
 

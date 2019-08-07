@@ -84,6 +84,10 @@ config/name="Pixel Zone"
 run/main_scene="res://scenes/intro_low_size.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+enable_audio_input=true
+
 [autoload]
 
 game_state="*res://globals/game_state.gd"
@@ -97,47 +101,9 @@ HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
 upload="*res://scenes/upload.tscn"
 DebugConsole="*res://console/DebugConsole.tscn"
 
-[compression]
-
-formats/zstd/compression_level=1
-
-[debug]
-
-gdscript/warnings/enable=false
-gdscript/completion/autocomplete_setters_and_getters=true
-gdscript/warnings/unassigned_variable=false
-gdscript/warnings/unassigned_variable_op_assign=false
-gdscript/warnings/unused_variable=false
-gdscript/warnings/unused_class_variable=false
-gdscript/warnings/unused_argument=false
-gdscript/warnings/unreachable_code=false
-gdscript/warnings/standalone_expression=false
-gdscript/warnings/void_assignment=false
-gdscript/warnings/narrowing_conversion=false
-gdscript/warnings/function_may_yield=false
-gdscript/warnings/incompatible_ternary=false
-gdscript/warnings/unused_signal=false
-gdscript/warnings/return_value_discarded=false
-gdscript/warnings/property_used_as_function=false
-gdscript/warnings/constant_used_as_function=false
-gdscript/warnings/function_used_as_property=false
-gdscript/warnings/integer_division=false
-
 [display]
 
 window/size/resizable=false
-
-[editor]
-
-convert_text_resources_to_binary_on_export=true
-
-[editor_plugins]
-
-enabled=PoolStringArray( "GDFirebase" )
-
-[gdnative]
-
-singletons=[  ]
 
 [input]
 
@@ -311,17 +277,11 @@ translation_remaps={
 }
 locale_filter=[ 1, [ "ar", "en", "es", "ms", "pl", "pl_PL" ] ]
 
-[memory]
-
-limits/message_queue/max_size_kb=4096
-
 [network]
 
-limits/packet_peer_stream/max_buffer_po2=64
 ssl/certificates="res://ca-certificates.crt"
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
-vram_compression/import_etc=true
