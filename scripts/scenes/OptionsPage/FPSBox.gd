@@ -20,6 +20,8 @@ func _load():
 	var loaded_settings = parse_json(load_.get_line())
 	if loaded_settings == "True":
 		$CheckButton.set_pressed(true)
+	if loaded_settings == "False":
+		$CheckButton.set_pressed(false)
 func _save():
 	var save = File.new()
 	save.open(str(documents) +"/Pixel Zone/.data/settings_fps.save", File.WRITE)

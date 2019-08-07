@@ -4,8 +4,8 @@
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
-[ext_resource path="res://animations/new.tres" type="Animation" id=5]
-[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/feedback.tscn" type="PackedScene" id=5]
+[ext_resource path="res://animations/new.tres" type="Animation" id=6]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -83,7 +83,6 @@ text = "KEY_REPORT_BUG"
 flat = true
 
 [node name="Downloadblecontent" type="Button" parent="TextureRect/VBoxContainer"]
-visible = false
 margin_top = 129.0
 margin_right = 509.0
 margin_bottom = 168.0
@@ -93,9 +92,9 @@ text = "KEY_DC"
 flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 129.0
+margin_top = 172.0
 margin_right = 509.0
-margin_bottom = 168.0
+margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "KEY_Quit"
@@ -165,6 +164,8 @@ margin_bottom = 216.0
 dialog_text = "Hmmm... it seems there isn't loaded a mod, wich was used,
 to create that save. Do you want to play without loading a mod?"
 
+[node name="Control" parent="TextureRect" instance=ExtResource( 5 )]
+
 [node name="ModSelector" type="FileDialog" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -180,19 +181,13 @@ resizable = true
 mode = 0
 access = 2
 filters = PoolStringArray( "*.pck" )
-current_dir = "C:/Users/Karol/Documents/pixel-zone-master"
-current_path = "C:/Users/Karol/Documents/pixel-zone-master/"
+current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
+current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/new = ExtResource( 5 )
-
-[node name="Control" parent="." instance=ExtResource( 6 )]
-margin_left = 1023.5
-margin_top = 3.5
-margin_right = 1023.5
-margin_bottom = 3.5
+anims/new = ExtResource( 6 )
 
 [node name="VScrollBar" type="VScrollBar" parent="."]
 visible = false

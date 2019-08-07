@@ -43,9 +43,7 @@ func _on_PP_pressed():
 	$HTTPRequest.request("https://github.com/MasterPolska123/pixel-zone-master/releases/download/v0.7.2.1.0/dlc_loops.pck")
 
 func _on_Licenses_pressed():
-	$TextureRect/LicenseSelector.popup_centered()
-	Firebase.Storage.upload("res://icon.png", "Pixel Zone", "icon.png")
-	
+	$TextureRect/Control._show()
 func _on_Play8_pressed():
 	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 

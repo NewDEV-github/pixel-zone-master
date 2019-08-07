@@ -53,6 +53,7 @@ custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -269,43 +270,43 @@ margin_bottom = 155.0
 
 [node name="Englisch" type="Button" parent="TabContainer/Language/Europe"]
 margin_right = 131.0
-margin_bottom = 39.0
+margin_bottom = 20.0
 text = "LANG_EN"
 
 [node name="Portuguese" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 43.0
+margin_top = 24.0
 margin_right = 131.0
-margin_bottom = 82.0
+margin_bottom = 44.0
 text = "LANG_PT"
 
 [node name="French" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 86.0
+margin_top = 48.0
 margin_right = 131.0
-margin_bottom = 125.0
+margin_bottom = 68.0
 text = "LANG_FR"
 
 [node name="Polisch" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 129.0
+margin_top = 72.0
 margin_right = 131.0
-margin_bottom = 168.0
+margin_bottom = 92.0
 text = "LANG_PL"
 
 [node name="Detusch" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 172.0
+margin_top = 96.0
 margin_right = 131.0
-margin_bottom = 211.0
+margin_bottom = 116.0
 text = "LANG_DE"
 
 [node name="Italiano" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 215.0
+margin_top = 120.0
 margin_right = 131.0
-margin_bottom = 254.0
+margin_bottom = 140.0
 text = "LANG_IT"
 
 [node name="Spanisch" type="Button" parent="TabContainer/Language/Europe"]
-margin_top = 258.0
+margin_top = 144.0
 margin_right = 131.0
-margin_bottom = 297.0
+margin_bottom = 164.0
 text = "LANG_ES"
 
 [node name="Label" type="Label" parent="TabContainer/Language"]
@@ -315,7 +316,6 @@ margin_right = 80.4999
 margin_bottom = -325.5
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -336,7 +336,7 @@ script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 margin_right = 392.0
-margin_bottom = 114.0
+margin_bottom = 110.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -357,20 +357,20 @@ align = 1
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 118.0
+margin_top = 114.0
 margin_right = 392.0
-margin_bottom = 372.0
+margin_bottom = 374.0
 
 [node name="VSyncBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -379,21 +379,21 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 43.0
+margin_top = 44.0
 margin_right = 392.0
-margin_bottom = 82.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -402,21 +402,21 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="PixelSnapBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 86.0
+margin_top = 88.0
 margin_right = 392.0
-margin_bottom = 125.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -425,21 +425,21 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="QualityBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 129.0
+margin_top = 132.0
 margin_right = 392.0
-margin_bottom = 168.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -448,21 +448,21 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 172.0
+margin_top = 176.0
 margin_right = 392.0
-margin_bottom = 211.0
+margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -471,21 +471,21 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="IFB" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 215.0
+margin_top = 220.0
 margin_right = 392.0
-margin_bottom = 254.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
-margin_right = 334.0
-margin_bottom = 39.0
+margin_right = 312.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -494,14 +494,14 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
-margin_left = 338.0
+margin_left = 316.0
 margin_right = 392.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 
 [node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 376.0
+margin_top = 378.0
 margin_right = 392.0
-margin_bottom = 490.0
+margin_bottom = 488.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -511,9 +511,9 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Advanced" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 494.0
+margin_top = 492.0
 margin_right = 392.0
-margin_bottom = 533.0
+margin_bottom = 532.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_AO"
 align = 1
@@ -529,7 +529,7 @@ script = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 margin_right = 392.0
-margin_bottom = 60.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -538,15 +538,15 @@ align = 1
 valign = 1
 
 [node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 64.0
+margin_top = 69.0
 margin_right = 392.0
-margin_bottom = 124.0
+margin_bottom = 134.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
 margin_right = 392.0
-margin_bottom = 60.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -581,9 +581,9 @@ text = "Unmuted"
 flat = true
 
 [node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 128.0
+margin_top = 138.0
 margin_right = 392.0
-margin_bottom = 188.0
+margin_bottom = 203.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -594,16 +594,16 @@ script = ExtResource( 12 )
 
 [node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 editor/display_folded = true
-margin_top = 192.0
+margin_top = 207.0
 margin_right = 392.0
-margin_bottom = 252.0
+margin_bottom = 272.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 5
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
 margin_right = 392.0
-margin_bottom = 60.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -638,9 +638,9 @@ text = "Unmuted"
 flat = true
 
 [node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 256.0
+margin_top = 276.0
 margin_right = 392.0
-margin_bottom = 316.0
+margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -651,15 +651,15 @@ script = ExtResource( 13 )
 
 [node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 editor/display_folded = true
-margin_top = 320.0
+margin_top = 345.0
 margin_right = 392.0
-margin_bottom = 380.0
+margin_bottom = 410.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
 margin_right = 392.0
-margin_bottom = 60.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -694,9 +694,9 @@ text = "Unmuted"
 flat = true
 
 [node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 384.0
+margin_top = 414.0
 margin_right = 392.0
-margin_bottom = 444.0
+margin_bottom = 479.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -708,31 +708,40 @@ ticks_on_borders = true
 script = ExtResource( 14 )
 
 [node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 448.0
+margin_top = 483.0
 margin_right = 392.0
-margin_bottom = 487.0
+margin_bottom = 503.0
 text = "KEY_OM"
 
 [node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 491.0
+margin_top = 507.0
 margin_right = 392.0
-margin_bottom = 530.0
+margin_bottom = 531.0
 editable = false
 placeholder_text = "Name of selected file"
 caret_blink = true
 
 [node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 14.7496
-margin_top = 34.2496
-margin_right = 6.74963
-margin_bottom = -18.7504
+margin_left = 15.0
+margin_top = 34.0
+margin_right = 7.0
+margin_bottom = -1.0
 
 [node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
+
+[node name="Button" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog"]
+margin_left = 94.5
+margin_top = 465.75
+margin_right = 210.5
+margin_bottom = 485.75
+text = "Custom SOng"
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
@@ -766,3 +775,4 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ApplyButton" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="item_selected" from="TabContainer/Graphics & Audio/WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog/Button" to="." method="_on_Button_pressed"]

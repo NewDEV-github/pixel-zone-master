@@ -97,6 +97,7 @@ func _on_ItemList_item_selected(index):
 		path = 'res://sounds/sci-fi.ogg'
 	if index == 6:
 		path = 'res://sounds/Castlemania.ogg'
+	
 	AudioServer.set_bus_mute(1, true)
 	$Custom_Music.set_stream(load(path))
 	$Custom_Music.play()
@@ -137,3 +138,8 @@ func _on_ThemeList_item_selected(index):
 	ui_theme.new()._load_user_theme(load_path)
 	emit_signal("ready_to_load", load_path)
 #	self.set_theme(load(full_theme_path))
+
+func _on_Button_pressed():
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(get_tree().get_current_scene())
+	ResourceSaver.save("res://my_scene.tscn", packed_scene)
