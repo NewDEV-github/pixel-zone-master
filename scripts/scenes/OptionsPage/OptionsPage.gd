@@ -127,7 +127,9 @@ func _on_Yellow_pressed():
 				checked = true
 		else:
 			print("An error occurred when trying to access the path.")
+
 signal ready_to_load
+
 func _on_ThemeList_item_selected(index):
 	var path = str(documents) + "/Pixel Zone/"
 	var item_name = $TabContainer/Theme/CustomTheme/ThemeList.get_item_text(index)
@@ -138,8 +140,3 @@ func _on_ThemeList_item_selected(index):
 	ui_theme.new()._load_user_theme(load_path)
 	emit_signal("ready_to_load", load_path)
 #	self.set_theme(load(full_theme_path))
-
-func _on_Button_pressed():
-	var packed_scene = PackedScene.new()
-	packed_scene.pack(get_tree().get_current_scene())
-	ResourceSaver.save("res://my_scene.tscn", packed_scene)

@@ -2,20 +2,20 @@
 KEY_APPLY,Apply,Aplicar,Einreichen,Zastosuj,Applicare,Aplique,Appliquer
 KEY_CONTROLS,"A/Left - Left
 D/Right - Right
-Space -  Jump/SpinDash
-","A / Izquierda - Izquierda
-D / Derecha - Derecha
-Espacio – Salto/SpinDash","A / Links - Links
-D / rechts - richtig
-Weltraum – Jump/SpinDash","A/Left - Lewo
-D/Right - Prawo
-Space – Skok/SpinDash","A / Sinistra - Sinistra
-D / Destra - Destra
-Spazio – Salta/SpinDash","A / esquerda - esquerda
-D / Direita - Direita
-Espaço – Jump/SpinDash","A / Gauche - Gauche
-D / Droite - Droite
-Space – Jump/SpinDash"
+Space -  Jump
+","A/Izquierda - Izquierda
+D/Derecha - Derecha
+Espacio – Salto","A/Links - Links
+D/Rechts – Rechts
+Weltraum – Jump","A/Lewo - Lewo
+D/Prawo - Prawo
+Spacja – Skok","A/Sinistra - Sinistra
+D/Destra - Destra
+Spazio – Salta","A/Esquerda - Esquerda
+D/Direita - Direita
+Espaço – Jump","A/Gauche - Gauche
+D/Droite – Droite
+Space – Jump"
 KEY_GRAPHICS,Graphics,Gráficos,Grafik,Grafika,Grafica,Gráficos,Graphique
 KEY_WINDOW_TYPE,Window Type,Tipo de ventana,Fenstertyp,Typ Okna,Tipo di finestra,Tipo de janela,Type de fenêtre
 KEY_RESOLUTION,Resolution,Resolución,Auflösung,Rozdzielczość,Risoluzione,Resolução,Résolution

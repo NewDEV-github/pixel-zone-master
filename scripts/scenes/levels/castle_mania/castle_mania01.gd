@@ -6,11 +6,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var a = File.new()
+	a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))
+	a.store_line("15")
+	a.close()
+	a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
+	a.store_line("15")
+	a.close()
 
 
 func _on_Area2D2_body_entered(body):

@@ -54,6 +54,8 @@ func _process(delta):
 			$control/SciFi02/select13.set_disabled(false)
 		if decrypted_sav_1 >= "14":
 			$control/SciFi03/select14.set_disabled(false)
+		if decrypted_sav_1 >= "15":
+			$control/CastleMania01/select15a.set_disabled(false)
 func _on_VScrollBar_value_changed(value):
 	$control.set_position(Vector2(0, -(value*10)))
 
@@ -75,3 +77,7 @@ func _on_select17_pressed():
 
 func _on_select14_pressed():
 	background_load.load_scene("res://scenes/stages/scifi/sci_fi_3.tscn")
+
+
+func _on_select15a_pressed():
+	background_load.load_scene("res://scenes/stages/castle_mania/castle_mania01.tscn")

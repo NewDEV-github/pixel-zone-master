@@ -79,3 +79,11 @@ KEY_COINS,Collected Coins,Monedas recogidas,Gesammelte Münzen,Zebrane Monety,Mo
 KEY_AO,Advanced Options,Opciones avanzadas,Erweiterte Optionen,Opcje Zaawansowane,Opzioni avanzate,Opções avançadas,Options avancées
 KEY_LPM,Low Processor Mode,Modo de procesador bajo,Niedriger Prozessormodus,Tryb ‘wolnego’ procesora,Modalità basso processore,Modo Low Processor,Mode processeur bas
 KEY_OM,Select Music,Seleccionar musica,Wählen Sie Musik,Wybierz ścieżkę,Seleziona musica,Selecione Música,Sélectionnez la musique
+KEY_CT,Select Custom Theme,Seleccionar tema personalizado,Wählen Sie Benutzerdefiniertes Design,Wybierz Własny Motyw,Seleziona tema personalizzato,Selecione um tema personalizado,Sélectionner un thème personnalisé
+KEY_Theme_NOT,"Restart game to full
+Reload list of detected themes",Reinicia el juego a la lista completa de recarga de temas detectados,"Starten Sie das Spiel neu, um die Liste
+Der erkannten Themen vollständig neu zu laden","Uruchom ponownie grę,
+Aby odświeżyć listę załadowanych motywów","Riavvia il gioco all'elenco
+Di ricariche completo dei temi rilevati","Reinicie o jogo para recarregar
+Completamente a lista de temas detectados","Redémarrer le jeu pour recharger
+Complètement la liste des thèmes détectés"
