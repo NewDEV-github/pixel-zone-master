@@ -13,6 +13,7 @@
 [node name="GameUI" type="Control"]
 pause_mode = 2
 self_modulate = Color( 1, 1, 1, 0 )
+light_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ -298.126 ]
@@ -40,6 +41,7 @@ script = ExtResource( 3 )
 
 [node name="Menu" type="Panel" parent="UIScaler"]
 self_modulate = Color( 1, 1, 1, 0 )
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -410.625
@@ -55,6 +57,7 @@ margin_right = 398.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UIScaler/Menu"]
 modulate = Color( 1, 0.956863, 0.956863, 1 )
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -67,18 +70,8 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Save" type="Button" parent="UIScaler/Menu/HBoxContainer"]
-visible = false
-margin_right = 230.0
-margin_bottom = 91.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-text = "KEY_SAVE"
-flat = true
-
 [node name="Return" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+light_mask = 2
 margin_right = 189.0
 margin_bottom = 186.0
 size_flags_horizontal = 3
@@ -89,6 +82,7 @@ text = "KEY_Return"
 flat = true
 
 [node name="Options" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+light_mask = 2
 margin_top = 190.0
 margin_right = 189.0
 margin_bottom = 376.0
@@ -101,21 +95,8 @@ group = SubResource( 1 )
 text = "KEY_Options"
 flat = true
 
-[node name="Stats" type="Button" parent="UIScaler/Menu/HBoxContainer"]
-visible = false
-margin_top = 228.0
-margin_right = 189.0
-margin_bottom = 338.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-toggle_mode = true
-group = SubResource( 1 )
-text = "KEY_Stats"
-flat = true
-
 [node name="Quit" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+light_mask = 2
 margin_top = 380.0
 margin_right = 189.0
 margin_bottom = 567.0
@@ -135,5 +116,4 @@ script = ExtResource( 7 )
 id = "Menu"
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Return" to="UIScaler/Menu" method="_on_Return_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Options" to="UIScaler/Menu" method="_on_Options_pressed"]
-[connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Stats" to="UIScaler/Menu" method="_on_Stats_pressed"]
 [connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Quit" to="UIScaler/Menu" method="_on_Quit_pressed"]

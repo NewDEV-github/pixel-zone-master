@@ -32,6 +32,7 @@ shortcut = SubResource( 1 )
 
 [node name="OptionsPage" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.75
@@ -43,6 +44,7 @@ size_flags_vertical = 3
 script = ExtResource( 1 )
 
 [node name="TabContainer" type="TabContainer" parent="."]
+light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -301.0
@@ -53,7 +55,7 @@ custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
-visible = false
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -64,6 +66,7 @@ theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="TabContainer/Controls"]
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -76,6 +79,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_CONTROLS"
 
 [node name="ApplyButton2" type="Button" parent="TabContainer/Controls"]
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -92,7 +96,9 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
 visible = false
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -101,6 +107,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Theme"]
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -111,6 +118,7 @@ margin_right = 279.0
 margin_bottom = 159.0
 
 [node name="Label" type="Label" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_right = 558.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 2 )
@@ -118,14 +126,8 @@ text = "KEY_UI_THEME"
 align = 1
 valign = 1
 
-[node name="CheckButton" type="CheckBox" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
-margin_top = 43.0
-margin_right = 558.0
-margin_bottom = 82.0
-text = "Apply to Game's UI, not only of User's UI"
-
 [node name="Yellow" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 35.0
 margin_right = 558.0
 margin_bottom = 72.0
@@ -133,6 +135,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_CT"
 
 [node name="Neon" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 76.0
 margin_right = 558.0
 margin_bottom = 113.0
@@ -140,6 +143,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Neon"
 
 [node name="Alien" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 117.0
 margin_right = 558.0
 margin_bottom = 154.0
@@ -147,6 +151,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Alien"
 
 [node name="Light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 158.0
 margin_right = 558.0
 margin_bottom = 195.0
@@ -154,6 +159,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Light"
 
 [node name="Solarized_dark" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 199.0
 margin_right = 558.0
 margin_bottom = 236.0
@@ -161,45 +167,15 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_dark"
 
 [node name="Solarized_light" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 240.0
 margin_right = 558.0
 margin_bottom = 277.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Solarized_light"
 
-[node name="Grey" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
-margin_top = 301.0
-margin_right = 558.0
-margin_bottom = 340.0
-custom_fonts/font = ExtResource( 2 )
-text = "Custom Theme"
-
-[node name="Red" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
-margin_top = 281.0
-margin_right = 558.0
-margin_bottom = 318.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Red"
-
-[node name="Green" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
-margin_top = 322.0
-margin_right = 558.0
-margin_bottom = 359.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Green"
-
-[node name="Blue" type="Button" parent="TabContainer/Theme/VBoxContainer"]
-visible = false
-margin_top = 363.0
-margin_right = 558.0
-margin_bottom = 400.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_Blue"
-
 [node name="Default" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 281.0
 margin_right = 558.0
 margin_bottom = 318.0
@@ -207,6 +183,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Default"
 
 [node name="Old" type="Button" parent="TabContainer/Theme/VBoxContainer"]
+light_mask = 2
 margin_top = 322.0
 margin_right = 558.0
 margin_bottom = 359.0
@@ -215,15 +192,18 @@ text = "KEY_Old"
 
 [node name="CustomTheme" type="WindowDialog" parent="TabContainer/Theme"]
 visible = true
+light_mask = 2
 margin_right = 784.0
 margin_bottom = 535.0
 
 [node name="ThemeList" type="ItemList" parent="TabContainer/Theme/CustomTheme"]
+light_mask = 2
 margin_left = -2.0
 margin_right = 787.0
 margin_bottom = 449.0
 
 [node name="Label" type="Label" parent="TabContainer/Theme/CustomTheme"]
+light_mask = 2
 margin_left = 2.0
 margin_top = 458.0
 margin_right = 784.0
@@ -234,6 +214,7 @@ text = "KEY_Theme_NOT"
 [node name="Language" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
 visible = false
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -242,6 +223,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="ApplyButton3" type="Button" parent="TabContainer/Language"]
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -258,6 +240,7 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Europe" type="VBoxContainer" parent="TabContainer/Language"]
+light_mask = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -272,12 +255,14 @@ rect_clip_content = true
 alignment = 1
 
 [node name="Englisch" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_right = 257.0
 margin_bottom = 37.0
 custom_fonts/font = ExtResource( 2 )
 text = "LANG_EN"
 
 [node name="Portuguese" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 41.0
 margin_right = 257.0
 margin_bottom = 78.0
@@ -285,6 +270,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "LANG_PT"
 
 [node name="French" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 82.0
 margin_right = 257.0
 margin_bottom = 119.0
@@ -292,6 +278,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "LANG_FR"
 
 [node name="Polisch" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 123.0
 margin_right = 257.0
 margin_bottom = 160.0
@@ -299,6 +286,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "LANG_PL"
 
 [node name="Detusch" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 164.0
 margin_right = 257.0
 margin_bottom = 201.0
@@ -306,6 +294,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "LANG_DE"
 
 [node name="Italiano" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 205.0
 margin_right = 257.0
 margin_bottom = 242.0
@@ -313,19 +302,17 @@ custom_fonts/font = ExtResource( 2 )
 text = "LANG_IT"
 
 [node name="Spanisch" type="Button" parent="TabContainer/Language/Europe"]
+light_mask = 2
 margin_top = 246.0
 margin_right = 257.0
 margin_bottom = 283.0
 custom_fonts/font = ExtResource( 2 )
 text = "LANG_ES"
 
-[node name="Label" type="Label" parent="TabContainer/Language"]
-margin_left = 40.4999
-margin_top = -364.5
-margin_right = 80.4999
-margin_bottom = -325.5
-
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
+visible = false
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -334,10 +321,13 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Graphics & Audio"]
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="GraphicsBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
+editor/display_folded = true
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 533.0
 size_flags_horizontal = 3
@@ -345,6 +335,7 @@ size_flags_vertical = 3
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 110.0
 size_flags_horizontal = 3
@@ -354,24 +345,13 @@ text = "KEY_GRAPHICS"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-visible = false
-margin_top = 136.0
-margin_right = 365.0
-margin_bottom = 268.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_3D_NW"
-align = 1
-valign = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 margin_top = 114.0
 margin_right = 392.0
 margin_bottom = 374.0
 
 [node name="VSyncBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_right = 392.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -379,6 +359,7 @@ size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -389,11 +370,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_top = 44.0
 margin_right = 392.0
 margin_bottom = 84.0
@@ -402,6 +385,7 @@ size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -412,11 +396,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="PixelSnapBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_top = 88.0
 margin_right = 392.0
 margin_bottom = 128.0
@@ -425,6 +411,7 @@ size_flags_vertical = 3
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -435,11 +422,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="QualityBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_top = 132.0
 margin_right = 392.0
 margin_bottom = 172.0
@@ -448,6 +437,7 @@ size_flags_vertical = 3
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -458,11 +448,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_top = 176.0
 margin_right = 392.0
 margin_bottom = 216.0
@@ -471,6 +463,7 @@ size_flags_vertical = 3
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -481,11 +474,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="IFB" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+editor/display_folded = true
 margin_top = 220.0
 margin_right = 392.0
 margin_bottom = 260.0
@@ -494,6 +489,7 @@ size_flags_vertical = 3
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -504,11 +500,13 @@ align = 1
 valign = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
 [node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
 margin_top = 378.0
 margin_right = 392.0
 margin_bottom = 488.0
@@ -521,6 +519,7 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Advanced" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
 margin_top = 492.0
 margin_right = 392.0
 margin_bottom = 532.0
@@ -538,6 +537,7 @@ size_flags_vertical = 3
 script = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
@@ -548,6 +548,7 @@ align = 1
 valign = 1
 
 [node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+editor/display_folded = true
 margin_top = 66.0
 margin_right = 392.0
 margin_bottom = 128.0
@@ -555,6 +556,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
@@ -566,6 +568,7 @@ valign = 1
 
 [node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
 visible = false
+light_mask = 2
 margin_left = 127.0
 margin_right = 250.0
 margin_bottom = 48.0
@@ -579,6 +582,7 @@ flat = true
 
 [node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
 visible = false
+light_mask = 2
 margin_left = 193.0
 margin_right = 382.0
 margin_bottom = 48.0
@@ -591,6 +595,7 @@ text = "Unmuted"
 flat = true
 
 [node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_top = 132.0
 margin_right = 392.0
 margin_bottom = 194.0
@@ -604,6 +609,7 @@ script = ExtResource( 12 )
 
 [node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 editor/display_folded = true
+light_mask = 2
 margin_top = 198.0
 margin_right = 392.0
 margin_bottom = 260.0
@@ -612,6 +618,7 @@ size_flags_vertical = 3
 custom_constants/separation = 5
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
@@ -623,6 +630,7 @@ valign = 1
 
 [node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
 visible = false
+light_mask = 2
 margin_left = 157.0
 margin_right = 250.0
 margin_bottom = 48.0
@@ -636,6 +644,7 @@ flat = true
 
 [node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
 visible = false
+light_mask = 2
 margin_left = 193.0
 margin_right = 382.0
 margin_bottom = 48.0
@@ -648,6 +657,7 @@ text = "Unmuted"
 flat = true
 
 [node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_top = 264.0
 margin_right = 392.0
 margin_bottom = 326.0
@@ -668,6 +678,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
+light_mask = 2
 margin_right = 392.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
@@ -679,6 +690,7 @@ valign = 1
 
 [node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
 visible = false
+light_mask = 2
 margin_left = 127.0
 margin_right = 250.0
 margin_bottom = 48.0
@@ -692,6 +704,7 @@ flat = true
 
 [node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
 visible = false
+light_mask = 2
 margin_left = 193.0
 margin_right = 382.0
 margin_bottom = 48.0
@@ -704,6 +717,7 @@ text = "Unmuted"
 flat = true
 
 [node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_top = 396.0
 margin_right = 392.0
 margin_bottom = 458.0
@@ -718,6 +732,7 @@ ticks_on_borders = true
 script = ExtResource( 14 )
 
 [node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_top = 462.0
 margin_right = 392.0
 margin_bottom = 499.0
@@ -725,6 +740,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_OM"
 
 [node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
 margin_top = 503.0
 margin_right = 392.0
 margin_bottom = 527.0
@@ -733,6 +749,7 @@ placeholder_text = "Name of selected file"
 caret_blink = true
 
 [node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
@@ -741,14 +758,15 @@ margin_right = 7.0
 margin_bottom = -1.0
 
 [node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0

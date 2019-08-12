@@ -18,3 +18,13 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("scenes/GameOver.tscn")
+
+
+func _on_Area2D3_body_entered(body):
+	if body.name == "Player":
+		$Player/Light2D.set_visible(false)
+
+
+func _on_Area2D3_body_exited(body):
+	if body.name == "Player":
+		$Player/Light2D.set_visible(true)

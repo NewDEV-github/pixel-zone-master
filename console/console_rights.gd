@@ -7,7 +7,7 @@ enum CallRights {
 	TESTER = 2,
 	MODERATOR = 3,
 	ADMIN = 4,
-	DEV = 65535
+	DEV = 5
 }
 
 const _CallRights = {

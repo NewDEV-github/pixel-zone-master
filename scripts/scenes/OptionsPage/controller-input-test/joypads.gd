@@ -20,7 +20,7 @@ func _physics_process(delta):
 	for axis in range(JOY_AXIS_0, JOY_AXIS_MAX):
 		axis_value = Input.get_joy_axis(joy_num, axis)
 		get_node("axes/axis_prog" + str(axis)).set_value(100*axis_value)
-		get_node("axes/axis_val" + str(axis)).set_text(str(axis_value))
+#		get_node("axes/axis_val" + str(axis)).set_text(str(axis_value))
 		# Show joypad direction indicators
 		if (axis <= JOY_ANALOG_RY):
 			if (abs(axis_value) < DEADZONE):

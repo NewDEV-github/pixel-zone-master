@@ -7,12 +7,17 @@ const ConsoleRights = preload("res://console/console_rights.gd")
 
 var _consoleRef #: Console
 
-
+#How to make Command - part 1
 func _init(console):
 	_consoleRef = console
+	#how to make commands:
+	#1. <command_name>Ref and <command_name>Command must have the same <command_name>.
+	#2. CommandRef.new(self, "exit" - This is a 'name of Command', CommandRef.COMMAND_REF_TYPE.FUNC - type of command, 0 - number of excepted arguments to run)
+	#3. Command.new('exit' - It must be the same string as 'name of Command',  exitRef, [], 'Closes the console.' - description of the command, ConsoleRights.CallRights.DEV - Console mode excepted to run the command)
 	var exitRef = CommandRef.new(self, "exit", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var exitCommand = Command.new('exit',  exitRef, [], 'Closes the console.', ConsoleRights.CallRights.DEV)
 	console.add_command(exitCommand)
+	
 	
 	var ytRef = CommandRef.new(self, "yt", CommandRef.COMMAND_REF_TYPE.FUNC, 0)
 	var ytCommand = Command.new('yt',  ytRef, [], 'Brings You to my YouTube channel :) .', ConsoleRights.CallRights.DEV)
@@ -126,7 +131,10 @@ func _init(console):
 #		output += input[i]
 #
 #	_consoleRef.append_message(output)
-
+ 
+#How to make Command - part 2
+#func set_user_color(input : Array): - function name must be the same as 'name of Command' and must have '(input : Array)'
+#	_consoleRef.update_user_name_color(input[0]) - check value of inserted argument
 func set_user_color(input : Array):
 	_consoleRef.update_user_name_color(input[0])
 
@@ -155,11 +163,11 @@ func set_console_size(input : Array):
 func toggle_titlebar(_input : Array):
 	_consoleRef.update_visibility_titlebar(!_consoleRef.get_node("offset/titleBar").visible)
 
-func current_scene(input : String):
+func current_scene(input : Array):
 	var path = input
-	print(path)
-	background_load.load_scene(path)
-
+	var check = File.new()
+	background_load.load_scene(input[0])
+const CallRights = preload("res://console/console_rights.gd")
 
 func alias(input : Array):
 	if input.size() < 2:
@@ -200,7 +208,6 @@ func set_dock(input : Array):
 func set_theme(input : Array):
 	_consoleRef.update_theme(input[0])
 	
-
 func help_all(_input : Array):
 	_consoleRef.new_line()
 	for i in range(_consoleRef.commands.size()):

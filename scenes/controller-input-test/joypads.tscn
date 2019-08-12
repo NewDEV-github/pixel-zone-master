@@ -5,16 +5,20 @@
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 
 [node name="joypads" type="Node2D"]
+light_mask = 2
 script = ExtResource( 1 )
 
 [node name="diagram" parent="." instance=ExtResource( 2 )]
+light_mask = 2
 position = Vector2( 595.375, 171.875 )
 
 [node name="device_info" type="Control" parent="."]
+light_mask = 2
 margin_right = 31.0
 margin_bottom = 40.0
 
 [node name="label_device" type="Label" parent="device_info"]
+light_mask = 2
 margin_left = 2.99997
 margin_top = 11.75
 margin_right = 169.0
@@ -26,6 +30,7 @@ text = "KEY_DEVICE"
 valign = 1
 
 [node name="joy_num" type="SpinBox" parent="device_info"]
+light_mask = 2
 margin_left = 176.0
 margin_top = 9.0
 margin_right = 312.0
@@ -35,6 +40,7 @@ size_flags_vertical = 2
 max_value = 16.0
 
 [node name="joy_name" type="Label" parent="device_info"]
+light_mask = 2
 margin_left = 333.0
 margin_top = 11.0
 margin_right = 573.0
@@ -49,6 +55,7 @@ margin_right = 88.0
 margin_bottom = 40.0
 
 [node name="axis_prog0" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 60.0
 margin_right = 300.0
@@ -59,6 +66,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="axis_prog1" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 95.0
 margin_right = 300.0
@@ -69,6 +77,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="axis_prog2" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 130.0
 margin_right = 300.0
@@ -79,6 +88,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="axis_prog3" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 165.0
 margin_right = 300.0
@@ -89,6 +99,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="axis_prog4" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 200.0
 margin_right = 300.0
@@ -99,6 +110,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="axis_prog5" type="ProgressBar" parent="axes"]
+light_mask = 2
 margin_left = 100.0
 margin_top = 235.0
 margin_right = 300.0
@@ -110,6 +122,7 @@ percent_visible = false
 
 [node name="axis_prog6" type="ProgressBar" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = 100.0
 margin_top = 180.0
 margin_right = 300.0
@@ -121,6 +134,7 @@ percent_visible = false
 
 [node name="axis_prog7" type="ProgressBar" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = 100.0
 margin_top = 200.0
 margin_right = 300.0
@@ -132,6 +146,7 @@ percent_visible = false
 
 [node name="axis_prog8" type="ProgressBar" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = 100.0
 margin_top = 220.0
 margin_right = 300.0
@@ -143,6 +158,7 @@ percent_visible = false
 
 [node name="axis_prog9" type="ProgressBar" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = 100.0
 margin_top = 240.0
 margin_right = 300.0
@@ -154,6 +170,7 @@ percent_visible = false
 
 [node name="axis_prog10" type="ProgressBar" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = 100.0
 margin_top = 260.0
 margin_right = 300.0
@@ -164,6 +181,7 @@ step = 0.0001
 percent_visible = false
 
 [node name="label_axis0" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -48.0
 margin_top = 43.0
 margin_right = 92.0
@@ -175,6 +193,7 @@ text = "KEY_Axis0"
 valign = 1
 
 [node name="label_axis1" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -47.0
 margin_top = 78.0
 margin_right = 89.0
@@ -186,6 +205,7 @@ text = "KEY_Axis1"
 valign = 1
 
 [node name="label_axis2" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -47.0
 margin_top = 114.0
 margin_right = 93.0
@@ -197,6 +217,7 @@ text = "KEY_Axis2"
 valign = 1
 
 [node name="label_axis3" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -48.0
 margin_top = 150.0
 margin_right = 92.0
@@ -208,6 +229,7 @@ text = "KEY_Axis3"
 valign = 1
 
 [node name="label_axis4" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -48.0
 margin_top = 185.0
 margin_right = 92.0
@@ -219,6 +241,7 @@ text = "KEY_Axis4"
 valign = 1
 
 [node name="label_axis5" type="Label" parent="axes"]
+light_mask = 2
 margin_left = -48.0
 margin_top = 224.0
 margin_right = 92.0
@@ -231,6 +254,7 @@ valign = 1
 
 [node name="label_axis6" type="Label" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = -47.0
 margin_top = 180.0
 margin_right = 59.0
@@ -242,6 +266,7 @@ valign = 1
 
 [node name="label_axis7" type="Label" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = -48.0
 margin_top = 200.0
 margin_right = 61.0
@@ -253,6 +278,7 @@ valign = 2
 
 [node name="label_axis8" type="Label" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = -48.0
 margin_top = 220.0
 margin_right = 62.0
@@ -264,6 +290,7 @@ valign = 2
 
 [node name="label_axis9" type="Label" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = -47.0
 margin_top = 240.0
 margin_right = 61.0
@@ -275,6 +302,7 @@ valign = 2
 
 [node name="label_axis10" type="Label" parent="axes"]
 visible = false
+light_mask = 2
 margin_left = -46.0
 margin_top = 260.0
 margin_right = 60.0
@@ -284,82 +312,12 @@ size_flags_vertical = 0
 text = "KEY_Axis10"
 valign = 2
 
-[node name="axis_val0" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val1" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val2" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val3" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val4" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val5" type="Label" parent="axes"]
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val6" type="Label" parent="axes"]
-visible = false
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val7" type="Label" parent="axes"]
-visible = false
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val8" type="Label" parent="axes"]
-visible = false
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val9" type="Label" parent="axes"]
-visible = false
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
-[node name="axis_val10" type="Label" parent="axes"]
-visible = false
-margin_left = 1.5
-margin_top = -91.5
-margin_right = 41.5
-margin_bottom = -77.5
-
 [node name="buttons" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="label_buttons" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 10.0
 margin_top = 276.0
 margin_right = 176.0
@@ -370,6 +328,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "KEY_Buttons"
 
 [node name="btn0" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 20.0
 margin_top = 310.0
 margin_right = 45.0
@@ -381,6 +340,7 @@ text = "0"
 align = 1
 
 [node name="btn1" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 45.0
 margin_top = 310.0
 margin_right = 70.0
@@ -392,6 +352,7 @@ text = "1"
 align = 1
 
 [node name="btn2" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 70.0
 margin_top = 310.0
 margin_right = 95.0
@@ -403,6 +364,7 @@ text = "2"
 align = 1
 
 [node name="btn3" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 95.0
 margin_top = 310.0
 margin_right = 120.0
@@ -414,6 +376,7 @@ text = "3"
 align = 1
 
 [node name="btn4" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 120.0
 margin_top = 310.0
 margin_right = 145.0
@@ -425,6 +388,7 @@ text = "4"
 align = 1
 
 [node name="btn5" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 145.0
 margin_top = 310.0
 margin_right = 170.0
@@ -436,6 +400,7 @@ text = "5"
 align = 1
 
 [node name="btn6" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 170.0
 margin_top = 310.0
 margin_right = 195.0
@@ -447,6 +412,7 @@ text = "6"
 align = 1
 
 [node name="btn7" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 195.0
 margin_top = 310.0
 margin_right = 220.0
@@ -458,6 +424,7 @@ text = "7"
 align = 1
 
 [node name="btn8" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 220.0
 margin_top = 310.0
 margin_right = 245.0
@@ -469,6 +436,7 @@ text = "8"
 align = 1
 
 [node name="btn9" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 20.0
 margin_top = 330.0
 margin_right = 45.0
@@ -480,6 +448,7 @@ text = "9"
 align = 1
 
 [node name="btn10" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 45.0
 margin_top = 330.0
 margin_right = 70.0
@@ -491,6 +460,7 @@ text = "10"
 align = 1
 
 [node name="btn11" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 84.0
 margin_top = 330.0
 margin_right = 105.0
@@ -502,6 +472,7 @@ text = "11"
 align = 1
 
 [node name="btn12" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 115.0
 margin_top = 330.0
 margin_right = 142.0
@@ -513,6 +484,7 @@ text = "12"
 align = 1
 
 [node name="btn13" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 150.0
 margin_top = 330.0
 margin_right = 175.0
@@ -524,6 +496,7 @@ text = "13"
 align = 1
 
 [node name="btn14" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 181.0
 margin_top = 330.0
 margin_right = 214.0
@@ -535,6 +508,7 @@ text = "14"
 align = 1
 
 [node name="btn15" type="Label" parent="buttons"]
+light_mask = 2
 margin_left = 219.0
 margin_top = 330.0
 margin_right = 244.0
@@ -553,6 +527,7 @@ margin_bottom = 46.75
 
 [node name="weak_label" type="Label" parent="vibration"]
 visible = false
+light_mask = 2
 margin_left = 10.0
 margin_top = 375.0
 margin_right = 152.0
@@ -563,6 +538,7 @@ text = "KEY_WIB_1"
 
 [node name="strong_label" type="Label" parent="vibration"]
 visible = false
+light_mask = 2
 margin_left = 10.0
 margin_top = 413.0
 margin_right = 157.0
@@ -572,6 +548,7 @@ size_flags_vertical = 0
 text = "KEY_WIB_2"
 
 [node name="duration_label" type="Label" parent="vibration"]
+light_mask = 2
 margin_top = 397.0
 margin_right = 156.0
 margin_bottom = 436.0
@@ -582,6 +559,7 @@ text = "KEY_WIB_3"
 
 [node name="vibration_weak_value" type="SpinBox" parent="vibration"]
 visible = false
+light_mask = 2
 margin_left = 340.0
 margin_top = 371.0
 margin_right = 414.0
@@ -594,6 +572,7 @@ value = 1.0
 
 [node name="vibration_strong_value" type="SpinBox" parent="vibration"]
 visible = false
+light_mask = 2
 margin_left = 341.0
 margin_top = 407.0
 margin_right = 415.0
@@ -605,6 +584,7 @@ step = 0.05
 value = 1.0
 
 [node name="vibration_duration_value" type="SpinBox" parent="vibration"]
+light_mask = 2
 margin_left = 265.0
 margin_top = 393.0
 margin_right = 401.0
@@ -616,6 +596,7 @@ step = 0.1
 value = 1.0
 
 [node name="start_vibration" type="Button" parent="vibration"]
+light_mask = 2
 margin_left = 394.0
 margin_top = 354.0
 margin_right = 650.0
@@ -628,6 +609,7 @@ enabled_focus_mode = 0
 text = "KEY_WIB_START"
 
 [node name="stop_vibration" type="Button" parent="vibration"]
+light_mask = 2
 margin_left = 392.0
 margin_top = 441.0
 margin_right = 648.0
@@ -636,6 +618,5 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "KEY_WIB_STOP"
-
 [connection signal="pressed" from="vibration/start_vibration" to="." method="_on_start_vibration_pressed"]
 [connection signal="pressed" from="vibration/stop_vibration" to="." method="_on_stop_vibration_pressed"]

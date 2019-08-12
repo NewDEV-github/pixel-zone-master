@@ -13,4 +13,3 @@ motion_mirroring = Vector2( 1152, 0 )
 position = Vector2( 576.282, 295.875 )
 scale = Vector2( 4.53467, 3.57686 )
 texture = ExtResource( 1 )
-

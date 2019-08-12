@@ -121,15 +121,21 @@ position = Vector2( 8542.97, 808.734 )
 position = Vector2( 9944.02, 1070.72 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-light_mask = 2
 position = Vector2( 0.666656, -4.66667 )
 
 [node name="Light2D" type="Light2D" parent="Player"]
-position = Vector2( 215, 90.4167 )
+show_behind_parent = true
+position = Vector2( 249, 80.4166 )
 texture = ExtResource( 9 )
 texture_scale = 17.49
 energy = 2.07
 shadow_enabled = true
-shadow_item_cull_mask = 0
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PoolVector2Array( 1597.82, -11.8114, 1714.25, 59.0637, 1845.88, 119.814, 1926.88, 261.564, 1977.5, 443.814, 2053.44, 585.564, 2109.13, 772.877, 2169.88, 1091.81, 2174.94, 1365.19, 2185.07, 1587.86, 1916.75, 1663.8, -1.93591, 1663.8, -1.93591, 2002.99, 960.363, 2002.99, 2133.68, 1982.74, 4447.25, 2239.01, 6867.75, 2233.95, 10799.3, 2233.95, 11351.1, 1190.28, 11027.1, 287.331, 10055.1, 84.8773, 6459, 120.315, 2175.05, 69.6898 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]
+[connection signal="body_exited" from="Area2D3" to="." method="_on_Area2D3_body_exited"]
