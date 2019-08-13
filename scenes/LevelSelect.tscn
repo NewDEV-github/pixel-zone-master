@@ -624,10 +624,32 @@ margin_bottom = 1362.0
 margin_right = 247.0
 margin_bottom = 39.0
 theme = ExtResource( 9 )
-text = "CastleMania"
+text = "CastleMania 01"
 align = 1
 
 [node name="select15a" type="Button" parent="control/CastleMania01"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+disabled = true
+text = "KEY_SELECT"
+flat = true
+
+[node name="CastleMania02" type="VBoxContainer" parent="control"]
+margin_left = 387.503
+margin_top = 1280.0
+margin_right = 634.503
+margin_bottom = 1362.0
+
+[node name="Label" type="Label" parent="control/CastleMania02"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "CastleMania 02"
+align = 1
+
+[node name="select15b" type="Button" parent="control/CastleMania02"]
 margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
@@ -650,3 +672,4 @@ flat = true
 [connection signal="pressed" from="control/SciFi02/select13" to="." method="_on_select17_pressed"]
 [connection signal="pressed" from="control/SciFi03/select14" to="." method="_on_select14_pressed"]
 [connection signal="pressed" from="control/CastleMania01/select15a" to="." method="_on_select15a_pressed"]
+[connection signal="pressed" from="control/CastleMania02/select15b" to="." method="_on_select15b_pressed"]

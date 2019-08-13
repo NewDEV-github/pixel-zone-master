@@ -285,3 +285,4 @@ ssl/certificates="res://ca-certificates.crt"
 
 quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
+vram_compression/import_etc=true
