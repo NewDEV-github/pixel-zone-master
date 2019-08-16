@@ -11,8 +11,6 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("res://scenes/stages/hill/hill_1.tscn")
-
-
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("scenes/GameOver.tscn")

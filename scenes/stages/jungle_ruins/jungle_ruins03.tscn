@@ -197,7 +197,7 @@ position = Vector2( 9944.02, 1070.72 )
 position = Vector2( 9.66669, 91.5 )
 
 [node name="Light2D" type="Light2D" parent="Player"]
-position = Vector2( 250.194, 72.9167 )
+position = Vector2( 244.194, 75.9167 )
 texture = ExtResource( 9 )
 texture_scale = 12.85
 energy = 2.03

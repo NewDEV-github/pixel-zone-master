@@ -103,7 +103,7 @@ DebugConsole="*res://console/DebugConsole.tscn"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="viewport"
 
 [input]
 

@@ -9,7 +9,6 @@ var load_mod = "false"
 var mod_temp
 func _on_Play_pressed():
 	$AnimationPlayer.play("new")
-	$Timer.stop()
 #	var mod = File.new()
 #	var mod_path = File.new()
 #	mod_path.open(str(documents) + "/Pixel Zone/.data/mod_info.save", File.READ)
@@ -92,9 +91,8 @@ func _on_ModSelector_popup_hide():
 
 
 func _on_ModSelector_about_to_show():
-	$Timer.stop()
+	pass
 
 
 func _on_ConfirmationDialog_confirmed():
 	$AnimationPlayer.play("new")
-	$Timer.stop()

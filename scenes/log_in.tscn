@@ -51,6 +51,5 @@ margin_top = 129.0
 margin_right = 298.0
 margin_bottom = 168.0
 text = "Back"
-
 [connection signal="pressed" from="Control/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button" to="." method="_on_Button_pressed"]
