@@ -25,6 +25,14 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	var true_ = 'false'
+	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+	var vconf = ConfigFile.new()
+	var conf = File.new()
+	if not conf.file_exists('user://456378r9w4iufuhj'):
+		vconf.set_value("saves", "game_pass", "false")
+		vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")
+		conf.open('user://456378r9w4iufuhj', File.WRITE)
 	OS.set_use_file_access_save_and_swap(true)
 	var documents_dir = Directory.new()
 	if not documents_dir.dir_exists(str(documents)+ "/Pixel Zone/.data"):
@@ -42,13 +50,12 @@ func _ready():
 		documents_dir.make_dir('logs')
 	_load()
 	var update = File.new()
+	var config = ConfigFile.new()
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/update.pck"):
 		ProjectSettings.load_resource_pack(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	if not update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		update.open(str(documents) + "/Pixel Zone/.data/updates/config/config.ini", File.WRITE)
-		update.store_line(to_json(""))
-		update.close()
-	var dlc = File.new()
+		config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
+		vconf.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
 		return
 func _on_Skip_pressed():
