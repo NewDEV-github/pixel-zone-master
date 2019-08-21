@@ -55,6 +55,7 @@ custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 editor/display_folded = true
+visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -212,7 +213,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Theme_NOT"
 
 [node name="Language" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 light_mask = 2
 anchor_right = 1.0
@@ -309,9 +309,12 @@ margin_bottom = 283.0
 custom_fonts/font = ExtResource( 2 )
 text = "LANG_ES"
 
+[node name="Label" type="Label" parent="TabContainer/Language"]
+margin_top = -561.938
+margin_right = 40.0
+margin_bottom = -547.938
+
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
-visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -326,7 +329,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="GraphicsBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
-editor/display_folded = true
 light_mask = 2
 margin_right = 392.0
 margin_bottom = 533.0
@@ -351,7 +353,6 @@ margin_right = 392.0
 margin_bottom = 374.0
 
 [node name="VSyncBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
 margin_right = 392.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -427,7 +428,7 @@ margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
-[node name="QualityBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+[node name="VoxelConeTracingBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 editor/display_folded = true
 margin_top = 132.0
 margin_right = 392.0
@@ -436,7 +437,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
 
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VoxelConeTracingBox"]
 light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
@@ -447,7 +448,7 @@ text = "Voxel Cone Tracing"
 align = 1
 valign = 1
 
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/QualityBox"]
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VoxelConeTracingBox"]
 light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
@@ -479,7 +480,7 @@ margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
-[node name="IFB" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+[node name="IFBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
 editor/display_folded = true
 margin_top = 220.0
 margin_right = 392.0
@@ -488,7 +489,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox"]
 light_mask = 2
 margin_right = 312.0
 margin_bottom = 40.0
@@ -499,7 +500,7 @@ text = "Image Filter"
 align = 1
 valign = 1
 
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB"]
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox"]
 light_mask = 2
 margin_left = 316.0
 margin_right = 392.0
@@ -603,6 +604,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
 max_value = 12.0
+step = 0.001
+value = -10.0
 rounded = true
 ticks_on_borders = true
 script = ExtResource( 12 )
@@ -665,6 +668,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
 max_value = 12.0
+step = 0.001
+value = -10.0
 rounded = true
 ticks_on_borders = true
 script = ExtResource( 13 )
@@ -725,6 +730,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
 max_value = 12.0
+step = 0.001
+value = -10.0
 rounded = true
 allow_greater = true
 allow_lesser = true
@@ -765,6 +772,7 @@ margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
+editor/display_folded = true
 visible = false
 light_mask = 2
 anchor_right = 1.0

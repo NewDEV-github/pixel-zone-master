@@ -29,11 +29,11 @@ func _process(delta):
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
-		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB".set_visible(true)
+		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox".set_visible(true)
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
-		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFB".set_visible(false)
+		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox".set_visible(false)
 func _on_ApplyButton_pressed():
 	hide()
 func _save():

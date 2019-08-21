@@ -25,6 +25,7 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	ProjectSettings.save()
 	var true_ = 'false'
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()
@@ -48,16 +49,16 @@ func _ready():
 	if not documents_dir.dir_exists("user://logs/"):
 		documents_dir.open('user://')
 		documents_dir.make_dir('logs')
+	if not documents_dir.dir_exists("user://other_saves/"):
+		documents_dir.open('user://')
+		documents_dir.make_dir('other_saves')
 	_load()
 	var update = File.new()
 	var config = ConfigFile.new()
 	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/update.pck"):
 		ProjectSettings.load_resource_pack(str(documents) + "/Pixel Zone/.data/updates/update.pck")
-	if not update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
-		vconf.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
-	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/config/config.ini"):
-		return
+	config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
+	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 func _on_Skip_pressed():
 	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():

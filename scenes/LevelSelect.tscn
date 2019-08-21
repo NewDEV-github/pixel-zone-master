@@ -657,6 +657,28 @@ theme = ExtResource( 9 )
 disabled = true
 text = "KEY_SELECT"
 flat = true
+
+[node name="CastleMania03" type="VBoxContainer" parent="control"]
+margin_left = 775.0
+margin_top = 1280.0
+margin_right = 1022.0
+margin_bottom = 1362.0
+
+[node name="Label" type="Label" parent="control/CastleMania03"]
+margin_right = 247.0
+margin_bottom = 39.0
+theme = ExtResource( 9 )
+text = "CastleMania 03"
+align = 1
+
+[node name="select15c" type="Button" parent="control/CastleMania03"]
+margin_top = 43.0
+margin_right = 247.0
+margin_bottom = 82.0
+theme = ExtResource( 9 )
+disabled = true
+text = "KEY_SELECT"
+flat = true
 [connection signal="pressed" from="control/PixelZone01/select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="control/PixelZone02/select2" to="." method="_on_select2_pressed"]
 [connection signal="pressed" from="control/IceCap01/select3" to="." method="_on_select3_pressed"]
@@ -673,3 +695,4 @@ flat = true
 [connection signal="pressed" from="control/SciFi03/select14" to="." method="_on_select14_pressed"]
 [connection signal="pressed" from="control/CastleMania01/select15a" to="." method="_on_select15a_pressed"]
 [connection signal="pressed" from="control/CastleMania02/select15b" to="." method="_on_select15b_pressed"]
+[connection signal="pressed" from="control/CastleMania03/select15c" to="." method="_on_select15c_pressed"]

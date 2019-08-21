@@ -82,6 +82,8 @@ _global_script_class_icons={
 
 config/name="Pixel Zone"
 run/main_scene="res://scenes/intro_low_size.tscn"
+boot_splash/image="res://boot/logo/cd6bf89628d16baf.png"
+boot_splash/bg_color=Color( 0.137255, 0.137255, 0.137255, 0 )
 config/icon="res://icon.png"
 
 [audio]
@@ -103,6 +105,7 @@ DebugConsole="*res://console/DebugConsole.tscn"
 
 [display]
 
+window/per_pixel_transparency/splash=true
 window/stretch/mode="viewport"
 
 [input]
@@ -284,5 +287,7 @@ ssl/certificates="res://ca-certificates.crt"
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true

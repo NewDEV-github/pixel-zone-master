@@ -568,9 +568,11 @@ shape = SubResource( 1 )
 
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="sound_shoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="ui" type="CanvasLayer" parent="."]
 layer = 0
