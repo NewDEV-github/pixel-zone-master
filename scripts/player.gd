@@ -50,6 +50,7 @@ func _physics_process(delta):
 	# Horizontal Movement
 	#speeding
 	var target_speed = 0
+#	real-time speeding
 #	timer += delta
 #	if timer > TIMER_LIMIT:
 #		if not speed == 1.1:
@@ -62,17 +63,17 @@ func _physics_process(delta):
 	#moving left
 	if Input.is_action_pressed("move_left"):
 		target_speed -= 1
-		#braking
+		#braking if movig left
 		if Input.is_action_pressed("move_right"):
 			speed = 0 
-			target_speed == 0
+			target_speed += 1.1
 	#moving right
 	if Input.is_action_pressed("move_right"):
 		target_speed += 1
-		#braking
+		#braking if moving right
 		if Input.is_action_pressed("move_left"):
 			speed = 0 
-			target_speed == 0
+			target_speed -= 1.1
 	#setting 'speed' to 0 so that the character can accelerate again
 	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
 		speed = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/castle_mania/castle_mania01.gd" type="Script" id=1]
 [ext_resource path="res://scenes/parllax_bg_4.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@ extents = Vector2( 16.3953, 6.19803 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.80981, 48.3753 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3904.96, 182.313 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -186,6 +189,12 @@ position = Vector2( 48.8335, 231.611 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D21"]
 position = Vector2( -1.49988, -1.5 )
 shape = SubResource( 3 )
+
+[node name="Area2D23" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D23"]
+position = Vector2( 3253.92, 1488.37 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D2_body_entered"]
@@ -208,3 +217,4 @@ shape = SubResource( 3 )
 [connection signal="body_entered" from="Area2D19" to="." method="_on_Area2D5_body_entered"]
 [connection signal="body_entered" from="Area2D20" to="." method="_on_Area2D5_body_entered"]
 [connection signal="body_entered" from="Area2D21" to="." method="_on_Area2D5_body_entered"]
+[connection signal="body_entered" from="Area2D23" to="." method="_on_Area2D23_body_entered"]

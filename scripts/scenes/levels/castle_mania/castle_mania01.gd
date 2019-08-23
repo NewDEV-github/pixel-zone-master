@@ -45,3 +45,8 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D22_body_entered(body):
 	if body.name == "Player":
 		background_load.load_scene("res://scenes/stages/castle_mania/castle_mania02.tscn")
+
+
+func _on_Area2D23_body_entered(body):
+	if body.name == "Player":
+		get_tree().change_scene("res://scenes/GameOver.tscn")

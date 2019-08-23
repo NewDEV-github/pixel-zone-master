@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1146.52, 138.96 )
+extents = Vector2( 1694.58, 138.96 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30.5994, 89.8442 )
@@ -57,7 +57,7 @@ shape = SubResource( 1 )
 position = Vector2( 5371.32, 146.813 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2( 3434.28, 2585.68 )
+position = Vector2( 3468.45, 2927.4 )
 shape = SubResource( 1 )
 
 [node name="toxic" type="Area2D" parent="."]

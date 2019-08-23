@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/Hill.ogg-bba0ce2984cef598efa306cf130b68bc.oggstr"
+path="res://.import/hill.ogg-5cef02c7d336350ae6edae817471bde1.oggstr"
 
 [deps]
 
-source_file="res://sounds/Hill.ogg"
-dest_files=[ "res://.import/Hill.ogg-bba0ce2984cef598efa306cf130b68bc.oggstr" ]
+source_file="res://sounds/hill.ogg"
+dest_files=[ "res://.import/hill.ogg-5cef02c7d336350ae6edae817471bde1.oggstr" ]
 
 [params]
 

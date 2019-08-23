@@ -25,6 +25,7 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	
 	ProjectSettings.save()
 	var true_ = 'false'
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
@@ -59,6 +60,8 @@ func _ready():
 		ProjectSettings.load_resource_pack(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
+#	if str(OS.get_name()) == 'HTML5':
+#		get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
 func _on_Skip_pressed():
 	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():

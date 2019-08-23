@@ -32,7 +32,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Panel/HBoxContainer/Button2:self_modulate")
+tracks/2/path = NodePath("Panel/VBoxContainer/Button2:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -44,7 +44,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Panel/HBoxContainer/Button:self_modulate")
+tracks/3/path = NodePath("Panel/VBoxContainer/Button:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -66,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="Panel"]
+light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -69.5
@@ -75,30 +76,31 @@ margin_bottom = 177.0
 custom_fonts/font = ExtResource( 2 )
 text = "Game Over"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -107.0
-margin_top = -20.0
-margin_right = 107.0
-margin_bottom = 20.0
+margin_left = -114.5
+margin_top = -39.0
+margin_right = 114.5
+margin_bottom = 39.0
 
-[node name="Button2" type="Button" parent="Panel/HBoxContainer"]
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+light_mask = 2
 margin_right = 229.0
-margin_bottom = 40.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_PLAY_AWAY"
-flat = true
-
-[node name="Button" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 233.0
-margin_right = 363.0
-margin_bottom = 40.0
+margin_bottom = 37.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Quit"
+flat = true
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+light_mask = 2
+margin_top = 41.0
+margin_right = 229.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_PLAY_AWAY"
 flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -109,6 +111,5 @@ anims/game_over = SubResource( 1 )
 position = Vector2( 509.626, 313.875 )
 texture = ExtResource( 3 )
 texture_scale = 25.54
-
-[connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

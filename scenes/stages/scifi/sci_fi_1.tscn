@@ -319,9 +319,6 @@ position = Vector2( 5106.38, 1839.38 )
 [node name="enemy17" parent="Node2D2" instance=ExtResource( 6 )]
 position = Vector2( 5362.88, 1393.88 )
 
-[node name="enemy18" parent="Node2D2" instance=ExtResource( 6 )]
-position = Vector2( 5362.88, 1393.88 )
-
 [node name="enemy19" parent="Node2D2" instance=ExtResource( 6 )]
 position = Vector2( 6081.76, 1488.38 )
 
@@ -330,7 +327,6 @@ position = Vector2( 6058.13, 2072.25 )
 
 [node name="enemy21" parent="Node2D2" instance=ExtResource( 6 )]
 position = Vector2( 6382.13, 2052 )
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="toxic" to="." method="_on_toxic_body_entered"]
 [connection signal="body_entered" from="toxic2" to="." method="_on_toxic_body_entered"]
