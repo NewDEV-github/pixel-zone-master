@@ -22,7 +22,7 @@ func save():
 		"The nuber of audio drivers" : OS.get_audio_driver_count(),
 		"Static memory used" : OS.get_static_memory_usage(),
 		"Time from starting the engine (seconds)" : OS.get_ticks_msec(),
-        "Operating System" : OS.get_name(),
+		"Operating System" : OS.get_name(),
 		"Locale" : OS.get_locale(),
 		"Enumeration" : text,
 		"Data" : OS.get_date(),

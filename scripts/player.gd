@@ -151,9 +151,9 @@ func _on_Area2D2_area_entered(area):
 	if area.name == "bossarea":
 		$ui/Control/ProgressBar.value -= 3
 func _on_stage2_normal_achieve1():
-    $anim2.play("achievement")
+	$anim2.play("achievement")
 func _on_Timer_timeout():
-    $ui/Panel.hide()
+	$ui/Panel.hide()
 func set_player_name(new_name):
 	get_node("label").set_text(new_name)
 func save():

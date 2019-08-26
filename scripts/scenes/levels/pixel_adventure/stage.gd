@@ -12,13 +12,8 @@ func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("scenes/GameOver.tscn")
 func save():
-    var save_dict = {
-        "filename" : get_filename(),
-        "parent" : get_parent().get_path(),
-		"pos_x" : get_position().x,
-		"pos_y" : get_position().y,
-    }
-    return save_dict
+	var save_dict = 'null'
+	return save_dict
 
 
 func _on_nextlevel_body_entered(body):

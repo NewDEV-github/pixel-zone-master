@@ -105,8 +105,11 @@ DebugConsole="*res://console/DebugConsole.tscn"
 
 [display]
 
-window/per_pixel_transparency/splash=true
+window/size/resizable=false
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/per_pixel_transparency/splash=true
 
 [input]
 

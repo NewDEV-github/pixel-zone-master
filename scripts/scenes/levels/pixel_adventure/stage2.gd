@@ -14,9 +14,6 @@ func _ready():
 		a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
 		a.store_line("2")
 		a.close()
-
-
-
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("scenes/GameOver.tscn")
@@ -27,5 +24,5 @@ func _on_nextlevel_body_entered(body):
 
 
 func _on_Area2D_body_entered(body):
-   if body.name == "Player":
-    emit_signal("achieve1")
+	if body.name == "Player":
+		emit_signal("achieve1")

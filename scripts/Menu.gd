@@ -71,7 +71,7 @@ func _on_Load_pressed():
 	if con.file_exists("user://4_dlc1.save") and con.file_exists("user://3_dlc1.save") and con.file_exists("user://1_dlc1.save") and con.file_exists("user://3_dlc1.save") and con.file_exists("user://dlc_1/stage_dlc1.tscn"):
 		background_load.load_scene("user://dlc_1/ice_03_dlc1.tscn")
 func _on_Achievements_pressed():
-    $AchievementsPage.show()
+	$AchievementsPage.show()
 
 
 func _on_eastereggtimer_timeout():

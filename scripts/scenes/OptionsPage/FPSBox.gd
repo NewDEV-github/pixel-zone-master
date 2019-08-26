@@ -16,7 +16,7 @@ func _ready():
 	_load()
 func _load():
 	var load_ = File.new()
-	load_.open(str(documents) +"/Pixel Zone/.data/settings_fps.save", File.READ)
+	load_.open(str(documents) +"/Pixel Zone/.data/settings/settings_fps.save", File.READ)
 	var loaded_settings = parse_json(load_.get_line())
 	if loaded_settings == "True":
 		$CheckButton.set_pressed(true)
@@ -24,6 +24,6 @@ func _load():
 		$CheckButton.set_pressed(false)
 func _save():
 	var save = File.new()
-	save.open(str(documents) +"/Pixel Zone/.data/settings_fps.save", File.WRITE)
+	save.open(str(documents) +"/Pixel Zone/.data/settings/settings_fps.save", File.WRITE)
 	save.store_line(to_json(str($CheckButton.pressed)))
 	save.close()

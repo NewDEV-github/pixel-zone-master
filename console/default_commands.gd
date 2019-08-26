@@ -131,7 +131,6 @@ func _init(console):
 #		output += input[i]
 #
 #	_consoleRef.append_message(output)
- 
 #How to make Command - part 2
 #func set_user_color(input : Array): - function name must be the same as 'name of Command' and must have '(input : Array)'
 #	_consoleRef.update_user_name_color(input[0]) - check value of inserted argument
@@ -199,7 +198,6 @@ func set_default_text_color(input : Array):
 		_consoleRef.set_default_text_color(Color(input[0], input[1], input[2])) 
 	elif input.size() == 4:
 		_consoleRef.set_default_text_color(Color(input[0], input[1], input[2], input[3])) 
-	 
 
 func set_dock(input : Array):
 	_consoleRef.update_docking(input[0])

@@ -503,8 +503,7 @@ func write_line(message : String, addToLog = true, userPrefix = false, messageSi
 		new_line()
 	append_message(message, addToLog, userPrefix, messageSignPrefix, clickableMeta, sendToConsole, flags)
 	if addNewLineAfterMsg:
-		new_line()
- 
+		new_line() 
 
 func warn(message, addToLog = true):
 	if not addNewLineAfterMsg:
@@ -751,7 +750,6 @@ func _on_titleBar_gui_input(event):
 
 func _on_animation_animation_started():
 	$offset/lineEdit.clear()
- 
 
 func _on_hideConsole_button_up():
 	if Rect2($offset/hideConsole.rect_global_position, $offset/hideConsole.rect_size).has_point( \
@@ -1053,7 +1051,6 @@ func update_corner(rounded : bool):
 	roundedTitleBar = rounded
 	if has_node("offset/titleBarBackground") and $offset/titleBarBackground != null:
 		var newStyle = $offset/titleBarBackground.theme.get("Panel/styles/panel")
-		 
 		if rounded:
 			newStyle.set("corner_radius_top_left", 7)
 			newStyle.set("corner_radius_top_right", 7)

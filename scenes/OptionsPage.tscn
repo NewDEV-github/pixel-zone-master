@@ -1,20 +1,17 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=3]
 [ext_resource path="res://scripts/scenes/OptionsPage/GraphicsBox.gd" type="Script" id=4]
-[ext_resource path="res://scripts/scenes/OptionsPage/VSyncBox.gd" type="Script" id=5]
+[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=6]
-[ext_resource path="res://scripts/scenes/OptionsPage/PixelsnapBox.gd" type="Script" id=7]
-[ext_resource path="res://scripts/scenes/OptionsPage/QualityBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/scenes/OptionsPage/LPMBox.gd" type="Script" id=9]
 [ext_resource path="res://scripts/scenes/OptionsPage/Advanced.gd" type="Script" id=10]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=11]
 [ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=12]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=13]
 [ext_resource path="res://scripts/scenes/OptionsPage/SFXBar.gd" type="Script" id=14]
-[ext_resource path="res://scenes/controller-input-test/joypads.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=16]
 [ext_resource path="res://scenes/Custom_Music.gd" type="Script" id=17]
 
@@ -42,6 +39,9 @@ margin_bottom = -2.25
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TabContainer" type="TabContainer" parent="."]
 light_mask = 2
@@ -54,7 +54,6 @@ margin_bottom = 591.0
 custom_fonts/font = ExtResource( 2 )
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 light_mask = 2
 anchor_right = 1.0
@@ -97,7 +96,6 @@ text = "KEY_APPLY"
 flat = true
 
 [node name="Theme" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 light_mask = 2
 anchor_right = 1.0
@@ -339,7 +337,7 @@ script = ExtResource( 4 )
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 light_mask = 2
 margin_right = 392.0
-margin_bottom = 110.0
+margin_bottom = 198.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -348,39 +346,13 @@ align = 1
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 114.0
+margin_top = 202.0
 margin_right = 392.0
-margin_bottom = 374.0
-
-[node name="VSyncBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_right = 392.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-light_mask = 2
-margin_right = 312.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "VSync"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VSyncBox"]
-light_mask = 2
-margin_left = 316.0
-margin_right = 392.0
-margin_bottom = 40.0
+margin_bottom = 286.0
 
 [node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-margin_top = 44.0
 margin_right = 392.0
-margin_bottom = 84.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
@@ -402,63 +374,10 @@ margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
-[node name="PixelSnapBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-margin_top = 88.0
-margin_right = 392.0
-margin_bottom = 128.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 7 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-light_mask = 2
-margin_right = 312.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Pixel Snap"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/PixelSnapBox"]
-light_mask = 2
-margin_left = 316.0
-margin_right = 392.0
-margin_bottom = 40.0
-
-[node name="VoxelConeTracingBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 392.0
-margin_bottom = 172.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VoxelConeTracingBox"]
-light_mask = 2
-margin_right = 312.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Voxel Cone Tracing"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/VoxelConeTracingBox"]
-light_mask = 2
-margin_left = 316.0
-margin_right = 392.0
-margin_bottom = 40.0
-
 [node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-margin_top = 176.0
+margin_top = 44.0
 margin_right = 392.0
-margin_bottom = 216.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 9 )
@@ -480,35 +399,9 @@ margin_left = 316.0
 margin_right = 392.0
 margin_bottom = 40.0
 
-[node name="IFBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-editor/display_folded = true
-margin_top = 220.0
-margin_right = 392.0
-margin_bottom = 260.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox"]
-light_mask = 2
-margin_right = 312.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Image Filter"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox"]
-light_mask = 2
-margin_left = 316.0
-margin_right = 392.0
-margin_bottom = 40.0
-
 [node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
 light_mask = 2
-margin_top = 378.0
+margin_top = 290.0
 margin_right = 392.0
 margin_bottom = 488.0
 size_flags_horizontal = 3
@@ -540,7 +433,7 @@ script = ExtResource( 11 )
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
 margin_right = 392.0
-margin_bottom = 62.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -549,17 +442,16 @@ align = 1
 valign = 1
 
 [node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-editor/display_folded = true
-margin_top = 66.0
+margin_top = 47.0
 margin_right = 392.0
-margin_bottom = 128.0
+margin_bottom = 90.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
 light_mask = 2
 margin_right = 392.0
-margin_bottom = 62.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -597,9 +489,9 @@ flat = true
 
 [node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 132.0
+margin_top = 94.0
 margin_right = 392.0
-margin_bottom = 194.0
+margin_bottom = 137.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -610,12 +502,74 @@ rounded = true
 ticks_on_borders = true
 script = ExtResource( 12 )
 
-[node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-editor/display_folded = true
+[node name="MusicBox2" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 198.0
+margin_top = 141.0
 margin_right = 392.0
-margin_bottom = 260.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+light_mask = 2
+margin_right = 392.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Selected Music Volume"
+align = 1
+valign = 1
+
+[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+visible = false
+light_mask = 2
+margin_left = 157.0
+margin_right = 250.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Muted"
+flat = true
+
+[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+visible = false
+light_mask = 2
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Unmuted"
+flat = true
+
+[node name="MusicBar2" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 188.0
+margin_right = 392.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -60.0
+max_value = 12.0
+step = 0.001
+value = -10.0
+rounded = true
+ticks_on_borders = true
+script = ExtResource( 13 )
+
+[node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 235.0
+margin_right = 392.0
+margin_bottom = 278.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 5
@@ -623,7 +577,7 @@ custom_constants/separation = 5
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
 light_mask = 2
 margin_right = 392.0
-margin_bottom = 62.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -661,9 +615,9 @@ flat = true
 
 [node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 264.0
+margin_top = 282.0
 margin_right = 392.0
-margin_bottom = 326.0
+margin_bottom = 325.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -675,17 +629,16 @@ ticks_on_borders = true
 script = ExtResource( 13 )
 
 [node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-editor/display_folded = true
-margin_top = 330.0
+margin_top = 329.0
 margin_right = 392.0
-margin_bottom = 392.0
+margin_bottom = 372.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
 light_mask = 2
 margin_right = 392.0
-margin_bottom = 62.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
@@ -723,9 +676,9 @@ flat = true
 
 [node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 396.0
+margin_top = 376.0
 margin_right = 392.0
-margin_bottom = 458.0
+margin_bottom = 419.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -60.0
@@ -738,19 +691,27 @@ allow_lesser = true
 ticks_on_borders = true
 script = ExtResource( 14 )
 
+[node name="BetaTests" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 423.0
+margin_right = 392.0
+margin_bottom = 463.0
+custom_fonts/font = ExtResource( 2 )
+text = "Enable Beta Updates"
+
 [node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 462.0
+margin_top = 467.0
 margin_right = 392.0
-margin_bottom = 499.0
+margin_bottom = 504.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_OM"
 
 [node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
 light_mask = 2
-margin_top = 503.0
+margin_top = 508.0
 margin_right = 392.0
-margin_bottom = 527.0
+margin_bottom = 532.0
 editable = false
 placeholder_text = "Name of selected file"
 caret_blink = true
@@ -772,7 +733,6 @@ margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
 visible = false
 light_mask = 2
 anchor_right = 1.0
@@ -782,7 +742,7 @@ margin_top = 49.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 15 )]
+[node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 5 )]
 script = ExtResource( 16 )
 
 [node name="Custom_Music" type="AudioStreamPlayer" parent="."]
@@ -802,5 +762,6 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Language/Europe/Italiano" to="." method="_on_Italiano_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Spanisch" to="." method="_on_Spanisch_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ApplyButton" to="." method="_on_ApplyButton_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests" to="." method="_on_BetaTests_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="item_selected" from="TabContainer/Graphics & Audio/WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]

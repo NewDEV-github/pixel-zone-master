@@ -7,7 +7,7 @@ var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 func _load():
 	var load_ = File.new()
-	load_.open(str(documents) +"/Pixel Zone/.data/lang.save", File.READ)
+	load_.open(str(documents) +"/Pixel Zone/.data/settings/lang.save", File.READ)
 	var loaded_lang = parse_json(load_.get_line())
 	if loaded_lang == "en":
 		TranslationServer.set_locale("en")
@@ -65,12 +65,12 @@ func _ready():
 func _on_Skip_pressed():
 	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():
-    var save_dict = {
-        "filename" : get_filename(),
-        "parent" : get_parent().get_path(),
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
 		"File ID" : OS.get_unix_time()
-    }
-    return save_dict
+	}
+	return save_dict
 
 
 func _on_VideoPlayer_finished():

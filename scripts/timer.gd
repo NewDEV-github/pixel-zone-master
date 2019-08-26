@@ -19,10 +19,4 @@ func _on_Timer_timeout():
 	ms += 1
 	
 func save():
-    var save_dict = {
-        "filename" : get_filename(),
-        "parent" : get_parent().get_path(),
-		"pos_x" : get_position().x,
-		"pos_y" : get_position().y,
-    }
-    return save_dict
+	var save_dict = 'null'

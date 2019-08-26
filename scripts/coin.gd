@@ -1,18 +1,9 @@
 extends Area2D
 
 var taken=false
-	
-
-	
-   
+var save_dict = 'null'
 func save():
-    var save_dict = {
-        "filename" : get_filename(),
-        "parent" : get_parent().get_path(),
-		"pos_x" : get_position().x,
-		"pos_y" : get_position().y,
-    }
-    return save_dict
+	return save_dict
 
 
 func _on_coin_body_entered(body):
@@ -22,4 +13,3 @@ func _on_coin_body_entered(body):
 		$anim.play("taken")
 		taken = true
 		game_state._save()
-	

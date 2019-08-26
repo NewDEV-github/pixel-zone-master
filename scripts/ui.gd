@@ -15,14 +15,14 @@ var ui_theme #= $theme.text
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _save():
 	var save = File.new()
-	save.open(str(documents) +"/Pixel Zone/.data/theme.save", File.WRITE)
+	save.open(str(documents) +"/Pixel Zone/.data/settings/theme.save", File.WRITE)
 	save.store_line(to_json($theme.text))
 	save.close()
 func _load_user_theme(path):
 	self.set_theme(path)
 func _load():
 	var load_ = File.new()
-	load_.open(str(documents) +"/Pixel Zone/.data/theme.save", File.READ)
+	load_.open(str(documents) +"/Pixel Zone/.data/settings/theme.save", File.READ)
 	var loaded_theme = parse_json(load_.get_line())
 	if loaded_theme == "yellow":
 		self.set_theme(yellow)

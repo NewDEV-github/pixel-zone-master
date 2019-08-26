@@ -21,7 +21,11 @@ func _on_Play_pressed():
 #		$Timer.stop()
 #	if not load_mod_info == mod_temp:
 #		$TextureRect/ConfirmationDialog.popup_centered()
-
+func _ready():
+	var beta = File.new()
+	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
+	var loaded = bool(str(beta.get_line()))
+	$TextureRect/VBoxContainer/Update.set_visible(loaded)
 func _on_Quit_pressed():
 	get_tree().quit()
 

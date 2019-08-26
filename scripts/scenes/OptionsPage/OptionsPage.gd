@@ -29,21 +29,24 @@ func _process(delta):
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
-		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox".set_visible(true)
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(true)
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
-		$"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/IFBox".set_visible(false)
+		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(false)
 func _on_ApplyButton_pressed():
 	hide()
 func _save():
 	var save = File.new()
-	save.open(str(documents) +"/Pixel Zone/.data/lang.save", File.WRITE)
+	save.open(str(documents) +"/Pixel Zone/.data/settings/lang.save", File.WRITE)
 	save.store_line(to_json($TabContainer/Language/Label.text))
 	save.close()
-
 	
 func _ready():
+	var beta = File.new()
+	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
+	var loaded = bool(str(beta.get_line()))
+	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_pressed(loaded)
 	music = AudioServer.get_bus_index("Music")
 	custom_music = AudioServer.get_bus_index("Custom Music")
 func _on_Englisch_pressed():
@@ -140,3 +143,10 @@ func _on_ThemeList_item_selected(index):
 	ui_theme.new()._load_user_theme(load_path)
 	emit_signal("ready_to_load", load_path)
 #	self.set_theme(load(full_theme_path))
+
+
+func _on_BetaTests_pressed():
+	var beta = File.new()
+	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.WRITE)
+	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
+	beta.close()

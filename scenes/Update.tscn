@@ -22,23 +22,23 @@ margin_right = 2.0
 margin_bottom = 1.0
 theme = ExtResource( 2 )
 
-[node name="HSeparator" type="HSeparator" parent="."]
-margin_left = 370.0
-margin_top = 249.0
-margin_right = 1027.0
-margin_bottom = 253.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 375.0
-margin_right = 1026.0
-margin_bottom = 251.0
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 372.75
-margin_top = 249.75
-margin_right = 1023.75
-margin_bottom = 500.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 3.0
+margin_bottom = -33.0
+bbcode_enabled = true
+bbcode_text = "[center]
+Thank You for entering beta tests.
+You Can send an issue to [url]ww.github.com[/url]
+[url]mailto:karoltomaszewskimusic@gmail.com[/url]"
+text = "
+Thank You for entering beta tests.
+You Can send an issue to ww.github.com
+mailto:karoltomaszewskimusic@gmail.com"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 1.0
@@ -50,6 +50,9 @@ margin_top = -43.0
 theme = ExtResource( 2 )
 text = "KEY_Download"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 use_threads = true
@@ -70,16 +73,13 @@ use_threads = true
 wait_time = 5.0
 one_shot = true
 
-[node name="ItemList" type="ItemList" parent="."]
-margin_right = 374.0
-margin_bottom = 601.0
-theme = ExtResource( 2 )
-
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="Panel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 3 )
@@ -90,6 +90,4 @@ valign = 1
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_right = 202.0
 margin_bottom = 14.0
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]

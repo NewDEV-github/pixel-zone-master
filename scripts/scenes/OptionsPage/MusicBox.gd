@@ -2,6 +2,7 @@ extends VBoxContainer
 var master_bus
 var music_bus
 var sfx_bus
+var custom
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 #	var save = File.new()
 #	save.open(str(documents) +"/Pixel Zone/.data/settings_audio_master.save", File.WRITE)
@@ -16,6 +17,7 @@ func _ready():
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music") #and AudioServer.get_bus_index("Custom")
 	sfx_bus = AudioServer.get_bus_index("SFX")
+	custom = AudioServer.get_bus_index("Custom Music")
 	
 	set_controls_for_bus(
 		master_bus, $VolumeBox/OnButton,
@@ -31,6 +33,10 @@ func _ready():
 		sfx_bus, $SFXBox/OnButton,
 		$SFXBox/OffButton, $SFXBar
 		)
+	set_controls_for_bus(
+		custom, $MusicBox2/OnButton,
+		$MusicBox2/OffButton, $MusicBar2
+		)
 
 	connect("visibility_changed", self, "_on_visibility_changed")
 
@@ -41,6 +47,7 @@ func _on_visibility_changed():
 	$VolumeBar.value = get_bus_volume(master_bus)
 	$MusicBar.value = get_bus_volume(music_bus)
 	$SFXBar.value = get_bus_volume(sfx_bus)
+	$MusicBar2.value = get_bus_volume(custom)
 
 func set_bus_volume(value, bus_id):
 	AudioServer.set_bus_volume_db(bus_id, value)
