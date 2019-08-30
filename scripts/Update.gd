@@ -25,3 +25,8 @@ func _on_Button_pressed():
 	$HTTPRequest2.set_download_file(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	$HTTPRequest2.request(str(Update_server) + "update.pck")
 	$RichTextLabel2.add_text("\n\nDebug Output:\npgrading game.")
+
+
+func _on_Timer_timeout():
+	$Panel.hide()
+	$ProgressBar.hide()

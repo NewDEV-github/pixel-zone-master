@@ -56,8 +56,6 @@ func _ready():
 	_load()
 	var update = File.new()
 	var config = ConfigFile.new()
-	if update.file_exists(str(documents) + "/Pixel Zone/.data/updates/update.pck"):
-		ProjectSettings.load_resource_pack(str(documents) + "/Pixel Zone/.data/updates/update.pck")
 	config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 #	if str(OS.get_name()) == 'HTML5':

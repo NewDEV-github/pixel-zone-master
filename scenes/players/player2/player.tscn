@@ -1,0 +1,733 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=3]
+[ext_resource path="res://scenes/sprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://animations/achievement.tres" type="Animation" id=5]
+[ext_resource path="res://animations/respawn.tres" type="Animation" id=6]
+[ext_resource path="res://animations/full_health.tres" type="Animation" id=7]
+[ext_resource path="res://sounds/sound_jump.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/sound_shoot.wav" type="AudioStream" id=9]
+[ext_resource path="res://scenes/timer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=11]
+[ext_resource path="res://scripts/ui.gd" type="Script" id=12]
+[ext_resource path="res://textures/osb_left.png" type="Texture" id=13]
+[ext_resource path="res://textures/osb_right.png" type="Texture" id=14]
+[ext_resource path="res://textures/osb_jump.png" type="Texture" id=15]
+[ext_resource path="res://textures/osb_speed.png" type="Texture" id=16]
+[ext_resource path="res://textures/osb_fire.png" type="Texture" id=17]
+[ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://textures/saving.png" type="Texture" id=19]
+[ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
+[ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
+[ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.81836
+height = 44.4787
+
+[sub_resource type="Animation" id=2]
+length = 0.01
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.01
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 21 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 7.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.25, 1.5, 2, 4.5, 4.75, 5, 5.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 16, 19, 20, 19, 16 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 24, 23 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9, 5 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 5 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "achievement"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("anim:playback_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ui/Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 412, 0 ), Vector2( 412, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ui/Panel:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ui/Panel:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 200, 40 ), Vector2( 200, 40 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ui/Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Timer:autostart")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.01
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.01
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 21 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 7.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.25, 1.5, 2, 4.5, 4.75, 5, 5.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 16, 19, 20, 19, 16 ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 24, 23 ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 2.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_physics_process"
+}, {
+"args": [  ],
+"method": "do_teleport"
+}, {
+"args": [ true ],
+"method": "set_physics_process"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 0 ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9, 5 ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 1.25
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 5 ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Start:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="label" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -43.5
+margin_top = -50.0
+margin_right = 43.5
+margin_bottom = -24.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2( 243, 70.8751 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 20000005
+limit_bottom = 20000000
+smoothing_speed = 3.5
+script = ExtResource( 3 )
+
+[node name="sprite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 243, 71 )
+
+[node name="Area2D2" type="Area2D" parent="sprite"]
+position = Vector2( 0.291992, -0.835023 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sprite/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="sprite"]
+position = Vector2( 0.291992, -0.835023 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sprite/Area2D"]
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/achievement = ExtResource( 5 )
+anims/crouch = SubResource( 2 )
+anims/falling = SubResource( 3 )
+anims/falling_weapon = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/idle_weapon = SubResource( 6 )
+anims/jumping = SubResource( 7 )
+anims/jumping_weapon = SubResource( 8 )
+anims/respawn = ExtResource( 6 )
+anims/run = SubResource( 9 )
+anims/run_weapon = SubResource( 10 )
+anims/standing_weapon_ready = SubResource( 11 )
+
+[node name="anim2" type="AnimationPlayer" parent="."]
+anims/achievement = SubResource( 12 )
+anims/crouch = SubResource( 13 )
+anims/falling = SubResource( 14 )
+anims/falling_weapon = SubResource( 15 )
+anims/full_health = ExtResource( 7 )
+anims/idle = SubResource( 16 )
+anims/idle_weapon = SubResource( 17 )
+anims/jumping = SubResource( 18 )
+anims/jumping_weapon = SubResource( 19 )
+anims/respawn = SubResource( 20 )
+anims/run = SubResource( 21 )
+anims/run_weapon = SubResource( 22 )
+anims/standing_weapon_ready = SubResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 243, 71 )
+shape = SubResource( 1 )
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="sound_shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="ui" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="timer" parent="ui" instance=ExtResource( 10 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -42.8704
+margin_top = 0.0
+margin_right = 42.8704
+margin_bottom = 31.0
+
+[node name="Control" type="Control" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="theme" type="Label" parent="ui/Control"]
+margin_left = 615.094
+margin_top = -273.375
+margin_right = 655.094
+margin_bottom = -234.375
+
+[node name="ProgressBar" type="ProgressBar" parent="ui/Control"]
+pause_mode = 2
+margin_right = 76.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+value = 100.0
+
+[node name="left" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 27.759, 490 )
+scale = Vector2( 1.49157, 1.46265 )
+normal = ExtResource( 13 )
+passby_press = true
+action = "move_left"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 121.542, 490 )
+scale = Vector2( 1.49157, 1.46265 )
+normal = ExtResource( 14 )
+passby_press = true
+action = "move_right"
+visibility_mode = 1
+
+[node name="jump" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 900, 490 )
+scale = Vector2( 1.49157, 1.46265 )
+normal = ExtResource( 15 )
+action = "jump"
+visibility_mode = 1
+
+[node name="speed" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 796.219, 490 )
+scale = Vector2( 1.49157, 1.46265 )
+normal = ExtResource( 16 )
+action = "speed"
+visibility_mode = 1
+
+[node name="fire" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 900, 399 )
+scale = Vector2( 1.49157, 1.46265 )
+normal = ExtResource( 17 )
+action = "shoot"
+visibility_mode = 1
+
+[node name="GameUI" parent="ui/Control" instance=ExtResource( 18 )]
+
+[node name="Start" type="Label" parent="ui/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -17.0
+margin_right = 81.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 2 )
+text = "Start!"
+align = 1
+
+[node name="fps" type="Label" parent="ui/Control"]
+visible = false
+margin_left = 77.0
+margin_top = 1.0
+margin_right = 367.0
+margin_bottom = 47.0
+
+[node name="Label" type="Label" parent="ui/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -0.666824
+margin_top = 27.5833
+margin_right = 162.334
+margin_bottom = 66.5834
+custom_fonts/font = ExtResource( 2 )
+text = "Full Health!"
+
+[node name="Sprite" type="Sprite" parent="ui"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 996.938, 572.063 )
+rotation = 18.8496
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui"]
+pause_mode = 2
+anims/full_health = ExtResource( 7 )
+anims/loaded_level = ExtResource( 20 )
+anims/next_level = ExtResource( 21 )
+anims/saving_state = ExtResource( 22 )
+anims/start = SubResource( 24 )
+
+[node name="ColorRect" type="ColorRect" parent="ui"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Panel" type="Panel" parent="ui"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="ui/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Achievement Unlocked!"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="LeftGroundSensor" type="RayCast2D" parent="."]
+position = Vector2( 234, 70.5001 )
+
+[node name="RightGroundSensor" type="RayCast2D" parent="."]
+position = Vector2( 255, 70.5001 )
+
+[node name="LeftWallSensor" type="RayCast2D" parent="."]
+position = Vector2( 233.667, 70.6667 )
+rotation = 1.5708
+
+[node name="RightWallSensor" type="RayCast2D" parent="."]
+position = Vector2( 242.5, 71.0001 )
+rotation = 4.71239
+[connection signal="area_entered" from="sprite/Area2D2" to="." method="_on_Area2D2_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

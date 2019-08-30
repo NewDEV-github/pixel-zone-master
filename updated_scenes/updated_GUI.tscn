@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
+[ext_resource path="res://textures/background.png" type="Texture" id=2]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://animations/new.tres" type="Animation" id=6]
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+margin_right = 538.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -254.5
+margin_top = -127.0
+margin_right = 254.504
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
+margin_right = 509.0
+margin_bottom = 39.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_Play"
+flat = true
+
+[node name="Play8" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 43.0
+margin_right = 509.0
+margin_bottom = 82.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Multiplayer"
+flat = true
+
+[node name="ImportMod" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 86.0
+margin_right = 509.0
+margin_bottom = 125.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_MOD"
+flat = true
+
+[node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 129.0
+margin_right = 509.0
+margin_bottom = 168.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_Quit"
+flat = true
+
+[node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
+visible = false
+margin_top = 172.0
+margin_right = 509.0
+margin_bottom = 211.0
+theme = ExtResource( 4 )
+text = "KEY_Update"
+flat = true
+
+[node name="Label2" type="Label" parent="TextureRect"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 1.2, 1.2 )
+text = "BETA  VERSION"
+
+[node name="ModSelector" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -510.0
+margin_top = -271.0
+margin_right = 513.0
+margin_bottom = 301.0
+theme = ExtResource( 4 )
+window_title = "Otwórz plik"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( "*.pck" )
+current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
+current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/new = ExtResource( 6 )
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_bottom = 1.0
+margin_right = 12.0
+[connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
+[connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
+[connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
+[connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
+[connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]

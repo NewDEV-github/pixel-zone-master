@@ -6,6 +6,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var player_default = globals.selected_player
+	add_child(player_default)
 	var true_ = 'false'
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()
@@ -20,6 +22,7 @@ func _ready():
 		b.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
 		b.store_line("15")
 		b.close()
+		
 
 
 func _on_Area2D2_body_entered(body):
