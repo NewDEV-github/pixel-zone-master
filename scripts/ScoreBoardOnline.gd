@@ -15,8 +15,8 @@ var score_3
 var score_4
 func _ready():
 	#load user's score
-	score.open("user://other_saves/0.save", File.READ)
-	score_0 = parse_json(score.get_line())
+	score.open_encrypted_with_pass("user://other_saves/0.save", File.READ, str(3087283))
+	score_0 = score.get_line()
 	print(score_0)
 	score.close()
 	var save_file = File.new()

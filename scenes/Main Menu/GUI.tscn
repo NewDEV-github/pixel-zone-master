@@ -83,7 +83,7 @@ margin_top = 172.0
 margin_right = 509.0
 margin_bottom = 211.0
 theme = ExtResource( 4 )
-text = "KEY_Update"
+text = "Online Scoreboard"
 flat = true
 
 [node name="ModSelector" type="FileDialog" parent="."]

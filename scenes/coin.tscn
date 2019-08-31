@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/coin.gd" type="Script" id=1]
 [ext_resource path="res://textures/coin.png" type="Texture" id=2]
@@ -94,20 +94,6 @@ tracks/4/keys = {
 [sub_resource type="CanvasItemMaterial" id=4]
 blend_mode = 1
 
-[sub_resource type="GradientTexture" id=5]
-
-[sub_resource type="ParticlesMaterial" id=6]
-emission_shape = 1
-emission_sphere_radius = 10.0
-flag_disable_z = true
-gravity = Vector3( 0, 90, 0 )
-initial_velocity = 121.98
-angular_velocity = -2.49891e+038
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.2
-color_ramp = SubResource( 5 )
-
 [node name="coin" type="Area2D"]
 script = ExtResource( 1 )
 
@@ -127,15 +113,14 @@ shape = SubResource( 3 )
 stream = ExtResource( 3 )
 bus = "SFX"
 
-[node name="particles" type="Particles2D" parent="."]
+[node name="particles" type="CPUParticles2D" parent="."]
 material = SubResource( 4 )
+emitting = false
 lifetime = 2.0
 explosiveness = 1.0
 draw_order = 65793
-process_material = SubResource( 6 )
 texture = ExtResource( 4 )
 
 [node name="enabler" type="VisibilityEnabler2D" parent="."]
 pause_particles = false
-
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
