@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scripts/ui.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://animations/achievement.tres" type="Animation" id=20]
 [ext_resource path="res://animations/respawn.tres" type="Animation" id=21]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=22]
+[ext_resource path="res://scenes/players/player2/player_2.png" type="Texture" id=23]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -519,8 +520,8 @@ smoothing_speed = 3.5
 script = ExtResource( 22 )
 
 [node name="sprite" parent="." instance=ExtResource( 6 )]
-self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 243, 71 )
+texture = ExtResource( 23 )
 
 [node name="Area2D2" type="Area2D" parent="sprite"]
 position = Vector2( 0.291992, -0.835023 )

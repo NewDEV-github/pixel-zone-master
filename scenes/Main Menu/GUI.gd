@@ -106,8 +106,9 @@ func _on_ConfirmationDialog_confirmed():
 func _on_TextureButton_pressed():
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
 	$AnimationPlayer.play("new")
-
+	globals._save()
 
 func _on_TextureButton2_pressed():
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	$AnimationPlayer.play("new")
+	globals._save()

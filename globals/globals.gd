@@ -29,10 +29,11 @@ func _get_player_pos_x():
 func _get_player_pos_y():
 	var position_p = selected_player.position.y
 	return position_p
+func _save():
+	var a = File.new()
+	a.open_encrypted_with_pass("user://save_data.3", File.WRITE, str(34567865))
+	a.store_line(str(selected_player))
+	a.close()
 
-#func _process(delta):
-#	print(str(selected_player))
-
-
-
-
+func _process(delta):
+	pass

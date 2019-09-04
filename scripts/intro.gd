@@ -53,6 +53,12 @@ func _ready():
 	if not documents_dir.dir_exists("user://other_saves/"):
 		documents_dir.open('user://')
 		documents_dir.make_dir('other_saves')
+	if not documents_dir.dir_exists("user://saves/"):
+		documents_dir.open('user://')
+		documents_dir.make_dir('saves')
+		documents_dir.open('user://saves')
+		documents_dir.make_dir('1')
+		documents_dir.make_dir('2')
 	_load()
 	var update = File.new()
 	var config = ConfigFile.new()
@@ -60,6 +66,7 @@ func _ready():
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 #	if str(OS.get_name()) == 'HTML5':
 #		get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
+#	_on_Skip_pressed()
 func _on_Skip_pressed():
 	get_tree().change_scene("res://scenes/gui_loader.tscn")
 func save():
