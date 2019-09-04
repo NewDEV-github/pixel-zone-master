@@ -2,11 +2,11 @@
 
 [ext_resource path="res://scripts/scenes/levels/jungle_ruins/jungle_ruins03.gd" type="Script" id=1]
 [ext_resource path="res://sounds/brazil-fast.ogg" type="AudioStream" id=2]
-[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/parallax_bg2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/parallax_bg2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://titles/jungle_ruins_back.tres" type="TileSet" id=5]
 [ext_resource path="res://titles/jungle_ruins_front.tres" type="TileSet" id=6]
-[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://textures/particle.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -68,7 +68,7 @@ stream = ExtResource( 2 )
 autoplay = true
 bus = "Music"
 
-[node name="parallax_bg" parent="." instance=ExtResource( 4 )]
+[node name="parallax_bg" parent="." instance=ExtResource( 3 )]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 10436.1, 2058.52 )
@@ -76,7 +76,7 @@ position = Vector2( 10436.1, 2058.52 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[node name="next_level" parent="." instance=ExtResource( 7 )]
+[node name="next_level" parent="." instance=ExtResource( 4 )]
 position = Vector2( 10437.8, 2033.52 )
 
 [node name="Area2D2" type="Area2D" parent="."]
@@ -153,43 +153,43 @@ occluder = SubResource( 16 )
 
 [node name="Node" type="Node" parent="."]
 
-[node name="enemy" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 658.547, 421.453 )
 
-[node name="enemy2" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy2" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 580.922, 637.875 )
 
-[node name="enemy3" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy3" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 1458, 444.234 )
 
-[node name="enemy4" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy4" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 1378.27, 1036.55 )
 
-[node name="enemy5" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy5" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 2392.03, 1184.62 )
 
-[node name="enemy6" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy6" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 3451.36, 1389.66 )
 
-[node name="enemy7" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy7" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 4351.22, 1298.53 )
 
-[node name="enemy8" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy8" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 4852.41, 945.422 )
 
-[node name="enemy9" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy9" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 5421.94, 842.906 )
 
-[node name="enemy10" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy10" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 5752.27, 820.125 )
 
-[node name="enemy11" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy11" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 6538.22, 751.781 )
 
-[node name="enemy12" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy12" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 8542.97, 808.734 )
 
-[node name="enemy13" parent="Node" instance=ExtResource( 3 )]
+[node name="enemy13" parent="Node" instance=ExtResource( 7 )]
 position = Vector2( 9944.02, 1070.72 )
 
 [node name="Light2D" type="Light2D" parent="."]

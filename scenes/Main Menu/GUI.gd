@@ -8,7 +8,7 @@ var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 var load_mod = "false"
 var mod_temp
 func _on_Play_pressed():
-	$AnimationPlayer.play("new")
+#	$AnimationPlayer.play("new")
 #	var mod = File.new()
 #	var mod_path = File.new()
 #	mod_path.open(str(documents) + "/Pixel Zone/.data/mod_info.save", File.READ)
@@ -21,6 +21,7 @@ func _on_Play_pressed():
 #		$Timer.stop()
 #	if not load_mod_info == mod_temp:
 #		$TextureRect/ConfirmationDialog.popup_centered()
+	$TextureRect/PopupPanel.popup_centered()
 func _ready():
 	var beta = File.new()
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
@@ -99,4 +100,14 @@ func _on_ModSelector_about_to_show():
 
 
 func _on_ConfirmationDialog_confirmed():
+	$AnimationPlayer.play("new")
+
+
+func _on_TextureButton_pressed():
+	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
+	$AnimationPlayer.play("new")
+
+
+func _on_TextureButton2_pressed():
+	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	$AnimationPlayer.play("new")

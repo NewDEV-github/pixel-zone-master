@@ -1,26 +1,23 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/castle_mania/castle_mania02.gd" type="Script" id=1]
 [ext_resource path="res://scenes/parllax_bg_6.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/players/player1/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://titles/casstle_mania.tres" type="TileSet" id=4]
 [ext_resource path="res://sounds/Castlemania.ogg" type="AudioStream" id=5]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.1254, 16.8751 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15.2503, 19.2094 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3904.96, 182.313 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -38,189 +35,189 @@ bus = "Music"
 position = Vector2( 76.4999, 243 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-2" type="Area2D" parent="."]
 position = Vector2( 1485, 654.749 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-2"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-3" type="Area2D" parent="."]
 position = Vector2( 1577.25, 654.749 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-3"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-4" type="Area2D" parent="."]
 position = Vector2( 1669.5, 654.749 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-4"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-5" type="Area2D" parent="."]
 position = Vector2( 1759.5, 654.749 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-5"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-6" type="Area2D" parent="."]
 position = Vector2( 1851.75, 654.749 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-6"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-7" type="Area2D" parent="."]
 position = Vector2( 1944, 656.999 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-7"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-8" type="Area2D" parent="."]
 position = Vector2( 2036.25, 656.999 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-8"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-9" type="Area2D" parent="."]
 position = Vector2( 2162.25, 524.25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-9"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-10" type="Area2D" parent="."]
 position = Vector2( 2254.5, 524.25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-10"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-11" type="Area2D" parent="."]
 position = Vector2( 2349, 587.249 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-11"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-12" type="Area2D" parent="."]
 position = Vector2( 3379.5, 522 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-12"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-13" type="Area2D" parent="."]
 position = Vector2( 3377.25, 614.249 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-13"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-14" type="Area2D" parent="."]
 position = Vector2( 3442.5, 526.5 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-14"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-15" type="Area2D" parent="."]
 position = Vector2( 3599.99, 717.749 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-15"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-16" type="Area2D" parent="."]
 position = Vector2( 3599.99, 807.749 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-16"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-17" type="Area2D" parent="."]
 position = Vector2( 3599.99, 902.249 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-17"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-18" type="Area2D" parent="."]
 position = Vector2( 3532.49, 722.249 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-18"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( 7010.43, 608.343 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-19" type="Area2D" parent="."]
 position = Vector2( 3534.74, 814.499 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-19"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-20" type="Area2D" parent="."]
 position = Vector2( 3534.74, 908.999 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-20"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-21" type="Area2D" parent="."]
 position = Vector2( 4205.24, 369 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-21"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes3x1-22" type="Area2D" parent="."]
 position = Vector2( 4299.74, 369 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes3x1-22"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Spikes1x1-1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes1x1-1"]
 position = Vector2( 398.749, 303.5 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Spikes1x1-2" type="Area2D" parent="."]
 position = Vector2( 32, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes1x1-2"]
 position = Vector2( 398.749, 303.5 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Spikes1x1-3" type="Area2D" parent="."]
 position = Vector2( 1185, 129 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes1x1-3"]
 position = Vector2( 398.749, 303.5 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Spikes1x1-4" type="Area2D" parent="."]
 position = Vector2( 1214.75, 134.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes1x1-4"]
 position = Vector2( 398.749, 298.5 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Spikes1x1-5" type="Area2D" parent="."]
 position = Vector2( 3167.75, 636.812 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes1x1-5"]
 position = Vector2( 398.749, 303.5 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 3265.31, 1488.37 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="Spikes3x1" to="." method="_on_Spikes3x1_body_entered"]
 [connection signal="body_entered" from="Spikes3x1-2" to="." method="_on_Spikes3x1_body_entered"]
 [connection signal="body_entered" from="Spikes3x1-3" to="." method="_on_Spikes3x1_body_entered"]

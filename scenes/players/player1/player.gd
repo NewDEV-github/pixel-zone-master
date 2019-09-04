@@ -91,13 +91,7 @@ func _physics_process(delta):
 		$sound_jump.play()
 	# Shooting
 #	if Input.is_action_just_pressed("shoot"):
-#		if (get_path()) == "/Characters/":
-#			print("I have got any ammo")
-#			return
-#
-#		var weapon_up = preload("res://scenes/bullet_modified.tscn").instance()
-#		var default_weapon = preload("res://scenes/bullet.tscn").instance()
-#		var weapon_current = default_weapon
+#		var weapon_current = preload("res://scenes/bullet.tscn").instance()
 #		weapon_current.position = $sprite/bullet_shoot.global_position #use node for shoot position
 #		weapon_current.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
 #		weapon_current.add_collision_exception_with(self) # don't want player to collide with bullet

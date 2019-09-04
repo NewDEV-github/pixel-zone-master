@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=2]
 
-[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/players/player1/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/sprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://animations/achievement.tres" type="Animation" id=4]
@@ -523,7 +523,7 @@ position = Vector2( 0.291992, -0.835023 )
 shape = SubResource( 1 )
 
 [node name="sprite" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 0 )
+position = Vector2( 243, 71 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/achievement = ExtResource( 4 )
@@ -585,7 +585,6 @@ margin_right = 42.8704
 margin_bottom = 33.8519
 
 [node name="Control" type="Control" parent="ui"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 10 )
@@ -727,12 +726,11 @@ margin_bottom = 400.0
 rect_min_size = Vector2( 1024, 400 )
 scroll_horizontal_enabled = false
 
-[node name="Chat" type="VBoxContainer" parent="ui/ChatControl/VBoxContainer/ScrollContainer" instance=ExtResource( 24 )]
-margin_left = 512.0
-margin_right = 512.0
-grow_vertical = 0
-size_flags_horizontal = 6
-alignment = 1
+[node name="Chat" parent="ui/ChatControl/VBoxContainer/ScrollContainer" instance=ExtResource( 24 )]
+ItemTemplate = null
+CurrentPath = ""
+OneShot = false
+SpecifiedKey = ""
 
 [node name="SubmitText" type="LineEdit" parent="ui/ChatControl/VBoxContainer"]
 margin_top = 404.0
@@ -751,7 +749,6 @@ text = "Submit"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
-
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 [connection signal="pressed" from="ui/ChatControl/VBoxContainer/SubmitButton" to="ui/ChatControl" method="_on_SubmitButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

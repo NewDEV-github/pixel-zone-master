@@ -20,6 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="TextureRect"]
 visible = false
@@ -37,7 +40,7 @@ anchor_bottom = 0.5
 margin_left = -254.5
 margin_top = -127.0
 margin_right = 254.504
-margin_bottom = 41.0
+margin_bottom = 65.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,7 +50,7 @@ margin_right = 509.0
 margin_bottom = 39.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
-text = "KEY_Play"
+text = "New Game"
 flat = true
 
 [node name="Play8" type="Button" parent="TextureRect/VBoxContainer"]
@@ -77,6 +80,12 @@ custom_fonts/font = ExtResource( 3 )
 text = "KEY_Quit"
 flat = true
 
+[node name="Button" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 172.0
+margin_right = 509.0
+margin_bottom = 192.0
+text = "Load Game"
+
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
 visible = false
 margin_top = 172.0
@@ -85,6 +94,34 @@ margin_bottom = 211.0
 theme = ExtResource( 4 )
 text = "Online Scoreboard"
 flat = true
+
+[node name="PopupPanel" type="WindowDialog" parent="TextureRect"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton3" type="Button" parent="TextureRect/PopupPanel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 269.0
+margin_bottom = 596.0
+text = "PLAYER 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="Button" parent="TextureRect/PopupPanel"]
+margin_left = 609.0
+margin_top = 4.0
+margin_right = 1000.0
+margin_bottom = 596.0
+text = "PLAYER 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ModSelector" type="FileDialog" parent="."]
 anchor_left = 0.5
@@ -108,14 +145,14 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.166667 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/new = ExtResource( 6 )
 
 [node name="VScrollBar" type="VScrollBar" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.166667 )
 anchor_bottom = 1.0
 margin_right = 12.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play_pressed"]
@@ -123,6 +160,8 @@ margin_right = 12.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
+[connection signal="pressed" from="TextureRect/PopupPanel/TextureButton3" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureRect/PopupPanel/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
