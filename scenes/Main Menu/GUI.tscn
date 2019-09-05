@@ -99,7 +99,7 @@ flat = true
 [node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 172.0
 margin_right = 509.0
-margin_bottom = 209.0
+margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "FAQ"
@@ -141,8 +141,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -165.0
-margin_right = -6.10352e-05
-margin_bottom = -3.05176e-05
+margin_right = -6.10352e-005
+margin_bottom = -3.05176e-005
 text = "UFO-ROBI"
 icon = SubResource( 1 )
 __meta__ = {
@@ -156,6 +156,24 @@ margin_left = -139.0
 margin_right = 139.0
 margin_bottom = 39.0
 text = "KEY_PLAYER_SELECT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LanguageButton" type="OptionButton" parent="TextureRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -143.0
+margin_top = -39.0
+rect_pivot_offset = Vector2( -357.17, -267.882 )
+theme = ExtResource( 4 )
+text = "Language"
+clip_text = true
+align = 1
+items = [ "English", null, false, 0, null, "Spanish", null, false, 1, null, "German", null, false, 2, null, "Polish", null, false, 3, null, "Italian", null, false, 4, null, "Portugal", null, false, 5, null, "French", null, false, 6, null ]
+selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -201,6 +219,7 @@ margin_right = 12.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton3" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="item_selected" from="TextureRect/LanguageButton" to="." method="_on_LanguageButton_item_selected"]
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
