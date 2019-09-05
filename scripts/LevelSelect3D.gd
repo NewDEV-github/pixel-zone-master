@@ -1,6 +1,5 @@
 extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-
 func _on_select_pressed():
 	background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
 func _on_select2_pressed():

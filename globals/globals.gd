@@ -1,5 +1,5 @@
 extends Node
-
+var scene_path = ''
 var collected = 0 setget _set_collected, _get_collected
 var to_collect = 0
 var player
@@ -31,9 +31,14 @@ func _get_player_pos_y():
 	return position_p
 func _save():
 	var a = File.new()
-	a.open_encrypted_with_pass("user://save_data.3", File.WRITE, str(34567865))
-	a.store_line(str(selected_player))
+	a.open("user://save_data.3", File.WRITE) #str(34567865))
+	a.store_string(str('preload('+scene_path+').instance()'))
 	a.close()
 
-func _process(delta):
-	pass
+func _ready():
+	var a = File.new()
+	a.open("user://save_data.3", File.READ)# str(34567865))
+	var file = a.get_line()
+	selected_player = str(file)
+#func _process(delta):
+#	print(str(selected_player))

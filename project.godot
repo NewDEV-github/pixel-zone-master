@@ -107,11 +107,11 @@ DebugConsole="*res://console/DebugConsole.tscn"
 
 gdscript/warnings/unassigned_variable=false
 gdscript/warnings/unused_variable=false
+gdscript/warnings/shadowed_variable=false
 gdscript/warnings/unused_class_variable=false
 gdscript/warnings/unused_argument=false
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
-gdscript/warnings/shadowed_variable=false
 
 [display]
 
