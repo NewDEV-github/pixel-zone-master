@@ -81,10 +81,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Pixel Zone"
+config/description="A Short game made with Godot Engine"
 run/main_scene="res://scenes/intro_low_size.tscn"
 boot_splash/image="res://boot/logo/cd6bf89628d16baf.png"
-boot_splash/bg_color=Color( 0.137255, 0.137255, 0.137255, 0 )
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [audio]
 
@@ -117,6 +119,10 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/resizable=false
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "GDFirebase", "mixing-desk" )
 
 [input]
 
@@ -297,7 +303,5 @@ ssl/certificates="res://ca-certificates.crt"
 [rendering]
 
 quality/driver/driver_name="GLES2"
-quality/intended_usage/framebuffer_allocation=0
-quality/intended_usage/framebuffer_allocation.mobile=0
-quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
+quality/reflections/high_quality_ggx=false

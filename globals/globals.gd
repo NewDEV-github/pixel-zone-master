@@ -39,6 +39,5 @@ func _ready():
 	var a = File.new()
 	a.open("user://save_data.3", File.READ)# str(34567865))
 	var file = a.get_line()
-	selected_player = str(file)
 #func _process(delta):
 #	print(str(selected_player))

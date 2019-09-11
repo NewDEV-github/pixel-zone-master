@@ -169,3 +169,7 @@ func _on_LanguageButton_item_selected(id):
 		TranslationServer.set_locale('pt')
 	if id == 6:
 		TranslationServer.set_locale('fr')
+
+
+func _on_Back_pressed():
+	$AnimationPlayer.play("back")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
@@ -12,6 +12,93 @@ frames = 4
 frame_1/delay_sec = 0.0
 frame_2/delay_sec = 0.0
 frame_3/delay_sec = 0.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "back"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect/VBoxContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -696, 173 ), Vector2( 257.5, 173 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VScrollBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VScrollBar:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TextureRect/PopupPanel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TextureRect/LanguageButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -44,8 +131,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -254.5
-margin_top = -84.0
-margin_right = 254.5
+margin_top = -127.0
+margin_right = 254.489
 margin_bottom = 84.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -116,7 +203,6 @@ flat = true
 clip_text = true
 
 [node name="PopupPanel" type="WindowDialog" parent="TextureRect"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -7.68201
@@ -165,14 +251,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -143.0
+margin_left = -248.0
 margin_top = -39.0
-rect_pivot_offset = Vector2( -357.17, -267.882 )
+rect_pivot_offset = Vector2( -884, 579 )
 theme = ExtResource( 4 )
-text = "Language"
+text = "LANG_EN"
 clip_text = true
 align = 1
-items = [ "English", null, false, 0, null, "Spanish", null, false, 1, null, "German", null, false, 2, null, "Polish", null, false, 3, null, "Italian", null, false, 4, null, "Portugal", null, false, 5, null, "French", null, false, 6, null ]
+items = [ "LANG_EN", null, false, 0, null, "LANG_ES", null, false, 1, null, "LANG_DE", null, false, 2, null, "LANG_PL", null, false, 3, null, "LANG_IT", null, false, 4, null, "LANG_PT", null, false, 5, null, "LANG_FR", null, false, 6, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -202,7 +288,21 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 visible = false
 modulate = Color( 1, 1, 1, 0.166667 )
 
+[node name="Button" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -25.0
+margin_top = 13.0
+margin_bottom = 33.0
+text = "<-"
+flat = true
+__meta__ = {
+"_editor_description_": "
+"
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/back = SubResource( 2 )
 anims/new = ExtResource( 6 )
 
 [node name="VScrollBar" type="VScrollBar" parent="."]
@@ -223,4 +323,5 @@ margin_right = 12.0
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_Back_pressed"]
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]

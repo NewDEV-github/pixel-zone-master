@@ -1,10 +1,10 @@
 extends Node2D
-
+var player_default = globals.selected_player
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
 		get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
-var player_default = globals.selected_player
+
 func _ready():
 	add_child(Object(player_default))
 	globals._set_player_pos(0,0)
