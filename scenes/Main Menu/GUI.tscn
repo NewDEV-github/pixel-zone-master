@@ -139,7 +139,7 @@ __meta__ = {
 }
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
-margin_right = 509.0
+margin_right = 508.0
 margin_bottom = 39.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -148,7 +148,7 @@ flat = true
 
 [node name="Play8" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 43.0
-margin_right = 509.0
+margin_right = 508.0
 margin_bottom = 82.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -157,7 +157,7 @@ flat = true
 
 [node name="ImportMod" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 86.0
-margin_right = 509.0
+margin_right = 508.0
 margin_bottom = 125.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -166,7 +166,7 @@ flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 129.0
-margin_right = 509.0
+margin_right = 508.0
 margin_bottom = 168.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -185,7 +185,7 @@ flat = true
 
 [node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 172.0
-margin_right = 509.0
+margin_right = 508.0
 margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )

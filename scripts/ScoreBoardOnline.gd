@@ -21,6 +21,8 @@ func _ready():
 	score.close()
 	var save_file = File.new()
 	#Load current user's name
+	if not save_file.file_exists(str(documents)  + "/Pixel Zone/.data/name.save"):
+		$Panel2.show()
 	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.READ, str(2345654))
 	var loaded_name = save_file.get_line()
 	$Panel/Names.add_item(str(loaded_name) + " - You")
@@ -43,3 +45,27 @@ func _ready():
 	score_4 = parse_json(score.get_line())
 	score.close()
 	#count users from highest score to lower
+
+
+func _on_Button_pressed():
+	$"Login Panel".popup_centered()
+	$Panel2.hide()
+
+func _on_SignUp_pressed():
+	var email = $"Login Panel/Sign In/Sign Up/Email".text
+	var password = $"Login Panel/Sign In/Sign Up/Password".text
+	var confirm_password = $"Login Panel/Sign In/Sign Up/Confirm Password".text
+	if str(password) == str(confirm_password):
+		Firebase.Auth.signup_with_email_and_password(email, password)
+#	if not str(password) == str(confirm_password):
+#		$Label.show()
+
+
+func _on_Sign_In_pressed():
+	var email = $"Login Panel/Sign In/Email".text
+	var password = $"Login Panel/Sign In/Password".text
+	Firebase.Auth.login_with_email_and_password(email, password)
+
+
+func _on_Restore_pressed():
+	OS.shell_open("https://masterpolska123.github.io/home/login.html")

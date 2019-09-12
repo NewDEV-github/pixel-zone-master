@@ -95,9 +95,11 @@ var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_signup_pressed():
 	var email = $Control/Control2/VBoxContainer/email.text
 	var password = $Control/Control2/VBoxContainer/password.text
-	Firebase.Auth.signup_with_email_and_password(email, password)
-	$Control/Control2.hide()
-	$Control/Control.show()
+	var password_confirm = $Control/Control2/VBoxContainer/password2.text
+	if str(password) == str(password_confirm):
+		Firebase.Auth.signup_with_email_and_password(email, password)
+		$Control/Control2.hide()
+		$Control/Control.show()
 
 func _on_Button4_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/login.html")

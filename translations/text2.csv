@@ -142,3 +142,9 @@ l'état de sauvegarde
 Du jeu."
 KEY_ONLINE_SC,Online Scoreboard (BETA!),Cuadro de indicadores en línea (BETA!),Online-Anzeiger (BETA!),"Tablica wyników
 Online (BETA!)",Quadro di valutazione online (BETA!),Placar Online (BETA!),Tableau de bord en ligne (BETA!)
+KEY_SIGNIN,Sign In,Registrarse,Einloggen,Zaloguj,Registrati,Assinar em,Se connecter
+KEY_SIGNUP,Sign Up,Regístrate,Anmelden,Zarejestruj,Iscriviti,Inscrever-se,S'inscrire
+KEY_RESTORE_P,Restore Password,Restaurar contraseña,Passwort wiederherstellen,Przywróć hasło,Ripristina password,Restaurar senha,Restaurer le mot de passe
+KEY_REG_P_A,Register your Pixel Zone account,Registre su cuenta de Pixel Zone,Registrieren Sie Ihr Pixel Zone-Konto,Zarejestruj się na swoje konto Pixel Zone,Registra il tuo account Pixel Zone,Registre sua conta na Pixel Zone,Enregistrez votre compte Pixel Zone
+KEY_LOG_P_A,Login to your Pixel Zone account,Inicie sesión en su cuenta de Pixel Zone,Melden Sie sich bei Ihrem Pixel Zone-Konto an,Zaloguj się na swoje konto Pixel Zone,Accedi al tuo account Pixel Zone,Entre na sua conta Pixel Zone,Connectez-vous à votre compte Pixel Zone
+KEY_PASS_ERR,Incorrect passwords!,Contraseñas incorrectas!,Falsche Passwörter!,Hasła nie pasują,Password errate!,Senhas incorretas!,Mots de passe incorrects!

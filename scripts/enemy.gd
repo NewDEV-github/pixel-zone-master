@@ -47,13 +47,8 @@ func _physics_process(delta):
 
 
 func hit_by_bullet():
-	state = STATE_WALKING
-	$ProgressBar.value -= 4
-	if $ProgressBar.value == 0:
-		state = STATE_KILLED
+	state = STATE_KILLED
 
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		state = STATE_KILLED
-		if body.has_method("jump"):
-			body.call("jump")

@@ -122,7 +122,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GDFirebase", "mixing-desk" )
+enabled=PoolStringArray( "GDFirebase" )
 
 [input]
 

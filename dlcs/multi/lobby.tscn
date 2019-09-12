@@ -13,6 +13,7 @@ size_flags_vertical = 2
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ -426.126 ]
 }
 
@@ -187,7 +188,6 @@ margin_right = 55.0
 margin_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-window_title = "Alert!"
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -209,13 +209,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -212.0
-margin_top = -84.0
-margin_right = 212.0
-margin_bottom = 84.0
+margin_left = -258.0
+margin_top = -105.5
+margin_right = 258.0
+margin_bottom = 105.5
 
 [node name="email" type="LineEdit" parent="Control/Control2/VBoxContainer"]
-margin_right = 424.0
+margin_right = 516.0
 margin_bottom = 39.0
 max_length = 1000
 expand_to_text_length = true
@@ -232,34 +232,43 @@ placeholder_text = "UserName"
 
 [node name="password" type="LineEdit" parent="Control/Control2/VBoxContainer"]
 margin_top = 43.0
-margin_right = 424.0
+margin_right = 516.0
 margin_bottom = 82.0
 max_length = 100
 secret = true
 expand_to_text_length = true
 placeholder_text = "Password"
 
-[node name="signup" type="Button" parent="Control/Control2/VBoxContainer"]
+[node name="password2" type="LineEdit" parent="Control/Control2/VBoxContainer"]
 margin_top = 86.0
-margin_right = 424.0
+margin_right = 516.0
 margin_bottom = 125.0
-text = "Sign Up"
+max_length = 100
+secret = true
+expand_to_text_length = true
+placeholder_text = "Confirm Password"
+
+[node name="signup" type="Button" parent="Control/Control2/VBoxContainer"]
+margin_top = 129.0
+margin_right = 516.0
+margin_bottom = 168.0
+text = "KEY_SIGNUP"
 
 [node name="Label" type="Label" parent="Control/Control2/VBoxContainer"]
-margin_top = 129.0
-margin_right = 424.0
-margin_bottom = 168.0
-text = "Register your Pixel Zone acconut"
+margin_top = 172.0
+margin_right = 516.0
+margin_bottom = 211.0
+text = "KEY_REG_P_A"
+align = 1
+valign = 1
 
-[node name="Label2" type="Label" parent="Control/Control2"]
-margin_left = 4.0
-margin_top = 415.0
-margin_right = 1023.0
-margin_bottom = 601.0
-text = "Your e-mail will
-be set as your player's name,
-but You can change it before
-playing."
+[node name="Label2" type="Label" parent="Control/Control2/VBoxContainer"]
+visible = false
+margin_top = 215.0
+margin_right = 424.0
+margin_bottom = 254.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KEY_PASS_ERR"
 align = 1
 valign = 1
 
@@ -277,10 +286,13 @@ margin_left = -221.0
 margin_top = -148.0
 margin_right = 222.0
 margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="username" type="LineEdit" parent="Control/Control/HBoxContainer"]
 visible = false
-margin_right = 368.0
+margin_right = 443.0
 margin_bottom = 39.0
 max_length = 100
 placeholder_text = "Username"
@@ -303,38 +315,45 @@ placeholder_text = "Password"
 margin_top = 86.0
 margin_right = 443.0
 margin_bottom = 125.0
-text = "Login"
+text = "KEY_SIGNIN"
 
-[node name="Button3" type="Button" parent="Control/Control/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Control/Control/HBoxContainer"]
 margin_top = 129.0
 margin_right = 443.0
-margin_bottom = 168.0
-text = "Sign Up"
+margin_bottom = 133.0
 
 [node name="Button4" type="Button" parent="Control/Control/HBoxContainer"]
-margin_top = 172.0
+margin_top = 137.0
 margin_right = 443.0
-margin_bottom = 211.0
-text = "Restore Your Password"
+margin_bottom = 176.0
+text = "KEY_RESTORE_P"
+
+[node name="Button3" type="Button" parent="Control/Control/HBoxContainer"]
+margin_top = 180.0
+margin_right = 443.0
+margin_bottom = 219.0
+text = "KEY_SIGNUP"
 
 [node name="Button" type="Button" parent="Control/Control/HBoxContainer"]
-margin_top = 215.0
+visible = false
+margin_top = 223.0
 margin_right = 443.0
-margin_bottom = 254.0
+margin_bottom = 262.0
 text = "Back"
 
 [node name="Label" type="Label" parent="Control/Control/HBoxContainer"]
 modulate = Color( 1, 0, 0, 1 )
-margin_top = 258.0
+margin_top = 223.0
 margin_right = 443.0
-margin_bottom = 297.0
+margin_bottom = 262.0
 
 [node name="Label2" type="Label" parent="Control/Control/HBoxContainer"]
-margin_top = 301.0
+margin_top = 266.0
 margin_right = 443.0
-margin_bottom = 340.0
-text = "Login into Your Pixel Zone acconut"
-
+margin_bottom = 305.0
+text = "KEY_LOG_P_A"
+align = 1
+valign = 3
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="players/back3" to="." method="_on_back3_pressed"]
 [connection signal="pressed" from="connect/Button" to="." method="_on_Button_pressed"]
@@ -343,6 +362,6 @@ text = "Login into Your Pixel Zone acconut"
 [connection signal="pressed" from="connect/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/Control2/VBoxContainer/signup" to="." method="_on_signup_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button2" to="Control" method="_on_Button2_pressed"]
-[connection signal="pressed" from="Control/Control/HBoxContainer/Button3" to="Control" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button3" to="Control" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button" to="Control" method="_on_Button_pressed"]

@@ -131,7 +131,7 @@ perdita dello stato del gioco
 
 
 Non spegnere il gioco
-Uando questa icona ? visibile","Este jogo usa a função de salvamento automático. Esta função não contém DLCs - Somente jogo base (por enquanto)
+Uando questa icona visibile","Este jogo usa a função de salvamento automático. Esta função não contém DLCs - Somente jogo base (por enquanto)
 Os arquivos são salvos no disco e a remoção
 de um deles pode resultar na
 Perda do estado do jogo
@@ -146,37 +146,29 @@ L'état du jeu
 
 N'éteignez pas le jeu,
 Tant que cette icône est visible"
-KEY_AP,Awaiting Players�,A la espera de jugadores ...,Spieler erwarten�,Oczekuj�cy Gracze�,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente�
-KEY_Host,Host,Anfitri�n,Wirt,Hostuj,Ospite,Hospedeiro,H�te
-KEY_Join,Join,Unirse,Beitreten,Do��cz,Aderire,Junte-se,Joindre
-KEY_IP_Adress,IP Address,Direcci�n IP,IP Adresse,Adres IP,Indirizzo IP,Endere�o de IP,Adresse IP
-KEY_NAME,Name,Nombre,Name,Nazwa,Nome,Nome,pr�nom
-KEY_ERR,"Oops�
+,Awaiting Players…,A la espera de jugadores ...,Spieler erwarten…,Oczekujący gracze…,In attesa di giocatori ...,Aguardando jogadores ...,Joueurs en attente…
+,Host,Anfitrion,Wirt,Hostuj,Ospite,Hospedeiro,Hoste
+,Join,Unirse,Beitreten,Dołącz,Aderire,Junte-se,Joindre
+,IP Address,Direccion IP,IP Adresse,Adres IP,Indirizzo IP,IP,Adresse IP
+,Name,Nombre,Name,Nazwa,Nome,Nome,prenorm
+,"Oops!
 
-It seems there was an error. Debug file was created at �user://logs/*.log�.
+It seems there was an error. Debug file was created at ‘user://logs/*.log’.
 
-Pixel Zone will exit now","Vaya �
+Pixel Zone will exit now","Vaya!
 
-Parece que hubo un error. El archivo de depuraci�n se cre� en �usuario: //logs/*.log�.
-
-Pixel Zone saldr� ahora","Hoppla�
+Parece que hubo un error.","Hoppla!
 
 Es scheint einen Fehler zu geben. Die Debug-Datei wurde unter ""user: //logs/*.log"" erstellt.
 
-Pixel Zone wird jetzt beendet","Ups�
+Pixel Zone wird jetzt beendet","Ups!
 
-To wygl�da na b��d. Log b��du zosta� utworzony w �user://logs/*.log�
+To wygląda na błąd. Log błędu został utworzony w ‘user://logs/*.log’
 
-Pixel Zone wy��czy si� teraz","Oops �
+Pixel Zone wyłączy się teraz","Oops!
 
-Sembra che ci sia stato un errore. Il file di debug ? stato creato su ""utente: //logs/*.log"".
+Sembra che ci sia stato un errore.","Oops!
 
-Pixel Zone uscir? ora","Oops �
+Parece que houve um erro.","Oups!
 
-Parece que houve um erro. O arquivo de depura�?o foi criado em ""user: //logs/*.log"".
-
-A Pixel Zone sair� agora","Oups�
-
-Il semble qu'il y ait eu une erreur. Le fichier de d�bogage a �t� cr�� ? ""user: //logs/*.log"".
-
-Pixel Zone va quitter maintenant"
+Il semble qu'il y ait eu une erreur."
