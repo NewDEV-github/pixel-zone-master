@@ -117,8 +117,8 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 
 [editor_plugins]
 

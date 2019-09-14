@@ -59,13 +59,25 @@ func _on_SignUp_pressed():
 		Firebase.Auth.signup_with_email_and_password(email, password)
 #	if not str(password) == str(confirm_password):
 #		$Label.show()
+	var save_file = File.new()
+	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.WRITE, str(2345654))
+	save_file.store_line(str(email))
+	get_tree().reload_current_scene()
 
 
 func _on_Sign_In_pressed():
 	var email = $"Login Panel/Sign In/Email".text
 	var password = $"Login Panel/Sign In/Password".text
 	Firebase.Auth.login_with_email_and_password(email, password)
+	var save_file = File.new()
+	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.WRITE, str(2345654))
+	save_file.store_line(str(email))
+	get_tree().reload_current_scene()
 
 
 func _on_Restore_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/login.html")
+
+
+func _on_RELOAD_pressed():
+	get_tree().reload_current_scene()

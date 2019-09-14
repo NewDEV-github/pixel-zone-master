@@ -161,7 +161,10 @@ func dd():
 	$ui/Control/ProgressBar.value -= 70
 func _process(delta):
 	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
-
+	if (OS.is_window_maximized()) == true:
+		$camera.zoom = Vector2(1.2, 1.2)
+	if (OS.is_window_maximized()) == false:
+		$camera.zoom = Vector2(1, 1)
 func _on_fps_show():
 	$ui/Control/fps.show()
 func _on_fps_hide():

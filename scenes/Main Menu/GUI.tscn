@@ -111,6 +111,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -130,16 +132,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -254.5
-margin_top = -127.0
-margin_right = 254.489
-margin_bottom = 84.0
+margin_left = -306.0
+margin_top = -105.5
+margin_right = 306.0
+margin_bottom = 105.5
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Play5" type="Button" parent="TextureRect/VBoxContainer"]
-margin_right = 508.0
+margin_right = 612.0
 margin_bottom = 39.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -148,7 +151,7 @@ flat = true
 
 [node name="Play8" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 43.0
-margin_right = 508.0
+margin_right = 612.0
 margin_bottom = 82.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -157,7 +160,7 @@ flat = true
 
 [node name="ImportMod" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 86.0
-margin_right = 508.0
+margin_right = 612.0
 margin_bottom = 125.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -166,7 +169,7 @@ flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 129.0
-margin_right = 508.0
+margin_right = 612.0
 margin_bottom = 168.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
@@ -176,8 +179,8 @@ flat = true
 [node name="LoadGame" type="Button" parent="TextureRect/VBoxContainer"]
 visible = false
 margin_top = 172.0
-margin_right = 509.0
-margin_bottom = 209.0
+margin_right = 508.0
+margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "Continue"
@@ -185,7 +188,7 @@ flat = true
 
 [node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 172.0
-margin_right = 508.0
+margin_right = 612.0
 margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
