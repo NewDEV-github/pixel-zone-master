@@ -65,3 +65,5 @@ func load_scene(path):
 	progress.show()
 
 	
+#func _process(delta):
+#	progress.set_position(CENTER)

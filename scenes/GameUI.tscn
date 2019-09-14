@@ -12,48 +12,43 @@
 pause_mode = 2
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ -298.126 ]
 }
 
-[node name="UIScaler" type="Node2D" parent="."]
-
-[node name="Menu" type="Panel" parent="UIScaler"]
+[node name="Menu" type="Panel" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -410.625
-margin_top = -2.0
-margin_right = 622.375
-margin_bottom = 600.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="OptionsPage" parent="UIScaler/Menu" instance=ExtResource( 3 )]
-visible = false
-margin_left = 413.0
-margin_right = 398.0
+[node name="OptionsPage" parent="Menu" instance=ExtResource( 3 )]
+margin_left = 212.0
+margin_top = 0.0
+margin_right = -21.0
+margin_bottom = 0.0
 
-[node name="HBoxContainer" type="VBoxContainer" parent="UIScaler/Menu"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu"]
 modulate = Color( 1, 0.956863, 0.956863, 1 )
 light_mask = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -106.5
-margin_top = -266.0
-margin_right = 82.5
-margin_bottom = 301.0
+anchor_bottom = 1.0
+margin_right = 170.0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Return" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+[node name="Return" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
-margin_right = 189.0
-margin_bottom = 186.0
+margin_right = 170.0
+margin_bottom = 197.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -61,11 +56,11 @@ custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
 text = "KEY_Return"
 flat = true
 
-[node name="Options" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+[node name="Options" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
-margin_top = 190.0
-margin_right = 189.0
-margin_bottom = 376.0
+margin_top = 201.0
+margin_right = 170.0
+margin_bottom = 398.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -75,11 +70,11 @@ group = SubResource( 1 )
 text = "KEY_Options"
 flat = true
 
-[node name="Quit" type="Button" parent="UIScaler/Menu/HBoxContainer"]
+[node name="Quit" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
-margin_top = 380.0
-margin_right = 189.0
-margin_bottom = 567.0
+margin_top = 402.0
+margin_right = 170.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -89,11 +84,13 @@ group = SubResource( 1 )
 text = "KEY_Quit"
 flat = true
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="UIScaler/Menu"]
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="Menu"]
 volume_db = -10.0
 autoplay = true
 script = ExtResource( 5 )
 id = "Menu"
-[connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Return" to="UIScaler/Menu" method="_on_Return_pressed"]
-[connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Options" to="UIScaler/Menu" method="_on_Options_pressed"]
-[connection signal="pressed" from="UIScaler/Menu/HBoxContainer/Quit" to="UIScaler/Menu" method="_on_Quit_pressed"]
+
+[node name="UIScaler" type="Node2D" parent="."]
+[connection signal="pressed" from="Menu/HBoxContainer/Return" to="Menu" method="_on_Return_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Options" to="Menu" method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Quit" to="Menu" method="_on_Quit_pressed"]

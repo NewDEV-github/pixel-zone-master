@@ -290,6 +290,9 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 [node name="Control" parent="." instance=ExtResource( 5 )]
 visible = false
 modulate = Color( 1, 1, 1, 0.166667 )
+margin_left = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
 
 [node name="Button" type="Button" parent="Control"]
 anchor_left = 1.0
