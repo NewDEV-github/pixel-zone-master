@@ -16,4 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 2 )
 autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
