@@ -170,6 +170,34 @@ func _on_LanguageButton_item_selected(id):
 	if id == 6:
 		TranslationServer.set_locale('fr')
 
-
+var checked = false
 func _on_Back_pressed():
-	$AnimationPlayer.play("back")
+	$WindowDialog.popup_centered()
+	var path = 'res://Level Editor/saved_levels/'
+	if checked == false:
+		var dir = Directory.new()
+		if dir.open(path) == OK:
+			dir.list_dir_begin()
+			print(str(dir.list_dir_begin()))
+			var file_name = dir.get_next()
+			while (file_name != ""):
+				if dir.current_is_dir():
+					print("Found directory: " + file_name)
+				else:
+					print("Found file: " + file_name)
+					var fil_name = str(file_name).get_basename()
+					var extension = str(file_name).get_extension()
+					print(extension)
+					if extension == "tscn":
+						$WindowDialog/ItemList.add_item(fil_name)
+				file_name = dir.get_next()
+				checked = true
+#	$AnimationPlayer.play("back")
+	
+
+
+func _on_ItemList_item_selected(index):
+	var path = 'res://Level Editor/saved_levels'
+	var name = $WindowDialog/ItemList.get_item_text(index)
+	background_load.load_scene(str(path) + '/' + str(name) + '.tscn')
+	

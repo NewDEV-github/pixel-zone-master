@@ -5,6 +5,7 @@
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 scroll_base_scale = Vector2( 0.7, 0 )
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.4, 1 )

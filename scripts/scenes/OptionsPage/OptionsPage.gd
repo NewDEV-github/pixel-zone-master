@@ -115,10 +115,11 @@ func _on_Yellow_pressed():
 					print("Found directory: " + file_name)
 				else:
 					print("Found file: " + file_name)
+					var fil_name = str(file_name).get_basename()
 					var extension = str(file_name).get_extension()
 					print(extension)
 					if extension == "tres":
-						$TabContainer/Theme/CustomTheme/ThemeList.add_item(file_name)
+						$TabContainer/Theme/CustomTheme/ThemeList.add_item(fil_name)
 				file_name = dir.get_next()
 				checked = true
 		else:
@@ -126,7 +127,7 @@ func _on_Yellow_pressed():
 
 signal ready_to_load
 
-func _on_ThemeList_item_selected(index):
+func _on_ThemeList_ibgtem_selected(index):
 	var path = str(documents) + "/Pixel Zone/"
 	var item_name = $TabContainer/Theme/CustomTheme/ThemeList.get_item_text(index)
 	var full_theme_path = str(path) + str(item_name)
