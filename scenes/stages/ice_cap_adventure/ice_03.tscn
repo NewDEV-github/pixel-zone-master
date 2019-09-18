@@ -2,11 +2,12 @@
 
 [ext_resource path="res://scripts/scenes/levels/ice_cap_adventure/ice_03.gd" type="Script" id=1]
 [ext_resource path="res://titles/ice.tres" type="TileSet" id=2]
-[ext_resource path="res://sounds/levels/Ice_Cap_Adventure/Ice_Cap_Adventure.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sounds/Ice_Cap_Adventure.ogg" type="AudioStream" id=3]
 [ext_resource path="res://scenes/parllax_bg_3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 156.328, 201.747 )

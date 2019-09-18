@@ -144,3 +144,11 @@ func _on_BetaTests_pressed():
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.WRITE)
 	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
 	beta.close()
+
+
+func _on_CheckButton_pressed():
+	pass # Replace with function body.
+
+
+func _on_SFXBar_value_changed(value):
+	pass # Replace with function body.

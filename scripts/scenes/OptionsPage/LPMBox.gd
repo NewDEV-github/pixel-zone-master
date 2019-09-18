@@ -15,12 +15,12 @@ func _load():
 		$CheckButton.set_pressed(true)
 	if loaded_settings == "False":
 		$CheckButton.set_pressed(false)
-func _process(delta):
+
+
+
+func _on_CheckButton_pressed():
 	_save()
 	if $CheckButton.pressed == true:
 		OS.low_processor_usage_mode = true
 	if $CheckButton.pressed == false:
 		OS.low_processor_usage_mode = false
-
-
-

@@ -173,7 +173,7 @@ func _on_LanguageButton_item_selected(id):
 var checked = false
 func _on_Back_pressed():
 	$WindowDialog.popup_centered()
-	var path = 'res://Level Editor/saved_levels/'
+	var path = 'user://saved_levels/'
 	if checked == false:
 		var dir = Directory.new()
 		if dir.open(path) == OK:
@@ -197,7 +197,7 @@ func _on_Back_pressed():
 
 
 func _on_ItemList_item_selected(index):
-	var path = 'res://Level Editor/saved_levels'
+	var path = 'user://saved_levels'
 	var name = $WindowDialog/ItemList.get_item_text(index)
 	background_load.load_scene(str(path) + '/' + str(name) + '.tscn')
 	

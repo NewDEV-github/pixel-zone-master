@@ -12,5 +12,7 @@ func _load():
 	load_.open(str(documents) +"/Pixel Zone/.data/settings/settings_audio_sfx.save", File.READ)
 	var loaded_settings = str(parse_json(load_.get_line()))
 	AudioServer.set_bus_volume_db(2, float(str(loaded_settings)))
-func _process(delta):
+
+
+func _on_SFXBar_value_changed(value):
 	_save()

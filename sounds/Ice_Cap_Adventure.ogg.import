@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ice_Cap_Adventure.ogg-4083739e819e77c2000443946a120555.oggstr"
+
+[deps]
+
+source_file="res://sounds/Ice_Cap_Adventure.ogg"
+dest_files=[ "res://.import/Ice_Cap_Adventure.ogg-4083739e819e77c2000443946a120555.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

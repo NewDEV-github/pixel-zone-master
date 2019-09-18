@@ -15,5 +15,8 @@ func _load():
 		set_pressed(true)
 	if loaded_settings == "False":
 		set_pressed(false)
-func _process(delta):
+
+
+
+func _on_Advanced_pressed():
 	_save()

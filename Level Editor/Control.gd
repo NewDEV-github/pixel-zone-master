@@ -5,7 +5,7 @@ onready var root = $"Editor's Scene"
 var node 
 var mode = 'play'
 var number
-var save_dir = 'res://Level Editor/saved_levels/'
+var save_dir = 'user://saved_levels/'
 const SPEED = 100
 var selected_file
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +20,7 @@ func _process(delta):
 	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
 	number = str(delta * SPEED)
 	if mode == 'edit':
-		var position_l = get_local_mouse_position()
+		var position_l = get_global_mouse_position()
 		node.set_position(position_l)
 
 func _input(event):
@@ -87,7 +87,7 @@ func _on_ItemList_item_selected(index):
 	root.add_child(selected_bg)
 	selected_bg.set_owner(root)
 	$PopupPanel2.hide()
-	$"Panel/VBoxContainer2/Select Background".set_disabled(true)
+	$"Panel/VBoxContainer2/Select Background2".set_disabled(true)
 	
 	
 	
@@ -99,3 +99,31 @@ func _on_icon3_pressed():
 	root.add_child(node)
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
+
+
+func _on_MusicList_item_selected(index):
+	var audio = preload('res://Level Editor/audio.tscn').instance()
+	if not root.has_node('AUDIO'):
+		root.add_child(audio)
+		audio.set_owner(root)
+		audio.set_name('AUDIO')
+	var music_to_play
+	if index == 0:
+		music_to_play = load('res://sounds/music.ogg')
+	if index == 1:
+		music_to_play = load('res://sounds/Ice_Cap_Adventure.ogg')
+	if index == 2:
+		music_to_play = load('res://sounds/brazil-fast.ogg')
+	if index == 3:
+		music_to_play = load('res://sounds/jungle_ruins.ogg')
+	if index == 4:
+		music_to_play = load('res://sounds/hill.ogg')
+	if index == 5:
+		music_to_play = load('res://sounds/sci-fi.ogg')
+	if index == 6:
+		music_to_play = load('res://sounds/Castlemania.ogg')
+	audio.set_stream(music_to_play)
+
+
+func _on_Select_Music_pressed():
+	$PopupPanel3.popup_centered()

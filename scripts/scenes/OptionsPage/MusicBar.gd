@@ -12,5 +12,5 @@ func _load():
 	load_.open(str(documents) +"/Pixel Zone/.data/settings/settings_audio_usr_music.save", File.READ)
 	var loaded_settings = str(parse_json(load_.get_line()))
 	AudioServer.set_bus_volume_db(1, float(str(loaded_settings)))
-func _process(delta):
+func _on_MusicBar_value_changed(value):
 	_save()

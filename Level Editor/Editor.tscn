@@ -78,23 +78,32 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -44.0
+margin_top = -68.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Select Background" type="Button" parent="Panel/VBoxContainer2"]
+[node name="Select Music" type="Button" parent="Panel/VBoxContainer2"]
 margin_right = 188.0
 margin_bottom = 20.0
+text = "Select Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select Background2" type="Button" parent="Panel/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 188.0
+margin_bottom = 44.0
 text = "Select Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 24.0
+margin_top = 48.0
 margin_right = 188.0
-margin_bottom = 44.0
+margin_bottom = 68.0
 text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -145,10 +154,32 @@ anchor_bottom = 1.0
 margin_top = 8.0
 margin_bottom = 8.0
 items = [ "BG 1", null, false, "BG 2", null, false, "BG 3", null, false, "BG 4", null, false, "BG 5", null, false, "BG 6", null, false, "BG 7", null, false ]
+
+[node name="PopupPanel3" type="WindowDialog" parent="."]
+visible = true
+margin_left = 180.0
+margin_top = 97.25
+margin_right = 570.0
+margin_bottom = 373.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicList" type="ItemList" parent="PopupPanel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+margin_bottom = 8.0
+items = [ "Track 1", null, false, "Track 2", null, false, "Track 3", null, false, "Track 4", null, false, "Track 5", null, false, "Track 6", null, false, "Track 7", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Panel/VBoxContainer/icon" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon3" to="." method="_on_icon3_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer2/Select Background" to="." method="_on_Select_Background_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer2/Select Music" to="." method="_on_Select_Music_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer2/Select Background2" to="." method="_on_Select_Background_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]
 [connection signal="item_selected" from="PopupPanel2/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="item_selected" from="PopupPanel3/MusicList" to="." method="_on_MusicList_item_selected"]
