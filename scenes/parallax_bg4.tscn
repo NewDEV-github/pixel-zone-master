@@ -18,11 +18,11 @@ centered = false
 
 [node name="mount_ 2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.2, 1 )
-motion_mirroring = Vector2( 800, 0 )
+motion_mirroring = Vector2( 1900, 0 )
 
 [node name="Sprite" type="Sprite" parent="mount_ 2"]
 position = Vector2( 0, 396.405 )
-scale = Vector2( 1.63914, 1.59327 )
+scale = Vector2( 2.77539, 1.59327 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
@@ -30,9 +30,21 @@ region_rect = Rect2( 0, 0, 800, 256 )
 
 [node name="mount_1" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.4, 1 )
-motion_mirroring = Vector2( 800, 0 )
+motion_mirroring = Vector2( 1600, 0 )
 
 [node name="Sprite" type="Sprite" parent="mount_1"]
+position = Vector2( -6.96094, 436.508 )
+scale = Vector2( 1, 1.49438 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+
+[node name="mount_2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 3200, 0 )
+
+[node name="Sprite" type="Sprite" parent="mount_2"]
 position = Vector2( -6.96094, 436.508 )
 scale = Vector2( 1, 1.49438 )
 texture = ExtResource( 3 )

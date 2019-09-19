@@ -8,10 +8,8 @@ extents = Vector2( 34.3911, 34.5868 )
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 418.524, 284.296 )
 shape = SubResource( 1 )
 
 [node name="tileset_1" type="Sprite" parent="."]
-position = Vector2( 418.164, 284.937 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )

@@ -250,7 +250,7 @@ grow_vertical = 2
 rect_clip_content = true
 alignment = 1
 
-[node name="Englisch" type="Button" parent="TabContainer/Language/Europe"]
+[node name="English" type="Button" parent="TabContainer/Language/Europe"]
 light_mask = 2
 margin_right = 257.0
 margin_bottom = 37.0
@@ -273,7 +273,7 @@ margin_bottom = 119.0
 custom_fonts/font = ExtResource( 2 )
 text = "LANG_FR"
 
-[node name="Polisch" type="Button" parent="TabContainer/Language/Europe"]
+[node name="Polish" type="Button" parent="TabContainer/Language/Europe"]
 light_mask = 2
 margin_top = 123.0
 margin_right = 257.0
@@ -297,7 +297,7 @@ margin_bottom = 242.0
 custom_fonts/font = ExtResource( 2 )
 text = "LANG_IT"
 
-[node name="Spanisch" type="Button" parent="TabContainer/Language/Europe"]
+[node name="Spanish" type="Button" parent="TabContainer/Language/Europe"]
 light_mask = 2
 margin_top = 246.0
 margin_right = 257.0
@@ -754,13 +754,13 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]
 [connection signal="pressed" from="TabContainer/Language/ApplyButton3" to="." method="_on_ApplyButton_pressed"]
-[connection signal="pressed" from="TabContainer/Language/Europe/Englisch" to="." method="_on_Englisch_pressed"]
+[connection signal="pressed" from="TabContainer/Language/Europe/English" to="." method="_on_Englisch_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Portuguese" to="." method="_on_Portuguese_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/French" to="." method="_on_French_pressed"]
-[connection signal="pressed" from="TabContainer/Language/Europe/Polisch" to="." method="_on_Polisch_pressed"]
+[connection signal="pressed" from="TabContainer/Language/Europe/Polish" to="." method="_on_Polisch_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Detusch" to="." method="_on_Detusch_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Italiano" to="." method="_on_Italiano_pressed"]
-[connection signal="pressed" from="TabContainer/Language/Europe/Spanisch" to="." method="_on_Spanisch_pressed"]
+[connection signal="pressed" from="TabContainer/Language/Europe/Spanish" to="." method="_on_Spanisch_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox" method="_on_CheckButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox" method="_on_CheckButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ApplyButton" to="." method="_on_ApplyButton_pressed"]

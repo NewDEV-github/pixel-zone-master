@@ -60,6 +60,7 @@ func _on_Detusch_pressed():
 	TranslationServer.set_locale("de")
 	_save()
 func _on_Polisch_pressed():
+	TranslationServer.set_locale("pl")
 	_save()
 func _on_Italiano_pressed():
 	TranslationServer.set_locale("it")
@@ -127,7 +128,7 @@ func _on_Yellow_pressed():
 
 signal ready_to_load
 
-func _on_ThemeList_ibgtem_selected(index):
+func _on_ThemeList_item_selected(index):
 	var path = str(documents) + "/Pixel Zone/"
 	var item_name = $TabContainer/Theme/CustomTheme/ThemeList.get_item_text(index)
 	var full_theme_path = str(path) + str(item_name)

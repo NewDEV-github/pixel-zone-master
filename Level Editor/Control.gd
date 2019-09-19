@@ -5,6 +5,7 @@ onready var root = $"Editor's Scene"
 var node 
 var mode = 'play'
 var number
+var is_checked: bool
 var save_dir = 'user://saved_levels/'
 const SPEED = 100
 var selected_file
@@ -22,7 +23,6 @@ func _process(delta):
 	if mode == 'edit':
 		var position_l = get_global_mouse_position()
 		node.set_position(position_l)
-
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if mode == 'play':
