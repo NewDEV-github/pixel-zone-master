@@ -17,7 +17,7 @@ func _process(delta):
 #	if str($PopupPanel/LineEdit.text) == '':
 #		$PopupPanel/SAVE_BUTTON.set_disabled(false)
 	var objects = str(float(get_tree().get_node_count()) - 8)
-	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
+#	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
 	number = str(delta * SPEED)
 	if mode == 'edit':
 		var position_l = get_global_mouse_position()
@@ -27,26 +27,17 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if mode == 'play':
 			mode = 'edit'
+			$Panel.hide()
 		elif mode == 'edit':
 			mode = 'play'
+			$Panel.show()
 
 func _on_TextureButton_pressed():
-	node = preload("res://Level Editor/tiles/icon.tscn").instance()
-	node.set_name('icon' + str(number))
-	root.add_child(node)
-	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.show()
 
 func _on_Button_pressed():
 	$PopupPanel.popup_centered()
 #	
-
-func _on_TextureButton2_pressed():
-	node = preload("res://Level Editor/tiles/icon2.tscn").instance()
-	node.set_name('icon2' + str(number))
-	root.add_child(node)
-	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	
 func _on_Button2_pressed():
 	$PopupPanel/FileDialog.popup_centered()
@@ -127,3 +118,76 @@ func _on_MusicList_item_selected(index):
 
 func _on_Select_Music_pressed():
 	$PopupPanel3.popup_centered()
+
+###selecing tiles
+
+func _on_Tile1_icecapzone_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile1.tscn").instance()
+	node.set_name('tile1_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone2_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile2.tscn").instance()
+	node.set_name('tile2_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone3_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile3.tscn").instance()
+	node.set_name('tile3_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone4_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile4.tscn").instance()
+	node.set_name('tile4_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone5_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile5.tscn").instance()
+	node.set_name('tile5_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone6_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile6.tscn").instance()
+	node.set_name('tile6_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone7_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile7.tscn").instance()
+	node.set_name('tile7_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_icecapzone8_pressed():
+	node = preload("res://Level Editor/tiles/IceCapZone/tile8.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
