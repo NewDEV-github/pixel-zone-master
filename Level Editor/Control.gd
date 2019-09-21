@@ -9,10 +9,13 @@ var is_checked: bool
 var save_dir = 'user://saved_levels/'
 const SPEED = 100
 var selected_file
+var x = 75
+var y = 75
+var heigth_width = 100000000
+var locked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #	if str($PopupPanel/LineEdit.text) == '':
@@ -21,16 +24,22 @@ func _process(delta):
 #	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
 	number = str(delta * SPEED)
 	if mode == 'edit':
-		var position_l = get_global_mouse_position()
-		node.set_position(position_l)
+		var position_l = get_global_mouse_position().snapped(Vector2(5,5))
+		var snap_grid_x = round(position_l.x)
+		var snap_grid_y = round(position_l.y)
+		$Label.set_text("POSITION: " + str(position_l))
+		node.set_position(Vector2(snap_grid_x, snap_grid_y))
+		print(str(node.position))
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		if mode == 'play':
+		if mode == 'play'and locked == false:
 			mode = 'edit'
 			$Panel.hide()
-		elif mode == 'edit':
-			mode = 'play'
-			$Panel.show()
+			$Label.show()
+		elif mode == 'edit' and locked == false:
+				mode = 'play'
+				$Panel.show()
+				$Label.hide()
 
 func _on_TextureButton_pressed():
 	$SetCurrentTile.show()
@@ -186,6 +195,184 @@ func _on_Tile1_icecapzone7_pressed():
 
 func _on_Tile1_icecapzone8_pressed():
 	node = preload("res://Level Editor/tiles/IceCapZone/tile8.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile1.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill2_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile2.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill3_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile3.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill4_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile4.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+func _on_Tile1_hill5_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile5.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+func _on_Tile1_hill6_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile6.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill7_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile7.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill8_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile8.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill9_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile9.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill10_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile10.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill11_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile11.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill12_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile12.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill13_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile13.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill14_pressed():
+	node = preload('res://Level Editor/tiles/Hill/tile14.tscn').instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill15_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile15.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill16_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile16.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill17_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile17.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile1_hill18_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile18.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+func _on_Tile1_hill19_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile19.tscn").instance()
+	node.set_name('tile8_icecap' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+	
+
+
+func _on_Tile1_hill20_pressed():
+	node = preload("res://Level Editor/tiles/Hill/tile20.tscn").instance()
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
