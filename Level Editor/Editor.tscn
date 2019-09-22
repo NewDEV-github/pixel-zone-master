@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Level Editor/Control.gd" type="Script" id=2]
@@ -32,6 +32,39 @@
 [ext_resource path="res://single tiles/tileset_hill_20.png" type="Texture" id=30]
 [ext_resource path="res://single tiles/tileset_hill_19.png" type="Texture" id=31]
 [ext_resource path="res://single tiles/tileset_hill_18.png" type="Texture" id=32]
+[ext_resource path="res://single tiles/tileset_pa_5.png" type="Texture" id=33]
+[ext_resource path="res://single tiles/tileset_pa_1.png" type="Texture" id=34]
+[ext_resource path="res://single tiles/tileset_pa_3.png" type="Texture" id=35]
+[ext_resource path="res://single tiles/tileset_pa_2.png" type="Texture" id=36]
+[ext_resource path="res://single tiles/tileset_pa_4.png" type="Texture" id=37]
+[ext_resource path="res://single tiles/tileset_pa_19.png" type="Texture" id=38]
+[ext_resource path="res://single tiles/tileset_pa_8.png" type="Texture" id=39]
+[ext_resource path="res://single tiles/tileset_pa_12.png" type="Texture" id=40]
+[ext_resource path="res://single tiles/tileset_pa_14.png" type="Texture" id=41]
+[ext_resource path="res://single tiles/tileset_pa_15.png" type="Texture" id=42]
+[ext_resource path="res://single tiles/tileset_pa_16.png" type="Texture" id=43]
+[ext_resource path="res://single tiles/tileset_pa_7.png" type="Texture" id=44]
+[ext_resource path="res://single tiles/tileset_pa_9.png" type="Texture" id=45]
+[ext_resource path="res://single tiles/tileset_pa_10.png" type="Texture" id=46]
+[ext_resource path="res://single tiles/tileset_pa_13.png" type="Texture" id=47]
+[ext_resource path="res://single tiles/tileset_pa_6.png" type="Texture" id=48]
+[ext_resource path="res://single tiles/tileset_pa_11.png" type="Texture" id=49]
+[ext_resource path="res://single tiles/tileset_pa_17.png" type="Texture" id=50]
+[ext_resource path="res://single tiles/tileset_pa_18.png" type="Texture" id=51]
+[ext_resource path="res://single tiles/tileset_pa_20.png" type="Texture" id=52]
+[ext_resource path="res://single tiles/tileset_jg_1.png" type="Texture" id=53]
+[ext_resource path="res://single tiles/tileset_jg_3.png" type="Texture" id=54]
+[ext_resource path="res://single tiles/tileset_jg_4.png" type="Texture" id=55]
+[ext_resource path="res://single tiles/tileset_jg_2.png" type="Texture" id=56]
+[ext_resource path="res://single tiles/tileset_jg_5.png" type="Texture" id=57]
+[ext_resource path="res://single tiles/tileset_jg_8.png" type="Texture" id=58]
+[ext_resource path="res://single tiles/tileset_jg_9.png" type="Texture" id=59]
+[ext_resource path="res://single tiles/tileset_jg_7.png" type="Texture" id=60]
+[ext_resource path="res://single tiles/tileset_jg_6.png" type="Texture" id=61]
+[ext_resource path="res://single tiles/tileset_jg_10.png" type="Texture" id=62]
+[ext_resource path="res://single tiles/tileset_jg_11.png" type="Texture" id=63]
+[ext_resource path="res://single tiles/tileset_jg_13.png" type="Texture" id=64]
+[ext_resource path="res://single tiles/tileset_jg_12.png" type="Texture" id=65]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -100,27 +133,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Select Music" type="Button" parent="Panel/VBoxContainer2"]
+[node name="BACK" type="Button" parent="Panel/VBoxContainer2"]
 margin_right = 188.0
 margin_bottom = 20.0
+text = "Back To Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select Music" type="Button" parent="Panel/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 188.0
+margin_bottom = 44.0
 text = "Select Music"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Select Background2" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 24.0
+margin_top = 48.0
 margin_right = 188.0
-margin_bottom = 44.0
+margin_bottom = 68.0
 text = "Select Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 48.0
+margin_top = 72.0
 margin_right = 188.0
-margin_bottom = 68.0
+margin_bottom = 92.0
 text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,7 +267,6 @@ __meta__ = {
 }
 
 [node name="SetCurrentTile" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -289,8 +330,8 @@ texture_normal = ExtResource( 5 )
 [node name="VBoxContainer2" type="GridContainer" parent="SetCurrentTile"]
 margin_left = 26.0
 margin_top = 4.0
-margin_right = 1042.0
-margin_bottom = 606.0
+margin_right = 1074.0
+margin_bottom = 598.0
 rect_scale = Vector2( 0.25, 0.25 )
 columns = 15
 __meta__ = {
@@ -298,127 +339,356 @@ __meta__ = {
 }
 
 [node name="Tile1_hill" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_right = 64.0
+margin_right = 89.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 13 )
 
 [node name="Tile1_hill2" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 68.0
-margin_right = 132.0
+margin_left = 93.0
+margin_right = 157.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 20 )
 
 [node name="Tile1_hill3" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 136.0
-margin_right = 200.0
+margin_left = 161.0
+margin_right = 225.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 24 )
 
 [node name="Tile1_hill4" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 204.0
-margin_right = 268.0
+margin_left = 229.0
+margin_right = 293.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 21 )
 
 [node name="Tile1_hill5" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 272.0
-margin_right = 336.0
+margin_left = 297.0
+margin_right = 361.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 23 )
 
 [node name="Tile1_hill6" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 340.0
-margin_right = 404.0
+margin_left = 365.0
+margin_right = 429.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 22 )
 
 [node name="Tile1_hill7" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 408.0
-margin_right = 472.0
+margin_left = 433.0
+margin_right = 497.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 25 )
 
 [node name="Tile1_hill8" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 476.0
-margin_right = 540.0
+margin_left = 501.0
+margin_right = 565.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 26 )
 
 [node name="Tile1_hill9" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 544.0
-margin_right = 608.0
+margin_left = 569.0
+margin_right = 633.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 27 )
 
 [node name="Tile1_hill10" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 612.0
-margin_right = 676.0
+margin_left = 637.0
+margin_right = 701.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 29 )
 
 [node name="Tile1_hill11" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 680.0
-margin_right = 776.0
+margin_left = 705.0
+margin_right = 801.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 17 )
 
 [node name="Tile1_hill12" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 780.0
-margin_right = 844.0
+margin_left = 805.0
+margin_right = 869.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 18 )
 
 [node name="Tile1_hill13" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 848.0
-margin_right = 912.0
+margin_left = 873.0
+margin_right = 937.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 19 )
 
 [node name="Tile1_hill14" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 916.0
-margin_right = 980.0
+margin_left = 941.0
+margin_right = 1005.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 14 )
 
 [node name="Tile1_hill15" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 984.0
-margin_right = 1048.0
+margin_left = 1009.0
+margin_right = 1073.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 15 )
 
 [node name="Tile1_hill16" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
 margin_top = 68.0
-margin_right = 64.0
+margin_right = 89.0
 margin_bottom = 132.0
 texture_normal = ExtResource( 16 )
 
 [node name="Tile1_hill17" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 68.0
+margin_left = 93.0
 margin_top = 68.0
-margin_right = 132.0
+margin_right = 157.0
 margin_bottom = 132.0
 texture_normal = ExtResource( 28 )
 
 [node name="Tile1_hill18" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 136.0
+margin_left = 161.0
 margin_top = 68.0
-margin_right = 200.0
+margin_right = 225.0
 margin_bottom = 132.0
 texture_normal = ExtResource( 32 )
 
 [node name="Tile1_hill19" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 204.0
+margin_left = 229.0
 margin_top = 68.0
-margin_right = 268.0
+margin_right = 293.0
 margin_bottom = 132.0
 texture_normal = ExtResource( 31 )
 
 [node name="Tile1_hill20" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
-margin_left = 272.0
+margin_left = 297.0
 margin_top = 68.0
-margin_right = 336.0
+margin_right = 361.0
 margin_bottom = 132.0
 texture_normal = ExtResource( 30 )
+
+[node name="Tile2_pa_1" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 365.0
+margin_top = 68.0
+margin_right = 429.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 34 )
+
+[node name="Tile2_pa_2" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 433.0
+margin_top = 68.0
+margin_right = 497.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 36 )
+
+[node name="Tile2_pa_3" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 501.0
+margin_top = 68.0
+margin_right = 565.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 35 )
+
+[node name="Tile2_pa_4" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 569.0
+margin_top = 68.0
+margin_right = 633.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 37 )
+
+[node name="Tile2_pa_5" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 637.0
+margin_top = 68.0
+margin_right = 701.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 33 )
+
+[node name="Tile2_pa_6" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 705.0
+margin_top = 68.0
+margin_right = 801.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 48 )
+
+[node name="Tile2_pa_7" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 805.0
+margin_top = 68.0
+margin_right = 869.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 44 )
+
+[node name="Tile2_pa_8" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 873.0
+margin_top = 68.0
+margin_right = 937.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 39 )
+
+[node name="Tile2_pa_9" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 941.0
+margin_top = 68.0
+margin_right = 1005.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 45 )
+
+[node name="Tile2_pa_10" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 1009.0
+margin_top = 68.0
+margin_right = 1073.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 46 )
+
+[node name="Tile2_pa_11" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_top = 136.0
+margin_right = 89.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 49 )
+
+[node name="Tile2_pa_12" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 93.0
+margin_top = 136.0
+margin_right = 157.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 40 )
+
+[node name="Tile2_pa_13" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 161.0
+margin_top = 136.0
+margin_right = 225.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 47 )
+
+[node name="Tile2_pa_14" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 229.0
+margin_top = 136.0
+margin_right = 293.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 41 )
+
+[node name="Tile2_pa_15" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 297.0
+margin_top = 136.0
+margin_right = 361.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 42 )
+
+[node name="Tile2_pa_16" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 365.0
+margin_top = 136.0
+margin_right = 429.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 43 )
+
+[node name="Tile2_pa_17" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 433.0
+margin_top = 136.0
+margin_right = 497.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 50 )
+
+[node name="Tile2_pa_18" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 501.0
+margin_top = 136.0
+margin_right = 565.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 51 )
+
+[node name="Tile2_pa_19" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 569.0
+margin_top = 136.0
+margin_right = 633.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 38 )
+
+[node name="Tile2_pa_20" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 637.0
+margin_top = 136.0
+margin_right = 701.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 52 )
+
+[node name="Tile3_jg_1" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 705.0
+margin_top = 136.0
+margin_right = 801.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 53 )
+
+[node name="Tile3_jg_2" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 805.0
+margin_top = 136.0
+margin_right = 869.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 56 )
+
+[node name="Tile3_jg_3" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 873.0
+margin_top = 136.0
+margin_right = 937.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 54 )
+
+[node name="Tile3_jg_4" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 941.0
+margin_top = 136.0
+margin_right = 1005.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 55 )
+
+[node name="Tile3_jg_5" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 1009.0
+margin_top = 136.0
+margin_right = 1073.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 57 )
+
+[node name="Tile3_jg_6" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_top = 204.0
+margin_right = 89.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 61 )
+
+[node name="Tile3_jg_7" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 93.0
+margin_top = 204.0
+margin_right = 157.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 60 )
+
+[node name="Tile3_jg_8" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 161.0
+margin_top = 204.0
+margin_right = 225.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 58 )
+
+[node name="Tile3_jg_9" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 229.0
+margin_top = 204.0
+margin_right = 293.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 59 )
+
+[node name="Tile3_jg_10" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 297.0
+margin_top = 204.0
+margin_right = 361.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 62 )
+
+[node name="Tile3_jg_11" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 365.0
+margin_top = 204.0
+margin_right = 429.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 63 )
+
+[node name="Tile3_jg_12" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 433.0
+margin_top = 204.0
+margin_right = 497.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 65 )
+
+[node name="Tile3_jg_13" type="TextureButton" parent="SetCurrentTile/VBoxContainer2"]
+margin_left = 501.0
+margin_top = 204.0
+margin_right = 565.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 64 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
@@ -426,6 +696,7 @@ margin_bottom = 14.0
 theme = ExtResource( 12 )
 [connection signal="pressed" from="Panel/VBoxContainer/icon" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon3" to="." method="_on_icon3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer2/BACK" to="." method="_on_BACK_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Select Music" to="." method="_on_Select_Music_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Select Background2" to="." method="_on_Select_Background_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Button" to="." method="_on_Button_pressed"]
@@ -469,3 +740,36 @@ theme = ExtResource( 12 )
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile1_hill18" to="." method="_on_Tile1_hill18_pressed"]
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile1_hill19" to="." method="_on_Tile1_hill19_pressed"]
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile1_hill20" to="." method="_on_Tile1_hill20_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_1" to="." method="_on_Tile2_pa_1_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_2" to="." method="_on_Tile2_pa_2_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_3" to="." method="_on_Tile2_pa_3_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_4" to="." method="_on_Tile2_pa_4_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_5" to="." method="_on_Tile2_pa_5_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_6" to="." method="_on_Tile2_pa_6_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_7" to="." method="_on_Tile2_pa_7_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_8" to="." method="_on_Tile2_pa_8_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_9" to="." method="_on_Tile2_pa_9_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_10" to="." method="_on_Tile2_pa_10_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_11" to="." method="_on_Tile2_pa_11_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_12" to="." method="_on_Tile2_pa_12_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_13" to="." method="_on_Tile2_pa_13_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_14" to="." method="_on_Tile2_pa_14_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_15" to="." method="_on_Tile2_pa_15_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_16" to="." method="_on_Tile2_pa_16_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_17" to="." method="_on_Tile2_pa_17_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_18" to="." method="_on_Tile2_pa_18_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_19" to="." method="_on_Tile2_pa_19_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile2_pa_20" to="." method="_on_Tile2_pa_20_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_1" to="." method="_on_Tile3_jg_1_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_2" to="." method="_on_Tile3_jg_2_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_3" to="." method="_on_Tile3_jg_3_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_4" to="." method="_on_Tile3_jg_4_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_5" to="." method="_on_Tile3_jg_5_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_6" to="." method="_on_Tile3_jg_6_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_7" to="." method="_on_Tile3_jg_7_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_8" to="." method="_on_Tile3_jg_8_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_9" to="." method="_on_Tile3_jg_9_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_10" to="." method="_on_Tile3_jg_10_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_11" to="." method="_on_Tile3_jg_11_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_12" to="." method="_on_Tile3_jg_12_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer2/Tile3_jg_13" to="." method="_on_Tile3_jg_13_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://single tiles/tileset_jg_11.png" type="Texture" id=1]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -28.9778, -1.63239, -16.2499, 22.2325, 17.1609, 25.4145, 26.7069, -1.63239 )
+
+[node name="tileset_jg_1" type="Sprite" parent="."]
+position = Vector2( -1.74951, -3.09072 )
+texture = ExtResource( 1 )

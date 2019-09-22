@@ -425,3 +425,303 @@ func _on_Snappingy_text_changed(new_text):
 
 func _on_Snappingy_text_entered(new_text):
 	y = float(new_text)
+### selecting tiles - continuation
+
+func _on_Tile2_pa_1_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile1.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_2_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile2.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_3_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile3.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_4_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile4.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_5_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile5.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_6_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile6.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_7_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile7.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_8_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile8.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+func _on_Tile2_pa_9_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile9.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_10_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile10.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_11_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile11.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_12_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile12.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_13_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile13.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_14_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile14.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_15_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile15.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_16_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile16.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_17_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile17.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_18_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile18.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_19_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile19.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile2_pa_20_pressed():
+	node = preload("res://Level Editor/tiles/PixelAdventure/tile20.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_1_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile1.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_2_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile2.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_3_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile3.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+func _on_Tile3_jg_4_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile4.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_5_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile5.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_6_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile6.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_7_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile7.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_8_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile8.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_9_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile9.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_10_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile10.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_11_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile11.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_12_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile12.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_Tile3_jg_13_pressed():
+	node = preload("res://Level Editor/tiles/JungleRuins/tile13.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+###gui options
+func _on_BACK_pressed():
+	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
+### selecting tiles - cotinued
