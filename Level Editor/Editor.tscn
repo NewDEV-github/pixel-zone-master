@@ -126,6 +126,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel"]
+margin_top = 108.0
+margin_right = 186.0
+margin_bottom = 196.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scalex" type="LineEdit" parent="Panel/VBoxContainer3"]
+margin_right = 186.0
+margin_bottom = 24.0
+text = "1"
+placeholder_text = "SCALE - X"
+
+[node name="Scaley" type="LineEdit" parent="Panel/VBoxContainer3"]
+margin_top = 28.0
+margin_right = 186.0
+margin_bottom = 52.0
+text = "1"
+placeholder_text = "SCALE - Y"
+
+[node name="Snappingx" type="LineEdit" parent="Panel/VBoxContainer3"]
+margin_top = 56.0
+margin_right = 186.0
+margin_bottom = 80.0
+text = "4"
+placeholder_text = "SNAPPING - X"
+
+[node name="Snappingy" type="LineEdit" parent="Panel/VBoxContainer3"]
+margin_top = 84.0
+margin_right = 186.0
+margin_bottom = 108.0
+text = "4"
+placeholder_text = "SNAPPING - Y"
+
 [node name="PopupPanel" type="WindowDialog" parent="."]
 margin_left = 180.0
 margin_top = 97.25
@@ -190,6 +225,7 @@ __meta__ = {
 }
 
 [node name="SetCurrentTile" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -393,6 +429,15 @@ theme = ExtResource( 12 )
 [connection signal="pressed" from="Panel/VBoxContainer2/Select Music" to="." method="_on_Select_Music_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Select Background2" to="." method="_on_Select_Background_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer2/Button" to="." method="_on_Button_pressed"]
+[connection signal="text_changed" from="Panel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_entered"]
+[connection signal="text_changed" from="Panel/VBoxContainer3/Scaley" to="." method="_on_Scaley_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer3/Scaley" to="." method="_on_Scaley_text_entered"]
+[connection signal="text_changed" from="Panel/VBoxContainer3/Snappingx" to="." method="_on_Snappingx_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer3/Snappingx" to="." method="_on_Snappingx_text_entered"]
+[connection signal="text_changed" from="Panel/VBoxContainer3/Snappingy" to="." method="_on_Snappingy_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer3/Snappingy" to="." method="_on_Snappingy_text_entered"]
+[connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]
 [connection signal="item_selected" from="PopupPanel2/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="item_selected" from="PopupPanel3/MusicList" to="." method="_on_MusicList_item_selected"]

@@ -9,8 +9,10 @@ var is_checked: bool
 var save_dir = 'user://saved_levels/'
 const SPEED = 100
 var selected_file
-var x = 75
-var y = 75
+var x = 4
+var scale_x = 1
+var scale_y = 1
+var y = 4
 var heigth_width = 100000000
 var locked = false
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +26,7 @@ func _process(delta):
 #	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
 	number = str(delta * SPEED)
 	if mode == 'edit':
-		var position_l = get_global_mouse_position().snapped(Vector2(5,5))
+		var position_l = get_global_mouse_position().snapped(Vector2(x,y))
 		var snap_grid_x = round(position_l.x)
 		var snap_grid_y = round(position_l.y)
 		$Label.set_text("POSITION: " + str(position_l))
@@ -45,6 +47,7 @@ func _on_TextureButton_pressed():
 	$SetCurrentTile.show()
 
 func _on_Button_pressed():
+	locked == true
 	$PopupPanel.popup_centered()
 #	
 	
@@ -57,6 +60,7 @@ func _on_FileDialog_file_selected(path):
 	$PopupPanel/LineEdit.set_text(selected_file)
 
 func _on_SAVE_BUTTON_pressed():
+	locked = false
 	var packed_scene = PackedScene.new()
 	$"Editor's Scene".set_script(load('res://Level Editor/level_script.gd'))
 	packed_scene.pack($"Editor's Scene")
@@ -90,8 +94,9 @@ func _on_ItemList_item_selected(index):
 	$"Panel/VBoxContainer2/Select Background2".set_disabled(true)
 	
 	
-	
-
+func _on_LineEdit_text_entered(new_text):
+	scale_x = float(str(new_text))
+	node.set_scale(Vector2(scale_x, scale_y))
 
 func _on_icon3_pressed():
 	node = preload("res://scenes/coin.tscn").instance()
@@ -378,3 +383,45 @@ func _on_Tile1_hill20_pressed():
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
+
+
+###ANOTHER GUI OPTIONS
+func _on_PopupPanel_popup_hide():
+	locked = false
+
+
+
+func _on_Scalex_text_changed(new_text):
+	scale_x = float(str(new_text))
+	node.set_scale(Vector2(scale_x, scale_y))
+
+
+func _on_Scalex_text_entered(new_text):
+	scale_x = float(str(new_text))
+	node.set_scale(Vector2(scale_x, scale_y))
+
+
+func _on_Scaley_text_entered(new_text):
+	scale_y = float(str(new_text))
+	node.set_scale(Vector2(scale_x, scale_y))
+
+
+func _on_Scaley_text_changed(new_text):
+	scale_y = float(str(new_text))
+	node.set_scale(Vector2(scale_x, scale_y))
+
+
+func _on_Snappingx_text_changed(new_text):
+	x = float(new_text)
+
+
+func _on_Snappingx_text_entered(new_text):
+	x = float(new_text)
+
+
+func _on_Snappingy_text_changed(new_text):
+	y = float(new_text)
+
+
+func _on_Snappingy_text_entered(new_text):
+	y = float(new_text)

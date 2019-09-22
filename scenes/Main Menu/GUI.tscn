@@ -99,6 +99,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Button:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Button:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -287,22 +311,26 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="Control" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_top = 0.0
-margin_bottom = 0.0
-
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -25.0
+margin_right = 7.0
 theme = ExtResource( 4 )
 text = "<-"
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": "
 "
 }
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.0
+margin_bottom = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/back = SubResource( 2 )
@@ -310,6 +338,7 @@ anims/new = ExtResource( 6 )
 
 [node name="VScrollBar" type="VScrollBar" parent="."]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0
 
@@ -340,6 +369,6 @@ __meta__ = {
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
-[connection signal="pressed" from="Control/Button" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Back_pressed"]
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
