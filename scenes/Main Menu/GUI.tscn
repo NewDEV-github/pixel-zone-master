@@ -201,19 +201,18 @@ text = "KEY_Quit"
 flat = true
 
 [node name="LoadGame" type="Button" parent="TextureRect/VBoxContainer"]
-visible = false
-margin_top = 172.0
-margin_right = 508.0
-margin_bottom = 211.0
-theme = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-text = "Continue"
-flat = true
-
-[node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
 margin_top = 172.0
 margin_right = 611.0
 margin_bottom = 211.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Level Editor (BETA!)"
+flat = true
+
+[node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 215.0
+margin_right = 611.0
+margin_bottom = 254.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "FAQ"
@@ -221,9 +220,9 @@ flat = true
 
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
 visible = false
-margin_top = 172.0
-margin_right = 509.0
-margin_bottom = 211.0
+margin_top = 215.0
+margin_right = 611.0
+margin_bottom = 254.0
 theme = ExtResource( 4 )
 text = "KEY_ONLINE_SC"
 flat = true
@@ -360,7 +359,7 @@ __meta__ = {
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="TextureRect/VBoxContainer/LoadGame" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/LoadGame2" to="." method="_on_LoadGame2_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton3" to="." method="_on_TextureButton_pressed"]

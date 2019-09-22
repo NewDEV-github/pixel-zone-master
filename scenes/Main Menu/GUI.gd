@@ -201,3 +201,7 @@ func _on_ItemList_item_selected(index):
 	var name = $WindowDialog/ItemList.get_item_text(index)
 	background_load.load_scene(str(path) + '/' + str(name) + '.tscn')
 	
+
+
+func _on_LoadGame_pressed():
+	background_load.load_scene('res://Level Editor/Editor.tscn')

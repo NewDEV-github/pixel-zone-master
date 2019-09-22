@@ -53,6 +53,9 @@ func _ready():
 	if not documents_dir.dir_exists("user://other_saves/"):
 		documents_dir.open('user://')
 		documents_dir.make_dir('other_saves')
+	if not documents_dir.dir_exists("user://saved_levels/"):
+		documents_dir.open('user://')
+		documents_dir.make_dir('saved_levels')
 	if not documents_dir.dir_exists("user://saves/"):
 		documents_dir.open('user://')
 		documents_dir.make_dir('saves')
