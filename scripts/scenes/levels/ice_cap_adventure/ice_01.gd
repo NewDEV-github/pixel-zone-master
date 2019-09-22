@@ -14,6 +14,7 @@ func _ready():
 	var vconf = ConfigFile.new()
 	vconf.load(str(documents) + "/Pixel Zone/.data/settings/game.ini")
 	var passed = str(vconf.get_value("saves", "game_pass", true_))
+	print(str(passed))
 	if str(passed) == 'false':
 		var a = File.new()
 		a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))

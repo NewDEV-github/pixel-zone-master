@@ -18,8 +18,8 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="sky"]
-position = Vector2( 1025.25, 4.31436 )
-scale = Vector2( 2.12012, 2.567 )
+position = Vector2( 1007.75, 5.90536 )
+scale = Vector2( 2.16321, 2.567 )
 texture = ExtResource( 1 )
 centered = false
 

@@ -661,7 +661,6 @@ text = "Start!"
 align = 1
 
 [node name="fps" type="Label" parent="ui/Control"]
-visible = false
 margin_left = 77.0
 margin_top = 1.0
 margin_right = 367.0
