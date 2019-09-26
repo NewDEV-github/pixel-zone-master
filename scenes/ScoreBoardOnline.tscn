@@ -73,6 +73,17 @@ margin_bottom = 58.2501
 custom_fonts/font = ExtResource( 2 )
 text = "Score"
 
+[node name="Button2" type="Button" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -176.0
+margin_bottom = 39.0
+text = "KEY_SIGNIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Panel2" type="Panel" parent="."]
 visible = false
 self_modulate = Color( 0, 0, 0, 0.239216 )
@@ -212,6 +223,7 @@ margin_top = 68.0
 margin_right = 1030.0
 margin_bottom = 74.0
 [connection signal="pressed" from="Panel/RELOAD" to="." method="_on_RELOAD_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel2/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Login Panel/Sign In/Sign In" to="." method="_on_Sign_In_pressed"]
 [connection signal="pressed" from="Login Panel/Sign In/Restore" to="." method="_on_Restore_pressed"]

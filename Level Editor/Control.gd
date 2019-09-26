@@ -1,6 +1,6 @@
 extends Control
 
-# Declare member variables here. Examples:
+var rotation = 1
 onready var root = $"Editor's Scene"
 var node 
 var mode = 'play'
@@ -32,6 +32,11 @@ func _process(delta):
 		$Label.set_text("POSITION: " + str(position_l))
 		node.set_position(Vector2(snap_grid_x, snap_grid_y))
 		print(str(node.position))
+		if Input.is_action_pressed("rotate"):
+			if Input.is_action_pressed("ui_left"):
+				node.rotation += float(rotation)
+			elif Input.is_action_pressed("ui_right"):
+				node.rotation -= float(rotation)
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if mode == 'play'and locked == false:
@@ -724,4 +729,11 @@ func _on_Tile3_jg_13_pressed():
 ###gui options
 func _on_BACK_pressed():
 	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
-### selecting tiles - cotinued
+
+
+func _on_RotiationDegree_text_changed(new_text):
+	rotation = float(str(new_text))
+
+
+func _on_RotiationDegree_text_entered(new_text):
+	rotation = float(str(new_text))

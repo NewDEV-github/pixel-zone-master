@@ -3,74 +3,75 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Level Editor/Control.gd" type="Script" id=2]
 [ext_resource path="res://textures/coin.png" type="Texture" id=3]
-[ext_resource path="res://single tiles/tileset_6.png" type="Texture" id=4]
-[ext_resource path="res://single tiles/tileset_8.png" type="Texture" id=5]
-[ext_resource path="res://single tiles/tileset_2.png" type="Texture" id=6]
-[ext_resource path="res://single tiles/tileset_7.png" type="Texture" id=7]
-[ext_resource path="res://single tiles/tileset_3.png" type="Texture" id=8]
-[ext_resource path="res://single tiles/tileset_5.png" type="Texture" id=9]
-[ext_resource path="res://single tiles/tileset_1.png" type="Texture" id=10]
-[ext_resource path="res://single tiles/tileset_4.png" type="Texture" id=11]
+[ext_resource path="res://Level Editor/single tiles/tileset_6.png" type="Texture" id=4]
+[ext_resource path="res://Level Editor/single tiles/tileset_8.png" type="Texture" id=5]
+[ext_resource path="res://Level Editor/single tiles/tileset_2.png" type="Texture" id=6]
+[ext_resource path="res://Level Editor/single tiles/tileset_7.png" type="Texture" id=7]
+[ext_resource path="res://Level Editor/single tiles/tileset_3.png" type="Texture" id=8]
+[ext_resource path="res://Level Editor/single tiles/tileset_5.png" type="Texture" id=9]
+[ext_resource path="res://Level Editor/single tiles/tileset_1.png" type="Texture" id=10]
+[ext_resource path="res://Level Editor/single tiles/tileset_4.png" type="Texture" id=11]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=12]
-[ext_resource path="res://single tiles/tileset_hill_1.png" type="Texture" id=13]
-[ext_resource path="res://single tiles/tileset_hill_14.png" type="Texture" id=14]
-[ext_resource path="res://single tiles/tileset_hill_15.png" type="Texture" id=15]
-[ext_resource path="res://single tiles/tileset_hill_16.png" type="Texture" id=16]
-[ext_resource path="res://single tiles/tileset_hill_11.png" type="Texture" id=17]
-[ext_resource path="res://single tiles/tileset_hill_12.png" type="Texture" id=18]
-[ext_resource path="res://single tiles/tileset_hill_13.png" type="Texture" id=19]
-[ext_resource path="res://single tiles/tileset_hill_2.png" type="Texture" id=20]
-[ext_resource path="res://single tiles/tileset_hill_4.png" type="Texture" id=21]
-[ext_resource path="res://single tiles/tileset_hill_6.png" type="Texture" id=22]
-[ext_resource path="res://single tiles/tileset_hill_5.png" type="Texture" id=23]
-[ext_resource path="res://single tiles/tileset_hill_3.png" type="Texture" id=24]
-[ext_resource path="res://single tiles/tileset_hill_7.png" type="Texture" id=25]
-[ext_resource path="res://single tiles/tileset_hill_8.png" type="Texture" id=26]
-[ext_resource path="res://single tiles/tileset_hill_9.png" type="Texture" id=27]
-[ext_resource path="res://single tiles/tileset_hill_17.png" type="Texture" id=28]
-[ext_resource path="res://single tiles/tileset_hill_10.png" type="Texture" id=29]
-[ext_resource path="res://single tiles/tileset_hill_20.png" type="Texture" id=30]
-[ext_resource path="res://single tiles/tileset_hill_19.png" type="Texture" id=31]
-[ext_resource path="res://single tiles/tileset_hill_18.png" type="Texture" id=32]
-[ext_resource path="res://single tiles/tileset_pa_5.png" type="Texture" id=33]
-[ext_resource path="res://single tiles/tileset_pa_1.png" type="Texture" id=34]
-[ext_resource path="res://single tiles/tileset_pa_3.png" type="Texture" id=35]
-[ext_resource path="res://single tiles/tileset_pa_2.png" type="Texture" id=36]
-[ext_resource path="res://single tiles/tileset_pa_4.png" type="Texture" id=37]
-[ext_resource path="res://single tiles/tileset_pa_19.png" type="Texture" id=38]
-[ext_resource path="res://single tiles/tileset_pa_8.png" type="Texture" id=39]
-[ext_resource path="res://single tiles/tileset_pa_12.png" type="Texture" id=40]
-[ext_resource path="res://single tiles/tileset_pa_14.png" type="Texture" id=41]
-[ext_resource path="res://single tiles/tileset_pa_15.png" type="Texture" id=42]
-[ext_resource path="res://single tiles/tileset_pa_16.png" type="Texture" id=43]
-[ext_resource path="res://single tiles/tileset_pa_7.png" type="Texture" id=44]
-[ext_resource path="res://single tiles/tileset_pa_9.png" type="Texture" id=45]
-[ext_resource path="res://single tiles/tileset_pa_10.png" type="Texture" id=46]
-[ext_resource path="res://single tiles/tileset_pa_13.png" type="Texture" id=47]
-[ext_resource path="res://single tiles/tileset_pa_6.png" type="Texture" id=48]
-[ext_resource path="res://single tiles/tileset_pa_11.png" type="Texture" id=49]
-[ext_resource path="res://single tiles/tileset_pa_17.png" type="Texture" id=50]
-[ext_resource path="res://single tiles/tileset_pa_18.png" type="Texture" id=51]
-[ext_resource path="res://single tiles/tileset_pa_20.png" type="Texture" id=52]
-[ext_resource path="res://single tiles/tileset_jg_1.png" type="Texture" id=53]
-[ext_resource path="res://single tiles/tileset_jg_3.png" type="Texture" id=54]
-[ext_resource path="res://single tiles/tileset_jg_4.png" type="Texture" id=55]
-[ext_resource path="res://single tiles/tileset_jg_2.png" type="Texture" id=56]
-[ext_resource path="res://single tiles/tileset_jg_5.png" type="Texture" id=57]
-[ext_resource path="res://single tiles/tileset_jg_8.png" type="Texture" id=58]
-[ext_resource path="res://single tiles/tileset_jg_9.png" type="Texture" id=59]
-[ext_resource path="res://single tiles/tileset_jg_7.png" type="Texture" id=60]
-[ext_resource path="res://single tiles/tileset_jg_6.png" type="Texture" id=61]
-[ext_resource path="res://single tiles/tileset_jg_10.png" type="Texture" id=62]
-[ext_resource path="res://single tiles/tileset_jg_11.png" type="Texture" id=63]
-[ext_resource path="res://single tiles/tileset_jg_13.png" type="Texture" id=64]
-[ext_resource path="res://single tiles/tileset_jg_12.png" type="Texture" id=65]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_1.png" type="Texture" id=13]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_14.png" type="Texture" id=14]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_15.png" type="Texture" id=15]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_16.png" type="Texture" id=16]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_11.png" type="Texture" id=17]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_12.png" type="Texture" id=18]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_13.png" type="Texture" id=19]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_2.png" type="Texture" id=20]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_4.png" type="Texture" id=21]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_6.png" type="Texture" id=22]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_5.png" type="Texture" id=23]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_3.png" type="Texture" id=24]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_7.png" type="Texture" id=25]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_8.png" type="Texture" id=26]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_9.png" type="Texture" id=27]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_17.png" type="Texture" id=28]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_10.png" type="Texture" id=29]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_20.png" type="Texture" id=30]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_19.png" type="Texture" id=31]
+[ext_resource path="res://Level Editor/single tiles/tileset_hill_18.png" type="Texture" id=32]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_5.png" type="Texture" id=33]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_1.png" type="Texture" id=34]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_3.png" type="Texture" id=35]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_2.png" type="Texture" id=36]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_4.png" type="Texture" id=37]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_19.png" type="Texture" id=38]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_8.png" type="Texture" id=39]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_12.png" type="Texture" id=40]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_14.png" type="Texture" id=41]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_15.png" type="Texture" id=42]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_16.png" type="Texture" id=43]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_7.png" type="Texture" id=44]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_9.png" type="Texture" id=45]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_10.png" type="Texture" id=46]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_13.png" type="Texture" id=47]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_6.png" type="Texture" id=48]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_11.png" type="Texture" id=49]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_17.png" type="Texture" id=50]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_18.png" type="Texture" id=51]
+[ext_resource path="res://Level Editor/single tiles/tileset_pa_20.png" type="Texture" id=52]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_1.png" type="Texture" id=53]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_3.png" type="Texture" id=54]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_4.png" type="Texture" id=55]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_2.png" type="Texture" id=56]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_5.png" type="Texture" id=57]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_8.png" type="Texture" id=58]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_9.png" type="Texture" id=59]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_7.png" type="Texture" id=60]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_6.png" type="Texture" id=61]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_10.png" type="Texture" id=62]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_11.png" type="Texture" id=63]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_13.png" type="Texture" id=64]
+[ext_resource path="res://Level Editor/single tiles/tileset_jg_12.png" type="Texture" id=65]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.41422
 margin_right = 1.41418
+theme = ExtResource( 12 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -85,8 +86,7 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="."]
 anchor_bottom = 1.0
-margin_left = -1.0
-margin_right = 187.0
+margin_right = 267.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,16 +100,15 @@ __meta__ = {
 }
 
 [node name="icon" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 9.0
-margin_right = 188.0
-margin_bottom = 79.0
+margin_right = 267.0
+margin_bottom = 72.0
 text = "SELECT TILES"
 icon = ExtResource( 1 )
 
 [node name="icon3" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 83.0
-margin_right = 188.0
-margin_bottom = 105.0
+margin_top = 76.0
+margin_right = 267.0
+margin_bottom = 115.0
 icon = ExtResource( 3 )
 
 [node name="Tree" type="ItemList" parent="Panel"]
@@ -128,80 +127,89 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -68.0
+margin_top = -168.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BACK" type="Button" parent="Panel/VBoxContainer2"]
-margin_right = 188.0
-margin_bottom = 20.0
+margin_right = 267.0
+margin_bottom = 39.0
 text = "Back To Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Select Music" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 24.0
-margin_right = 188.0
-margin_bottom = 44.0
+margin_top = 43.0
+margin_right = 267.0
+margin_bottom = 82.0
 text = "Select Music"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Select Background2" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 48.0
-margin_right = 188.0
-margin_bottom = 68.0
+margin_top = 86.0
+margin_right = 267.0
+margin_bottom = 125.0
 text = "Select Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer2"]
-margin_top = 72.0
-margin_right = 188.0
-margin_bottom = 92.0
+margin_top = 129.0
+margin_right = 267.0
+margin_bottom = 168.0
 text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Panel"]
-margin_top = 108.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -105.5
 margin_right = 186.0
-margin_bottom = 196.0
+margin_bottom = 105.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Scalex" type="LineEdit" parent="Panel/VBoxContainer3"]
 margin_right = 186.0
-margin_bottom = 24.0
+margin_bottom = 39.0
 text = "1"
 placeholder_text = "SCALE - X"
 
 [node name="Scaley" type="LineEdit" parent="Panel/VBoxContainer3"]
-margin_top = 28.0
+margin_top = 43.0
 margin_right = 186.0
-margin_bottom = 52.0
+margin_bottom = 82.0
 text = "1"
 placeholder_text = "SCALE - Y"
 
 [node name="Snappingx" type="LineEdit" parent="Panel/VBoxContainer3"]
-margin_top = 56.0
+margin_top = 86.0
 margin_right = 186.0
-margin_bottom = 80.0
+margin_bottom = 125.0
 text = "4"
 placeholder_text = "SNAPPING - X"
 
 [node name="Snappingy" type="LineEdit" parent="Panel/VBoxContainer3"]
-margin_top = 84.0
+margin_top = 129.0
 margin_right = 186.0
-margin_bottom = 108.0
+margin_bottom = 168.0
 text = "4"
 placeholder_text = "SNAPPING - Y"
+
+[node name="RotiationDegree" type="LineEdit" parent="Panel/VBoxContainer3"]
+margin_top = 172.0
+margin_right = 186.0
+margin_bottom = 211.0
+text = "4"
+placeholder_text = "ROTATION DEGREE"
 
 [node name="PopupPanel" type="WindowDialog" parent="."]
 margin_left = 180.0
@@ -226,9 +234,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -21.5
-margin_top = -20.0
-margin_right = 21.5
+margin_left = -39.0
+margin_top = -39.0
+margin_right = 39.0
 text = "SAVE"
 
 [node name="PopupPanel2" type="WindowDialog" parent="."]
@@ -267,6 +275,7 @@ __meta__ = {
 }
 
 [node name="SetCurrentTile" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -708,6 +717,8 @@ theme = ExtResource( 12 )
 [connection signal="text_entered" from="Panel/VBoxContainer3/Snappingx" to="." method="_on_Snappingx_text_entered"]
 [connection signal="text_changed" from="Panel/VBoxContainer3/Snappingy" to="." method="_on_Snappingy_text_changed"]
 [connection signal="text_entered" from="Panel/VBoxContainer3/Snappingy" to="." method="_on_Snappingy_text_entered"]
+[connection signal="text_changed" from="Panel/VBoxContainer3/RotiationDegree" to="." method="_on_RotiationDegree_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer3/RotiationDegree" to="." method="_on_RotiationDegree_text_entered"]
 [connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]
 [connection signal="item_selected" from="PopupPanel2/ItemList" to="." method="_on_ItemList_item_selected"]
