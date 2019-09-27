@@ -17,9 +17,32 @@ var heigth_width = 100000000
 var locked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$TextEdit.add_keyword_color("extends", Color.red)
+	$TextEdit.add_keyword_color("func", Color.red)
+	$TextEdit.add_keyword_color("var", Color.red)
+	$TextEdit.add_keyword_color("while", Color.red)
+	$TextEdit.add_keyword_color("if", Color.red)
+	$TextEdit.add_keyword_color("and", Color.red)
+	$TextEdit.add_keyword_color("or", Color.red)
+	$TextEdit.add_keyword_color("not", Color.red)
+	$TextEdit.add_keyword_color("const", Color.red)
+	$TextEdit.add_keyword_color("false", Color.red)
+	$TextEdit.add_keyword_color("true", Color.red)
+	$TextEdit.add_keyword_color("str", Color.red)
+	$TextEdit.add_keyword_color("float", Color.red)
+	$TextEdit.add_keyword_color("round", Color.red)
+	$TextEdit.add_keyword_color("elif", Color.red)
+	$TextEdit.add_keyword_color("else", Color.red)
+	$TextEdit.add_keyword_color("Control", Color.lightgreen)
+	$TextEdit.add_color_region('#', '', Color.darkgray)
+	$TextEdit.add_color_region(str("'"), str("'"), Color.yellow)
+	$TextEdit.add_color_region(str('"'), str('"'), Color.yellow)
+	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#		$TextEdit.add_keyword_color('func', Color.red)
+#		$TextEdit.add_color_region('f', 'c', Color.red)
+#		$TextEdit.add_color_override("function_color", Color.red)
 #	if str($PopupPanel/LineEdit.text) == '':
 #		$PopupPanel/SAVE_BUTTON.set_disabled(false)
 	var objects = str(float(get_tree().get_node_count()) - 8)
@@ -38,13 +61,15 @@ func _process(delta):
 			elif Input.is_action_pressed("ui_right"):
 				node.rotation -= float(rotation)
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") and $TextEdit.visible == false:
 		if mode == 'play'and locked == false:
 			mode = 'edit'
 			$Panel.hide()
 			$Label.show()
+			$Panel2.hide()
 		elif mode == 'edit' and locked == false:
 				mode = 'play'
+				$Panel2.show()
 				$Panel.show()
 				$Label.hide()
 
@@ -737,3 +762,25 @@ func _on_RotiationDegree_text_changed(new_text):
 
 func _on_RotiationDegree_text_entered(new_text):
 	rotation = float(str(new_text))
+
+
+func _on_OPTIONS_pressed():
+	if locked == false:
+		$OptionPanel.popup_centered()
+
+
+func _on_EDITOR_pressed():
+	if locked == false:
+		$Panel.show()
+		$TextEdit.hide()
+
+
+func _on_Script_pressed():
+	if locked == false:
+		$Panel.hide()
+		$TextEdit.show()
+
+
+func _on_FILE_pressed():
+	if locked == false:
+		$PopupPanel.popup_centered()
