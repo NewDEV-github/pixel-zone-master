@@ -17,6 +17,10 @@ var heigth_width = 100000000
 var locked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$TextEdit.add_keyword_color("load", Color.red)
+	$TextEdit.add_keyword_color("preload", Color.red)
+	$TextEdit.add_keyword_color("setget", Color.red)
+	$TextEdit.add_keyword_color("match", Color.red)
 	$TextEdit.add_keyword_color("extends", Color.red)
 	$TextEdit.add_keyword_color("func", Color.red)
 	$TextEdit.add_keyword_color("var", Color.red)
@@ -33,10 +37,14 @@ func _ready():
 	$TextEdit.add_keyword_color("round", Color.red)
 	$TextEdit.add_keyword_color("elif", Color.red)
 	$TextEdit.add_keyword_color("else", Color.red)
+	$TextEdit.add_keyword_color("print", Color.red)
+	$TextEdit.add_keyword_color("Object", Color.lightgreen)
 	$TextEdit.add_keyword_color("Control", Color.lightgreen)
 	$TextEdit.add_color_region('#', '', Color.darkgray)
 	$TextEdit.add_color_region(str("'"), str("'"), Color.yellow)
 	$TextEdit.add_color_region(str('"'), str('"'), Color.yellow)
+	$TextEdit.add_color_region(str('$'), str(' '), Color.green)
+	$TextEdit.add_color_region(str('$'), str('.'), Color.green)
 	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
