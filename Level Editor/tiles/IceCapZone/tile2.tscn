@@ -1,16 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Level Editor/single tiles/tileset_2.png" type="Texture" id=1]
 
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.33891, 9.45057 )
-
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 0.397751, -0.397743 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -18.9011, -17.4055, -18.5034, 16.0052, 8.94116, 16.0052, 8.94116, -17.4055 )
 
 [node name="icon" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )

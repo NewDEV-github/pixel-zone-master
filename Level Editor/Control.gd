@@ -48,13 +48,30 @@ func _ready():
 	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#		$TextEdit.add_keyword_color('func', Color.red)
-#		$TextEdit.add_color_region('f', 'c', Color.red)
-#		$TextEdit.add_color_override("function_color", Color.red)
-#	if str($PopupPanel/LineEdit.text) == '':
-#		$PopupPanel/SAVE_BUTTON.set_disabled(false)
-	var objects = str(float(get_tree().get_node_count()) - 8)
-#	$Panel/VBoxContainer/Label.set_text('OBJECTS CONUT: '+str(objects) + '\n' +str(mode))
+	if $PopupPanel.visible == false:
+		locked = false
+	if $PopupPanel2.visible == true:
+		locked = false
+	if $PopupPanel3.visible == false:
+		locked = false
+	if $PopupPanel4.visible == false:
+		locked = false
+	if $PopupPanel5.visible == false:
+		locked = false
+	if $OptionPanel.visible == false:
+		locked = false
+	if $PopupPanel.visible == true:
+		locked = true
+	if $PopupPanel2.visible == true:
+		locked = true
+	if $PopupPanel3.visible == true:
+		locked = true
+	if $PopupPanel4.visible == true:
+		locked = true
+	if $PopupPanel5.visible == true:
+		locked = true
+	if $OptionPanel.visible == true:
+		locked = true
 	number = str(delta * SPEED)
 	if mode == 'edit':
 		var position_l = get_global_mouse_position().snapped(Vector2(x,y))
@@ -129,7 +146,6 @@ func _on_ItemList_item_selected(index):
 	root.add_child(selected_bg)
 	selected_bg.set_owner(root)
 	$PopupPanel2.hide()
-	$"Panel/VBoxContainer2/Select Background2".set_disabled(true)
 	
 	
 func _on_LineEdit_text_entered(new_text):
@@ -141,7 +157,7 @@ func _on_icon3_pressed():
 	node.set_name('coin' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
+
 
 
 func _on_MusicList_item_selected(index):
@@ -178,7 +194,6 @@ func _on_Tile1_icecapzone_pressed():
 	node.set_name('tile1_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -187,7 +202,6 @@ func _on_Tile1_icecapzone2_pressed():
 	node.set_name('tile2_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -196,7 +210,6 @@ func _on_Tile1_icecapzone3_pressed():
 	node.set_name('tile3_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -205,7 +218,6 @@ func _on_Tile1_icecapzone4_pressed():
 	node.set_name('tile4_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -214,7 +226,6 @@ func _on_Tile1_icecapzone5_pressed():
 	node.set_name('tile5_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -223,7 +234,6 @@ func _on_Tile1_icecapzone6_pressed():
 	node.set_name('tile6_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -232,7 +242,7 @@ func _on_Tile1_icecapzone7_pressed():
 	node.set_name('tile7_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
+
 	$SetCurrentTile.hide()
 
 
@@ -241,7 +251,6 @@ func _on_Tile1_icecapzone8_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -250,7 +259,6 @@ func _on_Tile1_hill_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -258,8 +266,7 @@ func _on_Tile1_hill2_pressed():
 	node = preload("res://Level Editor/tiles/Hill/tile2.tscn").instance()
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
-	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
+	node.set_owner(root)	
 	$SetCurrentTile.hide()
 
 
@@ -268,7 +275,6 @@ func _on_Tile1_hill3_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -277,7 +283,6 @@ func _on_Tile1_hill4_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 func _on_Tile1_hill5_pressed():
@@ -285,7 +290,6 @@ func _on_Tile1_hill5_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 func _on_Tile1_hill6_pressed():
@@ -293,7 +297,6 @@ func _on_Tile1_hill6_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -302,7 +305,6 @@ func _on_Tile1_hill7_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -311,7 +313,6 @@ func _on_Tile1_hill8_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -320,7 +321,6 @@ func _on_Tile1_hill9_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -329,7 +329,6 @@ func _on_Tile1_hill10_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -338,7 +337,6 @@ func _on_Tile1_hill11_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -347,7 +345,6 @@ func _on_Tile1_hill12_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -356,7 +353,6 @@ func _on_Tile1_hill13_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -365,7 +361,6 @@ func _on_Tile1_hill14_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -374,7 +369,6 @@ func _on_Tile1_hill15_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -383,7 +377,6 @@ func _on_Tile1_hill16_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -392,7 +385,6 @@ func _on_Tile1_hill17_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -401,7 +393,6 @@ func _on_Tile1_hill18_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 func _on_Tile1_hill19_pressed():
@@ -409,7 +400,6 @@ func _on_Tile1_hill19_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 	
 
@@ -419,7 +409,6 @@ func _on_Tile1_hill20_pressed():
 	node.set_name('tile8_icecap' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -470,7 +459,6 @@ func _on_Tile2_pa_1_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -479,7 +467,6 @@ func _on_Tile2_pa_2_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -488,7 +475,6 @@ func _on_Tile2_pa_3_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -497,7 +483,6 @@ func _on_Tile2_pa_4_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -506,7 +491,6 @@ func _on_Tile2_pa_5_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -515,7 +499,6 @@ func _on_Tile2_pa_6_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -524,7 +507,6 @@ func _on_Tile2_pa_7_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -533,7 +515,6 @@ func _on_Tile2_pa_8_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 func _on_Tile2_pa_9_pressed():
@@ -541,7 +522,6 @@ func _on_Tile2_pa_9_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -550,7 +530,6 @@ func _on_Tile2_pa_10_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -559,7 +538,6 @@ func _on_Tile2_pa_11_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -568,7 +546,6 @@ func _on_Tile2_pa_12_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -577,7 +554,6 @@ func _on_Tile2_pa_13_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -586,7 +562,6 @@ func _on_Tile2_pa_14_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -595,7 +570,6 @@ func _on_Tile2_pa_15_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -604,7 +578,6 @@ func _on_Tile2_pa_16_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -613,7 +586,6 @@ func _on_Tile2_pa_17_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -622,7 +594,6 @@ func _on_Tile2_pa_18_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -631,7 +602,6 @@ func _on_Tile2_pa_19_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -640,7 +610,6 @@ func _on_Tile2_pa_20_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -649,7 +618,6 @@ func _on_Tile3_jg_1_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -658,7 +626,6 @@ func _on_Tile3_jg_2_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -667,15 +634,12 @@ func _on_Tile3_jg_3_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 func _on_Tile3_jg_4_pressed():
 	node = preload("res://Level Editor/tiles/JungleRuins/tile4.tscn").instance()
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
-	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -684,7 +648,6 @@ func _on_Tile3_jg_5_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -693,7 +656,6 @@ func _on_Tile3_jg_6_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -702,7 +664,6 @@ func _on_Tile3_jg_7_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -711,7 +672,6 @@ func _on_Tile3_jg_8_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -720,7 +680,6 @@ func _on_Tile3_jg_9_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -729,7 +688,6 @@ func _on_Tile3_jg_10_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -738,7 +696,6 @@ func _on_Tile3_jg_11_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -747,7 +704,6 @@ func _on_Tile3_jg_12_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 
@@ -756,7 +712,6 @@ func _on_Tile3_jg_13_pressed():
 	node.set_name('tile_pa' + str(number))
 	root.add_child(node)
 	node.set_owner(root)
-	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 
 ###gui options
@@ -779,16 +734,45 @@ func _on_OPTIONS_pressed():
 
 func _on_EDITOR_pressed():
 	if locked == false:
-		$Panel.show()
 		$TextEdit.hide()
 
 
 func _on_Script_pressed():
 	if locked == false:
-		$Panel.hide()
 		$TextEdit.show()
 
 
 func _on_FILE_pressed():
 	if locked == false:
 		$PopupPanel.popup_centered()
+
+
+func _on_ADD_pressed():
+	if locked == false:
+		$PopupPanel4.popup_centered()
+
+
+func _on_collision_pressed():
+	if locked == false:
+		$PopupPanel5.popup_centered()
+
+func _on_10x10_pressed():
+	node = preload("res://Level Editor/collisonbox10x10.tscn").instance()
+	node.set_name('collision_10x10' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_40x40_pressed():
+	node = preload("res://Level Editor/collisonbox40x40.tscn").instance()
+	node.set_name('collision_40x40' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+
+
+func _on_FAQ_pressed():
+	OS.shell_open('https://masterpolska123.github.io/home/faq/index.html#leveleditor')

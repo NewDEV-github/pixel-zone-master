@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level Editor/single tiles/tileset_ca_2.png" type="Texture" id=1]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -3.37057, -6.53367, -6.8698, -1.36416, -5.8698, 7.13586, 8.63023, 7.13586, 8.63023, -0.864159, 4.63023, -6.36417 )
+
+[node name="tileset_ca_1" type="Sprite" parent="."]
+position = Vector2( 0.707108, 0 )
+scale = Vector2( 1.02946, 1 )
+texture = ExtResource( 1 )
