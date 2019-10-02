@@ -303,10 +303,11 @@ __meta__ = {
 }
 
 [node name="PopupPanel5" type="WindowDialog" parent="."]
+visible = true
 margin_left = 180.0
-margin_top = 95.8358
-margin_right = 570.0
-margin_bottom = 371.836
+margin_top = 96.0
+margin_right = 703.0
+margin_bottom = 372.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -316,27 +317,45 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -103.5
-margin_top = -41.0
-margin_right = 103.5
-margin_bottom = 41.0
+margin_left = -180.5
+margin_top = -84.0
+margin_right = 180.5
+margin_bottom = 84.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="10x10" type="Button" parent="PopupPanel5/VBoxContainer"]
-margin_right = 207.0
+margin_right = 361.0
 margin_bottom = 39.0
-text = "Add background"
+text = "Add collision shape 10x10"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="40x40" type="Button" parent="PopupPanel5/VBoxContainer"]
 margin_top = 43.0
-margin_right = 207.0
+margin_right = 361.0
 margin_bottom = 82.0
-text = "Add music"
+text = "Add collision shape 40x40"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon10x10" type="Button" parent="PopupPanel5/VBoxContainer"]
+margin_top = 86.0
+margin_right = 361.0
+margin_bottom = 125.0
+text = "Add collision polygon 40x40"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon40x40" type="Button" parent="PopupPanel5/VBoxContainer"]
+margin_top = 129.0
+margin_right = 361.0
+margin_bottom = 168.0
+text = "Add collision polygon 40x40"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1310,6 +1329,8 @@ texture_normal = ExtResource( 120 )
 [connection signal="pressed" from="PopupPanel4/VBoxContainer/Select Music" to="." method="_on_Select_Music_pressed"]
 [connection signal="pressed" from="PopupPanel5/VBoxContainer/10x10" to="." method="_on_10x10_pressed"]
 [connection signal="pressed" from="PopupPanel5/VBoxContainer/40x40" to="." method="_on_40x40_pressed"]
+[connection signal="pressed" from="PopupPanel5/VBoxContainer/Polygon10x10" to="." method="_on_Polygon_pressed"]
+[connection signal="pressed" from="PopupPanel5/VBoxContainer/Polygon40x40" to="." method="_on_Polygon40x40_pressed"]
 [connection signal="text_changed" from="OptionPanel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_changed"]
 [connection signal="text_entered" from="OptionPanel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_entered"]
 [connection signal="text_changed" from="OptionPanel/VBoxContainer3/Scaley" to="." method="_on_Scaley_text_changed"]

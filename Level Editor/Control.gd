@@ -1,5 +1,7 @@
 extends Control
 var timeout
+var collision = CollisionPolygon2D.new()
+var collision_ = false
 var rotation = 1
 onready var root = $"Editor's Scene"
 var node 
@@ -75,6 +77,7 @@ func _process(delta):
 		locked = true
 	number = str(delta * SPEED)
 	if mode == 'edit':
+		var mouse_position = get_local_mouse_position()
 		var position_l = get_global_mouse_position().snapped(Vector2(x,y))
 		var snap_grid_x = round(position_l.x)
 		var snap_grid_y = round(position_l.y)
@@ -763,6 +766,7 @@ func _on_10x10_pressed():
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
+	$PopupPanel5.hide()
 
 
 func _on_40x40_pressed():
@@ -772,6 +776,7 @@ func _on_40x40_pressed():
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
+	$PopupPanel5.hide()
 
 
 func _on_FAQ_pressed():
@@ -1246,3 +1251,23 @@ func _on_Tile5_cs_32_pressed():
 	root.add_child(node)
 	node.set_owner(root)
 	$SetCurrentTile.hide()
+### GUI OPTIONS - CONTINUED
+
+func _on_Polygon_pressed():
+	node = preload("res://Level Editor/collision_polygon10x10.tscn").instance()
+	node.set_name('polygon_10x10' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+	$PopupPanel5.hide()
+
+
+func _on_Polygon40x40_pressed():
+	node = preload("res://Level Editor/collision_polygon40x40.tscn").instance()
+	node.set_name('polygon_40x40' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$Panel/Tree.add_item(str(node.name))
+	$SetCurrentTile.hide()
+	$PopupPanel5.hide()

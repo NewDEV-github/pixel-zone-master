@@ -15,4 +15,6 @@ Master Inc's. official website - https://masterpolska123.github.io/home/index.ht
 How to make modifications and custom themes for Pixel Zone (mods) - 
 https://masterpolska123.github.io/home/faq/index.html#mobile
 
+FAQ for level editor - https://masterpolska123.github.io/home/faq/index.html#leveleditor
+
 You can register on Pixel Zone's official website without worrying about spam.
