@@ -1,5 +1,5 @@
 extends Control
-
+var timeout
 var rotation = 1
 onready var root = $"Editor's Scene"
 var node 
@@ -48,6 +48,7 @@ func _ready():
 	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if $PopupPanel.visible == false:
 		locked = false
 	if $PopupPanel2.visible == true:
@@ -105,7 +106,6 @@ func _on_Button_pressed():
 	locked == true
 	$PopupPanel.popup_centered()
 #	
-	
 func _on_Button2_pressed():
 	$PopupPanel/FileDialog.popup_centered()
 	$PopupPanel/SAVE_BUTTON.set_disabled(false)
@@ -115,14 +115,14 @@ func _on_FileDialog_file_selected(path):
 	$PopupPanel/LineEdit.set_text(selected_file)
 
 func _on_SAVE_BUTTON_pressed():
+	var script = str(save_dir + $PopupPanel/LineEdit.text + '.gd')
+	#SAVING SCENE
 	locked = false
 	var packed_scene = PackedScene.new()
-	$"Editor's Scene".set_script(load('res://Level Editor/level_script.gd'))
+	$"Editor's Scene".set_script(load(str(script)))
 	packed_scene.pack($"Editor's Scene")
 	ResourceSaver.save(str(save_dir + $PopupPanel/LineEdit.text + '.tscn'), packed_scene)
 	$PopupPanel.hide()
-
-
 func _on_Select_Background_pressed():
 	$PopupPanel2.popup_centered()
 
@@ -776,3 +776,473 @@ func _on_40x40_pressed():
 
 func _on_FAQ_pressed():
 	OS.shell_open('https://masterpolska123.github.io/home/faq/index.html#leveleditor')
+
+
+func _on_Timer_timeout():
+	if $PopupPanel/LineEdit.text != '':
+		var text = $TextEdit.text
+		var file = File.new()
+		file.open(str(save_dir + $PopupPanel/LineEdit.text + '.gd'), File.WRITE)
+		file.store_line(str(text))
+### SELECTING TILES - Last part
+
+func _on_Tile4_scifi_1_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile1.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_2_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile2.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_3_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile3.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_4_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile4.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_5_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile5.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_6_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile6.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_7_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile7.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_8_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile8.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_9_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile9.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_10_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile10.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_11_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile11.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_12_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile12.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_13_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile13.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_14_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile14.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_15_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile15.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_16_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile16.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_17_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile17.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_18_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile18.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+func _on_Tile4_scifi_19_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile19.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_20_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile20.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_21_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile21.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_22_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile22.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_23_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile23.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_24_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile24.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_25_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile25.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile4_scifi_26_pressed():
+	node = preload("res://Level Editor/tiles/Scifi/tile26.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_1_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile1.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_2_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile2.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_3_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile3.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_4_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile4.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_5_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile5.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_6_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile6.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_7_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile7.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_8_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile8.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_9_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile9.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_10_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile10.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_11_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile11.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_12_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile12.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_13_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile13.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_14_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile14.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_15_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile15.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_16_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile16.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_17_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile17.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_18_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile18.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_19_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile19.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_20_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile20.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_21_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile21.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_22_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile22.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_23_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile23.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_24_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile24.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_25_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile25.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_26_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile26.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+func _on_Tile5_cs_27_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile27.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_28_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile28.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_29_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile29.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_30_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile30.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_31_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile31.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
+
+
+func _on_Tile5_cs_32_pressed():
+	node = preload("res://Level Editor/tiles/CastleMania/tile32.tscn").instance()
+	node.set_name('tile_pa' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()

@@ -140,10 +140,6 @@ window/stretch/aspect="expand"
 
 enabled=PoolStringArray( "GDFirebase" )
 
-[gdnative]
-
-singletons=[  ]
-
 [input]
 
 ui_accept={
