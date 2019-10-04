@@ -155,7 +155,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
-margin_bottom = 125.0
+margin_left = -5.0
+margin_right = -5.0
+margin_bottom = 82.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,21 +174,15 @@ margin_right = 289.0
 margin_bottom = 82.0
 text = "Add coin"
 
-[node name="collision" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 86.0
-margin_right = 289.0
-margin_bottom = 125.0
-text = "Add colision"
-
 [node name="Tree" type="ItemList" parent="Panel"]
 anchor_left = -0.00540541
 anchor_top = 0.324667
 anchor_right = 1.0
 anchor_bottom = 0.96
-margin_left = -0.437836
-margin_top = -53.1642
-margin_right = -1.0
-margin_bottom = -15.68
+margin_left = -6.43784
+margin_top = -93.1642
+margin_right = -7.0
+margin_bottom = -23.68
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -242,7 +238,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 8.0
 margin_bottom = 8.0
-items = [ "BG 1", null, false, "BG 2", null, false, "BG 3", null, false, "BG 4", null, false, "BG 5", null, false, "BG 6", null, false, "BG 7", null, false ]
+items = [ "Jungle Ruins", null, false, "Hill", null, false, "Pixel Adventure", null, false, "Ice Cap", null, false, "Castlemania - outside", null, false, "Sci Fi", null, false, "Castlemania - inside", null, false ]
 
 [node name="PopupPanel3" type="WindowDialog" parent="."]
 margin_left = 180.0
@@ -258,7 +254,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 8.0
 margin_bottom = 8.0
-items = [ "Track 1", null, false, "Track 2", null, false, "Track 3", null, false, "Track 4", null, false, "Track 5", null, false, "Track 6", null, false, "Track 7", null, false ]
+items = [ "Pixel Adventure", null, false, "Ice Cap", null, false, "Jungle Ruins", null, false, "Jungle Ruins 2", null, false, "Hill", null, false, "Sci Fi", null, false, "Castlemania", null, false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -303,7 +299,6 @@ __meta__ = {
 }
 
 [node name="PopupPanel5" type="WindowDialog" parent="."]
-visible = true
 margin_left = 180.0
 margin_top = 96.0
 margin_right = 703.0
@@ -318,9 +313,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -180.5
-margin_top = -84.0
+margin_top = -62.5
 margin_right = 180.5
-margin_bottom = 84.0
+margin_bottom = 62.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -343,6 +338,7 @@ __meta__ = {
 }
 
 [node name="Polygon10x10" type="Button" parent="PopupPanel5/VBoxContainer"]
+visible = false
 margin_top = 86.0
 margin_right = 361.0
 margin_bottom = 125.0
@@ -352,15 +348,26 @@ __meta__ = {
 }
 
 [node name="Polygon40x40" type="Button" parent="PopupPanel5/VBoxContainer"]
-margin_top = 129.0
+visible = false
+margin_top = 86.0
 margin_right = 361.0
-margin_bottom = 168.0
+margin_bottom = 125.0
 text = "Add collision polygon 40x40"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="collision" type="Button" parent="PopupPanel5/VBoxContainer"]
+margin_top = 86.0
+margin_right = 361.0
+margin_bottom = 125.0
+text = "Add colision"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_right = 214.0
 margin_bottom = 39.0
 theme = ExtResource( 12 )
@@ -539,6 +546,7 @@ __meta__ = {
 autostart = true
 
 [node name="SetCurrentTile" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 39.8787
@@ -549,10 +557,11 @@ __meta__ = {
 }
 
 [node name="VBoxContainer3" type="Control" parent="SetCurrentTile"]
-margin_left = -1.0
-margin_top = 16.0
-margin_right = 1387.0
-margin_bottom = 376.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="SetCurrentTile/VBoxContainer3"]
 margin_right = 1388.0
@@ -1317,9 +1326,25 @@ margin_left = 700.0
 margin_right = 716.0
 margin_bottom = 112.0
 texture_normal = ExtResource( 120 )
+
+[node name="ImportCustomtile" type="Button" parent="SetCurrentTile/VBoxContainer3"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+margin_right = 247.0
+text = "Import custom tile"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="SetCurrentTile/VBoxContainer3"]
+visible = false
+margin_top = 310.0
+margin_right = 40.0
+margin_bottom = 350.0
 [connection signal="pressed" from="Panel/VBoxContainer/icon" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon3" to="." method="_on_icon3_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/collision" to="." method="_on_collision_pressed"]
 [connection signal="pressed" from="Panel/BACK" to="." method="_on_BACK_pressed"]
 [connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]
@@ -1331,6 +1356,7 @@ texture_normal = ExtResource( 120 )
 [connection signal="pressed" from="PopupPanel5/VBoxContainer/40x40" to="." method="_on_40x40_pressed"]
 [connection signal="pressed" from="PopupPanel5/VBoxContainer/Polygon10x10" to="." method="_on_Polygon_pressed"]
 [connection signal="pressed" from="PopupPanel5/VBoxContainer/Polygon40x40" to="." method="_on_Polygon40x40_pressed"]
+[connection signal="pressed" from="PopupPanel5/VBoxContainer/collision" to="." method="_on_collision_pressed"]
 [connection signal="text_changed" from="OptionPanel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_changed"]
 [connection signal="text_entered" from="OptionPanel/VBoxContainer3/Scalex" to="." method="_on_Scalex_text_entered"]
 [connection signal="text_changed" from="OptionPanel/VBoxContainer3/Scaley" to="." method="_on_Scaley_text_changed"]
@@ -1467,3 +1493,4 @@ texture_normal = ExtResource( 120 )
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer3/HBoxContainer/Tile5_cs_30" to="." method="_on_Tile5_cs_30_pressed"]
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer3/HBoxContainer/Tile5_cs_32" to="." method="_on_Tile5_cs_32_pressed"]
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer3/HBoxContainer/Tile5_cs_31" to="." method="_on_Tile5_cs_31_pressed"]
+[connection signal="pressed" from="SetCurrentTile/VBoxContainer3/ImportCustomtile" to="." method="_on_ImportCustomtile_pressed"]

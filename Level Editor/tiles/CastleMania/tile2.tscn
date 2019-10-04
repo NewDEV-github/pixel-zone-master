@@ -11,3 +11,4 @@ polygon = PoolVector2Array( -3.37057, -6.53367, -6.8698, -1.36416, -5.8698, 7.13
 position = Vector2( 0.707108, 0 )
 scale = Vector2( 1.02946, 1 )
 texture = ExtResource( 1 )
+[connection signal="mouse_entered" from="." to="." method="_on_KinematicBody2D_mouse_entered"]

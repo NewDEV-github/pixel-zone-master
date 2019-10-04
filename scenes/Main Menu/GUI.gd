@@ -1,4 +1,5 @@
 extends Control
+
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
@@ -7,6 +8,7 @@ var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 var load_mod = "false"
 var mod_temp
+var download_path = 'res://Level Editor/'
 func _on_Play_pressed():
 	$AnimationPlayer.play("new")
 func _ready():
@@ -112,37 +114,12 @@ func _on_TextureButton_pressed():
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
 	$AnimationPlayer.play("new")
 	globals._save()
-	#create new save
-#	var a = File.new()
-#	a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))
-#	a.store_line("1")
-#	a.close()
-#	a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
-#	a.store_line("1")
-#	a.close()
-#	var vconf = ConfigFile.new()
-#	vconf.set_value("saves", "game_pass", "false")
-#	vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")
-#	emit_signal("reload")
-#	get_tree().reload_current_scene()
+
 func _on_TextureButton2_pressed():
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	$AnimationPlayer.play("new")
 	globals._save()
-	#create new save
-#	var a = File.new()
-#	a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))
-#	a.store_line("0")
-#	a.close()
-#	a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
-#	a.store_line("0")
-#	a.close()
-#	var vconf = ConfigFile.new()
-#	vconf.set_value("saves", "game_pass", "false")
-#	vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")
-#	emit_signal("reload")
-#	get_tree().reload_current_scene()
 func _on_Play5_pressed():
 	$TextureRect/PopupPanel.popup_centered()
 

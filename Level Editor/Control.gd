@@ -1,12 +1,19 @@
 extends Control
+var tile_path = ''
 var timeout
 var collision = CollisionPolygon2D.new()
 var collision_ = false
 var rotation = 1
 onready var root = $"Editor's Scene"
-var node 
+var node
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+var file_name
+var fil_name
+var extension
+var file_path
 var mode = 'play'
 var number
+var checked = false
 var is_checked: bool
 var save_dir = 'user://saved_levels/'
 const SPEED = 100
@@ -47,10 +54,9 @@ func _ready():
 	$TextEdit.add_color_region(str('"'), str('"'), Color.yellow)
 	$TextEdit.add_color_region(str('$'), str(' '), Color.green)
 	$TextEdit.add_color_region(str('$'), str('.'), Color.green)
-	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#You cannot edit this because the level will not load and the game will freeze'
+	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#	You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	if $PopupPanel.visible == false:
 		locked = false
 	if $PopupPanel2.visible == true:
@@ -82,13 +88,13 @@ func _process(delta):
 		var snap_grid_x = round(position_l.x)
 		var snap_grid_y = round(position_l.y)
 		$Label.set_text("POSITION: " + str(position_l))
-		node.set_position(Vector2(snap_grid_x, snap_grid_y))
+		node.set_position(Vector2(snap_grid_x, snap_grid_y)) 
 		print(str(node.position))
 		if Input.is_action_pressed("rotate"):
 			if Input.is_action_pressed("ui_left"):
-				node.rotation += float(rotation)
+				node.rect_rotation += float(rotation)
 			elif Input.is_action_pressed("ui_right"):
-				node.rotation -= float(rotation)
+				node.rect_rotation -= float(rotation)
 func _input(event):
 	if event.is_action_pressed("ui_accept") and $TextEdit.visible == false:
 		if mode == 'play'and locked == false:
@@ -1271,3 +1277,41 @@ func _on_Polygon40x40_pressed():
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
 	$PopupPanel5.hide()
+
+#
+#func _on_ImportCustomtile_pressed():
+#	var path = 'user://Tiles/'
+#	if checked == false:
+#		var dir = Directory.new()
+#		if dir.open(path) == OK:
+#			dir.list_dir_begin()
+#			print(str(dir.list_dir_begin()))
+#			var file_name = dir.get_next()
+#			while (file_name != ""):
+#				if dir.current_is_dir():
+#					print("Found directory: " + file_name)
+#				else:
+#					print("Found file: " + file_name)
+#					var fil_name = str(file_name).get_basename()
+#					var extension = str(file_name).get_extension()
+#					var file_path = str(file_name).get_base_dir()
+#					var tile_name = File.new()
+#					tile_name.open(str(file_path) + 'name.txt', File.READ)
+#					var tile_name_ = tile_name.get_as_text()
+#					print(extension)
+#					if extension == "tscn":
+#						tile_path = str(file_path) + str(fil_name)
+#						var texture_button = Button.new()
+#						$SetCurrentTile/VBoxContainer3/HBoxContainer5.add_child(texture_button)
+#						texture_button.set_owner($SetCurrentTile/VBoxContainer3/HBoxContainer5)
+#						texture_button.set_text(str(tile_name_))
+#						texture_button.connect("pressed", self, '_on_pressed')
+#				file_name = dir.get_next()
+#				checked = true
+#func _on_pressed():
+#	var _node = load(str(tile_path))
+#	node = _node.instance()
+#	node.set_name('polygon_10x10' + str(number))
+#	root.add_child(node)
+#	node.set_owner(root)
+#	$SetCurrentTile.hide()

@@ -5,5 +5,17 @@ extents = Vector2( 40, 40 )
 
 [node name="Area2D" type="Area2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0.14902, 0.447059, 0.498039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.353553, -2.38419e-007 )
 shape = SubResource( 1 )

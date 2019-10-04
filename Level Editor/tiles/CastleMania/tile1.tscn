@@ -9,3 +9,4 @@ polygon = PoolVector2Array( -4.6964, -6.52334, -20.6063, -6.16978, -23.4347, 7.9
 
 [node name="tileset_ca_1" type="Sprite" parent="CollisionShape2D"]
 texture = ExtResource( 1 )
+[connection signal="mouse_entered" from="." to="." method="_on_KinematicBody2D_mouse_entered"]
