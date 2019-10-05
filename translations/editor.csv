@@ -1,0 +1,19 @@
+,en,es,de,pl,it,pt,fr
+ED_SAVE,Save,Salvar,Sparen,Zapisz,Salva,Salve ,Sauver
+ED_SELECT,Select Tile,Seleccionar mosaico,Wählen Sie Kacheln,Wybierz kafelek,Seleziona tessera,Selecionar lado a lado,Sélectionner une tuile
+ED_ADD_COIN,Add coin,Añadir moneda,Münze hinzufügen,Dodaj pieniądz,Aggiungi moneta,Adicionar moeda,Ajouter une pièce
+ED_ADD_ENEMY,Add enemy,Añadir enemigo,Feind hinzufügen,Dodaj przeciwnika,Aggiungi nemico,Adicionar inimigo,Ajouter l'ennemi
+ED_BACK,Back,atrás,Zurück,Powrót,Indietro,De volta,Retour
+ED_OPTIONS,Options,Opciones,Optionen,Opcje,Opzioni,Opções,Les options
+ED_ADD,Add…,Añadir…,Hinzufügen…,Dodaj…,Inserisci…,"Adicionar, acrescentar…",Ajouter…
+ED_EDITOR,Editor,Editor,Editor,Edytor,Editore,Editor,Éditeur
+ED_SCRIPT,Script,Guión,Skript,Skrypt,Copione,Roteiro,Scénario
+ED_COLL_SH_10,Collision (10x10),Colisión (10x10),Kollision (10x10),Kolizja (10x10),Collisione (10x10),Colisão (10x10),Collision (10x10)
+ED_COLL_SH_40,Collision (40x40),Colisión (40x40),Kollision (40x40),Kolizja (40x40),Collisione (40x40),Colisão (40x40),Collision (40x40)
+ED_ADD_BG,Background,Antecedentes,Hintergrund,Tło,Sfondo,Fundo,Contexte
+ED_ADD_MUSIC,Music,Música,Musik,Muzykę,Musica,Música,La musique
+ED_SCALE_X,SCALE – X,ESCALA - X,SCALE - X,SKALA - X,SCALA - X,ESCALA - X,ÉCHELLE - X
+ED_SCALE_Y,SCALE – Y,ESCALA - Y,SCALE - Y,SKALA – Y,SCALA - Y,ESCALA - Y,ÉCHELLE - Y
+ED_SNAPPING_X,SNAPPING - X,SNAPPING - X,SCHNAPPEN - X,PRZYCIĄGANIE - X,SNAPPING - X,SNAPPING - X,SNAPPING - X
+ED_SNAPPING_Y,SNAPPING – Y,SNAPPING - Y,SNAPPING - Y,PRZYCIĄGANIE - Y,SNAPPING - Y,SNAPPING - Y,SNAPPING - Y
+ED_ROT_DEEGREE,ROTATION DEGREE,GRADO DE ROTACIÓN,ROTATION DEGREE,STOPIEŃ OBROTU,GRADO DI ROTAZIONE,GRAU DE ROTAÇÃO,DEGRÉ DE ROTATION

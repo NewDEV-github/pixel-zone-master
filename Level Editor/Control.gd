@@ -1,5 +1,7 @@
 extends Control
 var tile_path = ''
+var position_x = 0
+var position_y = 0
 var timeout
 var collision = CollisionPolygon2D.new()
 var collision_ = false
@@ -54,9 +56,10 @@ func _ready():
 	$TextEdit.add_color_region(str('"'), str('"'), Color.yellow)
 	$TextEdit.add_color_region(str('$'), str(' '), Color.green)
 	$TextEdit.add_color_region(str('$'), str('.'), Color.green)
-	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#	You cannot edit this because the level will not load and the game will freeze'
+	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	set_position(Vector2(0,0))\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#	You cannot edit this because the level will not load and the game will freeze'
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$"Editor's Scene".set_position(Vector2(position_x, position_y))
 	if $PopupPanel.visible == false:
 		locked = false
 	if $PopupPanel2.visible == true:
@@ -64,8 +67,6 @@ func _process(delta):
 	if $PopupPanel3.visible == false:
 		locked = false
 	if $PopupPanel4.visible == false:
-		locked = false
-	if $PopupPanel5.visible == false:
 		locked = false
 	if $OptionPanel.visible == false:
 		locked = false
@@ -77,19 +78,16 @@ func _process(delta):
 		locked = true
 	if $PopupPanel4.visible == true:
 		locked = true
-	if $PopupPanel5.visible == true:
-		locked = true
 	if $OptionPanel.visible == true:
 		locked = true
 	number = str(delta * SPEED)
 	if mode == 'edit':
 		var mouse_position = get_local_mouse_position()
-		var position_l = get_global_mouse_position().snapped(Vector2(x,y))
+		var position_l = get_local_mouse_position().snapped(Vector2(x,y))
 		var snap_grid_x = round(position_l.x)
 		var snap_grid_y = round(position_l.y)
-		$Label.set_text("POSITION: " + str(position_l))
-		node.set_position(Vector2(snap_grid_x, snap_grid_y)) 
-		print(str(node.position))
+		$Label.set_text(str(position_l))
+		node.set_position(Vector2(snap_grid_x - position_x, snap_grid_y - position_y)) 
 		if Input.is_action_pressed("rotate"):
 			if Input.is_action_pressed("ui_left"):
 				node.rect_rotation += float(rotation)
@@ -102,12 +100,15 @@ func _input(event):
 			$Panel.hide()
 			$Label.show()
 			$Panel2.hide()
+			$VSlider.show()
+			$HSlider.show()
 		elif mode == 'edit' and locked == false:
 				mode = 'play'
 				$Panel2.show()
 				$Panel.show()
 				$Label.hide()
-
+				$HSlider.hide()
+				$VSlider.hide()
 func _on_TextureButton_pressed():
 	$SetCurrentTile.show()
 
@@ -782,7 +783,6 @@ func _on_40x40_pressed():
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
-	$PopupPanel5.hide()
 
 
 func _on_FAQ_pressed():
@@ -1315,3 +1315,18 @@ func _on_Polygon40x40_pressed():
 #	root.add_child(node)
 #	node.set_owner(root)
 #	$SetCurrentTile.hide()
+
+
+func _on_icon4_pressed():
+	node = preload("res://scenes/enemy.tscn").instance()
+	node.set_name('enemy' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+
+
+func _on_VSlider_value_changed(value):
+	position_y = value*-100
+
+
+func _on_HSlider_value_changed(value):
+	position_x = value*-10
