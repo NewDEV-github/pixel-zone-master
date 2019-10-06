@@ -145,10 +145,10 @@ __meta__ = {
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="Editor\'s Scene"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 4282.0
-margin_bottom = 2392.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 4281.0
+margin_bottom = 2391.0
 editor_only = false
 
 [node name="Panel" type="Panel" parent="."]

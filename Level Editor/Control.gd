@@ -70,6 +70,8 @@ func _process(delta):
 		locked = false
 	if $OptionPanel.visible == false:
 		locked = false
+	if $SetCurrentTile.visible == false:
+		locked = false
 	if $PopupPanel.visible == true:
 		locked = true
 	if $PopupPanel2.visible == true:
@@ -79,6 +81,8 @@ func _process(delta):
 	if $PopupPanel4.visible == true:
 		locked = true
 	if $OptionPanel.visible == true:
+		locked = true
+	if $SetCurrentTile.visible == true:
 		locked = true
 	number = str(delta * SPEED)
 	if mode == 'edit':
