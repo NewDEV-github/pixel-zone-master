@@ -92,7 +92,7 @@ func _on_Update_pressed():
 
 
 func _on_VScrollBar_value_changed(value):
-	$Control.set_position(Vector2(0, -(value*10)))
+	$Control.set_position(Vector2(0, +(value*(-10))))
 
 
 func _on_Timer_timeout():

@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -696, 194.5 ), Vector2( 257.5, 194.5 ) ]
+"values": [ Vector2( -696, 173 ), Vector2( 206.001, 173 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("VScrollBar:visible")
@@ -156,10 +156,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -254.5
-margin_top = -105.5
-margin_right = 357.497
-margin_bottom = 148.5
+margin_left = -305.999
+margin_top = -127.0
+margin_right = 305.994
+margin_bottom = 127.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -273,6 +273,7 @@ __meta__ = {
 }
 
 [node name="LanguageButton" type="OptionButton" parent="TextureRect"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -281,6 +282,7 @@ margin_left = -248.0
 margin_top = -39.0
 rect_pivot_offset = Vector2( -884, 579 )
 theme = ExtResource( 4 )
+text = "LANG_EN"
 clip_text = true
 align = 1
 items = [ "LANG_EN", null, false, 0, null, "LANG_ES", null, false, 1, null, "LANG_DE", null, false, 2, null, "LANG_PL", null, false, 3, null, "LANG_IT", null, false, 4, null, "LANG_PT", null, false, 5, null, "LANG_FR", null, false, 6, null ]
@@ -335,15 +337,12 @@ margin_bottom = 0.0
 anims/back = SubResource( 2 )
 anims/new = ExtResource( 6 )
 
-[node name="VScrollBar" type="VScrollBar" parent="."]
+[node name="VScrollBar" type="VSlider" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0
 rect_scale = Vector2( 2, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 anchor_right = 0.586914

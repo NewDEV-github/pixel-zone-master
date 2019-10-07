@@ -588,6 +588,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 11 )
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="theme" type="Label" parent="ui/Control"]
 margin_left = 615.094
@@ -603,7 +606,7 @@ custom_fonts/font = ExtResource( 2 )
 value = 100.0
 
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 27.759, 490 )
+position = Vector2( 30, 490 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 13 )
 passby_press = true
@@ -611,7 +614,7 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 121.542, 490 )
+position = Vector2( 120, 490 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 14 )
 passby_press = true
@@ -619,14 +622,13 @@ action = "move_right"
 visibility_mode = 1
 
 [node name="pause" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 924.75, -0.500464 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 3 )
 action = "ui_cancel"
 visibility_mode = 1
 
 [node name="jump" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 931.5, 508 )
+position = Vector2( 70, 400 )
 scale = Vector2( 1.4, 1.4 )
 normal = ExtResource( 15 )
 action = "jump"

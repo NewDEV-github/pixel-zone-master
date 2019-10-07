@@ -586,6 +586,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 10 )
 script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ProgressBar" type="ProgressBar" parent="ui/Control"]
 pause_mode = 2
@@ -595,7 +598,7 @@ custom_fonts/font = ExtResource( 2 )
 value = 100.0
 
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 27.759, 490 )
+position = Vector2( 30, 490 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 12 )
 passby_press = true
@@ -603,7 +606,7 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 121.542, 490 )
+position = Vector2( 120, 490 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 13 )
 passby_press = true
@@ -611,21 +614,20 @@ action = "move_right"
 visibility_mode = 1
 
 [node name="jump" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 900, 490 )
+position = Vector2( 120, 400 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 14 )
 action = "jump"
 visibility_mode = 1
 
 [node name="fire" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 900, 399 )
+position = Vector2( 30, 400 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 16 )
 action = "shoot"
 visibility_mode = 1
 
 [node name="pause" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 920.25, 4.12527 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 15 )
 action = "ui_cancel"
