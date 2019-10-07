@@ -14,7 +14,7 @@
 [ext_resource path="res://textures/osb_left.png" type="Texture" id=12]
 [ext_resource path="res://textures/osb_right.png" type="Texture" id=13]
 [ext_resource path="res://textures/osb_jump.png" type="Texture" id=14]
-[ext_resource path="res://textures/osb_speed.png" type="Texture" id=15]
+[ext_resource path="res://textures/pause_button.png" type="Texture" id=15]
 [ext_resource path="res://textures/osb_fire.png" type="Texture" id=16]
 [ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=17]
 [ext_resource path="res://textures/saving.png" type="Texture" id=18]
@@ -617,18 +617,18 @@ normal = ExtResource( 14 )
 action = "jump"
 visibility_mode = 1
 
-[node name="speed" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 796.219, 490 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 15 )
-action = "speed"
-visibility_mode = 1
-
 [node name="fire" type="TouchScreenButton" parent="ui/Control"]
 position = Vector2( 900, 399 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 16 )
 action = "shoot"
+visibility_mode = 1
+
+[node name="pause" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 920.25, 4.12527 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 15 )
+action = "ui_cancel"
 visibility_mode = 1
 
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 17 )]
@@ -654,6 +654,9 @@ margin_bottom = 17.0
 custom_fonts/font = ExtResource( 2 )
 text = "Start!"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="fps" type="Label" parent="ui/Control"]
 visible = false

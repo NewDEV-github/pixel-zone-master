@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/players/player1/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://textures/pause_button.png" type="Texture" id=3]
 [ext_resource path="res://scenes/sprite.tscn" type="PackedScene" id=4]
 [ext_resource path="res://animations/achievement.tres" type="Animation" id=5]
 [ext_resource path="res://animations/respawn.tres" type="Animation" id=6]
@@ -14,8 +15,6 @@
 [ext_resource path="res://textures/osb_left.png" type="Texture" id=13]
 [ext_resource path="res://textures/osb_right.png" type="Texture" id=14]
 [ext_resource path="res://textures/osb_jump.png" type="Texture" id=15]
-[ext_resource path="res://textures/osb_speed.png" type="Texture" id=16]
-[ext_resource path="res://textures/osb_fire.png" type="Texture" id=17]
 [ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://textures/saving.png" type="Texture" id=19]
 [ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
@@ -619,25 +618,18 @@ passby_press = true
 action = "move_right"
 visibility_mode = 1
 
+[node name="pause" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 924.75, -0.500464 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 3 )
+action = "ui_cancel"
+visibility_mode = 1
+
 [node name="jump" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 900, 490 )
-scale = Vector2( 1.49157, 1.46265 )
+position = Vector2( 931.5, 508 )
+scale = Vector2( 1.4, 1.4 )
 normal = ExtResource( 15 )
 action = "jump"
-visibility_mode = 1
-
-[node name="speed" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 796.219, 490 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 16 )
-action = "speed"
-visibility_mode = 1
-
-[node name="fire" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 900, 399 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 17 )
-action = "shoot"
 visibility_mode = 1
 
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 18 )]

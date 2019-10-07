@@ -156,10 +156,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -306.0
+margin_left = -254.5
 margin_top = -105.5
-margin_right = 305.997
-margin_bottom = 105.5
+margin_right = 357.497
+margin_bottom = 148.5
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -281,7 +281,6 @@ margin_left = -248.0
 margin_top = -39.0
 rect_pivot_offset = Vector2( -884, 579 )
 theme = ExtResource( 4 )
-text = "LANG_EN"
 clip_text = true
 align = 1
 items = [ "LANG_EN", null, false, 0, null, "LANG_ES", null, false, 1, null, "LANG_DE", null, false, 2, null, "LANG_PL", null, false, 3, null, "LANG_IT", null, false, 4, null, "LANG_PT", null, false, 5, null, "LANG_FR", null, false, 6, null ]
@@ -311,6 +310,7 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="Button" type="Button" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
@@ -340,6 +340,10 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0
+rect_scale = Vector2( 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 anchor_right = 0.586914

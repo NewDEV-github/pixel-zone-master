@@ -8,11 +8,21 @@ var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
 var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 var load_mod = "false"
 var mod_temp
+var os = OS.get_name()
 var download_path = 'res://Level Editor/'
 func _on_Play_pressed():
 	$AnimationPlayer.play("new")
 func _ready():
-	
+	if str(os) == 'Android':
+		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
+		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
+		$Button.hide()
+		$VScrollBar.set_scale(Vector2(2,1))
+	if not str(os) == 'Android':
+		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
+		$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
+		$Button.show()
+		$VScrollBar.set_scale(Vector2(1,1))
 	var loaded_lang = str(TranslationServer.get_locale())
 	if loaded_lang == "en":
 		$TextureRect/LanguageButton.select(int(str(0)))
@@ -36,6 +46,7 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
+	
 	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
 	
 func _on_Play7_pressed():

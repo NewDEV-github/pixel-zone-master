@@ -14,7 +14,7 @@
 [ext_resource path="res://textures/osb_jump.png" type="Texture" id=12]
 [ext_resource path="res://sounds/sound_shoot.wav" type="AudioStream" id=13]
 [ext_resource path="res://textures/osb_fire.png" type="Texture" id=14]
-[ext_resource path="res://textures/osb_speed.png" type="Texture" id=15]
+[ext_resource path="res://textures/pause_button.png" type="Texture" id=15]
 [ext_resource path="res://textures/osb_left.png" type="Texture" id=16]
 [ext_resource path="res://textures/saving.png" type="Texture" id=17]
 [ext_resource path="res://scenes/players/player2/player2.gd" type="Script" id=18]
@@ -593,6 +593,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 8 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="theme" type="Label" parent="ui/Control"]
 margin_left = 615.094
@@ -630,17 +633,17 @@ normal = ExtResource( 12 )
 action = "jump"
 visibility_mode = 1
 
-[node name="speed" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 796.219, 490 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 15 )
-action = "speed"
-visibility_mode = 1
-
 [node name="fire" type="TouchScreenButton" parent="ui/Control"]
 position = Vector2( 900, 399 )
 scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 14 )
+action = "shoot"
+visibility_mode = 1
+
+[node name="pause" type="TouchScreenButton" parent="ui/Control"]
+position = Vector2( 925.456, -0.338135 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 15 )
 action = "shoot"
 visibility_mode = 1
 
