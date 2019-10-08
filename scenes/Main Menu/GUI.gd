@@ -11,7 +11,10 @@ var mod_temp
 var os = OS.get_name()
 var download_path = 'res://Level Editor/'
 func _on_Play_pressed():
-	$AnimationPlayer.play("new")
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")
 func _ready():
 	if str(os) == 'Android':
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
@@ -117,19 +120,28 @@ func _on_ModSelector_about_to_show():
 
 
 func _on_ConfirmationDialog_confirmed():
-	$AnimationPlayer.play("new")
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")
 
 signal reload
 func _on_TextureButton_pressed():
 	globals.scene_path = 'res://scenes/players/player1/player.tscn'
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
-	$AnimationPlayer.play("new")
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")
 	globals._save()
 
 func _on_TextureButton2_pressed():
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
-	$AnimationPlayer.play("new")
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")
 	globals._save()
 func _on_Play5_pressed():
 	$TextureRect/PopupPanel.popup_centered()

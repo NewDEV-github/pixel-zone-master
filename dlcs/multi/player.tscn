@@ -598,42 +598,53 @@ custom_fonts/font = ExtResource( 2 )
 value = 100.0
 
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 30, 490 )
-scale = Vector2( 1.49157, 1.46265 )
+position = Vector2( 10, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 12 )
 passby_press = true
 action = "move_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 120, 490 )
-scale = Vector2( 1.49157, 1.46265 )
+position = Vector2( 130, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 13 )
 passby_press = true
 action = "move_right"
 visibility_mode = 1
 
-[node name="jump" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 120, 400 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 14 )
-action = "jump"
-visibility_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="fire" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 30, 400 )
-scale = Vector2( 1.49157, 1.46265 )
-normal = ExtResource( 16 )
-action = "shoot"
-visibility_mode = 1
-
-[node name="pause" type="TouchScreenButton" parent="ui/Control"]
-scale = Vector2( 0.8, 0.8 )
+[node name="pause" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+position = Vector2( -75, 0 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 15 )
 action = "ui_cancel"
 visibility_mode = 1
 
+[node name="fire" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+position = Vector2( -117, 360 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 16 )
+action = "shoot"
+visibility_mode = 1
+
+[node name="jump" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+position = Vector2( -117, 480 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 14 )
+action = "jump"
+visibility_mode = 1
+
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 17 )]
+margin_top = 18.0
+margin_bottom = -23.0
 
 [node name="Label" type="Label" parent="ui/Control"]
 margin_left = -162.667

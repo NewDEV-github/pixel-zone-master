@@ -606,35 +606,43 @@ custom_fonts/font = ExtResource( 2 )
 value = 100.0
 
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 30, 490 )
-scale = Vector2( 1.49157, 1.46265 )
+position = Vector2( 10, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 13 )
 passby_press = true
 action = "move_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 120, 490 )
-scale = Vector2( 1.49157, 1.46265 )
+position = Vector2( 130, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 14 )
 passby_press = true
 action = "move_right"
 visibility_mode = 1
 
-[node name="pause" type="TouchScreenButton" parent="ui/Control"]
-scale = Vector2( 0.8, 0.8 )
-normal = ExtResource( 3 )
-action = "ui_cancel"
-visibility_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="jump" type="TouchScreenButton" parent="ui/Control"]
-position = Vector2( 70, 400 )
-scale = Vector2( 1.4, 1.4 )
+[node name="jump" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+position = Vector2( -117, 480 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 15 )
 action = "jump"
 visibility_mode = 1
 
+[node name="pause" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+position = Vector2( -75, 0 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 3 )
+action = "ui_cancel"
+visibility_mode = 1
+
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 18 )]
+margin_top = 18.0
+margin_bottom = -23.0
 
 [node name="Start" type="Label" parent="ui/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -665,6 +673,9 @@ margin_right = 162.334
 margin_bottom = 66.5834
 custom_fonts/font = ExtResource( 2 )
 text = "Full Health!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="ui"]
 visible = false
