@@ -26,9 +26,9 @@ func _process(delta):
 	tab_container.set_tab_title(2, "KEY_LANG")
 	tab_container.set_tab_title(3, "KEY_G_A")
 	if not str(os) == 'Android':
-		tab_container.set_tab_title(4, str(tr('KEY_CON_TAB') + ' mobile'))
+		tab_container.set_tab_title(4, 'KEY_CONTROLLER')
 	else:
-		tab_container.set_tab_title(4, "KEY_CONTROLLER")
+		tab_container.set_tab_title(4, str(tr('KEY_CON_TAB') + ' mobile'))
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
@@ -49,6 +49,10 @@ func _save():
 func _ready():
 	if str(os) == 'Android':
 		$"TabContainer/Controller Test/joypads".hide()
+		$"TabContainer/Controller Test/Control".show()
+	if not str(os) == 'Android':
+		$"TabContainer/Controller Test/joypads".show()
+		$"TabContainer/Controller Test/Control".hide()
 	var beta = File.new()
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
 	var loaded = bool(str(beta.get_line()))

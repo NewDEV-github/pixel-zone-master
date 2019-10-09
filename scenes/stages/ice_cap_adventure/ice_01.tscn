@@ -11,7 +11,7 @@
 extents = Vector2( 36.833, 195.539 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4321.75, 130.397 )
+extents = Vector2( 4570, 130.397 )
 
 [node name="ice_cap1" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,7 +31,7 @@ bus = "Music"
 [node name="parallax_bg" parent="." instance=ExtResource( 5 )]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 13196.2, 2613.04 )
+position = Vector2( 13180, 2600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 4.5752, -110.25 )
@@ -123,10 +123,10 @@ position = Vector2( 12897.5, 2718.63 )
 [node name="enemies" type="Node" parent="."]
 
 [node name="enemy" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 1506.94, 822.937 )
+position = Vector2( 640, 490 )
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 3379.39, 1464.19 )
+position = Vector2( 2660, 1410 )
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 4 )]
 position = Vector2( 3105.79, 1983.6 )
@@ -138,13 +138,13 @@ position = Vector2( 4448.14, 2037.04 )
 position = Vector2( 5670.79, 1917.34 )
 
 [node name="enemy6" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 6701.06, 1677.94 )
+position = Vector2( 6280, 1705.96 )
 
 [node name="enemy7" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 8165.25, 1472.74 )
+position = Vector2( 8380, 1560 )
 
 [node name="enemy8" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 8744.51, 1724.96 )
+position = Vector2( 9320, 1580 )
 
 [node name="enemy9" parent="enemies" instance=ExtResource( 4 )]
 position = Vector2( 9989.88, 2294.49 )
@@ -162,7 +162,7 @@ position = Vector2( 11812.4, 3053.86 )
 position = Vector2( 4429.43, 2308.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 21.6421, 158.709 )
+position = Vector2( -599.43, 361.5 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

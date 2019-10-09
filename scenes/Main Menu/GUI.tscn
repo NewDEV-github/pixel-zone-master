@@ -378,9 +378,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -305.999
+margin_left = -305.997
 margin_top = -127.0
-margin_right = 305.993
+margin_right = 305.995
 margin_bottom = 127.0
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -533,7 +533,7 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="Back" type="Button" parent="."]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -548,6 +548,7 @@ __meta__ = {
 }
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 0.0
 margin_bottom = 0.0
@@ -559,6 +560,7 @@ anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 4 )
 
 [node name="VScrollBar" type="VSlider" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 12.0

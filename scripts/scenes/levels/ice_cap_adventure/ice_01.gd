@@ -35,12 +35,6 @@ func _ready():
 
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
-		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
-
-
-
-func _on_Area2D3_body_entered(body):
-	if body.name == "Player":
-		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		if not str(OS.get_name()) == 'Android':
+			remove_child(player_default)
+			get_tree().change_scene("res://scenes/GameOver.tscn")

@@ -754,21 +754,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controller Test/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -135.5
-margin_top = -119.0
-margin_right = 135.5
-margin_bottom = 119.0
-rect_scale = Vector2( 2, 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="pause" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_right = 271.0
+margin_right = 1016.0
 margin_bottom = 24.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -809,7 +802,7 @@ __meta__ = {
 
 [node name="jump" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
 margin_top = 28.0
-margin_right = 271.0
+margin_right = 1016.0
 margin_bottom = 52.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -852,7 +845,7 @@ __meta__ = {
 
 [node name="shoot" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
 margin_top = 56.0
-margin_right = 271.0
+margin_right = 1016.0
 margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -895,7 +888,7 @@ __meta__ = {
 
 [node name="left" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
 margin_top = 84.0
-margin_right = 271.0
+margin_right = 1016.0
 margin_bottom = 108.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -937,7 +930,7 @@ __meta__ = {
 
 [node name="right" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
 margin_top = 112.0
-margin_right = 271.0
+margin_right = 1016.0
 margin_bottom = 136.0
 __meta__ = {
 "_edit_use_anchors_": false

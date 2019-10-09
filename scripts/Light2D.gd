@@ -8,4 +8,4 @@ extends Light2D
 func _process(delta):
 	var players_pos_x = float(globals._get_player_pos_x()) + 243
 	var players_pos_y = float(globals._get_player_pos_y()) + 71
-	set_position(Vector2(float(players_pos_x), float(players_pos_x)))
+	set_position(Vector2(float(players_pos_x), float(players_pos_y)))
