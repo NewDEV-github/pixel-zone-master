@@ -80,11 +80,6 @@ func _on_back_pressed():
 func _on_back3_pressed():
 	$connect.show()
 	$players.hide()
-func _process(delta):
-#	var config = File.new()
-#	if config.file_exists(str(documents)  + "/Pixel Zone/.data/user_config.save"):
-	var load_name = $Control.load_name
-	$connect/name.set_text(str(load_name))
 
 func _on_Button_pressed():
 	$Control.show()
@@ -99,7 +94,7 @@ func _on_signup_pressed():
 	if str(password) == str(password_confirm):
 		Firebase.Auth.signup_with_email_and_password(email, password)
 		$Control/Control2.hide()
-		$Control/Control.show()
+		$Control.hide()
 
 func _on_Button4_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/login.html")

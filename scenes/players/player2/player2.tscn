@@ -656,7 +656,6 @@ action = "move_right"
 visibility_mode = 1
 
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 2 )]
-visible = false
 margin_top = 18.0
 margin_bottom = -23.0
 

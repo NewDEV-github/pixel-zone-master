@@ -25,17 +25,20 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 
 [node name="label" type="Label" parent="players"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -58.0
-margin_top = -173.5
-margin_right = 58.0
-margin_bottom = -134.5
+anchor_left = 0.300781
+anchor_top = 0.211667
+anchor_right = 0.707031
+anchor_bottom = 0.276667
+margin_top = -4.05312e-006
+margin_bottom = -2.6226e-006
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_AP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="start" type="Button" parent="players"]
 margin_left = 442.0
@@ -77,6 +80,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="connect"]
 visible = false
@@ -85,74 +91,88 @@ margin_bottom = 39.0
 text = "Login"
 
 [node name="name_label" type="Label" parent="connect"]
-margin_left = 329.0
-margin_top = 92.0
-margin_right = 477.0
-margin_bottom = 131.0
+anchor_left = 0.321289
+anchor_top = 0.153333
+anchor_right = 0.462891
+anchor_bottom = 0.218333
+margin_top = -1.66893e-006
+margin_bottom = 1.43051e-006
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_NAME"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="name" type="LineEdit" parent="connect"]
-margin_left = 329.5
-margin_top = 136.5
-margin_right = 485.5
-margin_bottom = 175.5
+anchor_left = 0.322266
+anchor_top = 0.228333
+anchor_right = 0.463867
+anchor_bottom = 0.293333
+margin_top = -3.45707e-006
+margin_bottom = 6.55651e-006
 size_flags_horizontal = 2
 size_flags_vertical = 2
-text = "The Warrior"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ip_label" type="Label" parent="connect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -186.0
-margin_top = -122.5
-margin_right = 14.0
-margin_bottom = -83.5
+anchor_left = 0.318359
+anchor_top = 0.295833
+anchor_right = 0.513672
+anchor_bottom = 0.360833
+margin_top = 8.34465e-006
+margin_bottom = -8.82149e-006
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_IP_Adress"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="ip" type="LineEdit" parent="connect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -183.0
-margin_top = -86.0
-margin_right = -27.0
-margin_bottom = -47.0
+anchor_left = 0.321289
+anchor_top = 0.356667
+anchor_right = 0.461914
+anchor_bottom = 0.421667
+margin_top = 7.39098e-006
+margin_bottom = 9.05991e-006
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "127.0.0.1"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="host" type="Button" parent="connect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 36.0
-margin_top = -165.0
-margin_right = 163.0
-margin_bottom = -124.0
+anchor_left = 0.535156
+anchor_top = 0.225
+anchor_right = 0.664063
+anchor_bottom = 0.293333
+margin_top = 3.57628e-006
+margin_right = -5.0
+margin_bottom = 6.91414e-006
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "KEY_Host"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="join" type="Button" parent="connect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 35.5
-margin_top = -87.5
-margin_right = 162.5
-margin_bottom = -48.5
+anchor_left = 0.534668
+anchor_top = 0.354167
+anchor_right = 0.658691
+anchor_bottom = 0.419167
+margin_top = 5.96046e-006
+margin_bottom = 7.39098e-006
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "KEY_Join"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="error_label" type="Label" parent="connect"]
 anchor_left = 0.5
@@ -169,25 +189,25 @@ custom_colors/font_color = Color( 0.820312, 0.291595, 0.291595, 1 )
 align = 1
 
 [node name="back" type="Button" parent="connect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -67.9999
-margin_top = 29.5
-margin_right = 67.9999
-margin_bottom = 68.5
+anchor_left = 0.433594
+anchor_top = 0.549167
+anchor_right = 0.566406
+anchor_bottom = 0.614167
+margin_left = 7.62939e-006
+margin_top = -7.62939e-006
+margin_right = 2.28882e-005
+margin_bottom = -6.19888e-006
 text = "KEY_Quit"
-
-[node name="ChatControl" parent="connect" instance=ExtResource( 3 )]
-visible = false
-margin_left = -2.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="error" type="AcceptDialog" parent="."]
 margin_right = 55.0
 margin_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+window_title = "Alarm!"
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0

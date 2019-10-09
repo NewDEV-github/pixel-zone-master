@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/ice_cap_adventure/ice_01.gd" type="Script" id=1]
 [ext_resource path="res://titles/ice.tres" type="TileSet" id=2]
@@ -6,16 +6,12 @@
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/parllax_bg_3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.833, 195.539 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4321.75, 130.397 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 1.5, 258.5 )
 
 [node name="ice_cap1" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,9 +29,6 @@ autoplay = true
 bus = "Music"
 
 [node name="parallax_bg" parent="." instance=ExtResource( 5 )]
-
-[node name="next_level" parent="." instance=ExtResource( 7 )]
-position = Vector2( 13158.6, 2666.95 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 13196.2, 2613.04 )
@@ -171,13 +164,5 @@ position = Vector2( 4429.43, 2308.5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 21.6421, 158.709 )
 shape = SubResource( 2 )
-
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2( 310.5, 127.5 )
-scale = Vector2( 0.5, 1 )
-shape = SubResource( 3 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]

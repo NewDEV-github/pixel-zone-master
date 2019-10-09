@@ -30,6 +30,7 @@ func _ready():
 	var true_ = 'false'
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()
+	
 	var conf = File.new()
 	if not conf.file_exists('user://456378r9w4iufuhj'):
 		vconf.set_value("saves", "game_pass", "false")

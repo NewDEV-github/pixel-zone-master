@@ -222,6 +222,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("TextureRect/PopupPanel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "new_ANDROID"
@@ -320,6 +332,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("TextureRect/PopupPanel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [node name="GUI" type="Control"]
@@ -479,6 +503,7 @@ margin_left = -248.0
 margin_top = -39.0
 rect_pivot_offset = Vector2( -884, 579 )
 theme = ExtResource( 4 )
+text = "LANG_EN"
 clip_text = true
 align = 1
 items = [ "LANG_EN", null, false, 0, null, "LANG_ES", null, false, 1, null, "LANG_DE", null, false, 2, null, "LANG_PL", null, false, 3, null, "LANG_IT", null, false, 4, null, "LANG_PT", null, false, 5, null, "LANG_FR", null, false, 6, null ]
@@ -509,7 +534,6 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="Back" type="Button" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

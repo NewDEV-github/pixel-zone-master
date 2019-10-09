@@ -19,12 +19,12 @@ func _ready():
 	if str(os) == 'Android':
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
 		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
-		$Button.hide()
+		$Back.hide()
 		$VScrollBar.set_scale(Vector2(2,1))
 	if not str(os) == 'Android':
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
 		$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
-		$Button.show()
+		$Back.show()
 		$VScrollBar.set_scale(Vector2(1,1))
 	var loaded_lang = str(TranslationServer.get_locale())
 	if loaded_lang == "en":
