@@ -19,3 +19,11 @@ android/build/build/intermediates/incremental/debug-mergeJavaRes/merge-state
 *.jar
 *.aar
 *.ap_
+android/build/build/intermediates/incremental/debug-mergeJniLibs/merge-state
+android/build/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/8SWUDfAgbCRq_hMglByRYm7b8o4=
+android/build/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/MkGuuZNtdxjIrABVEO9UH73tp18=
+android/build/build/intermediates/incremental/release-mergeJniLibs/merge-state
+android/build/build/intermediates/incremental/packageRelease/tmp/release/zip-cache/lvRD1NDn9R9QrEDwBUxlcJ3IIJI=
+android/build/build/intermediates/incremental/release-mergeJavaRes/merge-state
+android/build/build/intermediates/incremental/release-mergeJniLibs/zip-cache/aMK2WwYm248hTLcCMPbn11IDUKY=
+android/build/build/intermediates/incremental/release-mergeJavaRes/zip-cache/aMK2WwYm248hTLcCMPbn11IDUKY=
