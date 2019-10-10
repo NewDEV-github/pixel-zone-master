@@ -6,6 +6,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="progress" type="ProgressBar" parent="."]
 light_mask = 2
@@ -18,3 +21,8 @@ margin_top = -7.0
 margin_right = 100.0
 margin_bottom = 7.0
 step = 1.0
+
+[node name="loading" type="Panel" parent="."]
+visible = false
+margin_right = 1027.0
+margin_bottom = 595.0

@@ -598,6 +598,7 @@ custom_fonts/font = ExtResource( 2 )
 value = 100.0
 
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
+light_mask = 2
 position = Vector2( 10, 460 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 12 )
@@ -606,6 +607,7 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="ui/Control"]
+light_mask = 2
 position = Vector2( 130, 460 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 13 )
@@ -622,6 +624,7 @@ __meta__ = {
 }
 
 [node name="pause" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+light_mask = 2
 position = Vector2( -75, 0 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 15 )
@@ -629,6 +632,7 @@ action = "ui_cancel"
 visibility_mode = 1
 
 [node name="fire" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+light_mask = 2
 position = Vector2( -117, 360 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 16 )
@@ -636,6 +640,7 @@ action = "shoot"
 visibility_mode = 1
 
 [node name="jump" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+light_mask = 2
 position = Vector2( -117, 480 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 14 )

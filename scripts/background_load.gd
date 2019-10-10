@@ -39,7 +39,6 @@ func _thread_load(path):
 func _thread_done(resource):
 	assert(resource)
 	
-	# Always wait for threads to finish, this is required on Windows
 	thread.wait_to_finish()
 	
 	#Hide the progress bar
@@ -58,12 +57,11 @@ func _thread_done(resource):
 	progress.hide()
 
 func load_scene(path):
-	
-	thread = Thread.new()
-	thread.start( self, "_thread_load", path)
-	raise() # show on top
-	progress.show()
-
-	
-#func _process(delta):
-#	progress.set_position(CENTER)
+	if not str(OS.get_name()) == 'Android':
+		thread = Thread.new()
+		thread.start( self, "_thread_load", path)
+		raise() # show on top
+		progress.show()
+	if str(OS.get_name()) == 'Android':
+#		raise()  show on top
+		get_tree().change_scene(str(path))

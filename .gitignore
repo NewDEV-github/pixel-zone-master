@@ -1,3 +1,21 @@
 
 dlcs/3D/level/geometry/demolevel.dae
 *.md
+*.bin
+*.lock
+*.java
+*.json
+*.properties
+*.gson
+android/build/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/8SWUDfAgbCRq_hMglByRYm7b8o4=
+android/build/build/intermediates/incremental/debug-mergeJavaRes/merge-state
+*.dex
+*.xml
+*.txt
+*.class
+*.flat
+*.apk
+*.so
+*.jar
+*.aar
+*.ap_
