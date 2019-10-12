@@ -94,15 +94,14 @@ enable_audio_input=true
 
 [autoload]
 
-game_state="*res://globals/game_state.gd"
 globals="*res://globals/globals.gd"
+background_load="*res://scenes/background_load.tscn"
+game_state="*res://globals/game_state.gd"
 settings="*res://globals/settings.gd"
 gamestate="*res://globals/gamestate.gd"
 log_file="*res://scenes/log_file.tscn"
-background_load="*res://scenes/background_load.tscn"
 Firebase="*res://addons/GDFirebase/Firebase.gd"
 HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
-upload="*res://scenes/upload.tscn"
 DebugConsole="*res://console/DebugConsole.tscn"
 
 [debug]

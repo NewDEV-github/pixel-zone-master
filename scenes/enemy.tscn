@@ -37,6 +37,7 @@ scale = Vector2( 23.5056, 10.8629 )
 pause_particles = false
 
 [node name="anim2" type="AnimationPlayer" parent="."]
+autoplay = "walk"
 anims/explode = ExtResource( 2 )
 anims/idle = ExtResource( 3 )
 anims/walk = ExtResource( 4 )

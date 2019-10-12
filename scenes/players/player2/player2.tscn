@@ -643,6 +643,13 @@ normal = ExtResource( 14 )
 action = "shoot"
 visibility_mode = 1
 
+[node name="Sprite" type="Sprite" parent="ui/Control/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -27.062, 572.063 )
+rotation = 6.28319
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 17 )
+
 [node name="left" type="TouchScreenButton" parent="ui/Control"]
 light_mask = 2
 position = Vector2( 10, 460 )
@@ -694,16 +701,9 @@ margin_bottom = 66.5834
 custom_fonts/font = ExtResource( 9 )
 text = "Full Health!"
 
-[node name="Sprite" type="Sprite" parent="ui"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 996.938, 572.063 )
-rotation = 18.8496
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ui"]
 pause_mode = 2
+autoplay = "saving_state"
 anims/full_health = ExtResource( 19 )
 anims/loaded_level = ExtResource( 4 )
 anims/next_level = ExtResource( 3 )

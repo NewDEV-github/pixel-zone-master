@@ -4,19 +4,19 @@
 resource_name = "saving_state"
 length = 4.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/path = NodePath("Control/Control/Sprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 3, 4.5 ),
+"times": PoolRealArray( 0, 1, 3.5, 4.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 360.0, 720.0, 1080.0 ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:visible")
+tracks/1/path = NodePath("Control/Control/Sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -24,19 +24,6 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 4.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 3.5, 4.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ -360.0, 360.0 ]
 }
-

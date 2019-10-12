@@ -486,6 +486,7 @@ margin_top = 43.0
 margin_right = 247.0
 margin_bottom = 82.0
 theme = ExtResource( 9 )
+disabled = true
 text = "KEY_SELECT"
 flat = true
 

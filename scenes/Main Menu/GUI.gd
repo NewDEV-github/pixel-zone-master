@@ -11,10 +11,11 @@ var mod_temp
 var os = OS.get_name()
 var download_path = 'res://Level Editor/'
 func _on_Play_pressed():
-	if not str(OS.get_name()) == 'Android':
-		$AnimationPlayer.play("new")
-	if str(OS.get_name()) == 'Android':
-		$AnimationPlayer.play("new_ANDROID")
+	if globals.player_has_been_selected == true:
+		if not str(OS.get_name()) == 'Android':
+			$AnimationPlayer.play("new")
+		if str(OS.get_name()) == 'Android':
+			$AnimationPlayer.play("new_ANDROID")
 func _ready():
 	if str(os) == 'Android':
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
@@ -133,6 +134,7 @@ func _on_TextureButton_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
+	globals.player_has_been_selected = true
 	globals._save()
 
 func _on_TextureButton2_pressed():
@@ -142,9 +144,16 @@ func _on_TextureButton2_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
+	globals.player_has_been_selected = true
 	globals._save()
 func _on_Play5_pressed():
-	$TextureRect/PopupPanel.popup_centered()
+	if globals.player_has_been_selected == false:
+		$TextureRect/PopupPanel.popup_centered()
+	elif globals.player_has_been_selected == true:
+		if not str(OS.get_name()) == 'Android':
+			$AnimationPlayer.play("new")
+		if str(OS.get_name()) == 'Android':
+			$AnimationPlayer.play("new_ANDROID")
 
 
 func _on_LoadGame2_pressed():

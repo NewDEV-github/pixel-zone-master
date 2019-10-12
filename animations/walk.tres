@@ -5,7 +5,7 @@ length = 1.25
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
+tracks/0/path = NodePath("../enemy/sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -16,4 +16,3 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 0 ]
 }
-

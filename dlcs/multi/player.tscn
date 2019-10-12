@@ -615,7 +615,7 @@ passby_press = true
 action = "move_right"
 visibility_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Control"]
+[node name="Control" type="VBoxContainer" parent="ui/Control"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -623,7 +623,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="pause" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+[node name="pause" type="TouchScreenButton" parent="ui/Control/Control"]
 light_mask = 2
 position = Vector2( -75, 0 )
 scale = Vector2( 0.6, 0.6 )
@@ -631,7 +631,7 @@ normal = ExtResource( 15 )
 action = "ui_cancel"
 visibility_mode = 1
 
-[node name="fire" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+[node name="fire" type="TouchScreenButton" parent="ui/Control/Control"]
 light_mask = 2
 position = Vector2( -117, 360 )
 scale = Vector2( 1.8, 1.8 )
@@ -639,13 +639,21 @@ normal = ExtResource( 16 )
 action = "shoot"
 visibility_mode = 1
 
-[node name="jump" type="TouchScreenButton" parent="ui/Control/VBoxContainer"]
+[node name="jump" type="TouchScreenButton" parent="ui/Control/Control"]
 light_mask = 2
 position = Vector2( -117, 480 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 14 )
 action = "jump"
 visibility_mode = 1
+
+[node name="Sprite" type="Sprite" parent="ui/Control/Control"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -27.062, 572.063 )
+rotation = -6.28319
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 18 )
 
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 17 )]
 margin_top = 18.0
@@ -682,14 +690,6 @@ margin_left = 77.0
 margin_top = 1.0
 margin_right = 367.0
 margin_bottom = 47.0
-
-[node name="Sprite" type="Sprite" parent="ui"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 996.938, 572.063 )
-rotation = 18.8496
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ui"]
 pause_mode = 2

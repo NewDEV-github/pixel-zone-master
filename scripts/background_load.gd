@@ -4,9 +4,8 @@ var thread = null
 
 onready var progress = $progress
 
-var SIMULATED_DELAY_SEC = 1.0
-func _ready():
-	progress.hide()
+var SIMULATED_DELAY_SEC = 1.1
+
 func _thread_load(path):
 	var ril = ResourceLoader.load_interactive(path)
 	assert(ril)
@@ -20,7 +19,7 @@ func _thread_load(path):
 		# Update progress bar, use call deferred, which routes to main thread
 		progress.call_deferred("set_value", ril.get_stage())
 		# Simulate a delay
-		OS.delay_msec(SIMULATED_DELAY_SEC * 1000.0)
+		OS.delay_msec(SIMULATED_DELAY_SEC * 1500.0)
 		# Poll (does a load step)
 		var err = ril.poll()
 		# if OK, then load another one. If EOF, it' s done. Otherwise there was an error.
@@ -39,6 +38,7 @@ func _thread_load(path):
 func _thread_done(resource):
 	assert(resource)
 	
+	# Always wait for threads to finish, this is required on Windows
 	thread.wait_to_finish()
 	
 	#Hide the progress bar
@@ -54,14 +54,11 @@ func _thread_done(resource):
 	# Set as current scene
 	get_tree().current_scene = new_scene
 	
-	progress.hide()
+	progress.visible = false
 
 func load_scene(path):
-	if not str(OS.get_name()) == 'Android':
-		thread = Thread.new()
-		thread.start( self, "_thread_load", path)
-		raise() # show on top
-		progress.show()
-	if str(OS.get_name()) == 'Android':
-#		raise()  show on top
-		get_tree().change_scene(str(path))
+	print(str('LOADING SCENE: ' + path + '...'))
+	thread = Thread.new()
+	thread.start( self, "_thread_load", path)
+	raise() # show on top
+	progress.visible = true
