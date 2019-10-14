@@ -146,6 +146,7 @@ func _on_TextureButton2_pressed():
 		$AnimationPlayer.play("new_ANDROID")
 	globals.player_has_been_selected = true
 	globals._save()
+
 func _on_Play5_pressed():
 	if globals.player_has_been_selected == false:
 		$TextureRect/PopupPanel.popup_centered()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://dlcs/multi/lobby.gd" type="Script" id=2]
-[ext_resource path="res://scenes/ChatControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level Editor/buttongroup.tres" type="ButtonGroup" id=3]
 [ext_resource path="res://scripts/log_in.gd" type="Script" id=4]
+[ext_resource path="res://scenes/ChatControl.tscn" type="PackedScene" id=5]
 
 [node name="lobby" type="Control"]
 anchor_right = 1.0
@@ -62,6 +63,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 
 [node name="back3" type="Button" parent="players"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -72,7 +74,7 @@ margin_right = 68.0
 margin_bottom = 251.0
 text = "Back"
 
-[node name="ChatControl2" parent="players" instance=ExtResource( 3 )]
+[node name="ChatControl2" parent="players" instance=ExtResource( 5 )]
 visible = false
 
 [node name="connect" type="Panel" parent="."]
@@ -202,6 +204,35 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="Control" type="VBoxContainer" parent="connect"]
+visible = false
+margin_right = 216.0
+margin_bottom = 125.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="connect/Control"]
+margin_right = 216.0
+margin_bottom = 39.0
+text = "Admin rights"
+
+[node name="ROBI" type="CheckBox" parent="connect/Control"]
+margin_top = 43.0
+margin_right = 216.0
+margin_bottom = 82.0
+group = ExtResource( 3 )
+text = "ROBI"
+align = 1
+
+[node name="ROBI2" type="CheckBox" parent="connect/Control"]
+margin_top = 86.0
+margin_right = 216.0
+margin_bottom = 125.0
+group = ExtResource( 3 )
+text = "UFO-ROBI"
+align = 1
+
 [node name="error" type="AcceptDialog" parent="."]
 margin_right = 55.0
 margin_bottom = 58.0
@@ -210,6 +241,7 @@ size_flags_vertical = 2
 window_title = "Alarm!"
 
 [node name="Control" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -380,6 +412,8 @@ valign = 3
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="connect/back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="connect/Control/ROBI" to="." method="_on_ROBI_toggled"]
+[connection signal="toggled" from="connect/Control/ROBI2" to="." method="_on_ROBI2_toggled"]
 [connection signal="pressed" from="Control/Control2/VBoxContainer/signup" to="." method="_on_signup_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button2" to="Control" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button4" to="." method="_on_Button4_pressed"]

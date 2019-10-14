@@ -12,7 +12,7 @@
 [ext_resource path="res://scenes/one_way_platform.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 49.9733, 10 )
+extents = Vector2( 375.62, 37.6396 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6677.58, 153.924 )
@@ -285,7 +285,7 @@ bus = "Music"
 position = Vector2( 7163.36, 2274.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nextlevel"]
-position = Vector2( 4.49951, 1.5 )
+position = Vector2( -11.5005, -334.5 )
 rotation = 1.5708
 shape = SubResource( 1 )
 one_way_collision = true
@@ -298,6 +298,6 @@ position = Vector2( 1450.41, -74.25 )
 shape = SubResource( 2 )
 
 [node name="next_level" parent="." instance=ExtResource( 6 )]
-position = Vector2( 7401.93, 2417.9 )
+position = Vector2( 7397.93, 2417.9 )
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

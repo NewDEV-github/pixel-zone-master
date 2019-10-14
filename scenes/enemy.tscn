@@ -90,7 +90,7 @@ bus = "SFX"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0.99451 )
 margin_left = -31.5
 margin_top = -50.0
 margin_right = 39.5

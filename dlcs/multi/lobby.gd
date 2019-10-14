@@ -1,4 +1,13 @@
 extends Control
+func _process(delta):
+	if $connect/Control/CheckButton.pressed == true:
+		$connect/Control/ROBI.show()
+		$connect/Control/ROBI2.show()
+		$connect/join.hide()
+	if $connect/Control/CheckButton.pressed == false:
+		$connect/Control/ROBI.hide()
+		$connect/Control/ROBI2.hide()
+		$connect/join.show()
 func _ready():
 	# Called every time the node is added to the scene.
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
@@ -98,3 +107,13 @@ func _on_signup_pressed():
 
 func _on_Button4_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/login.html")
+
+
+func _on_ROBI_toggled(button_pressed):
+	if button_pressed == true:
+		gamestate.player_scene = load("res://dlcs/multi/player.tscn")
+
+
+func _on_ROBI2_toggled(button_pressed):
+	if button_pressed == true:
+		gamestate.player_scene = load("res://dlcs/multi/player2.tscn")

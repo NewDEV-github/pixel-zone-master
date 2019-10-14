@@ -98,7 +98,7 @@ func _on_ItemList_item_selected(index):
 	if index == 3:
 		path = 'res://sounds/levels/Ice_Cap_Adventure/Ice_Cap_Adventure.ogg'
 	if index == 4:
-		path = "res://sounds/Hill.ogg"
+		path = "res://sounds/hill.ogg"
 	if index == 5:
 		path = 'res://sounds/sci-fi.ogg'
 	if index == 6:
