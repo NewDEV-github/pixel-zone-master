@@ -1,6 +1,6 @@
 extends Control
-
-export (String) var Update_server = "masterpolska123.github.io/home/updates/"
+export (float) var file_name
+export (String) var Update_server = "https://masterpolska123.github.io/home/updates/"
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
@@ -11,22 +11,33 @@ var version_to_download
 var latest_update
 var update_info
 func _ready():
-	$Panel.show()
-	$ProgressBar.show()
-	$ProgressBar.set_value(0)
-	$HTTPRequest.set_download_file("user://latest_version.txt")
-	$HTTPRequest2.set_download_file("user://version_info.txt")
-	$ProgressBar.set_value(20)
-	$HTTPRequest.request("masterpolska123.github.io/home/updates_info/latest_version.txt")
-	$ProgressBar.set_value(45)
-	$HTTPRequest2.request("masterpolska123.github.io/home/updates_info/version_info.txt")
-	$ProgressBar.set_value(50)
+	$HTTPRequest.set_download_file('user://%s.txt' % [str(file_name)])
+	print(str("https://masterpolska123.github.io/home/updates_info/%s.txt" % [str(file_name)]))
+	$HTTPRequest.request("https://masterpolska123.github.io/home/updates_info/%s.txt" % [str(file_name)], [], true)
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	if response_code == HTTPClient.RESPONSE_OK :
+		print('Update avaliable')
+		$AcceptDialog.connect("confirmed", self, '_ok')
+		$AcceptDialog.set_text('Update found.\n Click ok to go to download website.')
+		$AcceptDialog.popup_centered()
+#	if response_code == HTTPClient.RESPONSE_NOT_FOUND :
+#		print('Update not found')
+#		$AcceptDialog.connect("confirmed", self, '_failed')
+#		$AcceptDialog.set_text('Update not found.\n Click ok or "x" to close.')
+#		$AcceptDialog.popup_centered()
+#	if response_code == HTTPClient.RESPONSE_BAD_GATEWAY :
+#		print('Sorry... Bad gateway')
+#		$AcceptDialog.connect("confirmed", self, '_failed')
+#		$AcceptDialog.set_text('Update not found.\n Click ok or "x" to close.')
+#		$AcceptDialog.popup_centered()
+	
+	print(str(response_code))
+func _ok():
+	OS.shell_open('https://masterpolska123.github.io/home/pixelzone.html')
+func _failed():
+	$AcceptDialog.hide()
+
+
 func _on_Button_pressed():
-	$HTTPRequest2.set_download_file(str(documents) + "/Pixel Zone/.data/updates/update.pck")
-	$HTTPRequest2.request(str(Update_server) + "update.pck")
-	$RichTextLabel2.add_text("\n\nDebug Output:\npgrading game.")
-
-
-func _on_Timer_timeout():
-	$Panel.hide()
-	$ProgressBar.hide()
+	_ready()

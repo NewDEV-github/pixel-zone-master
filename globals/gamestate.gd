@@ -1,4 +1,5 @@
 extends Node
+var host = NetworkedMultiplayerENet.new()
 var player_scene = load("res://dlcs/multi/player.tscn")
 # Default game port
 const DEFAULT_PORT = 10567
@@ -132,7 +133,6 @@ func host_game(new_player_name):
 
 func join_game(ip, new_player_name):
 	player_name = new_player_name
-	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
 
@@ -167,6 +167,11 @@ func end_game():
 	players.clear()
 	get_tree().set_network_peer(null) # End networking
 
+func check_host(host:String):
+	if host.is_valid_ip_address() == true:
+		return true
+	if host.is_valid_ip_address() == false:
+		return false
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")

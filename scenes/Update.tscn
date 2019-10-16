@@ -1,92 +1,51 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Update.gd" type="Script" id=1]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=2]
-[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Panel2" type="Panel" parent="."]
-modulate = Color( 0.768627, 0.768627, 0.768627, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = -4.0
-margin_right = 2.0
-margin_bottom = 1.0
-theme = ExtResource( 2 )
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 3.0
-margin_bottom = -33.0
-bbcode_enabled = true
-bbcode_text = "[center]
-Thank You for entering beta tests.
-You Can send an issue to [url]ww.github.com[/url]
-[url]mailto:karoltomaszewskimusic@gmail.com[/url]"
-text = "
-Thank You for entering beta tests.
-You Can send an issue to ww.github.com
-mailto:karoltomaszewskimusic@gmail.com"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -280.0
-margin_top = -43.0
-theme = ExtResource( 2 )
-text = "KEY_Download"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+file_name = 1.0
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-use_threads = true
-
-[node name="HTTPRequest2" type="HTTPRequest" parent="."]
-use_threads = true
-
-[node name="HTTPRequest3" type="HTTPRequest" parent="."]
-use_threads = true
-
-[node name="HTTPRequest4" type="HTTPRequest" parent="."]
-use_threads = true
-
-[node name="HTTPRequest5" type="HTTPRequest" parent="."]
-use_threads = true
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 3 )
-text = "KEY_UPDATE"
-align = 1
-valign = 1
+[node name="Button" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.5
+margin_top = -19.5
+margin_right = 42.5
+margin_bottom = 19.5
+text = "Check"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-margin_right = 202.0
-margin_bottom = 14.0
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 263.0
+margin_top = 99.0
+margin_right = 739.0
+margin_bottom = 378.0
+popup_exclusive = true
+window_title = "Update information"
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

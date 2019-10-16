@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
 [ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
+[ext_resource path="res://scenes/Update.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 4
@@ -585,6 +586,8 @@ __meta__ = {
 }
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
+
+[node name="Control2" parent="." instance=ExtResource( 7 )]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]

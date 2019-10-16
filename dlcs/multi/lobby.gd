@@ -18,8 +18,12 @@ func _ready():
 func login_show():
 	$connect/Button.show()
 func _on_host_pressed():
+	var ip = $connect/ip.text
 	if (get_node("connect/name").text == ""):
 		get_node("connect/error_label").text="Invalid name!"
+		return
+	if (not ip.is_valid_ip_address()):
+		get_node("connect/error_label").text="Invalid IPv4 address!"
 		return
 
 	get_node("connect").hide()
@@ -29,7 +33,6 @@ func _on_host_pressed():
 	var player_name = get_node("connect/name").text
 	gamestate.host_game(player_name)
 	refresh_lobby()
-
 func _on_join_pressed():
 	if (get_node("connect/name").text == ""):
 		get_node("connect/error_label").text="Invalid name!"
@@ -117,3 +120,12 @@ func _on_ROBI_toggled(button_pressed):
 func _on_ROBI2_toggled(button_pressed):
 	if button_pressed == true:
 		gamestate.player_scene = load("res://dlcs/multi/player2.tscn")
+
+
+func _on_join2_pressed():
+	var os = OS.get_name()
+	var ip = IP.get_local_addresses()
+	print(ip)
+	$connect/WindowDialog/TextEdit.add_text(str('\n' + str(ip)))
+	$connect/WindowDialog.popup_centered()
+
