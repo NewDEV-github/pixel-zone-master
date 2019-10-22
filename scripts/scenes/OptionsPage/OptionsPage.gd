@@ -3,6 +3,18 @@ class_name Options_Page
 var current_tab = 0
 var music
 var custom_music
+onready var pause_x = $"TabContainer/Controller Test/Control/VBoxContainer/pause/x".text
+onready var pause_y = $"TabContainer/Controller Test/Control/VBoxContainer/pause/y".text
+onready var jump_x = $"TabContainer/Controller Test/Control/VBoxContainer/jump/x".text
+onready var jump_y = $"TabContainer/Controller Test/Control/VBoxContainer/jump/y".text
+onready var shoot_x = $"TabContainer/Controller Test/Control/VBoxContainer/shoot/x".text
+onready var shoot_y = $"TabContainer/Controller Test/Control/VBoxContainer/shoot/y".text
+onready var left_x = $"TabContainer/Controller Test/Control/VBoxContainer/left/x".text
+onready var left_y = $"TabContainer/Controller Test/Control/VBoxContainer/left/y".text
+onready var right_x = $"TabContainer/Controller Test/Control/VBoxContainer/right/x".text
+onready var right_y = $"TabContainer/Controller Test/Control/VBoxContainer/right/y".text
+var player_1 = preload('res://scenes/players/player1/player.gd').new()
+var player_2 = preload('res://scenes/players/player2/player2.gd').new()
 var os = str(OS.get_name())
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 onready var tab_container = get_node("TabContainer")
@@ -21,14 +33,16 @@ onready var tab_container = get_node("TabContainer")
 #		tab_container.set_current_tab(int(float(current_tab)))
 #	print(current_tab)
 func _process(delta):
+	
 	tab_container.set_tab_title(0, "KEY_CON_TAB")
 	tab_container.set_tab_title(1, "KEY_THEME")
 	tab_container.set_tab_title(2, "KEY_LANG")
 	tab_container.set_tab_title(3, "KEY_G_A")
+	tab_container.set_tab_title(4, "KEY_CONTROLLER")
 	if not str(os) == 'Android':
-		tab_container.set_tab_title(4, 'KEY_CONTROLLER')
+		$TabContainer.set_tab_disabled(4, false)
 	else:
-		tab_container.set_tab_title(4, str(tr('KEY_CON_TAB') + ' mobile'))
+		$TabContainer.set_tab_disabled(4, true)
 	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
@@ -37,6 +51,7 @@ func _process(delta):
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
 		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(false)
+	
 func _on_ApplyButton_pressed():
 	hide()
 
@@ -96,7 +111,7 @@ func _on_ItemList_item_selected(index):
 	if index == 2:
 		path = "res://sounds/brazil-fast.ogg"
 	if index == 3:
-		path = 'res://sounds/levels/Ice_Cap_Adventure/Ice_Cap_Adventure.ogg'
+		path = 'res://sounds/Ice_Cap_Adventure.ogg'
 	if index == 4:
 		path = "res://sounds/hill.ogg"
 	if index == 5:
@@ -155,10 +170,3 @@ func _on_BetaTests_pressed():
 	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
 	beta.close()
 
-
-func _on_CheckButton_pressed():
-	pass # Replace with function body.
-
-
-func _on_SFXBar_value_changed(value):
-	pass # Replace with function body.

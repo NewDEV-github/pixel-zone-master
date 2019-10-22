@@ -5,11 +5,11 @@
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/moving_platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/one_way_platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/parallax_bg.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=8]
 [ext_resource path="res://sounds/music.ogg" type="AudioStream" id=9]
-[ext_resource path="res://scenes/one_way_platform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 375.62, 37.6396 )
@@ -221,46 +221,46 @@ rotation = -0.0826906
 position = Vector2( 1700.06, 1066.92 )
 rotation = 0.547997
 
-[node name="one_way_platform" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1099.56, 940.804 )
 
-[node name="one_way_platform13" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform13" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1339.63, 967.879 )
 
-[node name="one_way_platform1" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform1" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 967.609, 836.547 )
 
-[node name="one_way_platform2" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform2" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1190.78, 754.282 )
 
-[node name="one_way_platform3" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform3" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 953.762, 638.622 )
 
-[node name="one_way_platform6" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform6" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1192.93, 520.298 )
 
-[node name="one_way_platform4" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform4" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1256.76, 638.622 )
 
-[node name="one_way_platform7" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform7" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 2784.9, 1655.71 )
 
-[node name="one_way_platform8" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform8" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 2976.23, 1555 )
 
-[node name="one_way_platform9" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform9" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 3122.25, 1469.41 )
 
-[node name="one_way_platform10" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform10" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 3200.29, 1353.6 )
 
-[node name="one_way_platform11" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform11" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 3200.29, 1237.8 )
 
-[node name="one_way_platform5" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform5" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1039.29, 409.746 )
 
-[node name="one_way_platform12" parent="props" instance=ExtResource( 10 )]
+[node name="one_way_platform12" parent="props" instance=ExtResource( 6 )]
 position = Vector2( 1187.79, 281.496 )
 
 [node name="parallax_bg" parent="." instance=ExtResource( 7 )]
@@ -297,7 +297,7 @@ position = Vector2( 0, 2772.19 )
 position = Vector2( 1450.41, -74.25 )
 shape = SubResource( 2 )
 
-[node name="next_level" parent="." instance=ExtResource( 6 )]
+[node name="next_level" parent="." instance=ExtResource( 10 )]
 position = Vector2( 7397.93, 2417.9 )
 [connection signal="body_entered" from="nextlevel" to="." method="_on_nextlevel_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

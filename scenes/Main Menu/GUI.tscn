@@ -533,21 +533,6 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="Back" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -25.0
-margin_right = 7.0
-theme = ExtResource( 4 )
-text = "<-"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "
-"
-}
-
 [node name="Control" parent="." instance=ExtResource( 5 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
@@ -570,6 +555,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Back" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_right = 7.0
+theme = ExtResource( 4 )
+text = "<-"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "
+"
+}
+
 [node name="WindowDialog" type="WindowDialog" parent="."]
 anchor_right = 0.586914
 anchor_bottom = 0.725
@@ -588,6 +588,10 @@ __meta__ = {
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
 [node name="Control2" parent="." instance=ExtResource( 7 )]
+margin_left = -7.25
+margin_right = -1031.25
+margin_bottom = -600.0
+file_name = 0.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
@@ -601,7 +605,7 @@ __meta__ = {
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]

@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://animations/cutscenes/cutscene6.anim" type="Animation" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -18,9 +20,12 @@ color = Color( 0, 0, 0, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.25
 margin_top = -133.0
+margin_right = -2.25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/cutscene6 = ExtResource( 1 )

@@ -4,7 +4,7 @@ var thread = null
 
 onready var progress = $progress
 
-var SIMULATED_DELAY_SEC = 1.1
+var SIMULATED_DELAY_SEC = 1.0
 
 func _thread_load(path):
 	var ril = ResourceLoader.load_interactive(path)
@@ -19,7 +19,7 @@ func _thread_load(path):
 		# Update progress bar, use call deferred, which routes to main thread
 		progress.call_deferred("set_value", ril.get_stage())
 		# Simulate a delay
-		OS.delay_msec(SIMULATED_DELAY_SEC * 1500.0)
+		OS.delay_msec(SIMULATED_DELAY_SEC * 1000.0)
 		# Poll (does a load step)
 		var err = ril.poll()
 		# if OK, then load another one. If EOF, it' s done. Otherwise there was an error.

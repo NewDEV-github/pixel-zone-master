@@ -156,18 +156,15 @@ func save():
 	return node_data
 func _on_ice_cap1_achieve3():
 	$anim.play("achievement")
-func dd():
-	$ui/Control/ProgressBar.value -= 70
 func _process(delta):
 	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
-	if (OS.is_window_maximized()) == true:
-		$camera.zoom = Vector2(1.2, 1.2)
-	if (OS.is_window_maximized()) == false:
-		$camera.zoom = Vector2(1, 1)
 func _on_fps_show():
 	$ui/Control/fps.show()
 func _on_fps_hide():
 	$ui/Control/fps.hide()
-signal size
-func _on_SunnyLand_size():
-	emit_signal("size")
+
+func _button_position(button, x, y):
+	button.set_position(Vector2(x,y))
+
+func _button_scale(button, x, y):
+	button.set_scale(Vector2(x,y))

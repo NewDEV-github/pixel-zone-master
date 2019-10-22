@@ -53,7 +53,6 @@ __meta__ = {
 }
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
-visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -734,6 +733,7 @@ margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
 
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
+visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -743,7 +743,6 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="joypads" parent="TabContainer/Controller Test" instance=ExtResource( 12 )]
-visible = false
 script = ExtResource( 13 )
 
 [node name="Control" type="Control" parent="TabContainer/Controller Test"]

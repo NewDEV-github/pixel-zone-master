@@ -19,7 +19,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == HTTPClient.RESPONSE_OK :
 		print('Update avaliable')
 		$AcceptDialog.connect("confirmed", self, '_ok')
-		$AcceptDialog.set_text('Update found.\n Click ok to go to download website.')
+		$AcceptDialog.set_text('Update found.\nClick ok to go to download website.')
 		$AcceptDialog.popup_centered()
 #	if response_code == HTTPClient.RESPONSE_NOT_FOUND :
 #		print('Update not found')

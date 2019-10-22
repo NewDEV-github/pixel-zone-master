@@ -156,11 +156,15 @@ func save():
 	return node_data
 func _on_ice_cap1_achieve3():
 	$anim.play("achievement")
-func dd():
-	$ui/Control/ProgressBar.value -= 70
 func _process(delta):
 	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
 func _on_fps_show():
 	$ui/Control/fps.show()
 func _on_fps_hide():
 	$ui/Control/fps.hide()
+
+func _button_position(button, x, y):
+	button.set_position(Vector2(x,y))
+
+func _button_scale(button, x, y):
+	button.set_scale(Vector2(x,y))

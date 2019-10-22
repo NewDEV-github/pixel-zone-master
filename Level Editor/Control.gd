@@ -777,7 +777,7 @@ func _on_10x10_pressed():
 	node.set_owner(root)
 	$Panel/Tree.add_item(str(node.name))
 	$SetCurrentTile.hide()
-	$PopupPanel5.hide()
+#	$PopupPanel5.hide()
 
 
 func _on_40x40_pressed():
