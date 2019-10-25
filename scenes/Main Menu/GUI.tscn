@@ -588,9 +588,6 @@ __meta__ = {
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
 [node name="Control2" parent="." instance=ExtResource( 7 )]
-margin_left = -7.25
-margin_right = -1031.25
-margin_bottom = -600.0
 file_name = 0.0
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
