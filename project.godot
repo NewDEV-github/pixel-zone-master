@@ -121,7 +121,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GDFirebase" )
+enabled=PoolStringArray( "GDFirebase", "adb_helper" )
 
 [input]
 

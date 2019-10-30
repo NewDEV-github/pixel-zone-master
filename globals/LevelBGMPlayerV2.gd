@@ -11,8 +11,6 @@ func _ready():
 func _play_bgm(mid, value):
 	if id != mid:
 		return
-	
-	# prints(mid, value)
 
 	if value:
 		if not is_connected("finished", self, "_after_intro"):

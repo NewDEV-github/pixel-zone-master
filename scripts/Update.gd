@@ -35,9 +35,15 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print(str(response_code))
 func _ok():
 	OS.shell_open('https://masterpolska123.github.io/home/pixelzone.html')
+	hide()
 func _failed():
 	$AcceptDialog.hide()
+	hide()
 
 
 func _on_Button_pressed():
 	_ready()
+
+
+func _on_AcceptDialog_popup_hide():
+	hide()

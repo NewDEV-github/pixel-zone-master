@@ -1,9 +1,10 @@
 extends Node
+var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var scene_path = ''
 var collected = 0 setget _set_collected, _get_collected
 var to_collect = 0
 var player
-
+var auto_load_mod = true
 signal collected_changed
 signal play_bgm(id, value)
 var player_has_been_selected = false
@@ -29,15 +30,11 @@ func _get_player_pos_x():
 func _get_player_pos_y():
 	var position_p = selected_player.position.y
 	return position_p
-func _save():
-	var a = File.new()
-	a.open("user://save_data.3", File.WRITE) #str(34567865))
-	a.store_string(str('preload('+scene_path+').instance()'))
-	a.close()
-
 func _ready():
-	var a = File.new()
-	a.open("user://save_data.3", File.READ)# str(34567865))
-	var file = a.get_line()
-#func _process(delta):
-#	print(str(selected_player))
+	var beta_2 = File.new()
+	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
+	var load_set = beta_2.get_line()
+	if load_set == 'True':
+		auto_load_mod = true
+	if load_set == 'False':
+		auto_load_mod = false

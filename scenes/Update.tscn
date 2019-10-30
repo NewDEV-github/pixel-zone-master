@@ -49,3 +49,4 @@ __meta__ = {
 }
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="popup_hide" from="AcceptDialog" to="." method="_on_AcceptDialog_popup_hide"]

@@ -4,9 +4,9 @@
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
-[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Update.tscn" type="PackedScene" id=5]
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
-[ext_resource path="res://scenes/Update.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 4
@@ -533,27 +533,25 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="Control" parent="." instance=ExtResource( 5 )]
+[node name="Control" parent="." instance=ExtResource( 7 )]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 0.0
 margin_bottom = 0.0
+
+[node name="VScrollBar" type="VSlider" parent="."]
+visible = false
+anchor_bottom = 1.0
+margin_right = 16.0
+rect_scale = Vector2( 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/back = SubResource( 2 )
 anims/back_ANDROID = SubResource( 3 )
 anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 4 )
-
-[node name="VScrollBar" type="VSlider" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-anchor_bottom = 1.0
-margin_right = 12.0
-rect_scale = Vector2( 2, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Back" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -587,8 +585,7 @@ __meta__ = {
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
-[node name="Control2" parent="." instance=ExtResource( 7 )]
-file_name = 0.0
+[node name="Control2" parent="." instance=ExtResource( 5 )]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]

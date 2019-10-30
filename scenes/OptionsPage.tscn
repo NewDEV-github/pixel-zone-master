@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scripts/scenes/OptionsPage/GraphicsBox.gd" type="Script" id=4]
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=5]
 [ext_resource path="res://scripts/scenes/OptionsPage/LPMBox.gd" type="Script" id=6]
-[ext_resource path="res://scripts/scenes/OptionsPage/Advanced.gd" type="Script" id=7]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=9]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=10]
@@ -52,7 +51,457 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
+light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 49.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Graphics & Audio"]
+light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GraphicsBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 547.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 207.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_GRAPHICS"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+margin_top = 211.0
+margin_right = 506.0
+margin_bottom = 295.0
+
+[node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+margin_right = 506.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
+light_mask = 2
+margin_right = 426.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_FPS"
+align = 1
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
+light_mask = 2
+margin_left = 430.0
+margin_right = 506.0
+margin_bottom = 40.0
+
+[node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
+margin_top = 44.0
+margin_right = 506.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+light_mask = 2
+margin_right = 426.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_LPM"
+align = 1
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
+light_mask = 2
+margin_left = 430.0
+margin_right = 506.0
+margin_bottom = 40.0
+
+[node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
+margin_top = 299.0
+margin_right = 506.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
+shortcut = SubResource( 2 )
+text = "KEY_APPLY"
+flat = true
+
+[node name="Advanced" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
+light_mask = 2
+margin_top = 510.0
+margin_right = 506.0
+margin_bottom = 547.0
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_AO"
+
+[node name="MusicBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
+margin_left = 510.0
+margin_right = 1016.0
+margin_bottom = 547.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_MUSIC"
+align = 1
+valign = 1
+
+[node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+margin_top = 61.0
+margin_right = 506.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_VOLUME"
+align = 1
+valign = 1
+
+[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
+visible = false
+light_mask = 2
+margin_left = 127.0
+margin_right = 250.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 3 )
+text = "Muted"
+flat = true
+
+[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
+visible = false
+light_mask = 2
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 3 )
+text = "Unmuted"
+flat = true
+
+[node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 122.0
+margin_right = 506.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -60.0
+max_value = 12.0
+step = 0.001
+value = -10.0
+rounded = true
+ticks_on_borders = true
+script = ExtResource( 9 )
+
+[node name="MusicBox2" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 183.0
+margin_right = 506.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Selected Music Volume"
+align = 1
+valign = 1
+
+[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+visible = false
+light_mask = 2
+margin_left = 157.0
+margin_right = 250.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Muted"
+flat = true
+
+[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
+visible = false
+light_mask = 2
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Unmuted"
+flat = true
+
+[node name="MusicBar2" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 244.0
+margin_right = 506.0
+margin_bottom = 301.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -60.0
+max_value = 12.0
+step = 0.001
+value = -10.0
+rounded = true
+ticks_on_borders = true
+script = ExtResource( 10 )
+
+[node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 305.0
+margin_right = 506.0
+margin_bottom = 362.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_BACKGROUND"
+align = 1
+valign = 1
+
+[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
+visible = false
+light_mask = 2
+margin_left = 157.0
+margin_right = 250.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Muted"
+flat = true
+
+[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
+visible = false
+light_mask = 2
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 4 )
+text = "Unmuted"
+flat = true
+
+[node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 366.0
+margin_right = 506.0
+margin_bottom = 423.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -60.0
+max_value = 12.0
+step = 0.001
+value = -10.0
+rounded = true
+ticks_on_borders = true
+script = ExtResource( 10 )
+
+[node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+margin_top = 427.0
+margin_right = 506.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
+light_mask = 2
+margin_right = 506.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_SFX"
+align = 1
+valign = 1
+
+[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
+visible = false
+light_mask = 2
+margin_left = 127.0
+margin_right = 250.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 5 )
+text = "Muted"
+flat = true
+
+[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
+visible = false
+light_mask = 2
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+group = SubResource( 5 )
+text = "Unmuted"
+flat = true
+
+[node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
+light_mask = 2
+margin_top = 488.0
+margin_right = 506.0
+margin_bottom = 547.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -60.0
+max_value = 12.0
+step = 0.001
+value = -10.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+ticks_on_borders = true
+script = ExtResource( 11 )
+
+[node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
+light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 34.0
+margin_right = 7.0
+margin_bottom = -1.0
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
+light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -61.0
+items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
+
+[node name="WindowDialog2" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
+visible = true
+margin_right = 1015.0
+margin_bottom = 549.0
+window_title = "Advanced Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/WindowDialog2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+light_mask = 2
+margin_right = 385.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_OM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+light_mask = 2
+margin_top = 41.0
+margin_right = 385.0
+margin_bottom = 65.0
+editable = false
+placeholder_text = "Name of selected file"
+caret_blink = true
+
+[node name="BetaTests" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+light_mask = 2
+margin_top = 69.0
+margin_right = 385.0
+margin_bottom = 109.0
+custom_fonts/font = ExtResource( 2 )
+text = "Show Online Scoreboard"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoLoadMods" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+light_mask = 2
+margin_top = 113.0
+margin_right = 385.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 2 )
+text = "Auto load mods"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Controls" type="Tabs" parent="TabContainer"]
+visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -310,428 +759,6 @@ margin_top = -561.938
 margin_right = 40.0
 margin_bottom = -547.938
 
-[node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
-visible = false
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 49.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Graphics & Audio"]
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="GraphicsBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 547.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 205.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_GRAPHICS"
-align = 1
-valign = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-margin_top = 209.0
-margin_right = 506.0
-margin_bottom = 293.0
-
-[node name="FPSBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_right = 506.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-light_mask = 2
-margin_right = 426.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_FPS"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox"]
-light_mask = 2
-margin_left = 430.0
-margin_right = 506.0
-margin_bottom = 40.0
-
-[node name="LPMBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer"]
-margin_top = 44.0
-margin_right = 506.0
-margin_bottom = 84.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
-light_mask = 2
-margin_right = 426.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_LPM"
-align = 1
-valign = 1
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox"]
-light_mask = 2
-margin_left = 430.0
-margin_right = 506.0
-margin_bottom = 40.0
-
-[node name="ApplyButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-light_mask = 2
-margin_top = 297.0
-margin_right = 506.0
-margin_bottom = 502.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
-shortcut = SubResource( 2 )
-text = "KEY_APPLY"
-flat = true
-
-[node name="Advanced" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox"]
-light_mask = 2
-margin_top = 506.0
-margin_right = 506.0
-margin_bottom = 546.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_AO"
-align = 1
-script = ExtResource( 7 )
-
-[node name="MusicBox" type="VBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer"]
-margin_left = 510.0
-margin_right = 1016.0
-margin_bottom = 547.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_MUSIC"
-align = 1
-valign = 1
-
-[node name="VolumeBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 48.0
-margin_right = 506.0
-margin_bottom = 92.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_VOLUME"
-align = 1
-valign = 1
-
-[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
-visible = false
-light_mask = 2
-margin_left = 127.0
-margin_right = 250.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 3 )
-text = "Muted"
-flat = true
-
-[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBox"]
-visible = false
-light_mask = 2
-margin_left = 193.0
-margin_right = 382.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 3 )
-text = "Unmuted"
-flat = true
-
-[node name="VolumeBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 96.0
-margin_right = 506.0
-margin_bottom = 140.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-min_value = -60.0
-max_value = 12.0
-step = 0.001
-value = -10.0
-rounded = true
-ticks_on_borders = true
-script = ExtResource( 9 )
-
-[node name="MusicBox2" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 144.0
-margin_right = 506.0
-margin_bottom = 188.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 5
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "Selected Music Volume"
-align = 1
-valign = 1
-
-[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
-visible = false
-light_mask = 2
-margin_left = 157.0
-margin_right = 250.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 4 )
-text = "Muted"
-flat = true
-
-[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox2"]
-visible = false
-light_mask = 2
-margin_left = 193.0
-margin_right = 382.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 4 )
-text = "Unmuted"
-flat = true
-
-[node name="MusicBar2" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 192.0
-margin_right = 506.0
-margin_bottom = 236.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-min_value = -60.0
-max_value = 12.0
-step = 0.001
-value = -10.0
-rounded = true
-ticks_on_borders = true
-script = ExtResource( 10 )
-
-[node name="MusicBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 240.0
-margin_right = 506.0
-margin_bottom = 284.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 5
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_BACKGROUND"
-align = 1
-valign = 1
-
-[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
-visible = false
-light_mask = 2
-margin_left = 157.0
-margin_right = 250.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 4 )
-text = "Muted"
-flat = true
-
-[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBox"]
-visible = false
-light_mask = 2
-margin_left = 193.0
-margin_right = 382.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 4 )
-text = "Unmuted"
-flat = true
-
-[node name="MusicBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 288.0
-margin_right = 506.0
-margin_bottom = 332.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-min_value = -60.0
-max_value = 12.0
-step = 0.001
-value = -10.0
-rounded = true
-ticks_on_borders = true
-script = ExtResource( 10 )
-
-[node name="SFXBox" type="HBoxContainer" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-margin_top = 336.0
-margin_right = 506.0
-margin_bottom = 380.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
-light_mask = 2
-margin_right = 506.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_SFX"
-align = 1
-valign = 1
-
-[node name="OffButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
-visible = false
-light_mask = 2
-margin_left = 127.0
-margin_right = 250.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 5 )
-text = "Muted"
-flat = true
-
-[node name="OnButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBox"]
-visible = false
-light_mask = 2
-margin_left = 193.0
-margin_right = 382.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-group = SubResource( 5 )
-text = "Unmuted"
-flat = true
-
-[node name="SFXBar" type="HSlider" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 384.0
-margin_right = 506.0
-margin_bottom = 428.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-min_value = -60.0
-max_value = 12.0
-step = 0.001
-value = -10.0
-rounded = true
-allow_greater = true
-allow_lesser = true
-ticks_on_borders = true
-script = ExtResource( 11 )
-
-[node name="BetaTests" type="CheckButton" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 432.0
-margin_right = 506.0
-margin_bottom = 472.0
-custom_fonts/font = ExtResource( 2 )
-text = "Show Online Scoreboard"
-align = 1
-
-[node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 476.0
-margin_right = 506.0
-margin_bottom = 513.0
-custom_fonts/font = ExtResource( 2 )
-text = "KEY_OM"
-
-[node name="LineEdit" type="LineEdit" parent="TabContainer/Graphics & Audio/HBoxContainer/MusicBox"]
-light_mask = 2
-margin_top = 517.0
-margin_right = 506.0
-margin_bottom = 541.0
-editable = false
-placeholder_text = "Name of selected file"
-caret_blink = true
-
-[node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 34.0
-margin_right = 7.0
-margin_bottom = -1.0
-
-[node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -61.0
-items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
-
 [node name="Controller Test" type="Tabs" parent="TabContainer"]
 visible = false
 light_mask = 2
@@ -973,6 +1000,18 @@ autoplay = true
 bus = "Custom Music"
 script = ExtResource( 14 )
 id = "Level"
+[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox" method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox" method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ApplyButton" to="." method="_on_ApplyButton_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced" to="." method="_on_Advanced_pressed"]
+[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBar" method="_on_VolumeBar_value_changed"]
+[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar2" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar2" method="_on_MusicBar2_value_changed"]
+[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar" method="_on_MusicBar_value_changed"]
+[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBar" method="_on_SFXBar_value_changed"]
+[connection signal="item_selected" from="TabContainer/Graphics & Audio/WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests" to="." method="_on_BetaTests_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods" to="." method="_on_AutoLoadMods_pressed"]
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]
@@ -984,14 +1023,3 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Language/Europe/Detusch" to="." method="_on_Detusch_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Italiano" to="." method="_on_Italiano_pressed"]
 [connection signal="pressed" from="TabContainer/Language/Europe/Spanish" to="." method="_on_Spanisch_pressed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox" method="_on_CheckButton_pressed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox" method="_on_CheckButton_pressed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/ApplyButton" to="." method="_on_ApplyButton_pressed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced" method="_on_Advanced_pressed"]
-[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/VolumeBar" method="_on_VolumeBar_value_changed"]
-[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar2" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar2" method="_on_MusicBar2_value_changed"]
-[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MusicBar" method="_on_MusicBar_value_changed"]
-[connection signal="value_changed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBar" to="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/SFXBar" method="_on_SFXBar_value_changed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests" to="." method="_on_BetaTests_pressed"]
-[connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton" to="." method="_on_MenuButton_pressed"]
-[connection signal="item_selected" from="TabContainer/Graphics & Audio/WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]

@@ -34,23 +34,23 @@ onready var tab_container = get_node("TabContainer")
 #	print(current_tab)
 func _process(delta):
 	
-	tab_container.set_tab_title(0, "KEY_CON_TAB")
+	tab_container.set_tab_title(0, "KEY_G_A")
 	tab_container.set_tab_title(1, "KEY_THEME")
 	tab_container.set_tab_title(2, "KEY_LANG")
-	tab_container.set_tab_title(3, "KEY_G_A")
+	tab_container.set_tab_title(3, "KEY_CON_TAB")
 	tab_container.set_tab_title(4, "KEY_CONTROLLER")
 	if not str(os) == 'Android':
 		$TabContainer.set_tab_disabled(4, false)
 	else:
 		$TabContainer.set_tab_disabled(4, true)
-	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(true)
-	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
-		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(false)
+#	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(true)
+#	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
+#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(false)
 	
 func _on_ApplyButton_pressed():
 	hide()
@@ -62,18 +62,31 @@ func _save():
 	save.close()
 	
 func _ready():
+	var beta_2 = File.new()
+	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
+	var load_set = beta_2.get_line()
+	if load_set == 'True':
+		$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods".pressed = true
+	if load_set == 'False':
+		$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods".pressed = false
+	
+	
+	
 	if str(os) == 'Android':
 		$"TabContainer/Controller Test/joypads".hide()
 		$"TabContainer/Controller Test/Control".show()
 	if not str(os) == 'Android':
 		$"TabContainer/Controller Test/joypads".show()
 		$"TabContainer/Controller Test/Control".hide()
+		
+		
 	var beta = File.new()
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
 	var loaded = bool(str(beta.get_line()))
 	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_pressed(loaded)
 	music = AudioServer.get_bus_index("Music")
 	custom_music = AudioServer.get_bus_index("Custom Music")
+
 func _on_Englisch_pressed():
 	TranslationServer.set_locale("en")
 	_save()
@@ -165,8 +178,25 @@ func _on_ThemeList_item_selected(index):
 
 
 func _on_BetaTests_pressed():
+	
 	var beta = File.new()
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.WRITE)
+	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
+	beta.close()
+
+
+
+func _on_Advanced_pressed():
+	$"TabContainer/Graphics & Audio/WindowDialog2".popup_centered()
+
+
+func _on_AutoLoadMods_pressed():
+	if globals.auto_load_mod == true:
+		globals.auto_load_mod = false
+	if globals.auto_load_mod == false:
+		globals.auto_load_mod = true
+	var beta = File.new()
+	beta.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.WRITE)
 	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
 	beta.close()
 

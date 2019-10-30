@@ -10,6 +10,8 @@ var load_mod = "false"
 var mod_temp
 var os = OS.get_name()
 var download_path = 'res://Level Editor/'
+var mod_path = str(documents) + '/Pixel Zone/Mods/'
+var dir_mod_path = Directory.new()
 func _on_Play_pressed():
 	if globals.player_has_been_selected == true:
 		if not str(OS.get_name()) == 'Android':
@@ -17,6 +19,38 @@ func _on_Play_pressed():
 		if str(OS.get_name()) == 'Android':
 			$AnimationPlayer.play("new_ANDROID")
 func _ready():
+	if globals.auto_load_mod == true:
+		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
+	if globals.auto_load_mod == false:
+		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
+	if not dir_mod_path.dir_exists(str(mod_path)):
+		dir_mod_path.open(str(documents + '/Pixel Zone/'))
+		dir_mod_path.make_dir('Mods')
+	if dir_mod_path.dir_exists(str(mod_path)):
+		if globals.auto_load_mod == true :
+			var checked = false
+			var path = mod_path
+			if checked == false:
+				var dir = Directory.new()
+				if dir.open(path) == OK:
+					dir.list_dir_begin()
+					print(str(dir.list_dir_begin()))
+					var file_name = dir.get_next()
+					while (file_name != ""):
+						if dir.current_is_dir():
+							print("Found directory: " + file_name)
+						else:
+							print("Found file: " + file_name)
+							var file_path = str(file_name).get_base_dir()
+							var fil_name = str(file_name).get_basename()
+							var extension = str(file_name).get_extension()
+							print(extension)
+							if extension == "pck":
+								print(str(path) + str(fil_name) + '.' + str(extension))
+								ProjectSettings.load_resource_pack(str(path) + str(fil_name) + '.' + str(extension))
+								print('LOADING MODIIFICATION FROM: ' +str(path) + str(fil_name) + '.' + str(extension))
+						file_name = dir.get_next()
+						checked = true
 	if str(os) == 'Android':
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(true)
 		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)

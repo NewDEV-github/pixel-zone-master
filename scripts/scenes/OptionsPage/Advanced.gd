@@ -19,4 +19,5 @@ func _load():
 
 
 func _on_Advanced_pressed():
-	_save()
+#	_save()
+	$Window
