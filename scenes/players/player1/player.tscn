@@ -655,8 +655,10 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 19 )
 
 [node name="GameUI" parent="ui/Control" instance=ExtResource( 18 )]
-margin_top = 18.0
-margin_bottom = -23.0
+anchor_top = 0.03
+anchor_bottom = 0.961667
+margin_top = 4.02331e-007
+margin_bottom = 1.38283e-005
 
 [node name="Start" type="Label" parent="ui/Control"]
 self_modulate = Color( 1, 1, 1, 0 )

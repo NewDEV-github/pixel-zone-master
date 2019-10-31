@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://animations/cutscenes/cutscene2.anim" type="Animation" id=1]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://textures/backgrounds/hubbg1.png" type="Texture" id=3]
+[ext_resource path="res://textures/backgrounds/hubbg3.png" type="Texture" id=4]
+[ext_resource path="res://titles/ice.tres" type="TileSet" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -10,20 +14,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1048588, 13, 0, 1048589, 14, 0, 1048590, 14, 0, 1048591, 14, 0, 1048592, 14, 0, 1048593, 14, 0, 1048594, 14, 0, 1048595, 14, 0, 1048596, 14, 0, 1048597, 15, 0, 1048614, 13, 0, 1048615, 14, 0, 1048616, 14, 0, 1048617, 14, 0, 1048618, 14, 0, 1048619, 14, 0, 1048620, 14, 0, 1048621, 14, 0, 1048622, 14, 0, 1048623, 14, 0, 1048624, 14, 0, 1048625, 14, 0, 1048626, 15, 0, 1114149, 13, 0, 1114150, 22, 0, 1114151, 17, 0, 1114152, 17, 0, 1114153, 17, 0, 1114154, 17, 0, 1114155, 17, 0, 1114156, 17, 0, 1114157, 17, 0, 1114158, 17, 0, 1114159, 17, 0, 1114160, 17, 0, 1114161, 17, 0, 1114162, 23, 0, 1114163, 14, 0, 1114164, 14, 0, 1114165, 14, 0, 1114166, 15, 0 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 452.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -133.0
+custom_fonts/normal_font = ExtResource( 2 )
+text = "ROBI: I don't know..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cutscene2"
+playback_speed = 0.3
 anims/cutscene2 = ExtResource( 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

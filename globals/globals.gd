@@ -7,7 +7,6 @@ var player
 var auto_load_mod = true
 signal collected_changed
 signal play_bgm(id, value)
-var player_has_been_selected = false
 func _set_collected(value):
 	collected = value
 	emit_signal("collected_changed")

@@ -83,7 +83,7 @@ func _ready():
 	var beta = File.new()
 	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
 	var loaded = bool(str(beta.get_line()))
-	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_pressed(loaded)
+	$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests".set_pressed(loaded)
 	music = AudioServer.get_bus_index("Music")
 	custom_music = AudioServer.get_bus_index("Custom Music")
 

@@ -56,10 +56,10 @@ LANG_PL,Polish,Polaco,Polieren,Polski,Polacco,Polonês,Polonais
 LANG_IT,Italiano,Italiano,Italiano,Włoski,Italiano,Italiano,Italiano
 LANG_PT,Portuguese,Portugués,Portugiesisch,Portugalski,Portoghese,Português,Portugues
 KEY_LANG,Language,Idioma,Sprache,Język,Linguaggio,Língua,La langue
-KEY_G_A,Graphics & Audio,Gráficos y Audio,Grafik & Audio,Grafika i Audio,Grafica e audio,Gráficos e ?udio,Graphiques et audio
+KEY_G_A,Basic Options,Opciones basicas,Grundlegende Optionen,Podstawowe Opcje,Opzioni di base,Opções Básicas,Options de base
 KEY_CON_TAB,Controls,Controles,Steuerelemente,Sterowanie,Controlli,Controles,Les contrôles
 LANG_FR,French,Francés,Französisch,Francuski,Francese,Francês,Français
-KEY_CONTROLLER,Check controller settings,Verifique la configuración del controlador,?berprüfen Sie die Controller-Einstellungen,Sprawdź ustawienia kontrolera,Controlla le impostazioni del controller,Verifique as configurações do controlador,Vérifier les paramètres du contrôleur
+KEY_CONTROLLER,Check controller settings,Verifique la configuración del controlador,Controller,Sprawdź ustawienia kontrolera,Controlla le impostazioni del controller,Verifique as configurações do controlador,Vérifier les paramètres du contrôleur
 KEY_DEVICE,Device,Dispositivo,Gerät,Urządzenie,Dispositivo,Dispositivo,Dispositif
 KEY_Axis0,Axis 0,Eje 0,Achse 0,Oś 0,Asse 0,Eixo 0,Axe 0
 KEY_Axis1,Axis 1,Eje 1,Achse 1,Oś 1,Asse 1,Eixo 1,Axe 1

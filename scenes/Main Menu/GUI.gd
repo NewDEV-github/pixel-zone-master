@@ -13,11 +13,10 @@ var download_path = 'res://Level Editor/'
 var mod_path = str(documents) + '/Pixel Zone/Mods/'
 var dir_mod_path = Directory.new()
 func _on_Play_pressed():
-	if globals.player_has_been_selected == true:
-		if not str(OS.get_name()) == 'Android':
-			$AnimationPlayer.play("new")
-		if str(OS.get_name()) == 'Android':
-			$AnimationPlayer.play("new_ANDROID")
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")
 func _ready():
 	if globals.auto_load_mod == true:
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
@@ -168,8 +167,7 @@ func _on_TextureButton_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
-	globals.player_has_been_selected = true
-	globals._save()
+
 
 func _on_TextureButton2_pressed():
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
@@ -178,17 +176,9 @@ func _on_TextureButton2_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
-	globals.player_has_been_selected = true
-	globals._save()
 
 func _on_Play5_pressed():
-	if globals.player_has_been_selected == false:
-		$TextureRect/PopupPanel.popup_centered()
-	elif globals.player_has_been_selected == true:
-		if not str(OS.get_name()) == 'Android':
-			$AnimationPlayer.play("new")
-		if str(OS.get_name()) == 'Android':
-			$AnimationPlayer.play("new_ANDROID")
+	$TextureRect/PopupPanel.popup_centered()
 
 
 func _on_LoadGame2_pressed():
