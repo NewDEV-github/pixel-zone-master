@@ -68,11 +68,8 @@ func _ready():
 	var config = ConfigFile.new()
 	config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
-#	if str(OS.get_name()) == 'HTML5':
-#		get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
-#	_on_Skip_pressed()
-func _on_Skip_pressed():
-	get_tree().change_scene("res://scenes/gui_loader.tscn")
+	$AnimationPlayer.play("intro")
+
 func save():
 	var save_dict = {
 		"filename" : get_filename(),
@@ -82,5 +79,5 @@ func save():
 	return save_dict
 
 
-func _on_VideoPlayer_finished():
-	_on_Skip_pressed()
+func _on_AnimationPlayer_animation_finished(anim_name):
+	get_tree().change_scene("res://scenes/gui_loader.tscn")

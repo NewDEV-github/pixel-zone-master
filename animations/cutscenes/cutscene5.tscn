@@ -1,12 +1,53 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://animations/cutscenes/cutscene5.anim" type="Animation" id=1]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://textures/backgrounds/parallax-industrial-pack/layers/skill-desc_0000_foreground.png" type="Texture" id=3]
+[ext_resource path="res://textures/backgrounds/parallax-industrial-pack/layers/skill-desc_0003_bg.png" type="Texture" id=4]
+[ext_resource path="res://textures/backgrounds/parallax-industrial-pack/layers/skill-desc_0001_buildings.png" type="Texture" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_horizontal_guides_": [ -1.26346 ],
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_top = -2.0
+margin_right = 1021.0
+margin_bottom = 601.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -608.0
+margin_top = -363.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -639.0
+margin_top = -353.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -21,9 +62,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -133.0
+custom_fonts/normal_font = ExtResource( 2 )
+text = "ROBI:
+I see. We have to go to the factory by the laboratory.
+This is the only way..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.3
 anims/cutscene5 = ExtResource( 1 )

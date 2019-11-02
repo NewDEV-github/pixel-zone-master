@@ -1,7 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/intro.gd" type="Script" id=1]
-[ext_resource path="res://animations/intro.webm" type="VideoStream" id=2]
+[ext_resource path="res://ubuntu-font-family/UMB14C3.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -11,18 +39,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-light_mask = 2
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.993
-margin_bottom = 0.199951
-rect_clip_content = true
-mouse_default_cursor_shape = 5
-size_flags_horizontal = 15
-size_flags_vertical = 15
-stream = ExtResource( 2 )
-autoplay = true
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
-[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+
+[node name="RichTextLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -244.5
+margin_top = -46.0
+margin_right = 244.5
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 2 )
+text = "Pixel Zone"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/intro = SubResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
