@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/ui.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://animations/respawn.tres" type="Animation" id=21]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=22]
 [ext_resource path="res://scenes/players/player2/player_2.png" type="Texture" id=23]
+[ext_resource path="res://scenes/players/player1/ai/player.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -496,6 +497,9 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 18 )
+
+[node name="Player_ai1" parent="." instance=ExtResource( 24 )]
+position = Vector2( -108.187, 0 )
 
 [node name="label" type="Label" parent="."]
 visible = false
