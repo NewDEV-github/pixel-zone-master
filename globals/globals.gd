@@ -2,8 +2,6 @@ extends Node
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var scene_path = ''
 var collected = 0 setget _set_collected, _get_collected
-var to_collect = 0
-var player
 var auto_load_mod = true
 signal collected_changed
 signal play_bgm(id, value)
@@ -17,7 +15,6 @@ func _get_collected():
 func play_bgm(id, value):
 	emit_signal("play_bgm", id, value)
 
-var dlc_name = ""
 var selected_player = ''
 func _set_player_pos(x, y):
 	selected_player.set_position(Vector2(x, y))
@@ -29,6 +26,11 @@ func _get_player_pos_x():
 func _get_player_pos_y():
 	var position_p = selected_player.position.y
 	return position_p
+func on_scene_shanged():
+	if scene_path == 'res://scenes/players/player1/player.tscn':
+		var ai = preload('res://scenes/players/player1/ai.gd').new()
+		ai.restart_position()
+		
 func _ready():
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)

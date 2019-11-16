@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://console/default_commands.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://scripts/enemy.gd"
-}, {
 "base": "Resource",
 "class": "FirebaseResource",
 "language": "GDScript",
@@ -76,7 +71,6 @@ _global_script_class_icons={
 "ConsoleRights": "",
 "ConsoleUser": "",
 "DefaultCommands": "",
-"Enemy": "",
 "FirebaseResource": "",
 "FirebaseStorage": "",
 "FirebaseUserData": "",
@@ -121,7 +115,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GDFirebase", "adb_helper" )
+enabled=PoolStringArray( "GDFirebase", "adb_helper", "zylann.editor_debugger" )
 
 [input]
 

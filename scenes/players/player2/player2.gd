@@ -9,10 +9,8 @@ const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
 var TIMER_LIMIT = 2.5
-var timer = 0.0
 var linear_vel = Vector2()
 var onair_time = 0 #
-var teleport_destination
 var on_floor = false
 var shoot_time=99999 #time since last shot
 var anim=""

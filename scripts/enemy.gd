@@ -1,8 +1,4 @@
 extends KinematicBody2D
-
-class_name Enemy
-
-
 const GRAVITY_VEC = Vector2(0, 900)
 const FLOOR_NORMAL = Vector2(0, -1)
 

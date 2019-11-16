@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/players/player2/ai/player2.gd" type="Script" id=1]
 [ext_resource path="res://scenes/sprite.tscn" type="PackedScene" id=6]
@@ -8,7 +8,6 @@
 [ext_resource path="res://animations/full_health.tres" type="Animation" id=19]
 [ext_resource path="res://animations/achievement.tres" type="Animation" id=20]
 [ext_resource path="res://animations/respawn.tres" type="Animation" id=21]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=22]
 [ext_resource path="res://scenes/players/player2/player_2.png" type="Texture" id=23]
 
 [sub_resource type="Animation" id=1]
@@ -195,18 +194,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Timer:autostart")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -435,17 +422,16 @@ align = 1
 valign = 1
 
 [node name="camera" type="Camera2D" parent="."]
-position = Vector2( 243, 70.8751 )
+position = Vector2( 1.16897, -0.719611 )
 current = true
 limit_left = 0
 limit_top = 0
 limit_right = 20000005
 limit_bottom = 20000000
 smoothing_speed = 3.5
-script = ExtResource( 22 )
 
 [node name="sprite" parent="." instance=ExtResource( 6 )]
-position = Vector2( 243, 71 )
+position = Vector2( 1.16897, -2.1857 )
 texture = ExtResource( 23 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -478,7 +464,7 @@ anims/run_weapon = SubResource( 21 )
 anims/standing_weapon_ready = SubResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 243, 71 )
+position = Vector2( 4.35097, -2.18571 )
 shape = SubResource( 23 )
 
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
@@ -489,21 +475,16 @@ bus = "SFX"
 stream = ExtResource( 13 )
 bus = "SFX"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
-autostart = true
-
 [node name="LeftGroundSensor" type="RayCast2D" parent="."]
-position = Vector2( 234, 70.5001 )
+position = Vector2( -7.83102, -1.09462 )
 
 [node name="RightGroundSensor" type="RayCast2D" parent="."]
-position = Vector2( 255, 70.5001 )
+position = Vector2( 13.169, -1.09462 )
 
 [node name="LeftWallSensor" type="RayCast2D" parent="."]
-position = Vector2( 233.667, 70.6667 )
+position = Vector2( -6.57304, 0.662985 )
 rotation = 1.5708
 
 [node name="RightWallSensor" type="RayCast2D" parent="."]
-position = Vector2( 242.5, 71.0001 )
+position = Vector2( 8.62394, -0.594612 )
 rotation = 4.71239
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -21,7 +21,7 @@
 [ext_resource path="res://animations/full_health.tres" type="Animation" id=19]
 [ext_resource path="res://animations/achievement.tres" type="Animation" id=20]
 [ext_resource path="res://animations/respawn.tres" type="Animation" id=21]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=22]
+[ext_resource path="res://scenes/players/player1/ai.gd" type="Script" id=22]
 [ext_resource path="res://scenes/players/player2/player_2.png" type="Texture" id=23]
 [ext_resource path="res://scenes/players/player1/ai/player.tscn" type="PackedScene" id=24]
 
@@ -495,13 +495,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Node2D" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 22 )
+
+[node name="Player_ai2" parent="." instance=ExtResource( 24 )]
+position = Vector2( -108.187, 0 )
+input_pickable = true
+
+[node name="Player" type="KinematicBody2D" parent="."]
+input_pickable = true
 script = ExtResource( 18 )
 
-[node name="Player_ai1" parent="." instance=ExtResource( 24 )]
-position = Vector2( -108.187, 0 )
-
-[node name="label" type="Label" parent="."]
+[node name="label" type="Label" parent="Player"]
 visible = false
 light_mask = 2
 anchor_left = 0.5
@@ -514,7 +520,7 @@ custom_fonts/font = ExtResource( 9 )
 align = 1
 valign = 1
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="Player"]
 position = Vector2( 243, 70.8751 )
 current = true
 limit_left = 0
@@ -522,25 +528,24 @@ limit_top = 0
 limit_right = 20000005
 limit_bottom = 20000000
 smoothing_speed = 3.5
-script = ExtResource( 22 )
 
-[node name="sprite" parent="." instance=ExtResource( 6 )]
+[node name="sprite" parent="Player" instance=ExtResource( 6 )]
 position = Vector2( 243, 71 )
 texture = ExtResource( 23 )
 
-[node name="Area2D2" type="Area2D" parent="sprite"]
+[node name="Area2D2" type="Area2D" parent="Player/sprite"]
 position = Vector2( 0.291992, -0.835023 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="sprite/Area2D2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/sprite/Area2D2"]
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="sprite"]
+[node name="Area2D" type="Area2D" parent="Player/sprite"]
 position = Vector2( 0.291992, -0.835023 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="sprite/Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/sprite/Area2D"]
 shape = SubResource( 1 )
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="Player"]
 anims/achievement = ExtResource( 20 )
 anims/crouch = SubResource( 2 )
 anims/falling = SubResource( 3 )
@@ -554,7 +559,7 @@ anims/run = SubResource( 9 )
 anims/run_weapon = SubResource( 10 )
 anims/standing_weapon_ready = SubResource( 11 )
 
-[node name="anim2" type="AnimationPlayer" parent="."]
+[node name="anim2" type="AnimationPlayer" parent="Player"]
 anims/achievement = SubResource( 12 )
 anims/crouch = SubResource( 13 )
 anims/falling = SubResource( 14 )
@@ -569,22 +574,22 @@ anims/run = SubResource( 21 )
 anims/run_weapon = SubResource( 22 )
 anims/standing_weapon_ready = SubResource( 23 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 243, 71 )
 shape = SubResource( 1 )
 
-[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 10 )
 bus = "SFX"
 
-[node name="sound_shoot" type="AudioStreamPlayer2D" parent="."]
+[node name="sound_shoot" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 13 )
 bus = "SFX"
 
-[node name="ui" type="CanvasLayer" parent="."]
+[node name="ui" type="CanvasLayer" parent="Player"]
 layer = 0
 
-[node name="timer" parent="ui" instance=ExtResource( 7 )]
+[node name="timer" parent="Player/ui" instance=ExtResource( 7 )]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
@@ -593,7 +598,7 @@ margin_top = 0.0
 margin_right = 42.8704
 margin_bottom = 31.0
 
-[node name="Control" type="Control" parent="ui"]
+[node name="Control" type="Control" parent="Player/ui"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 8 )
@@ -602,20 +607,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="theme" type="Label" parent="ui/Control"]
+[node name="theme" type="Label" parent="Player/ui/Control"]
 margin_left = 615.094
 margin_top = -273.375
 margin_right = 655.094
 margin_bottom = -234.375
 
-[node name="ProgressBar" type="ProgressBar" parent="ui/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
 pause_mode = 2
 margin_right = 76.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 9 )
 value = 100.0
 
-[node name="Control" type="VBoxContainer" parent="ui/Control"]
+[node name="Control" type="VBoxContainer" parent="Player/ui/Control"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -623,7 +628,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="pause" type="TouchScreenButton" parent="ui/Control/Control"]
+[node name="pause" type="TouchScreenButton" parent="Player/ui/Control/Control"]
 light_mask = 2
 position = Vector2( -75, 0 )
 scale = Vector2( 0.6, 0.6 )
@@ -631,7 +636,7 @@ normal = ExtResource( 15 )
 action = "ui_cancel"
 visibility_mode = 1
 
-[node name="jump" type="TouchScreenButton" parent="ui/Control/Control"]
+[node name="jump" type="TouchScreenButton" parent="Player/ui/Control/Control"]
 light_mask = 2
 position = Vector2( -117, 480 )
 scale = Vector2( 1.8, 1.8 )
@@ -639,7 +644,7 @@ normal = ExtResource( 12 )
 action = "jump"
 visibility_mode = 1
 
-[node name="fire" type="TouchScreenButton" parent="ui/Control/Control"]
+[node name="fire" type="TouchScreenButton" parent="Player/ui/Control/Control"]
 light_mask = 2
 position = Vector2( -117, 360 )
 scale = Vector2( 1.8, 1.8 )
@@ -647,14 +652,14 @@ normal = ExtResource( 14 )
 action = "shoot"
 visibility_mode = 1
 
-[node name="Sprite" type="Sprite" parent="ui/Control/Control"]
+[node name="Sprite" type="Sprite" parent="Player/ui/Control/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -27.062, 572.063 )
 rotation = 6.28319
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 17 )
 
-[node name="left" type="TouchScreenButton" parent="ui/Control"]
+[node name="left" type="TouchScreenButton" parent="Player/ui/Control"]
 light_mask = 2
 position = Vector2( 10, 460 )
 scale = Vector2( 1.8, 1.8 )
@@ -663,7 +668,7 @@ passby_press = true
 action = "move_left"
 visibility_mode = 1
 
-[node name="right" type="TouchScreenButton" parent="ui/Control"]
+[node name="right" type="TouchScreenButton" parent="Player/ui/Control"]
 light_mask = 2
 position = Vector2( 130, 460 )
 scale = Vector2( 1.8, 1.8 )
@@ -672,11 +677,11 @@ passby_press = true
 action = "move_right"
 visibility_mode = 1
 
-[node name="GameUI" parent="ui/Control" instance=ExtResource( 2 )]
+[node name="GameUI" parent="Player/ui/Control" instance=ExtResource( 2 )]
 margin_top = 18.0
 margin_bottom = -23.0
 
-[node name="Start" type="Label" parent="ui/Control"]
+[node name="Start" type="Label" parent="Player/ui/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -690,13 +695,13 @@ custom_fonts/font = ExtResource( 9 )
 text = "Start!"
 align = 1
 
-[node name="fps" type="Label" parent="ui/Control"]
+[node name="fps" type="Label" parent="Player/ui/Control"]
 margin_left = 77.0
 margin_top = 1.0
 margin_right = 367.0
 margin_bottom = 47.0
 
-[node name="Label" type="Label" parent="ui/Control"]
+[node name="Label" type="Label" parent="Player/ui/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -0.666824
 margin_top = 27.5833
@@ -705,7 +710,7 @@ margin_bottom = 66.5834
 custom_fonts/font = ExtResource( 9 )
 text = "Full Health!"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ui"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/ui"]
 pause_mode = 2
 autoplay = "saving_state"
 anims/full_health = ExtResource( 19 )
@@ -714,14 +719,14 @@ anims/next_level = ExtResource( 3 )
 anims/saving_state = ExtResource( 5 )
 anims/start = SubResource( 24 )
 
-[node name="ColorRect" type="ColorRect" parent="ui"]
+[node name="ColorRect" type="ColorRect" parent="Player/ui"]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Panel" type="Panel" parent="ui"]
+[node name="Panel" type="Panel" parent="Player/ui"]
 visible = false
 anchor_left = 0.5
 anchor_right = 0.5
@@ -729,29 +734,29 @@ margin_left = -100.0
 margin_right = 100.0
 margin_bottom = 40.0
 
-[node name="Label" type="Label" parent="ui/Panel"]
+[node name="Label" type="Label" parent="Player/ui/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Achievement Unlocked!"
 align = 1
 valign = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Player"]
 wait_time = 4.0
 autostart = true
 
-[node name="LeftGroundSensor" type="RayCast2D" parent="."]
+[node name="LeftGroundSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 234, 70.5001 )
 
-[node name="RightGroundSensor" type="RayCast2D" parent="."]
+[node name="RightGroundSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 255, 70.5001 )
 
-[node name="LeftWallSensor" type="RayCast2D" parent="."]
+[node name="LeftWallSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 233.667, 70.6667 )
 rotation = 1.5708
 
-[node name="RightWallSensor" type="RayCast2D" parent="."]
+[node name="RightWallSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 242.5, 71.0001 )
 rotation = 4.71239
-[connection signal="area_entered" from="sprite/Area2D2" to="." method="_on_Area2D2_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="Player/sprite/Area2D2" to="Player" method="_on_Area2D2_area_entered"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]

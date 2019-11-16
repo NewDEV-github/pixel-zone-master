@@ -19,6 +19,7 @@ file_name = 1.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -41,6 +42,7 @@ margin_left = 263.0
 margin_top = 99.0
 margin_right = 739.0
 margin_bottom = 378.0
+mouse_filter = 1
 popup_exclusive = true
 window_title = "Update information"
 dialog_autowrap = true

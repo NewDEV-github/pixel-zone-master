@@ -161,6 +161,7 @@ func _on_ConfirmationDialog_confirmed():
 
 signal reload
 func _on_TextureButton_pressed():
+	$TextureRect/PopupPanel/Label.set_text('Loading...')
 	globals.scene_path = 'res://scenes/players/player1/player.tscn'
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
 	if not str(OS.get_name()) == 'Android':
@@ -170,6 +171,7 @@ func _on_TextureButton_pressed():
 
 
 func _on_TextureButton2_pressed():
+	$TextureRect/PopupPanel/Label.set_text('Loading...')
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	if not str(OS.get_name()) == 'Android':

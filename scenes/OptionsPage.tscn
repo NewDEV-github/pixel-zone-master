@@ -454,8 +454,11 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/WindowDialog2"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 385.0
+margin_bottom = 177.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButton" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
 light_mask = 2
@@ -473,7 +476,7 @@ margin_top = 41.0
 margin_right = 385.0
 margin_bottom = 65.0
 editable = false
-placeholder_text = "Name of selected file"
+placeholder_text = "Path of selected track"
 caret_blink = true
 
 [node name="BetaTests" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
@@ -499,6 +502,12 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DataClear" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+margin_top = 157.0
+margin_right = 385.0
+margin_bottom = 177.0
+text = "Clear User's Acconut Data"
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 visible = false
@@ -1012,6 +1021,7 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests" to="." method="_on_BetaTests_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods" to="." method="_on_AutoLoadMods_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/DataClear" to="." method="_on_DataClear_pressed"]
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]

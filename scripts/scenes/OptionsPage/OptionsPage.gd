@@ -43,15 +43,6 @@ func _process(delta):
 		$TabContainer.set_tab_disabled(4, false)
 	else:
 		$TabContainer.set_tab_disabled(4, true)
-#	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == true:
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(true)
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(true)
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(true)
-#	if $"TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced".pressed == false:
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/MenuButton".set_visible(false)
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_visible(false)
-#		$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".set_visible(false)
-	
 func _on_ApplyButton_pressed():
 	hide()
 
@@ -64,7 +55,7 @@ func _save():
 func _ready():
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
-	var load_set = beta_2.get_line()
+	var load_set = str(beta_2.get_line())
 	if load_set == 'True':
 		$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods".pressed = true
 	if load_set == 'False':
@@ -200,3 +191,10 @@ func _on_AutoLoadMods_pressed():
 	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
 	beta.close()
 
+
+
+func _on_DataClear_pressed():
+	var data = File.new()
+	var data_dir = Directory.new()
+	if data.file_exists(str(documents)+ "/Pixel Zone/.data/name.save"):
+		data_dir.remove(str(documents)+ "/Pixel Zone/.data/name.save")
