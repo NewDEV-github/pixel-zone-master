@@ -1,0 +1,213 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/adb_helper/icon.png" type="Texture" id=1]
+[ext_resource path="res://addons/adb_helper/adb_helper.gd" type="Script" id=2]
+[ext_resource path="res://addons/adb_helper/baseline-settings-20px.svg" type="Texture" id=3]
+
+[node name="adb_helper" type="Button"]
+margin_right = 36.0
+margin_bottom = 30.0
+shortcut_in_tooltip = false
+icon = ExtResource( 1 )
+flat = true
+script = ExtResource( 2 )
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_left = 13.0
+margin_top = 69.0
+margin_right = 279.0
+margin_bottom = 258.0
+window_title = "Wireless ADB Debugging"
+
+[node name="DialogContainer" type="VBoxContainer" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="DeviceContainer" type="VBoxContainer" parent="WindowDialog/DialogContainer"]
+editor/display_folded = true
+margin_right = 256.0
+margin_bottom = 113.0
+size_flags_vertical = 3
+
+[node name="HeaderLabels" type="HBoxContainer" parent="WindowDialog/DialogContainer/DeviceContainer"]
+editor/display_folded = true
+margin_right = 256.0
+margin_bottom = 14.0
+
+[node name="DeviceHeader" type="Label" parent="WindowDialog/DialogContainer/DeviceContainer/HeaderLabels"]
+margin_right = 44.0
+margin_bottom = 14.0
+text = "Device"
+
+[node name="IPHeader" type="Label" parent="WindowDialog/DialogContainer/DeviceContainer/HeaderLabels"]
+margin_left = 48.0
+margin_right = 194.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "IP"
+align = 1
+valign = 1
+
+[node name="ConnectHeader" type="Label" parent="WindowDialog/DialogContainer/DeviceContainer/HeaderLabels"]
+margin_left = 198.0
+margin_right = 256.0
+margin_bottom = 14.0
+text = "Connect?"
+
+[node name="HSeparator" type="HSeparator" parent="WindowDialog/DialogContainer"]
+margin_top = 117.0
+margin_right = 256.0
+margin_bottom = 121.0
+
+[node name="AddDeviceContainer" type="HBoxContainer" parent="WindowDialog/DialogContainer"]
+margin_top = 125.0
+margin_right = 256.0
+margin_bottom = 149.0
+
+[node name="DeviceTextEdit" type="LineEdit" parent="WindowDialog/DialogContainer/AddDeviceContainer"]
+margin_right = 66.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+placeholder_text = "Name..."
+
+[node name="IPTextEdit" type="LineEdit" parent="WindowDialog/DialogContainer/AddDeviceContainer"]
+margin_left = 70.0
+margin_right = 202.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+placeholder_text = "IP: 192.168.0.1 ..."
+
+[node name="AddButton" type="Button" parent="WindowDialog/DialogContainer/AddDeviceContainer"]
+margin_left = 206.0
+margin_right = 255.0
+margin_bottom = 24.0
+text = "Add..."
+
+[node name="ExtraContainer" type="HBoxContainer" parent="WindowDialog/DialogContainer"]
+margin_top = 153.0
+margin_right = 256.0
+margin_bottom = 179.0
+
+[node name="SettingsButton" type="Button" parent="WindowDialog/DialogContainer/ExtraContainer"]
+margin_right = 32.0
+margin_bottom = 26.0
+icon = ExtResource( 3 )
+
+[node name="HelpButton" type="Button" parent="WindowDialog/DialogContainer/ExtraContainer"]
+margin_left = 36.0
+margin_right = 82.0
+margin_bottom = 26.0
+size_flags_horizontal = 0
+text = "Help!"
+
+[node name="PortLabel" type="Label" parent="WindowDialog/DialogContainer/ExtraContainer"]
+margin_left = 86.0
+margin_top = 6.0
+margin_right = 256.0
+margin_bottom = 20.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+text = "Port: 5555 (added to IP)"
+align = 2
+
+[node name="SettingsDialog" type="WindowDialog" parent="."]
+editor/display_folded = true
+visible = true
+margin_left = 12.0
+margin_top = 292.0
+margin_right = 289.0
+margin_bottom = 464.0
+popup_exclusive = true
+window_title = "ADB Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.97331
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="InfoLabel" type="Label" parent="SettingsDialog/VBoxContainer"]
+margin_right = 268.0
+margin_bottom = 31.0
+text = "These settings can be found at
+Editor > EditorSettings >Export > Android"
+align = 1
+autowrap = true
+
+[node name="HSeparator" type="HSeparator" parent="SettingsDialog/VBoxContainer"]
+margin_top = 35.0
+margin_right = 268.0
+margin_bottom = 39.0
+
+[node name="ADBShutdownCheckbox" type="CheckBox" parent="SettingsDialog/VBoxContainer"]
+margin_top = 43.0
+margin_right = 268.0
+margin_bottom = 67.0
+text = "Shutdown ADB on Exit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsDialog/VBoxContainer"]
+margin_top = 71.0
+margin_right = 268.0
+margin_bottom = 95.0
+
+[node name="ADBLabel" type="Label" parent="SettingsDialog/VBoxContainer/HBoxContainer"]
+margin_right = 29.0
+margin_bottom = 24.0
+size_flags_vertical = 1
+text = "Adb:"
+valign = 1
+
+[node name="ADBPath" type="LineEdit" parent="SettingsDialog/VBoxContainer/HBoxContainer"]
+margin_left = 33.0
+margin_right = 240.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 2
+placeholder_text = "Path to Adb executable..."
+
+[node name="FilePickerButton" type="Button" parent="SettingsDialog/VBoxContainer/HBoxContainer"]
+margin_left = 244.0
+margin_right = 268.0
+margin_bottom = 24.0
+text = "..."
+
+[node name="FileDialog" type="FileDialog" parent="."]
+visible = true
+margin_left = 296.0
+margin_top = 277.0
+margin_right = 791.0
+margin_bottom = 587.0
+popup_exclusive = true
+window_title = "Open a File"
+resizable = true
+dialog_text = "Select the Adb Executable...
+"
+mode = 0
+access = 2
+current_dir = "E:/git/climbeleon-bit/project"
+current_path = "E:/git/climbeleon-bit/project/"
+
+[node name="ErrorDialog" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 307.754
+margin_top = 155.231
+margin_right = 572.754
+margin_bottom = 230.231
+window_title = "Alert! No ADB Found!"
+dialog_text = "No ADB Information found!
+Please set up your Android Export first!"
+[connection signal="pressed" from="." to="." method="_on_adb_helper_pressed"]
+[connection signal="pressed" from="WindowDialog/DialogContainer/AddDeviceContainer/AddButton" to="." method="_on_AddButton_pressed"]
+[connection signal="pressed" from="WindowDialog/DialogContainer/ExtraContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="WindowDialog/DialogContainer/ExtraContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="toggled" from="SettingsDialog/VBoxContainer/ADBShutdownCheckbox" to="." method="_on_ADBShutdownCheckbox_toggled"]
+[connection signal="pressed" from="SettingsDialog/VBoxContainer/HBoxContainer/FilePickerButton" to="." method="_on_FilePickerButton_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
