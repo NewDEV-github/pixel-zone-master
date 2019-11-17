@@ -26,16 +26,13 @@ func _get_player_pos_x():
 func _get_player_pos_y():
 	var position_p = selected_player.position.y
 	return position_p
-func on_scene_shanged():
-	if scene_path == 'res://scenes/players/player1/player.tscn':
-		var ai = preload('res://scenes/players/player1/ai.gd').new()
-		ai.restart_position()
-		
+func on_scene_changed():
+	selected_player.restart_position()
 func _ready():
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
-	var load_set = beta_2.get_line()
-	if load_set == 'True':
+	var load_set = bool(str(beta_2.get_line()))
+	if load_set == true :
 		auto_load_mod = true
-	if load_set == 'False':
+	if load_set == false :
 		auto_load_mod = false

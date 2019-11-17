@@ -5,8 +5,6 @@ var current_page = null
 
 func _ready():
 	connect("visibility_changed", self, "_on_visibility_changed")
-	settings.connect("window_minimized_changed", self, "_on_window_minimized_changed")
-
 func _on_visibility_changed():
 	get_tree().paused = visible
 	if visible:

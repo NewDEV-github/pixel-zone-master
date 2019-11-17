@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/cutscenes.en.translation", "res://translations/cutscenes.es.translation", "res://translations/cutscenes.de.translation", "res://translations/cutscenes.pl.translation", "res://translations/cutscenes.it.translation", "res://translations/cutscenes.pt.translation", "res://translations/cutscenes.fr.translation" ]
+
+source_file="res://translations/cutscenes.csv"
+dest_files=[ "res://translations/cutscenes.en.translation", "res://translations/cutscenes.es.translation", "res://translations/cutscenes.de.translation", "res://translations/cutscenes.pl.translation", "res://translations/cutscenes.it.translation", "res://translations/cutscenes.pt.translation", "res://translations/cutscenes.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

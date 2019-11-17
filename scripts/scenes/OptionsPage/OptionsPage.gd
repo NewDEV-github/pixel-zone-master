@@ -3,18 +3,6 @@ class_name Options_Page
 var current_tab = 0
 var music
 var custom_music
-onready var pause_x = $"TabContainer/Controller Test/Control/VBoxContainer/pause/x".text
-onready var pause_y = $"TabContainer/Controller Test/Control/VBoxContainer/pause/y".text
-onready var jump_x = $"TabContainer/Controller Test/Control/VBoxContainer/jump/x".text
-onready var jump_y = $"TabContainer/Controller Test/Control/VBoxContainer/jump/y".text
-onready var shoot_x = $"TabContainer/Controller Test/Control/VBoxContainer/shoot/x".text
-onready var shoot_y = $"TabContainer/Controller Test/Control/VBoxContainer/shoot/y".text
-onready var left_x = $"TabContainer/Controller Test/Control/VBoxContainer/left/x".text
-onready var left_y = $"TabContainer/Controller Test/Control/VBoxContainer/left/y".text
-onready var right_x = $"TabContainer/Controller Test/Control/VBoxContainer/right/x".text
-onready var right_y = $"TabContainer/Controller Test/Control/VBoxContainer/right/y".text
-var player_1 = preload('res://scenes/players/player1/player.gd').new()
-var player_2 = preload('res://scenes/players/player2/player2.gd').new()
 var os = str(OS.get_name())
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 onready var tab_container = get_node("TabContainer")

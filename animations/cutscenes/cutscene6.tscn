@@ -1,21 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://animations/cutscenes/cutscene6.anim" type="Animation" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scenes/parllax_bg_6.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/parllax_bg_4.tscn" type="PackedScene" id=3]
 [ext_resource path="res://titles/casstle_mania.tres" type="TileSet" id=4]
 [ext_resource path="res://textures/robot_demo.png" type="Texture" id=5]
 [ext_resource path="res://textures/robot_demo_2.png" type="Texture" id=6]
+[ext_resource path="res://animations/cutscenes/cutscene6.gd" type="Script" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -1.26346 ],
 "_edit_use_anchors_": false
 }
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+[node name="ParallaxBackground2" parent="." instance=ExtResource( 3 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -31,7 +33,7 @@ margin_left = -2.25
 margin_top = -133.0
 margin_right = -2.25
 custom_fonts/normal_font = ExtResource( 2 )
-text = "UFO-ROBI: So... Let's go to the factory."
+text = "UFO-ROBI: Let’s go to the mountains. There is a factory."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,6 +61,7 @@ hframes = 16
 frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cutscene6"
 playback_speed = 0.3
 anims/cutscene6 = ExtResource( 1 )
 

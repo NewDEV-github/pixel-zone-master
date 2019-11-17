@@ -5,15 +5,9 @@ extends Label
 # var b = "text"
 # Called when the node enters the scene tree for the first time.
 func save():
-	print(OS.POWERSTATE_CHARGED)
-	OS.POWERSTATE_CHARGING
-	OS.POWERSTATE_NO_BATTERY
-	OS.POWERSTATE_ON_BATTERY
+
 	var save_dict = {
 		"Number of log" : OS.get_unix_time(),
-		
-		
-		
 		"Process ID" : OS.get_process_id(),
 		"All resources" : OS.print_all_resources("user://logs/" + str(OS.get_unix_time()) + "_all_resources.log"),
 		"Textures (by size)" : OS.print_all_textures_by_size(),

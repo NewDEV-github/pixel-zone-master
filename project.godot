@@ -84,6 +84,7 @@ config/name="Pixel Zone"
 config/description="A short game made with Godot Engine"
 run/main_scene="res://scenes/intro_low_size.tscn"
 boot_splash/image="res://boot/logo/logo.png"
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.icns"
 config/windows_native_icon="res://icon.ico"
@@ -96,7 +97,6 @@ enable_audio_input=true
 
 globals="*res://globals/globals.gd"
 game_state="*res://globals/game_state.gd"
-settings="*res://globals/settings.gd"
 gamestate="*res://globals/gamestate.gd"
 log_file="*res://scenes/log_file.tscn"
 Firebase="*res://addons/GDFirebase/Firebase.gd"
@@ -107,6 +107,27 @@ background_load="*res://scenes/background_load.tscn"
 [debug]
 
 settings/stdout/print_fps=true
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
+gdscript/warnings/shadowed_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unreachable_code=false
+gdscript/warnings/standalone_expression=false
+gdscript/warnings/void_assignment=false
+gdscript/warnings/narrowing_conversion=false
+gdscript/warnings/function_may_yield=false
+gdscript/warnings/variable_conflicts_function=false
+gdscript/warnings/function_conflicts_variable=false
+gdscript/warnings/function_conflicts_constant=false
+gdscript/warnings/incompatible_ternary=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+gdscript/warnings/property_used_as_function=false
+gdscript/warnings/constant_used_as_function=false
+gdscript/warnings/function_used_as_property=false
+gdscript/warnings/integer_division=false
 
 [display]
 
