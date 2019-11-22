@@ -1,4 +1,12 @@
 extends Control
+var theme1
+var theme2
+var theme3
+var theme4
+var theme5
+var theme6
+var theme7
+var theme8
 var solarized_light = load("res://themes/solarized_light.tres")
 var solarized_dark = load("res://themes/solarized_dark.tres")
 var light = load("res://themes/light.tres")
@@ -11,7 +19,6 @@ var yellow = load("res://themes/yellow_theme.tres")
 var old = load("res://themes/2theme.tres")
 var blue = load("res://themes/blue_theme.tres")
 var default = load("res://themes/theme_test.tres")
-var ui_theme #= $theme.text
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _save():
 	var save = File.new()
@@ -99,14 +106,14 @@ func _on_Solarized_light_pressed():
 
 func _ready():
 	_load()
-#	self.set_theme(default)
-	$GameUI/Menu/OptionsPage.connect("ready_to_load", self, "_load_user_theme")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Neon.connect("pressed", self, "_on_Neon_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Alien.connect("pressed", self, "_on_Alien_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Light.connect("pressed", self, "_on_Light_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_dark.connect("pressed", self, "_on_Solarized_dark_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_light.connect("pressed", self, "_on_Solarized_light_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Default.connect("pressed", self, "_on_Default_pressed")
-	$GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Old.connect("pressed", self, "_on_Old_pressed")
+	
+	theme1 = $GameUI/Menu/OptionsPage.connect("ready_to_load", self, "_load_user_theme")
+	theme2 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Neon.connect("pressed", self, "_on_Neon_pressed")
+	theme3 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Alien.connect("pressed", self, "_on_Alien_pressed")
+	theme4 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Light.connect("pressed", self, "_on_Light_pressed")
+	theme5 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_dark.connect("pressed", self, "_on_Solarized_dark_pressed")
+	theme6 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Solarized_light.connect("pressed", self, "_on_Solarized_light_pressed")
+	theme7 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Default.connect("pressed", self, "_on_Default_pressed")
+	theme8 = $GameUI/Menu/OptionsPage/TabContainer/Theme/VBoxContainer/Old.connect("pressed", self, "_on_Old_pressed")
 func _on_theme_selected(path):
 	self.set_theme(path)

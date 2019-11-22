@@ -17,6 +17,7 @@ var on_floor = false
 var shoot_time=99999 #time since last shot
 var anim=""
 var speed = 0.5
+var scene
 onready var sprite = $sprite
 func _ready():
 	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
@@ -28,7 +29,7 @@ func _physics_process(delta):
 #		if $console/console.visible == true:
 #			$console/console.hide()
 	if $ui/Control/ProgressBar.value == 0:
-		get_tree().change_scene("scenes/GameOver.tscn")
+		scene = get_tree().change_scene("scenes/GameOver.tscn")
 	onair_time += delta
 	shoot_time += delta
 

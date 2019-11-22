@@ -1,10 +1,7 @@
 extends Control
+var scene
+var config
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
-var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
-var downloads = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
-var movies = OS.get_system_dir(OS.SYSTEM_DIR_MOVIES)
-var music = OS.get_system_dir(OS.SYSTEM_DIR_MUSIC)
 func _load():
 	var load_ = File.new()
 	load_.open(str(documents) +"/Pixel Zone/.data/settings/lang.save", File.READ)
@@ -27,14 +24,14 @@ func _load():
 func _ready():
 	
 	ProjectSettings.save()
-	var true_ = 'false'
+
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()
 	
 	var conf = File.new()
 	if not conf.file_exists('user://456378r9w4iufuhj'):
 		vconf.set_value("saves", "game_pass", "false")
-		vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")
+		config = vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")
 		conf.open('user://456378r9w4iufuhj', File.WRITE)
 	OS.set_use_file_access_save_and_swap(true)
 	var documents_dir = Directory.new()
@@ -64,7 +61,6 @@ func _ready():
 		documents_dir.make_dir('1')
 		documents_dir.make_dir('2')
 	_load()
-	var update = File.new()
 	var config = ConfigFile.new()
 	config.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
@@ -80,4 +76,5 @@ func save():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	get_tree().change_scene("res://scenes/gui_loader.tscn")
+	if not str(anim_name) == '':
+		scene = get_tree().change_scene("res://scenes/gui_loader.tscn")

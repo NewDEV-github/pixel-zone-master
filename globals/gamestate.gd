@@ -1,4 +1,9 @@
 extends Node
+var connect
+var connect2
+var connect3
+var connect4
+var connect5
 var host = NetworkedMultiplayerENet.new()
 var player_scene = load("res://dlcs/multi/player.tscn")
 # Default game port
@@ -22,8 +27,7 @@ signal game_error(what)
 
 # Callback from SceneTree
 func _player_connected(id):
-	# This is not used in this demo, because _connected_ok is called for clients
-	# on success and will do the job.
+	print(str(id))
 	pass
 
 # Callback from SceneTree
@@ -173,8 +177,8 @@ func check_host(host:String):
 	if host.is_valid_ip_address() == false:
 		return false
 func _ready():
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
-	get_tree().connect("connected_to_server", self, "_connected_ok")
-	get_tree().connect("connection_failed", self, "_connected_fail")
-	get_tree().connect("server_disconnected", self, "_server_disconnected")
+	connect = get_tree().connect("network_peer_connected", self, "_player_connected")
+	connect2 = get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
+	connect3 = get_tree().connect("connected_to_server", self, "_connected_ok")
+	connect4 = get_tree().connect("connection_failed", self, "_connected_fail")
+	connect5 = get_tree().connect("server_disconnected", self, "_server_disconnected")

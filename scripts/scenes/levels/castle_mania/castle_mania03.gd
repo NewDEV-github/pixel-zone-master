@@ -3,7 +3,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var scene
 # Called when the node enters the scene tree for the first time.
 var player_default = globals.selected_player
 func _ready():
@@ -39,22 +39,22 @@ func _ready():
 func _on_Spikes3x1_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 
 
 func _on_Spikes1x11_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 
 
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 
 
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/Credits.tscn")
+		scene = get_tree().change_scene("res://scenes/Credits.tscn")

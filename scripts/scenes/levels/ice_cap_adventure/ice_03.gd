@@ -1,10 +1,10 @@
 extends Node2D
 
-
+var scene
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins01.tscn")
+		scene = get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins01.tscn")
 var player_default = globals.selected_player
 func _ready():
 	add_child(Object(player_default))
@@ -37,5 +37,5 @@ func _ready():
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 

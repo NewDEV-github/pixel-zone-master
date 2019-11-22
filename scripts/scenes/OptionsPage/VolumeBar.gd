@@ -15,3 +15,4 @@ func _load():
 
 func _on_VolumeBar_value_changed(value):
 	_save()
+	value = value

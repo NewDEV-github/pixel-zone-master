@@ -1,4 +1,5 @@
 extends Node
+var scene
 var player_default = globals.selected_player
 func _ready():
 	add_child(Object(player_default))
@@ -29,10 +30,10 @@ func _ready():
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		get_tree().change_scene("scenes/GameOver.tscn")
+		scene = get_tree().change_scene("scenes/GameOver.tscn")
 
 func _on_nextlevel_body_entered(body):
 	if body.name =="Player":
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_01.tscn")
+		scene = get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_01.tscn")
 

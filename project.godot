@@ -107,27 +107,7 @@ background_load="*res://scenes/background_load.tscn"
 [debug]
 
 settings/stdout/print_fps=true
-gdscript/warnings/unassigned_variable=false
-gdscript/warnings/unassigned_variable_op_assign=false
-gdscript/warnings/unused_variable=false
-gdscript/warnings/shadowed_variable=false
-gdscript/warnings/unused_class_variable=false
 gdscript/warnings/unused_argument=false
-gdscript/warnings/unreachable_code=false
-gdscript/warnings/standalone_expression=false
-gdscript/warnings/void_assignment=false
-gdscript/warnings/narrowing_conversion=false
-gdscript/warnings/function_may_yield=false
-gdscript/warnings/variable_conflicts_function=false
-gdscript/warnings/function_conflicts_variable=false
-gdscript/warnings/function_conflicts_constant=false
-gdscript/warnings/incompatible_ternary=false
-gdscript/warnings/unused_signal=false
-gdscript/warnings/return_value_discarded=false
-gdscript/warnings/property_used_as_function=false
-gdscript/warnings/constant_used_as_function=false
-gdscript/warnings/function_used_as_property=false
-gdscript/warnings/integer_division=false
 
 [display]
 
@@ -329,7 +309,7 @@ ui_delete={
 
 [locale]
 
-translations=PoolStringArray( "res://translations/text.en.translation", "res://translations/text.es.translation", "res://translations/text.de.translation", "res://translations/text.pl.translation", "res://translations/text.it.translation", "res://translations/text.pt.translation", "res://translations/text.fr.translation", "res://translations/text2.de.translation", "res://translations/text2.en.translation", "res://translations/text2.es.translation", "res://translations/text2.fr.translation", "res://translations/text2.it.translation", "res://translations/text2.pl.translation", "res://translations/text2.pt.translation", "res://translations/editor.de.translation", "res://translations/editor.en.translation", "res://translations/editor.es.translation", "res://translations/editor.fr.translation", "res://translations/editor.it.translation", "res://translations/editor.pl.translation", "res://translations/editor.pt.translation" )
+translations=PoolStringArray( "res://translations/text.en.translation", "res://translations/text.es.translation", "res://translations/text.de.translation", "res://translations/text.pl.translation", "res://translations/text.it.translation", "res://translations/text.pt.translation", "res://translations/text.fr.translation", "res://translations/text2.de.translation", "res://translations/text2.en.translation", "res://translations/text2.es.translation", "res://translations/text2.fr.translation", "res://translations/text2.it.translation", "res://translations/text2.pl.translation", "res://translations/text2.pt.translation", "res://translations/editor.de.translation", "res://translations/editor.en.translation", "res://translations/editor.es.translation", "res://translations/editor.fr.translation", "res://translations/editor.it.translation", "res://translations/editor.pl.translation", "res://translations/editor.pt.translation", "res://translations/cutscenes.de.translation", "res://translations/cutscenes.en.translation", "res://translations/cutscenes.es.translation", "res://translations/cutscenes.fr.translation", "res://translations/cutscenes.it.translation", "res://translations/cutscenes.pl.translation", "res://translations/cutscenes.pt.translation" )
 translation_remaps={
 
 }

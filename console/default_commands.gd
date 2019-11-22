@@ -1,5 +1,5 @@
 class_name DefaultCommands
-
+var yt
 var _firstHelp := true
 const ConsoleRights = preload("res://console/console_rights.gd")
 
@@ -152,9 +152,11 @@ func show_default_commands(_input : Array):
 func toggle_text_background(_input : Array):
 	_consoleRef.update_text_background(!_consoleRef.showTextBackground)
 func about(input : Array):
+	print(str(input))
 	_consoleRef.append_message_no_event(": That game was made only with hardware from [color=white]LENOVO[/color]", false)
 func yt(input : Array):
-	OS.shell_open("https://www.youtube.com/channel/UC71U5GLMcpg5y6gKKhyQRLQ?view_as=subscriber")
+	print(str(input))
+	yt = OS.shell_open("https://www.youtube.com/channel/UC71U5GLMcpg5y6gKKhyQRLQ?view_as=subscriber")
 func set_console_size(input : Array):
 	_consoleRef.rect_size = Vector2(float(input[0]), float(input[1]))
 
@@ -163,8 +165,6 @@ func toggle_titlebar(_input : Array):
 	_consoleRef.update_visibility_titlebar(!_consoleRef.get_node("offset/titleBar").visible)
 
 func current_scene(input : Array):
-	var path = input
-	var check = File.new()
 	background_load.load_scene(input[0])
 const CallRights = preload("res://console/console_rights.gd")
 

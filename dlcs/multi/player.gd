@@ -9,18 +9,19 @@ const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
 var TIMER_LIMIT = 2.5
-var timer = 0.0
 var linear_vel = Vector2()
 var onair_time = 0 #
-var teleport_destination
 var on_floor = false
 var shoot_time=99999 #time since last shot
 var anim=""
 var speed = 0.5
+var scene
+var fpshide
+var fpsshow
 onready var sprite = $sprite
 func _ready():
-	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
-	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
+	fpshide = $ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
+	fpsshow = $ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
 func _physics_process(delta):
 #	if Input.is_action_just_pressed("console"):
 #		if $console/console.visible == false:
@@ -28,7 +29,7 @@ func _physics_process(delta):
 #		if $console/console.visible == true:
 #			$console/console.hide()
 	if $ui/Control/ProgressBar.value == 0:
-		get_tree().change_scene("scenes/GameOver.tscn")
+		scene = get_tree().change_scene("scenes/GameOver.tscn")
 	onair_time += delta
 	shoot_time += delta
 
@@ -159,6 +160,7 @@ func _on_ice_cap1_achieve3():
 func dd():
 	$ui/Control/ProgressBar.value -= 70
 func _process(delta):
+	delta -= 1
 	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
 func _on_fps_show():
 	$ui/Control/fps.show()

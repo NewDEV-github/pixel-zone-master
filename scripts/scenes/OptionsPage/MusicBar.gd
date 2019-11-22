@@ -14,3 +14,4 @@ func _load():
 	AudioServer.set_bus_volume_db(1, float(str(loaded_settings)))
 func _on_MusicBar_value_changed(value):
 	_save()
+	value = value

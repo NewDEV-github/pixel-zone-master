@@ -1,6 +1,6 @@
 extends Node
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-var scene_path = ''
+var scene_path
 var collected = 0 setget _set_collected, _get_collected
 var auto_load_mod = true
 signal collected_changed
@@ -29,6 +29,7 @@ func _get_player_pos_y():
 func on_scene_changed():
 	selected_player.restart_position()
 func _ready():
+	scene_path = ''
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
 	var load_set = bool(str(beta_2.get_line()))

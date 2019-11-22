@@ -1,4 +1,4 @@
 extends VBoxContainer
-var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+var apply
 func _ready():
-	$ApplyButton.connect("pressed", self, "_on_apply")
+	apply = $ApplyButton.connect("pressed", self, "_on_apply")

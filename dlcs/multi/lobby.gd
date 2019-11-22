@@ -1,4 +1,5 @@
 extends Control
+var scene
 func _process(delta):
 	if $connect/Control/CheckButton.pressed == true:
 		$connect/Control/ROBI.show()
@@ -86,7 +87,7 @@ func _on_start_pressed():
 
 
 func _on_back_pressed():
-	get_tree().change_scene("scenes/Main Menu/GUI.tscn")
+	scene = get_tree().change_scene("scenes/Main Menu/GUI.tscn")
 
 
 func _on_back3_pressed():

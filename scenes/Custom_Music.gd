@@ -1,7 +1,8 @@
 extends AudioStreamPlayer
 export(String) var id
+var bgm
 func _ready():
-	globals.connect("play_bgm", self, "_play_bgm")
+	bgm = globals.connect("play_bgm", self, "_play_bgm")
 
 func _play_bgm(mid, value):
 	if id != mid:

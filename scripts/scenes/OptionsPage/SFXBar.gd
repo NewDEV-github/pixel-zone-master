@@ -16,3 +16,4 @@ func _load():
 
 func _on_SFXBar_value_changed(value):
 	_save()
+	value = value

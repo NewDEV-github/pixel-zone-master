@@ -29,16 +29,13 @@ anchor_bottom = 1.0
 margin_top = 452.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="Label" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -133.0
-custom_fonts/normal_font = ExtResource( 2 )
-text = "Location: Some sea. Robots floating on a boat that stood on the shore. The toy factory was right in the middle of the ocean. "
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_fonts/font = ExtResource( 2 )
+text = "KEY_CUT_1_1"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -53,3 +50,4 @@ __meta__ = {
 autoplay = "cutscene1"
 playback_speed = 0.3
 anims/cutscene1 = ExtResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -3,7 +3,9 @@
 """
 extends Control
 class_name Console
-
+var log1
+var log2
+var log3
 # signals
 signal on_message_sent
 signal on_command_sent
@@ -291,11 +293,9 @@ func create_log_file(filePath):
 		if not dir.file_exists(filePath):
 			print("log file for console doesn't exist!")
 		logFile = File.new()
-		logFile.open(filePath, logFile.WRITE_READ)
+		log1 = logFile.open(filePath, logFile.WRITE_READ)
 		logFileCreated = true
 		logFile.close()
-	
-	
 func add_basic_commands():
 	DefaultCommands.new(self) # adds default commands
 
@@ -859,7 +859,7 @@ func _get_color_by_name(colorName : String) -> Color:
 func _on_logTimer_timeout():
 	if not logEnabled:
 		return
-	logFile.open(logFileName, logFile.READ_WRITE)
+	log2 = logFile.open(logFileName, logFile.READ_WRITE)
 	logFile.seek_end()
 	logFile.store_string(allText)
 	logFile.close()

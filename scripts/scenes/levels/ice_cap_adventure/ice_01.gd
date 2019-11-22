@@ -1,9 +1,10 @@
 extends Node2D
+var scene
 var player_default = globals.selected_player
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
+		scene = get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
 
 func _ready():
 	var player_default = globals.selected_player
@@ -38,4 +39,4 @@ func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
 		if not str(OS.get_name()) == 'Android':
 			remove_child(player_default)
-			get_tree().change_scene("res://scenes/GameOver.tscn")
+			scene = get_tree().change_scene("res://scenes/GameOver.tscn")

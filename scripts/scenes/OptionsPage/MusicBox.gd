@@ -3,7 +3,7 @@ var master_bus
 var music_bus
 var sfx_bus
 var custom
-var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+var visibility_connect
 #	var save = File.new()
 #	save.open(str(documents) +"/Pixel Zone/.data/settings_audio_master.save", File.WRITE)
 #	save.store_line(to_json($VolumeBar.value))
@@ -38,7 +38,7 @@ func _ready():
 		$MusicBox2/OffButton, $MusicBar2
 		)
 
-	connect("visibility_changed", self, "_on_visibility_changed")
+	visibility_connect = connect("visibility_changed", self, "_on_visibility_changed")
 
 func _on_visibility_changed():
 	if not visible:

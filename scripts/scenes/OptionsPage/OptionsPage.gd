@@ -1,6 +1,5 @@
 extends Panel
 class_name Options_Page
-var current_tab = 0
 var music
 var custom_music
 var os = str(OS.get_name())
@@ -21,7 +20,7 @@ onready var tab_container = get_node("TabContainer")
 #		tab_container.set_current_tab(int(float(current_tab)))
 #	print(current_tab)
 func _process(delta):
-	
+	delta -=1
 	tab_container.set_tab_title(0, "KEY_G_A")
 	tab_container.set_tab_title(1, "KEY_THEME")
 	tab_container.set_tab_title(2, "KEY_LANG")

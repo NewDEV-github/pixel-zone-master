@@ -1,10 +1,10 @@
 extends Panel
 
 var current_page = null
-
+var visible_connect
 
 func _ready():
-	connect("visibility_changed", self, "_on_visibility_changed")
+	visible_connect = connect("visibility_changed", self, "_on_visibility_changed")
 func _on_visibility_changed():
 	get_tree().paused = visible
 	if visible:
@@ -30,13 +30,14 @@ func _on_Return_pressed():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		visible = !visible
+		delta -=1
 
 func _on_Options_pressed():
 	show_page($OptionsPage)
-
-func _on_window_minimized_changed(value):
-	show()
-
+#
+#func _on_window_minimized_changed(value):
+#	show()
+#
 
 func _on_Stats_pressed():
 	show_page($StatsPage)

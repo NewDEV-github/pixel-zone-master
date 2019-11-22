@@ -1,5 +1,5 @@
 extends Control
-
+var scene
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
@@ -103,7 +103,7 @@ func _on_PP_pressed():
 func _on_Licenses_pressed():
 	$TextureRect/Control._show()
 func _on_Play8_pressed():
-	get_tree().change_scene("res://dlcs/multi/lobby.tscn")
+	scene = get_tree().change_scene("res://dlcs/multi/lobby.tscn")
 
 
 
@@ -143,7 +143,7 @@ func _on_ModSelector_file_selected(path):
 	mod_temp = path
 	print(str(path))
 	ProjectSettings.load_resource_pack(path)
-	get_tree().change_scene("res://mod.tscn")
+	scene = get_tree().change_scene("res://mod.tscn")
 
 func _on_ModSelector_popup_hide():
 	pass

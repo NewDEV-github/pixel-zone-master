@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Sent to everyone else
-slave func do_explosion():
+puppet func do_explosion():
 	get_node("anim").play("explode")
 
 # Received by owner of the rock

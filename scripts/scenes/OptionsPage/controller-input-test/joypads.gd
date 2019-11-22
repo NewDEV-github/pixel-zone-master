@@ -2,12 +2,14 @@ extends Node2D
 
 # Member variables
 var joy_num
+var joy_num_connect
 var cur_joy = -1
 var axis_value
 
 const DEADZONE = 0.2
 
 func _physics_process(delta):
+	delta -=1
 	# Get the joypad device number from the spinbox
 	joy_num = get_node("device_info/joy_num").get_value()
 
@@ -44,7 +46,7 @@ func _physics_process(delta):
 
 func _ready():
 	set_physics_process(true)
-	Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
+	joy_num_connect = Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
 
 #Called whenever a joypad has been connected or disconnected.
 func _on_joy_connection_changed(device_id, connected):

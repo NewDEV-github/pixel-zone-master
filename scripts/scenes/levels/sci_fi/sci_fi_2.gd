@@ -1,5 +1,5 @@
 extends Control
-
+var scene
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -37,16 +37,16 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 
 
 func _on_toxic_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/GameOver.tscn")
+		scene = get_tree().change_scene("res://scenes/GameOver.tscn")
 
 
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		get_tree().change_scene("res://scenes/stages/scifi/sci_fi_3.tscn")
+		scene = get_tree().change_scene("res://scenes/stages/scifi/sci_fi_3.tscn")
