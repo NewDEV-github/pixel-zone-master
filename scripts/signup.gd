@@ -6,9 +6,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time
 
-
-func _on_LinkButton_pressed():
-	OS.shell_open("https://masterpolska.pl.tl/Polityka--Prywatno%26%23347%3Bci.htm")
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var user_name = $Panel/VBoxContainer/name.text
 var user_pass = $Panel/VBoxContainer/password.text

@@ -76,7 +76,7 @@ func _on_Sign_In_pressed():
 
 
 func _on_Restore_pressed():
-	OS.shell_open("https://masterpolska123.github.io/home/login.html")
+	OS.shell_open("https://masterpolska123.github.io/home/auth/login/")
 
 
 func _on_RELOAD_pressed():

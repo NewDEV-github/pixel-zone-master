@@ -34,7 +34,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	
 	print(str(response_code))
 func _ok():
-	OS.shell_open('https://masterpolska123.github.io/home/pixelzone.html')
+	OS.shell_open('https://masterpolska123.github.io/home/pixel-zone/')
 	hide()
 func _failed():
 	$AcceptDialog.hide()
