@@ -110,7 +110,7 @@ func _on_signup_pressed():
 		$Control.hide()
 
 func _on_Button4_pressed():
-	OS.shell_open("https://masterpolska123.github.io/home/login.html")
+	OS.shell_open("https://masterpolska123.github.io/home/auth/login")
 
 
 func _on_ROBI_toggled(button_pressed):

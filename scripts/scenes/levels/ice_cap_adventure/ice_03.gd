@@ -4,7 +4,7 @@ var scene
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		scene = get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins01.tscn")
+		scene = get_tree().change_scene("res://animations/cutscenes/cutscene3.tscn")
 var player_default = globals.selected_player
 func _ready():
 	add_child(Object(player_default))

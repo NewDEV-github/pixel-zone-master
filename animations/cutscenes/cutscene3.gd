@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	pass # Replace with function body.
+	get_tree().change_scene('res://scenes/stages/jungle_ruins/jungle_ruins01.tscn')

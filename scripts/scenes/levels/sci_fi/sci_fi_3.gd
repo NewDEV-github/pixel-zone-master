@@ -50,5 +50,5 @@ func _on_toxic_body_entered(body):
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		scene = get_tree().change_scene("res://scenes/stages/castle_mania/castle_mania01.tscn")
+		scene = get_tree().change_scene("res://animations/cutscenes/cutscene6.tscn")
 

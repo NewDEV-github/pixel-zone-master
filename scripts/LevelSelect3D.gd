@@ -1,7 +1,13 @@
 extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_select_pressed():
-	background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/pixel_adventure/stage.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene1.tscn')
 func _on_select2_pressed():
 	background_load.load_scene("res://scenes/stages/pixel_adventure/stage2.tscn")
 func _on_select3_pressed():

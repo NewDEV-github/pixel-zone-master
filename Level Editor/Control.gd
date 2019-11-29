@@ -790,7 +790,7 @@ func _on_40x40_pressed():
 
 
 func _on_FAQ_pressed():
-	OS.shell_open('https://masterpolska123.github.io/home/faq/index.html#leveleditor')
+	OS.shell_open('https://masterpolska123.github.io/home/faq/#leveleditor')
 
 
 func _on_Timer_timeout():

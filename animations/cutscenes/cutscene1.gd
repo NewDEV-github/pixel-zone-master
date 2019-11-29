@@ -6,12 +6,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+	var file = File.new()
+	file.open('user://cut.dat', File.WRITE)
+	file.store_line(str(true))
 func _on_AnimationPlayer_animation_finished(anim_name):
-	pass # Replace with function body.
+	get_tree().change_scene('res://scenes/stages/pixel_adventure/stage.tscn')

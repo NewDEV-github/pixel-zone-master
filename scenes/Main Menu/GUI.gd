@@ -184,7 +184,7 @@ func _on_Play5_pressed():
 
 
 func _on_LoadGame2_pressed():
-	OS.shell_open('https://masterpolska123.github.io/home/faq/index.html')
+	OS.shell_open('https://masterpolska123.github.io/home/faq/')
 
 
 func _on_LanguageButton_item_selected(id):

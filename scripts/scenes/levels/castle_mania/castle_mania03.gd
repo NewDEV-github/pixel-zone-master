@@ -57,4 +57,4 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
-		scene = get_tree().change_scene("res://scenes/Credits.tscn")
+		scene = get_tree().change_scene("res://animations/cutscenes/cutscene7.tscn")
