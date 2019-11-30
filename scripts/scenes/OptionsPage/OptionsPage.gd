@@ -22,9 +22,9 @@ onready var tab_container = get_node("TabContainer")
 func _process(delta):
 	delta -=1
 	tab_container.set_tab_title(0, "KEY_G_A")
-	tab_container.set_tab_title(1, "KEY_THEME")
-	tab_container.set_tab_title(2, "KEY_LANG")
-	tab_container.set_tab_title(3, "KEY_CON_TAB")
+	tab_container.set_tab_title(1, "KEY_CON_TAB")
+	tab_container.set_tab_title(2, "KEY_THEME")
+	tab_container.set_tab_title(3, "KEY_LANG")
 	tab_container.set_tab_title(4, "KEY_CONTROLLER")
 	if not str(os) == 'Android':
 		$TabContainer.set_tab_disabled(4, false)

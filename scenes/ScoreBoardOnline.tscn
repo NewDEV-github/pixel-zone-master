@@ -21,6 +21,9 @@ margin_left = 0.727264
 margin_top = 1.125
 margin_right = 0.727295
 margin_bottom = 1.125
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Scores" type="ItemList" parent="Panel"]
 anchor_left = 1.0

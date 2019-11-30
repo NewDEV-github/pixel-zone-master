@@ -125,7 +125,7 @@ func _on_WindowDialog3_about_to_show():
 
 
 func _on_Update_pressed():
-	background_load.load_scene("res://scenes/ScoreBoardOnline.tscn")
+	background_load.load_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
 
 func _on_VScrollBar_value_changed(value):

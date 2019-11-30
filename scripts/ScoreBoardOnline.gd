@@ -14,39 +14,14 @@ var score_2
 var score_3
 var score_4
 func _ready():
-	#load user's score
-	score.open_encrypted_with_pass("user://other_saves/0.save", File.READ, str(3087283))
-	score_0 = score.get_line()
-	print(score_0)
-	score.close()
-	var save_file = File.new()
-	#Load current user's name
-	if not save_file.file_exists(str(documents)  + "/Pixel Zone/.data/name.save"):
-		$Panel2.show()
-	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.READ, str(2345654))
-	var loaded_name = save_file.get_line()
-	$Panel/Names.add_item(str(loaded_name) + " - You")
-	$Panel/Scores.add_item(str(score_0))
-	#load other user's scores
-	#1
-	score.open('user://other_saves/1.save', File.READ)
-	score_1 = parse_json(score.get_line())
-	score.close()
-	#2
-	score.open('user://other_saves/2.save', File.READ)
-	score_2 = parse_json(score.get_line())
-	score.close()
-	#3
-	score.open('user://other_saves/3.save', File.READ)
-	score_3 = parse_json(score.get_line())
-	score.close()
-	#4
-	score.open('user://other_saves/4.save', File.READ)
-	score_4 = parse_json(score.get_line())
-	score.close()
-	#count users from highest score to lower
-
-
+	SilentWolf.Scores.persist_score("alan_duval", 34)
+	SilentWolf.Scores.persist_score("HamsterToad", 49)
+	SilentWolf.Scores.persist_score("Bolivar", 17)
+	SilentWolf.Scores.persist_score("appendage", 6)
+	SilentWolf.Scores.persist_score("masterofdisaster", 28)
+	SilentWolf.Scores.persist_score("ken", 24)
+	SilentWolf.Scores.persist_score("rabidtiger", 39)
+	SilentWolf.Scores.persist_score("Bloodnoon", 32)
 func _on_Button_pressed():
 	$"Login Panel".popup_centered()
 	$Panel2.hide()
@@ -56,6 +31,7 @@ func _on_SignUp_pressed():
 	var password = $"Login Panel/Sign In/Sign Up/Password".text
 	var confirm_password = $"Login Panel/Sign In/Sign Up/Confirm Password".text
 	if str(password) == str(confirm_password):
+		SilentWolf.Auth.register_player(email, email, password, confirm_password)
 		Firebase.Auth.signup_with_email_and_password(email, password)
 #	if not str(password) == str(confirm_password):
 #		$Label.show()
@@ -69,6 +45,7 @@ func _on_Sign_In_pressed():
 	var email = $"Login Panel/Sign In/Email".text
 	var password = $"Login Panel/Sign In/Password".text
 	Firebase.Auth.login_with_email_and_password(email, password)
+	SilentWolf.Auth.login_player(email, password)
 	var save_file = File.new()
 	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.WRITE, str(2345654))
 	save_file.store_line(str(email))

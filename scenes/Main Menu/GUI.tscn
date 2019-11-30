@@ -591,9 +591,19 @@ __meta__ = {
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
 [node name="Control2" parent="." instance=ExtResource( 5 )]
+visible = false
 margin_right = 5.0
 margin_bottom = 5.0
 mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.74911
+margin_top = 490.5
+margin_right = 503.749
+margin_bottom = 521.5
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_TRANSLATIONS"
+align = 1
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]

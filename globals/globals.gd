@@ -3,6 +3,7 @@ var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var scene_path
 var collected = 0 setget _set_collected, _get_collected
 var auto_load_mod = true
+var current_stage = ''
 signal collected_changed
 signal play_bgm(id, value)
 func _set_collected(value):
@@ -27,6 +28,9 @@ func _get_player_pos_y():
 	var position_p = selected_player.position.y
 	return position_p
 func on_scene_changed():
+	var file = File.new()
+	file.open_encrypted_with_pass('user://save_data.1', File.READ, str(34567865))
+	current_stage = str(file.get_line())
 	selected_player.restart_position()
 func _ready():
 	scene_path = ''
