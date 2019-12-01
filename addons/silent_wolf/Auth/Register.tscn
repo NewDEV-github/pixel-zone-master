@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Auth/Register.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
@@ -12,41 +12,55 @@ font_data = ExtResource( 2 )
 size = 32
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 32
 outline_color = Color( 0.854902, 0.0901961, 0.0901961, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Register" type="TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
-margin_left = 371.0
-margin_top = 54.0
-margin_right = 1560.0
-margin_bottom = 926.0
-custom_constants/separation = 80
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 250.0
+margin_bottom = 130.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_constants/separation = 40
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="FormContainer"]
-margin_top = 90.0
-margin_right = 1189.0
-margin_bottom = 162.0
+margin_right = 1274.0
+margin_bottom = 72.0
 custom_fonts/font = SubResource( 1 )
 text = "Sign up"
 align = 1
 
 [node name="MainFormContainer" type="HBoxContainer" parent="FormContainer"]
-margin_top = 242.0
-margin_right = 1189.0
-margin_bottom = 635.0
+margin_top = 112.0
+margin_right = 1274.0
+margin_bottom = 505.0
 custom_constants/separation = 30
+alignment = 1
 
 [node name="FormLabels" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
-editor/display_folded = true
-margin_right = 625.0
+margin_left = 59.0
+margin_right = 684.0
 margin_bottom = 393.0
 custom_constants/separation = 30
 
@@ -79,9 +93,8 @@ custom_fonts/font = SubResource( 1 )
 text = "Confirm password:"
 
 [node name="FormInputFields" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
-editor/display_folded = true
-margin_left = 655.0
-margin_right = 1155.0
+margin_left = 714.0
+margin_right = 1214.0
 margin_bottom = 393.0
 custom_constants/separation = 30
 
@@ -116,18 +129,24 @@ rect_min_size = Vector2( 360, 75 )
 custom_fonts/font = SubResource( 2 )
 max_length = 30
 
+[node name="CheckBox" type="CheckBox" parent="FormContainer"]
+margin_top = 545.0
+margin_right = 1274.0
+margin_bottom = 572.0
+custom_fonts/font = SubResource( 4 )
+text = "Keep my data"
+
 [node name="ErrorMessage" type="Label" parent="FormContainer"]
 visible = false
-margin_top = 651.0
-margin_right = 1189.0
-margin_bottom = 665.0
+margin_top = 625.0
+margin_right = 1274.0
+margin_bottom = 662.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 
 [node name="RegisterButton" parent="FormContainer" instance=ExtResource( 3 )]
-margin_top = 715.0
-margin_right = 1189.0
-margin_bottom = 833.0
+margin_top = 612.0
+margin_right = 1274.0
+margin_bottom = 730.0
 text = "Submit"
-
 [connection signal="pressed" from="FormContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]

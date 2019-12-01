@@ -17,4 +17,4 @@ func _on_coin_body_entered(body):
 		'STAGE' : globals.current_stage
 		}
 		var playername = str(SilentWolf.Auth.logged_in_player)
-		SilentWolf.Players.post_player_data(playername, points)
+		SilentWolf.Scores.persist_score(playername, points)

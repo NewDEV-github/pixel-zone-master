@@ -78,3 +78,11 @@ func _on_CloseButton_pressed():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	print("scene name: " + str(scene_name))
 	get_tree().change_scene(scene_name)
+
+
+func _on_Button2_pressed():
+	get_tree().change_scene('res://addons/silent_wolf/Auth/Login.tscn')
+
+
+func _on_Button_pressed():
+	get_tree().change_scene('res://addons/silent_wolf/Auth/Register.tscn')

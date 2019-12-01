@@ -4,7 +4,7 @@ onready var Scores = Node.new()
 onready var Auth = Node.new()
 
 var config = {
-	"api_key": "FmKF4gtm0Z2RbUAEU62kZ2OZoYLj4PYOURAPIKEY",
+	"api_key": "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
 	"game_id": "PixelZone",
 	"game_version": "0.9.2-beta2"
 }
@@ -14,7 +14,7 @@ var scores_config = {
 }
 
 var auth_config = {
-	"redirect_to_scene": "res://scenes/ScoreboardOnline"
+	"redirect_to_scene": "res://addons/silent_wolf/Scores/Leaderboard.tscn"
 }
 
 func _ready():

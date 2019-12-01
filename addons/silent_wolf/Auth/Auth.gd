@@ -69,14 +69,14 @@ func _on_LoginPlayer_request_completed( result, response_code, headers, body ):
 			emit_signal("login_failed", response.error)
 	
 func _on_RegisterPlayer_request_completed( result, response_code, headers, body ):
-	RegisterPlayer.queue_free()
+#	RegisterPlayer.queue_free()
 	var json = JSON.parse(body.get_string_from_utf8())
 	var response = json.result
 	print("reponse: " + str(response))
 	if "message" in response.keys() and response.message == "Forbidden":
 		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
 	else:
-		print("SilentWolf create new player success? : " + str(response.success))
+		print("SilentWolf create new player success : " + str(response.success))
 		# also get a JWT token here
 		# send a different signal depending on registration success or failure
 		if response.success:
@@ -87,11 +87,12 @@ func _on_RegisterPlayer_request_completed( result, response_code, headers, body 
 			
 func setup_login_timer():
 	login_timer = Timer.new()
-	login_timer.set_one_shot(true)
-	login_timer.set_wait_time(login_timeout)
-	login_timer.connect("timeout", self, "on_login_timeout_complete")
 	add_child(login_timer)
-
+	var node = get_tree().get_root()
+	login_timer.set_owner(node)
+	login_timer.wait_time = login_timeout
+	login_timer.set_one_shot(true)
+	login_timer.connect("timeout", self, "on_login_timeout_complete")
 func on_login_timeout_complete():
 	logged_in_player = null
 	emit_signal("player_logged_out")
