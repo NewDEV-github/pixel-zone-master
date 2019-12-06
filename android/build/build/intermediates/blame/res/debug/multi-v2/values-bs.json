@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\karol\\OneDrive\\Dokumenty\\pixel-zone-master\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\77390ebfe91fa35c766d1b3fc4831914\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,267,386,452,515,603,718",
+                        "endColumns": "69,118,65,62,87,114,69",
+                        "endOffsets": "266,385,451,514,602,717,787"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "305,379,502,572,639,731,850",
+                        "endColumns": "73,122,69,66,91,118,73",
+                        "endOffsets": "374,497,567,634,726,845,919"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\8339c6e49e0e24f68beae7faf86ffcdd\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "199",
+                        "endOffsets": "446"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "199",
+                        "endOffsets": "300"
+                    }
+                }
+            ]
+        }
+    ]
+}

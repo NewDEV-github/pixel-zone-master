@@ -374,16 +374,19 @@ anchor_bottom = 1.0
 margin_top = -39.0
 margin_right = 538.0
 custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -305.997
+margin_left = -305.999
 margin_top = -127.0
-margin_right = 305.995
-margin_bottom = 127.0
+margin_right = 305.994
+margin_bottom = 205.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -443,14 +446,24 @@ text = "FAQ"
 flat = true
 
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
-visible = false
-margin_top = 215.0
+margin_top = 258.0
 margin_right = 611.0
-margin_bottom = 254.0
+margin_bottom = 297.0
 theme = ExtResource( 4 )
 text = "KEY_ONLINE_SC"
 flat = true
 clip_text = true
+
+[node name="Label2" type="Label" parent="TextureRect/VBoxContainer"]
+margin_top = 301.0
+margin_right = 611.0
+margin_bottom = 332.0
+custom_fonts/font = ExtResource( 3 )
+text = "KEY_TRANSLATIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PopupPanel" type="WindowDialog" parent="TextureRect"]
 anchor_right = 1.0
@@ -538,12 +551,14 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="Control" parent="." instance=ExtResource( 7 )]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 0.0
 margin_bottom = 0.0
 mouse_filter = 2
 
 [node name="VScrollBar" type="VSlider" parent="."]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 16.0
 rect_scale = Vector2( 2, 1 )
@@ -558,6 +573,7 @@ anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 4 )
 
 [node name="Back" type="Button" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
@@ -596,14 +612,7 @@ margin_right = 5.0
 margin_bottom = 5.0
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="."]
-margin_left = 8.74911
-margin_top = 490.5
-margin_right = 503.749
-margin_bottom = 521.5
-custom_fonts/font = ExtResource( 3 )
-text = "KEY_TRANSLATIONS"
-align = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]

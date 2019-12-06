@@ -78,6 +78,10 @@ _global_script_class_icons={
 "Pause_Menu": ""
 }
 
+[android]
+
+modules="org/godotengine/godot/GodotAdMob org/godotengine/godot/AndroidPermissions"
+
 [application]
 
 config/name="Pixel Zone"

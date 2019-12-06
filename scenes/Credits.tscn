@@ -11,6 +11,9 @@ margin_bottom = 612.0
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -32,8 +35,12 @@ text = "
 Thank You for playing
 Pixel Zone
 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "credits"
+playback_speed = 0.5
 anims/credits = ExtResource( 4 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

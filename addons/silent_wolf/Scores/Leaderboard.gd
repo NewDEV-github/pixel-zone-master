@@ -10,13 +10,13 @@ func _ready():
 	var local_scores = SilentWolf.Scores.local_scores
 	
 	if scores: 
-		render_board(scores, null) #local_scores)
+		render_board(scores, local_scores) #null)
 	else:
 		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()
 		yield(SilentWolf.Scores.get_high_scores(), "scores_received")
 		hide_message()
-		render_board(SilentWolf.Scores.scores, null)
+		render_board(SilentWolf.Scores.scores, local_scores)
 
 func render_board(scores, local_scores):
 	var all_scores = merge_scores_with_local_scores(scores, local_scores)
@@ -32,7 +32,7 @@ func merge_scores_with_local_scores(scores, local_scores):
 			if !in_array:
 				scores.append(score)
 			scores.sort_custom(self, "sort_by_score");
-	return scores
+	return scores.resize(10)
 	
 func sort_by_score(a, b):
 	if a.score > b.score:
@@ -77,12 +77,5 @@ func hide_message():
 func _on_CloseButton_pressed():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	print("scene name: " + str(scene_name))
+	global.reset()
 	get_tree().change_scene(scene_name)
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene('res://addons/silent_wolf/Auth/Login.tscn')
-
-
-func _on_Button_pressed():
-	get_tree().change_scene('res://addons/silent_wolf/Auth/Register.tscn')

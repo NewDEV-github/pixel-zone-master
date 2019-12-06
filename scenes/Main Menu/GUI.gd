@@ -17,7 +17,90 @@ func _on_Play_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
+		
+var admob = null
+var isReal = true
+var isTop = true
+var adBannerId = "ca-app-pub-3142193952770678/2105195769" # [Replace with your Ad Unit ID and delete this message.]
+var adInterstitialId = "ca-app-pub-3142193952770678/5995273653" # [Replace with your Ad Unit ID and delete this message.]
+var adRewardedId = "ca-app-pub-3142193952770678/3880047799" # [There is no testing option for rewarded videos, so you can use this id for testing]
+# Loaders
+
+func loadBanner():
+	if admob != null:
+		admob.loadBanner(adBannerId, isTop)
+
+func loadInterstitial():
+	if admob != null:
+		admob.loadInterstitial(adInterstitialId)
+		
+func loadRewardedVideo():
+	if admob != null:
+		admob.loadRewardedVideo(adRewardedId)
+
+# Events
+
+func _on_BtnBanner_toggled(pressed):
+	if admob != null:
+		if pressed: admob.showBanner()
+		else: admob.hideBanner()
+
+func _on_BtnInterstitial_pressed():
+	if admob != null:
+		admob.showInterstitial()
+		
+func _on_BtnRewardedVideo_pressed():
+	if admob != null:
+		admob.showRewardedVideo()
+
+func _on_admob_network_error():
+	print("Network Error")
+
+func _on_admob_ad_loaded():
+	print("Ad loaded success")
+
+func _on_interstitial_not_loaded():
+	print("Error: Interstitial not loaded")
+
+func _on_interstitial_loaded():
+	print("Interstitial loaded")
+
+func _on_interstitial_close():
+	print("Interstitial closed")
+
+func _on_rewarded_video_ad_loaded():
+	print("Rewarded loaded success")
+func _on_rewarded_video_ad_closed():
+	print("Rewarded closed")
+	loadRewardedVideo()
+	
+func _on_rewarded(currency, amount):
+	print("Reward: " + currency + ", " + str(amount))
+func onResize():
+	if admob != null:
+		admob.resize()
+
 func _ready():
+	if(Engine.has_singleton("AdMob")):
+		admob = Engine.get_singleton("AdMob")
+		admob.init(isReal, get_instance_id())
+		loadBanner()
+		loadInterstitial()
+		loadRewardedVideo()
+		admob.showBanner()
+	
+		admob.Access()
+	get_tree().connect("screen_resized", self, "onResize")
+	var conf = File.new()
+	if not os == 'Android':
+		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
+			$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
+		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
+			$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
+		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
+			$TextureRect/VBoxContainer/Update.set_disabled(false)
+		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
+			$TextureRect/VBoxContainer/Update.set_disabled(true)
 	if globals.auto_load_mod == true:
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
 	if globals.auto_load_mod == false:

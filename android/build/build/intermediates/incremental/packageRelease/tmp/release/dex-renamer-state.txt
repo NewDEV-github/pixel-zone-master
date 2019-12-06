@@ -1,0 +1,4 @@
+#Fri Dec 06 21:00:12 CET 2019
+base.0=C\:\\Users\\karol\\OneDrive\\Dokumenty\\pixel-zone-master\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex

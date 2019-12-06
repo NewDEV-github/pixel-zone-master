@@ -1,6 +1,6 @@
 extends Node
 
-var UUID = load("res://addons/silent_wolf/utils/UUID.gd")
+const UUID = preload("../utils/UUID.gd")
 
 signal scores_received
 signal position_received
