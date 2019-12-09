@@ -1334,3 +1334,27 @@ func _on_VSlider_value_changed(value):
 
 func _on_HSlider_value_changed(value):
 	position_x = value*-10
+
+
+func _on_DISK_pressed():
+	$Disk.popup_centered()
+
+
+func _on_Disk_file_selected(path):
+	load_ogg(path)
+func load_ogg(file):
+	var path = file
+	var ogg_file = File.new()
+	ogg_file.open(path, File.READ)
+	var bytes = ogg_file.get_buffer(ogg_file.get_len())
+	var stream = AudioStreamOGGVorbis.new()
+	stream.data = bytes
+	var audio = preload('res://Level Editor/audio.tscn').instance()
+	if not root.has_node('AUDIO'):
+		root.add_child(audio)
+		audio.set_owner(root)
+		audio.set_name('AUDIO')
+		audio.set_stream(stream)
+	else:
+		audio.set_stream(stream)
+	ogg_file.close()

@@ -257,6 +257,7 @@ margin_bottom = 8.0
 items = [ "Jungle Ruins", null, false, "Hill", null, false, "Pixel Adventure", null, false, "Ice Cap", null, false, "Castlemania - outside", null, false, "Sci Fi", null, false, "Castlemania - inside", null, false ]
 
 [node name="PopupPanel3" type="WindowDialog" parent="."]
+visible = true
 margin_left = 180.0
 margin_top = 97.25
 margin_right = 570.0
@@ -265,12 +266,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MusicList" type="ItemList" parent="PopupPanel3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 8.0
-margin_bottom = 8.0
+margin_top = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicList" type="ItemList" parent="PopupPanel3/VBoxContainer"]
+margin_right = 390.0
+margin_bottom = 231.0
+size_flags_vertical = 3
 items = [ "Pixel Adventure", null, false, "Ice Cap", null, false, "Jungle Ruins", null, false, "Jungle Ruins 2", null, false, "Hill", null, false, "Sci Fi", null, false, "Castlemania", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DISK" type="Button" parent="PopupPanel3/VBoxContainer"]
+margin_top = 235.0
+margin_right = 390.0
+margin_bottom = 274.0
+text = "Select music from the disk"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -534,6 +551,7 @@ __meta__ = {
 autostart = true
 
 [node name="SetCurrentTile" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 39.8787
@@ -1349,6 +1367,21 @@ anchor_right = 0.973
 anchor_bottom = 1.0
 margin_top = -16.0
 margin_right = -0.351991
+
+[node name="Disk" type="FileDialog" parent="."]
+visible = true
+margin_left = 18.0
+margin_top = 101.0
+margin_right = 569.0
+margin_bottom = 573.0
+window_title = "Otwórz plik"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( "*.ogg" )
+show_hidden_files = true
+current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
+current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 [connection signal="pressed" from="Panel/VBoxContainer/icon" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon3" to="." method="_on_icon3_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon4" to="." method="_on_icon4_pressed"]
@@ -1356,7 +1389,8 @@ margin_right = -0.351991
 [connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]
 [connection signal="item_selected" from="PopupPanel2/ItemList" to="." method="_on_ItemList_item_selected"]
-[connection signal="item_selected" from="PopupPanel3/MusicList" to="." method="_on_MusicList_item_selected"]
+[connection signal="item_selected" from="PopupPanel3/VBoxContainer/MusicList" to="." method="_on_MusicList_item_selected"]
+[connection signal="pressed" from="PopupPanel3/VBoxContainer/DISK" to="." method="_on_DISK_pressed"]
 [connection signal="pressed" from="PopupPanel4/VBoxContainer2/10x10" to="." method="_on_10x10_pressed"]
 [connection signal="pressed" from="PopupPanel4/VBoxContainer2/40x40" to="." method="_on_40x40_pressed"]
 [connection signal="pressed" from="PopupPanel4/VBoxContainer2/Polygon10x10" to="." method="_on_Polygon_pressed"]
@@ -1502,3 +1536,4 @@ margin_right = -0.351991
 [connection signal="pressed" from="SetCurrentTile/VBoxContainer3/ImportCustomtile" to="." method="_on_ImportCustomtile_pressed"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="file_selected" from="Disk" to="." method="_on_Disk_file_selected"]

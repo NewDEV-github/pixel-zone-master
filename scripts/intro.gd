@@ -22,6 +22,9 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	SilentWolf.config.api_key = "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4"
+	SilentWolf.config.game_id = "PixelZone"
+	SilentWolf.config.game_version = "0.9.1-beta1"
 	
 	ProjectSettings.save()
 

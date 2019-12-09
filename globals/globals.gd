@@ -1,4 +1,5 @@
 extends Node
+var timer = Timer.new()
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var scene_path
 var collected = 0 setget _set_collected, _get_collected
@@ -13,6 +14,14 @@ func _set_collected(value):
 func _get_collected():
 	return collected
 
+func _send_data():
+	var points = {
+		'COINS' : game_state.points,
+		'STAGE' : globals.current_stage
+		}
+	var playername = str(SilentWolf.Auth.logged_in_player)
+	if not str(playername) == '':
+		SilentWolf.Scores.persist_score(playername, points)
 func play_bgm(id, value):
 	emit_signal("play_bgm", id, value)
 
@@ -32,7 +41,12 @@ func on_scene_changed():
 	file.open_encrypted_with_pass('user://save_data.1', File.READ, str(34567865))
 	current_stage = str(file.get_line())
 	selected_player.restart_position()
+
 func _ready():
+	timer.wait_time = 20
+	timer.connect("timeout", self, '_timeout')
+	timer.one_shot = false
+	timer.start()
 	scene_path = ''
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
@@ -41,3 +55,7 @@ func _ready():
 		auto_load_mod = true
 	if load_set == false :
 		auto_load_mod = false
+
+func _timeout():
+	_send_data()
+	print('SENDING DATA...')
