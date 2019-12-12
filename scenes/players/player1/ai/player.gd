@@ -17,17 +17,17 @@ var anim=""
 var speed = 0.5
 var scene
 onready var sprite = $sprite
-func _ready():
-	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
-	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
+#func _ready():
+#	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
+#	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
 func _physics_process(delta):
 #	if Input.is_action_just_pressed("console"):
 #		if $console/console.visible == false:
 #			$console/console.show()
 #		if $console/console.visible == true:
 #			$console/console.hide()
-	if $ui/Control/ProgressBar.value == 0:
-		scene = get_tree().change_scene("scenes/GameOver.tscn")
+#	if $ui/Control/ProgressBar.value == 0:
+#		scene = get_tree().change_scene("scenes/GameOver.tscn")
 	onair_time += delta
 	shoot_time += delta
 
@@ -144,8 +144,8 @@ func _on_Area2D2_area_entered(area):
 		$ui/Control/ProgressBar.value -= 3
 func _on_stage2_normal_achieve1():
 	$anim2.play("achievement")
-func _on_Timer_timeout():
-	$ui/Panel.hide()
+#func _on_Timer_timeout():
+#	$ui/Panel.hide()
 func set_player_name(new_name):
 	get_node("label").set_text(new_name)
 func save():
@@ -155,12 +155,12 @@ func save():
 	return node_data
 func _on_ice_cap1_achieve3():
 	$anim.play("achievement")
-func _process(delta):
-	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
-func _on_fps_show():
-	$ui/Control/fps.show()
-func _on_fps_hide():
-	$ui/Control/fps.hide()
+#func _process(delta):
+#	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
+#func _on_fps_show():
+#	$ui/Control/fps.show()
+#func _on_fps_hide():
+#	$ui/Control/fps.hide()
 
 func _button_position(button, x, y):
 	button.set_position(Vector2(x,y))

@@ -12,7 +12,7 @@ func _on_RegisterButton_pressed():
 	var confirm_password = $"FormContainer/MainFormContainer/FormInputFields/ConfirmPassword".text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing_label()
-	Firebase.Auth.signup_with_email_and_password(email, password)
+#	Firebase.Auth.signup_with_email_and_password(email, password)
 	
 func _on_registration_succeeded():
 	print("registration succeeded: " + str(SilentWolf.Auth.logged_in_player))

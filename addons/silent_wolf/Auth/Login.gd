@@ -10,7 +10,7 @@ func _on_LoginButton_pressed():
 	var email = $"FormContainer/UsernameContainer2/Username".text
 	var password = $"FormContainer/PasswordContainer/Password".text
 	SilentWolf.Auth.login_player(username, password)
-	Firebase.Auth.login_with_email_and_password(email, password)
+#	Firebase.Auth.login_with_email_and_password(email, password)
 	show_processing_label()
 	
 func _on_login_succeeded():

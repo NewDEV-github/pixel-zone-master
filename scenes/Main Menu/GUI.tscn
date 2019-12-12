@@ -626,6 +626,7 @@ mouse_filter = 2
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]
 [connection signal="popup_hide" from="ModSelector" to="." method="_on_ModSelector_popup_hide"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]

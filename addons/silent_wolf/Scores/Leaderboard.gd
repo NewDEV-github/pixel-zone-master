@@ -10,7 +10,7 @@ func _ready():
 	var local_scores = SilentWolf.Scores.local_scores
 	
 	if scores: 
-		render_board(scores, local_scores) #null)
+		render_board(scores, local_scores) #null
 	else:
 		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()

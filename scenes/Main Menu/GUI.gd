@@ -81,9 +81,16 @@ func onResize():
 		admob.resize()
 
 func _ready():
+	var file = File.new()
+	if file.file_exists(str(documents) + '/Pixel Zone/.data/settings/editor.txt'):
+		$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
+	else:
+		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
+	$HTTPRequest.set_download_file('user://LeaderBoard.txt')
+	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/Leaderboard_config.txt')
 	if(Engine.has_singleton("AdMob")):
 		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
+		admob.init(true, get_instance_id())
 		loadBanner()
 		loadInterstitial()
 		loadRewardedVideo()
@@ -324,3 +331,12 @@ func _on_ItemList_item_selected(index):
 
 func _on_LoadGame_pressed():
 	background_load.load_scene('res://Level Editor/Editor.tscn')
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var file = File.new()
+	file.open('user://LeaderBoard.txt', File.READ)
+	if str(file.get_line()) == 'Enable' and not os == 'Android':
+		$TextureRect/VBoxContainer/Update.set_disabled(false)
+	else:
+		$TextureRect/VBoxContainer/Update.set_disabled(true)

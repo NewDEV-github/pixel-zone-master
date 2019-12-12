@@ -121,7 +121,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GDFirebase", "adb_helper", "silent_wolf", "zylann.editor_debugger" )
+enabled=PoolStringArray( "GDFirebase", "adb_helper", "graphics_editor", "silent_wolf", "zylann.editor_debugger" )
 
 [input]
 
@@ -319,10 +319,6 @@ translation_remaps={
 
 }
 locale_filter=[ 1, [ "ar", "en", "es", "ms", "pl", "pl_PL" ] ]
-
-[network]
-
-ssl/certificates="res://ca-certificates.crt"
 
 [rendering]
 
