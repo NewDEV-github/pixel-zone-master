@@ -30,8 +30,8 @@ anchor_left = 0.300781
 anchor_top = 0.211667
 anchor_right = 0.707031
 anchor_bottom = 0.276667
-margin_top = -4.05312e-006
-margin_bottom = -2.6226e-006
+margin_top = -4.05312e-06
+margin_bottom = -2.6226e-06
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_AP"
@@ -87,18 +87,17 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="connect"]
-visible = false
 margin_right = 75.0
 margin_bottom = 39.0
-text = "Login"
+text = "Login to another account"
 
 [node name="name_label" type="Label" parent="connect"]
 anchor_left = 0.321289
 anchor_top = 0.153333
 anchor_right = 0.462891
 anchor_bottom = 0.218333
-margin_top = -1.66893e-006
-margin_bottom = 1.43051e-006
+margin_top = -1.66893e-06
+margin_bottom = 1.43051e-06
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_NAME"
@@ -111,8 +110,8 @@ anchor_left = 0.322266
 anchor_top = 0.228333
 anchor_right = 0.463867
 anchor_bottom = 0.293333
-margin_top = -3.45707e-006
-margin_bottom = 6.55651e-006
+margin_top = -3.45707e-06
+margin_bottom = 6.55651e-06
 size_flags_horizontal = 2
 size_flags_vertical = 2
 __meta__ = {
@@ -124,8 +123,8 @@ anchor_left = 0.318359
 anchor_top = 0.295833
 anchor_right = 0.513672
 anchor_bottom = 0.360833
-margin_top = 8.34465e-006
-margin_bottom = -8.82149e-006
+margin_top = 8.34465e-06
+margin_bottom = -8.82149e-06
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "KEY_IP_Adress"
@@ -138,8 +137,8 @@ anchor_left = 0.321289
 anchor_top = 0.356667
 anchor_right = 0.461914
 anchor_bottom = 0.421667
-margin_top = 7.39098e-006
-margin_bottom = 9.05991e-006
+margin_top = 7.39098e-06
+margin_bottom = 9.05991e-06
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "185.199.111.153"
@@ -152,9 +151,9 @@ anchor_left = 0.535156
 anchor_top = 0.225
 anchor_right = 0.664063
 anchor_bottom = 0.293333
-margin_top = 3.57628e-006
+margin_top = 3.57628e-06
 margin_right = -5.0
-margin_bottom = 6.91414e-006
+margin_bottom = 6.91414e-06
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "KEY_Host"
@@ -167,8 +166,8 @@ anchor_left = 0.534668
 anchor_top = 0.354167
 anchor_right = 0.658691
 anchor_bottom = 0.419167
-margin_top = 5.96046e-006
-margin_bottom = 7.39098e-006
+margin_top = 5.96046e-06
+margin_bottom = 7.39098e-06
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "KEY_Join"
@@ -181,8 +180,8 @@ anchor_left = 0.713344
 anchor_top = 0.298482
 anchor_right = 0.837367
 anchor_bottom = 0.363482
-margin_top = 5.96046e-006
-margin_bottom = 7.39098e-006
+margin_top = 5.96046e-06
+margin_bottom = 7.39098e-06
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "Get IPv4 adresses"
@@ -209,10 +208,10 @@ anchor_left = 0.433594
 anchor_top = 0.549167
 anchor_right = 0.566406
 anchor_bottom = 0.614167
-margin_left = 7.62939e-006
-margin_top = -7.62939e-006
-margin_right = 2.28882e-005
-margin_bottom = -6.19888e-006
+margin_left = 7.62939e-06
+margin_top = -7.62939e-06
+margin_right = 2.28882e-05
+margin_bottom = -6.19888e-06
 text = "KEY_Quit"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -248,7 +247,6 @@ text = "UFO-ROBI"
 align = 1
 
 [node name="WindowDialog" type="WindowDialog" parent="connect"]
-visible = true
 margin_left = 107.0
 margin_top = 91.0
 margin_right = 858.0
@@ -280,10 +278,12 @@ size_flags_vertical = 2
 window_title = "Alarm!"
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="Control"]
 modulate = Color( 0, 0, 0, 1 )
@@ -339,34 +339,47 @@ secret = true
 expand_to_text_length = true
 placeholder_text = "Confirm Password"
 
-[node name="signup" type="Button" parent="Control/Control2/VBoxContainer"]
+[node name="Keep" type="CheckBox" parent="Control/Control2/VBoxContainer"]
 margin_top = 129.0
 margin_right = 516.0
 margin_bottom = 168.0
-text = "KEY_SIGNUP"
+text = "Keep My Data"
 
-[node name="Label" type="Label" parent="Control/Control2/VBoxContainer"]
+[node name="signup" type="Button" parent="Control/Control2/VBoxContainer"]
 margin_top = 172.0
 margin_right = 516.0
 margin_bottom = 211.0
+text = "KEY_SIGNUP"
+
+[node name="Label" type="Label" parent="Control/Control2/VBoxContainer"]
+margin_top = 215.0
+margin_right = 516.0
+margin_bottom = 254.0
 text = "KEY_REG_P_A"
 align = 1
 valign = 1
 
 [node name="Label2" type="Label" parent="Control/Control2/VBoxContainer"]
-visible = false
-margin_top = 215.0
-margin_right = 424.0
-margin_bottom = 254.0
+margin_top = 258.0
+margin_right = 516.0
+margin_bottom = 297.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "KEY_PASS_ERR"
 align = 1
 valign = 1
+
+[node name="LoginBack" type="Button" parent="Control/Control2/VBoxContainer"]
+margin_top = 301.0
+margin_right = 516.0
+margin_bottom = 340.0
+text = "Back"
 
 [node name="Control" type="Control" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Control/Control"]
 anchor_left = 0.5
@@ -437,6 +450,7 @@ modulate = Color( 1, 0, 0, 1 )
 margin_top = 223.0
 margin_right = 443.0
 margin_bottom = 262.0
+align = 1
 
 [node name="Label2" type="Label" parent="Control/Control/HBoxContainer"]
 margin_top = 266.0
@@ -445,6 +459,11 @@ margin_bottom = 305.0
 text = "KEY_LOG_P_A"
 align = 1
 valign = 3
+
+[node name="Close" type="Button" parent="Control"]
+margin_right = 24.0
+margin_bottom = 39.0
+text = "x"
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="players/back3" to="." method="_on_back3_pressed"]
 [connection signal="pressed" from="connect/Button" to="." method="_on_Button_pressed"]
@@ -455,7 +474,9 @@ valign = 3
 [connection signal="toggled" from="connect/Control/ROBI" to="." method="_on_ROBI_toggled"]
 [connection signal="toggled" from="connect/Control/ROBI2" to="." method="_on_ROBI2_toggled"]
 [connection signal="pressed" from="Control/Control2/VBoxContainer/signup" to="." method="_on_signup_pressed"]
+[connection signal="pressed" from="Control/Control2/VBoxContainer/LoginBack" to="." method="_on_LoginBack_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button2" to="Control" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button3" to="Control" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Control/Control/HBoxContainer/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Close" to="." method="_on_Close_pressed"]

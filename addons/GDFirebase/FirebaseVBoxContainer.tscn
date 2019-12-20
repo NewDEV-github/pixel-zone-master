@@ -9,4 +9,3 @@ grow_vertical = 0
 size_flags_horizontal = 6
 alignment = 1
 script = ExtResource( 1 )
-

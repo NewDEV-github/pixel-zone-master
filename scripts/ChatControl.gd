@@ -13,7 +13,7 @@ func _ready():
 func login_success(auth_result):
 	auth = auth_result
 	firebase_reference = Firebase.Database.get_database_reference("game/chat", {})
-	firebase_storage = Firebase.Storage
+#	firebase_storage = Firebase.Storage
 	show()
 
 var current_file

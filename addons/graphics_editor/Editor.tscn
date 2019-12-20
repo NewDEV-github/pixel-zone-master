@@ -17,6 +17,9 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 300 )
 rect_clip_content = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PaintCanvasContainer" type="Control" parent="."]
 show_behind_parent = true
@@ -38,6 +41,10 @@ anchor_bottom = 0.0
 margin_right = 1600.0
 margin_bottom = 1600.0
 rect_min_size = Vector2( 1600, 1600 )
+grid_size = 16
+canvas_size = Vector2( 100, 100 )
+region_size = 10
+can_draw = true
 
 [node name="Grids" type="Control" parent="PaintCanvasContainer/PaintCanvas"]
 anchor_right = 1.0
@@ -47,11 +54,16 @@ mouse_filter = 2
 [node name="VisualGrid" parent="PaintCanvasContainer/PaintCanvas/Grids" instance=ExtResource( 4 )]
 mouse_filter = 2
 color = Color( 0.639216, 0.639216, 0.639216, 1 )
+size = 16
+zoom = 0
+offset = Vector2( 0, 0 )
 
 [node name="VisualGrid2" parent="PaintCanvasContainer/PaintCanvas/Grids" instance=ExtResource( 4 )]
 mouse_filter = 2
 color = Color( 1, 1, 1, 1 )
 size = 160
+zoom = 0
+offset = Vector2( 0, 0 )
 
 [node name="CanvasOutline" type="Control" parent="PaintCanvasContainer/PaintCanvas"]
 anchor_right = 1.0
@@ -61,7 +73,6 @@ script = ExtResource( 5 )
 color = Color( 0, 1, 0, 1 )
 
 [node name="Navbar" type="Control" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 margin_bottom = 20.0
 script = ExtResource( 6 )
@@ -139,7 +150,6 @@ margin_top = -70.0
 hide_root = true
 
 [node name="BottomPanel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -157,6 +167,7 @@ margin_left = -340.0
 margin_top = -165.0
 margin_right = 340.0
 margin_bottom = 165.0
+window_title = "Zapisz plik"
 filters = PoolStringArray( "*.png ; PNG Images" )
 script = ExtResource( 9 )
 

@@ -100,10 +100,14 @@ func _ready():
 	get_tree().connect("screen_resized", self, "onResize")
 	var conf = File.new()
 	if not os == 'Android':
-		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
-			$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
-		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
+		if not os == 'OSX':
+			if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
+				$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
+			if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
+				$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
+		else:
 			$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
+		
 		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
 			$TextureRect/VBoxContainer/Update.set_disabled(false)
 		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):

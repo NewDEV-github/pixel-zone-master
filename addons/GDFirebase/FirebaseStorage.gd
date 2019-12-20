@@ -6,11 +6,10 @@ class_name FirebaseStorage
 var path setget , get_path
 var auth
 var config
-var connect
 const delimiter = "/"
 
 func _ready():
-	connect = connect("request_completed", self, "on_request_completed")
+	connect("request_completed", self, "on_request_completed")
 
 func set_config(config_json):
 	config = config_json

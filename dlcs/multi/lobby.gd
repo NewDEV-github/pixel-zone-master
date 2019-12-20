@@ -1,6 +1,8 @@
 extends Control
 var scene
+var keep_data
 func _process(delta):
+	keep_data = $Control/Control2/VBoxContainer/Keep.pressed
 	if $connect/Control/CheckButton.pressed == true:
 		$connect/Control/ROBI.show()
 		$connect/Control/ROBI2.show()
@@ -10,6 +12,15 @@ func _process(delta):
 		$connect/Control/ROBI2.hide()
 		$connect/join.show()
 func _ready():
+#	Firebase.Auth.connect('login_succeeded', self, 'login_succeed')
+	Firebase.Auth.connect('login_failed', self, 'login_failed')
+	var file = File.new()
+	if file.file_exists(str(documents) + '/Pixel Zone/.data/name.save'):
+		$Control.hide()
+		$connect.show()
+		file.open_encrypted_with_pass(str(documents) + '/Pixel Zone/.data/name.save', File.READ, str(2345654))
+		var pl_name = str(file.get_line())
+		$connect/name.text = pl_name
 	# Called every time the node is added to the scene.
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
@@ -105,9 +116,10 @@ func _on_signup_pressed():
 	var password = $Control/Control2/VBoxContainer/password.text
 	var password_confirm = $Control/Control2/VBoxContainer/password2.text
 	if str(password) == str(password_confirm):
-		Firebase.Auth.signup_with_email_and_password(email, password)
-		$Control/Control2.hide()
-		$Control.hide()
+		if keep_data == true:
+			Firebase.Auth.signup_with_email_and_password(email, password)
+			$Control/Control2.hide()
+			$Control.hide()
 
 func _on_Button4_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/auth/login")
@@ -130,3 +142,23 @@ func _on_join2_pressed():
 	$connect/WindowDialog/TextEdit.add_text(str('\n' + str(ip)))
 	$connect/WindowDialog.popup_centered()
 
+func login_succeed():
+#
+#	print(str(auth))
+	$Control/Control2/VBoxContainer/Label.set_text('Success!')
+	$Control/Control/HBoxContainer/Label.set_text('Success!')
+	$Control/Control.hide()
+func login_failed(errorcode, errormessage):
+	$Control/Control2/VBoxContainer/Label.set_text(str(errormessage))
+	$Control/Control/HBoxContainer/Label.set_text(str(errormessage))
+	$Control/Control.show()
+
+func _on_LoginBack_pressed():
+	$Control/Control2.hide()
+	$Control/Control.show()
+	$Control/Control/HBoxContainer/Label.text = ''
+
+
+func _on_Close_pressed():
+	$Control.hide()
+	$connect.show()
