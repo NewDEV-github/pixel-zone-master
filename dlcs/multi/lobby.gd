@@ -12,6 +12,10 @@ func _process(delta):
 		$connect/Control/ROBI2.hide()
 		$connect/join.show()
 func _ready():
+	if $Control.logged_in == false:
+		$Control.show()
+	else:
+		$Control.hide()
 #	Firebase.Auth.connect('login_succeeded', self, 'login_succeed')
 	Firebase.Auth.connect('login_failed', self, 'login_failed')
 	var file = File.new()
@@ -162,3 +166,7 @@ func _on_LoginBack_pressed():
 func _on_Close_pressed():
 	$Control.hide()
 	$connect.show()
+
+
+func _on_Control_logged_in(username):
+	$connect/name.text = username

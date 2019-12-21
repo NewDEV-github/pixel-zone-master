@@ -1,0 +1,132 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/auth.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Register" type="Control" parent="HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Register"]
+anchor_left = 0.0980392
+anchor_top = 0.433333
+anchor_right = 0.901961
+anchor_bottom = 0.566667
+margin_left = -8.19564e-07
+margin_top = -2.38419e-06
+margin_right = -2.98023e-06
+margin_bottom = 2.38419e-06
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="email" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+margin_right = 410.0
+margin_bottom = 39.0
+placeholder_text = "Username"
+
+[node name="email2" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+margin_top = 43.0
+margin_right = 410.0
+margin_bottom = 82.0
+placeholder_text = "Email"
+
+[node name="pass" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+margin_top = 86.0
+margin_right = 410.0
+margin_bottom = 125.0
+placeholder_text = "Password"
+
+[node name="confirmpass" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+margin_top = 129.0
+margin_right = 410.0
+margin_bottom = 168.0
+placeholder_text = "Confirm Password"
+
+[node name="Button2" type="Button" parent="HBoxContainer/Register/VBoxContainer"]
+margin_top = 172.0
+margin_right = 410.0
+margin_bottom = 211.0
+text = "Confirm"
+
+[node name="Label" type="Label" parent="HBoxContainer/Register/VBoxContainer"]
+margin_top = 215.0
+margin_right = 410.0
+margin_bottom = 254.0
+
+[node name="login" type="Control" parent="HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/login"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = -26.0
+margin_right = -50.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit3" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+margin_right = 410.0
+margin_bottom = 39.0
+placeholder_text = "Username"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+margin_top = 43.0
+margin_right = 410.0
+margin_bottom = 82.0
+placeholder_text = "Email"
+
+[node name="LineEdit2" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+margin_top = 86.0
+margin_right = 410.0
+margin_bottom = 125.0
+placeholder_text = "Password"
+
+[node name="Button" type="Button" parent="HBoxContainer/login/VBoxContainer"]
+margin_top = 129.0
+margin_right = 410.0
+margin_bottom = 168.0
+text = "Confirm"
+
+[node name="Label" type="Label" parent="HBoxContainer/login/VBoxContainer"]
+margin_top = 172.0
+margin_right = 410.0
+margin_bottom = 211.0
+[connection signal="pressed" from="HBoxContainer/Register/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="HBoxContainer/login/VBoxContainer/Button" to="." method="_on_Button_pressed"]
