@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/scenes/OptionsPage/GraphicsBox.gd" type="Script" id=4]
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=5]
 [ext_resource path="res://scripts/scenes/OptionsPage/LPMBox.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Main Menu/Configure.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=9]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=10]
@@ -42,6 +43,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control" parent="." instance=ExtResource( 7 )]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 49.0
+margin_right = -4.0
+margin_bottom = -4.0
+
 [node name="TabContainer" type="TabContainer" parent="."]
 light_mask = 2
 anchor_right = 1.0
@@ -52,7 +62,6 @@ __meta__ = {
 }
 
 [node name="Graphics & Audio" type="Tabs" parent="TabContainer"]
-visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -456,7 +465,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics & Audio/WindowDialog2"]
 margin_right = 385.0
-margin_bottom = 177.0
+margin_bottom = 215.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -475,16 +484,18 @@ __meta__ = {
 light_mask = 2
 margin_top = 41.0
 margin_right = 385.0
-margin_bottom = 65.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 editable = false
 placeholder_text = "Path of selected track"
 caret_blink = true
 
 [node name="BetaTests" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
 light_mask = 2
-margin_top = 69.0
+margin_top = 71.0
 margin_right = 385.0
-margin_bottom = 109.0
+margin_bottom = 111.0
 custom_fonts/font = ExtResource( 2 )
 text = "Show Online Scoreboard"
 align = 1
@@ -494,9 +505,9 @@ __meta__ = {
 
 [node name="AutoLoadMods" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
 light_mask = 2
-margin_top = 113.0
+margin_top = 115.0
 margin_right = 385.0
-margin_bottom = 153.0
+margin_bottom = 155.0
 custom_fonts/font = ExtResource( 2 )
 text = "Auto load mods"
 align = 1
@@ -505,10 +516,20 @@ __meta__ = {
 }
 
 [node name="DataClear" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
-margin_top = 157.0
+margin_top = 159.0
 margin_right = 385.0
-margin_bottom = 177.0
+margin_bottom = 185.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Clear User's Acconut Data"
+
+[node name="Button" type="Button" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+margin_top = 189.0
+margin_right = 385.0
+margin_bottom = 215.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Configure"
 
 [node name="Controls" type="Tabs" parent="TabContainer"]
 visible = false
@@ -668,6 +689,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_Theme_NOT"
 
 [node name="Language" type="Tabs" parent="TabContainer"]
+visible = false
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1032,6 +1054,7 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests" to="." method="_on_BetaTests_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods" to="." method="_on_AutoLoadMods_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/DataClear" to="." method="_on_DataClear_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/Button" to="." method="_on_Configure_pressed"]
 [connection signal="pressed" from="TabContainer/Controls/ApplyButton2" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]

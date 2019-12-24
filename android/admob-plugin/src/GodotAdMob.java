@@ -58,10 +58,10 @@ public class GodotAdMob extends Godot.SingletonBase
 	 * @param boolean isReal Tell if the enviroment is for real or test
 	 * @param int gdscript instance id
 	 */
-	
 	public void init(boolean isReal, int instance_id) {
 		this.initWithContentRating(isReal, instance_id, false, "");
 	}
+
 	/**
 	 * Init with content rating additional options 
 	 * @param boolean isReal Tell if the enviroment is for real or test

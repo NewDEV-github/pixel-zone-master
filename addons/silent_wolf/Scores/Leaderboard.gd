@@ -1,16 +1,21 @@
 tool
-extends Control
+extends Node2D
 
 const ScoreItem = preload("ScoreItem.tscn")
+const SWLogger = preload("../utils/SWLogger.gd")
 
 var list_index = 0
 
 func _ready():
+	if $Control.logged_in == false:
+		$Control.show()
+	else:
+		$Control.hide()
 	var scores = SilentWolf.Scores.scores
 	var local_scores = SilentWolf.Scores.local_scores
 	
 	if scores: 
-		render_board(scores, local_scores) #null
+		render_board(scores, local_scores) #null)
 	else:
 		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()
@@ -76,13 +81,10 @@ func hide_message():
 
 func _on_CloseButton_pressed():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
-	print("scene name: " + str(scene_name))
+	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
 	get_tree().change_scene(scene_name)
 
 
-func _on_Button2_pressed():
-	get_tree().change_scene("res://addons/silent_wolf/Auth/Register.tscn")
-
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://addons/silent_wolf/Auth/Login.tscn")
+func _on_Control_logged_in(username):
+	$Control.hide()
+	print(str(username))

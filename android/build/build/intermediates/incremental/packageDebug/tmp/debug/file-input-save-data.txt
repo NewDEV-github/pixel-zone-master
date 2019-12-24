@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Dec 05 16:16:13 CET 2019
+#Sun Dec 22 19:41:57 CET 2019
 4.path=lib/x86/libgodot_android.so
 8.set=NATIVE_RESOURCE
 6.path=lib/x86_64/libc++_shared.so

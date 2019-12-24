@@ -1,5 +1,7 @@
 extends Node
 
+const CommonErrors = preload("../common/CommonErrors.gd")
+const SWLogger = preload("../utils/SWLogger.gd")
 const UUID = preload("../utils/UUID.gd")
 
 signal scores_received
@@ -31,7 +33,7 @@ func get_score_position(score):
 	ScorePosition = HTTPRequest.new()
 	get_tree().get_root().add_child(ScorePosition)
 	ScorePosition.connect("request_completed", self, "_on_GetScorePosition_request_completed")
-	print("Calling SilentWolf to get score position")
+	SWLogger.info("Calling SilentWolf to get score position")
 	var game_id = SilentWolf.config.game_id
 	var game_version = SilentWolf.config.game_version
 	var api_key = SilentWolf.config.api_key
@@ -45,7 +47,7 @@ func get_high_scores(maximum=10):
 	HighScores = HTTPRequest.new()
 	get_tree().get_root().add_child(HighScores)
 	HighScores.connect("request_completed", self, "_on_GetHighScores_request_completed")
-	print("Calling SilentWolf backend to get scores...")
+	SWLogger.info("Calling SilentWolf backend to get scores...")
 	# resetting the latest_number value in case the first requests times out, we need to request the same amount of top scores in the retry
 	latest_max = maximum
 	var api_key_header = "x-api-key: " + SilentWolf.config.api_key
@@ -62,13 +64,13 @@ func get_high_scores(maximum=10):
 func add_to_local_scores(game_result):
 	var local_score = { "score_id": game_result.score_id, "game_id_version" : game_result.game_id + ";"  + game_result.game_version, "player_name": game_result.player_name, "score": game_result.score }
 	local_scores.append(local_score)
-	print("local scores: " + str(local_scores))
+	SWLogger.debug("local scores: " + str(local_scores))
 
 func persist_score(player_name, score):
 	PostScore = HTTPRequest.new()
 	get_tree().get_root().add_child(PostScore)
 	PostScore.connect("request_completed", self, "_on_PostNewScore_request_completed")
-	print("Calling SilentWolf backend to post new score...")
+	SWLogger.info("Calling SilentWolf backend to post new score...")
 	var game_id = SilentWolf.config.game_id
 	var game_version = SilentWolf.config.game_version
 	var api_key = SilentWolf.config.api_key
@@ -84,42 +86,60 @@ func persist_score(player_name, score):
 	return self
 		
 func _on_GetHighScores_request_completed(result, response_code, headers, body):
+	SWLogger.info("GetHighScores request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	#print("client status: " + str(HighScores.get_http_client_status()))
 	HighScores.queue_free()
-	print('response headers' + str(response_code))
-	print('response headers' + str(headers))
-	print('response body' + str(body.get_string_from_utf8()))
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
-	else:
-		print("SilentWolf get high score success")
-		scores = response.top_scores
-		emit_signal("scores_received", scores)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
+		else:
+			SWLogger.info("SilentWolf get high score success")
+			scores = response.top_scores
+			emit_signal("scores_received", scores)
 	#var retries = 0
 	#request_timer.stop()
 		
 func _on_PostNewScore_request_completed(result, response_code, headers, body):
+	SWLogger.info("PostNewScore request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
 	PostScore.queue_free()
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
-	else:
-		print("SilentWolf post score success: " + str(response_code))
-		emit_signal("score_posted")
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
+		else:
+			SWLogger.info("SilentWolf post score success: " + str(response_code))
+			emit_signal("score_posted")
 				
 func _on_GetScorePosition_request_completed(result, response_code, headers, body):
+	SWLogger.info("GetScorePosition request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
 	ScorePosition.queue_free()
-	print("GetScorePosition request completed")
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
-	else:
-		print("SilentWolf find score position success.")
-		position = response.position
-		emit_signal("position_received", position)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
+		else:
+			SWLogger.info("SilentWolf find score position success.")
+			position = response.position
+			emit_signal("position_received", position)
 				
 #func setup_request_timer():
 #	request_timer = Timer.new()

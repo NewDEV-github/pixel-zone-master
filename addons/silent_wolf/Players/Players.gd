@@ -1,5 +1,8 @@
 extends Node
 
+const CommonErrors = preload("../common/CommonErrors.gd")
+const SWLogger = preload("../utils/SWLogger.gd")
+
 signal player_data_received
 signal player_data_posted
 signal player_data_removed
@@ -47,7 +50,7 @@ func get_player_data(player_name):
 	GetPlayerData = HTTPRequest.new()
 	get_tree().get_root().add_child(GetPlayerData)
 	GetPlayerData.connect("request_completed", self, "_on_GetPlayerData_request_completed")
-	print("Calling SilentWolf to get player data")
+	SWLogger.info("Calling SilentWolf to get player data")
 	var game_id = SilentWolf.config.game_id
 	var game_version = SilentWolf.config.game_version
 	var api_key = SilentWolf.config.api_key
@@ -59,7 +62,7 @@ func post_player_data(player_name, player_data, overwrite=true):
 	PushPlayerData = HTTPRequest.new()
 	get_tree().get_root().add_child(PushPlayerData)
 	PushPlayerData.connect("request_completed", self, "_on_PushPlayerData_request_completed")
-	print("Calling SilentWolf to post player data")
+	SWLogger.info("Calling SilentWolf to post player data")
 	var game_id = SilentWolf.config.game_id
 	var game_version = SilentWolf.config.game_version
 	var api_key = SilentWolf.config.api_key
@@ -88,7 +91,7 @@ func delete_player_data(player_name, player_data):
 	RemovePlayerData = HTTPRequest.new()
 	get_tree().get_root().add_child(RemovePlayerData)
 	RemovePlayerData.connect("request_completed", self, "_on_RemovePlayerData_request_completed")
-	print("Calling SilentWolf to remove player data")
+	SWLogger.info("Calling SilentWolf to remove player data")
 	var game_id = SilentWolf.config.game_id
 	var api_key = SilentWolf.config.api_key
 	var headers = ["Content-Type: application/json", "x-api-key: " + api_key]
@@ -98,41 +101,63 @@ func delete_player_data(player_name, player_data):
 	return self
 	
 func _on_GetPlayerData_request_completed(result, response_code, headers, body):
+	SWLogger.info("GetPlayerData request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	#print("client status: " + str(GetPlayerData.get_http_client_status()))
 	if is_instance_valid(GetPlayerData): # GetPlayerData != null and GetPlayerData.is_inside_tree():
 		GetPlayerData.queue_free()
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
-	else:
-		print("SilentWolf get player data success")
-		player_name = response.player_name
-		player_data = response.player_data
-		print("Request completed: Player data: " + str(player_data))
-		emit_signal("player_data_received", player_name, player_data)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
+		else:
+			SWLogger.info("SilentWolf get player data success")
+			player_name = response.player_name
+			player_data = response.player_data
+			SWLogger.debug("Request completed: Player data: " + str(player_data))
+			emit_signal("player_data_received", player_name, player_data)
 		
 func _on_PushPlayerData_request_completed(result, response_code, headers, body):
-	if  is_instance_valid(PushPlayerData): #PushPlayerData != null and PushPlayerData.is_inside_tree():
+	SWLogger.info("PushPlayerData request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	if is_instance_valid(PushPlayerData): #PushPlayerData != null and PushPlayerData.is_inside_tree():
 		PushPlayerData.queue_free()
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
-	else:
-		print("SilentWolf post player data score success: " + str(response_code))
-		var player_name = response.player_name
-		emit_signal("player_data_posted", player_name)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
+		else:
+			SWLogger.info("SilentWolf post player data score success: " + str(response_code))
+			var player_name = response.player_name
+			emit_signal("player_data_posted", player_name)
 		
 func _on_RemovePlayerData_request_completed(result, response_code, headers, body):
-	if  is_instance_valid(RemovePlayerData): 
+	SWLogger.info("RemovePlayerData request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	if is_instance_valid(RemovePlayerData): 
 		RemovePlayerData.queue_free()
-	var json = JSON.parse(body.get_string_from_utf8())
-	var response = json.result
-	if "message" in response.keys() and response.message == "Forbidden":
-		print("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
-	else:
-		print("SilentWolf post player data score success: " + str(response_code))
-		var player_name = response.player_name
-		# return player_data after (maybe partial) removal
-		var player_data = response.player_data
-		emit_signal("player_data_removed", player_name, player_data)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerdata")
+		else:
+			SWLogger.info("SilentWolf post player data score success: " + str(response_code))
+			var player_name = response.player_name
+			# return player_data after (maybe partial) removal
+			var player_data = response.player_data
+			emit_signal("player_data_removed", player_name, player_data)

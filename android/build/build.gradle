@@ -3,9 +3,10 @@
 // Do not remove/modify comments ending with BEGIN/END, they are used to inject
 // addon-specific configuration.
 apply from: 'config.gradle'
+
 buildscript {
     apply from: 'config.gradle'
-	
+
     repositories {
         google()
         jcenter()
@@ -18,6 +19,7 @@ buildscript {
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_END
     }
 }
+
 apply plugin: 'com.android.application'
 
 allprojects {
@@ -119,24 +121,6 @@ android {
 
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

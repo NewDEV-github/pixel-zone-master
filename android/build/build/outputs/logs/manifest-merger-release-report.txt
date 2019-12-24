@@ -4,7 +4,7 @@ ADDED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\And
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml:2:1-69:12
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml:2:1-69:12
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml:2:1-69:12
-MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:2:1-21:12
+MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.android.gms:play-services-ads:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\77390ebfe91fa35c766d1b3fc4831914\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-lite:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\f9059f30799d4d564eccb54d944f3872\AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.android.gms:play-services-gass:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\6519c95dcab3b142fabc139fb636a9c8\AndroidManifest.xml:2:1-9:12
@@ -50,8 +50,8 @@ ADDED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\And
 		ADDED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml:21:9-32
 application
 ADDED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml:30:5-67:19
-MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:17:5-19:19
-MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:17:5-19:19
+MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:17:5-19:19
+MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:17:5-19:19
 MERGED from [com.google.android.gms:play-services-ads-lite:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\f9059f30799d4d564eccb54d944f3872\AndroidManifest.xml:26:5-34:19
 MERGED from [com.google.android.gms:play-services-ads-lite:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\f9059f30799d4d564eccb54d944f3872\AndroidManifest.xml:26:5-34:19
 MERGED from [com.google.android.gms:play-services-gass:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\6519c95dcab3b142fabc139fb636a9c8\AndroidManifest.xml:7:5-20
@@ -134,8 +134,8 @@ uses-sdk
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml
 INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml
-MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:7:5-9:41
-MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-ads:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\77390ebfe91fa35c766d1b3fc4831914\AndroidManifest.xml:21:5-23:62
 MERGED from [com.google.android.gms:play-services-ads:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\77390ebfe91fa35c766d1b3fc4831914\AndroidManifest.xml:21:5-23:62
 MERGED from [com.google.android.gms:play-services-ads-lite:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\f9059f30799d4d564eccb54d944f3872\AndroidManifest.xml:20:5-44
@@ -161,19 +161,19 @@ INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\
 		ADDED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml
 		INJECTED from C:\Users\karol\OneDrive\Dokumenty\pixel-zone-master\android\build\AndroidManifest.xml
 instrumentation
-ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:11:5-15:57
+ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:11:5-15:57
 	android:label
-		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:14:9-58
+		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:14:9-58
 	android:icon
-		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:13:9-38
+		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:13:9-38
 	android:targetPackage
-		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:15:9-54
+		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:15:9-54
 	android:name
-		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:12:9-45
+		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:12:9-45
 service#org.godotengine.godot.GodotDownloaderService
-ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:18:9-80
+ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:18:9-80
 	android:name
-		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\afb7c9bf2ae051fb48f9918ae7da6869\AndroidManifest.xml:18:18-77
+		ADDED from [godot-lib.release.aar] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\0a5d68a81a5367a1d30c6afeeaf1de91\AndroidManifest.xml:18:18-77
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.android.gms:play-services-ads-lite:16.0.0] C:\Users\karol\.gradle\caches\transforms-2\files-2.1\f9059f30799d4d564eccb54d944f3872\AndroidManifest.xml:23:5-67
 	android:name

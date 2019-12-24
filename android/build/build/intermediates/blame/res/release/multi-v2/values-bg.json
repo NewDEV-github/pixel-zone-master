@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\0a5d68a81a5367a1d30c6afeeaf1de91\\res\\values-bg\\values-bg.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "302",
+                        "endColumns": "75",
+                        "endOffsets": "373"
+                    }
+                },
+                {
                     "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\77390ebfe91fa35c766d1b3fc4831914\\res\\values-bg\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -35,23 +52,6 @@
                         "startOffsets": "378,465,603,672,743,837,960",
                         "endColumns": "86,137,68,70,93,122,76",
                         "endOffsets": "460,598,667,738,832,955,1032"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\afb7c9bf2ae051fb48f9918ae7da6869\\res\\values-bg\\values-bg.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "302",
-                        "endColumns": "75",
-                        "endOffsets": "373"
                     }
                 }
             ]

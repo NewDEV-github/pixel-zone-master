@@ -82,14 +82,19 @@ font_data = ExtResource( 4 )
 size = 64
 font_data = ExtResource( 4 )
 
-[node name="Register" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Register" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
-margin_right = 288.0
-margin_bottom = 118.0
+margin_left = 241.0
+margin_top = 54.0
+margin_right = 529.0
+margin_bottom = 172.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -97,15 +102,12 @@ custom_fonts/font = SubResource( 4 )
 text = "← Back"
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.19408
-margin_top = 11.5512
-margin_right = 248.194
-margin_bottom = 114.551
+margin_left = 396.0
+margin_top = 200.0
+margin_right = 1665.0
+margin_bottom = 1060.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/separation = 60
 __meta__ = {
 "_edit_use_anchors_": false
@@ -169,8 +171,6 @@ margin_bottom = 78.0
 rect_min_size = Vector2( 500, 78 )
 custom_fonts/font = SubResource( 6 )
 max_length = 30
-caret_blink = true
-caret_blink_speed = 0.5
 
 [node name="Email" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 108.0
@@ -179,8 +179,6 @@ margin_bottom = 183.0
 rect_min_size = Vector2( 360, 75 )
 custom_fonts/font = SubResource( 6 )
 max_length = 50
-caret_blink = true
-caret_blink_speed = 0.5
 
 [node name="Password" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 213.0
@@ -190,8 +188,6 @@ rect_min_size = Vector2( 360, 75 )
 custom_fonts/font = SubResource( 6 )
 max_length = 30
 secret = true
-caret_blink = true
-caret_blink_speed = 0.5
 
 [node name="ConfirmPassword" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 318.0
@@ -201,8 +197,6 @@ rect_min_size = Vector2( 360, 75 )
 custom_fonts/font = SubResource( 6 )
 max_length = 30
 secret = true
-caret_blink = true
-caret_blink_speed = 0.5
 
 [node name="InfoLabels" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
 margin_left = 1185.0

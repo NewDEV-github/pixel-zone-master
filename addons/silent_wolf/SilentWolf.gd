@@ -4,6 +4,15 @@ onready var Scores = Node.new()
 onready var Auth = Node.new()
 onready var Players = Node.new()
 
+#
+# SILENTWOLF CONFIG: THE CONFIG VARIABLES BELOW WILL BE OVERRIDED THE 
+# NEXT TIME YOU UPDATE YOUR PLUGIN!
+#
+# As a best practice, use SilentWolf.configure from your game's
+# code instead to set the SilentWolf configuration.
+#
+# See https://silentwolf.com for more details
+#
 var config = {
 	"api_key": "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
 	"game_id": "PixelZone",
@@ -18,7 +27,6 @@ var auth_config = {
 	"redirect_to_scene": "res://addons/silent_wolf/Scores/Leaderboard.tscn",
 	"session_duration": 3600
 }
-
 func _ready():
 	Scores.set_script(preload("res://addons/silent_wolf/Scores/Scores.gd"))
 	add_child(Scores)
@@ -38,6 +46,15 @@ func configure_game_id(game_id):
 
 func configure_game_version(game_version):
 	config.game_version = game_version
+
+##################################################################
+# Log levels:
+# 0 - error (only log errors)
+# 1 - info (log errors and the main actions taken by the SilentWolf plugin) - default setting
+# 2 - debug (detailed logs, including the above and much more, to be used when investigating a problem). This shouldn't be the default setting in production.
+##################################################################
+func configure_log_level(log_level):
+	config.log_level = log_level
 
 func configure_scores(json_scores_config):
 	scores_config = json_scores_config

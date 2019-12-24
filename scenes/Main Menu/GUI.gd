@@ -1,4 +1,5 @@
 extends Control
+var configured = false
 var scene
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
@@ -81,6 +82,9 @@ func onResize():
 		admob.resize()
 
 func _ready():
+	if os == 'OSX':
+		if configured == false:
+			$Control3.popup_centered()
 	var file = File.new()
 	if file.file_exists(str(documents) + '/Pixel Zone/.data/settings/editor.txt'):
 		$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
@@ -344,3 +348,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		$TextureRect/VBoxContainer/Update.set_disabled(false)
 	else:
 		$TextureRect/VBoxContainer/Update.set_disabled(true)
+
+
+func _on_Control3_popup_hide():
+	configured = true
+	get_tree().reload_current_scene()

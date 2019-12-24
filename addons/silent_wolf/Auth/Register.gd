@@ -1,4 +1,6 @@
-extends Control
+extends TextureRect
+
+const SWLogger = preload("../utils/SWLogger.gd")
 
 func _ready():
 	var auth_node = get_tree().get_root().get_node("res://addons/silent_wolf/Auth/Auth")
@@ -12,10 +14,9 @@ func _on_RegisterButton_pressed():
 	var confirm_password = $"FormContainer/MainFormContainer/FormInputFields/ConfirmPassword".text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing_label()
-#	Firebase.Auth.signup_with_email_and_password(email, password)
 	
 func _on_registration_succeeded():
-	print("registration succeeded: " + str(SilentWolf.Auth.logged_in_player))
+	SWLogger.info("registration succeeded: " + str(SilentWolf.Auth.logged_in_player))
 	#get_tree().change_scene("res://addons/silent_wolf/Auth/Login.tscn")
 	# redirect to configured scene (user is logged in after registration)
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
@@ -23,7 +24,7 @@ func _on_registration_succeeded():
 	
 func _on_registration_failed(error):
 	hide_processing_label()
-	print("registration failed: " + str(error))
+	SWLogger.info("registration failed: " + str(error))
 	$"FormContainer/ErrorMessage".text = error
 	$"FormContainer/ErrorMessage".show()
 

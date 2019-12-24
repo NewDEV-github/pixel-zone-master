@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\afb7c9bf2ae051fb48f9918ae7da6869\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "293",
-                        "endColumns": "75",
-                        "endOffsets": "364"
-                    }
-                },
-                {
                     "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\8339c6e49e0e24f68beae7faf86ffcdd\\res\\values-th\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "105",
                         "endColumns": "187",
                         "endOffsets": "288"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\karol\\.gradle\\caches\\transforms-2\\files-2.1\\0a5d68a81a5367a1d30c6afeeaf1de91\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "293",
+                        "endColumns": "75",
+                        "endOffsets": "364"
                     }
                 }
             ]
