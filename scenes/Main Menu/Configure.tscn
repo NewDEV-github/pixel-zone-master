@@ -3,7 +3,6 @@
 [ext_resource path="res://scenes/Main Menu/Configure.gd" type="Script" id=1]
 
 [node name="Control" type="WindowDialog"]
-visible = true
 anchor_right = 0.345
 anchor_bottom = 0.385
 margin_right = -0.280029

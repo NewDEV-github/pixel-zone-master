@@ -1,6 +1,6 @@
 extends Control
-export var logged_in = false
-var login_data_dir = str(OS.get_system_dir(_OS.SYSTEM_DIR_DOCUMENTS)) + '/Pixel Zone/.data/'
+var logged_in = false
+var login_data_dir = str(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)) + '/Pixel Zone/.data/'
 signal login_succeeded(auth_result)
 signal logged_in(username)
 func _ready():

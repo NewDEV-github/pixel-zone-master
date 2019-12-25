@@ -43,15 +43,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" parent="." instance=ExtResource( 7 )]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 49.0
-margin_right = -4.0
-margin_bottom = -4.0
-
 [node name="TabContainer" type="TabContainer" parent="."]
 light_mask = 2
 anchor_right = 1.0
@@ -440,22 +431,30 @@ script = ExtResource( 11 )
 
 [node name="WindowDialog" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
 light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 34.0
-margin_right = 7.0
-margin_bottom = -1.0
+anchor_left = 0.140748
+anchor_top = 0.0621572
+anchor_right = 0.886811
+anchor_bottom = 0.85192
+margin_left = -7.51019e-06
+margin_top = 3.72529e-08
+margin_right = 5.72205e-06
+margin_bottom = 1.60933e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="ItemList" type="ItemList" parent="TabContainer/Graphics & Audio/WindowDialog"]
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1.0
 margin_bottom = -61.0
 items = [ "Pixel Adventure", null, false, "Jungle Ruins", null, false, "Jungle Ruins - 2", null, false, "Ice Cap", null, false, "Hill", null, false, "Sci-Fi", null, false, "CastleMania", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WindowDialog2" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
-visible = true
 margin_right = 1015.0
 margin_bottom = 549.0
 window_title = "Advanced Settings"
@@ -1035,6 +1034,15 @@ margin_bottom = 16.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Control" parent="." instance=ExtResource( 7 )]
+visible = true
+anchor_left = 0.379395
+anchor_top = 0.334167
+anchor_right = 0.620605
+anchor_bottom = 0.665833
+margin_top = -5.48363e-06
+margin_right = 0.0
 
 [node name="Custom_Music" type="AudioStreamPlayer" parent="."]
 autoplay = true

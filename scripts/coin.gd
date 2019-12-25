@@ -8,7 +8,8 @@ func save():
 
 func _on_coin_body_entered(body):
 	if body.name == "Player":
-		get_node("/root/game_state").points += 1
+		game_state.points += 1
+		print(str(game_state.points))
 		$anim.play("taken")
 		taken = true
 		game_state._save()

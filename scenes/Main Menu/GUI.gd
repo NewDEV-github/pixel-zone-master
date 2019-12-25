@@ -201,7 +201,7 @@ func _on_PP_pressed():
 func _on_Licenses_pressed():
 	$TextureRect/Control._show()
 func _on_Play8_pressed():
-	scene = get_tree().change_scene("res://dlcs/multi/lobby.tscn")
+	background_load.load_scene("res://dlcs/multi/lobby.tscn")
 
 
 

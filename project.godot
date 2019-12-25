@@ -80,7 +80,7 @@ _global_script_class_icons={
 
 [android]
 
-modules="org/godotengine/godot/GodotAdMob org/godotengine/godot/AndroidPermissions"
+modules="org/godotengine/godot/GodotAdMob"
 
 [application]
 
@@ -105,14 +105,12 @@ gamestate="*res://globals/gamestate.gd"
 log_file="*res://scenes/log_file.tscn"
 Firebase="*res://addons/GDFirebase/Firebase.gd"
 HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
-DebugConsole="*res://console/DebugConsole.tscn"
 background_load="*res://scenes/background_load.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [debug]
 
 settings/stdout/print_fps=true
-gdscript/warnings/unused_argument=false
 
 [display]
 

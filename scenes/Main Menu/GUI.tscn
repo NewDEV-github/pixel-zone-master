@@ -357,8 +357,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control3" parent="." instance=ExtResource( 8 )]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -615,8 +613,10 @@ margin_right = 5.0
 margin_bottom = 5.0
 mouse_filter = 2
 
+[node name="Control3" parent="." instance=ExtResource( 8 )]
+visible = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-[connection signal="popup_hide" from="Control3" to="." method="_on_Control3_popup_hide"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
@@ -635,3 +635,4 @@ mouse_filter = 2
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
+[connection signal="popup_hide" from="Control3" to="." method="_on_Control3_popup_hide"]

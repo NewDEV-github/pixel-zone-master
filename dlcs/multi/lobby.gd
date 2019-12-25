@@ -1,21 +1,21 @@
 extends Control
 var scene
 var keep_data
-func _process(delta):
-	keep_data = $Control/Control2/VBoxContainer/Keep.pressed
-	if $connect/Control/CheckButton.pressed == true:
-		$connect/Control/ROBI.show()
-		$connect/Control/ROBI2.show()
-		$connect/join.hide()
-	if $connect/Control/CheckButton.pressed == false:
-		$connect/Control/ROBI.hide()
-		$connect/Control/ROBI2.hide()
-		$connect/join.show()
+#func _process(delta):
+#	keep_data = $Control/Control2/VBoxContainer/Keep.pressed
+#	if $connect/Control/CheckButton.pressed == true:
+#		$connect/Control/ROBI.show()
+#		$connect/Control/ROBI2.show()
+#		$connect/join.hide()
+#	if $connect/Control/CheckButton.pressed == false:
+#		$connect/Control/ROBI.hide()
+#		$connect/Control/ROBI2.hide()
+#		$connect/join.show()
 func _ready():
-	if $Control.logged_in == false:
-		$Control.show()
-	else:
-		$Control.hide()
+#	if $Control.logged_in == false:
+#		$Control.show()
+#	else:
+#		$Control.hide()
 #	Firebase.Auth.connect('login_succeeded', self, 'login_succeed')
 	Firebase.Auth.connect('login_failed', self, 'login_failed')
 	var file = File.new()
@@ -111,7 +111,6 @@ func _on_back3_pressed():
 
 func _on_Button_pressed():
 	$Control.show()
-	$Control/Control.show()
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 
 
@@ -149,13 +148,13 @@ func _on_join2_pressed():
 func login_succeed():
 #
 #	print(str(auth))
-	$Control/Control2/VBoxContainer/Label.set_text('Success!')
-	$Control/Control/HBoxContainer/Label.set_text('Success!')
-	$Control/Control.hide()
+	$Control/HBoxContainer/login/VBoxContainer/Label.set_text('Success!')
+#	$Control/HBoxContainer/Register/VBoxContainer/Label.set_text('Success!')
+	$Control.hide()
 func login_failed(errorcode, errormessage):
-	$Control/Control2/VBoxContainer/Label.set_text(str(errormessage))
-	$Control/Control/HBoxContainer/Label.set_text(str(errormessage))
-	$Control/Control.show()
+	$Control/HBoxContainer/login/VBoxContainer/Label.set_text(str(errormessage))
+	$Control/HBoxContainer/Register/VBoxContainer/Label.set_text(str(errormessage))
+	$Control.show()
 
 func _on_LoginBack_pressed():
 	$Control/Control2.hide()
