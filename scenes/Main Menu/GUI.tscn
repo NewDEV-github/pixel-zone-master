@@ -614,7 +614,6 @@ margin_bottom = 5.0
 mouse_filter = 2
 
 [node name="Control3" parent="." instance=ExtResource( 8 )]
-visible = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]

@@ -7,9 +7,7 @@ static func error(text):
 	print(str(text))
 
 static func info(text):
-	if SilentWolf.config.log_level > 0:
-		print(str(text))
+	print(str(text))
 	
 static func debug(text):
-	if SilentWolf.config.log_level > 1:
-		print(str(text))
+	print(str(text))

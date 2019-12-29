@@ -22,13 +22,13 @@ __meta__ = {
 
 [node name="LeaderBoard" type="CheckButton" parent="VBoxContainer"]
 margin_top = 22.0
-margin_right = 353.0
+margin_right = 352.0
 margin_bottom = 62.0
 text = "Leaderboard"
 
 [node name="Editor" type="CheckButton" parent="VBoxContainer"]
 margin_top = 66.0
-margin_right = 353.0
+margin_right = 352.0
 margin_bottom = 106.0
 text = "Editor"
 __meta__ = {

@@ -26,62 +26,16 @@ var adBannerId = "ca-app-pub-3142193952770678/2105195769" # [Replace with your A
 var adInterstitialId = "ca-app-pub-3142193952770678/5995273653" # [Replace with your Ad Unit ID and delete this message.]
 var adRewardedId = "ca-app-pub-3142193952770678/3880047799" # [There is no testing option for rewarded videos, so you can use this id for testing]
 # Loaders
-
-func loadBanner():
-	if admob != null:
-		admob.loadBanner(adBannerId, isTop)
-
-func loadInterstitial():
-	if admob != null:
-		admob.loadInterstitial(adInterstitialId)
-		
-func loadRewardedVideo():
-	if admob != null:
-		admob.loadRewardedVideo(adRewardedId)
-
-# Events
-
-func _on_BtnBanner_toggled(pressed):
-	if admob != null:
-		if pressed: admob.showBanner()
-		else: admob.hideBanner()
-
-func _on_BtnInterstitial_pressed():
-	if admob != null:
-		admob.showInterstitial()
-		
-func _on_BtnRewardedVideo_pressed():
-	if admob != null:
-		admob.showRewardedVideo()
-
-func _on_admob_network_error():
-	print("Network Error")
-
-func _on_admob_ad_loaded():
-	print("Ad loaded success")
-
-func _on_interstitial_not_loaded():
-	print("Error: Interstitial not loaded")
-
-func _on_interstitial_loaded():
-	print("Interstitial loaded")
-
-func _on_interstitial_close():
-	print("Interstitial closed")
-
-func _on_rewarded_video_ad_loaded():
-	print("Rewarded loaded success")
-func _on_rewarded_video_ad_closed():
-	print("Rewarded closed")
-	loadRewardedVideo()
-	
-func _on_rewarded(currency, amount):
-	print("Reward: " + currency + ", " + str(amount))
-func onResize():
-	if admob != null:
-		admob.resize()
-
 func _ready():
+	if(Engine.has_singleton("AdMob")):
+		admob = Engine.get_singleton("AdMob")
+		admob.init(isReal, get_instance_id())
+		loadBanner()
+		loadInterstitial()
+		loadRewardedVideo()
+	showbanner()
+	get_tree().connect("screen_resized", self, "onResize")
+
 	if os == 'OSX':
 		if configured == false:
 			$Control3.popup_centered()
@@ -92,16 +46,7 @@ func _ready():
 		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
 	$HTTPRequest.set_download_file('user://LeaderBoard.txt')
 	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/Leaderboard_config.txt')
-	if(Engine.has_singleton("AdMob")):
-		admob = Engine.get_singleton("AdMob")
-		admob.init(true, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
-		admob.showBanner()
 	
-		admob.Access()
-	get_tree().connect("screen_resized", self, "onResize")
 	var conf = File.new()
 	if not os == 'Android':
 		if not os == 'OSX':
@@ -353,3 +298,43 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 func _on_Control3_popup_hide():
 	configured = true
 	get_tree().reload_current_scene()
+###ADS
+
+# Loaders
+
+func loadBanner():
+	if admob != null:
+		admob.loadBanner(adBannerId, isTop)
+
+func loadInterstitial():
+	if admob != null:
+		admob.loadInterstitial(adInterstitialId)
+		
+func loadRewardedVideo():
+	if admob != null:
+		admob.loadRewardedVideo(adRewardedId)
+
+# Events
+
+func showbanner():
+	if admob != null:
+		admob.showBanner()
+func hidebanner():
+	if admob != null:
+		admob.hideBanner()
+func interstitial():
+	if admob != null:
+		admob.showInterstitial()
+		
+func rewarded():
+	if admob != null:
+		admob.showRewardedVideo()
+
+func _on_rewarded(currency, amount):
+	print("Reward: " + currency + ", " + str(amount))
+
+
+func onResize():
+	if admob != null:
+		admob.resize()
+

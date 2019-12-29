@@ -4,14 +4,11 @@ extends Control
 # var a = 2
 # var b = "text"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+	AdvancedBackgroundLoader.preload_scene('res://scenes/stages/ice_cap_adventure/ice_01.tscn')
+func _process(delta):
+	$Button.visible = AdvancedBackgroundLoader.can_change
+func _on_Button_pressed():
+	AdvancedBackgroundLoader.change_scene_to_preloaded()
 func _on_AnimationPlayer_animation_finished(anim_name):
-	get_tree().change_scene('res://scenes/stages/ice_cap_adventure/ice_01.tscn')
+	AdvancedBackgroundLoader.change_scene_to_preloaded()

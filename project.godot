@@ -107,6 +107,7 @@ Firebase="*res://addons/GDFirebase/Firebase.gd"
 HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
 background_load="*res://scenes/background_load.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+AdvancedBackgroundLoader="*res://addons/Advanced Background Loader/background_load.gd"
 
 [debug]
 
@@ -119,7 +120,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GDFirebase", "adb_helper", "graphics_editor", "silent_wolf", "zylann.editor_debugger" )
+enabled=PoolStringArray( "Advanced Background Loader", "GDFirebase", "adb_helper", "graphics_editor", "silent_wolf", "zylann.editor_debugger" )
 
 [input]
 
