@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "AudioPlayer",
+"language": "GDScript",
+"path": "res://Gameplay Scripts/audio_player.gd"
+}, {
+"base": "AnimationPlayer",
+"class": "CharacterAnimator",
+"language": "GDScript",
+"path": "res://Gameplay Scripts/character_animator.gd"
+}, {
 "base": "Reference",
 "class": "Command",
 "language": "GDScript",
@@ -63,8 +73,20 @@ _global_script_classes=[ {
 "class": "Pause_Menu",
 "language": "GDScript",
 "path": "res://scripts/GameUI.gd"
+}, {
+"base": "Node2D",
+"class": "PlayerCamera",
+"language": "GDScript",
+"path": "res://Gameplay Scripts/player_camera.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerPhysics",
+"language": "GDScript",
+"path": "res://Gameplay Scripts/player_physics.gd"
 } ]
 _global_script_class_icons={
+"AudioPlayer": "",
+"CharacterAnimator": "",
 "Command": "",
 "CommandRef": "",
 "Console": "",
@@ -75,7 +97,9 @@ _global_script_class_icons={
 "FirebaseStorage": "",
 "FirebaseUserData": "",
 "Options_Page": "",
-"Pause_Menu": ""
+"Pause_Menu": "",
+"PlayerCamera": "",
+"PlayerPhysics": ""
 }
 
 [android]

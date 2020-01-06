@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://textures/background.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=2]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=3]
 [ext_resource path="res://animations/Credits.tres" type="Animation" id=4]
+[ext_resource path="res://sounds/Credits.wav" type="AudioStream" id=5]
 
 [node name="TextureRect" type="TextureRect"]
 margin_right = 1033.0
@@ -16,24 +17,216 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -508.5
-margin_top = -78.0
-margin_right = 508.5
-margin_bottom = 89.0
+anchor_top = 0.31
+anchor_right = 1.0
+anchor_bottom = 0.709
+margin_top = 260.28
+margin_bottom = 4792.09
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]
 Thank You for playing
 Pixel Zone
+[/center]
+[center]
+Graphics:
+
+Karol,
+Godot Engine
+[/center]
+[center]
+Main programmer:
+
+Karol
+[/center]
+[center]
+Help with scripts:
+
+Godot Engine Community
+[/center]
+[center]
+Audio:
+
+Karol
+[/center]
+[center]
+Audio Programming:
+
+Karol
+[/center]
+[center]
+Characters Programming:
+
+Karol
+[/center]
+[center]
+AI Programming:
+
+Karol
+[/center]
+[center]
+UI Programming:
+
+Karol (Me)
+[/center]
+[center]
+Core Programming:
+
+Godot Engine Programmers
+[/center]
+[center]
+Render Programming:
+
+Godot Engine Programmers
+[/center]
+[center]
+Physics Programming:
+
+Godot Engine Programmers,
+Karol
+[/center]
+[center]
+Level Editor Programming:
+
+Karol
+[/center]
+[center]
+Animators:
+
+Karol,
+Godot Engine
+[/center]
+[center]
+Screenplay:
+
+Karol
+[/center]
+[center]
+Dialogues:
+
+Karol
+[/center]
+[center]
+Special Thanks to:
+
+Wojtek Kubiak
+[/center]
+[center]
+
+
+Godot Engine Community
+[/center]
+[center]
+
+
+Polish Godot Engine Community
+[/center]
+[center]
+
+
+SilentWolf
 [/center]"
 text = "
 Thank You for playing
 Pixel Zone
+
+
+Graphics:
+
+Karol,
+Godot Engine
+
+
+Main programmer:
+
+Karol
+
+
+Help with scripts:
+
+Godot Engine Community
+
+
+Audio:
+
+Karol
+
+
+Audio Programming:
+
+Karol
+
+
+Characters Programming:
+
+Karol
+
+
+AI Programming:
+
+Karol
+
+
+UI Programming:
+
+Karol (Me)
+
+
+Core Programming:
+
+Godot Engine Programmers
+
+
+Render Programming:
+
+Godot Engine Programmers
+
+
+Physics Programming:
+
+Godot Engine Programmers,
+Karol
+
+
+Level Editor Programming:
+
+Karol
+
+
+Animators:
+
+Karol,
+Godot Engine
+
+
+Screenplay:
+
+Karol
+
+
+Dialogues:
+
+Karol
+
+
+Special Thanks to:
+
+Wojtek Kubiak
+
+
+
+
+Godot Engine Community
+
+
+
+
+Polish Godot Engine Community
+
+
+
+
+SilentWolf
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -41,6 +234,18 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "credits"
-playback_speed = 0.5
 anims/credits = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.51758
+margin_right = -2.51758
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

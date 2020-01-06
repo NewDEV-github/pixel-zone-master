@@ -61,6 +61,8 @@ func _ready():
 			$TextureRect/VBoxContainer/Update.set_disabled(false)
 		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
 			$TextureRect/VBoxContainer/Update.set_disabled(true)
+	$HTTPRequest.set_download_file('user://dlc.txt')
+	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/dlc.txt')
 	if globals.auto_load_mod == true:
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
 	if globals.auto_load_mod == false:
@@ -126,7 +128,11 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	
+	var conf = File.new()
+	if conf.file_exists('user://dlc.txt'):
+		$TextureRect/PopupPanel/TextureButton4.show()
+	if not conf.file_exists('user://dlc.txt'):
+		$TextureRect/PopupPanel/TextureButton4.hide()
 	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
 	
 func _on_Play7_pressed():
@@ -204,6 +210,7 @@ func _on_ConfirmationDialog_confirmed():
 
 signal reload
 func _on_TextureButton_pressed():
+	globals.play_cutscenes = true
 	$TextureRect/PopupPanel/Label.set_text('Loading...')
 	globals.scene_path = 'res://scenes/players/player1/player.tscn'
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
@@ -214,6 +221,7 @@ func _on_TextureButton_pressed():
 
 
 func _on_TextureButton2_pressed():
+	globals.play_cutscenes = true
 	$TextureRect/PopupPanel/Label.set_text('Loading...')
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
@@ -338,3 +346,14 @@ func onResize():
 	if admob != null:
 		admob.resize()
 
+
+
+func _on_TextureButton4_pressed():
+	globals.play_cutscenes = false
+	$TextureRect/PopupPanel/Label.set_text('Loading...')
+	globals.scene_path = 'res://main.tscn'
+	globals.selected_player = preload('res://main.tscn').instance()
+	if not str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new")
+	if str(OS.get_name()) == 'Android':
+		$AnimationPlayer.play("new_ANDROID")

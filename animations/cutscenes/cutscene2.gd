@@ -5,7 +5,10 @@ extends Control
 # var b = "text"
 
 func _ready():
-	AdvancedBackgroundLoader.preload_scene('res://scenes/stages/ice_cap_adventure/ice_01.tscn')
+	if globals.play_cutscenes == false:
+		get_tree().change_scene('res://scenes/stages/ice_cap_adventure/ice_01.tscn')
+	else:
+		AdvancedBackgroundLoader.preload_scene('res://scenes/stages/ice_cap_adventure/ice_01.tscn')
 func _process(delta):
 	$Button.visible = AdvancedBackgroundLoader.can_change
 func _on_Button_pressed():

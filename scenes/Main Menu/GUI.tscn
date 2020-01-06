@@ -467,12 +467,13 @@ __meta__ = {
 }
 
 [node name="PopupPanel" type="WindowDialog" parent="TextureRect"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -7.68201
-margin_top = 9.0
-margin_right = -356.682
-margin_bottom = -221.0
+margin_left = -3.40699
+margin_top = 128.7
+margin_right = -352.407
+margin_bottom = -101.3
 mouse_filter = 1
 theme = ExtResource( 4 )
 __meta__ = {
@@ -501,13 +502,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton4" type="Button" parent="TextureRect/PopupPanel"]
+anchor_left = 0.248889
+anchor_top = 0.683784
+anchor_right = 0.74963
+anchor_bottom = 0.997297
+margin_left = -4.06802e-06
+margin_top = 5.24521e-06
+margin_right = 1.27703e-05
+margin_bottom = 6.19888e-06
+text = "Sonic"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="Label" type="Label" parent="TextureRect/PopupPanel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -139.0
-margin_right = 139.0
-margin_bottom = 39.0
+margin_left = -138.5
+margin_top = 19.0
+margin_right = 243.5
+margin_bottom = 306.0
+rect_scale = Vector2( 0.75, 0.75 )
 text = "KEY_PLAYER_SELECT"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -625,6 +645,7 @@ mouse_filter = 2
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton3" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="TextureRect/PopupPanel/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="item_selected" from="TextureRect/LanguageButton" to="." method="_on_LanguageButton_item_selected"]
 [connection signal="about_to_show" from="ModSelector" to="." method="_on_ModSelector_about_to_show"]
 [connection signal="file_selected" from="ModSelector" to="." method="_on_ModSelector_file_selected"]

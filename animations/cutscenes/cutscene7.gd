@@ -6,7 +6,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	AdvancedBackgroundLoader.preload_scene('res://scenes/Credits.tscn')
+	if globals.play_cutscenes == false:
+		get_tree().change_scene('res://scenes/Credits.tscn')
+	else:
+		AdvancedBackgroundLoader.preload_scene('res://scenes/Credits.tscn')
 func _process(delta):
 	$Button.visible = AdvancedBackgroundLoader.can_change
 func _on_Button_pressed():

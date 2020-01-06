@@ -22,6 +22,9 @@ func _load():
 		TranslationServer.set_locale("fr")
 
 func _ready():
+	var conf = File.new()
+	if conf.file_exists('user://dlc.txt'):
+		ProjectSettings.load_resource_pack('user://dlc.pck')
 	SilentWolf.config.api_key = "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4"
 	SilentWolf.config.game_id = "PixelZone"
 	SilentWolf.config.game_version = "0.9.1-beta1"
@@ -31,7 +34,6 @@ func _ready():
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()
 	
-	var conf = File.new()
 	if not conf.file_exists('user://456378r9w4iufuhj'):
 		vconf.set_value("saves", "game_pass", "false")
 		config = vconf.save(str(documents) + "/Pixel Zone/.data/settings/game.ini")

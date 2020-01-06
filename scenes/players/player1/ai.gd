@@ -7,7 +7,7 @@ func restart_position():
 	set_position(Vector2(0, 0))
 	$'Player'.position = Vector2(0, 0)
 	$'Player_ai2'.set_position(Vector2(144, 90))
-
+	
 func _process(delta):
 #	print(str(is_instance_valid($Player_ai2)))
 	var pos_y = $Player.position.y

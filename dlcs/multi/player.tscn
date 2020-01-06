@@ -521,7 +521,7 @@ shape = SubResource( 1 )
 shape = SubResource( 1 )
 
 [node name="sprite" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.84375, -9.15527e-005 )
+position = Vector2( 0.84375, -9.15527e-05 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/achievement = ExtResource( 4 )

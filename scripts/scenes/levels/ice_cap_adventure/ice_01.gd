@@ -10,6 +10,7 @@ func _ready():
 	var player_default = globals.selected_player
 	add_child(Object(player_default))
 	globals._set_player_pos(0,0)
+	player_default.restart_position()
 	globals.on_scene_changed()
 	var true_ = 'false'
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
