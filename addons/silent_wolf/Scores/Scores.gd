@@ -4,9 +4,15 @@ const CommonErrors = preload("../common/CommonErrors.gd")
 const SWLogger = preload("../utils/SWLogger.gd")
 const UUID = preload("../utils/UUID.gd")
 
+# legacy signals
 signal scores_received
 signal position_received
 signal score_posted
+
+# new signals
+signal sw_scores_received
+signal sw_position_received
+signal sw_score_posted
 
 var scores = []
 var local_scores = []
@@ -102,6 +108,7 @@ func _on_GetHighScores_request_completed(result, response_code, headers, body):
 		else:
 			SWLogger.info("SilentWolf get high score success")
 			scores = response.top_scores
+			emit_signal("sw_scores_received", scores)
 			emit_signal("scores_received", scores)
 	#var retries = 0
 	#request_timer.stop()
@@ -121,6 +128,7 @@ func _on_PostNewScore_request_completed(result, response_code, headers, body):
 			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
 		else:
 			SWLogger.info("SilentWolf post score success: " + str(response_code))
+			emit_signal("sw_score_posted")
 			emit_signal("score_posted")
 				
 func _on_GetScorePosition_request_completed(result, response_code, headers, body):
@@ -139,18 +147,5 @@ func _on_GetScorePosition_request_completed(result, response_code, headers, body
 		else:
 			SWLogger.info("SilentWolf find score position success.")
 			position = response.position
+			emit_signal("sw_position_received", position)
 			emit_signal("position_received", position)
-				
-#func setup_request_timer():
-#	request_timer = Timer.new()
-#	request_timer.set_one_shot(true)
-#	request_timer.set_wait_time(request_timeout)
-#	request_timer.connect("timeout", self, "on_request_timeout_complete")
-#	add_child(request_timer)
-
-#func on_request_timeout_complete():
-	# check underlying HTTPClient status
-	#print("Request is taking a while, underlying HTTPClient status: " + str(get_http_client_status()))
-	#print("Retrying get high scores...")
-	# retry once if relevant, use the latest number of scores to be fetched (set on the previous request)
-	#request_high_scores(latest_max)

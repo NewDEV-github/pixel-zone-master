@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Auth/Login.gd" type="Script" id=1]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://addons/silent_wolf/assets/gfx/checkbox_unchecked.png" type="Texture" id=5]
+[ext_resource path="res://addons/silent_wolf/assets/gfx/checkbox_checked.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 23.0
@@ -58,20 +60,36 @@ font_data = ExtResource( 3 )
 size = 32
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 5.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 32
 font_data = ExtResource( 4 )
 
 [node name="Login" type="TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
-margin_left = 339.0
-margin_top = 117.0
-margin_right = 667.0
-margin_bottom = 235.0
+visible = false
+anchor_left = 0.027
+anchor_top = 0.041
+anchor_right = 0.347
+anchor_bottom = 0.238
+margin_left = -0.482718
+margin_top = 0.122335
+margin_right = -0.16272
+margin_bottom = -0.0776672
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -79,23 +97,24 @@ custom_fonts/font = SubResource( 4 )
 text = "← Back"
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
-margin_left = 679.0
-margin_top = 196.75
-margin_right = 1327.0
-margin_bottom = 933.75
-custom_constants/separation = 100
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="FormContainer"]
-margin_right = 648.0
+margin_right = 1024.0
 margin_bottom = 72.0
 custom_fonts/font = SubResource( 5 )
 text = "Log in"
 align = 1
 
 [node name="UsernameContainer" type="HBoxContainer" parent="FormContainer"]
-margin_top = 172.0
-margin_right = 648.0
-margin_bottom = 247.0
+margin_top = 122.0
+margin_right = 1024.0
+margin_bottom = 197.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="FormContainer/UsernameContainer"]
@@ -114,9 +133,9 @@ custom_fonts/font = SubResource( 7 )
 max_length = 30
 
 [node name="PasswordContainer" type="HBoxContainer" parent="FormContainer"]
-margin_top = 347.0
-margin_right = 648.0
-margin_bottom = 422.0
+margin_top = 247.0
+margin_right = 1024.0
+margin_bottom = 322.0
 custom_constants/separation = 40
 
 [node name="Label" type="Label" parent="FormContainer/PasswordContainer"]
@@ -135,19 +154,32 @@ custom_fonts/font = SubResource( 8 )
 max_length = 30
 secret = true
 
+[node name="RememberMeCheckBox" type="CheckBox" parent="FormContainer"]
+margin_top = 372.0
+margin_right = 1024.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 50, 50 )
+custom_icons/checked = ExtResource( 6 )
+custom_icons/unchecked = ExtResource( 5 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
+custom_constants/hseparation = 15
+text = "Stay signed in for 30 days"
+expand_icon = true
+
 [node name="ErrorMessage" type="Label" parent="FormContainer"]
 visible = false
 margin_top = 522.0
 margin_right = 648.0
-margin_bottom = 536.0
-custom_fonts/font = SubResource( 9 )
+margin_bottom = 559.0
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
 
 [node name="LoginButton" parent="FormContainer" instance=ExtResource( 2 )]
-margin_top = 522.0
-margin_right = 648.0
-margin_bottom = 640.0
+margin_top = 472.0
+margin_right = 1024.0
+margin_bottom = 590.0
 text = "Submit"
 
 [node name="ProcessingLabel" type="Label" parent="FormContainer"]

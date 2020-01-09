@@ -470,10 +470,10 @@ __meta__ = {
 visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -3.40699
-margin_top = 128.7
-margin_right = -352.407
-margin_bottom = -101.3
+margin_left = -3.0
+margin_top = 129.0
+margin_right = -260.0
+margin_bottom = -9.0
 mouse_filter = 1
 theme = ExtResource( 4 )
 __meta__ = {
@@ -493,8 +493,8 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -165.0
-margin_right = -6.10352e-05
+margin_left = -166.763
+margin_right = -1.76288
 margin_bottom = -3.05176e-05
 text = "UFO-ROBI"
 icon = SubResource( 1 )
@@ -503,14 +503,12 @@ __meta__ = {
 }
 
 [node name="TextureButton4" type="Button" parent="TextureRect/PopupPanel"]
-anchor_left = 0.248889
-anchor_top = 0.683784
-anchor_right = 0.74963
-anchor_bottom = 0.997297
-margin_left = -4.06802e-06
-margin_top = 5.24521e-06
-margin_right = 1.27703e-05
-margin_bottom = 6.19888e-06
+anchor_left = 0.226221
+anchor_top = 0.508658
+anchor_right = 0.77772
+anchor_bottom = 0.822511
+margin_left = -1.51141
+margin_right = -1.51141
 text = "Sonic"
 clip_text = true
 __meta__ = {
@@ -518,18 +516,31 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureRect/PopupPanel"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -138.5
-margin_top = 19.0
-margin_right = 243.5
-margin_bottom = 306.0
+anchor_left = 0.241199
+anchor_top = -0.0562771
+anchor_right = 0.769231
+anchor_bottom = 0.477814
+margin_right = 135.0
+margin_bottom = 82.25
 rect_scale = Vector2( 0.75, 0.75 )
 text = "KEY_PLAYER_SELECT"
 align = 1
 valign = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="TextureRect/PopupPanel"]
+anchor_left = 0.235984
+anchor_top = 0.822511
+anchor_right = 0.769231
+anchor_bottom = 0.980519
+text = "Sonic is property of SEGA. I diidn't own him!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
 }
 
 [node name="LanguageButton" type="OptionButton" parent="TextureRect"]

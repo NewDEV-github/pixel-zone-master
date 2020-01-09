@@ -12,6 +12,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="AcceptDialog" parent="."]
+margin_left = 50.0
+margin_top = 475.0
+margin_right = 460.0
+margin_bottom = 577.0
+window_title = "Alarm!"
+dialog_autowrap = true
+
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,11 +82,6 @@ margin_right = 410.0
 margin_bottom = 211.0
 text = "Confirm"
 
-[node name="Label" type="Label" parent="HBoxContainer/Register/VBoxContainer"]
-margin_top = 215.0
-margin_right = 410.0
-margin_bottom = 254.0
-
 [node name="login" type="Control" parent="HBoxContainer"]
 margin_left = 514.0
 margin_right = 1024.0
@@ -123,10 +126,5 @@ margin_top = 129.0
 margin_right = 410.0
 margin_bottom = 168.0
 text = "Confirm"
-
-[node name="Label" type="Label" parent="HBoxContainer/login/VBoxContainer"]
-margin_top = 172.0
-margin_right = 410.0
-margin_bottom = 211.0
 [connection signal="pressed" from="HBoxContainer/Register/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="HBoxContainer/login/VBoxContainer/Button" to="." method="_on_Button_pressed"]

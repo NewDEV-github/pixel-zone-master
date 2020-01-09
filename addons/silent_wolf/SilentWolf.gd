@@ -14,9 +14,10 @@ onready var Players = Node.new()
 # See https://silentwolf.com for more details
 #
 var config = {
-	"api_key": "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
+	"api_key": "FmKF4gtm0Z2RbUAEU62kZ2OZoYLj4PYOURAPIKEY",
 	"game_id": "PixelZone",
-	"game_version": "0.9.1-beta1"
+	"game_version": "0.0.0",
+	"log_level": 1
 }
 
 var scores_config = {
@@ -27,6 +28,7 @@ var auth_config = {
 	"redirect_to_scene": "res://addons/silent_wolf/Scores/Leaderboard.tscn",
 	"session_duration": 3600
 }
+
 func _ready():
 	Scores.set_script(preload("res://addons/silent_wolf/Scores/Scores.gd"))
 	add_child(Scores)

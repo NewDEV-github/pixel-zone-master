@@ -3,9 +3,9 @@ extends Node
 const CommonErrors = preload("../common/CommonErrors.gd")
 const SWLogger = preload("../utils/SWLogger.gd")
 
-signal player_data_received
-signal player_data_posted
-signal player_data_removed
+signal sw_player_data_received
+signal sw_player_data_posted
+signal sw_player_data_removed
 
 var GetPlayerData = null
 var PushPlayerData = null
@@ -120,7 +120,7 @@ func _on_GetPlayerData_request_completed(result, response_code, headers, body):
 			player_name = response.player_name
 			player_data = response.player_data
 			SWLogger.debug("Request completed: Player data: " + str(player_data))
-			emit_signal("player_data_received", player_name, player_data)
+			emit_signal("sw_player_data_received", player_name, player_data)
 		
 func _on_PushPlayerData_request_completed(result, response_code, headers, body):
 	SWLogger.info("PushPlayerData request completed")
@@ -139,7 +139,7 @@ func _on_PushPlayerData_request_completed(result, response_code, headers, body):
 		else:
 			SWLogger.info("SilentWolf post player data score success: " + str(response_code))
 			var player_name = response.player_name
-			emit_signal("player_data_posted", player_name)
+			emit_signal("sw_player_data_posted", player_name)
 		
 func _on_RemovePlayerData_request_completed(result, response_code, headers, body):
 	SWLogger.info("RemovePlayerData request completed")
@@ -160,4 +160,4 @@ func _on_RemovePlayerData_request_completed(result, response_code, headers, body
 			var player_name = response.player_name
 			# return player_data after (maybe partial) removal
 			var player_data = response.player_data
-			emit_signal("player_data_removed", player_name, player_data)
+			emit_signal("sw_player_data_removed", player_name, player_data)

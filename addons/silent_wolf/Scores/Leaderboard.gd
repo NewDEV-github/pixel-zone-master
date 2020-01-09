@@ -1,5 +1,5 @@
 tool
-extends Node2D
+extends Control
 
 const ScoreItem = preload("ScoreItem.tscn")
 const SWLogger = preload("../utils/SWLogger.gd")
@@ -7,19 +7,17 @@ const SWLogger = preload("../utils/SWLogger.gd")
 var list_index = 0
 
 func _ready():
-	if $Control.logged_in == false:
-		$Control.show()
-	else:
-		$Control.hide()
+	if str(SilentWolf.Auth.logged_in_player) == null:
+		$AcceptDialog.popup_centered()
 	var scores = SilentWolf.Scores.scores
 	var local_scores = SilentWolf.Scores.local_scores
 	
 	if scores: 
-		render_board(scores, local_scores) #null)
+		render_board(scores, local_scores)
 	else:
 		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()
-		yield(SilentWolf.Scores.get_high_scores(), "scores_received")
+		yield(SilentWolf.Scores.get_high_scores(), "sw_scores_received")
 		hide_message()
 		render_board(SilentWolf.Scores.scores, local_scores)
 
@@ -30,14 +28,17 @@ func render_board(scores, local_scores):
 	for score in scores:
 		add_item(score.player_name, str(int(score.score)))
 
-func merge_scores_with_local_scores(scores, local_scores):
+func merge_scores_with_local_scores(scores, local_scores, max_scores=10):
 	if local_scores:
 		for score in local_scores:
 			var in_array = score_in_score_array(scores, score)
 			if !in_array:
 				scores.append(score)
 			scores.sort_custom(self, "sort_by_score");
-	return scores.resize(10)
+	var return_scores = scores
+	if scores.size() > max_scores:
+		return_scores = scores.resize(max_scores)
+	return return_scores
 	
 func sort_by_score(a, b):
 	if a.score > b.score:
@@ -82,9 +83,9 @@ func hide_message():
 func _on_CloseButton_pressed():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
+#	global.reset()
 	get_tree().change_scene(scene_name)
 
 
-func _on_Control_logged_in(username):
-	$Control.hide()
-	print(str(username))
+func _on_AcceptDialog_popup_hide():
+	get_tree().change_scene("res://scenes/auth.tscn")

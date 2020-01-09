@@ -1,6 +1,7 @@
 extends Control
 var configured = false
 var scene
+var date
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 var dcim = OS.get_system_dir(OS.SYSTEM_DIR_DCIM)
@@ -27,6 +28,12 @@ var adInterstitialId = "ca-app-pub-3142193952770678/5995273653" # [Replace with 
 var adRewardedId = "ca-app-pub-3142193952770678/3880047799" # [There is no testing option for rewarded videos, so you can use this id for testing]
 # Loaders
 func _ready():
+	var file = File.new()
+	file.open('user://date.dat', File.READ)
+	var currentline = str(file.get_line())
+	print(str(currentline))
+	date = currentline
+	get_tree().reload_current_scene()
 	if(Engine.has_singleton("AdMob")):
 		admob = Engine.get_singleton("AdMob")
 		admob.init(isReal, get_instance_id())
@@ -39,11 +46,6 @@ func _ready():
 	if os == 'OSX':
 		if configured == false:
 			$Control3.popup_centered()
-	var file = File.new()
-	if file.file_exists(str(documents) + '/Pixel Zone/.data/settings/editor.txt'):
-		$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
-	else:
-		$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
 	$HTTPRequest.set_download_file('user://LeaderBoard.txt')
 	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/Leaderboard_config.txt')
 	
@@ -57,12 +59,10 @@ func _ready():
 		else:
 			$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
 		
-		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
-			$TextureRect/VBoxContainer/Update.set_disabled(false)
-		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
-			$TextureRect/VBoxContainer/Update.set_disabled(true)
-	$HTTPRequest.set_download_file('user://dlc.txt')
-	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/dlc.txt')
+#		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
+#			$TextureRect/VBoxContainer/Update.set_disabled(false)
+#		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
+#			$TextureRect/VBoxContainer/Update.set_disabled(true)
 	if globals.auto_load_mod == true:
 		$TextureRect/VBoxContainer/ImportMod.set_disabled(false)
 	if globals.auto_load_mod == false:
@@ -128,11 +128,8 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	var conf = File.new()
-	if conf.file_exists('user://dlc.txt'):
-		$TextureRect/PopupPanel/TextureButton4.show()
-	if not conf.file_exists('user://dlc.txt'):
-		$TextureRect/PopupPanel/TextureButton4.hide()
+	if float(str(date)) >= 1422020 and float(str(date)) <= 132020:
+		$TextureRect/PopupPanel/TextureButton4.show() #== conf.file_exists('user://dlc.txt')
 	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
 	
 func _on_Play7_pressed():
@@ -174,9 +171,15 @@ func _on_WindowDialog3_about_to_show():
 
 
 func _on_Update_pressed():
-	background_load.load_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
+	background_load.load_scene("res://scenes/auth.tscn")
 
-
+func _input(event):
+	if event.is_action_pressed("up"):
+		var up = event.get_action_strength("up")
+		_on_VScrollBar_value_changed(float(str(up)))
+	if event.is_action_pressed("down"):
+		var down = event.get_action_strength("down")
+		_on_VScrollBar_value_changed(float(str(down)))
 func _on_VScrollBar_value_changed(value):
 	$Control.set_position(Vector2(0, +(value*(-10))))
 
@@ -294,14 +297,14 @@ func _on_LoadGame_pressed():
 	background_load.load_scene('res://Level Editor/Editor.tscn')
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	var file = File.new()
-	file.open('user://LeaderBoard.txt', File.READ)
-	if str(file.get_line()) == 'Enable' and not os == 'Android':
-		$TextureRect/VBoxContainer/Update.set_disabled(false)
-	else:
-		$TextureRect/VBoxContainer/Update.set_disabled(true)
-
+#func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+#	var file = File.new()
+#	file.open('user://LeaderBoard.txt', File.READ)
+#	if str(file.get_line()) == 'Enable' and not os == 'Android':
+#		$TextureRect/VBoxContainer/Update.set_disabled(false)
+#	else:
+#		$TextureRect/VBoxContainer/Update.set_disabled(true)
+#
 
 func _on_Control3_popup_hide():
 	configured = true

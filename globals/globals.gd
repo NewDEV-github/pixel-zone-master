@@ -16,13 +16,12 @@ func _get_collected():
 	return collected
 
 func _send_data():
-	var points = {
-		'COINS' : game_state.points,
-		'STAGE' : globals.current_stage
-		}
+
 	var playername = str(SilentWolf.Auth.logged_in_player)
 	if not str(playername) == '':
-		SilentWolf.Scores.persist_score(playername, points)
+		SilentWolf.Scores.persist_score(playername, game_state.points)
+		SilentWolf.Scores.get_high_scores()
+		
 func play_bgm(id, value):
 	emit_signal("play_bgm", id, value)
 

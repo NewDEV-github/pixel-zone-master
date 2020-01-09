@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay Scripts/player_camera.gd" type="Script" id=2]
@@ -22,6 +22,21 @@
 [ext_resource path="res://Audio/sfx/peelOutCharge.wav" type="AudioStream" id=20]
 [ext_resource path="res://Audio/sfx/peelOutRelease.wav" type="AudioStream" id=21]
 [ext_resource path="res://Audio/sfx/instaShield.wav" type="AudioStream" id=22]
+[ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=23]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=24]
+[ext_resource path="res://textures/osb_fire.png" type="Texture" id=25]
+[ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/timer.tscn" type="PackedScene" id=27]
+[ext_resource path="res://animations/full_health.tres" type="Animation" id=28]
+[ext_resource path="res://scripts/ui.gd" type="Script" id=30]
+[ext_resource path="res://textures/pause_button.png" type="Texture" id=31]
+[ext_resource path="res://textures/osb_left.png" type="Texture" id=32]
+[ext_resource path="res://textures/osb_jump.png" type="Texture" id=33]
+[ext_resource path="res://textures/osb_right.png" type="Texture" id=34]
+[ext_resource path="res://textures/saving.png" type="Texture" id=35]
+[ext_resource path="res://animations/loaded_level.tres" type="Animation" id=36]
+[ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=37]
+[ext_resource path="res://animations/saving_state.tres" type="Animation" id=38]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Braking"
@@ -263,11 +278,27 @@ radius = 9.0
 
 [sub_resource type="RayShape2D" id=17]
 
+[sub_resource type="Animation" id=18]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Start:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Node2D" type="KinematicBody2D"]
+position = Vector2( 7.3205, 0 )
 script = ExtResource( 1 )
 
 [node name="PlayerCamera" type="Node2D" parent="."]
-position = Vector2( 144, 90 )
+position = Vector2( 242.827, 97.3206 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -286,7 +317,7 @@ drag_margin_bottom = 0.15
 editor_draw_limits = true
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 144, 90 )
+position = Vector2( 242.827, 99.1958 )
 z_index = 1
 collision/safe_margin = 0.1
 script = ExtResource( 3 )
@@ -420,4 +451,167 @@ cast_to = Vector2( 11, 0 )
 [node name="LeftWallSensor" type="RayCast2D" parent="Player"]
 enabled = true
 cast_to = Vector2( -11, 0 )
+
+[node name="ui" type="CanvasLayer" parent="Player"]
+layer = 0
+
+[node name="timer" parent="Player/ui" instance=ExtResource( 27 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -127.5
+margin_top = 0.0
+margin_right = 127.5
+margin_bottom = 31.0
+
+[node name="Control" type="Control" parent="Player/ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 24 )
+script = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="theme" type="Label" parent="Player/ui/Control"]
+margin_left = 615.094
+margin_top = -273.375
+margin_right = 655.094
+margin_bottom = -234.375
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
+pause_mode = 2
+margin_right = 76.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 23 )
+value = 100.0
+
+[node name="Control" type="VBoxContainer" parent="Player/ui/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="TouchScreenButton" parent="Player/ui/Control/Control"]
+light_mask = 2
+position = Vector2( -75, 0 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 31 )
+action = "ui_cancel"
+visibility_mode = 1
+
+[node name="LookUp" type="TouchScreenButton" parent="Player/ui/Control/Control"]
+light_mask = 2
+position = Vector2( -120.66, 355.551 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 33 )
+action = "ui_up"
+visibility_mode = 1
+
+[node name="jump" type="TouchScreenButton" parent="Player/ui/Control/Control"]
+light_mask = 2
+position = Vector2( -237.788, 464.766 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 25 )
+action = "ui_accept"
+visibility_mode = 1
+
+[node name="fire" type="TouchScreenButton" parent="Player/ui/Control/Control"]
+light_mask = 2
+position = Vector2( -126.788, 590.266 )
+scale = Vector2( 1.8, -1.8 )
+normal = ExtResource( 33 )
+action = "ui_down"
+visibility_mode = 1
+
+[node name="Sprite" type="Sprite" parent="Player/ui/Control/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -27.062, 572.063 )
+rotation = 6.28319
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 35 )
+
+[node name="left" type="TouchScreenButton" parent="Player/ui/Control"]
+light_mask = 2
+position = Vector2( 10, 460 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 32 )
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="Player/ui/Control"]
+light_mask = 2
+position = Vector2( 130, 460 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 34 )
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="GameUI" parent="Player/ui/Control" instance=ExtResource( 26 )]
+margin_top = 18.0
+margin_bottom = -23.0
+
+[node name="Start" type="Label" parent="Player/ui/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -17.0
+margin_right = 81.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 23 )
+text = "Start!"
+align = 1
+
+[node name="fps" type="Label" parent="Player/ui/Control"]
+margin_left = 77.0
+margin_top = 1.0
+margin_right = 367.0
+margin_bottom = 47.0
+
+[node name="Label" type="Label" parent="Player/ui/Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -0.666824
+margin_top = 27.5833
+margin_right = 162.334
+margin_bottom = 66.5834
+custom_fonts/font = ExtResource( 23 )
+text = "Full Health!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/ui"]
+pause_mode = 2
+autoplay = "saving_state"
+anims/full_health = ExtResource( 28 )
+anims/loaded_level = ExtResource( 36 )
+anims/next_level = ExtResource( 37 )
+anims/saving_state = ExtResource( 38 )
+anims/start = SubResource( 18 )
+
+[node name="ColorRect" type="ColorRect" parent="Player/ui"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Panel" type="Panel" parent="Player/ui"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Player/ui/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Achievement Unlocked!"
+align = 1
+valign = 1
 [connection signal="animation_finished" from="Player/Characters/Sonic/AnimationPlayer" to="Player/StateMachine" method="_on_AnimationPlayer_animation_finished"]

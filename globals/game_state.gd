@@ -14,3 +14,5 @@ func _load():
 	points += float(str(loaded_coins))
 func _ready():
 	_load()
+func _update_data():
+	globals._send_data()

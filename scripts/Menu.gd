@@ -21,8 +21,7 @@ func show_page(node):
 	current_page = node
 
 func _on_Quit_pressed():
-	get_tree().quit()
-
+	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
 # when preesed "Return" or "No" button in Quit Page
 func _on_Return_pressed():
 	hide()

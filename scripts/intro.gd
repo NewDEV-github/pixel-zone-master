@@ -1,34 +1,40 @@
 extends Control
 var scene
 var config
+var leaderboard = {
+		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
+		"game_id": "PixelZone",
+		"game_version": "0.9.1-beta1",
+		"log_level": 1
+	}
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _load():
 	var load_ = File.new()
 	load_.open(str(documents) +"/Pixel Zone/.data/settings/lang.save", File.READ)
 	var loaded_lang = parse_json(load_.get_line())
-	if loaded_lang == "en":
-		TranslationServer.set_locale("en")
-	if loaded_lang == "es":
-		TranslationServer.set_locale("es")
-	if loaded_lang == "de":
-		TranslationServer.set_locale("de")
-	if loaded_lang == "pl":
-		TranslationServer.set_locale("pl")
-	if loaded_lang == "it":
-		TranslationServer.set_locale("it")
-	if loaded_lang == "pt":
-		TranslationServer.set_locale("pt")
-	if loaded_lang == "fr":
-		TranslationServer.set_locale("fr")
+	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
+	$HTTPRequest.set_download_file('user://dlc.txt')
+	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/dlc.txt')
+
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"File ID" : OS.get_unix_time()
+	}
+	return save_dict
+func _start():
+	SilentWolf.configure({
+		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
+		"game_id": "PixelZone",
+		"game_version": "0.9.1-beta1",
+		"log_level": 1
+	})
 	var conf = File.new()
 	if conf.file_exists('user://dlc.txt'):
 		ProjectSettings.load_resource_pack('user://dlc.pck')
-	SilentWolf.config.api_key = "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4"
-	SilentWolf.config.game_id = "PixelZone"
-	SilentWolf.config.game_version = "0.9.1-beta1"
-	
 	ProjectSettings.save()
 
 	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
@@ -76,15 +82,11 @@ func _ready():
 	config.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 	$AnimationPlayer.play("intro")
 
-func save():
-	var save_dict = {
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"File ID" : OS.get_unix_time()
-	}
-	return save_dict
-
-
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if not str(anim_name) == '':
 		scene = get_tree().change_scene("res://scenes/gui_loader.tscn")
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	_start()
+	print('Request completed... %s' % result)

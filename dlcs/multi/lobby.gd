@@ -12,20 +12,7 @@ var keep_data
 #		$connect/Control/ROBI2.hide()
 #		$connect/join.show()
 func _ready():
-#	if $Control.logged_in == false:
-#		$Control.show()
-#	else:
-#		$Control.hide()
-#	Firebase.Auth.connect('login_succeeded', self, 'login_succeed')
-	Firebase.Auth.connect('login_failed', self, 'login_failed')
-	var file = File.new()
-	if file.file_exists(str(documents) + '/Pixel Zone/.data/name.save'):
-		$Control.hide()
-		$connect.show()
-		file.open_encrypted_with_pass(str(documents) + '/Pixel Zone/.data/name.save', File.READ, str(2345654))
-		var pl_name = str(file.get_line())
-		$connect/name.text = pl_name
-	# Called every time the node is added to the scene.
+
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
@@ -112,18 +99,6 @@ func _on_back3_pressed():
 func _on_Button_pressed():
 	$Control.show()
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-
-
-func _on_signup_pressed():
-	var email = $Control/Control2/VBoxContainer/email.text
-	var password = $Control/Control2/VBoxContainer/password.text
-	var password_confirm = $Control/Control2/VBoxContainer/password2.text
-	if str(password) == str(password_confirm):
-		if keep_data == true:
-			Firebase.Auth.signup_with_email_and_password(email, password)
-			$Control/Control2.hide()
-			$Control.hide()
-
 func _on_Button4_pressed():
 	OS.shell_open("https://masterpolska123.github.io/home/auth/login")
 

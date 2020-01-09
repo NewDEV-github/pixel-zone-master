@@ -1,4 +1,4 @@
-com.godot.game
+org.karol.pixelzone
 attr adSize
 attr adSizes
 attr adUnitId

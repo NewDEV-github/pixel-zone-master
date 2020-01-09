@@ -4,13 +4,15 @@ const SWLogger = preload("../utils/SWLogger.gd")
 
 func _ready():
 	var auth_node = get_tree().get_root().get_node("res://addons/silent_wolf/Auth/Auth")
-	SilentWolf.Auth.connect("login_succeeded", self, "_on_login_succeeded")
-	SilentWolf.Auth.connect("login_failed", self, "_on_login_failed")
+	SilentWolf.Auth.connect("sw_login_succeeded", self, "_on_login_succeeded")
+	SilentWolf.Auth.connect("sw_login_failed", self, "_on_login_failed")
 
 func _on_LoginButton_pressed():
 	var username = $"FormContainer/UsernameContainer/Username".text
 	var password = $"FormContainer/PasswordContainer/Password".text
-	SilentWolf.Auth.login_player(username, password)
+	var remember_me = $"FormContainer/RememberMeCheckBox".is_pressed()
+	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
+	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
 	
 func _on_login_succeeded():

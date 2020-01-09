@@ -122,9 +122,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AdsAttrs_adSize com.godot.game:adSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AdsAttrs_adSizes com.godot.game:adSizes}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AdsAttrs_adUnitId com.godot.game:adUnitId}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AdsAttrs_adSize org.karol.pixelzone:adSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AdsAttrs_adSizes org.karol.pixelzone:adSizes}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AdsAttrs_adUnitId org.karol.pixelzone:adUnitId}</code></td><td></td></tr>
      * </table>
      * @see #AdsAttrs_adSize
      * @see #AdsAttrs_adSizes
@@ -134,33 +134,33 @@ public final class R {
       0x7f010000, 0x7f010001, 0x7f010002
     };
     /**
-     * <p>This symbol is the offset where the {@link com.godot.game.R.attr#adSize}
+     * <p>This symbol is the offset where the {@link org.karol.pixelzone.R.attr#adSize}
      * attribute's value can be found in the {@link #AdsAttrs} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.godot.game:adSize
+     * @attr name org.karol.pixelzone:adSize
      */
     public static final int AdsAttrs_adSize=0;
     /**
-     * <p>This symbol is the offset where the {@link com.godot.game.R.attr#adSizes}
+     * <p>This symbol is the offset where the {@link org.karol.pixelzone.R.attr#adSizes}
      * attribute's value can be found in the {@link #AdsAttrs} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.godot.game:adSizes
+     * @attr name org.karol.pixelzone:adSizes
      */
     public static final int AdsAttrs_adSizes=1;
     /**
-     * <p>This symbol is the offset where the {@link com.godot.game.R.attr#adUnitId}
+     * <p>This symbol is the offset where the {@link org.karol.pixelzone.R.attr#adUnitId}
      * attribute's value can be found in the {@link #AdsAttrs} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.godot.game:adUnitId
+     * @attr name org.karol.pixelzone:adUnitId
      */
     public static final int AdsAttrs_adUnitId=2;
   }
