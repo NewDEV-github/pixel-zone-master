@@ -31,9 +31,9 @@ func _ready():
 	var file = File.new()
 	file.open('user://date.dat', File.READ)
 	var currentline = str(file.get_line())
-	print(str(currentline))
 	date = currentline
-	get_tree().reload_current_scene()
+	print(str(date))
+#	get_tree().reload_current_scene()
 	if(Engine.has_singleton("AdMob")):
 		admob = Engine.get_singleton("AdMob")
 		admob.init(isReal, get_instance_id())
@@ -127,9 +127,13 @@ func _ready():
 func _on_Quit_pressed():
 	get_tree().quit()
 
-func _process(delta):
-	if float(str(date)) >= 1422020 and float(str(date)) <= 132020:
-		$TextureRect/PopupPanel/TextureButton4.show() #== conf.file_exists('user://dlc.txt')
+func _process(_delta):
+	if str(date) == '2':
+		$TextureRect/PopupPanel/TextureButton4.show()
+		$TextureRect/PopupPanel/Label2.show()
+	else:
+		$TextureRect/PopupPanel/TextureButton4.hide()
+		$TextureRect/PopupPanel/Label2.hide()
 	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
 	
 func _on_Play7_pressed():

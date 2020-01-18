@@ -19,8 +19,7 @@ onready var tab_container = get_node("TabContainer")
 #		current_tab += 1
 #		tab_container.set_current_tab(int(float(current_tab)))
 #	print(current_tab)
-func _process(delta):
-	delta -=1
+func _process(_delta):
 	tab_container.set_tab_title(0, "KEY_G_A")
 	tab_container.set_tab_title(1, "KEY_CON_TAB")
 	tab_container.set_tab_title(2, "KEY_THEME")

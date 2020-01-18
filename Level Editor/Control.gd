@@ -28,6 +28,7 @@ var heigth_width = 100000000
 var locked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$TextEdit.add_keyword_color("load", Color.red)
 	$TextEdit.add_keyword_color("preload", Color.red)
 	$TextEdit.add_keyword_color("setget", Color.red)
@@ -57,6 +58,7 @@ func _ready():
 	$TextEdit.add_color_region(str('$'), str(' '), Color.green)
 	$TextEdit.add_color_region(str('$'), str('.'), Color.green)
 	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	set_position(Vector2(0,0))\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#	You cannot edit this because the level will not load and the game will freeze'
+	CustomTileResearch()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$"Editor's Scene".set_position(Vector2(position_x, position_y))
@@ -1283,42 +1285,57 @@ func _on_Polygon40x40_pressed():
 	$PopupPanel5.hide()
 
 #
-#func _on_ImportCustomtile_pressed():
-#	var path = 'user://Tiles/'
-#	if checked == false:
-#		var dir = Directory.new()
-#		if dir.open(path) == OK:
-#			dir.list_dir_begin()
-#			print(str(dir.list_dir_begin()))
-#			var file_name = dir.get_next()
-#			while (file_name != ""):
-#				if dir.current_is_dir():
-#					print("Found directory: " + file_name)
-#				else:
-#					print("Found file: " + file_name)
-#					var fil_name = str(file_name).get_basename()
-#					var extension = str(file_name).get_extension()
-#					var file_path = str(file_name).get_base_dir()
-#					var tile_name = File.new()
-#					tile_name.open(str(file_path) + 'name.txt', File.READ)
-#					var tile_name_ = tile_name.get_as_text()
-#					print(extension)
-#					if extension == "tscn":
-#						tile_path = str(file_path) + str(fil_name)
-#						var texture_button = Button.new()
-#						$SetCurrentTile/VBoxContainer3/HBoxContainer5.add_child(texture_button)
-#						texture_button.set_owner($SetCurrentTile/VBoxContainer3/HBoxContainer5)
+func CustomTileResearch():
+	var path = str(documents) + '/Pixel Zone/Custom Tiles/'
+	if checked == false:
+		var dir = Directory.new()
+		if dir.open(path) == OK:
+			dir.list_dir_begin()
+			print(str(dir.list_dir_begin()))
+			var file_name = dir.get_next()
+			while (file_name != ""):
+				if dir.current_is_dir():
+					print("Found directory: " + file_name)
+				else:
+					print("Found file: " + file_name)
+					var fil_name = str(file_name).get_basename()
+					var extension = str(file_name).get_extension()
+					var file_path = str(file_name).get_base_dir()
+					var tile_name = File.new()
+					var tile_name_
+					var tile_icon_path
+#					if extension == "txt":
+#						tile_name.open(str(path) + str(fil_name) + '.txt', File.READ)
+#						tile_name_ = tile_name.get_real()
+					print(extension)
+					if extension == 'png':
+						tile_icon_path = str(path) + str(fil_name) + '.png'
+						var img = Image.new()
+						img.load(str(tile_icon_path))
+						var tex = ImageTexture.new()
+						tex.create_from_image(img)
+						print(str(tile_icon_path))
+						var texture_button = TextureButton.new()
+						
+						texture_button.set_owner($SetCurrentTile/VBoxContainer3/Customtile)
+						$SetCurrentTile/VBoxContainer3/Customtile.add_child(texture_button)
 #						texture_button.set_text(str(tile_name_))
-#						texture_button.connect("pressed", self, '_on_pressed')
-#				file_name = dir.get_next()
-#				checked = true
-#func _on_pressed():
-#	var _node = load(str(tile_path))
-#	node = _node.instance()
-#	node.set_name('polygon_10x10' + str(number))
-#	root.add_child(node)
-#	node.set_owner(root)
-#	$SetCurrentTile.hide()
+						
+						texture_button.set_normal_texture(tex)
+						texture_button.connect("pressed", self, '_on_pressed')
+					if extension == "tscn":
+#						tile_name_ = fil_name
+						tile_path = str(path) + str(fil_name) + '.' + str(extension)
+#						print(str(tile_path))
+				file_name = dir.get_next()
+				checked = true
+func _on_pressed():
+	var _node = load(str(tile_path))
+	node = _node.instance()
+	node.set_name('Custom' + str(number))
+	root.add_child(node)
+	node.set_owner(root)
+	$SetCurrentTile.hide()
 
 
 func _on_icon4_pressed():

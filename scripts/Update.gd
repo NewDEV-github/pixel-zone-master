@@ -12,8 +12,8 @@ var latest_update
 var update_info
 func _ready():
 	$HTTPRequest.set_download_file('user://%s.txt' % [str(file_name)])
-	print(str("https://masterpolska123.github.io/home/updates_info/%s.txt" % [str(file_name)]))
-	$HTTPRequest.request("https://masterpolska123.github.io/home/updates_info/%s.txt" % [str(file_name)], [], true)
+	print(str("https://masterpolska123.github.io/updates_info/%s.txt" % [str(file_name)]))
+	$HTTPRequest.request("https://masterpolska123.github.io/updates_info/%s.txt" % [str(file_name)], [], true)
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == HTTPClient.RESPONSE_OK :
@@ -34,7 +34,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	
 	print(str(response_code))
 func _ok():
-	OS.shell_open('https://masterpolska123.github.io/home/pixel-zone/')
+	OS.shell_open('https://masterpolska123.github.io/pixel-zone/')
 	hide()
 func _failed():
 	$AcceptDialog.hide()

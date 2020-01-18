@@ -1,0 +1,191 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://textures/icon_folder_medium_thumb.svg" type="Texture" id=2]
+[ext_resource path="res://Level Editor/CustomTileCreator.gd" type="Script" id=3]
+
+[node name="CustomTileCreator" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="VBoxContainer" parent="Panel/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Right"]
+margin_right = 510.0
+margin_bottom = 73.0
+text = "Path To Texture File.
+It must have 1:1 properties"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/Right"]
+margin_top = 77.0
+margin_right = 510.0
+margin_bottom = 117.0
+
+[node name="LineEdit" type="LineEdit" parent="Panel/HBoxContainer/Right/HBoxContainer"]
+margin_right = 462.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open" type="Button" parent="Panel/HBoxContainer/Right/HBoxContainer"]
+margin_left = 466.0
+margin_right = 510.0
+margin_bottom = 40.0
+icon = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Right"]
+margin_top = 121.0
+margin_right = 510.0
+margin_bottom = 160.0
+text = "Tile's Scale"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/Right"]
+margin_top = 164.0
+margin_right = 510.0
+margin_bottom = 203.0
+
+[node name="HSlider" type="HSlider" parent="Panel/HBoxContainer/Right/HBoxContainer2"]
+margin_right = 370.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 1.0
+
+[node name="SpinBox" type="SpinBox" parent="Panel/HBoxContainer/Right/HBoxContainer2"]
+margin_left = 374.0
+margin_right = 510.0
+margin_bottom = 39.0
+size_flags_vertical = 3
+
+[node name="Label3" type="OptionButton" parent="Panel/HBoxContainer/Right"]
+visible = false
+margin_top = 207.0
+margin_right = 510.0
+margin_bottom = 246.0
+text = "10x10"
+items = [ "10x10", null, false, 0, null ]
+selected = 0
+
+[node name="Label4" type="Label" parent="Panel/HBoxContainer/Right"]
+margin_top = 207.0
+margin_right = 510.0
+margin_bottom = 246.0
+text = "Collision Polygon's Scale"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/HBoxContainer/Right"]
+margin_top = 250.0
+margin_right = 510.0
+margin_bottom = 289.0
+
+[node name="HSlider2" type="HSlider" parent="Panel/HBoxContainer/Right/HBoxContainer3"]
+margin_right = 370.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 1.0
+
+[node name="SpinBox" type="SpinBox" parent="Panel/HBoxContainer/Right/HBoxContainer3"]
+margin_left = 374.0
+margin_right = 510.0
+margin_bottom = 39.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/HBoxContainer/Right"]
+margin_top = 293.0
+margin_right = 510.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+
+[node name="name" type="LineEdit" parent="Panel/HBoxContainer/Right/HBoxContainer4"]
+margin_right = 428.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer/Right/HBoxContainer4"]
+margin_left = 432.0
+margin_right = 510.0
+margin_bottom = 39.0
+text = "SAVE"
+
+[node name="Left" type="VBoxContainer" parent="Panel/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/HBoxContainer/Left"]
+margin_right = 510.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tile" type="Control" parent="Panel/HBoxContainer/Left/CenterContainer"]
+margin_left = 255.0
+margin_top = 300.0
+margin_right = 255.0
+margin_bottom = 300.0
+
+[node name="Control" type="Control" parent="Panel/HBoxContainer/Left/CenterContainer"]
+visible = false
+margin_left = 255.0
+margin_top = 300.0
+margin_right = 255.0
+margin_bottom = 300.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Panel/HBoxContainer/Left/CenterContainer/Control"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="Panel"]
+margin_right = 604.0
+margin_bottom = 515.0
+window_title = "Otwórz plik"
+mode = 0
+access = 2
+filters = PoolStringArray( "*.png; PNG Textures" )
+show_hidden_files = true
+current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
+current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/HBoxContainer/Right/HBoxContainer/Open" to="." method="_on_Open_pressed"]
+[connection signal="value_changed" from="Panel/HBoxContainer/Right/HBoxContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="item_selected" from="Panel/HBoxContainer/Right/Label3" to="." method="_on_Label3_item_selected"]
+[connection signal="value_changed" from="Panel/HBoxContainer/Right/HBoxContainer3/HSlider2" to="." method="_on_HSlider2_value_changed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Right/HBoxContainer4/Button" to="." method="_on_Button_pressed"]
+[connection signal="file_selected" from="Panel/FileDialog" to="." method="_on_FileDialog_file_selected"]

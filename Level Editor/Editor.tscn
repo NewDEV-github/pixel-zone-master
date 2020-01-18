@@ -257,7 +257,6 @@ margin_bottom = 8.0
 items = [ "Jungle Ruins", null, false, "Hill", null, false, "Pixel Adventure", null, false, "Ice Cap", null, false, "Castlemania - outside", null, false, "Sci Fi", null, false, "Castlemania - inside", null, false ]
 
 [node name="PopupPanel3" type="WindowDialog" parent="."]
-visible = true
 margin_left = 180.0
 margin_top = 97.25
 margin_right = 570.0
@@ -551,7 +550,6 @@ __meta__ = {
 autostart = true
 
 [node name="SetCurrentTile" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 39.8787
@@ -1343,11 +1341,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="SetCurrentTile/VBoxContainer3"]
-visible = false
-margin_top = 310.0
-margin_right = 40.0
-margin_bottom = 350.0
+[node name="Customtile" type="HBoxContainer" parent="SetCurrentTile/VBoxContainer3"]
+anchor_top = 0.555556
+anchor_right = 0.871094
+anchor_bottom = 0.851255
+margin_bottom = -3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="VSlider" type="VSlider" parent="."]
 visible = false
@@ -1369,7 +1370,6 @@ margin_top = -16.0
 margin_right = -0.351991
 
 [node name="Disk" type="FileDialog" parent="."]
-visible = true
 margin_left = 18.0
 margin_top = 101.0
 margin_right = 569.0

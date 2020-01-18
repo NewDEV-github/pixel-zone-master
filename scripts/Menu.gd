@@ -26,10 +26,10 @@ func _on_Quit_pressed():
 func _on_Return_pressed():
 	hide()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		visible = !visible
-		delta -=1
+
 
 func _on_Options_pressed():
 	show_page($OptionsPage)

@@ -10,21 +10,33 @@ func _on_select_pressed():
 		background_load.load_scene('res://animations/cutscenes/cutscene1.tscn')
 func _on_select2_pressed():
 	background_load.load_scene("res://scenes/stages/pixel_adventure/stage2.tscn")
-func _on_select3_pressed():
-	background_load.load_scene("res://scenes/stages/ice_cap_adventure/ice_01.tscn")
+func _on_select3_pressed():#
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene2.tscn')
 func _on_select4_pressed():
 	background_load.load_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
 func _on_select5_pressed():
 	background_load.load_scene("res://scenes/stages/ice_cap_adventure/ice_03.tscn")
-func _on_select6_pressed():
-	background_load.load_scene("res://scenes/stages/jungle_ruins/jungle_ruins01.tscn")
+func _on_select6_pressed():#
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/jungle_ruins/jungle_ruins01.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene3.tscn')
 func _on_select7_pressed():
 	background_load.load_scene("res://scenes/stages/jungle_ruins/jungle_ruins02.tscn")
 func _on_select8_pressed():
 	background_load.load_scene("res://scenes/stages/jungle_ruins/jungle_ruins03.tscn")
 func _on_select9_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_2.tscn")
-func _process(delta):
+func _ready():
 	var conf = ConfigFile.new()
 	conf.load(str(documents) + '/Pixel Zone/.data/settings/game.ini')
 	var loaded_config = str(conf.get_value('saves', 'game_pass'))
@@ -92,7 +104,13 @@ func _on_VScrollBar_value_changed(value):
 	$control.set_position(Vector2(0, -(value*10)))
 
 func _on_select10_pressed():
-	background_load.load_scene("res://scenes/stages/hill/hill_1.tscn")
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/hill/hill_1.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene4.tscn')
 
 
 func _on_select15_pressed():
@@ -100,7 +118,13 @@ func _on_select15_pressed():
 
 
 func _on_select16_pressed():
-	background_load.load_scene("res://scenes/stages/scifi/sci_fi_1.tscn")
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/scifi/sci_fi_1.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene5.tscn')
 
 
 func _on_select17_pressed():
@@ -112,7 +136,13 @@ func _on_select14_pressed():
 
 
 func _on_select15a_pressed():
-	background_load.load_scene("res://scenes/stages/castle_mania/castle_mania01.tscn")
+	var file = File.new()
+	file.open('user://cut.dat', File.READ)
+	var line = str(file.get_line())
+	if bool(line) == true:
+		background_load.load_scene("res://scenes/stages/castle_mania/castle_mania01.tscn")
+	if not bool(line) == true:
+		background_load.load_scene('res://animations/cutscenes/cutscene6.tscn')
 
 
 func _on_select15b_pressed():

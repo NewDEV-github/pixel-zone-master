@@ -34,3 +34,14 @@ text = "Editor"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.273534
+anchor_top = 0.735409
+anchor_right = 0.746622
+anchor_bottom = 0.821989
+text = "Accept"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

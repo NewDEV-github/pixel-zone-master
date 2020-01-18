@@ -358,8 +358,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+anchor_top = -0.00293813
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.997062
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 2 )

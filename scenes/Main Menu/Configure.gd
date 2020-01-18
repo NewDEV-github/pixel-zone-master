@@ -1,9 +1,14 @@
 extends WindowDialog
 var savedir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + '/Pixel Zone/.data/settings/'
-onready var leaderboard = $VBoxContainer/LeaderBoard.pressed
-onready var editor = $VBoxContainer/Editor.pressed
+var leaderboard
+var editor
 var os = OS.get_name()
 func _process(_delta):
+	leaderboard = $VBoxContainer/LeaderBoard.pressed
+	editor = $VBoxContainer/Editor.pressed
+
+
+func _on_Button_pressed():
 	var file = File.new()
 	var dir = Directory.new()
 	if leaderboard == true:

@@ -43,18 +43,15 @@ func on_scene_changed():
 #	selected_player.restart_position()
 
 func _ready():
-	timer.wait_time = 20
-	timer.connect("timeout", self, '_timeout')
-	timer.one_shot = false
-	timer.start()
+#	timer.wait_time = 20
+#	timer.connect("timeout", self, '_timeout')
+#	timer.one_shot = false
+#	timer.start()
 	scene_path = ''
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
-	var load_set = bool(str(beta_2.get_line()))
-	if load_set == true :
-		auto_load_mod = true
-	if load_set == false :
-		auto_load_mod = false
+	var load_set = beta_2.get_line()
+	auto_load_mod = bool(str(load_set))
 
 func _timeout():
 	_send_data()

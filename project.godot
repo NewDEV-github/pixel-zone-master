@@ -144,7 +144,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Advanced Background Loader", "GDFirebase", "adb_helper", "graphics_editor", "silent_wolf", "zylann.editor_debugger" )
+enabled=PoolStringArray( "Advanced Background Loader", "GDFirebase", "adb_helper", "silent_wolf", "zylann.editor_debugger" )
 
 [input]
 

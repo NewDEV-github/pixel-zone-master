@@ -5,3 +5,14 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2( 4, 4 )
 polygon = PoolVector2Array( -15, -15, -15, 15, 15, 15, 15, -15 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 0, 0, 0.537255 )
+margin_left = -58.8408
+margin_top = -60.255
+margin_right = 61.1592
+margin_bottom = 59.745
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

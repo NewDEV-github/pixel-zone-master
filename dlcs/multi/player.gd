@@ -159,8 +159,7 @@ func _on_ice_cap1_achieve3():
 	$anim.play("achievement")
 func dd():
 	$ui/Control/ProgressBar.value -= 70
-func _process(delta):
-	delta -= 1
+func _process(_delta):
 	$ui/Control/fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
 func _on_fps_show():
 	$ui/Control/fps.show()
