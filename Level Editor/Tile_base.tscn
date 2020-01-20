@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level Editor/Tile_base.gd" type="Script" id=1]
+
+[node name="Tile" type="KinematicBody2D"]
+script = ExtResource( 1 )

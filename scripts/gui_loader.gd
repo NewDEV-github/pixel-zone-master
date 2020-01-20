@@ -5,9 +5,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var date_day = str(OS.get_date().day)
+#	var date_day = str(OS.get_date().day)
 	var date_month = str(OS.get_date().month)
-	var date_year = str(OS.get_date().year)
+#	var date_year = str(OS.get_date().year)
 	var file = File.new()
 	file.open('user://date.dat', File.WRITE)
 	file.store_line(str(date_month))

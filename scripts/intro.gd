@@ -88,6 +88,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		scene = get_tree().change_scene("res://scenes/gui_loader.tscn")
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(result, _response_code, _headers,_body):
 	_start()
 	print('Request completed... %s' % result)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://textures/icon_folder_medium_thumb.svg" type="Texture" id=2]
 [ext_resource path="res://Level Editor/CustomTileCreator.gd" type="Script" id=3]
+[ext_resource path="res://Level Editor/Tile_base.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level Editor/Tile_base.gd" type="Script" id=5]
 
 [node name="CustomTileCreator" type="Control"]
 anchor_right = 1.0
@@ -44,6 +46,7 @@ margin_right = 510.0
 margin_bottom = 117.0
 
 [node name="LineEdit" type="LineEdit" parent="Panel/HBoxContainer/Right/HBoxContainer"]
+visible = false
 margin_right = 462.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -55,10 +58,15 @@ __meta__ = {
 }
 
 [node name="Open" type="Button" parent="Panel/HBoxContainer/Right/HBoxContainer"]
-margin_left = 466.0
-margin_right = 510.0
+margin_right = 44.0
 margin_bottom = 40.0
 icon = ExtResource( 2 )
+
+[node name="Polygon" type="Button" parent="Panel/HBoxContainer/Right/HBoxContainer"]
+margin_left = 48.0
+margin_right = 207.0
+margin_bottom = 40.0
+text = "Add polygon"
 
 [node name="Label2" type="Label" parent="Panel/HBoxContainer/Right"]
 margin_top = 121.0
@@ -83,15 +91,6 @@ margin_left = 374.0
 margin_right = 510.0
 margin_bottom = 39.0
 size_flags_vertical = 3
-
-[node name="Label3" type="OptionButton" parent="Panel/HBoxContainer/Right"]
-visible = false
-margin_top = 207.0
-margin_right = 510.0
-margin_bottom = 246.0
-text = "10x10"
-items = [ "10x10", null, false, 0, null ]
-selected = 0
 
 [node name="Label4" type="Label" parent="Panel/HBoxContainer/Right"]
 margin_top = 207.0
@@ -149,26 +148,14 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tile" type="Control" parent="Panel/HBoxContainer/Left/CenterContainer"]
-margin_left = 255.0
-margin_top = 300.0
-margin_right = 255.0
-margin_bottom = 300.0
-
 [node name="Control" type="Control" parent="Panel/HBoxContainer/Left/CenterContainer"]
-visible = false
 margin_left = 255.0
 margin_top = 300.0
 margin_right = 255.0
 margin_bottom = 300.0
 
-[node name="ReferenceRect" type="ReferenceRect" parent="Panel/HBoxContainer/Left/CenterContainer/Control"]
-size_flags_horizontal = 3
-size_flags_vertical = 3
-editor_only = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Tile" type="KinematicBody2D" parent="Panel/HBoxContainer/Left/CenterContainer/Control" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
 
 [node name="FileDialog" type="FileDialog" parent="Panel"]
 margin_right = 604.0
@@ -184,8 +171,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Panel/HBoxContainer/Right/HBoxContainer/Open" to="." method="_on_Open_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Right/HBoxContainer/Polygon" to="." method="_on_Polygon_pressed"]
 [connection signal="value_changed" from="Panel/HBoxContainer/Right/HBoxContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="item_selected" from="Panel/HBoxContainer/Right/Label3" to="." method="_on_Label3_item_selected"]
 [connection signal="value_changed" from="Panel/HBoxContainer/Right/HBoxContainer3/HSlider2" to="." method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Right/HBoxContainer4/Button" to="." method="_on_Button_pressed"]
 [connection signal="file_selected" from="Panel/FileDialog" to="." method="_on_FileDialog_file_selected"]

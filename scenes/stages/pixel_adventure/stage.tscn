@@ -98,19 +98,10 @@ position = Vector2( 3726.65, 1102.79 )
 position = Vector2( 89.5989, 481.217 )
 
 [node name="coin 23" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 3735.94, 1095.49 )
+position = Vector2( 3635.13, 1102.87 )
 
 [node name="coin 24" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 3743.9, 1084.22 )
-
-[node name="coin 25" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 3745.23, 1072.28 )
-
-[node name="coin 26" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 3733.95, 1063.65 )
-
-[node name="coin 27" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 3725.99, 1072.94 )
+position = Vector2( 3810.29, 1101.43 )
 
 [node name="coin 28" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 88.272, 448.71 )

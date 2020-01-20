@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
 [ext_resource path="res://textures/background.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/Update.tscn" type="PackedScene" id=5]
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
 [ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Main Menu/Configure.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 4
@@ -385,10 +384,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -305.999
-margin_top = -127.0
-margin_right = 305.994
-margin_bottom = 205.0
+margin_left = -305.997
+margin_top = -166.0
+margin_right = 305.997
+margin_bottom = 166.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -403,6 +402,7 @@ text = "KEY_Play"
 flat = true
 
 [node name="Play8" type="Button" parent="TextureRect/VBoxContainer"]
+visible = false
 margin_top = 43.0
 margin_right = 611.0
 margin_bottom = 82.0
@@ -412,49 +412,57 @@ text = "Multiplayer"
 flat = true
 
 [node name="ImportMod" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 86.0
+margin_top = 43.0
 margin_right = 611.0
-margin_bottom = 125.0
+margin_bottom = 82.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "KEY_MOD"
 flat = true
 
 [node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 129.0
+margin_top = 86.0
 margin_right = 611.0
-margin_bottom = 168.0
+margin_bottom = 125.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "KEY_Quit"
 flat = true
 
 [node name="LoadGame" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 172.0
+margin_top = 129.0
 margin_right = 611.0
-margin_bottom = 211.0
+margin_bottom = 168.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "Level Editor (BETA!)"
 flat = true
 
 [node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 215.0
+margin_top = 172.0
 margin_right = 611.0
-margin_bottom = 254.0
+margin_bottom = 211.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 text = "FAQ"
 flat = true
 
 [node name="Update" type="Button" parent="TextureRect/VBoxContainer"]
-margin_top = 258.0
+margin_top = 215.0
 margin_right = 611.0
-margin_bottom = 297.0
+margin_bottom = 254.0
 theme = ExtResource( 4 )
 text = "KEY_ONLINE_SC"
 flat = true
 clip_text = true
+
+[node name="UPDATE" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 258.0
+margin_right = 611.0
+margin_bottom = 297.0
+theme = ExtResource( 4 )
+text = "Check for updates"
+flat = true
 
 [node name="Label2" type="Label" parent="TextureRect/VBoxContainer"]
 margin_top = 301.0
@@ -468,7 +476,6 @@ __meta__ = {
 }
 
 [node name="PopupPanel" type="WindowDialog" parent="TextureRect"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -3.0
@@ -645,8 +652,6 @@ margin_right = 5.0
 margin_bottom = 5.0
 mouse_filter = 2
 
-[node name="Control3" parent="." instance=ExtResource( 8 )]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
@@ -655,6 +660,7 @@ mouse_filter = 2
 [connection signal="pressed" from="TextureRect/VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/LoadGame2" to="." method="_on_LoadGame2_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Update" to="." method="_on_Update_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/UPDATE" to="." method="_on_UPDATE_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton3" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="TextureRect/PopupPanel/TextureButton4" to="." method="_on_TextureButton4_pressed"]
@@ -667,4 +673,3 @@ mouse_filter = 2
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
-[connection signal="popup_hide" from="Control3" to="." method="_on_Control3_popup_hide"]

@@ -184,7 +184,3 @@ func _on_DataClear_pressed():
 	var data_dir = Directory.new()
 	if data.file_exists(str(documents)+ "/Pixel Zone/.data/name.save"):
 		data_dir.remove(str(documents)+ "/Pixel Zone/.data/name.save")
-
-
-func _on_Configure_pressed():
-	$Control.popup_centered()

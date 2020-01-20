@@ -11,9 +11,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-file_name = 1.0
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -36,7 +33,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
+[node name="AcceptDialog" type="ConfirmationDialog" parent="."]
 visible = true
 margin_left = 263.0
 margin_top = 99.0
@@ -45,10 +42,10 @@ margin_bottom = 378.0
 mouse_filter = 1
 popup_exclusive = true
 window_title = "Update information"
+dialog_text = "Allow our website to notificate you, when update will be published"
 dialog_autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="popup_hide" from="AcceptDialog" to="." method="_on_AcceptDialog_popup_hide"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]

@@ -34,31 +34,14 @@ func _ready():
 	date = currentline
 	print(str(date))
 #	get_tree().reload_current_scene()
-	if(Engine.has_singleton("AdMob")):
-		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
-	showbanner()
-	get_tree().connect("screen_resized", self, "onResize")
-
-	if os == 'OSX':
-		if configured == false:
-			$Control3.popup_centered()
+	
+#	if os == 'OSX':
+#		if configured == false:
+#			$Control3.popup_centered()
 	$HTTPRequest.set_download_file('user://LeaderBoard.txt')
 	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/Leaderboard_config.txt')
 	
 	var conf = File.new()
-	if not os == 'Android':
-		if not os == 'OSX':
-			if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
-				$TextureRect/VBoxContainer/LoadGame.set_disabled(false)
-			if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/editor.txt'):
-				$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
-		else:
-			$TextureRect/VBoxContainer/LoadGame.set_disabled(true)
-		
 #		if conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
 #			$TextureRect/VBoxContainer/Update.set_disabled(false)
 #		if not conf.file_exists(str(documents) +'/Pixel Zone/.data/settings/leaderboard.txt'):
@@ -120,10 +103,6 @@ func _ready():
 		$TextureRect/LanguageButton.select(int(str(5)))
 	if loaded_lang == "fr":
 		$TextureRect/LanguageButton.select(int(str(6)))
-	var beta = File.new()
-	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
-	var loaded = bool(str(beta.get_line()))
-	$TextureRect/VBoxContainer/Update.set_visible(loaded)
 func _on_Quit_pressed():
 	get_tree().quit()
 
@@ -313,46 +292,6 @@ func _on_LoadGame_pressed():
 func _on_Control3_popup_hide():
 	configured = true
 	get_tree().reload_current_scene()
-###ADS
-
-# Loaders
-
-func loadBanner():
-	if admob != null:
-		admob.loadBanner(adBannerId, isTop)
-
-func loadInterstitial():
-	if admob != null:
-		admob.loadInterstitial(adInterstitialId)
-		
-func loadRewardedVideo():
-	if admob != null:
-		admob.loadRewardedVideo(adRewardedId)
-
-# Events
-
-func showbanner():
-	if admob != null:
-		admob.showBanner()
-func hidebanner():
-	if admob != null:
-		admob.hideBanner()
-func interstitial():
-	if admob != null:
-		admob.showInterstitial()
-		
-func rewarded():
-	if admob != null:
-		admob.showRewardedVideo()
-
-func _on_rewarded(currency, amount):
-	print("Reward: " + currency + ", " + str(amount))
-
-
-func onResize():
-	if admob != null:
-		admob.resize()
-
 
 
 func _on_TextureButton4_pressed():
@@ -364,3 +303,7 @@ func _on_TextureButton4_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
+
+
+func _on_UPDATE_pressed():
+	$Control2.popup()

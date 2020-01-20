@@ -102,10 +102,6 @@ _global_script_class_icons={
 "PlayerPhysics": ""
 }
 
-[android]
-
-modules="org/godotengine/godot/GodotAdMob"
-
 [application]
 
 config/name="Pixel Zone"

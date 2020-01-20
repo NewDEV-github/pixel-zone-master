@@ -85,14 +85,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="connect"]
-margin_right = 75.0
-margin_bottom = 39.0
-text = "Login to another account"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="name_label" type="Label" parent="connect"]
 anchor_left = 0.321289
 anchor_top = 0.153333
@@ -280,7 +272,6 @@ size_flags_vertical = 2
 window_title = "Alarm!"
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="players/back3" to="." method="_on_back3_pressed"]
-[connection signal="pressed" from="connect/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="connect/join2" to="." method="_on_join2_pressed"]
