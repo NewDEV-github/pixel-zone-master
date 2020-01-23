@@ -12,26 +12,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="AcceptDialog" parent="."]
-margin_left = 50.0
-margin_top = 475.0
-margin_right = 460.0
-margin_bottom = 577.0
-window_title = "Alarm!"
-dialog_autowrap = true
-
-[node name="Panel" type="Panel" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="BG" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Register" type="Control" parent="HBoxContainer"]
+[node name="MainCon" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reg" type="Control" parent="MainCon"]
 margin_right = 510.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -40,49 +35,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Register"]
-anchor_left = 0.0980392
-anchor_top = 0.433333
-anchor_right = 0.901961
-anchor_bottom = 0.566667
-margin_left = -8.19564e-07
-margin_top = -2.38419e-06
-margin_right = -2.98023e-06
-margin_bottom = 2.38419e-06
+[node name="RegCon" type="VBoxContainer" parent="MainCon/Reg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -205.0
+margin_top = -127.0
+margin_right = 205.0
+margin_bottom = 127.0
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="email" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+[node name="RegLabel" type="Label" parent="MainCon/Reg/RegCon"]
 margin_right = 410.0
 margin_bottom = 39.0
-placeholder_text = "Username"
+text = "REGISTER"
+align = 1
+valign = 1
 
-[node name="email2" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+[node name="username" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 43.0
 margin_right = 410.0
 margin_bottom = 82.0
-placeholder_text = "Email"
+hint_tooltip = "Username should contain at least
+6 characters (letters or numbers) and no spaces."
+placeholder_text = "Username"
 
-[node name="pass" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+[node name="email" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
-placeholder_text = "Password"
+placeholder_text = "Email"
 
-[node name="confirmpass" type="LineEdit" parent="HBoxContainer/Register/VBoxContainer"]
+[node name="pass" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 129.0
 margin_right = 410.0
 margin_bottom = 168.0
-placeholder_text = "Confirm Password"
+hint_tooltip = "Password should contain at least 8 characters including uppercase
+and lowercase letters, numbers and (optionally) special characters."
+placeholder_text = "Password"
 
-[node name="Button2" type="Button" parent="HBoxContainer/Register/VBoxContainer"]
+[node name="confirmpass" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
+placeholder_text = "Confirm Password"
+
+[node name="CofirmReg" type="Button" parent="MainCon/Reg/RegCon"]
+margin_top = 215.0
+margin_right = 410.0
+margin_bottom = 254.0
 text = "Confirm"
 
-[node name="login" type="Control" parent="HBoxContainer"]
+[node name="login" type="Control" parent="MainCon"]
 margin_left = 514.0
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -92,39 +99,87 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/login"]
+[node name="LogCon" type="VBoxContainer" parent="MainCon/login"]
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 50.0
-margin_top = -26.0
-margin_right = -50.0
-margin_bottom = 26.0
+margin_left = -205.0
+margin_top = -105.5
+margin_right = 205.0
+margin_bottom = 105.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit3" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+[node name="RegLabel2" type="Label" parent="MainCon/login/LogCon"]
 margin_right = 410.0
 margin_bottom = 39.0
-placeholder_text = "Username"
+text = "LOGIN"
+align = 1
+valign = 1
 
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+[node name="username" type="LineEdit" parent="MainCon/login/LogCon"]
 margin_top = 43.0
 margin_right = 410.0
 margin_bottom = 82.0
-placeholder_text = "Email"
+placeholder_text = "Username"
 
-[node name="LineEdit2" type="LineEdit" parent="HBoxContainer/login/VBoxContainer"]
+[node name="pass" type="LineEdit" parent="MainCon/login/LogCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
 placeholder_text = "Password"
 
-[node name="Button" type="Button" parent="HBoxContainer/login/VBoxContainer"]
+[node name="rememberme" type="CheckBox" parent="MainCon/login/LogCon"]
 margin_top = 129.0
 margin_right = 410.0
 margin_bottom = 168.0
+text = "Remember me for 30 days"
+
+[node name="ConfirmLog" type="Button" parent="MainCon/login/LogCon"]
+margin_top = 172.0
+margin_right = 410.0
+margin_bottom = 211.0
 text = "Confirm"
-[connection signal="pressed" from="HBoxContainer/Register/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="HBoxContainer/login/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+
+[node name="ERROR" type="Label" parent="."]
+visible = false
+anchor_left = 0.046685
+anchor_top = 0.737503
+anchor_right = 0.950982
+anchor_bottom = 0.802503
+text = "ERROR:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ProcessingPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.305882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PROCESSING" type="Label" parent="ProcessingPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = -19.5
+margin_right = 99.0
+margin_bottom = 19.5
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "PROCESSING..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="MainCon/login/LogCon/ConfirmLog" to="." method="_on_LoginButton_pressed"]

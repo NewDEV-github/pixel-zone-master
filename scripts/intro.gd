@@ -15,24 +15,7 @@ func _load():
 	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
-	$HTTPRequest.set_download_file('user://dlc.txt')
-	$HTTPRequest.request('https://masterpolska123.github.io/downloadable_files/installer/dlc.txt')
-
-func save():
-	var save_dict = {
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"File ID" : OS.get_unix_time()
-	}
-	return save_dict
-func _start():
-
-	SilentWolf.configure({
-		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
-		"game_id": "PixelZone",
-		"game_version": "0.9.1-beta1",
-		"log_level": 1
-	})
+	
 	var conf = File.new()
 #	if conf.file_exists('user://dlc.txt'):
 #		ProjectSettings.load_resource_pack('user://dlc.pck')
@@ -86,8 +69,3 @@ func _start():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if not str(anim_name) == '':
 		scene = get_tree().change_scene("res://scenes/gui_loader.tscn")
-
-
-func _on_HTTPRequest_request_completed(result, _response_code, _headers,_body):
-	_start()
-	print('Request completed... %s' % result)

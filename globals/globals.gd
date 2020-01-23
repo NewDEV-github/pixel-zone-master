@@ -41,12 +41,21 @@ func on_scene_changed():
 	file.open_encrypted_with_pass('user://save_data.1', File.READ, str(34567865))
 	current_stage = str(file.get_line())
 #	selected_player.restart_position()
-
 func _ready():
-#	timer.wait_time = 20
-#	timer.connect("timeout", self, '_timeout')
-#	timer.one_shot = false
-#	timer.start()
+	SilentWolf.configure({
+		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
+		"game_id": "PixelZone",
+		"game_version": "0.9.1-beta1",
+		"log_level": 1
+	})
+	SilentWolf.configure_auth({
+	"redirect_to_scene": "res://addons/silent_wolf/Scores/Leaderboard.tscn",
+	"session_duration_seconds": 3600,
+	"saved_session_expiration_days": 30
+	})
+	SilentWolf.configure_scores({
+	"open_scene_on_close": "res://scenes/Main Menu/GUI.tscn"
+	})
 	scene_path = ''
 	var beta_2 = File.new()
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
