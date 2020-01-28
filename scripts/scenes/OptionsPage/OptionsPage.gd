@@ -57,10 +57,10 @@ func _ready():
 		$"TabContainer/Controller Test/Control".hide()
 		
 		
-	var beta = File.new()
-	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
-	var loaded = bool(str(beta.get_line()))
-	$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests".set_pressed(loaded)
+#	var beta = File.new()
+#	beta.open(str(documents)+ "/Pixel Zone/.data/settings/beta.save", File.READ)
+#	var loaded = bool(str(beta.get_line()))
+#	$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/BetaTests".set_pressed(loaded)
 	music = AudioServer.get_bus_index("Music")
 	custom_music = AudioServer.get_bus_index("Custom Music")
 
@@ -172,10 +172,10 @@ func _on_AutoLoadMods_pressed():
 		globals.auto_load_mod = false
 	if globals.auto_load_mod == false:
 		globals.auto_load_mod = true
-	var beta = File.new()
-	beta.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.WRITE)
-	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
-	beta.close()
+#	var beta = File.new()
+#	beta.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.WRITE)
+#	beta.store_line(str($"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/BetaTests".pressed))
+#	beta.close()
 
 
 

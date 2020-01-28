@@ -30,6 +30,9 @@ func _ready():
 		conf.open('user://456378r9w4iufuhj', File.WRITE)
 	OS.set_use_file_access_save_and_swap(true)
 	var documents_dir = Directory.new()
+	if not documents_dir.dir_exists("user://Custom Tiles/"):
+		documents_dir.open('user://')
+		documents_dir.make_dir('Custom Tiles')
 	if not documents_dir.dir_exists(str(documents)+ "/Pixel Zone/.data"):
 		documents_dir.open(str(documents)+ "/")
 		documents_dir.make_dir("Pixel Zone")

@@ -13,5 +13,6 @@ func load_img(path):
 	img.decompress()
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
+	tex.set_flags(4)
 	texture = tex
-#	$'../Panel/HBoxContainer/Right/HBoxContainer/LineEdit'.set_text(str(path))
+	

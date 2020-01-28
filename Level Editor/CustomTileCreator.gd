@@ -19,10 +19,24 @@ func _on_Open_pressed():
 func _on_Button_pressed():
 	$Panel/HBoxContainer/Left/CenterContainer/Control/Tile.name_ = $Panel/HBoxContainer/Right/HBoxContainer4/name.text
 	$Panel/HBoxContainer/Left/CenterContainer/Control/Tile.img_path = img_path
+	coll.hide_colour()
 	$Panel/HBoxContainer/Left/CenterContainer/Control/Tile.save()
-
+	coll.show_colour()
 
 func _on_Polygon_pressed():
 	root.add_child(coll)
 	coll.set_owner(root)
 	coll.set_position(Vector2(0,0))
+	coll.show_colour()
+
+
+func _on_HSlider2_value_changed(value):
+	coll.set_scale(Vector2(value, value))
+
+
+func _on_HSlider_value_changed(value):
+	sprite.set_scale(Vector2(value, value))
+
+
+func _on_Back_pressed():
+	background_load.load_scene('res://Level Editor/Editor.tscn')

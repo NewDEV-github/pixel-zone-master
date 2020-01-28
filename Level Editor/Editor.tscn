@@ -146,10 +146,13 @@ __meta__ = {
 
 [node name="ReferenceRect" type="ReferenceRect" parent="Editor\'s Scene"]
 margin_left = 1.0
-margin_top = 1.0
+margin_top = -0.414246
 margin_right = 4281.0
-margin_bottom = 2391.0
+margin_bottom = 2389.59
 editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 anchor_bottom = 1.0
@@ -189,12 +192,17 @@ margin_right = 314.0
 margin_bottom = 125.0
 text = "ED_ADD_ENEMY"
 
+[node name="CUSTOM_TILE" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 129.0
+margin_right = 314.0
+margin_bottom = 168.0
+text = "CUSTOM TILE"
+
 [node name="Tree" type="ItemList" parent="Panel"]
 anchor_top = 0.293
 anchor_right = 1.0
 anchor_bottom = 0.935
-margin_top = 0.199992
-margin_bottom = -3.71933e-05
+margin_top = 36.2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1385,6 +1393,7 @@ current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 [connection signal="pressed" from="Panel/VBoxContainer/icon" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon3" to="." method="_on_icon3_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/icon4" to="." method="_on_icon4_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CUSTOM_TILE" to="." method="_on_CUSTOM_TILE_pressed"]
 [connection signal="pressed" from="Panel/BACK" to="." method="_on_BACK_pressed"]
 [connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="pressed" from="PopupPanel/SAVE_BUTTON" to="." method="_on_SAVE_BUTTON_pressed"]

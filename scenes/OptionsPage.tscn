@@ -492,7 +492,7 @@ __meta__ = {
 light_mask = 2
 margin_top = 41.0
 margin_right = 385.0
-margin_bottom = 82.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 editable = false
@@ -500,6 +500,7 @@ placeholder_text = "Path of selected track"
 caret_blink = true
 
 [node name="AutoLoadMods" type="CheckButton" parent="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer"]
+visible = false
 light_mask = 2
 margin_top = 86.0
 margin_right = 385.0

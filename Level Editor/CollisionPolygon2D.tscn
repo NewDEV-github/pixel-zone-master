@@ -9,14 +9,9 @@ shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
 modulate = Color( 1, 0, 0, 0.513726 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -9.13507
-margin_top = -10.789
-margin_right = 0.864929
-margin_bottom = -0.789032
+anchor_right = 1.0
+margin_left = -10.0
+margin_top = -10.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false

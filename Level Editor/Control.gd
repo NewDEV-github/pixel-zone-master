@@ -52,12 +52,14 @@ func _ready():
 	$TextEdit.add_keyword_color("print", Color.red)
 	$TextEdit.add_keyword_color("Object", Color.lightgreen)
 	$TextEdit.add_keyword_color("Control", Color.lightgreen)
-	$TextEdit.add_color_region('#', '', Color.darkgray)
+	$TextEdit.add_color_region('#', '', Color(0.462745, 0.47451, 0.509804))
 	$TextEdit.add_color_region(str("'"), str("'"), Color.yellow)
 	$TextEdit.add_color_region(str('"'), str('"'), Color.yellow)
 	$TextEdit.add_color_region(str('$'), str(' '), Color.green)
 	$TextEdit.add_color_region(str('$'), str('.'), Color.green)
-	$TextEdit.text = 'extends Control\nvar player_default = globals.selected_player\nfunc _ready():\n	set_position(Vector2(0,0))\n	add_child(Object(player_default))\n	globals._set_player_pos(0,0)\n#	You cannot edit this because the level will not load and the game will freeze'
+	var file = File.new()
+	file.open('res://Level Editor/level_script.txt', File.READ)
+	$TextEdit.text = str(file.get_as_text())
 	CustomTileResearch()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -1286,7 +1288,7 @@ func _on_Polygon40x40_pressed():
 
 #
 func CustomTileResearch():
-	var path = str(documents) + '/Pixel Zone/Custom Tiles/'
+	var path = 'user://Custom Tiles/'
 	if checked == false:
 		var dir = Directory.new()
 		if dir.open(path) == OK:
@@ -1375,3 +1377,7 @@ func load_ogg(file):
 	else:
 		audio.set_stream(stream)
 	ogg_file.close()
+
+
+func _on_CUSTOM_TILE_pressed():
+	background_load.load_scene('res://Level Editor/CustomTileCreator.tscn')
