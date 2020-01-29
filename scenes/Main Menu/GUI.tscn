@@ -124,6 +124,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Auth:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Auth:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "back_ANDROID"
@@ -235,6 +259,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Auth:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Auth:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "new_ANDROID"
@@ -257,10 +305,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Control:modulate")
@@ -346,11 +394,36 @@ tracks/8/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Auth:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Auth:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+theme = ExtResource( 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -362,19 +435,9 @@ anchor_right = 1.0
 anchor_bottom = 0.997062
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource( 4 )
 texture = ExtResource( 2 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TextureRect"]
-visible = false
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -39.0
-margin_right = 538.0
-custom_fonts/font = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -385,9 +448,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -305.997
-margin_top = -166.0
-margin_right = 305.997
-margin_bottom = 166.0
+margin_top = -127.0
+margin_right = 305.998
+margin_bottom = 205.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -435,7 +498,7 @@ margin_right = 611.0
 margin_bottom = 168.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 3 )
-text = "Level Editor (BETA!)"
+text = "KEY_EDITOR"
 flat = true
 
 [node name="LoadGame2" type="Button" parent="TextureRect/VBoxContainer"]
@@ -461,13 +524,13 @@ margin_top = 258.0
 margin_right = 611.0
 margin_bottom = 297.0
 theme = ExtResource( 4 )
-text = "Check for updates"
+text = "KEY_UPDATE_CHECK"
 flat = true
 
 [node name="Label2" type="Label" parent="TextureRect/VBoxContainer"]
 margin_top = 301.0
 margin_right = 611.0
-margin_bottom = 332.0
+margin_bottom = 340.0
 custom_fonts/font = ExtResource( 3 )
 text = "KEY_TRANSLATIONS"
 align = 1
@@ -613,7 +676,6 @@ anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 4 )
 
 [node name="Back" type="Button" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
@@ -646,6 +708,27 @@ __meta__ = {
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
+[node name="Auth" type="Label" parent="."]
+margin_right = 631.0
+margin_bottom = 73.0
+mouse_filter = 1
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Auth_thumb" type="Button" parent="."]
+margin_right = 381.0
+margin_bottom = 39.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "AUTH_NOT_LOGGED_THUMB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control2" parent="." instance=ExtResource( 5 )]
 visible = false
 margin_right = 5.0
@@ -653,6 +736,27 @@ margin_bottom = 5.0
 mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AuthInfoPanel" type="WindowDialog" parent="."]
+visible = true
+margin_left = 18.0
+margin_top = 47.0
+margin_right = 925.0
+margin_bottom = 411.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AuthInfoPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+margin_bottom = 3.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play5" to="." method="_on_Play5_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Play8" to="." method="_on_Play8_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ImportMod" to="." method="_on_ImportMod_pressed"]
@@ -673,3 +777,4 @@ mouse_filter = 2
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="WindowDialog/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
+[connection signal="pressed" from="Auth_thumb" to="." method="_on_Auth_thumb_pressed"]

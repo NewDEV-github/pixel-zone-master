@@ -17,3 +17,7 @@ dlcs/3D/level/geometry/demolevel.dae
 *.java
 *.flat
 *.dex
+*.stex
+*.oggstr
+*.sample
+*.md5

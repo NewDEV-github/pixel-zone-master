@@ -1,6 +1,10 @@
 extends Control
+var logged_player = str(SilentWolf.Auth.logged_in_player)
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 func _ready():
+	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	if str(logged_player) != '' or str(logged_player) != null:
+		get_tree().change_scene(scene_name)
 	var auth_node = get_tree().get_root().get_node("res://addons/silent_wolf/Auth/Auth")
 	SilentWolf.Auth.connect("sw_registration_succeeded", self, "_on_registration_succeeded")
 	SilentWolf.Auth.connect("sw_registration_failed", self, "_on_registration_failed")
@@ -18,12 +22,13 @@ func _on_LoginButton_pressed():
 func _on_login_succeeded():
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
 	SWLogger.info("logged in as: " + str(SilentWolf.Auth.logged_in_player))
+	globals.debug_auth_player()
 	get_tree().change_scene(scene_name)
 	
 func _on_login_failed(error):
 	hide_processing()
 	SWLogger.info("log in failed: " + str(error))
-	$ERROR.text = error
+	$ERROR.text = str(tr('AUTH_ERROR')) + ' ' + str(error)
 	$ERROR.show()
 
 ### INTERFACE
@@ -55,7 +60,7 @@ func _on_registration_succeeded():
 func _on_registration_failed(error):
 	hide_processing()
 	SWLogger.info("registration failed: " + str(error))
-	$ERROR.text = error
+	$ERROR.text = str(tr('AUTH_ERROR')) + ' ' + str(error)
 	$ERROR.show()
 #
 #func _on_UsernameToolButton_mouse_entered():

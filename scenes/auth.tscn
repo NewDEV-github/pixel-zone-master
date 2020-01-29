@@ -51,7 +51,7 @@ __meta__ = {
 [node name="RegLabel" type="Label" parent="MainCon/Reg/RegCon"]
 margin_right = 410.0
 margin_bottom = 39.0
-text = "REGISTER"
+text = "AUTH_REGISTER"
 align = 1
 valign = 1
 
@@ -61,13 +61,13 @@ margin_right = 410.0
 margin_bottom = 82.0
 hint_tooltip = "Username should contain at least
 6 characters (letters or numbers) and no spaces."
-placeholder_text = "Username"
+placeholder_text = "AUTH_USERNAME"
 
 [node name="email" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
-placeholder_text = "Email"
+placeholder_text = "AUTH_EMAIL"
 
 [node name="pass" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 129.0
@@ -75,19 +75,19 @@ margin_right = 410.0
 margin_bottom = 168.0
 hint_tooltip = "Password should contain at least 8 characters including uppercase
 and lowercase letters, numbers and (optionally) special characters."
-placeholder_text = "Password"
+placeholder_text = "AUTH_PASS"
 
 [node name="confirmpass" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
-placeholder_text = "Confirm Password"
+placeholder_text = "AUTH_CONFIRM_PASS"
 
 [node name="CofirmReg" type="Button" parent="MainCon/Reg/RegCon"]
 margin_top = 215.0
 margin_right = 410.0
 margin_bottom = 254.0
-text = "Confirm"
+text = "AUTH_CONFIRM"
 
 [node name="login" type="Control" parent="MainCon"]
 margin_left = 514.0
@@ -115,7 +115,7 @@ __meta__ = {
 [node name="RegLabel2" type="Label" parent="MainCon/login/LogCon"]
 margin_right = 410.0
 margin_bottom = 39.0
-text = "LOGIN"
+text = "AUTH_LOGIN"
 align = 1
 valign = 1
 
@@ -123,25 +123,25 @@ valign = 1
 margin_top = 43.0
 margin_right = 410.0
 margin_bottom = 82.0
-placeholder_text = "Username"
+placeholder_text = "AUTH_USERNAME"
 
 [node name="pass" type="LineEdit" parent="MainCon/login/LogCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
-placeholder_text = "Password"
+placeholder_text = "AUTH_PASS"
 
 [node name="rememberme" type="CheckBox" parent="MainCon/login/LogCon"]
 margin_top = 129.0
 margin_right = 410.0
 margin_bottom = 168.0
-text = "Remember me for 30 days"
+text = "AUTH_REMEMBER"
 
 [node name="ConfirmLog" type="Button" parent="MainCon/login/LogCon"]
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
-text = "Confirm"
+text = "AUTH_CONFIRM"
 
 [node name="ERROR" type="Label" parent="."]
 visible = false
@@ -177,7 +177,7 @@ margin_bottom = 19.5
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-text = "PROCESSING..."
+text = "AUTH_PROCESSING"
 __meta__ = {
 "_edit_use_anchors_": false
 }

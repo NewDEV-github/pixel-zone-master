@@ -8,6 +8,16 @@ var current_stage = ''
 var play_cutscenes
 signal collected_changed
 signal play_bgm(id, value)
+func send_saved_data():
+	print('SENDING SAVED DATA TO SilentWolf')
+	var save = File.new()
+	save.open_encrypted_with_pass("user://other_saves/0.save", File.READ, '3087283')
+	var loaded_coins = save.get_line()
+	debug_auth_player()
+	var playername = str(SilentWolf.Auth.logged_in_player)
+	if not str(playername) == '':
+		SilentWolf.Scores.persist_score(playername, loaded_coins)
+		SilentWolf.Scores.get_high_scores()
 func _set_collected(value):
 	collected = value
 	emit_signal("collected_changed")
@@ -16,7 +26,7 @@ func _get_collected():
 	return collected
 
 func _send_data():
-
+	debug_auth_player()
 	var playername = str(SilentWolf.Auth.logged_in_player)
 	if not str(playername) == '':
 		SilentWolf.Scores.persist_score(playername, game_state.points)
@@ -61,7 +71,5 @@ func _ready():
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
 	var load_set = beta_2.get_line()
 	auto_load_mod = bool(str(load_set))
-
-func _timeout():
-	_send_data()
-	print('SENDING DATA...')
+func debug_auth_player():
+	print(str(SilentWolf.Auth.logged_in_player))

@@ -18,3 +18,17 @@ ED_SNAPPING_X,SNAPPING - X,SNAPPING - X,SCHNAPPEN - X,PRZYCIĄGANIE - X,SNAPPING
 ED_SNAPPING_Y,SNAPPING – Y,SNAPPING - Y,SNAPPING - Y,PRZYCIĄGANIE - Y,SNAPPING - Y,SNAPPING - Y,SNAPPING - Y
 ED_ROT_DEEGREE,ROTATION DEGREE,GRADO DE ROTACIÓN,ROTATION DEGREE,STOPIEŃ OBROTU,GRADO DI ROTAZIONE,GRAU DE ROTAÇÃO,DEGRÉ DE ROTATION
 ED_SET_NAME,Level name,Establecer nombre de nivel,Legen Sie den Namen der Ebene fest,Nazwa poziomu,Imposta il nome del livello,Definir nome do nível,Définir le nom du niveau
+ED_TILE_CREATOR,Open Tile Creator,Open Tile Creator,Öffnen Sie den Tile Creator,Otwórz Edytor Kafelków,Apri Tile Creator,Open Tile Creator,Open Tile Creator
+ED_LOAD_DISK,Load music file from PC,Cargar archivo de música desde PC,Laden Sie die Musikdatei vom PC,Wybierz muzykę z PC,Carica file musicale da PC,Carregar arquivo de música do PC,Charger un fichier musical depuis un PC
+ED_TIL_INFO,"Texture file path.
+The texture must have a 1: 1 aspect ratio","Ruta del archivo de textura.
+La textura debe tener una relación de aspecto 1: 1","Pfad der Texturdatei.
+Die Textur muss ein Seitenverhältnis von 1: 1 haben","Ścieżka do pliku z teksturą.
+Tekstura musi mieć proporcje 1:1","Percorso del file di trama.
+La trama deve avere proporzioni 1: 1","Caminho do arquivo de textura.
+A textura deve ter uma proporção de 1: 1","Chemin du fichier de texture.
+La texture doit avoir un rapport d'aspect de 1: 1"
+ED_TIL_ADD_POLY,Add collision training ground,Añadir campo de entrenamiento de colisión,Kollisionsübungsplatz hinzufügen,Dodaj poligon kolizji,Aggiungi un campo di allenamento per le collisioni,Adicionar campo de treinamento de colisão,Ajouter un terrain d'entraînement à la collision
+ED_TIL_TILE_SCALE,Tile scale,Escala de azulejos,Fliesenmaßstab,Skala kafelka,Scala delle piastrelle,Escala de ladrilhos,Échelle de tuile
+ED_TIL_POLY_SCALE,Collision training range,Rango de entrenamiento de colisión,Kollisionstrainingsbereich,Skala poligonu kolizji,Campo di addestramento alla collisione,Faixa de treinamento de colisão,Gamme d'entraînement à la collision
+ED_TIL_BACK,Return to the level editor,Regresar al editor de niveles,Kehren Sie zum Ebeneneditor zurück,Powrót do edytora poziomów,Torna all'editor di livelli,Retornar ao editor de níveis,Retour à l'éditeur de niveau

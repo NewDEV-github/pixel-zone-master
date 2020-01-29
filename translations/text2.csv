@@ -140,14 +140,7 @@ après avoir redémarré
 le jeu sans perdre
 l'état de sauvegarde
 Du jeu."
-KEY_ONLINE_SC,Online Scoreboard (BETA!),Cuadro de indicadores en línea (BETA!),Online-Anzeiger (BETA!),"Tablica wyników
-Online (BETA!)",Quadro di valutazione online (BETA!),Placar Online (BETA!),Tableau de bord en ligne (BETA!)
-KEY_SIGNIN,Sign In,Registrarse,Einloggen,Zaloguj,Registrati,Assinar em,Se connecter
-KEY_SIGNUP,Sign Up,Regístrate,Anmelden,Zarejestruj,Iscriviti,Inscrever-se,S'inscrire
-KEY_RESTORE_P,Restore Password,Restaurar contraseña,Passwort wiederherstellen,Przywróć hasło,Ripristina password,Restaurar senha,Restaurer le mot de passe
-KEY_REG_P_A,Register your Pixel Zone account,Registre su cuenta de Pixel Zone,Registrieren Sie Ihr Pixel Zone-Konto,Zarejestruj się na swoje konto Pixel Zone,Registra il tuo account Pixel Zone,Registre sua conta na Pixel Zone,Enregistrez votre compte Pixel Zone
-KEY_LOG_P_A,Login to your Pixel Zone account,Inicie sesión en su cuenta de Pixel Zone,Melden Sie sich bei Ihrem Pixel Zone-Konto an,Zaloguj się na swoje konto Pixel Zone,Accedi al tuo account Pixel Zone,Entre na sua conta Pixel Zone,Connectez-vous à votre compte Pixel Zone
-KEY_PASS_ERR,Incorrect passwords!,Contraseñas incorrectas!,Falsche Passwörter!,Hasła nie pasują,Password errate!,Senhas incorretas!,Mots de passe incorrects!
+KEY_ONLINE_SC,Online Scoreboard,Cuadro de indicadores en línea,Online-Anzeiger,Tablica wyników online,Quadro di valutazione online,Placar Online,Tableau de bord en ligne
 KEY_TRANSLATIONS,"WARNING!
 
 Translations may not be 100% accurate","¡ADVERTENCIA!
@@ -163,3 +156,32 @@ Le traduzioni potrebbero non essere accurate al 100%","ATENÇÃO!
 As traduções podem não ser 100% precisas","ATTENTION!
 
 Les traductions peuvent ne pas être précises à 100%"
+KEY_UPDATE_CHECK,Check for updates,Buscar actualizaciones,Auf Updates prüfen,Sprawdź aktualizacje,Controlla gli aggiornamenti,Verifique se há atualizações,Vérifier les mises à jour
+AUTH_CONFIRM,Confirm,Confirmar,Bestätigen,Potwierdź,Confermare,confirme,Confirmer
+AUTH_REMEMBER,Remember me for 30 days,Recuérdame por 30 días,Erinnere dich an mich für 30 Tage,Zapamiętaj mnie przez 30 dni,Ricordami per 30 giorni,Lembrar de mim por 30 dias,Souviens-toi de moi pendant 30 jours
+AUTH_PASS,Password,Contraseña,Passwort,Hasło,Parola d'ordine,Senha,Mot de passe
+AUTH_CONFIRM_PASS,Confirm password,Confirmar contraseña,Kennwort bestätigen,Potwierdź hasło,Conferma password,Confirme a Senha,Confirmez le mot de passe
+AUTH_EMAIL,Email,Email,Email,E-mail,E-mail,O email,Email
+AUTH_USERNAME,Username,Nombre de usuario,Nutzername,Nazwa Użytkownika,Nome utente,Nome do usuário,Nom d'utilisateur
+AUTH_ERROR,Error:,Error:,Error:,Błąd:,Errore:,Erro:,Erreur:
+AUTH_PROCESSING,Processing…,Procesando…,Wird bearbeitet…,Przetwarzanie…,In lavorazione…,Em processamento…,En traitement…
+AUTH_LOGIN,Login into Your Account,Inicie sesión en su cuenta,Loggen Sie sich in Ihr Konto ein,Zaloguj się do Swojego Konta,Accedi al tuo account,Entre na sua conta,Connectez-vous à votre compte
+AUTH_REGISTER,Register new Account,Registrar una cuenta nueva,Neuen Account Registrieren,Zarejestruj nowe Konto,Registra un nuovo account,Registrar nova conta,Enregistrer un nouveau compte
+AUTH_NOT_LOGGED_1,"You are not logged in! Your score won't be uploaded,
+until you wil login into your account.
+Click button","¡Usted no se ha identificado! Su puntaje no se cargará
+hastaque inicie sesión en su cuenta.
+Haga clic en el botón","Du bist nicht eingeloggt! Ihre Punktzahl wird erst hochgeladen,
+wenn Sie sich in Ihrem Konto anmelden.
+Klicktaste","Nie jesteś zalogowany! Twój wynik nie zostanie przesłany,
+dopóki nie zalogujesz się na swoje konto.
+Kliknij przycisk","Non sei loggato! Il tuo punteggio non verrà caricato fino
+a quando non effettuerai l'accesso al tuo account.
+Fare clic sul pulsante","Você não está logado! Sua pontuação não será carregada
+até que você faça login na sua conta.
+Clique no botão","Vous n'êtes pas connecté! Votre score ne sera pas téléchargé
+jusqu'à ce que vous vous connectiez à votre compte.
+Cliquez sur le bouton"
+AUTH_NOT_LOGGED_2,to login.,iniciar sesión.,Einloggen.,żeby zalogować się.,per accedere.,Entrar.,ouvrir une session.
+AUTH_NOT_LOGGED_THUMB,You are not logged in!,¡Usted no se ha identificado!,Du bist nicht eingeloggt!,Nie jesteś zalogowany!,Non sei loggato!,Você não está logado!,Vous n'êtes pas connecté!
+KEY_EDITOR,Level Editor,Editor de niveles,Level-Editor,Edytor poziomów,Editor di livelli,Editor de níveis,Éditeur de niveau

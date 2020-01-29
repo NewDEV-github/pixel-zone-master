@@ -16,8 +16,10 @@ var mod_path = str(documents) + '/Pixel Zone/Mods/'
 var dir_mod_path = Directory.new()
 func _on_Play_pressed():
 	if not str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new_ANDROID")
 		
 var admob = null
@@ -28,13 +30,18 @@ var adInterstitialId = "ca-app-pub-3142193952770678/5995273653" # [Replace with 
 var adRewardedId = "ca-app-pub-3142193952770678/3880047799" # [There is no testing option for rewarded videos, so you can use this id for testing]
 # Loaders
 func _ready():
+	$AuthInfoPanel/Label.set_text(str(tr("AUTH_NOT_LOGGED_1")) + '\n\n(' + str(tr("KEY_ONLINE_SC")) +')\n\n' + str(tr("AUTH_NOT_LOGGED_2")))
+	SilentWolf.Auth.auto_login_player()
+	$Auth_thumb.show()
+	$Auth.hide()
 	var file = File.new()
 	file.open('user://date.dat', File.READ)
 	var currentline = str(file.get_line())
 	date = currentline
 	print(str(date))
-#	get_tree().reload_current_scene()
-	
+	SilentWolf.Auth.connect("sw_login_succeeded", self, "_on_login_succeeded")
+	SilentWolf.Auth.connect("sw_session_check_complete", self, "_on_auto_login_succeeded")
+
 #	if os == 'OSX':
 #		if configured == false:
 #			$Control3.popup_centered()
@@ -113,7 +120,7 @@ func _process(_delta):
 	else:
 		$TextureRect/PopupPanel/TextureButton4.hide()
 		$TextureRect/PopupPanel/Label2.hide()
-	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
+#	$TextureRect/Label.set_text("Downloaded " + str($HTTPRequest.get_downloaded_bytes()) + " bytes of " + str($HTTPRequest.get_body_size()) + " bytes (" + (str($HTTPRequest.get_downloaded_bytes()/($HTTPRequest.get_body_size()*(0.01)))) +" %)")
 	
 func _on_Play7_pressed():
 	OS.shell_open("mailto:karoltomaszewskimusic@gmail.com;olo2tom@o2.pl;?subject=I Found a Bug in Pixel Zone")
@@ -190,8 +197,10 @@ func _on_ModSelector_about_to_show():
 
 func _on_ConfirmationDialog_confirmed():
 	if not str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new_ANDROID")
 
 signal reload
@@ -201,8 +210,10 @@ func _on_TextureButton_pressed():
 	globals.scene_path = 'res://scenes/players/player1/player.tscn'
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
 	if not str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new_ANDROID")
 
 
@@ -212,8 +223,10 @@ func _on_TextureButton2_pressed():
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	if not str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new_ANDROID")
 
 func _on_Play5_pressed():
@@ -300,10 +313,30 @@ func _on_TextureButton4_pressed():
 	globals.scene_path = 'res://main.tscn'
 	globals.selected_player = preload('res://main.tscn').instance()
 	if not str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
+		$Auth_thumb.hide()
 		$AnimationPlayer.play("new_ANDROID")
 
 
 func _on_UPDATE_pressed():
 	$Control2.popup()
+
+func _on_auto_login_succeeded(return_value):
+	print(str('AUTO-LOGIN Return value: ' + return_value))
+	$Auth.set_text('Logged in as: ' + str(SilentWolf.Auth.logged_in_player))
+	globals.send_saved_data()
+	$Auth_thumb.hide()
+	$Auth.show()
+
+func _on_login_succeeded():
+	$Auth.set_text('Logged in as: ' + str(SilentWolf.Auth.logged_in_player))
+	globals.send_saved_data()
+	$Auth_thumb.hide()
+	$Auth.show()
+
+
+
+func _on_Auth_thumb_pressed():
+	$AuthInfoPanel.popup_centered()
