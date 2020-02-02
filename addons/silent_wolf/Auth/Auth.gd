@@ -19,22 +19,25 @@ var RegisterPlayer = null
 var LoginPlayer = null
 var ValidateSession = null
 
+# wekrefs
+var wrRegisterPlayer = null
+var wrLoginPlayer = null
+var wrValidateSession = null
+
 var login_timeout = 0
 var login_timer = null
 
 var complete_session_check_wait_timer
 
 func _ready():
-	if SilentWolf.auth_config.has("session_duration") and typeof(SilentWolf.auth_config.session_duration) == 2:
-		login_timeout = SilentWolf.auth_config.session_duration
-	else:
-		login_timeout = 3600
-	SWLogger.info("SilentWolf login timeout: " + str(login_timeout))
-	setup_login_timer()
+	pass
 	
 func register_player(player_name, email, password, confirm_password):
 	tmp_username = player_name
 	RegisterPlayer = HTTPRequest.new()
+	wrRegisterPlayer = weakref(RegisterPlayer)
+	if OS.get_name() != "HTML5":
+		RegisterPlayer.set_use_threads(true)
 	get_tree().get_root().add_child(RegisterPlayer)
 	RegisterPlayer.connect("request_completed", self, "_on_RegisterPlayer_request_completed")
 	SWLogger.info("Calling SilentWolf to register a player")
@@ -51,18 +54,36 @@ func register_player(player_name, email, password, confirm_password):
 func login_player(username, password, remember_me=false):
 	tmp_username = username
 	LoginPlayer = HTTPRequest.new()
+	wrLoginPlayer = weakref(LoginPlayer)
+	print("OS name: " + str(OS.get_name()))
+	if OS.get_name() != "HTML5":
+		LoginPlayer.set_use_threads(true)
 	print("get_tree().get_root(): " + str(get_tree().get_root()))
 	get_tree().get_root().add_child(LoginPlayer)
 	LoginPlayer.connect("request_completed", self, "_on_LoginPlayer_request_completed")
 	SWLogger.info("Calling SilentWolf to log in a player")
-	var game_id = "PixelZone"
-	var api_key = "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4"
+	var game_id = SilentWolf.config.game_id
+	var api_key = SilentWolf.config.api_key
 	var payload = { "game_id": game_id, "username": username, "password": password, "remember_me": str(remember_me) }
+	if SilentWolf.auth_config.has("saved_session_expiration_days") and typeof(SilentWolf.auth_config.saved_session_expiration_days) == 2:
+		payload["remember_me_expires_in"] = str(SilentWolf.auth_config.saved_session_expiration_days)
+	SWLogger.debug("SilentWolf login player payload: " + str(payload))
 	var query = JSON.print(payload)
 	var headers = ["Content-Type: application/json", "x-api-key: " + api_key]
 	#print("login_player headers: " + str(headers))
 	LoginPlayer.request("https://api.silentwolf.com/login_player", headers, true, HTTPClient.METHOD_POST, query)
 	return self
+	
+func set_player_logged_in(player_name):
+	logged_in_player  = player_name
+	SWLogger.info("SilentWolf - player logged in as " + str(player_name))
+	if SilentWolf.auth_config.has("session_duration_seconds") and typeof(SilentWolf.auth_config.session_duration_seconds) == 2:
+		login_timeout = SilentWolf.auth_config.session_duration_seconds
+	else:
+		login_timeout = 0
+	SWLogger.info("SilentWolf login timeout: " + str(login_timeout))
+	if login_timeout != 0:
+		setup_login_timer()
 	
 func logout_player():
 	logged_in_player = null
@@ -75,7 +96,8 @@ func logout_player():
 func _on_LoginPlayer_request_completed( result, response_code, headers, body ):
 	SWLogger.info("LoginPlayer request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-#	LoginPlayer.queue_free()
+	#LoginPlayer.queue_free()
+	SilentWolf.free_request(wrLoginPlayer, LoginPlayer)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	#SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -98,7 +120,7 @@ func _on_LoginPlayer_request_completed( result, response_code, headers, body ):
 				token = response.swtoken
 				#id_token = response.swidtoken
 				SWLogger.debug("token: " + token)
-				logged_in_player  = tmp_username
+				set_player_logged_in(tmp_username)
 				emit_signal("sw_login_succeeded")
 			else:
 				emit_signal("sw_login_failed", response.error)
@@ -106,7 +128,8 @@ func _on_LoginPlayer_request_completed( result, response_code, headers, body ):
 func _on_RegisterPlayer_request_completed( result, response_code, headers, body ):
 	SWLogger.info("RegisterPlayer request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-	RegisterPlayer.queue_free()
+	#RegisterPlayer.queue_free()
+	SilentWolf.free_request(wrRegisterPlayer, RegisterPlayer)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -200,6 +223,9 @@ func complete_session_check(return_value=null):
 		
 func validate_player_session(lookup, validator, scene=get_tree().get_current_scene()):
 	ValidateSession = HTTPRequest.new()
+	wrValidateSession = weakref(ValidateSession)
+	if OS.get_name() != "HTML5":
+		ValidateSession.set_use_threads(true)
 	scene.add_child(ValidateSession)
 	ValidateSession.connect("request_completed", self, "_on_ValidateSession_request_completed")
 	SWLogger.info("Calling SilentWolf to validate an existing player session")
@@ -215,7 +241,8 @@ func validate_player_session(lookup, validator, scene=get_tree().get_current_sce
 func _on_ValidateSession_request_completed( result, response_code, headers, body ):
 	SWLogger.info("SilentWolf - ValidateSession request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-	ValidateSession.queue_free()
+	#ValidateSession.queue_free()
+	SilentWolf.free_request(wrValidateSession, ValidateSession)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -229,7 +256,7 @@ func _on_ValidateSession_request_completed( result, response_code, headers, body
 		else:
 			SWLogger.info("SilentWolf validate session success? : " + str(response.success))
 			if response.success:
-				logged_in_player  = response.player_name
+				set_player_logged_in(response.player_name)
 				complete_session_check(logged_in_player)
 			else:
 				complete_session_check(response.error)

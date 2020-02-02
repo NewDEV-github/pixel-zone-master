@@ -19,9 +19,36 @@ var scene
 var fpshide
 var fpsshow
 onready var sprite = $sprite
+var admob = null
+var adBannerId = "ca-app-pub-3142193952770678/7369767442" # [Replace with your Ad Unit ID and delete this message.]
+var adInterstitialId = "ca-app-pub-3142193952770678/9337455234" # [Replace with your Ad Unit ID and delete this message.]
+var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testing option for rewarded videos, so you can use this id for testing]
+var isReal = true
+var isTop = true
+
 func _ready():
 	fpshide = $ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	fpsshow = $ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
+	if(Engine.has_singleton("AdMob")):
+		print('HAS SINGLETON')
+		admob = Engine.get_singleton("AdMob")
+		admob.init(isReal, get_instance_id())
+		loadBanner()
+		loadInterstitial()
+		loadRewardedVideo()
+	admob.showBanner()
+func loadBanner():
+	if admob != null:
+		admob.loadBanner(adBannerId, isTop)
+
+func loadInterstitial():
+	if admob != null:
+		admob.loadInterstitial(adInterstitialId)
+		
+func loadRewardedVideo():
+	if admob != null:
+		admob.loadRewardedVideo(adRewardedId)
+
 func _physics_process(delta):
 #	if Input.is_action_just_pressed("console"):
 #		if $console/console.visible == false:

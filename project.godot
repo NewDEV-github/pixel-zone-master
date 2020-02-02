@@ -19,50 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Gameplay Scripts/character_animator.gd"
 }, {
-"base": "Reference",
-"class": "Command",
-"language": "GDScript",
-"path": "res://console/command.gd"
-}, {
-"base": "Reference",
-"class": "CommandRef",
-"language": "GDScript",
-"path": "res://console/command_ref.gd"
-}, {
-"base": "Control",
-"class": "Console",
-"language": "GDScript",
-"path": "res://console/console.gd"
-}, {
-"base": "Reference",
-"class": "ConsoleRights",
-"language": "GDScript",
-"path": "res://console/console_rights.gd"
-}, {
-"base": "Reference",
-"class": "ConsoleUser",
-"language": "GDScript",
-"path": "res://console/console_user.gd"
-}, {
-"base": "Reference",
-"class": "DefaultCommands",
-"language": "GDScript",
-"path": "res://console/default_commands.gd"
-}, {
-"base": "Resource",
-"class": "FirebaseResource",
-"language": "GDScript",
-"path": "res://addons/GDFirebase/FirebaseResource.gd"
-}, {
-"base": "HTTPRequest",
-"class": "FirebaseStorage",
-"language": "GDScript",
-"path": "res://addons/GDFirebase/FirebaseStorage.gd"
-}, {
-"base": "Reference",
-"class": "FirebaseUserData",
-"language": "GDScript",
-"path": "res://addons/GDFirebase/FirebaseUserData.gd"
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://git_api.gdns"
 }, {
 "base": "Panel",
 "class": "Options_Page",
@@ -87,20 +47,16 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AudioPlayer": "",
 "CharacterAnimator": "",
-"Command": "",
-"CommandRef": "",
-"Console": "",
-"ConsoleRights": "",
-"ConsoleUser": "",
-"DefaultCommands": "",
-"FirebaseResource": "",
-"FirebaseStorage": "",
-"FirebaseUserData": "",
+"GitAPI": "",
 "Options_Page": "",
 "Pause_Menu": "",
 "PlayerCamera": "",
 "PlayerPhysics": ""
 }
+
+[android]
+
+modules="org/godotengine/godot/GodotAdMob"
 
 [application]
 
@@ -122,9 +78,6 @@ enable_audio_input=true
 globals="*res://globals/globals.gd"
 game_state="*res://globals/game_state.gd"
 gamestate="*res://globals/gamestate.gd"
-log_file="*res://scenes/log_file.tscn"
-Firebase="*res://addons/GDFirebase/Firebase.gd"
-HTTPSSEClient="*res://addons/GDFirebase/HTTPSSEClient/HTTPSSEClient.tscn"
 background_load="*res://scenes/background_load.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 AdvancedBackgroundLoader="*res://addons/Advanced Background Loader/background_load.gd"
@@ -140,7 +93,11 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Advanced Background Loader", "GDFirebase", "adb_helper", "silent_wolf", "zylann.editor_debugger" )
+enabled=PoolStringArray( "Advanced Background Loader", "adb_helper", "radial_progress", "silent_wolf" )
+
+[gdnative]
+
+singletons=[ "res://git_api.gdnlib" ]
 
 [input]
 
@@ -351,12 +308,20 @@ translation_remaps={
 }
 locale_filter=[ 1, [ "ar", "en", "es", "ms", "pl", "pl_PL" ] ]
 
+[logging]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/engine_log.log"
+file_logging/max_log_files=2147483647
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/2d/gles2_use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 quality/2d/use_pixel_snap=true
+threads/thread_model=2
 vram_compression/import_etc=true
 quality/shadows/filter_mode.mobile=1
 quality/reflections/texture_array_reflections.mobile=true

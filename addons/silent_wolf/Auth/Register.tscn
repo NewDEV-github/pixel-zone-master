@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Auth/Register.gd" type="Script" id=1]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=2]
@@ -44,9 +44,6 @@ corner_radius_bottom_left = 20
 size = 64
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=11]
-font_data = ExtResource( 3 )
-
 [sub_resource type="DynamicFont" id=5]
 size = 64
 font_data = ExtResource( 4 )
@@ -86,103 +83,96 @@ size = 64
 font_data = ExtResource( 4 )
 
 [node name="Register" type="TextureRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
-visible = false
-anchor_right = 0.324
-anchor_bottom = 0.167
-margin_left = 43.7174
-margin_top = 41.2721
-margin_right = -0.0585938
-margin_bottom = 59.0721
+margin_left = 241.0
+margin_top = 54.0
+margin_right = 529.0
+margin_bottom = 172.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 text = "← Back"
 
-[node name="Control" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="FormContainer" type="VBoxContainer" parent="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 185.0
-margin_bottom = -67.0
+[node name="FormContainer" type="VBoxContainer" parent="."]
+margin_left = 396.0
+margin_top = 200.0
+margin_right = 1665.0
+margin_bottom = 1060.0
 grow_horizontal = 0
 grow_vertical = 0
+custom_constants/separation = 60
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control/FormContainer"]
-margin_right = 1209.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 11 )
+[node name="Label" type="Label" parent="FormContainer"]
+margin_right = 1269.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
 text = "Sign up"
 align = 1
 
-[node name="MainFormContainer" type="HBoxContainer" parent="Control/FormContainer"]
-margin_top = 23.0
-margin_right = 1209.0
-margin_bottom = 416.0
-custom_constants/separation = 0
-alignment = 1
+[node name="MainFormContainer" type="HBoxContainer" parent="FormContainer"]
+margin_top = 132.0
+margin_right = 1269.0
+margin_bottom = 525.0
+custom_constants/separation = 30
 
-[node name="FormLabels" type="VBoxContainer" parent="Control/FormContainer/MainFormContainer"]
+[node name="FormLabels" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
 margin_right = 625.0
 margin_bottom = 393.0
 custom_constants/separation = 30
 
-[node name="PlayerNameLabel" type="Label" parent="Control/FormContainer/MainFormContainer/FormLabels"]
+[node name="PlayerNameLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 margin_right = 625.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 5 )
 text = "Username:"
 
-[node name="EmailLabel" type="Label" parent="Control/FormContainer/MainFormContainer/FormLabels"]
+[node name="EmailLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 margin_top = 110.0
 margin_right = 625.0
 margin_bottom = 182.0
 custom_fonts/font = SubResource( 5 )
 text = "Email:"
 
-[node name="PasswordLabel" type="Label" parent="Control/FormContainer/MainFormContainer/FormLabels"]
+[node name="PasswordLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 margin_top = 212.0
 margin_right = 625.0
 margin_bottom = 284.0
 custom_fonts/font = SubResource( 5 )
 text = "Password:"
 
-[node name="ConfirmPasswordLabel" type="Label" parent="Control/FormContainer/MainFormContainer/FormLabels"]
+[node name="ConfirmPasswordLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 margin_top = 314.0
 margin_right = 625.0
 margin_bottom = 386.0
 custom_fonts/font = SubResource( 5 )
 text = "Confirm password:"
 
-[node name="FormInputFields" type="VBoxContainer" parent="Control/FormContainer/MainFormContainer"]
-margin_left = 625.0
-margin_right = 1125.0
+[node name="FormInputFields" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
+margin_left = 655.0
+margin_right = 1155.0
 margin_bottom = 393.0
 custom_constants/separation = 30
 
-[node name="PlayerName" type="LineEdit" parent="Control/FormContainer/MainFormContainer/FormInputFields"]
+[node name="PlayerName" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_right = 500.0
 margin_bottom = 78.0
 rect_min_size = Vector2( 500, 78 )
 custom_fonts/font = SubResource( 6 )
 max_length = 30
 
-[node name="Email" type="LineEdit" parent="Control/FormContainer/MainFormContainer/FormInputFields"]
+[node name="Email" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 108.0
 margin_right = 500.0
 margin_bottom = 183.0
@@ -190,7 +180,7 @@ rect_min_size = Vector2( 360, 75 )
 custom_fonts/font = SubResource( 6 )
 max_length = 50
 
-[node name="Password" type="LineEdit" parent="Control/FormContainer/MainFormContainer/FormInputFields"]
+[node name="Password" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 213.0
 margin_right = 500.0
 margin_bottom = 288.0
@@ -199,7 +189,7 @@ custom_fonts/font = SubResource( 6 )
 max_length = 30
 secret = true
 
-[node name="ConfirmPassword" type="LineEdit" parent="Control/FormContainer/MainFormContainer/FormInputFields"]
+[node name="ConfirmPassword" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_top = 318.0
 margin_right = 500.0
 margin_bottom = 393.0
@@ -208,37 +198,37 @@ custom_fonts/font = SubResource( 6 )
 max_length = 30
 secret = true
 
-[node name="InfoLabels" type="VBoxContainer" parent="Control/FormContainer/MainFormContainer"]
-margin_left = 1125.0
-margin_right = 1209.0
+[node name="InfoLabels" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
+margin_left = 1185.0
+margin_right = 1269.0
 margin_bottom = 393.0
 rect_min_size = Vector2( 40, 0 )
 custom_constants/separation = 24
 
-[node name="UsernameToolButton" type="ToolButton" parent="Control/FormContainer/MainFormContainer/InfoLabels"]
+[node name="UsernameToolButton" type="ToolButton" parent="FormContainer/MainFormContainer/InfoLabels"]
 margin_right = 84.0
 margin_bottom = 80.0
 icon = ExtResource( 5 )
 
-[node name="DummyToolButton1" type="ToolButton" parent="Control/FormContainer/MainFormContainer/InfoLabels"]
+[node name="DummyToolButton1" type="ToolButton" parent="FormContainer/MainFormContainer/InfoLabels"]
 margin_top = 104.0
 margin_right = 84.0
 margin_bottom = 184.0
 icon = ExtResource( 6 )
 
-[node name="PasswordToolButton" type="ToolButton" parent="Control/FormContainer/MainFormContainer/InfoLabels"]
+[node name="PasswordToolButton" type="ToolButton" parent="FormContainer/MainFormContainer/InfoLabels"]
 margin_top = 208.0
 margin_right = 84.0
 margin_bottom = 288.0
 icon = ExtResource( 5 )
 
-[node name="DummyToolButton2" type="ToolButton" parent="Control/FormContainer/MainFormContainer/InfoLabels"]
+[node name="DummyToolButton2" type="ToolButton" parent="FormContainer/MainFormContainer/InfoLabels"]
 margin_top = 312.0
 margin_right = 84.0
 margin_bottom = 392.0
 icon = ExtResource( 6 )
 
-[node name="InfoBox" type="Label" parent="Control/FormContainer"]
+[node name="InfoBox" type="Label" parent="FormContainer"]
 visible = false
 margin_right = 1269.0
 margin_bottom = 137.0
@@ -250,7 +240,7 @@ custom_colors/font_outline_modulate = Color( 0.937255, 0.917647, 0.917647, 1 )
 text = "Password should contain at least 8 characters including uppercase and lowercase letters, numbers and (optionally) special characters."
 autowrap = true
 
-[node name="ErrorMessage" type="Label" parent="Control/FormContainer"]
+[node name="ErrorMessage" type="Label" parent="FormContainer"]
 visible = false
 margin_right = 1189.0
 margin_bottom = 37.0
@@ -258,13 +248,13 @@ custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
 
-[node name="RegisterButton" parent="Control/FormContainer" instance=ExtResource( 2 )]
-margin_top = 420.0
-margin_right = 1209.0
-margin_bottom = 538.0
+[node name="RegisterButton" parent="FormContainer" instance=ExtResource( 2 )]
+margin_top = 585.0
+margin_right = 1269.0
+margin_bottom = 703.0
 text = "Submit"
 
-[node name="ProcessingLabel" type="Label" parent="Control/FormContainer"]
+[node name="ProcessingLabel" type="Label" parent="FormContainer"]
 visible = false
 margin_right = 1189.0
 margin_bottom = 72.0
@@ -272,8 +262,8 @@ custom_fonts/font = SubResource( 10 )
 text = "Processing..."
 align = 1
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="mouse_entered" from="Control/FormContainer/MainFormContainer/InfoLabels/UsernameToolButton" to="." method="_on_UsernameToolButton_mouse_entered"]
-[connection signal="mouse_exited" from="Control/FormContainer/MainFormContainer/InfoLabels/UsernameToolButton" to="." method="_on_UsernameToolButton_mouse_exited"]
-[connection signal="mouse_entered" from="Control/FormContainer/MainFormContainer/InfoLabels/PasswordToolButton" to="." method="_on_PasswordToolButton_mouse_entered"]
-[connection signal="mouse_exited" from="Control/FormContainer/MainFormContainer/InfoLabels/PasswordToolButton" to="." method="_on_PasswordToolButton_mouse_exited"]
-[connection signal="pressed" from="Control/FormContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]
+[connection signal="mouse_entered" from="FormContainer/MainFormContainer/InfoLabels/UsernameToolButton" to="." method="_on_UsernameToolButton_mouse_entered"]
+[connection signal="mouse_exited" from="FormContainer/MainFormContainer/InfoLabels/UsernameToolButton" to="." method="_on_UsernameToolButton_mouse_exited"]
+[connection signal="mouse_entered" from="FormContainer/MainFormContainer/InfoLabels/PasswordToolButton" to="." method="_on_PasswordToolButton_mouse_entered"]
+[connection signal="mouse_exited" from="FormContainer/MainFormContainer/InfoLabels/PasswordToolButton" to="." method="_on_PasswordToolButton_mouse_exited"]
+[connection signal="pressed" from="FormContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]

@@ -7,14 +7,14 @@
 [ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 17.8984
-height = 19.0918
+radius = 17.3724
+height = 27.3357
 
 [sub_resource type="Animation" id=2]
 length = 5.0
 step = 0.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Enemy/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/path = NodePath("../Enemy/Sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 0.0, 180.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:self_modulate")
+tracks/2/path = NodePath("../Enemy/Sprite:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,7 +50,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Explosion:emitting")
+tracks/3/path = NodePath("../Enemy/Explosion:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -62,7 +62,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Explosion:process_material:scale")
+tracks/4/path = NodePath("../Enemy/Explosion:process_material:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -74,7 +74,7 @@ tracks/4/keys = {
 "values": [ 1.0, 4.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("SoundHit:playing")
+tracks/5/path = NodePath("../Enemy/SoundHit:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -86,7 +86,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("SoundExplode:playing")
+tracks/6/path = NodePath("../Enemy/SoundExplode:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -117,7 +117,7 @@ length = 6.75
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Enemy/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -134,7 +134,7 @@ length = 1.25
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Enemy/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -168,13 +168,6 @@ shape = SubResource( 1 )
 [node name="enemyarea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyarea"]
-position = Vector2( -0.00525069, -0.727495 )
-rotation = -1.5708
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -0.00525069, -0.727495 )
 rotation = -1.5708
 shape = SubResource( 1 )
@@ -234,4 +227,3 @@ stream = ExtResource( 6 )
 
 [node name="SoundExplode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

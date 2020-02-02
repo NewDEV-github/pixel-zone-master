@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://dlcs/multi/lobby.gd" type="Script" id=2]
 [ext_resource path="res://Level Editor/buttongroup.tres" type="ButtonGroup" id=3]
-[ext_resource path="res://scenes/ChatControl.tscn" type="PackedScene" id=5]
 
 [node name="lobby" type="Control"]
 anchor_right = 1.0
@@ -72,9 +71,6 @@ margin_top = 211.0
 margin_right = 68.0
 margin_bottom = 251.0
 text = "Back"
-
-[node name="ChatControl2" parent="players" instance=ExtResource( 5 )]
-visible = false
 
 [node name="connect" type="Panel" parent="."]
 anchor_right = 1.0

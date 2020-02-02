@@ -591,12 +591,12 @@ layer = 0
 
 [node name="timer" parent="Player/ui" instance=ExtResource( 7 )]
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.0
 margin_left = -42.8704
-margin_top = 0.0
+margin_top = -31.0
 margin_right = 42.8704
-margin_bottom = 31.0
+margin_bottom = 0.0
 
 [node name="Control" type="Control" parent="Player/ui"]
 anchor_right = 1.0
@@ -615,10 +615,15 @@ margin_bottom = -234.375
 
 [node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
 pause_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -31.0
 margin_right = 76.0
-margin_bottom = 26.0
 custom_fonts/font = ExtResource( 9 )
 value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" type="VBoxContainer" parent="Player/ui/Control"]
 anchor_left = 1.0
@@ -630,7 +635,7 @@ __meta__ = {
 
 [node name="pause" type="TouchScreenButton" parent="Player/ui/Control/Control"]
 light_mask = 2
-position = Vector2( -75, 0 )
+position = Vector2( -75, 95 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 15 )
 action = "ui_cancel"

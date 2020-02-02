@@ -7,8 +7,7 @@ const SWLogger = preload("../utils/SWLogger.gd")
 var list_index = 0
 
 func _ready():
-	if str(SilentWolf.Auth.logged_in_player) == null:
-		$AcceptDialog.popup_centered()
+	globals.debug_auth_player()
 	var scores = SilentWolf.Scores.scores
 	var local_scores = SilentWolf.Scores.local_scores
 	
@@ -39,7 +38,6 @@ func merge_scores_with_local_scores(scores, local_scores, max_scores=10):
 	if scores.size() > max_scores:
 		return_scores = scores.resize(max_scores)
 	return return_scores
-	
 func sort_by_score(a, b):
 	if a.score > b.score:
 		return true;
@@ -83,9 +81,10 @@ func hide_message():
 func _on_CloseButton_pressed():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
-#	global.reset()
+	#global.reset()
 	get_tree().change_scene(scene_name)
 
 
-func _on_AcceptDialog_popup_hide():
-	get_tree().change_scene("res://scenes/auth.tscn")
+func _on_Logout_pressed():
+	_on_CloseButton_pressed()
+	SilentWolf.Auth.logout_player()

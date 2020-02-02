@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scenes/players/player1/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
 [ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
+[ext_resource path="res://textures/osb_fire.png" type="Texture" id=23]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -584,12 +585,12 @@ layer = 0
 
 [node name="timer" parent="Player/ui" instance=ExtResource( 10 )]
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.0
 margin_left = -42.8704
-margin_top = 0.0
+margin_top = -31.0
 margin_right = 42.8704
-margin_bottom = 31.0
+margin_bottom = 0.0
 
 [node name="Control" type="Control" parent="Player/ui"]
 anchor_right = 1.0
@@ -608,10 +609,15 @@ margin_bottom = -234.375
 
 [node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
 pause_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -31.0
 margin_right = 76.0
-margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="left" type="TouchScreenButton" parent="Player/ui/Control"]
 light_mask = 2
@@ -649,7 +655,7 @@ visibility_mode = 1
 
 [node name="pause" type="TouchScreenButton" parent="Player/ui/Control/Control"]
 light_mask = 2
-position = Vector2( -75, 0 )
+position = Vector2( -75, 95 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 3 )
 action = "ui_cancel"
@@ -661,6 +667,14 @@ position = Vector2( -27.062, 572.063 )
 rotation = -6.28319
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 19 )
+
+[node name="jump2" type="TouchScreenButton" parent="Player/ui/Control/Control"]
+light_mask = 2
+position = Vector2( -117, 360 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 23 )
+action = "shoot"
+visibility_mode = 1
 
 [node name="GameUI" parent="Player/ui/Control" instance=ExtResource( 18 )]
 anchor_top = 0.03

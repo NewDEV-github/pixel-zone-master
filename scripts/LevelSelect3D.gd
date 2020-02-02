@@ -39,7 +39,7 @@ func _on_select9_pressed():
 func _ready():
 	var conf = ConfigFile.new()
 	conf.load(str(documents) + '/Pixel Zone/.data/settings/game.ini')
-	var loaded_config = str(conf.get_value('saves', 'game_pass'))
+	var loaded_config = str(conf.get_value('saves', 'game_pass', null))
 	var unlock = File.new()
 	unlock.open_encrypted_with_pass("user://save_data.1", File.READ, str(34567865))
 	var decrypted_sav_1 = int(str(unlock.get_line()))

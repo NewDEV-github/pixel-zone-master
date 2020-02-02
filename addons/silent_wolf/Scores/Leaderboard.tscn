@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Scores/Leaderboard.gd" type="Script" id=1]
 [ext_resource path="res://addons/silent_wolf/Scores/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://themes/theme_test.tres" type="Theme" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 76
@@ -28,6 +29,7 @@ visible = false
 margin_left = 50.0
 margin_right = 50.0
 margin_bottom = 40.0
+theme = ExtResource( 5 )
 
 [node name="HighScores" type="TextureRect" parent="OldBoard"]
 margin_bottom = 40.0
@@ -35,18 +37,19 @@ margin_bottom = 40.0
 [node name="Board" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleContainer" type="CenterContainer" parent="Board"]
 margin_right = 1024.0
-margin_bottom = 85.0
+margin_bottom = 93.0
 
 [node name="Label" type="Label" parent="Board/TitleContainer"]
-margin_left = 247.0
-margin_right = 776.0
-margin_bottom = 85.0
+margin_left = 243.0
+margin_right = 780.0
+margin_bottom = 93.0
 custom_fonts/font = SubResource( 1 )
 text = "Leaderboard"
 
@@ -57,17 +60,28 @@ margin_right = 1864.0
 margin_bottom = 126.0
 
 [node name="TextMessage" type="Label" parent="Board/MessageContainer"]
-margin_left = 789.0
-margin_right = 1075.0
-margin_bottom = 37.0
+margin_left = 785.0
+margin_right = 1079.0
+margin_bottom = 45.0
 custom_fonts/font = SubResource( 2 )
 text = "Loading scores..."
 valign = 1
 
-[node name="HighScores" type="CenterContainer" parent="Board"]
-margin_top = 89.0
+[node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
+margin_top = 97.0
 margin_right = 1024.0
-margin_bottom = 189.0
+margin_bottom = 215.0
+
+[node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
+margin_left = 162.0
+margin_right = 861.0
+margin_bottom = 118.0
+text = "Close Leaderboard"
+
+[node name="HighScores" type="CenterContainer" parent="Board"]
+margin_top = 219.0
+margin_right = 1024.0
+margin_bottom = 319.0
 rect_min_size = Vector2( 0, 100 )
 theme = SubResource( 3 )
 
@@ -77,25 +91,15 @@ margin_top = 50.0
 margin_right = 512.0
 margin_bottom = 50.0
 
-[node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
-margin_top = 193.0
-margin_right = 1024.0
-margin_bottom = 311.0
-
-[node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
-margin_left = 162.0
-margin_right = 861.0
-margin_bottom = 118.0
-text = "Close Leaderboard"
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
-margin_right = 198.0
-margin_bottom = 94.0
-window_title = "Alarm!"
-dialog_text = "Please Login or register accuont"
+[node name="Logout" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+margin_right = 116.0
+theme = ExtResource( 5 )
+text = "LOGOUT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
-[connection signal="popup_hide" from="AcceptDialog" to="." method="_on_AcceptDialog_popup_hide"]
+[connection signal="pressed" from="Logout" to="." method="_on_Logout_pressed"]

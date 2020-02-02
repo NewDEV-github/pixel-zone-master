@@ -14,6 +14,8 @@
 [ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=13]
 [ext_resource path="res://scenes/Custom_Music.gd" type="Script" id=14]
 
+
+
 [sub_resource type="InputEventAction" id=1]
 action = "ui_accept"
 

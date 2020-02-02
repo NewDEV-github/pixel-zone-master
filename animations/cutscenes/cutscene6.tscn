@@ -9,6 +9,8 @@
 [ext_resource path="res://animations/cutscenes/cutscene6.gd" type="Script" id=7]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=8]
 
+
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,8 +1,8 @@
 extends Control
 var save
-func _ready():
-	print_log()
-
+func _notification(what):
+	if what == NOTIFICATION_CRASH:
+		print_log()
 func print_log():
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(get_tree().get_current_scene())

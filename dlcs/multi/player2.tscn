@@ -24,6 +24,8 @@
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
 [ext_resource path="res://textures/robot_demo_2.png" type="Texture" id=23]
 
+
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
 height = 44.4787

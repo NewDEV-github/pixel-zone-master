@@ -29,6 +29,11 @@ var ScorePosition = null
 var HighScores = null
 var PostScore = null
 
+# wekrefs
+var wrScorePosition = null
+var wrHighScores = null
+var wrPostScore = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -37,6 +42,9 @@ func _ready():
 	
 func get_score_position(score):
 	ScorePosition = HTTPRequest.new()
+	wrScorePosition = weakref(ScorePosition)
+	if OS.get_name() != "HTML5":
+		ScorePosition.set_use_threads(true)
 	get_tree().get_root().add_child(ScorePosition)
 	ScorePosition.connect("request_completed", self, "_on_GetScorePosition_request_completed")
 	SWLogger.info("Calling SilentWolf to get score position")
@@ -51,6 +59,9 @@ func get_score_position(score):
 
 func get_high_scores(maximum=10):
 	HighScores = HTTPRequest.new()
+	wrHighScores = weakref(HighScores)
+	if OS.get_name() != "HTML5":
+		HighScores.set_use_threads(true)
 	get_tree().get_root().add_child(HighScores)
 	HighScores.connect("request_completed", self, "_on_GetHighScores_request_completed")
 	SWLogger.info("Calling SilentWolf backend to get scores...")
@@ -74,6 +85,9 @@ func add_to_local_scores(game_result):
 
 func persist_score(player_name, score):
 	PostScore = HTTPRequest.new()
+	wrPostScore= weakref(PostScore)
+	if OS.get_name() != "HTML5":
+		PostScore.set_use_threads(true)
 	get_tree().get_root().add_child(PostScore)
 	PostScore.connect("request_completed", self, "_on_PostNewScore_request_completed")
 	SWLogger.info("Calling SilentWolf backend to post new score...")
@@ -95,7 +109,8 @@ func _on_GetHighScores_request_completed(result, response_code, headers, body):
 	SWLogger.info("GetHighScores request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
 	#print("client status: " + str(HighScores.get_http_client_status()))
-	HighScores.queue_free()
+	#HighScores.queue_free()
+	SilentWolf.free_request(wrHighScores, HighScores)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -116,7 +131,8 @@ func _on_GetHighScores_request_completed(result, response_code, headers, body):
 func _on_PostNewScore_request_completed(result, response_code, headers, body):
 	SWLogger.info("PostNewScore request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-	PostScore.queue_free()
+	#PostScore.queue_free()
+	SilentWolf.free_request(wrPostScore, PostScore)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -134,7 +150,8 @@ func _on_PostNewScore_request_completed(result, response_code, headers, body):
 func _on_GetScorePosition_request_completed(result, response_code, headers, body):
 	SWLogger.info("GetScorePosition request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-	ScorePosition.queue_free()
+	#ScorePosition.queue_free()
+	SilentWolf.free_request(wrScorePosition, ScorePosition)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))

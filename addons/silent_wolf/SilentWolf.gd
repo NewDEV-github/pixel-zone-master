@@ -15,18 +15,19 @@ onready var Players = Node.new()
 #
 var config = {
 	"api_key": "FmKF4gtm0Z2RbUAEU62kZ2OZoYLj4PYOURAPIKEY",
-	"game_id": "PixelZone",
+	"game_id": "YOURGAMEID",
 	"game_version": "0.0.0",
 	"log_level": 1
 }
 
 var scores_config = {
-	"open_scene_on_close": "res://scenes/Main Menu/GUI.tscn"
+	"open_scene_on_close": "res://scenes/Splash.tscn"
 }
 
 var auth_config = {
-	"redirect_to_scene": "res://addons/silent_wolf/Scores/Leaderboard.tscn",
-	"session_duration": 3600
+	"redirect_to_scene": "res://scenes/Splash.tscn",
+	"session_duration_seconds": 0,
+	"saved_session_expiration_days": 30
 }
 
 func _ready():
@@ -72,3 +73,7 @@ func configure_auth_redirect_to_scene(scene):
 	
 func configure_auth_session_duration(duration):
 	auth_config.session_duration = duration
+	
+func free_request(weak_ref, object):
+	if (weak_ref.get_ref()):
+		object.queue_free()

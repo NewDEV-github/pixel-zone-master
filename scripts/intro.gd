@@ -15,7 +15,7 @@ func _load():
 	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
-	
+#	ads.admob.showBanner()
 	var conf = File.new()
 #	if conf.file_exists('user://dlc.txt'):
 #		ProjectSettings.load_resource_pack('user://dlc.pck')

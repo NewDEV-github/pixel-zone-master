@@ -3,7 +3,7 @@ var logged_player = str(SilentWolf.Auth.logged_in_player)
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 func _ready():
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
-	if str(logged_player) != '' or str(logged_player) != null:
+	if not str(logged_player) == null:
 		get_tree().change_scene(scene_name)
 	var auth_node = get_tree().get_root().get_node("res://addons/silent_wolf/Auth/Auth")
 	SilentWolf.Auth.connect("sw_registration_succeeded", self, "_on_registration_succeeded")

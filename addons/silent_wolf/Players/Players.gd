@@ -11,6 +11,11 @@ var GetPlayerData = null
 var PushPlayerData = null
 var RemovePlayerData = null
 
+# wekrefs
+var wrGetPlayerData = null
+var wrPushPlayerData = null
+var wrRemovePlayerData = null
+
 var player_name = null
 var player_data = null
 
@@ -48,6 +53,9 @@ func get_inventory():
 
 func get_player_data(player_name):
 	GetPlayerData = HTTPRequest.new()
+	wrGetPlayerData = weakref(GetPlayerData)
+	if OS.get_name() != "HTML5":
+		GetPlayerData.set_use_threads(true)
 	get_tree().get_root().add_child(GetPlayerData)
 	GetPlayerData.connect("request_completed", self, "_on_GetPlayerData_request_completed")
 	SWLogger.info("Calling SilentWolf to get player data")
@@ -60,6 +68,9 @@ func get_player_data(player_name):
 	
 func post_player_data(player_name, player_data, overwrite=true):
 	PushPlayerData = HTTPRequest.new()
+	wrPushPlayerData = weakref(PushPlayerData)
+	if OS.get_name() != "HTML5":
+		PushPlayerData.set_use_threads(true)
 	get_tree().get_root().add_child(PushPlayerData)
 	PushPlayerData.connect("request_completed", self, "_on_PushPlayerData_request_completed")
 	SWLogger.info("Calling SilentWolf to post player data")
@@ -89,6 +100,9 @@ func delete_all_player_data(player_name):
 	
 func delete_player_data(player_name, player_data):
 	RemovePlayerData = HTTPRequest.new()
+	wrRemovePlayerData = weakref(RemovePlayerData)
+	if OS.get_name() != "HTML5":
+		RemovePlayerData.set_use_threads(true)
 	get_tree().get_root().add_child(RemovePlayerData)
 	RemovePlayerData.connect("request_completed", self, "_on_RemovePlayerData_request_completed")
 	SWLogger.info("Calling SilentWolf to remove player data")
@@ -104,8 +118,9 @@ func _on_GetPlayerData_request_completed(result, response_code, headers, body):
 	SWLogger.info("GetPlayerData request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
 	#print("client status: " + str(GetPlayerData.get_http_client_status()))
-	if is_instance_valid(GetPlayerData): # GetPlayerData != null and GetPlayerData.is_inside_tree():
-		GetPlayerData.queue_free()
+	if is_instance_valid(GetPlayerData): 
+		SilentWolf.free_request(wrGetPlayerData, GetPlayerData)
+		#GetPlayerData.queue_free()
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
@@ -125,8 +140,9 @@ func _on_GetPlayerData_request_completed(result, response_code, headers, body):
 func _on_PushPlayerData_request_completed(result, response_code, headers, body):
 	SWLogger.info("PushPlayerData request completed")
 	var status_check = CommonErrors.check_status_code(response_code)
-	if is_instance_valid(PushPlayerData): #PushPlayerData != null and PushPlayerData.is_inside_tree():
-		PushPlayerData.queue_free()
+	if is_instance_valid(PushPlayerData): 
+		#PushPlayerData.queue_free()
+		SilentWolf.free_request(wrPushPlayerData, PushPlayerData)
 	SWLogger.debug("response headers: " + str(response_code))
 	SWLogger.debug("response headers: " + str(headers))
 	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))

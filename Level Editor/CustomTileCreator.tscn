@@ -5,6 +5,8 @@
 [ext_resource path="res://Level Editor/CustomTileCreator.gd" type="Script" id=3]
 [ext_resource path="res://Level Editor/Tile_base.tscn" type="PackedScene" id=4]
 
+
+
 [node name="CustomTileCreator" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
