@@ -6,6 +6,7 @@ var collected = 0 setget _set_collected, _get_collected
 var auto_load_mod = true
 var current_stage = ''
 var play_cutscenes
+var player_has_been_selected = false
 signal collected_changed
 signal play_bgm(id, value)
 func send_saved_data():

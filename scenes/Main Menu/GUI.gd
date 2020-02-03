@@ -1,6 +1,7 @@
 extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var checked = false
+
 var admob = null
 var isReal = true
 var isTop = true
@@ -11,7 +12,13 @@ var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testi
 var date
 func _ready():
 #	show()
-	SilentWolf.Auth.auto_login_player()
+#	SilentWolf.Auth.auto_login_player()
+	if globals.player_has_been_selected == true:
+		$CanvasLayer/Menu/Box.show()
+		$CanvasLayer/Menu/SelectCharacter.hide()
+	else:
+		$CanvasLayer/Menu/Box.hide()
+		$CanvasLayer/Menu/SelectCharacter.show()
 	var file = File.new()
 	file.open('user://date.dat', File.READ)
 	var currentline = str(file.get_line())
@@ -21,15 +28,15 @@ func _ready():
 		$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2.show()
 	else:
 		$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2.hide()
-	$CanvasLayer/Menu/Box.hide()
-	$CanvasLayer/Menu/SelectCharacter.show()
 #	print(str(downloadserver.get_data()))
 #	print(str(gamesite.get_data()))
 #	print(str(mainserver.get_data()))
 	if str(os) == 'Android':
 		$CanvasLayer/Menu/Box/LevelEditor.set_disabled(true)
+		$CanvasLayer/Menu/Box/PlayCustomStage.set_disabled(true)
 	else:
 		$CanvasLayer/Menu/Box/LevelEditor.set_disabled(false)
+		$CanvasLayer/Menu/Box/PlayCustomStage.set_disabled(false)
 	if(Engine.has_singleton("AdMob")):
 		print('HAS SINGLETON')
 		admob = Engine.get_singleton("AdMob")
@@ -129,6 +136,7 @@ func _on_Play_pressed():
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
+		admob.showInterstitial()
 
 func _on_Multiplayer_pressed():
 	background_load.load_scene('res://dlcs/multi/lobby.tscn')
@@ -195,6 +203,7 @@ func _on_Sonic_pressed():
 	globals.scene_path = 'res://main.tscn'
 	globals.selected_player = preload('res://main.tscn').instance()
 	after_selecting_player()
+	globals.player_has_been_selected = true
 
 func _on_UfoRobi_pressed():
 	globals.play_cutscenes = true
@@ -202,20 +211,27 @@ func _on_UfoRobi_pressed():
 	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
 	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
 	after_selecting_player()
+	globals.player_has_been_selected = true
 
 
 
 func _on_Robi_pressed():
+	
 	globals.play_cutscenes = true
 	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = 'res://scenes/players/player1/player.tscn'
 	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
 	after_selecting_player()
+	globals.player_has_been_selected = true
 
 func after_selecting_player():
 	$CanvasLayer/Menu/Character.hide()
 	$CanvasLayer/Menu/SelectCharacter.hide()
 	$CanvasLayer/Menu/Box.show()
+	if str(os) == 'Android':
+		admob.showInterstitial()
+		admob.showBanner()
+#	player_has_been_selected = true
 
 
 func _on_CheckForUpdates_pressed():
@@ -235,7 +251,9 @@ func _on_QuitDialog_confirmed():
 
 
 func _on_Leaderboard_pressed():
-	admob.showInterstitial()
+	if str(os) == 'Android':
+		admob.showInterstitial()
+		admob.hideBanner()
 	background_load.load_scene('res://scenes/auth.tscn')
 
 func _on_Lang_item_selected(id):

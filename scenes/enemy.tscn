@@ -1,20 +1,17 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://textures/bullet.png" type="Texture" id=1]
-[ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
-[ext_resource path="res://textures/enemy.png" type="Texture" id=3]
-[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=6]
-[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=7]
+[ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
+[ext_resource path="res://enemy/enemy.png" type="Texture" id=2]
+[ext_resource path="res://textures/bullet.png" type="Texture" id=3]
+[ext_resource path="res://sounds/sound_hit.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/sound_explode.wav" type="AudioStream" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 17.3724
-height = 27.3357
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
+resource_name = "explode"
 length = 5.0
 step = 0.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Enemy/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +23,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Enemy/Sprite:rotation_degrees")
+tracks/1/path = NodePath("Sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +35,7 @@ tracks/1/keys = {
 "values": [ 0.0, 180.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Enemy/Sprite:self_modulate")
+tracks/2/path = NodePath("Sprite:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,7 +47,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../Enemy/Explosion:emitting")
+tracks/3/path = NodePath("Explosion:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -62,7 +59,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Enemy/Explosion:process_material:scale")
+tracks/4/path = NodePath("Explosion:process_material:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -74,7 +71,7 @@ tracks/4/keys = {
 "values": [ 1.0, 4.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Enemy/SoundHit:playing")
+tracks/5/path = NodePath("SoundHit:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -86,7 +83,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Enemy/SoundExplode:playing")
+tracks/6/path = NodePath("SoundExplode:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -112,12 +109,12 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 6.75
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Enemy/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -129,12 +126,13 @@ tracks/0/keys = {
 "values": [ 5, 6, 5, 6, 5, 6, 7, 6, 7, 5 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
 length = 1.25
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Enemy/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -146,7 +144,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 0 ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=5]
+[sub_resource type="CanvasItemMaterial" id=4]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 13.4556
+height = 14.2002
 
 [sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 1
@@ -158,19 +160,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
 [node name="Enemy" type="KinematicBody2D"]
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -0.00525069, -0.727495 )
-rotation = -1.5708
-shape = SubResource( 1 )
-
-[node name="enemyarea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyarea"]
-position = Vector2( -0.00525069, -0.727495 )
-rotation = -1.5708
-shape = SubResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Enabler" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 16.2569, 11.0034 )
@@ -178,15 +168,20 @@ scale = Vector2( 23.5056, 10.8629 )
 pause_particles = false
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/explode = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/explode = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 5 )
-texture = ExtResource( 3 )
+material = SubResource( 4 )
+texture = ExtResource( 2 )
 flip_h = true
 hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.00525069, -0.727495 )
+rotation = -1.5708
+shape = SubResource( 5 )
 
 [node name="DetectFloorLeft" type="RayCast2D" parent="."]
 position = Vector2( -33.2868, -9.34363 )
@@ -194,13 +189,13 @@ enabled = true
 cast_to = Vector2( 0, 45 )
 
 [node name="DetectWallLeft" type="RayCast2D" parent="."]
-position = Vector2( -25.6595, 0.851012 )
+position = Vector2( -12.1361, -0.739977 )
 rotation = 1.5708
 enabled = true
 cast_to = Vector2( 0, 20 )
 
 [node name="DetectWallRight" type="RayCast2D" parent="."]
-position = Vector2( 19.9842, -0.381488 )
+position = Vector2( 3.2788, -0.381488 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 20 )
@@ -220,10 +215,10 @@ speed_scale = 1.2
 explosiveness = 0.1
 draw_order = 215832976
 process_material = SubResource( 7 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 4 )
 
 [node name="SoundExplode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 5 )

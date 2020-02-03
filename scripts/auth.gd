@@ -2,9 +2,9 @@ extends Control
 var logged_player = str(SilentWolf.Auth.logged_in_player)
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 func _ready():
-	var scene_name = SilentWolf.auth_config.redirect_to_scene
-	if not str(logged_player) == null:
-		get_tree().change_scene(scene_name)
+#	var scene_name = SilentWolf.auth_config.redirect_to_scene
+#	if not str(logged_player) == null:
+#		get_tree().change_scene(scene_name)
 	var auth_node = get_tree().get_root().get_node("res://addons/silent_wolf/Auth/Auth")
 	SilentWolf.Auth.connect("sw_registration_succeeded", self, "_on_registration_succeeded")
 	SilentWolf.Auth.connect("sw_registration_failed", self, "_on_registration_failed")
@@ -14,7 +14,7 @@ func _ready():
 func _on_LoginButton_pressed():
 	var username = $MainCon/login/LogCon/username.text
 	var password = $MainCon/login/LogCon/pass.text
-	var remember_me = $MainCon/login/LogCon/rememberme.is_pressed()
+	var remember_me = false
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing()
@@ -76,3 +76,7 @@ func _on_registration_failed(error):
 #
 #func _on_PasswordToolButton_mouse_exited():
 #	$"FormContainer/InfoBox".hide()
+
+
+func _on_Button_pressed():
+	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')

@@ -3,8 +3,6 @@
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/auth.gd" type="Script" id=2]
 
-
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -63,12 +61,14 @@ margin_right = 410.0
 margin_bottom = 82.0
 hint_tooltip = "Username should contain at least
 6 characters (letters or numbers) and no spaces."
+max_length = 20
 placeholder_text = "AUTH_USERNAME"
 
 [node name="email" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
+max_length = 20
 placeholder_text = "AUTH_EMAIL"
 
 [node name="pass" type="LineEdit" parent="MainCon/Reg/RegCon"]
@@ -77,12 +77,14 @@ margin_right = 410.0
 margin_bottom = 168.0
 hint_tooltip = "Password should contain at least 8 characters including uppercase
 and lowercase letters, numbers and (optionally) special characters."
+max_length = 20
 placeholder_text = "AUTH_PASS"
 
 [node name="confirmpass" type="LineEdit" parent="MainCon/Reg/RegCon"]
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
+max_length = 20
 placeholder_text = "AUTH_CONFIRM_PASS"
 
 [node name="CofirmReg" type="Button" parent="MainCon/Reg/RegCon"]
@@ -107,9 +109,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -205.0
-margin_top = -105.5
+margin_top = -84.0
 margin_right = 205.0
-margin_bottom = 105.5
+margin_bottom = 84.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -125,24 +127,29 @@ valign = 1
 margin_top = 43.0
 margin_right = 410.0
 margin_bottom = 82.0
+text = "AUTH_USERNAME"
+max_length = 20
 placeholder_text = "AUTH_USERNAME"
 
 [node name="pass" type="LineEdit" parent="MainCon/login/LogCon"]
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
+max_length = 20
+secret = true
 placeholder_text = "AUTH_PASS"
 
 [node name="rememberme" type="CheckBox" parent="MainCon/login/LogCon"]
+visible = false
 margin_top = 129.0
 margin_right = 410.0
 margin_bottom = 168.0
 text = "AUTH_REMEMBER"
 
 [node name="ConfirmLog" type="Button" parent="MainCon/login/LogCon"]
-margin_top = 172.0
+margin_top = 129.0
 margin_right = 410.0
-margin_bottom = 211.0
+margin_bottom = 168.0
 text = "AUTH_CONFIRM"
 
 [node name="ERROR" type="Label" parent="."]
@@ -183,5 +190,16 @@ text = "AUTH_PROCESSING"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+margin_right = 75.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="MainCon/login/LogCon/ConfirmLog" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

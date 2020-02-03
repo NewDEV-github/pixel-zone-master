@@ -238,6 +238,8 @@ __meta__ = {
 }
 
 [node name="Control" parent="." instance=ExtResource( 7 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 3.0
 margin_top = 100.0
 margin_right = 1.0
@@ -245,6 +247,8 @@ margin_bottom = 100.0
 mouse_filter = 1
 
 [node name="VScrollBar" type="VSlider" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 16.0
 rect_scale = Vector2( 2, 1 )
@@ -312,8 +316,6 @@ __meta__ = {
 }
 
 [node name="Menu" type="Control" parent="CanvasLayer"]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -412,8 +414,15 @@ __meta__ = {
 }
 
 [node name="Character" type="WindowDialog" parent="CanvasLayer/Menu"]
-margin_right = 756.0
-margin_bottom = 546.0
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -378.0
+margin_top = -273.0
+margin_right = 378.0
+margin_bottom = 273.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -427,7 +436,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu/Character/VBoxContainer"]
 margin_right = 756.0
-margin_bottom = 275.0
+margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -435,25 +444,25 @@ __meta__ = {
 }
 
 [node name="Robi" type="Button" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
-margin_right = 206.0
-margin_bottom = 275.0
+margin_right = 235.0
+margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Robi"
 
 [node name="infoLabel" type="Label" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
-margin_left = 210.0
-margin_right = 545.0
-margin_bottom = 275.0
+margin_left = 239.0
+margin_right = 517.0
+margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 text = "KEY_PLAYER_SELECT"
 align = 1
 
 [node name="UfoRobi" type="Button" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
-margin_left = 549.0
+margin_left = 521.0
 margin_right = 756.0
-margin_bottom = 275.0
+margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Ufo Robi"
