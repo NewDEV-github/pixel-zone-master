@@ -99,7 +99,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Advanced Background Loader", "adb_helper", "radial_progress", "silent_wolf" )
+enabled=PoolStringArray( "Advanced Background Loader", "adb_helper", "silent_wolf" )
 
 [gdnative]
 

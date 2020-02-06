@@ -167,3 +167,9 @@ func _button_position(button, x, y):
 
 func _button_scale(button, x, y):
 	button.set_scale(Vector2(x,y))
+
+
+
+func _on_Area2D2_body_entered(body):
+	if body.name == 'Enemy':
+		$ui/Control/ProgressBar.value -= 5

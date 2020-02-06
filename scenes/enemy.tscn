@@ -147,8 +147,8 @@ tracks/0/keys = {
 [sub_resource type="CanvasItemMaterial" id=4]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 13.4556
-height = 14.2002
+radius = 16.3316
+height = 26.8661
 
 [sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 1
@@ -187,23 +187,27 @@ shape = SubResource( 5 )
 position = Vector2( -33.2868, -9.34363 )
 enabled = true
 cast_to = Vector2( 0, 45 )
+collide_with_areas = true
 
 [node name="DetectWallLeft" type="RayCast2D" parent="."]
 position = Vector2( -12.1361, -0.739977 )
 rotation = 1.5708
 enabled = true
 cast_to = Vector2( 0, 20 )
+collide_with_areas = true
 
 [node name="DetectWallRight" type="RayCast2D" parent="."]
 position = Vector2( 3.2788, -0.381488 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 20 )
+collide_with_areas = true
 
 [node name="DetectFloorRight" type="RayCast2D" parent="."]
 position = Vector2( 29.1987, -9.34363 )
 enabled = true
 cast_to = Vector2( 0, 45 )
+collide_with_areas = true
 
 [node name="Explosion" type="Particles2D" parent="."]
 self_modulate = Color( 1, 1, 1, 0.12 )

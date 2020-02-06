@@ -2,7 +2,7 @@ extends Control
 
 var thread = null
 
-onready var progress = $RadialProgressBar
+onready var progress = $progress
 
 var SIMULATED_DELAY_SEC = 1.0
 
@@ -17,7 +17,7 @@ func _thread_load(path):
 	
 	while true: #iterate until we have a resource
 		# Update progress bar, use call deferred, which routes to main thread
-		progress.call_deferred("set_progress", ril.get_stage())
+		progress.call_deferred("set_value", ril.get_stage())
 		# Simulate a delay
 		OS.delay_msec(SIMULATED_DELAY_SEC * 1000.0)
 		# Poll (does a load step)

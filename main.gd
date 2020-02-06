@@ -18,7 +18,8 @@ func _ready():
 		loadBanner()
 		loadInterstitial()
 		loadRewardedVideo()
-	admob.showBanner()
+	if str(OS.get_name()) == 'Android':
+		admob.showBanner()
 func loadBanner():
 	if admob != null:
 		admob.loadBanner(adBannerId, isTop)
@@ -30,3 +31,9 @@ func loadInterstitial():
 func loadRewardedVideo():
 	if admob != null:
 		admob.loadRewardedVideo(adRewardedId)
+
+
+
+func _on_Area2D2_body_entered(body):
+	if body.name == 'Enemy':
+		$Player/ui/Control/ProgressBar.value -= 5

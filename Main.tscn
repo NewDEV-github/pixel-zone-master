@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay Scripts/player_camera.gd" type="Script" id=2]
@@ -293,6 +293,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 12.9608
+
 [node name="Node2D" type="KinematicBody2D"]
 position = Vector2( 7.3205, 0 )
 script = ExtResource( 1 )
@@ -481,6 +484,7 @@ margin_bottom = -234.375
 
 [node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
 pause_mode = 2
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -31.0
@@ -616,4 +620,10 @@ anchor_bottom = 1.0
 text = "Achievement Unlocked!"
 align = 1
 valign = 1
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 19 )
 [connection signal="animation_finished" from="Player/Characters/Sonic/AnimationPlayer" to="Player/StateMachine" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Player/Area2D" to="." method="_on_Area2D_body_entered"]

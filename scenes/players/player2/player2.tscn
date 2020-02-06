@@ -615,6 +615,7 @@ margin_bottom = -234.375
 
 [node name="ProgressBar" type="ProgressBar" parent="Player/ui/Control"]
 pause_mode = 2
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -31.0
@@ -763,5 +764,5 @@ rotation = 1.5708
 [node name="RightWallSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 242.5, 71.0001 )
 rotation = 4.71239
-[connection signal="area_entered" from="Player/sprite/Area2D2" to="Player" method="_on_Area2D2_area_entered"]
+[connection signal="body_entered" from="Player/sprite/Area2D2" to="Player" method="_on_Area2D2_body_entered"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]

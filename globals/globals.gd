@@ -9,16 +9,16 @@ var play_cutscenes
 var player_has_been_selected = false
 signal collected_changed
 signal play_bgm(id, value)
-func send_saved_data():
-	print('SENDING SAVED DATA TO SilentWolf')
-	var save = File.new()
-	save.open_encrypted_with_pass("user://other_saves/0.save", File.READ, '3087283')
-	var loaded_coins = save.get_line()
-	debug_auth_player()
-	var playername = str(SilentWolf.Auth.logged_in_player)
-	if not str(playername) == '':
-		SilentWolf.Scores.persist_score(playername, loaded_coins)
-		SilentWolf.Scores.get_high_scores()
+#func send_saved_data():
+#	print('SENDING SAVED DATA TO SilentWolf')
+#	var save = File.new()
+#	save.open_encrypted_with_pass("user://other_saves/0.save", File.READ, '3087283')
+#	var loaded_coins = save.get_line()
+#	debug_auth_player()
+#	var playername = str(SilentWolf.Auth.logged_in_player)
+#	if not str(playername) == '':
+#		SilentWolf.Scores.persist_score(playername, loaded_coins)
+#		SilentWolf.Scores.get_high_scores()
 func _set_collected(value):
 	collected = value
 	emit_signal("collected_changed")
@@ -29,7 +29,7 @@ func _get_collected():
 func _send_data():
 	debug_auth_player()
 	var playername = str(SilentWolf.Auth.logged_in_player)
-	if not str(playername) == '':
+	if not str(playername) == null:
 		SilentWolf.Scores.persist_score(playername, game_state.points)
 		SilentWolf.Scores.get_high_scores()
 		

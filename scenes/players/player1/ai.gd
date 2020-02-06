@@ -14,7 +14,8 @@ func _ready():
 		loadBanner()
 		loadInterstitial()
 		loadRewardedVideo()
-	admob.showBanner()
+	if str(OS.get_name()) == 'Android':
+		admob.showBanner()
 func loadBanner():
 	if admob != null:
 		admob.loadBanner(adBannerId, isTop)
@@ -39,4 +40,6 @@ func _process(_delta):
 	var length = ($Player.position - $Player_ai2.position).length()
 	if length >= 900:
 		$Player_ai2.set_position(Vector2(float(pos_x - 3), float(pos_y - 3)))
+
+
 

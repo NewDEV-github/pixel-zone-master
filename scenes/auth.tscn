@@ -127,7 +127,6 @@ valign = 1
 margin_top = 43.0
 margin_right = 410.0
 margin_bottom = 82.0
-text = "AUTH_USERNAME"
 max_length = 20
 placeholder_text = "AUTH_USERNAME"
 

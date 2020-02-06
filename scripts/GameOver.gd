@@ -14,7 +14,8 @@ func _ready():
 		loadBanner()
 		loadInterstitial()
 		loadRewardedVideo()
-	admob.showBanner()
+	if str(OS.get_name()) == 'Android':
+		admob.showBanner()
 func loadBanner():
 	if admob != null:
 		admob.loadBanner(adBannerId, isTop)
@@ -33,8 +34,10 @@ func _game_over():
 
 
 func _on_Button2_pressed():
-	admob.showInterstitial()
-	background_load.load_scene("scenes/Main Menu/GUI.tscn")
+	if str(OS.get_name()) == 'Android':
+		admob.showInterstitial()
+	get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
 func _on_Button_pressed():
-	admob.showInterstitial()
+	if str(OS.get_name()) == 'Android':
+		admob.showInterstitial()
 	get_tree().quit()

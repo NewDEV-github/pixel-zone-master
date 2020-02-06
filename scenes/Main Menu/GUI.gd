@@ -44,8 +44,9 @@ func _ready():
 		loadBanner()
 		loadInterstitial()
 		loadRewardedVideo()
-	admob.showBanner()
-	admob.showInterstitial()
+	if str(os) == 'Android':
+		admob.showBanner()
+		admob.showInterstitial()
 	get_tree().connect("screen_resized", self, "onResize")
 	var loaded_lang = str(TranslationServer.get_locale())
 	if loaded_lang == "en":

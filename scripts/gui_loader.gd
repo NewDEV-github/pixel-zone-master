@@ -45,4 +45,4 @@ func _ready():
 	file.store_line(str(date_month))
 	background_load.load_scene("res://scenes/Main Menu/GUI.tscn")
 	if OS.get_name() == 'Android':
-		OS.alert('Permissions!', "We need permittions to save game data on your device. Allow it in Application's settings. Thanks!")
+		OS.alert("We need permissions to save game data on your device. Allow it in Application's settings. Thanks!", 'Permissions!')
