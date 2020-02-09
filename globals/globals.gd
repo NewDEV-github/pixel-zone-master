@@ -29,7 +29,7 @@ func _get_collected():
 func _send_data():
 	debug_auth_player()
 	var playername = str(SilentWolf.Auth.logged_in_player)
-	if not str(playername) == null:
+	if not str(playername) == 'Null' or not str(playername) == 'null' or not str(playername) == '' or not str(playername) == null:
 		SilentWolf.Scores.persist_score(playername, game_state.points)
 		SilentWolf.Scores.get_high_scores()
 		

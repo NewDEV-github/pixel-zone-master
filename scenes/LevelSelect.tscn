@@ -10,8 +10,6 @@
 [ext_resource path="res://textures/LevelSelect/2019_05_31_162630_0.png" type="Texture" id=8]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=9]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "IC_01"
 length = 100.0

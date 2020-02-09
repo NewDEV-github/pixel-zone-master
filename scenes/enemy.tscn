@@ -148,7 +148,7 @@ tracks/0/keys = {
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 16.3316
-height = 26.8661
+height = 10.3945
 
 [sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 1
@@ -163,7 +163,7 @@ orbit_velocity_random = 0.0
 script = ExtResource( 1 )
 
 [node name="Enabler" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 16.2569, 11.0034 )
+position = Vector2( 14.4553, 10.746 )
 scale = Vector2( 23.5056, 10.8629 )
 pause_particles = false
 

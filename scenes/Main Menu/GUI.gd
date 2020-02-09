@@ -11,7 +11,14 @@ var adInterstitialId = "ca-app-pub-3142193952770678/9337455234" # [Replace with 
 var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testing option for rewarded videos, so you can use this id for testing]
 var date
 func _ready():
-#	show()
+	if str(os) == 'Android':
+		$up.show()
+		$down.show()
+		$VScrollBar.hide()
+	else:
+		$up.hide()
+		$down.hide()
+		$VScrollBar.show()
 #	SilentWolf.Auth.auto_login_player()
 	if globals.player_has_been_selected == true:
 		$CanvasLayer/Menu/Box.show()
@@ -144,7 +151,8 @@ func _on_Multiplayer_pressed():
 
 
 func _on_LevelEditor_pressed():
-	admob.showInterstitial()
+	if str(os) == 'Android':
+		admob.showInterstitial()
 	background_load.load_scene('res://Level Editor/Editor.tscn')
 
 
@@ -282,3 +290,11 @@ func _on_VScrollBar_value_changed(value):
 	$Control/control.set_position((Vector2(0, value*-10)))
 func _process(_delta):
 	$CanvasLayer/Menu/Box.set_anchors_preset(Control.PRESET_CENTER)
+
+
+func _on_up_pressed():
+	$VScrollBar.value -= 5
+
+
+func _on_down_pressed():
+	$VScrollBar.value += 5

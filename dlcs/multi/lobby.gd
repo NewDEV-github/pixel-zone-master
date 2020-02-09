@@ -1,6 +1,9 @@
 extends Control
 var scene
 var keep_data
+var os = OS.get_name()
+var admob = null
+var isReal = true
 #func _process(delta):
 #	keep_data = $Control/Control2/VBoxContainer/Keep.pressed
 #	if $connect/Control/CheckButton.pressed == true:
@@ -12,7 +15,12 @@ var keep_data
 #		$connect/Control/ROBI2.hide()
 #		$connect/join.show()
 func _ready():
-
+	if(Engine.has_singleton("AdMob")):
+		print('HAS SINGLETON')
+		admob = Engine.get_singleton("AdMob")
+		admob.init(isReal, get_instance_id())
+	if str(os) == 'Android':
+		admob.hideBanner()
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
 	gamestate.connect("player_list_changed", self, "refresh_lobby")

@@ -1,5 +1,5 @@
 extends Control
-var logged_player = str(SilentWolf.Auth.logged_in_player)
+#var logged_player = str(SilentWolf.Auth.logged_in_player)
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 func _ready():
 #	var scene_name = SilentWolf.auth_config.redirect_to_scene
@@ -80,3 +80,7 @@ func _on_registration_failed(error):
 
 func _on_Button_pressed():
 	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
+
+
+func _on_CofirmReg_pressed():
+	_on_RegisterButton_pressed()

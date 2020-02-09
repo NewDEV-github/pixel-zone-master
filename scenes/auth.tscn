@@ -78,6 +78,7 @@ margin_bottom = 168.0
 hint_tooltip = "Password should contain at least 8 characters including uppercase
 and lowercase letters, numbers and (optionally) special characters."
 max_length = 20
+secret = true
 placeholder_text = "AUTH_PASS"
 
 [node name="confirmpass" type="LineEdit" parent="MainCon/Reg/RegCon"]
@@ -85,6 +86,7 @@ margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
 max_length = 20
+secret = true
 placeholder_text = "AUTH_CONFIRM_PASS"
 
 [node name="CofirmReg" type="Button" parent="MainCon/Reg/RegCon"]
@@ -199,6 +201,6 @@ text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_CofirmReg_pressed"]
 [connection signal="pressed" from="MainCon/login/LogCon/ConfirmLog" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

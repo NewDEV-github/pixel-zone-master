@@ -151,19 +151,19 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("VScrollBar:visible")
+tracks/3/path = NodePath("CanvasLayer/Menu:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer/Menu:modulate")
+tracks/4/path = NodePath("CanvasLayer/Menu:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -171,11 +171,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("CanvasLayer/Menu:visible")
+tracks/5/path = NodePath("up:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -183,8 +183,20 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("down:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="GUI" type="Control"]
@@ -414,7 +426,6 @@ __meta__ = {
 }
 
 [node name="Character" type="WindowDialog" parent="CanvasLayer/Menu"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -548,6 +559,32 @@ resizable = true
 dialog_text = "Do you really want to quit?"
 
 [node name="parallax_bg" parent="." instance=ExtResource( 9 )]
+
+[node name="down" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = 100.0
+margin_right = 80.0
+margin_bottom = 140.0
+rect_rotation = 90.0
+text = ">"
+
+[node name="up" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -100.0
+margin_right = 40.0
+margin_bottom = -60.0
+rect_rotation = -90.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="toggled" from="CanvasLayer/Ads/BtnBanner" to="." method="_on_BtnBanner_toggled"]
 [connection signal="pressed" from="CanvasLayer/Ads/BtnInterstitial" to="." method="_on_BtnInterstitial_pressed"]
@@ -570,3 +607,5 @@ dialog_text = "Do you really want to quit?"
 [connection signal="pressed" from="CanvasLayer/Menu/SelectCharacter" to="." method="_on_Button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/Menu/UpdateDialog" to="." method="_on_UpdateDialog_confirmed"]
 [connection signal="confirmed" from="CanvasLayer/Menu/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
+[connection signal="pressed" from="down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="up" to="." method="_on_up_pressed"]

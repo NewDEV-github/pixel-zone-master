@@ -15,11 +15,30 @@ func _load():
 	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
+# warning-ignore:return_value_discarded
+	OS.request_permissions()
 #	ads.admob.showBanner()
 	var conf = File.new()
-#	if conf.file_exists('user://dlc.txt'):
-#		ProjectSettings.load_resource_pack('user://dlc.pck')
-#	ProjectSettings.save()
+#	if not conf.file_exists('user://game.cfg'):
+#		var con = ConfigFile.new()
+#		con.load('user://game.cfg')
+#		con.set_value('Levels', '1', 'true')
+#		con.set_value('Levels', '2', 'true')
+#		con.set_value('Levels', '3', 'true')
+#		con.set_value('Levels', '4', 'true')
+#		con.set_value('Levels', '5', 'true')
+#		con.set_value('Levels', '6', 'true')
+#		con.set_value('Levels', '7', 'true')
+#		con.set_value('Levels', '8', 'true')
+#		con.set_value('Levels', '9', 'true')
+#		con.set_value('Levels', '10', 'true')
+#		con.set_value('Levels', '11', 'true')
+#		con.set_value('Levels', '12', 'true')
+#		con.set_value('Levels', '13', 'true')
+#		con.set_value('Levels', '14', 'true')
+#		con.set_value('Levels', '15', 'true')
+#		con.set_value('Levels', '16', 'true')
+#		con.save()
 
 #	var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	var vconf = ConfigFile.new()

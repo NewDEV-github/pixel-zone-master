@@ -124,8 +124,6 @@
 [ext_resource path="res://Level Editor/single tiles/tileset_ca_32.png" type="Texture" id=122]
 [ext_resource path="res://Level Editor/single tiles/tileset_ca_28.png" type="Texture" id=123]
 
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 
 [node name="Control" type="Control"]
