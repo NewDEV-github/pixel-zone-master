@@ -87,6 +87,7 @@ gamestate="*res://globals/gamestate.gd"
 background_load="*res://scenes/background_load.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 AdvancedBackgroundLoader="*res://addons/Advanced Background Loader/background_load.gd"
+ads="*res://admob-ads/main.gd"
 
 [debug]
 

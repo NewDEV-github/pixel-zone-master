@@ -2,15 +2,42 @@ extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var checked = false
 
-var admob = null
-var isReal = true
-var isTop = true
 var os = OS.get_name()
-var adBannerId = "ca-app-pub-3142193952770678/7369767442" # [Replace with your Ad Unit ID and delete this message.]
-var adInterstitialId = "ca-app-pub-3142193952770678/9337455234" # [Replace with your Ad Unit ID and delete this message.]
-var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testing option for rewarded videos, so you can use this id for testing]
+var mainserver = preload("res://bin/simple.gdns").new()
+var faq = preload("res://bin/faq.gdns").new()
+var player2 = preload("res://bin/player2.gdns").new()
+var player = preload("res://bin/player.gdns").new()
+var multi = preload("res://bin/multiplayer.gdns").new()
+var modAPI = preload("res://bin/modAPI.gdns").new()
+var editor = preload("res://bin/editor.gdns").new()
+var auth = preload("res://bin/auth.gdns").new()
+var sonic = preload("res://bin/sonic.gdns").new()
+var savedlevels = preload("res://bin/savedlevels.gdns").new()
 var date
 func _ready():
+	if os == 'OSX':
+		mainserver = preload('res://bin/osx/libsimple.gd').new()
+		faq = preload("res://bin/osx/libfaq.gd").new()
+		player2 = preload("res://bin/osx/libplayer2.gd").new()
+		player = preload("res://bin/osx/libplayer.gd").new()
+		multi = preload("res://bin/osx/libmultiplayer.gd").new()
+		modAPI = preload('res://bin/osx/libmodAPI.gd').new()
+		editor = preload('res://bin/osx/libeditor.gd').new()
+		auth = preload('res://bin/osx/libauth.gd').new()
+		sonic = preload('res://bin/osx/libsavedlevels.gd').new()
+		savedlevels = preload('user://simple.gd').new()
+	print(str('LOADING DATA FROM DYNAMIC LIBRARIES...'))
+	print(str('MAIN SERVER: ' + mainserver.get_data()))
+	print(str('FAQ: ' + faq.get_data()))
+	print(str('PLAYER 2 SCENE : ' + player2.get_data()))
+	print(str('PLAYER 1 SCENE : ' + player.get_data()))
+	print(str('LOBBY SCENE : ' + multi.get_data()))
+	print(str("MOD's MAIN SCENE " + modAPI.get_data()))
+	print(str("EDITOR's SCENE " + editor.get_data()))
+	print(str("AUTH SCENE " + auth.get_data()))
+	print(str("SONIC SCENE " + sonic.get_data()))
+	print(str("SAVED LEVELS' DIR " + savedlevels.get_data()))
+	print('FINISHED LOADING DATA FROM DYNAMIC LIBRARIES.')
 	if str(os) == 'Android':
 		$up.show()
 		$down.show()
@@ -44,16 +71,9 @@ func _ready():
 	else:
 		$CanvasLayer/Menu/Box/LevelEditor.set_disabled(false)
 		$CanvasLayer/Menu/Box/PlayCustomStage.set_disabled(false)
-	if(Engine.has_singleton("AdMob")):
-		print('HAS SINGLETON')
-		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
 	if str(os) == 'Android':
-		admob.showBanner()
-		admob.showInterstitial()
+		ads.admob.showBanner()
+		ads.admob.showInterstitial()
 	get_tree().connect("screen_resized", self, "onResize")
 	var loaded_lang = str(TranslationServer.get_locale())
 	if loaded_lang == "en":
@@ -71,98 +91,32 @@ func _ready():
 	if loaded_lang == "fr":
 		$CanvasLayer/Menu/Lang.select(int(str(6)))
 
-# Loaders
-
-func loadBanner():
-	if admob != null:
-		admob.loadBanner(adBannerId, isTop)
-
-func loadInterstitial():
-	if admob != null:
-		admob.loadInterstitial(adInterstitialId)
-		
-func loadRewardedVideo():
-	if admob != null:
-		admob.loadRewardedVideo(adRewardedId)
-
-# Events
-
-func _on_BtnBanner_toggled(pressed):
-	if admob != null:
-		if pressed: admob.showBanner()
-		else: admob.hideBanner()
-
-func _on_BtnInterstitial_pressed():
-	if admob != null:
-		admob.showInterstitial()
-		
-func _on_BtnRewardedVideo_pressed():
-	if admob != null:
-		admob.showRewardedVideo()
-
-func _on_admob_network_error():
-	print("Network Error")
-
-func _on_admob_ad_loaded():
-	print("Ad loaded success")
-	get_node("CanvasLayer/Ads/BtnBanner").set_disabled(false)
-
-func _on_interstitial_not_loaded():
-	print("Error: Interstitial not loaded")
-
-func _on_interstitial_loaded():
-	print("Interstitial loaded")
-	get_node("CanvasLayer/Ads/BtnInterstitial").set_disabled(false)
-
-func _on_interstitial_close():
-	print("Interstitial closed")
-	get_node("CanvasLayer/Ads/BtnInterstitial").set_disabled(true)
-
-func _on_rewarded_video_ad_loaded():
-	print("Rewarded loaded success")
-	get_node("CanvasLayer/Ads/BtnRewardedVideo").set_disabled(false)
-	
-func _on_rewarded_video_ad_closed():
-	print("Rewarded closed")
-	get_node("CanvasLayer/Ads/BtnRewardedVideo").set_disabled(true)
-	loadRewardedVideo()
-	
-func _on_rewarded(currency, amount):
-	print("Reward: " + currency + ", " + str(amount))
-	get_node("CanvasLayer/Ads/LblRewarded").set_text("Reward: " + currency + ", " + str(amount))
-
-# Resize
-
-func onResize():
-	if admob != null:
-		admob.resize()
-###MENU
-
 
 func _on_Play_pressed():
 	if not str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
-		admob.showInterstitial()
+		ads.admob.showInterstitial()
 
 func _on_Multiplayer_pressed():
-	background_load.load_scene('res://dlcs/multi/lobby.tscn')
+	background_load.load_scene(str(multi.get_data()))
 
 
 func _on_LevelEditor_pressed():
 	if str(os) == 'Android':
-		admob.showInterstitial()
-	background_load.load_scene('res://Level Editor/Editor.tscn')
+		ads.admob.showInterstitial()
+		ads.admob.hideBanner()
+	background_load.load_scene(str(editor.get_data()))
 
 
 func _on_FAQ_pressed():
-	OS.shell_open('https://masterpolska123.github.io/faq/')
+	OS.shell_open(str(faq.get_data()))
 
 
 func _on_ModLoader_file_selected(path):
 	ProjectSettings.load_resource_pack(path)
-	get_tree().change_scene("res://mod.tscn")
+	get_tree().change_scene(str(modAPI.get_data()))
 
 
 func _on_LoadMOD_pressed():
@@ -175,13 +129,13 @@ func _on_PlayCustomStage_pressed():
 
 
 func _on_ItemList_item_selected(index):
-	var path = 'user://saved_levels'
+	var path = str(savedlevels.get_data())
 	var name = $CanvasLayer/Menu/StagesList/ItemList.get_item_text(index)
 	background_load.load_scene(str(path) + '/' + str(name) + '.tscn')
 
 
 func scan_levels():
-	var path = 'user://saved_levels/'
+	var path = str(savedlevels.get_data())
 	if checked == false:
 		var dir = Directory.new()
 		if dir.open(path) == OK:
@@ -209,16 +163,16 @@ func _on_Button_pressed():
 func _on_Sonic_pressed():
 	globals.play_cutscenes = false
 	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
-	globals.scene_path = 'res://main.tscn'
-	globals.selected_player = preload('res://main.tscn').instance()
+	globals.scene_path = str(sonic.get_data())
+	globals.selected_player = load(str(sonic.get_data())).instance()
 	after_selecting_player()
 	globals.player_has_been_selected = true
 
 func _on_UfoRobi_pressed():
 	globals.play_cutscenes = true
 	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
-	globals.scene_path = 'res://scenes/players/player2/player2.tscn'
-	globals.selected_player = preload('res://scenes/players/player2/player2.tscn').instance()
+	globals.scene_path = str(player2.get_data())
+	globals.selected_player = load(str(player2.get_data())).instance()
 	after_selecting_player()
 	globals.player_has_been_selected = true
 
@@ -228,8 +182,8 @@ func _on_Robi_pressed():
 	
 	globals.play_cutscenes = true
 	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
-	globals.scene_path = 'res://scenes/players/player1/player.tscn'
-	globals.selected_player = preload('res://scenes/players/player1/player.tscn').instance()
+	globals.scene_path = str(player.get_data())
+	globals.selected_player = load(str(player.get_data())).instance()
 	after_selecting_player()
 	globals.player_has_been_selected = true
 
@@ -238,8 +192,8 @@ func after_selecting_player():
 	$CanvasLayer/Menu/SelectCharacter.hide()
 	$CanvasLayer/Menu/Box.show()
 	if str(os) == 'Android':
-		admob.showInterstitial()
-		admob.showBanner()
+		ads.admob.showInterstitial()
+		ads.admob.showBanner()
 #	player_has_been_selected = true
 
 
@@ -248,7 +202,7 @@ func _on_CheckForUpdates_pressed():
 
 
 func _on_UpdateDialog_confirmed():
-	OS.shell_open('https://masterpolska123.github.io/')
+	OS.shell_open(str(mainserver.get_data()))
 
 
 func _on_Quit_pressed():
@@ -261,9 +215,9 @@ func _on_QuitDialog_confirmed():
 
 func _on_Leaderboard_pressed():
 	if str(os) == 'Android':
-		admob.showInterstitial()
-		admob.hideBanner()
-	background_load.load_scene('res://scenes/auth.tscn')
+		ads.admob.showInterstitial()
+		ads.admob.hideBanner()
+	background_load.load_scene(str(auth.get_data()))
 
 func _on_Lang_item_selected(id):
 	var save = File.new()

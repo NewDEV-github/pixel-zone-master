@@ -7,37 +7,14 @@ var isReal = true
 var isTop = true
 
 func _ready():
-	if(Engine.has_singleton("AdMob")):
-		print('HAS SINGLETON')
-		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
 	if str(OS.get_name()) == 'Android':
-		admob.showBanner()
-func loadBanner():
-	if admob != null:
-		admob.loadBanner(adBannerId, isTop)
-
-func loadInterstitial():
-	if admob != null:
-		admob.loadInterstitial(adInterstitialId)
-		
-func loadRewardedVideo():
-	if admob != null:
-		admob.loadRewardedVideo(adRewardedId)
-
-func _game_over():
-	show()
-	$AnimationPlayer.play("game_over")
-
+		ads.admob.showBanner()
 
 func _on_Button2_pressed():
 	if str(OS.get_name()) == 'Android':
-		admob.showInterstitial()
+		ads.admob.showInterstitial()
 	get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
 func _on_Button_pressed():
 	if str(OS.get_name()) == 'Android':
-		admob.showInterstitial()
+		ads.admob.showInterstitial()
 	get_tree().quit()

@@ -6,22 +6,7 @@ func _ready():
 	globals._set_player_pos(0,0)
 	player_default.restart_position()
 	globals.on_scene_changed()
-	var unlock = File.new()
-	unlock.open_encrypted_with_pass("user://save_data.1", File.READ, str(34567865))
-	var decrypted_sav_1 = int(str(unlock.get_line()))
-	unlock.close()
-	unlock.open_encrypted_with_pass("user://save_data.2", File.READ, str(34567865))
-	var decrypted_sav_2 = int(str(unlock.get_line()))
-	unlock.close()
-	if decrypted_sav_1 == decrypted_sav_2:
-		if not int(str(decrypted_sav_1)) >= 1:
-			var a = File.new()
-			a.open_encrypted_with_pass("user://save_data.1", File.WRITE, str(34567865))
-			a.store_line("8")
-			a.close()
-			a.open_encrypted_with_pass("user://save_data.2", File.WRITE, str(34567865))
-			a.store_line("8")
-			a.close()
+
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
@@ -40,3 +25,9 @@ func _on_Area2D3_body_entered(body):
 func _on_Area2D3_body_exited(body):
 	if body.name == "Player":
 		$Light2D.set_visible(true)
+
+func _process(_delta):
+	var unlock = File.new()
+	unlock.open('user://sav.s8', File.WRITE)
+	unlock.close()
+	set_process(false)

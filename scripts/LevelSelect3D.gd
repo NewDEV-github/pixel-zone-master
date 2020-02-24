@@ -37,49 +37,24 @@ func _on_select8_pressed():
 func _on_select9_pressed():
 	background_load.load_scene("res://scenes/stages/hill/hill_2.tscn")
 func _ready():
-#	var conf = ConfigFile.new()
-#	conf.load(str(documents) + '/Pixel Zone/.data/settings/game.ini')
-#	var loaded_config = str(conf.get_value('saves', 'game_pass', null))
-	var unlock = File.new()
-	unlock.open_encrypted_with_pass("user://save_data.1", File.READ, str(34567865))
-	var decrypted_sav_1 = int(str(unlock.get_line()))
-	unlock.close()
-	unlock.open_encrypted_with_pass("user://save_data.2", File.READ, str(34567865))
-	var decrypted_sav_2 = int(str(unlock.get_line()))
-	unlock.close()
-	if decrypted_sav_1 == decrypted_sav_2:
-		if int(str(decrypted_sav_1)) >= 2:
-			$control/PixelZone02/select2.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 3:
-			$control/IceCap01/select3.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 4:
-			$control/IceCap02/select4.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 5:
-			$control/IceCap03/select5.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 6:
-			$control/JungleRuins01/select6.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 7:
-			$control/JungleRuins02/select7.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 8:
-			$control/JungleRuins03/select8.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 9:
-			$control/Hill01/select10.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 10:
-			$control/Hill02/select9.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 11:
-			$control/Hill03/select11.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 12:
-			$control/SciFi01/select12.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 13:
-			$control/SciFi02/select13.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 14:
-			$control/SciFi03/select14.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 15:
-			$control/CastleMania01/select15a.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 16:
-			$control/CastleMania02/select15b.set_disabled(false)
-		if int(str(decrypted_sav_1)) >= 17:
-			$control/CastleMania03/select15c.set_disabled(false)
+	var file = File.new()
+	print(str(!file.file_exists('user://sav.s3')))
+	$control/PixelZone02/select2.set_disabled(!file.file_exists('user://sav.s2'))
+	$control/IceCap01/select3.set_disabled(!file.file_exists('user://sav.s3'))
+	$control/IceCap02/select4.set_disabled(!file.file_exists('user://sav.s4'))
+	$control/IceCap03/select5.set_disabled(!file.file_exists('user://sav.s5'))
+	$control/JungleRuins01/select6.set_disabled(!file.file_exists('user://sav.s6'))
+	$control/JungleRuins02/select7.set_disabled(!file.file_exists('user://sav.s7'))
+	$control/JungleRuins03/select8.set_disabled(!file.file_exists('user://sav.s8'))
+	$control/Hill01/select10.set_disabled(!file.file_exists('user://sav.s9'))
+	$control/Hill02/select9.set_disabled(!file.file_exists('user://sav.s10'))
+	$control/Hill03/select11.set_disabled(!file.file_exists('user://sav.s11'))
+	$control/SciFi01/select12.set_disabled(!file.file_exists('user://sav.s12'))
+	$control/SciFi02/select13.set_disabled(!file.file_exists('user://sav.s13'))
+	$control/SciFi03/select14.set_disabled(!file.file_exists('user://sav.s14'))
+	$control/CastleMania01/select15a.set_disabled(!file.file_exists('user://sav.s15'))
+	$control/CastleMania02/select15b.set_disabled(!file.file_exists('user://sav.s16'))
+	$control/CastleMania03/select15c.set_disabled(!file.file_exists('user://sav.s17'))
 ########if game was passed
 #		if str(loaded_config) == 'true':
 #			$control/PixelZone02/select2.set_disabled(false)

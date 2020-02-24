@@ -20,7 +20,7 @@ export (String) var load_name
 func _on_Button2_pressed():
 	var email = $Control/HBoxContainer/email.text
 	var password = $Control/HBoxContainer/password.text
-	Firebase.Auth.login_with_email_and_password(email, password)
+#	Firebase.Auth.login_with_email_and_password(email, password)
 	var save_file = File.new()
 	save_file.open_encrypted_with_pass(str(documents)  + "/Pixel Zone/.data/name.save", File.WRITE, str(2345654))
 	save_file.store_line(email)

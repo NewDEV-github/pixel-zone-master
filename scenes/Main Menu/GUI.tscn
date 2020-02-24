@@ -276,57 +276,6 @@ anims/new_ANDROID = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Ads" type="Control" parent="CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 1
-theme = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BtnBanner" type="Button" parent="CanvasLayer/Ads"]
-margin_left = 437.0
-margin_top = 220.0
-margin_right = 587.0
-margin_bottom = 295.0
-toggle_mode = true
-text = "Show/Hide Banner"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BtnInterstitial" type="Button" parent="CanvasLayer/Ads"]
-margin_left = 437.0
-margin_top = 305.0
-margin_right = 587.0
-margin_bottom = 380.0
-text = "Show Interstitial"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BtnRewardedVideo" type="Button" parent="CanvasLayer/Ads"]
-margin_left = 437.0
-margin_top = 394.0
-margin_right = 588.0
-margin_bottom = 469.0
-text = "Show Rewarded Video"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LblRewarded" type="Label" parent="CanvasLayer/Ads"]
-margin_right = 1026.0
-margin_bottom = 32.0
-text = "REWARDED VIDEO RETURN"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Menu" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -516,8 +465,12 @@ current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
 current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="StagesList" type="WindowDialog" parent="CanvasLayer/Menu"]
+margin_top = 221.0
 margin_right = 348.0
 margin_bottom = 622.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer/Menu/StagesList"]
 anchor_right = 1.0
@@ -586,9 +539,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
-[connection signal="toggled" from="CanvasLayer/Ads/BtnBanner" to="." method="_on_BtnBanner_toggled"]
-[connection signal="pressed" from="CanvasLayer/Ads/BtnInterstitial" to="." method="_on_BtnInterstitial_pressed"]
-[connection signal="pressed" from="CanvasLayer/Ads/BtnRewardedVideo" to="." method="_on_BtnRewardedVideo_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/Box/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/Box/Multiplayer" to="." method="_on_Multiplayer_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/Box/LevelEditor" to="." method="_on_LevelEditor_pressed"]
