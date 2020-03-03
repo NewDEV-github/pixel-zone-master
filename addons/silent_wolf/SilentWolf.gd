@@ -1,7 +1,7 @@
 extends Node
 
-onready var Scores = Node.new()
 onready var Auth = Node.new()
+onready var Scores = Node.new()
 onready var Players = Node.new()
 
 #
@@ -30,12 +30,19 @@ var auth_config = {
 	"saved_session_expiration_days": 30
 }
 
+var auth_script = load("res://addons/silent_wolf/Auth/Auth.gd")
+var scores_script = load("res://addons/silent_wolf/Scores/Scores.gd")
+var players_script = load("res://addons/silent_wolf/Players/Players.gd")
+
 func _ready():
-	Scores.set_script(preload("res://addons/silent_wolf/Scores/Scores.gd"))
-	add_child(Scores)
-	Auth.set_script(preload("res://addons/silent_wolf/Auth/Auth.gd"))
+	Auth.set_script(auth_script)
+	#Auth.set_script(preload("res://addons/silent_wolf/Auth/Auth.gd"))
 	add_child(Auth)
-	Players.set_script(preload("res://addons/silent_wolf/Players/Players.gd"))
+	Scores.set_script(scores_script)
+	#Scores.set_script(preload("res://addons/silent_wolf/Scores/Scores.gd"))
+	add_child(Scores)
+	Players.set_script(players_script)
+	#Players.set_script(preload("res://addons/silent_wolf/Players/Players.gd"))
 	add_child(Players)
 
 func configure(json_config):

@@ -1,40 +1,23 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Scores/Leaderboard.gd" type="Script" id=1]
-[ext_resource path="res://addons/silent_wolf/Scores/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 76
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=3]
 
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OldBoard" type="MarginContainer" parent="."]
-visible = false
-margin_left = 50.0
-margin_right = 50.0
-margin_bottom = 40.0
-theme = ExtResource( 5 )
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 0.773438, 0.773438, 0.773438, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="HighScores" type="TextureRect" parent="OldBoard"]
-margin_bottom = 40.0
-
-[node name="Board" type="VBoxContainer" parent="."]
+[node name="Board" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 5 )
@@ -42,64 +25,157 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleContainer" type="CenterContainer" parent="Board"]
-margin_right = 1024.0
-margin_bottom = 93.0
+[node name="ScoreItemContainer" type="VBoxContainer" parent="Board"]
+anchor_left = 0.0488281
+anchor_top = 0.0833333
+anchor_right = 0.930664
+anchor_bottom = 0.916667
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="Label" type="Label" parent="Board/TitleContainer"]
-margin_left = 243.0
-margin_right = 780.0
-margin_bottom = 93.0
-custom_fonts/font = SubResource( 1 )
-text = "Leaderboard"
-
-[node name="MessageContainer" type="CenterContainer" parent="Board"]
+[node name="VSlider" type="VSlider" parent="Board"]
 visible = false
-margin_top = 89.0
-margin_right = 1864.0
-margin_bottom = 126.0
-
-[node name="TextMessage" type="Label" parent="Board/MessageContainer"]
-margin_left = 785.0
-margin_right = 1079.0
-margin_bottom = 45.0
-custom_fonts/font = SubResource( 2 )
-text = "Loading scores..."
-valign = 1
-
-[node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
-margin_top = 97.0
-margin_right = 1024.0
-margin_bottom = 215.0
-
-[node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
-margin_left = 162.0
-margin_right = 861.0
-margin_bottom = 118.0
-text = "Close Leaderboard"
-
-[node name="HighScores" type="CenterContainer" parent="Board"]
-margin_top = 219.0
-margin_right = 1024.0
-margin_bottom = 319.0
-rect_min_size = Vector2( 0, 100 )
-theme = SubResource( 3 )
-
-[node name="ScoreItemContainer" type="VBoxContainer" parent="Board/HighScores"]
-margin_left = 512.0
+margin_left = 15.362
 margin_top = 50.0
-margin_right = 512.0
-margin_bottom = 50.0
-
-[node name="Logout" type="Button" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -39.0
-margin_right = 116.0
-theme = ExtResource( 5 )
-text = "LOGOUT"
+margin_right = 31.362
+margin_bottom = 550.0
+min_value = -15.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
-[connection signal="pressed" from="Logout" to="." method="_on_Logout_pressed"]
+
+[node name="Label" type="Label" parent="Board"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -81.5
+margin_right = 81.5
+margin_bottom = 39.0
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Button" parent="."]
+anchor_left = 0.9375
+anchor_top = 0.266667
+anchor_right = 0.976563
+anchor_bottom = 0.266667
+margin_top = 40.0
+margin_bottom = 80.0
+rect_rotation = -90.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="down" type="Button" parent="."]
+anchor_left = 0.952296
+anchor_top = 0.667947
+anchor_right = 0.952296
+anchor_bottom = 0.734614
+margin_left = 24.8494
+margin_top = -0.76828
+margin_right = 64.8495
+margin_bottom = -0.76828
+rect_rotation = 90.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -227.5
+margin_top = -133.0
+margin_right = 227.5
+margin_bottom = 133.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -227.5
+margin_top = -41.0
+margin_right = 227.5
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logout" type="Button" parent="WindowDialog/VBoxContainer"]
+margin_right = 455.0
+margin_bottom = 39.0
+theme = ExtResource( 5 )
+text = "QUIT & LOGOUT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="WindowDialog/VBoxContainer"]
+margin_top = 43.0
+margin_right = 455.0
+margin_bottom = 82.0
+text = "QUIT AND STAY LOGGED IN"
+
+[node name="Quit_leaderboard" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 39.0
+text = "Quit"
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.305882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoScores" type="Label" parent="Panel2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -98.0
+margin_top = -19.5
+margin_right = 98.0
+margin_bottom = 19.5
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "No Scores Yet!"
+align = 1
+valign = 1
+
+[node name="LoadingScores" type="Label" parent="Panel2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -129.0
+margin_top = -36.5
+margin_right = 129.0
+margin_bottom = 36.5
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "Loading Scores...
+It may take a while."
+align = 1
+valign = 1
+[connection signal="value_changed" from="Board/VSlider" to="." method="_on_VSlider_value_changed"]
+[connection signal="pressed" from="up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="WindowDialog/VBoxContainer/Logout" to="." method="_on_Logout_pressed"]
+[connection signal="pressed" from="WindowDialog/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Quit_leaderboard" to="." method="_on_Quit_leaderboard_pressed"]

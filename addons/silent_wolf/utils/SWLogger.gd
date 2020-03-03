@@ -5,6 +5,7 @@ func _ready():
 	
 static func error(text):
 	printerr(str(text))
+	push_error(str(text))
 
 static func info(text):
 	if SilentWolf.config.log_level > 0:
