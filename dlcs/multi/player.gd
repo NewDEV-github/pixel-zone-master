@@ -30,13 +30,8 @@ func _ready():
 	fpshide = $ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	fpsshow = $ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
 	if(Engine.has_singleton("AdMob")):
-		print('HAS SINGLETON')
-		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
-	admob.showBanner()
+		if str(OS.get_name()) == 'Android':
+			ads.admob.showBanner()
 func loadBanner():
 	if admob != null:
 		admob.loadBanner(adBannerId, isTop)

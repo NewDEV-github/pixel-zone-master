@@ -17,7 +17,7 @@ func _load():
 func _ready():
 # warning-ignore:return_value_discarded
 	OS.request_permissions()
-#	ads.admob.showBanner()
+	ads.admob.showBanner()
 	var conf = File.new()
 #	if not conf.file_exists('user://game.cfg'):
 #		var con = ConfigFile.new()

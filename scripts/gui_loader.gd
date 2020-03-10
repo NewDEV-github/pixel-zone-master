@@ -34,7 +34,7 @@ func _ready():
 #		loadBanner()
 #		loadInterstitial()
 #		loadRewardedVideo()
-#	admob.showBanner()
+#	ads.admob.showBanner()
 #	get_tree().connect("screen_resized", self, "onResize")
 
 #	var date_day = str(OS.get_date().day)

@@ -5,6 +5,11 @@ extends Node2D
 var admob = null
 var isReal = true
 var isTop = true
+
+export var banner_on_top:bool = true
+export var child_directed:bool = false
+export var is_personalized:bool = true
+export(String, "G", "PG", "T", "MA") var max_ad_content_rate = "G"
 var adBannerId = "ca-app-pub-3142193952770678/7369767442" # [Replace with your Ad Unit ID and delete this message.]
 var adInterstitialId = "ca-app-pub-3142193952770678/9337455234" # [Replace with your Ad Unit ID and delete this message.]
 var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testing option for rewarded videos, so you can use this id for testing]
@@ -15,13 +20,19 @@ func _ready():
 #	print(str(gamesite.get_data()))
 #	print(str(mainserver.get_data()))
 	if(Engine.has_singleton("AdMob")):
-		admob = Engine.get_singleton("AdMob")
-		admob.init(isReal, get_instance_id())
-		loadBanner()
-		loadInterstitial()
-		loadRewardedVideo()
-	admob.showBanner()
-	get_tree().connect("screen_resized", self, "onResize")
+		if str(OS.get_name()) == 'Android':
+			get_tree().connect("screen_resized", self, "onResize")
+			admob = Engine.get_singleton("AdMob")
+			admob.initWithContentRating(
+			isReal,
+			get_instance_id(),
+			child_directed,
+			is_personalized,
+			max_ad_content_rate
+			)
+			ads.admob.showBanner()
+		return true
+	return false
 
 # Loaders
 
@@ -41,7 +52,7 @@ func loadRewardedVideo():
 
 func _on_BtnBanner_toggled(pressed):
 	if admob != null:
-		if pressed: admob.showBanner()
+		if pressed: ads.admob.showBanner()
 		else: admob.hideBanner()
 
 func _on_BtnInterstitial_pressed():
@@ -57,34 +68,36 @@ func _on_admob_network_error():
 
 func _on_admob_ad_loaded():
 	print("Ad loaded success")
-	get_node("CanvasLayer/BtnBanner").set_disabled(false)
+#	get_node("CanvasLayer/BtnBanner").set_disabled(false)
 
 func _on_interstitial_not_loaded():
 	print("Error: Interstitial not loaded")
 
 func _on_interstitial_loaded():
 	print("Interstitial loaded")
-	get_node("CanvasLayer/BtnInterstitial").set_disabled(false)
+#	get_node("CanvasLayer/BtnInterstitial").set_disabled(false)
 
 func _on_interstitial_close():
 	print("Interstitial closed")
-	get_node("CanvasLayer/BtnInterstitial").set_disabled(true)
+#	get_node("CanvasLayer/BtnInterstitial").set_disabled(true)
 
 func _on_rewarded_video_ad_loaded():
 	print("Rewarded loaded success")
-	get_node("CanvasLayer/BtnRewardedVideo").set_disabled(false)
+#	get_node("CanvasLayer/BtnRewardedVideo").set_disabled(false)k
 	
 func _on_rewarded_video_ad_closed():
 	print("Rewarded closed")
-	get_node("CanvasLayer/BtnRewardedVideo").set_disabled(true)
+#	get_node("CanvasLayer/BtnRewardedVideo").set_disabled(true)
 	loadRewardedVideo()
 	
 func _on_rewarded(currency, amount):
 	print("Reward: " + currency + ", " + str(amount))
-	get_node("CanvasLayer/LblRewarded").set_text("Reward: " + currency + ", " + str(amount))
+#	get_node("CanvasLayer/LblRewarded").set_text("Reward: " + currency + ", " + str(amount))
 
 # Resize
 
 func onResize():
 	if admob != null:
 		admob.resize()
+
+
