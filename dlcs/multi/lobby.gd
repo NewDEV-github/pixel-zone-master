@@ -17,7 +17,7 @@ var isReal = true
 func _ready():
 	if(Engine.has_singleton("AdMob")):
 		if str(os) == 'Android':
-			admob.hideBanner()
+			admob.hide_banner()
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
 	gamestate.connect("player_list_changed", self, "refresh_lobby")

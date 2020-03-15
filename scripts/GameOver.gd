@@ -8,13 +8,20 @@ var isTop = true
 
 func _ready():
 	if str(OS.get_name()) == 'Android':
-		ads.admob.showBanner()
+		$Admob.load_banner()
+		$Admob.load_interstitial()
+#		$Admob.connect("banner_loaded", self, 'adloaded')
+#		$Admob.connect("interstitial_loaded", self, 'interstitialloaded')
+func adloaded():
+	pass
+func interstitialloaded():
+	pass
 
 func _on_Button2_pressed():
 	if str(OS.get_name()) == 'Android':
-		ads.admob.showInterstitial()
+		$Admob.show_interstitial()
 	get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
 func _on_Button_pressed():
 	if str(OS.get_name()) == 'Android':
-		ads.admob.showInterstitial()
+		$Admob.show_interstitial()
 	get_tree().quit()

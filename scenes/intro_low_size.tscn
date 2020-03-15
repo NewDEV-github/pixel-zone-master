@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/intro.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UMB14C3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "intro"
@@ -69,5 +70,14 @@ autoplay = "intro"
 anims/intro = SubResource( 1 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource( 3 )
+is_real = true
+banner_id = "ca-app-pub-3142193952770678/7369767442"
+interstitial_id = "ca-app-pub-3142193952770678/9337455234"
+rewarded_id = "ca-app-pub-3142193952770678/8372051443"
+child_directed = true
+max_ad_content_rate = "MA"
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

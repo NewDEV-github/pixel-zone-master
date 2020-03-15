@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://dlcs/multi/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://animations/loaded_level.tres" type="Animation" id=20]
 [ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=23]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -731,5 +732,13 @@ valign = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource( 23 )
+is_real = true
+banner_id = "ca-app-pub-3142193952770678/7369767442"
+interstitial_id = "ca-app-pub-3142193952770678/9337455234"
+rewarded_id = "ca-app-pub-3142193952770678/8372051443"
+max_ad_content_rate = "MA"
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

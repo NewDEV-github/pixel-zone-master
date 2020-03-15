@@ -29,21 +29,15 @@ var isTop = true
 func _ready():
 	fpshide = $ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	fpsshow = $ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")
-	if(Engine.has_singleton("AdMob")):
-		if str(OS.get_name()) == 'Android':
-			ads.admob.showBanner()
-func loadBanner():
-	if admob != null:
-		admob.loadBanner(adBannerId, isTop)
-
-func loadInterstitial():
-	if admob != null:
-		admob.loadInterstitial(adInterstitialId)
-		
-func loadRewardedVideo():
-	if admob != null:
-		admob.loadRewardedVideo(adRewardedId)
-
+	if str(OS.get_name()) == 'Android':
+		$Admob.load_banner()
+		$Admob.load_interstitial()
+		$Admob.connect("banner_loaded", self, 'adloaded')
+		$Admob.connect("interstitial_loaded", self, 'interstitialloaded')
+func adloaded():
+	$Admob.show_banner()
+func interstitialloaded():
+	$Admob.show_interstitial()
 func _physics_process(delta):
 #	if Input.is_action_just_pressed("console"):
 #		if $console/console.visible == false:
@@ -112,14 +106,14 @@ func _physics_process(delta):
 		linear_vel.y = -JUMP_SPEED
 		$sound_jump.play()
 	# Shooting
-#	if Input.is_action_just_pressed("shoot"):
-#		var weapon_current = preload("res://scenes/bullet.tscn").instance()
-#		weapon_current.position = $sprite/bullet_shoot.global_position #use node for shoot position
-#		weapon_current.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
-#		weapon_current.add_collision_exception_with(self) # don't want player to collide with bullet
-#		get_parent().add_child(weapon_current) #don't want bullet to move with me, so add it as child of parent
-#		$sound_shoot.play()
-#		shoot_time = 0
+	if Input.is_action_just_pressed("shoot"):
+		var weapon_current = preload("res://scenes/bullet.tscn").instance()
+		weapon_current.position = $sprite/bullet_shoot.global_position #use node for shoot position
+		weapon_current.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
+		weapon_current.add_collision_exception_with(self) # don't want player to collide with bullet
+		get_parent().add_child(weapon_current) #don't want bullet to move with me, so add it as child of parent
+		$sound_shoot.play()
+		shoot_time = 0
 
 	### ANIMATION ###
 

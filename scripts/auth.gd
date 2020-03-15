@@ -84,3 +84,14 @@ func _on_Button_pressed():
 
 func _on_CofirmReg_pressed():
 	_on_RegisterButton_pressed()
+
+
+func _on_CheckBox_toggled(button_pressed):
+	if button_pressed == true:
+		$MainCon/Reg/RegCon/confirmpass.set_secret(false)
+		$MainCon/Reg/RegCon/pass.set_secret(false)
+		$MainCon/login/LogCon/pass.set_secret(false)
+	else:
+		$MainCon/Reg/RegCon/confirmpass.set_secret(true)
+		$MainCon/Reg/RegCon/pass.set_secret(true)
+		$MainCon/login/LogCon/pass.set_secret(true)

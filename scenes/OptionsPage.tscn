@@ -14,8 +14,6 @@
 [ext_resource path="res://scenes/controller-input-test/joypads.gd" type="Script" id=13]
 [ext_resource path="res://scenes/Custom_Music.gd" type="Script" id=14]
 
-
-
 [sub_resource type="InputEventAction" id=1]
 action = "ui_accept"
 
@@ -459,7 +457,6 @@ __meta__ = {
 }
 
 [node name="WindowDialog2" type="WindowDialog" parent="TabContainer/Graphics & Audio"]
-visible = true
 margin_right = 1015.0
 margin_bottom = 549.0
 window_title = "Advanced Settings"

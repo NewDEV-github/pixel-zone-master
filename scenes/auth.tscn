@@ -153,6 +153,12 @@ margin_right = 410.0
 margin_bottom = 168.0
 text = "AUTH_CONFIRM"
 
+[node name="CheckBox" type="CheckButton" parent="MainCon/login/LogCon"]
+margin_top = 172.0
+margin_right = 410.0
+margin_bottom = 211.0
+text = "show password"
+
 [node name="ERROR" type="Label" parent="."]
 visible = false
 anchor_left = 0.046685
@@ -203,4 +209,5 @@ __meta__ = {
 }
 [connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_CofirmReg_pressed"]
 [connection signal="pressed" from="MainCon/login/LogCon/ConfirmLog" to="." method="_on_LoginButton_pressed"]
+[connection signal="toggled" from="MainCon/login/LogCon/CheckBox" to="." method="_on_CheckBox_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

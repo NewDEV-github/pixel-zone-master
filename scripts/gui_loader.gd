@@ -25,17 +25,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#	print(str(downloadserver.get_data()))
-#	print(str(gamesite.get_data()))
-#	print(str(mainserver.get_data()))
-#	if(Engine.has_singleton("AdMob")):
-#		admob = Engine.get_singleton("AdMob")
-#		admob.init(isReal, get_instance_id())
-#		loadBanner()
-#		loadInterstitial()
-#		loadRewardedVideo()
-#	ads.admob.showBanner()
-#	get_tree().connect("screen_resized", self, "onResize")
 
 #	var date_day = str(OS.get_date().day)
 	var date_month = str(OS.get_date().month)

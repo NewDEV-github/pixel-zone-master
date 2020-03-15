@@ -62,6 +62,7 @@ func max_ad_content_rate_set(new_val) -> void:
 
 # initialization
 func init() -> bool:
+	print('Initializing...')
 	if(Engine.has_singleton("AdMob")):
 		_admob_singleton = Engine.get_singleton("AdMob")
 		_admob_singleton.initWithContentRating(
@@ -73,7 +74,7 @@ func init() -> bool:
 		)
 		return true
 	return false
-	
+
 # load
 
 func load_banner() -> void:

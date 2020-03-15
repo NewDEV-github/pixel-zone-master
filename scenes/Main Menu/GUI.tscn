@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=3]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=4]
 [ext_resource path="res://titles/pixel_adventure.tres" type="TileSet" id=5]
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
@@ -151,7 +152,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer/Menu:modulate")
+tracks/3/path = NodePath("Menu:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -163,7 +164,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer/Menu:visible")
+tracks/4/path = NodePath("Menu:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -197,6 +198,20 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Admob")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_banner"
+} ]
 }
 
 [node name="GUI" type="Control"]
@@ -259,7 +274,6 @@ margin_bottom = 100.0
 mouse_filter = 1
 
 [node name="VScrollBar" type="VSlider" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 16.0
@@ -274,9 +288,7 @@ anims/back_ANDROID = SubResource( 2 )
 anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 3 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Menu" type="Control" parent="CanvasLayer"]
+[node name="Menu" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -285,7 +297,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Box" type="VBoxContainer" parent="CanvasLayer/Menu"]
+[node name="Box" type="VBoxContainer" parent="Menu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -299,60 +311,60 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="Play" type="Button" parent="Menu/Box"]
 margin_right = 557.0
 margin_bottom = 39.0
 text = "KEY_Play"
 
-[node name="Multiplayer" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="Multiplayer" type="Button" parent="Menu/Box"]
 margin_top = 43.0
 margin_right = 557.0
 margin_bottom = 82.0
 text = "Multiplayer"
 
-[node name="LevelEditor" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="LevelEditor" type="Button" parent="Menu/Box"]
 margin_top = 86.0
 margin_right = 557.0
 margin_bottom = 125.0
 text = "KEY_EDITOR"
 
-[node name="FAQ" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="FAQ" type="Button" parent="Menu/Box"]
 margin_top = 129.0
 margin_right = 557.0
 margin_bottom = 168.0
 text = "FAQ"
 
-[node name="LoadMOD" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="LoadMOD" type="Button" parent="Menu/Box"]
 margin_top = 172.0
 margin_right = 557.0
 margin_bottom = 211.0
 text = "KEY_MOD"
 
-[node name="PlayCustomStage" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="PlayCustomStage" type="Button" parent="Menu/Box"]
 margin_top = 215.0
 margin_right = 557.0
 margin_bottom = 254.0
 text = "Play stage made in Level Editor"
 
-[node name="Leaderboard" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="Leaderboard" type="Button" parent="Menu/Box"]
 margin_top = 258.0
 margin_right = 557.0
 margin_bottom = 297.0
 text = "KEY_ONLINE_SC"
 
-[node name="CheckForUpdates" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="CheckForUpdates" type="Button" parent="Menu/Box"]
 margin_top = 301.0
 margin_right = 557.0
 margin_bottom = 340.0
 text = "KEY_UPDATE_CHECK"
 
-[node name="Quit" type="Button" parent="CanvasLayer/Menu/Box"]
+[node name="Quit" type="Button" parent="Menu/Box"]
 margin_top = 344.0
 margin_right = 557.0
 margin_bottom = 383.0
 text = "KEY_Quit"
 
-[node name="Label" type="Label" parent="CanvasLayer/Menu/Box"]
+[node name="Label" type="Label" parent="Menu/Box"]
 margin_top = 387.0
 margin_right = 557.0
 margin_bottom = 426.0
@@ -360,7 +372,7 @@ text = "KEY_TRANSLATIONS"
 align = 1
 valign = 1
 
-[node name="Lang" type="OptionButton" parent="CanvasLayer/Menu"]
+[node name="Lang" type="OptionButton" parent="Menu"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -374,7 +386,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Character" type="WindowDialog" parent="CanvasLayer/Menu"]
+[node name="Character" type="WindowDialog" parent="Menu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -387,14 +399,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Character"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Character"]
 anchor_right = 1.0
 anchor_bottom = 1.01685
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu/Character/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer"]
 margin_right = 756.0
 margin_bottom = 555.0
 size_flags_horizontal = 3
@@ -403,14 +415,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Robi" type="Button" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
+[node name="Robi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_right = 235.0
 margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Robi"
 
-[node name="infoLabel" type="Label" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
+[node name="infoLabel" type="Label" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 239.0
 margin_right = 517.0
 margin_bottom = 555.0
@@ -419,7 +431,7 @@ size_flags_vertical = 5
 text = "KEY_PLAYER_SELECT"
 align = 1
 
-[node name="UfoRobi" type="Button" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer"]
+[node name="UfoRobi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 521.0
 margin_right = 756.0
 margin_bottom = 555.0
@@ -427,7 +439,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Ufo Robi"
 
-[node name="HBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Menu/Character/VBoxContainer"]
+[node name="HBoxContainer2" type="VBoxContainer" parent="Menu/Character/VBoxContainer"]
 visible = false
 margin_top = 279.0
 margin_right = 756.0
@@ -435,7 +447,7 @@ margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="infoLabel" type="Label" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2"]
+[node name="infoLabel" type="Label" parent="Menu/Character/VBoxContainer/HBoxContainer2"]
 margin_right = 756.0
 margin_bottom = 73.0
 size_flags_horizontal = 3
@@ -444,7 +456,7 @@ text = "Sonic is property of SEGA.
 I didn't own him!"
 align = 1
 
-[node name="Sonic" type="Button" parent="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2"]
+[node name="Sonic" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer2"]
 margin_top = 77.0
 margin_right = 756.0
 margin_bottom = 276.0
@@ -452,7 +464,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Sonic"
 
-[node name="ModLoader" type="FileDialog" parent="CanvasLayer/Menu"]
+[node name="ModLoader" type="FileDialog" parent="Menu"]
 margin_right = 683.0
 margin_bottom = 429.0
 window_title = "Otwórz plik"
@@ -464,7 +476,7 @@ show_hidden_files = true
 current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
 current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
-[node name="StagesList" type="WindowDialog" parent="CanvasLayer/Menu"]
+[node name="StagesList" type="WindowDialog" parent="Menu"]
 margin_top = 221.0
 margin_right = 348.0
 margin_bottom = 622.0
@@ -472,11 +484,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer/Menu/StagesList"]
+[node name="ItemList" type="ItemList" parent="Menu/StagesList"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="SelectCharacter" type="Button" parent="CanvasLayer/Menu"]
+[node name="SelectCharacter" type="Button" parent="Menu"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -491,7 +503,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UpdateDialog" type="ConfirmationDialog" parent="CanvasLayer/Menu"]
+[node name="UpdateDialog" type="ConfirmationDialog" parent="Menu"]
 margin_left = 98.0822
 margin_top = 24.5205
 margin_right = 461.082
@@ -504,7 +516,7 @@ notifications.
 Then wait for notification about update"
 dialog_autowrap = true
 
-[node name="QuitDialog" type="ConfirmationDialog" parent="CanvasLayer/Menu"]
+[node name="QuitDialog" type="ConfirmationDialog" parent="Menu"]
 margin_right = 308.0
 margin_bottom = 102.0
 window_title = "Quit?"
@@ -538,24 +550,33 @@ text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource( 3 )
+is_real = true
+banner_id = "ca-app-pub-3142193952770678/7369767442"
+interstitial_id = "ca-app-pub-3142193952770678/9337455234"
+rewarded_id = "ca-app-pub-3142193952770678/8372051443"
+child_directed = true
+max_ad_content_rate = "MA"
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/Multiplayer" to="." method="_on_Multiplayer_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/LevelEditor" to="." method="_on_LevelEditor_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/FAQ" to="." method="_on_FAQ_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/LoadMOD" to="." method="_on_LoadMOD_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/PlayCustomStage" to="." method="_on_PlayCustomStage_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/Leaderboard" to="." method="_on_Leaderboard_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/CheckForUpdates" to="." method="_on_CheckForUpdates_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Box/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="item_selected" from="CanvasLayer/Menu/Lang" to="." method="_on_Lang_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/Robi" to="." method="_on_Robi_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/UfoRobi" to="." method="_on_UfoRobi_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2/Sonic" to="." method="_on_Sonic_pressed"]
-[connection signal="file_selected" from="CanvasLayer/Menu/ModLoader" to="." method="_on_ModLoader_file_selected"]
-[connection signal="item_selected" from="CanvasLayer/Menu/StagesList/ItemList" to="." method="_on_ItemList_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Menu/SelectCharacter" to="." method="_on_Button_pressed"]
-[connection signal="confirmed" from="CanvasLayer/Menu/UpdateDialog" to="." method="_on_UpdateDialog_confirmed"]
-[connection signal="confirmed" from="CanvasLayer/Menu/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
+[connection signal="pressed" from="Menu/Box/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/Box/Multiplayer" to="." method="_on_Multiplayer_pressed"]
+[connection signal="pressed" from="Menu/Box/LevelEditor" to="." method="_on_LevelEditor_pressed"]
+[connection signal="pressed" from="Menu/Box/FAQ" to="." method="_on_FAQ_pressed"]
+[connection signal="pressed" from="Menu/Box/LoadMOD" to="." method="_on_LoadMOD_pressed"]
+[connection signal="pressed" from="Menu/Box/PlayCustomStage" to="." method="_on_PlayCustomStage_pressed"]
+[connection signal="pressed" from="Menu/Box/Leaderboard" to="." method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="Menu/Box/CheckForUpdates" to="." method="_on_CheckForUpdates_pressed"]
+[connection signal="pressed" from="Menu/Box/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="item_selected" from="Menu/Lang" to="." method="_on_Lang_item_selected"]
+[connection signal="pressed" from="Menu/Character/VBoxContainer/HBoxContainer/Robi" to="." method="_on_Robi_pressed"]
+[connection signal="pressed" from="Menu/Character/VBoxContainer/HBoxContainer/UfoRobi" to="." method="_on_UfoRobi_pressed"]
+[connection signal="pressed" from="Menu/Character/VBoxContainer/HBoxContainer2/Sonic" to="." method="_on_Sonic_pressed"]
+[connection signal="file_selected" from="Menu/ModLoader" to="." method="_on_ModLoader_file_selected"]
+[connection signal="item_selected" from="Menu/StagesList/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Menu/SelectCharacter" to="." method="_on_Button_pressed"]
+[connection signal="confirmed" from="Menu/UpdateDialog" to="." method="_on_UpdateDialog_confirmed"]
+[connection signal="confirmed" from="Menu/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
 [connection signal="pressed" from="down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="up" to="." method="_on_up_pressed"]

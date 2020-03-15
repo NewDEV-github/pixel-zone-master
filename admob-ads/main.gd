@@ -9,7 +9,7 @@ var isTop = true
 export var banner_on_top:bool = true
 export var child_directed:bool = false
 export var is_personalized:bool = true
-export(String, "G", "PG", "T", "MA") var max_ad_content_rate = "G"
+export(String, "G", "PG", "T", "MA") var max_ad_content_rate = "MA"
 var adBannerId = "ca-app-pub-3142193952770678/7369767442" # [Replace with your Ad Unit ID and delete this message.]
 var adInterstitialId = "ca-app-pub-3142193952770678/9337455234" # [Replace with your Ad Unit ID and delete this message.]
 var adRewardedId = "ca-app-pub-3142193952770678/8372051443" # [There is no testing option for rewarded videos, so you can use this id for testing]
@@ -30,7 +30,7 @@ func _ready():
 			is_personalized,
 			max_ad_content_rate
 			)
-			ads.admob.showBanner()
+			$Admob.show_banner()
 		return true
 	return false
 
@@ -52,12 +52,12 @@ func loadRewardedVideo():
 
 func _on_BtnBanner_toggled(pressed):
 	if admob != null:
-		if pressed: ads.admob.showBanner()
-		else: admob.hideBanner()
+		if pressed: $Admob.show_banner()
+		else: admob.hide_banner()
 
 func _on_BtnInterstitial_pressed():
 	if admob != null:
-		admob.showInterstitial()
+		admob.show_interstitial()
 		
 func _on_BtnRewardedVideo_pressed():
 	if admob != null:

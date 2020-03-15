@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/players/player2/ai/player2.gd" type="Script" id=1]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=2]
 [ext_resource path="res://scenes/sprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=9]
 [ext_resource path="res://sounds/sound_jump.wav" type="AudioStream" id=10]
@@ -488,3 +489,6 @@ rotation = 1.5708
 [node name="RightWallSensor" type="RayCast2D" parent="."]
 position = Vector2( 8.62394, -0.594612 )
 rotation = 4.71239
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource( 2 )

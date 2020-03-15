@@ -17,7 +17,6 @@ func _load():
 func _ready():
 # warning-ignore:return_value_discarded
 	OS.request_permissions()
-	ads.admob.showBanner()
 	var conf = File.new()
 #	if not conf.file_exists('user://game.cfg'):
 #		var con = ConfigFile.new()
@@ -87,6 +86,15 @@ func _ready():
 	config_.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config_.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")
 	$AnimationPlayer.play("intro")
+	if str(OS.get_name()) == 'Android':
+		$Admob.load_banner()
+		$Admob.load_interstitial()
+#		$Admob.connect("banner_loaded", self, 'adloaded')
+#		$Admob.connect("interstitial_loaded", self, 'interstitialloaded')
+func adloaded():
+	$Admob.show_banner()
+func interstitialloaded():
+	$Admob.show_interstitial()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if not str(anim_name) == '':

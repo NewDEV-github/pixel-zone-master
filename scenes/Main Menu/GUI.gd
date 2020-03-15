@@ -15,7 +15,10 @@ var sonic = preload("res://bin/sonic.gdns").new()
 var savedlevels = preload("res://bin/savedlevels.gdns").new()
 var date
 func _ready():
-	if os == 'OSX':
+	if str(os)=='Android':
+		$Admob.load_banner()
+		$Admob.load_interstitial()
+	if os == 'OSX' or os == 'X11':
 		mainserver = preload('res://bin/osx/libsimple.gd').new()
 		faq = preload("res://bin/osx/libfaq.gd").new()
 		player2 = preload("res://bin/osx/libplayer2.gd").new()
@@ -24,8 +27,8 @@ func _ready():
 		modAPI = preload('res://bin/osx/libmodAPI.gd').new()
 		editor = preload('res://bin/osx/libeditor.gd').new()
 		auth = preload('res://bin/osx/libauth.gd').new()
-		sonic = preload('res://bin/osx/libsavedlevels.gd').new()
-		savedlevels = preload('user://simple.gd').new()
+		sonic = preload('res://bin/osx/libsonic.gd').new()
+		savedlevels = preload('res://bin/osx/libsavedlevels.gd').new()
 	print(str('LOADING DATA FROM DYNAMIC LIBRARIES...'))
 	print(str('MAIN SERVER: ' + mainserver.get_data()))
 	print(str('FAQ: ' + faq.get_data()))
@@ -48,56 +51,63 @@ func _ready():
 		$VScrollBar.show()
 #	SilentWolf.Auth.auto_login_player()
 	if globals.player_has_been_selected == true:
-		$CanvasLayer/Menu/Box.show()
-		$CanvasLayer/Menu/SelectCharacter.hide()
+		$Menu/Box.show()
+		$Menu/SelectCharacter.hide()
 	else:
-		$CanvasLayer/Menu/Box.hide()
-		$CanvasLayer/Menu/SelectCharacter.show()
+		$Menu/Box.hide()
+		$Menu/SelectCharacter.show()
 	var file = File.new()
 	file.open('user://date.dat', File.READ)
 	var currentline = str(file.get_line())
 	date = currentline
 	print(str(date))
 	if str(date) == '2':
-		$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2.show()
+		$Menu/Character/VBoxContainer/HBoxContainer2.show()
 	else:
-		$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer2.hide()
+		$Menu/Character/VBoxContainer/HBoxContainer2.hide()
 #	print(str(downloadserver.get_data()))
 #	print(str(gamesite.get_data()))
 #	print(str(mainserver.get_data()))
 	if str(os) == 'Android':
-		$CanvasLayer/Menu/Box/LevelEditor.set_disabled(true)
-		$CanvasLayer/Menu/Box/PlayCustomStage.set_disabled(true)
+		$Menu/Box/LevelEditor.set_disabled(true)
+		$Menu/Box/PlayCustomStage.set_disabled(true)
 	else:
-		$CanvasLayer/Menu/Box/LevelEditor.set_disabled(false)
-		$CanvasLayer/Menu/Box/PlayCustomStage.set_disabled(false)
-	if str(os) == 'Android':
-		ads.admob.showBanner()
-		ads.admob.showInterstitial()
+		$Menu/Box/LevelEditor.set_disabled(false)
+		$Menu/Box/PlayCustomStage.set_disabled(false)
+	if str(OS.get_name()) == 'Android':
+		$Admob.load_banner()
+		$Admob.load_interstitial()
+#		$Admob.connect("banner_loaded", self, 'adloaded')
+#		$Admob.connect("interstitial_loaded", self, 'interstitialloaded')
 	get_tree().connect("screen_resized", self, "onResize")
 	var loaded_lang = str(TranslationServer.get_locale())
 	if loaded_lang == "en":
-		$CanvasLayer/Menu/Lang.select(int(str(0)))
+		$Menu/Lang.select(int(str(0)))
 	if loaded_lang == "es":
-		$CanvasLayer/Menu/Lang.select(int(str(1)))
+		$Menu/Lang.select(int(str(1)))
 	if loaded_lang == "de":
-		$CanvasLayer/Menu/Lang.select(int(str(2)))
+		$Menu/Lang.select(int(str(2)))
 	if loaded_lang == "pl":
-		$CanvasLayer/Menu/Lang.select(int(str(3)))
+		$Menu/Lang.select(int(str(3)))
 	if loaded_lang == "it":
-		$CanvasLayer/Menu/Lang.select(int(str(4)))
+		$Menu/Lang.select(int(str(4)))
 	if loaded_lang == "pt":
-		$CanvasLayer/Menu/Lang.select(int(str(5)))
+		$Menu/Lang.select(int(str(5)))
 	if loaded_lang == "fr":
-		$CanvasLayer/Menu/Lang.select(int(str(6)))
+		$Menu/Lang.select(int(str(6)))
 
+
+func adloaded():
+	$Admob.show_banner()
+func interstitialloaded():
+	$Admob.show_interstitial()
 
 func _on_Play_pressed():
 	if not str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
-		ads.admob.showInterstitial()
+		$Admob.show_interstitial()
 
 func _on_Multiplayer_pressed():
 	background_load.load_scene(str(multi.get_data()))
@@ -105,8 +115,8 @@ func _on_Multiplayer_pressed():
 
 func _on_LevelEditor_pressed():
 	if str(os) == 'Android':
-		ads.admob.showInterstitial()
-		ads.admob.hideBanner()
+		$Admob.show_interstitial()
+		$Admob.hide_banner()
 	background_load.load_scene(str(editor.get_data()))
 
 
@@ -120,17 +130,17 @@ func _on_ModLoader_file_selected(path):
 
 
 func _on_LoadMOD_pressed():
-	$CanvasLayer/Menu/ModLoader.popup_centered()
+	$Menu/ModLoader.popup_centered()
 
 
 func _on_PlayCustomStage_pressed():
 	scan_levels()
-	$CanvasLayer/Menu/StagesList.popup_centered()
+	$Menu/StagesList.popup_centered()
 
 
 func _on_ItemList_item_selected(index):
 	var path = str(savedlevels.get_data())
-	var name = $CanvasLayer/Menu/StagesList/ItemList.get_item_text(index)
+	var name = $Menu/StagesList/ItemList.get_item_text(index)
 	background_load.load_scene(str(path) + '/' + str(name) + '.tscn')
 
 
@@ -151,18 +161,18 @@ func scan_levels():
 					var extension = str(file_name).get_extension()
 					print(extension)
 					if extension == "tscn":
-						$CanvasLayer/Menu/StagesList/ItemList.add_item(fil_name)
+						$Menu/StagesList/ItemList.add_item(fil_name)
 				file_name = dir.get_next()
 				checked = true
 
 
 func _on_Button_pressed():
-	$CanvasLayer/Menu/Character.popup_centered()
+	$Menu/Character.popup_centered()
 
 
 func _on_Sonic_pressed():
 	globals.play_cutscenes = false
-	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
+	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(sonic.get_data())
 	globals.selected_player = load(str(sonic.get_data())).instance()
 	after_selecting_player()
@@ -170,7 +180,7 @@ func _on_Sonic_pressed():
 
 func _on_UfoRobi_pressed():
 	globals.play_cutscenes = true
-	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
+	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(player2.get_data())
 	globals.selected_player = load(str(player2.get_data())).instance()
 	after_selecting_player()
@@ -181,24 +191,24 @@ func _on_UfoRobi_pressed():
 func _on_Robi_pressed():
 	
 	globals.play_cutscenes = true
-	$CanvasLayer/Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
+	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(player.get_data())
 	globals.selected_player = load(str(player.get_data())).instance()
 	after_selecting_player()
 	globals.player_has_been_selected = true
 
 func after_selecting_player():
-	$CanvasLayer/Menu/Character.hide()
-	$CanvasLayer/Menu/SelectCharacter.hide()
-	$CanvasLayer/Menu/Box.show()
+	$Menu/Character.hide()
+	$Menu/SelectCharacter.hide()
+	$Menu/Box.show()
 	if str(os) == 'Android':
-		ads.admob.showInterstitial()
-		ads.admob.showBanner()
+		$Admob.show_interstitial()
+		$Admob.show_banner()
 #	player_has_been_selected = true
 
 
 func _on_CheckForUpdates_pressed():
-	$CanvasLayer/Menu/UpdateDialog.popup_centered()
+	$Menu/UpdateDialog.popup_centered()
 
 
 func _on_UpdateDialog_confirmed():
@@ -206,7 +216,7 @@ func _on_UpdateDialog_confirmed():
 
 
 func _on_Quit_pressed():
-	$CanvasLayer/Menu/QuitDialog.popup_centered()
+	$Menu/QuitDialog.popup_centered()
 
 
 func _on_QuitDialog_confirmed():
@@ -215,8 +225,8 @@ func _on_QuitDialog_confirmed():
 
 func _on_Leaderboard_pressed():
 	if str(os) == 'Android':
-		ads.admob.showInterstitial()
-		ads.admob.hideBanner()
+		$Admob.show_interstitial()
+		$Admob.hide_banner()
 	background_load.load_scene(str(auth.get_data()))
 
 func _on_Lang_item_selected(id):
@@ -243,7 +253,7 @@ func _on_Lang_item_selected(id):
 func _on_VScrollBar_value_changed(value):
 	$Control/control.set_position((Vector2(0, value*-10)))
 func _process(_delta):
-	$CanvasLayer/Menu/Box.set_anchors_preset(Control.PRESET_CENTER)
+	$Menu/Box.set_anchors_preset(Control.PRESET_CENTER)
 
 
 func _on_up_pressed():

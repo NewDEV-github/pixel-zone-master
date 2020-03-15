@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scenes/players/player1/player.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://animations/cutscenes/next_level.tres" type="Animation" id=21]
 [ext_resource path="res://animations/saving_state.tres" type="Animation" id=22]
 [ext_resource path="res://textures/osb_fire.png" type="Texture" id=23]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=24]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.81836
@@ -764,5 +765,14 @@ rotation = 1.5708
 [node name="RightWallSensor" type="RayCast2D" parent="Player"]
 position = Vector2( 242.5, 71.0001 )
 rotation = 4.71239
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource( 24 )
+is_real = true
+banner_id = "ca-app-pub-3142193952770678/7369767442"
+interstitial_id = "ca-app-pub-3142193952770678/9337455234"
+rewarded_id = "ca-app-pub-3142193952770678/8372051443"
+child_directed = true
+max_ad_content_rate = "MA"
 [connection signal="body_entered" from="Player/sprite/Area2D2" to="Player" method="_on_Area2D2_body_entered"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]
