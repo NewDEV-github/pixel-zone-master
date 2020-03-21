@@ -68,7 +68,7 @@ placeholder_text = "AUTH_USERNAME"
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
-max_length = 20
+max_length = 10000
 placeholder_text = "AUTH_EMAIL"
 
 [node name="pass" type="LineEdit" parent="MainCon/Reg/RegCon"]
@@ -77,7 +77,7 @@ margin_right = 410.0
 margin_bottom = 168.0
 hint_tooltip = "Password should contain at least 8 characters including uppercase
 and lowercase letters, numbers and (optionally) special characters."
-max_length = 20
+max_length = 10000
 secret = true
 placeholder_text = "AUTH_PASS"
 
@@ -85,7 +85,7 @@ placeholder_text = "AUTH_PASS"
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
-max_length = 20
+max_length = 10000
 secret = true
 placeholder_text = "AUTH_CONFIRM_PASS"
 
@@ -136,7 +136,7 @@ placeholder_text = "AUTH_USERNAME"
 margin_top = 86.0
 margin_right = 410.0
 margin_bottom = 125.0
-max_length = 20
+max_length = 10000
 secret = true
 placeholder_text = "AUTH_PASS"
 
@@ -157,19 +157,90 @@ text = "AUTH_CONFIRM"
 margin_top = 172.0
 margin_right = 410.0
 margin_bottom = 211.0
-text = "show password"
+text = "Show password"
 
 [node name="ERROR" type="Label" parent="."]
-visible = false
-anchor_left = 0.046685
-anchor_top = 0.737503
-anchor_right = 0.950982
-anchor_bottom = 0.802503
+anchor_left = 0.046875
+anchor_top = 0.738333
+anchor_right = 0.951172
+anchor_bottom = 0.873333
 text = "ERROR:"
 align = 1
 valign = 1
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="ConfirmEmailPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.305882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="WindowDialog" parent="ConfirmEmailPanel"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.0
+margin_top = -172.0
+margin_right = 208.0
+margin_bottom = 199.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmEmailPanel/Confirm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.5
+margin_top = -137.5
+margin_right = 148.5
+margin_bottom = 137.5
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Code" type="LineEdit" parent="ConfirmEmailPanel/Confirm/VBoxContainer"]
+margin_right = 297.0
+margin_bottom = 39.0
+placeholder_text = "Enter code"
+
+[node name="ConfirmButton" type="Button" parent="ConfirmEmailPanel/Confirm/VBoxContainer"]
+margin_top = 59.0
+margin_right = 297.0
+margin_bottom = 98.0
+text = "Confirm"
+
+[node name="Resend" type="Button" parent="ConfirmEmailPanel/Confirm/VBoxContainer"]
+margin_top = 118.0
+margin_right = 297.0
+margin_bottom = 157.0
+text = "Resend code"
+
+[node name="Cancel" type="Button" parent="ConfirmEmailPanel/Confirm/VBoxContainer"]
+margin_left = 103.0
+margin_top = 177.0
+margin_right = 194.0
+margin_bottom = 216.0
+size_flags_horizontal = 4
+text = "Cancel"
+
+[node name="Label" type="Label" parent="ConfirmEmailPanel/Confirm/VBoxContainer"]
+margin_top = 236.0
+margin_right = 297.0
+margin_bottom = 275.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="ProcessingPanel" type="Panel" parent="."]
@@ -210,4 +281,8 @@ __meta__ = {
 [connection signal="pressed" from="MainCon/Reg/RegCon/CofirmReg" to="." method="_on_CofirmReg_pressed"]
 [connection signal="pressed" from="MainCon/login/LogCon/ConfirmLog" to="." method="_on_LoginButton_pressed"]
 [connection signal="toggled" from="MainCon/login/LogCon/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="popup_hide" from="ConfirmEmailPanel/Confirm" to="." method="_on_Confirm_popup_hide"]
+[connection signal="pressed" from="ConfirmEmailPanel/Confirm/VBoxContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="ConfirmEmailPanel/Confirm/VBoxContainer/Resend" to="." method="_on_ResendConfCodeButton_pressed"]
+[connection signal="pressed" from="ConfirmEmailPanel/Confirm/VBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

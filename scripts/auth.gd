@@ -10,6 +10,11 @@ func _ready():
 	SilentWolf.Auth.connect("sw_registration_failed", self, "_on_registration_failed")
 	SilentWolf.Auth.connect("sw_login_succeeded", self, "_on_login_succeeded")
 	SilentWolf.Auth.connect("sw_login_failed", self, "_on_login_failed")
+	SilentWolf.Auth.connect("sw_email_verif_succeeded", self, "_on_confirmation_succeeded")
+	SilentWolf.Auth.connect("sw_email_verif_failed", self, "_on_confirmation_failed")
+	SilentWolf.Auth.connect("sw_resend_conf_code_succeeded", self, "_on_resend_code_succeeded")
+	SilentWolf.Auth.connect("sw_resend_conf_code_failed", self, "_on_resend_code_failed")
+
 ###LOGGING IN
 func _on_LoginButton_pressed():
 	var username = $MainCon/login/LogCon/username.text
@@ -49,13 +54,14 @@ func _on_RegisterButton_pressed():
 	var confirm_password = $MainCon/Reg/RegCon/confirmpass.text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing()
+	show_confirm_email()
+	$ERROR.hide()
 	
 func _on_registration_succeeded():
 	SWLogger.info("registration succeeded: " + str(SilentWolf.Auth.logged_in_player))
 	#get_tree().change_scene("res://addons/silent_wolf/Auth/Login.tscn")
 	# redirect to configured scene (user is logged in after registration)
-	var scene_name = SilentWolf.auth_config.redirect_to_scene
-	get_tree().change_scene(scene_name)
+
 	
 func _on_registration_failed(error):
 	hide_processing()
@@ -95,3 +101,59 @@ func _on_CheckBox_toggled(button_pressed):
 		$MainCon/Reg/RegCon/confirmpass.set_secret(true)
 		$MainCon/Reg/RegCon/pass.set_secret(true)
 		$MainCon/login/LogCon/pass.set_secret(true)
+
+
+###Email Verification
+	
+func _on_confirmation_succeeded():
+	SWLogger.info("email verification succeeded: " + str(SilentWolf.Auth.logged_in_player))
+	# redirect to configured scene (user is logged in after registration)
+	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	get_tree().change_scene(scene_name)
+	
+	
+func _on_confirmation_failed(error):
+	hide_processing()
+	SWLogger.info("email verification failed: " + str(error))
+	$ConfirmEmailPanel/Confirm/VBoxContainer/Label.text = error
+	
+	
+func _on_resend_code_succeeded():
+	SWLogger.info("Code resend succeeded for player: " + str(SilentWolf.Auth.tmp_username))
+	$ConfirmEmailPanel/Confirm/VBoxContainer/Label.text = "Confirmation code was resent to your email address"
+	
+
+func _on_resend_code_failed():
+	SWLogger.info("Code resend failed for player: " + str(SilentWolf.Auth.tmp_username))
+	$ConfirmEmailPanel/Confirm/VBoxContainer/Label.text = "Confirmation code could not be resent"
+
+func show_confirm_email():
+	$ConfirmEmailPanel.show()
+	$ConfirmEmailPanel/Confirm.popup_centered()
+
+func hide_confirm_email():
+	$ConfirmEmailPanel.hide()
+	$ConfirmEmailPanel/Confirm.hide()
+
+func _on_ConfirmButton_pressed():
+	var username = SilentWolf.Auth.tmp_username
+	var code = $ConfirmEmailPanel/Confirm/VBoxContainer/Code.text
+	SWLogger.debug("Email verification form submitted, code: " + str(code))
+	SilentWolf.Auth.verify_email(username, code)
+	show_processing()
+	
+	
+# TODO: implement
+func _on_ResendConfCodeButton_pressed():
+	var username = SilentWolf.Auth.tmp_username
+	SWLogger.debug("Requesting confirmation code resend")
+	SilentWolf.Auth.resend_conf_code(username)
+	show_processing()
+
+
+func _on_Confirm_popup_hide():
+	hide_confirm_email()
+
+
+func _on_Cancel_pressed():
+	hide_confirm_email()
