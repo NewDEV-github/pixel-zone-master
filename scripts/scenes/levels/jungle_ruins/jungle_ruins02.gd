@@ -11,11 +11,11 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
-		scene = get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins03.tscn")
+		game_state._update_data()
+		scene = get_tree().change_scene("res://scenes/stages/jungle_ruins/jungle_ruins03.tscn")
 
 
 func _on_Area2D2_body_entered(body):
-	
 	if body.name == "Player":
 		remove_child(player_default)
 		scene = get_tree().change_scene("scenes/GameOver.tscn")

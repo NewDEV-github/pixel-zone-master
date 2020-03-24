@@ -1,14 +1,8 @@
 extends Node
-var connect
-var connect2
-var connect3
-var connect4
-var connect5
-var host = NetworkedMultiplayerENet.new()
-var player_scene = load("res://dlcs/multi/player.tscn")
+
 # Default game port
 const DEFAULT_PORT = 10567
-var stage = load("res://dlcs/multi/stage_multiplayer.tscn")
+
 # Max number of players
 const MAX_PEERS = 10
 
@@ -27,26 +21,22 @@ signal game_error(what)
 
 # Callback from SceneTree
 func _player_connected(id):
-	print(str(id))
-	pass
+	# Registration of a client beings here, tell the connected player that we are here
+	rpc_id(id, "register_player", player_name)
 
 # Callback from SceneTree
 func _player_disconnected(id):
-	if (get_tree().is_network_server()):
-		if (has_node("/root/world")): # Game is in progress
+	if has_node("/root/world"): # Game is in progress
+		if get_tree().is_network_server():
 			emit_signal("game_error", "Player " + players[id] + " disconnected")
 			end_game()
-		else: # Game is not in progress
-			# If we are the server, send to the new dude all the already registered players
-			unregister_player(id)
-			for p_id in players:
-				# Erase in the server
-				rpc_id(p_id, "unregister_player", id)
+	else: # Game is not in progress
+		# Unregister this player
+		unregister_player(id)
 
 # Callback from SceneTree, only for clients (not server)
 func _connected_ok():
-	# Registration of a client beings here, tell everyone that we are here
-	rpc("register_player", get_tree().get_network_unique_id(), player_name)
+	# We just connected to a server
 	emit_signal("connection_succeeded")
 
 # Callback from SceneTree, only for clients (not server)
@@ -61,29 +51,24 @@ func _connected_fail():
 
 # Lobby management functions
 
-remote func register_player(id, new_player_name):
-	if (get_tree().is_network_server()):
-		# If we are the server, let everyone know about the new player
-		rpc_id(id, "register_player", 1, player_name) # Send myself to new dude
-		for p_id in players: # Then, for each remote player
-			rpc_id(id, "register_player", p_id, players[p_id]) # Send player to new dude
-			rpc_id(p_id, "register_player", id, new_player_name) # Send new dude to player
-
+remote func register_player(new_player_name):
+	var id = get_tree().get_rpc_sender_id()
+	print(id)
 	players[id] = new_player_name
 	emit_signal("player_list_changed")
 
-remote func unregister_player(id):
+func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
 remote func pre_start_game(spawn_points):
 	# Change scene
-	var world = stage.instance()
+	var world = load("res://dlcs/multi/stage_multiplayer.tscn").instance()
 	get_tree().get_root().add_child(world)
 
 	get_tree().get_root().get_node("lobby").hide()
 
-	
+	var player_scene = load("res://dlcs/multi/player.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("spawn_points/" + str(spawn_points[p_id])).position
@@ -93,7 +78,7 @@ remote func pre_start_game(spawn_points):
 		player.position=spawn_pos
 		player.set_network_master(p_id) #set unique id as master
 
-		if (p_id == get_tree().get_network_unique_id()):
+		if p_id == get_tree().get_network_unique_id():
 			# If node for this peer id, set name
 			player.set_player_name(player_name)
 		else:
@@ -107,7 +92,7 @@ remote func pre_start_game(spawn_points):
 	for pn in players:
 		world.get_node("score").add_player(pn, players[pn])
 
-	if (not get_tree().is_network_server()):
+	if not get_tree().is_network_server():
 		# Tell server we are ready to start
 		rpc_id(1, "ready_to_start", get_tree().get_network_unique_id())
 	elif players.size() == 0:
@@ -121,10 +106,10 @@ var players_ready = []
 remote func ready_to_start(id):
 	assert(get_tree().is_network_server())
 
-	if (not id in players_ready):
+	if not id in players_ready:
 		players_ready.append(id)
 
-	if (players_ready.size() == players.size()):
+	if players_ready.size() == players.size():
 		for p in players:
 			rpc_id(p, "post_start_game")
 		post_start_game()
@@ -137,6 +122,7 @@ func host_game(new_player_name):
 
 func join_game(ip, new_player_name):
 	player_name = new_player_name
+	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
 
@@ -163,7 +149,7 @@ func begin_game():
 	pre_start_game(spawn_points)
 
 func end_game():
-	if (has_node("/root/world")): # Game is in progress
+	if has_node("/root/world"): # Game is in progress
 		# End it
 		get_node("/root/world").queue_free()
 
@@ -171,14 +157,9 @@ func end_game():
 	players.clear()
 	get_tree().set_network_peer(null) # End networking
 
-func check_host(host:String):
-	if host.is_valid_ip_address() == true:
-		return true
-	if host.is_valid_ip_address() == false:
-		return false
 func _ready():
-	connect = get_tree().connect("network_peer_connected", self, "_player_connected")
-	connect2 = get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
-	connect3 = get_tree().connect("connected_to_server", self, "_connected_ok")
-	connect4 = get_tree().connect("connection_failed", self, "_connected_fail")
-	connect5 = get_tree().connect("server_disconnected", self, "_server_disconnected")
+	get_tree().connect("network_peer_connected", self, "_player_connected")
+	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
+	get_tree().connect("connected_to_server", self, "_connected_ok")
+	get_tree().connect("connection_failed", self, "_connected_fail")
+	get_tree().connect("server_disconnected", self, "_server_disconnected")

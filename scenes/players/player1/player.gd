@@ -17,6 +17,8 @@ var anim=""
 var speed = 0.5
 var scene
 onready var sprite = $sprite
+func restart_position():
+	set_position(Vector2(144, 90))
 func _ready():
 	$ui/Control/GameUI.connect("FPSHide", self, "_on_fps_hide")
 	$ui/Control/GameUI.connect("FPSShow", self, "_on_fps_show")

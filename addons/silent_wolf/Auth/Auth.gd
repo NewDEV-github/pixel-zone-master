@@ -8,6 +8,10 @@ signal sw_login_failed
 signal sw_logout_succeeded
 signal sw_registration_succeeded
 signal sw_registration_failed
+signal sw_email_verif_succeeded
+signal sw_email_verif_failed
+signal sw_resend_conf_code_succeeded
+signal sw_resend_conf_code_failed
 signal sw_session_check_complete
 
 var tmp_username = null
@@ -16,11 +20,15 @@ var token = null
 var id_token = null
 
 var RegisterPlayer = null
+var VerifyEmail = null
+var ResendConfCode = null
 var LoginPlayer = null
 var ValidateSession = null
 
 # wekrefs
 var wrRegisterPlayer = null
+var wrVerifyEmail = null
+var wrResendConfCode = null
 var wrLoginPlayer = null
 var wrValidateSession = null
 
@@ -49,6 +57,43 @@ func register_player(player_name, email, password, confirm_password):
 	var headers = ["Content-Type: application/json", "x-api-key: " + api_key]
 	#print("register_player headers: " + str(headers))
 	RegisterPlayer.request("https://api.silentwolf.com/create_new_player", headers, true, HTTPClient.METHOD_POST, query)
+	return self
+	
+func verify_email(player_name, code):
+	tmp_username = player_name
+	VerifyEmail = HTTPRequest.new()
+	wrVerifyEmail = weakref(VerifyEmail)
+	if OS.get_name() != "HTML5":
+		VerifyEmail.set_use_threads(true)
+	get_tree().get_root().add_child(VerifyEmail)
+	VerifyEmail.connect("request_completed", self, "_on_VerifyEmail_request_completed")
+	SWLogger.info("Calling SilentWolf to verify email address for: " + str(player_name))
+	var game_id = SilentWolf.config.game_id
+	var game_version = SilentWolf.config.game_version
+	var api_key = SilentWolf.config.api_key
+	var payload = { "game_id": game_id, "username":  player_name, "code": code }
+	var query = JSON.print(payload)
+	var headers = ["Content-Type: application/json", "x-api-key: " + api_key]
+	#print("register_player headers: " + str(headers))
+	VerifyEmail.request("https://api.silentwolf.com/confirm_verif_code", headers, true, HTTPClient.METHOD_POST, query)
+	return self
+	
+func resend_conf_code(player_name):
+	ResendConfCode = HTTPRequest.new()
+	wrResendConfCode = weakref(ResendConfCode)
+	if OS.get_name() != "HTML5":
+		ResendConfCode.set_use_threads(true)
+	get_tree().get_root().add_child(ResendConfCode)
+	ResendConfCode.connect("request_completed", self, "_on_ResendConfCode_request_completed")
+	SWLogger.info("Calling SilentWolf to resend confirmation code for: " + str(player_name))
+	var game_id = SilentWolf.config.game_id
+	var game_version = SilentWolf.config.game_version
+	var api_key = SilentWolf.config.api_key
+	var payload = { "game_id": game_id, "username": player_name }
+	var query = JSON.print(payload)
+	var headers = ["Content-Type: application/json", "x-api-key: " + api_key]
+	#print("register_player headers: " + str(headers))
+	ResendConfCode.request("https://api.silentwolf.com/resend_conf_code", headers, true, HTTPClient.METHOD_POST, query)
 	return self
 	
 func login_player(username, password, remember_me=false):
@@ -145,10 +190,66 @@ func _on_RegisterPlayer_request_completed( result, response_code, headers, body 
 			# also get a JWT token here
 			# send a different signal depending on registration success or failure
 			if response.success:
-				logged_in_player  = tmp_username
+				# if email confirmation is enabled for the game, we can't log in the player just yet
+				var email_conf_enabled = response.email_conf_enabled
+				if email_conf_enabled:
+					SWLogger.info("Player registration succeeded, but player still needs to verify email address")
+				else:
+					SWLogger.info("Player registration succeeded, email verification is disabled")
+					logged_in_player = tmp_username
 				emit_signal("sw_registration_succeeded")
 			else:
 				emit_signal("sw_registration_failed", response.error)
+
+
+func _on_VerifyEmail_request_completed( result, response_code, headers, body ):
+	SWLogger.info("VerifyEmail request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	SilentWolf.free_request(wrVerifyEmail, VerifyEmail)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		SWLogger.debug("reponse: " + str(response))
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerauth")
+		else:
+			SWLogger.info("SilentWolf verify email success? : " + str(response.success))
+			# also get a JWT token here
+			# send a different signal depending on registration success or failure
+			if response.success:
+				logged_in_player  = tmp_username
+				emit_signal("sw_email_verif_succeeded")
+			else:
+				emit_signal("sw_email_verif_failed", response.error)
+
+
+func _on_ResendConfCode_request_completed( result, response_code, headers, body ):
+	SWLogger.info("ResendConfCode request completed")
+	var status_check = CommonErrors.check_status_code(response_code)
+	SilentWolf.free_request(wrResendConfCode, ResendConfCode)
+	SWLogger.debug("response headers: " + str(response_code))
+	SWLogger.debug("response headers: " + str(headers))
+	SWLogger.debug("response body: " + str(body.get_string_from_utf8()))
+	
+	if status_check:
+		var json = JSON.parse(body.get_string_from_utf8())
+		var response = json.result
+		SWLogger.debug("reponse: " + str(response))
+		if "message" in response.keys() and response.message == "Forbidden":
+			SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/playerauth")
+		else:
+			SWLogger.info("SilentWolf resend conf code success? : " + str(response.success))
+			# also get a JWT token here
+			# send a different signal depending on registration success or failure
+			if response.success:
+				emit_signal("sw_resend_conf_code_succeeded")
+			else:
+				emit_signal("sw_resend_conf_code_failed", response.error)
+			
 			
 func setup_login_timer():
 	login_timer = Timer.new()

@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 
-const version = "0.5.7"
+const version = "0.5.8"
 
 func _enter_tree():
 	add_autoload_singleton("SilentWolf", "res://addons/silent_wolf/SilentWolf.gd")

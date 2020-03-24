@@ -19,7 +19,7 @@ func _ready():
 func _on_LoginButton_pressed():
 	var username = $MainCon/login/LogCon/username.text
 	var password = $MainCon/login/LogCon/pass.text
-	var remember_me = false
+	var remember_me = true
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing()

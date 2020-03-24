@@ -1,18 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://animations/cutscenes/cutscene3.anim" type="Animation" id=1]
-[ext_resource path="res://textures/robot_demo_2.png" type="Texture" id=2]
 [ext_resource path="res://textures/backgrounds/snowbg2.png" type="Texture" id=3]
 [ext_resource path="res://textures/backgrounds/snowbg3.png" type="Texture" id=4]
 [ext_resource path="res://textures/backgrounds/snowbg1.png" type="Texture" id=5]
 [ext_resource path="res://titles/ice.tres" type="TileSet" id=6]
-[ext_resource path="res://textures/robot_demo.png" type="Texture" id=7]
 [ext_resource path="res://titles/jungle_ruins_back.tres" type="TileSet" id=8]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=9]
 [ext_resource path="res://animations/cutscenes/cutscene3.gd" type="Script" id=10]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=11]
-
-
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -85,22 +81,7 @@ autoplay = "cutscene3"
 playback_speed = 0.3
 anims/cutscene3 = ExtResource( 1 )
 
-[node name="robot_demo" type="Sprite" parent="."]
-position = Vector2( 544.393, 355.688 )
-texture = ExtResource( 7 )
-vframes = 2
-hframes = 16
-frame = 2
-
-[node name="robot_demo_2" type="Sprite" parent="."]
-position = Vector2( 474.039, 356.085 )
-texture = ExtResource( 2 )
-vframes = 2
-hframes = 16
-frame = 2
-
 [node name="ColorRect2" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

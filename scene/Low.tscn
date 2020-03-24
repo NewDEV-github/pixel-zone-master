@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Control" type="Node"]
+
+[node name="Server" type="Node" parent="."]
+
+[node name="Client" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="Client" method="send_data" binds= [ "ping" ]]

@@ -15,6 +15,8 @@ var sonic = preload("res://bin/sonic.gdns").new()
 var savedlevels = preload("res://bin/savedlevels.gdns").new()
 var date
 func _ready():
+	SilentWolf.Auth.auto_login_player()
+	get_tree().paused = false
 	if str(os)=='Android':
 		$Admob.load_banner()
 		$Admob.load_interstitial()
@@ -220,8 +222,9 @@ func _on_Quit_pressed():
 
 
 func _on_QuitDialog_confirmed():
+	_quit()
+func _quit():
 	get_tree().quit()
-
 
 func _on_Leaderboard_pressed():
 	if str(os) == 'Android':

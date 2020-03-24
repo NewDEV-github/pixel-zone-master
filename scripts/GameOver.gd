@@ -7,6 +7,7 @@ var isReal = true
 var isTop = true
 
 func _ready():
+	globals._send_data()
 	if str(OS.get_name()) == 'Android':
 		$Admob.load_banner()
 		$Admob.load_interstitial()

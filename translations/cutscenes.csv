@@ -1,72 +1,36 @@
 ,en,es,de,pl,it,pt,fr
-KEY_CUT_1_1,"Location: Some sea. Robots floating on a boat that stood on the shore.
-The toy factory was right in the middle of the ocean.","Ubicación: algo de mar. Robots flotando en un bote que estaba en la orilla.
-La fábrica de juguetes estaba justo en medio del océano.","Lage: Etwas Meer. Roboter schwammen auf einem Boot, das am Ufer stand.
-Die Spielzeugfabrik befand sich mitten im Ozean.","Lokalizacja: Jakieś morze. Roboty pływają w łodzi.
-Fabryka zabawek znajdowała się na środku oceanu.","Ubicazione: Some sea. Robot galleggianti su una barca che si trovava sulla riva.
-La fabbrica di giocattoli era proprio nel mezzo dell'oceano.","Localização: Algum mar. Robôs flutuando em um barco que ficava na praia.
-A fábrica de brinquedos ficava bem no meio do oceano.","Lieu: Un peu de mer. Robots flottant sur un bateau qui se trouvait sur le rivage.
-La fabrique de jouets était en plein milieu de l'océan."
-KEY_CUT_1_2,UFO-ROBI: See! LAND!!! WE ARE SAVED !!! ,UFO-ROBI: ¡Mira! ¡¡¡TIERRA!!! ¡ESTAMOS SALVADOS!,UFO-ROBI: Sieh! LAND!!! WIR WERDEN GERETTET !!!,UFO-ROBI: Zobacz! Ziemia!!! JESTESMY URATOWANI,UFO-ROBI: Vedi! SBARCARE!!! SIAMO SALVATI !!!,UFO-ROBI: Veja! TERRA!!! ESTAMOS SALVOS !!!,UFO-ROBI: Voir! TERRE!!! Nous sommes sauvés !!!
-KEY_CUT_1_3,ROBI: Approx. So let's go there.,ROBI: Aprox. Entonces vamos allí.,ROBI: Ca. Also lass uns dorthin gehen.,ROBI: Ok. Więc chodźmy tam.,ROBI: ca. Quindi andiamo lì.,ROBI: Aprox. Então vamos lá.,ROBI: Env. Alors allons-y.
-KEY_CUT_2_1,"UFO-ROBI: A map. See
-It leads to the treasure, which will be able to repair all robots! Are we going to get him? ","UFO-ROBI: Algún mapa.
-Ver. ¡Conduce al tesoro, que podrá reparar todos los robots! ¿Vamos a atraparlo?","UFO-ROBI: Irgendeine Karte.
-Sehen. Es führt zu dem Schatz, der alle Roboter reparieren kann! Werden wir ihn bekommen?","UFO-ROBI: Zobacz na mapę.
-Prowadzi do skarbu, który będzie w stanie naprawić wszystkie roboty! Czy dostaniemy go?","UFO-ROBI: Una mappa.
-Vedere Porta al tesoro, che sarà in grado di riparare tutti i robot! Lo prenderemo?","UFO-ROBI: Um mapa.
-Veja Isso leva ao tesouro, que poderá reparar todos os robôs! Nós vamos pegá-lo?","UFO-ROBI: Une carte.
-Voir Cela mène au trésor, qui pourra réparer tous les robots! Allons-nous le chercher?"
-KEY_CUT_2_2,ROBI: I don't know...,ROBI: No lo se ...,ROBI: Ich weiß nicht ...,ROBI: Nie wiem ...,ROBI: Non lo so ...,ROBI: Eu não sei ...,ROBI: Je ne sais pas ...
-KEY_CUT_2_3,UFO-ROBI: Come!,UFO-ROBI: ¡Ven!,UFO-ROBI: Komm!,UFO-ROBI: Chodź!,UFO-ROBI: Vieni!,UFO-ROBI: Venha!,UFO-ROBI: Viens!
-KEY_CUT_2_4,"ROBI: Ok, but ... er ... it's a shame to talk …","ROBI: Ok, pero ... er ... es una pena hablar ...","ROBI: Ok, aber ... ähm ... es ist eine Schande zu reden ...","ROBI: Ok, ale ... eee ... szkoda gadać ...","ROBI: Ok, ma ... ehm ... è un peccato parlare ...","ROBI: Ok, mas ... er ... é uma pena conversar ...","ROBI: Ok, mais… euh… c'est dommage de parler…"
-KEY_CUT_3_1,UFO-ROBI: What is the temple doing in the middle of a giant glacier ?!,UFO-ROBI: ¿Qué está haciendo el templo en medio de un glaciar gigante?,UFO-ROBI: Was macht der Tempel inmitten eines riesigen Gletschers ?!,UFO-ROBI: Co robi świątynia na środku gigantycznego lodowca ?!,UFO-ROBI: Cosa sta facendo il tempio nel mezzo di un ghiacciaio gigante ?!,UFO-ROBI: O que o templo está fazendo no meio de uma geleira gigante ?!,UFO-ROBI: Que fait le temple au milieu d'un glacier géant?!
-KEY_CUT_3_2,"ROBI: I don’t know.
-Where should we go now according to your map?!","ROBI: No lo se.
-¿A dónde deberíamos ir ahora según tu mapa?","ROBI: Ich weiß es nicht.
-Wohin sollen wir jetzt laut deiner Karte gehen ?!","ROBI: Nie wiem.
-Dokąd powinniśmy teraz iść zgodnie z twoją mapą ?!","ROBI: Non lo so.
-Dove dovremmo andare ora secondo la tua mappa ?!","ROBI: eu não sei.
-Para onde devemos ir agora, de acordo com o seu mapa ?!","ROBI: Je ne sais pas.
-Où devrions-nous aller maintenant selon votre carte?!"
-KEY_CUT_3_3,UFO-ROBI: There. Through that Jungle.,UFO-ROBI: Ahí. A través de esa jungla.,UFO-ROBI: Da. Durch diesen Dschungel.,UFO-ROBI: Tam. Przez tę dżunglę.,UFO-ROBI: Ecco. Attraverso quella giungla.,UFO-ROBI: Ali. Através daquela selva.,UFO-ROBI: Là. À travers cette jungle.
-KEY_CUT_3_4,ROBI: Ohhhh.... ok.,ROBI: Ohhhh ... está bien.,ROBI: Ohhhh .... ok.,ROBI: Ohhhh .... ok.,ROBI: Ohhhh .... ok.,ROBI: Ohhhh .... ok.,ROBI: Ohhhh ... ok.
-KEY_CUT_4_1,"UFO-ROBI: Wait for me.
-Don't run so fast... ","UFO-ROBI: Espérame.
-No corras tan rápido ...","UFO-ROBI: Warte auf mich.
-Lauf nicht so schnell ...","UFO-ROBI: Zaczekaj na mnie.
-Nie biegaj tak szybko ...","UFO-ROBI: Aspettami.
-Non correre così veloce ...","UFO-ROBI: Espere por mim.
-Não corra tão rápido ...","UFO-ROBI: Attends moi.
-Ne cours pas si vite ..."
-KEY_CUT_4_2,"ROBI: Okay.
-Now we probably have to go to these green hills?","ROBI: De acuerdo.
-¿Ahora probablemente tengamos que ir a estas verdes colinas?","ROBI: Okay.
-Jetzt müssen wir wahrscheinlich zu diesen grünen Hügeln gehen?","ROBI: OK.
-Teraz prawdopodobnie musimy iść na te zielone wzgórza?","ROBI: Ok.
-Ora probabilmente dovremo andare su queste verdi colline?","ROBI: Ok.
-Agora provavelmente temos que ir a essas colinas verdes?","ROBI: D'accord.
-Maintenant, nous devons probablement aller dans ces collines verdoyantes?"
-KEY_CUT_4_3,"UFO-ROBI: Yes, but with this running, let's leave it.","UFO-ROBI: Sí, pero con esto corriendo, dejémoslo.","UFO-ROBI: Ja, aber mit diesem Rennen lassen wir es.","UFO-ROBI: Tak, ale z tym uruchomieniem, zostawmy to.","UFO-ROBI: Sì, ma con questa corsa, lasciamolo.","UFO-ROBI: Sim, mas com essa execução, vamos deixar.","UFO-ROBI: Oui, mais maintenant, laissez-le."
-KEY_CUT_5_1,"ROBI: Let's go back to the factory…
-Hey. We can see it on the horizon! ","ROBI: Volvamos a la fábrica ... Hola.
-¡Podemos verlo en el horizonte!","ROBI: Gehen wir zurück in die Fabrik ... Hey.
-Wir können es am Horizont sehen!","ROBI: Wróćmy do fabryki… Hej.
-Widać ją na horyzoncie!","ROBI: Torniamo in fabbrica ... Ehi.
-Possiamo vederlo all'orizzonte!","ROBI: Vamos voltar para a fábrica ... Ei.
-Podemos vê-lo no horizonte!","ROBI: Retournons à l'usine… Hey.
-Nous pouvons le voir à l'horizon!"
-KEY_CUT_5_2,"UFO-ROBI: Indeed. There is also a labolatroium.
-Only through it can we enter the factory","UFO-ROBI: De hecho. También hay un laboratorio.
-Solo a través de él podemos ingresar a la fábrica","UFO-ROBI: In der Tat. Es gibt auch ein Labolatroium.
-Nur dadurch können wir die Fabrik betreten","UFO-ROBI: Rzeczywiście. Jest także labolatroium.
-Tylko dzięki niemu możemy wejść do fabryki","UFO-ROBI: Anzi. C'è anche un labolatrio.
-Solo attraverso di essa possiamo entrare in fabbrica","UFO-ROBI: Realmente. Há também um labolatroium.
-Somente através dele podemos entrar na fábrica","UFO-ROBI: En effet. Il y a aussi un labolatroium.
-Seulement à travers elle peut-on entrer dans l'usine"
-KEY_CUT_5_3,ROBI: Let's go then.,ROBI: Entonces vámonos.,ROBI: Dann lass uns gehen.,ROBI: Chodźmy więc.,ROBI: Andiamo allora.,ROBI: Vamos então.,ROBI: Allons-y alors.
-KEY_CUT_6_1,"ROBI: Well, we have a laboratory passed...","ROBI: Bueno, tenemos un laboratorio aprobado ...","ROBI: Nun, wir haben ein Labor bestanden ...","ROBI: Cóż, przeszliśmy laboratorium ...","ROBI: Bene, abbiamo superato un laboratorio ...","ROBI: Bem, nós temos um laboratório aprovado ...","ROBI: Eh bien, nous avons passé un laboratoire ..."
-KEY_CUT_6_2,UFO-ROBI:Let’s go to the mountains. There is a factory.,UFO-ROBI: Vayamos a las montañas. Hay una fabrica.,UFO-ROBI: Lass uns in die Berge gehen. Es gibt eine Fabrik.,UFO-ROBI: Chodźmy w góry. Jest fabryka.,UFO-ROBI: Andiamo in montagna. C'è una fabbrica,UFO-ROBI: Vamos para as montanhas. Existe uma fábrica.,UFO-ROBI: Allons dans les montagnes. Il y a une usine.
-KEY_CUT_7_1,ROBI: You got it?!,ROBI: ¿Lo tienes?,ROBI: Hast du es verstanden ?!,ROBI: Masz to ?!,ROBI: Hai capito ?!,ROBI: Você entendeu ?!,ROBI: Vous l'avez?!
-KEY_CUT_7_2,UFO-ROBI: Wait a minute. I am finishing,UFO-ROBI: Espera un minuto. Estoy terminando,UFO-ROBI: Warte eine Minute. Ich beende,UFO-ROBI: Zaczekaj chwilę. Kończę,UFO-ROBI: Aspetta un minuto. sto finendo,UFO-ROBI: Espere um minuto. eu estou terminando,UFO-ROBI: Attendez une minute. je suis en train de finir
-KEY_CUT_7_3,"ROBI: Yes, we’ve done it!","ROBI: ¡Sí, lo hemos logrado!","ROBI: Ja, wir haben es geschafft!","ROBI: Tak, zrobiliśmy to!","ROBI: Sì, l'abbiamo fatto!","ROBI: Sim, nós conseguimos!","ROBI: Oui, nous l’avons fait!"
+KEY_CUT_1_1,Location: Some sea.,Ubicación: algo de mar.,Lage: Etwas Meer.,Lokalizacja: Jakieś morze. ,Ubicazione: Some sea.,Localização: Algum mar.,Emplacement: un peu de mer.
+KEY_CUT_1_2,LAND!!! I AM SAVED !!! ,¡¡¡TIERRA!!! ESTOY SALVADA !!!,LAND!!! ICH BIN GERETTET !!!,Ziemia!!! JESTEM URATOWANY,TERRA!!! SONO SALVATO !!!,TERRA!!! EU SOU SALVO !!!,TERRE!!! JE SUIS SAUVÉ !!!
+KEY_CUT_1_3,I should go there…,Debería ir allí ...,Ich sollte dorthin gehen ...,Powinienem tam pójść,Dovrei andare lì ...,Eu deveria ir lá,Je devrais y aller…
+KEY_CUT_2_1,"A map.
+It leads to the treasure, which will be able to repair all robots! I must have this
+Treasure as fast as I can","Un mapa. ¡Conduce al tesoro, que podrá reparar todos los robots!
+Debo tener este tesoro lo más rápido que pueda","Eine Landkarte. Es führt zu dem Schatz, der alle Roboter reparieren kann!
+Ich muss diesen Schatz so schnell wie möglich haben","Mapa
+Prowadzi do skarbu, dzięki któremu będę w
+stanie naprawić wszystkie roboty! Muszę go mieć jak najszybciej.","Una cartina. Porta al tesoro, che sarà in grado di riparare tutti i robot!
+Devo avere questo tesoro il più velocemente possibile","Um mapa. Isso leva ao tesouro, que poderá reparar todos os robôs!
+Eu devo ter esse tesouro o mais rápido possível","Une carte. Il mène au trésor, qui pourra réparer tous les robots!
+Je dois avoir ce trésor aussi vite que possible"
+KEY_CUT_3_1,Hmm… What is the temple doing in the middle of a giant glacier ?!,Hmm ... ¿Qué está haciendo el templo en medio de un glaciar gigante?,Hmm ... Was macht der Tempel inmitten eines riesigen Gletschers ?!,Hmm… Co robi świątynia na środku gigantycznego lodowca ?!,Hmm ... Cosa sta facendo il tempio nel mezzo di un ghiacciaio gigante ?!,Hmm… O que o templo está fazendo no meio de uma geleira gigante ?!,Hmm… Que fait le temple au milieu d'un glacier géant?!
+KEY_CUT_3_2,Should i go now here?!,¿Debo ir ahora aquí?,Soll ich jetzt hier hingehen?!,Powinienem tam teraz iść?,Ora dovrei andare qui ?!,Devo ir agora aqui ?!,Dois-je aller maintenant ici?!
+KEY_CUT_3_3,Nevermind...,No importa...,Keine Ursache...,Nieważne,Non importa...,Deixa pra lá...,Ça ne fait rien...
+KEY_CUT_4_1,"So… here I am. If the map is right, now i have to go here.","Así que aquí estoy. Si el mapa es correcto, ahora tengo que ir aquí.","So, hier bin ich. Wenn die Karte stimmt, muss ich jetzt hierher gehen.","Jeśli mapa jest prawidłowa,
+Powinienem tam teraz iść.","Quindi ... eccomi qui. Se la mappa è corretta, ora devo andare qui.","Então aqui estou. Se o mapa estiver correto, agora tenho que ir aqui.","Alors… me voici. Si la carte est bonne, je dois maintenant aller ici."
+KEY_CUT_5_1,"Ok. Let's go back to the factory…
+Oh. It’s on horizon. I have to get there as fast as I can.","Okay. Volvamos a la fábrica... Oh. Está en el horizonte.
+Tengo que llegar tan rápido como pueda.","In Ordnung. Gehen wir zurück in die Fabrik... Oh.
+Es ist am Horizont. Ich muss so schnell wie möglich dort sein.","Ok. Wróćmy do fabryki… Hej.
+Widać ją na horyzoncie!","Ok. Torniamo in fabbrica... Oh.
+È all'orizzonte. Devo arrivarci il più velocemente possibile.","Está bem. Vamos voltar para a fábrica... Oh.
+Está no horizonte. Eu tenho que chegar lá o mais rápido possível.","D'accord. Revenons à l'usine… Oh.
+C'est à l'horizon. Je dois y arriver aussi vite que possible."
+KEY_CUT_5_2,"There is also a labolatroium.
+Only through itI can enter the factory.",También hay un laboratorio. Solo a través de él puedo ingresar a la fábrica.,Es gibt auch ein Labolatroium. Nur dadurch kann ich die Fabrik betreten.," Jest także labolatroium.
+Tylko dzięki niemu mogę wejść do fabryki",C'è anche un labolatrio. Solo attraverso di essa posso entrare in fabbrica.,Há também um labolatroium. Somente através dele posso entrar na fábrica.,Il y a aussi un labolatroium. Ce n'est que par ce biais que je peux entrer en usine.
+KEY_CUT_6_1,"Well, I have a laboratory passed...","Bueno, tengo un laboratorio aprobado ...","Nun, ich habe ein Labor bestanden ...","Cóż, przeszedłem laboratorium ...","Bene, ho un laboratorio superato ...","Bem, eu tenho um laboratório passado ...","Eh bien, j'ai passé un laboratoire ..."
+KEY_CUT_6_2,Oh. I know. Let’s go to the mountains. There will be a factory.,Oh. Lo sé. Vamos a las montañas. Habrá una fabrica.,Oh. Ich kenne. Lass uns in die Berge gehen. Es wird eine Fabrik geben.,"Wiem. Muszę iść w kierunku gór.
+Tam będzie fabryka.",Oh. Lo so. Andiamo in montagna. Ci sarà una fabbrica.,Oh Eu sei. Vamos para as montanhas. Haverá uma fábrica.,Oh. Je sais. Allons à la montagne. Il y aura une usine.
+KEY_CUT_7_1,In a minute!!,¡¡En un minuto!!,In einer Minute!!,Za chwilę,In un minuto!!,Em um minuto!!,Dans une minute!!
+KEY_CUT_7_2,AARGH! I… GOT… IT!,AARGH! ¡LO TENGO!,AARGH! ICH HAB ES GESCHAFFT!,AAARGH!! Już… pra… wie…,AARGH! CAPITO!,AARGH! DEIXA COMIGO!,AARGH! J? AI COMPRIS!
+KEY_CUT_7_3,Woah. I did it! I DID IT!,Woah ¡Lo hice! ¡LO HICE!,Woah. Ich habs geschafft! ICH HABS GESCHAFFT!,Zrobiłem to. ZROZBIŁEM TO!,Woah. L'ho fatto! L'HO FATTO!,Woah. Eu fiz isso! EU FIZ ISSO!,Woah. Je l'ai fait! JE L'AI FAIT!

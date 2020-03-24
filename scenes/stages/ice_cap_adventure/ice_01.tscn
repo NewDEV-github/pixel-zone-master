@@ -11,7 +11,7 @@
 extents = Vector2( 36.833, 195.539 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5679.97, 798.836 )
+extents = Vector2( 15034.8, 798.836 )
 
 [node name="ice_cap1" type="Node2D"]
 script = ExtResource( 1 )
@@ -160,7 +160,7 @@ position = Vector2( 11812.4, 3053.86 )
 position = Vector2( 4429.43, 2308.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( -859.35, 1054.62 )
+position = Vector2( -416.907, 3203.63 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

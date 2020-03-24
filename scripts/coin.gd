@@ -13,4 +13,3 @@ func _on_coin_body_entered(body):
 		$anim.play("taken")
 		taken = true
 		game_state._save()
-		game_state._update_data()

@@ -4,6 +4,7 @@ var player_default = globals.selected_player
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
+		game_state._update_data()
 		scene = get_tree().change_scene("res://scenes/stages/ice_cap_adventure/ice_02.tscn")
 
 func _ready():

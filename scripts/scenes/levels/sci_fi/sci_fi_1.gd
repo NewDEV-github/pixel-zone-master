@@ -29,6 +29,7 @@ func _on_toxic_body_entered(body):
 func _on_Area2D2_body_entered(body):
 	if body.name == 'Player':
 		remove_child(player_default)
+		game_state._update_data()
 		scene = get_tree().change_scene("res://scenes/stages/scifi/sci_fi_2.tscn")
 
 func _process(_delta):

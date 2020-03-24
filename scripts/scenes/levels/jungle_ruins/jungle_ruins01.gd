@@ -11,6 +11,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		remove_child(player_default)
+		game_state._update_data()
 		scene = get_tree().change_scene("scenes/stages/jungle_ruins/jungle_ruins02.tscn")
 
 

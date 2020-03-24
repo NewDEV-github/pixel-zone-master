@@ -48,3 +48,5 @@ func _physics_process(delta):
 
 func hit_by_bullet():
 	state = STATE_KILLED
+	game_state.points += 25
+	game_state._save()

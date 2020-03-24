@@ -28,11 +28,21 @@ func _get_collected():
 
 func _send_data():
 	debug_auth_player()
-	var playername = str(SilentWolf.Auth.logged_in_player)
-	if not str(playername) == 'Null' or not str(playername) == 'null' or not str(playername) == '' or not str(playername) == null:
-		SilentWolf.Scores.persist_score(playername, game_state.points)
-		SilentWolf.Scores.get_high_scores()
-		
+	var playername = SilentWolf.Auth.logged_in_player
+	if not str(playername) == 'Null':
+		if not str(playername) == 'null':
+			if not str(playername) == '':
+				if not playername == null:
+					SilentWolf.Scores.persist_score(playername, game_state.points)
+					SilentWolf.Scores.get_high_scores()
+				else:
+					pass
+			else:
+				pass
+		else:
+			pass
+	else:
+		pass
 func play_bgm(id, value):
 	emit_signal("play_bgm", id, value)
 
@@ -41,11 +51,22 @@ func _set_player_pos(x, y):
 	selected_player.set_position(Vector2(x, y))
 
 func _get_player_pos_x():
-	var position_p = selected_player.position.x
+	var position_p
+	if scene_path == 'res://scenes/players/player2/player2.tscn':
+		position_p = float(preload('res://scenes/players/player2/player2.gd').new().position_x)
+	if scene_path == 'res://scenes/players/player/player.tscn':
+		position_p = float(preload('res://scenes/players/player1/player.gd').new().position_x)
+	if scene_path == 'res://main.tscn':
+		position_p = float(preload('res://Gameplay Scripts/player_physics.gd').new().position_x)
 	return position_p
-
 func _get_player_pos_y():
-	var position_p = selected_player.position.y
+	var position_p
+	if scene_path == 'res://scenes/players/player2/player2.tscn':
+		position_p = float(preload('res://scenes/players/player2/player2.gd').new().position_y)
+	if scene_path == 'res://scenes/players/player/player.tscn':
+		position_p = float(preload('res://scenes/players/player1/player.gd').new().position_y)
+	if scene_path == 'res://main.tscn':
+		position_p = float(preload('res://Gameplay Scripts/player_physics.gd').new().position_y)
 	return position_p
 func on_scene_changed():
 	var file = File.new()

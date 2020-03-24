@@ -200,12 +200,5 @@ texture_scale = 12.85
 energy = 2.5
 shadow_enabled = true
 script = ExtResource( 8 )
-
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
-polygon = PoolVector2Array( 1507.97, -23.1563, 1849.69, 159.094, 2100.28, 762.797, 2100.28, 1013.39, 2157.23, 1081.73, 2191.41, 1298.16, 2681.2, 1343.72, 2681.2, 1457.63, 3114.05, 1469.02, 3136.83, 1582.92, 3820.27, 1582.92, 3808.88, 1662.66, 4088.63, 1650.88, 4108.88, 1710.6, 4473.38, 1724.1, 6939.65, 2528.34, 10744.1, 2573.91, 10789.7, -23.1563, 2074.17, 67.9688 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="." method="_on_Area2D3_body_exited"]

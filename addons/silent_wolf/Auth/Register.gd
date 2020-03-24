@@ -16,10 +16,15 @@ func _on_RegisterButton_pressed():
 	show_processing_label()
 	
 func _on_registration_succeeded():
-	SWLogger.info("registration succeeded: " + str(SilentWolf.Auth.logged_in_player))
 	#get_tree().change_scene("res://addons/silent_wolf/Auth/Login.tscn")
 	# redirect to configured scene (user is logged in after registration)
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	# if doing email verification, open scene to confirm email address
+	if ("email_confirmation_scene" in SilentWolf.auth_config) and (SilentWolf.auth_config.email_confirmation_scene) != "":
+		SWLogger.info("registration succeeded, waiting for email verification...")
+		scene_name = SilentWolf.auth_config.email_confirmation_scene
+	else:
+		SWLogger.info("registration succeeded, logged in player: " + str(SilentWolf.Auth.logged_in_player))
 	get_tree().change_scene(scene_name)
 	
 func _on_registration_failed(error):

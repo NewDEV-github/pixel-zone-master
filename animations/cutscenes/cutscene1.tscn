@@ -6,8 +6,6 @@
 [ext_resource path="res://animations/cutscenes/cutscene1.gd" type="Script" id=4]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=5]
 
-
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,7 +39,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "KEY_CUT_1_1"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

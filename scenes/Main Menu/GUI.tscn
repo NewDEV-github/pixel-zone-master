@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Main Menu/GUI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://animations/new.tres" type="Animation" id=6]
 [ext_resource path="res://scenes/LevelSelect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/moving_platform.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/parallax_bg.tscn" type="PackedScene" id=9]
+[ext_resource path="res://textures/scroll_bg_sky.png" type="Texture" id=9]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://textures/scroll_bg_fg_1.png" type="Texture" id=11]
+[ext_resource path="res://textures/scroll_bg_fg_2.png" type="Texture" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "back"
@@ -214,6 +216,59 @@ tracks/7/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "quit"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("moving_platform:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "quit"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -223,6 +278,44 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -2.53125, -10.8732 )
+scale = Vector2( 45.3049, 2.56652 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -3.09512, 452.117 )
+scale = Vector2( 1, 1.27686 )
+texture = ExtResource( 12 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 799.597, 475.188 )
+scale = Vector2( 1, 1.27686 )
+texture = ExtResource( 12 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -6.96094, 436.508 )
+scale = Vector2( 1, 1.2373 )
+texture = ExtResource( 11 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 800.232, 461.269 )
+scale = Vector2( 1, 1.2373 )
+texture = ExtResource( 11 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 256 )
 
 [node name="moving_platform" parent="." instance=ExtResource( 8 )]
 position = Vector2( 750.151, 518.749 )
@@ -274,6 +367,7 @@ margin_bottom = 100.0
 mouse_filter = 1
 
 [node name="VScrollBar" type="VSlider" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_bottom = 1.0
 margin_right = 16.0
@@ -287,6 +381,7 @@ anims/back = SubResource( 1 )
 anims/back_ANDROID = SubResource( 2 )
 anims/new = ExtResource( 6 )
 anims/new_ANDROID = SubResource( 3 )
+anims/quit = SubResource( 4 )
 
 [node name="Menu" type="Control" parent="."]
 anchor_right = 1.0
@@ -387,6 +482,7 @@ __meta__ = {
 }
 
 [node name="Character" type="WindowDialog" parent="Menu"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -408,7 +504,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer"]
 margin_right = 756.0
-margin_bottom = 555.0
+margin_bottom = 275.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -417,7 +513,7 @@ __meta__ = {
 
 [node name="Robi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_right = 235.0
-margin_bottom = 555.0
+margin_bottom = 275.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Robi"
@@ -425,7 +521,7 @@ text = "Robi"
 [node name="infoLabel" type="Label" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 239.0
 margin_right = 517.0
-margin_bottom = 555.0
+margin_bottom = 275.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 text = "KEY_PLAYER_SELECT"
@@ -434,13 +530,12 @@ align = 1
 [node name="UfoRobi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 521.0
 margin_right = 756.0
-margin_bottom = 555.0
+margin_bottom = 275.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Ufo Robi"
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="Menu/Character/VBoxContainer"]
-visible = false
 margin_top = 279.0
 margin_right = 756.0
 margin_bottom = 555.0
@@ -473,8 +568,8 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.pck; Modification Files" )
 show_hidden_files = true
-current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
-current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
+current_dir = "/home/godot/Pulpit/pixel-zone-master"
+current_path = "/home/godot/Pulpit/pixel-zone-master/"
 
 [node name="StagesList" type="WindowDialog" parent="Menu"]
 margin_top = 221.0
@@ -523,11 +618,9 @@ window_title = "Quit?"
 resizable = true
 dialog_text = "Do you really want to quit?"
 
-[node name="parallax_bg" parent="." instance=ExtResource( 9 )]
-
 [node name="down" type="Button" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.4 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 40.0
@@ -539,7 +632,7 @@ text = ">"
 
 [node name="up" type="Button" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.4 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -100.0

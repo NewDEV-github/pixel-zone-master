@@ -50,11 +50,14 @@ var is_wall_right : bool
 var is_pushing : bool
 var is_looking_down : bool
 var is_looking_up : bool
-
+var position_x = 0.0
+var position_y = 0.0
 func _ready():
 	control_unlock_timer = control_unlock_time
 
 func _process(delta):
+	position_x = position.x
+	position_y = position.y
 	var roll_anim = animation.current_animation == 'Rolling'
 	high_collider.disabled = roll_anim
 	low_collider.disabled = !roll_anim

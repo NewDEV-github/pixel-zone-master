@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://animations/cutscenes/cutscene6.anim" type="Animation" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/parllax_bg_4.tscn" type="PackedScene" id=3]
 [ext_resource path="res://titles/casstle_mania.tres" type="TileSet" id=4]
-[ext_resource path="res://textures/robot_demo.png" type="Texture" id=5]
-[ext_resource path="res://textures/robot_demo_2.png" type="Texture" id=6]
 [ext_resource path="res://animations/cutscenes/cutscene6.gd" type="Script" id=7]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=8]
-
-
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -36,7 +32,7 @@ margin_left = -2.25
 margin_top = -133.0
 margin_right = -2.25
 custom_fonts/font = ExtResource( 2 )
-text = "UFO-ROBI: Let’s go to the mountains. There is a factory."
+text = "KEY_CUT_6_1"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 5 )
@@ -46,27 +42,12 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 851968, 27, 0, 851969, 27, 0, 851970, 27, 0, 851971, 27, 0, 851972, 27, 0, 851973, 27, 0, 851974, 27, 0, 851975, 27, 0, 851976, 27, 0, 851977, 27, 0, 851978, 27, 0, 851979, 27, 0, 851980, 27, 0, 851981, 27, 0, 851982, 27, 0, 851983, 27, 0, 851984, 27, 0, 851985, 27, 0, 851986, 27, 0, 851987, 27, 0, 851988, 27, 0, 851989, 27, 0, 851990, 27, 0, 851991, 27, 0, 851992, 27, 0, 851993, 27, 0, 851994, 27, 0, 851995, 27, 0, 851996, 27, 0, 851997, 27, 0, 851998, 27, 0, 851999, 27, 0, 852000, 27, 0, 852001, 27, 0, 852002, 27, 0 )
 
-[node name="robot_demo_2" type="Sprite" parent="."]
-position = Vector2( 146.165, 390 )
-texture = ExtResource( 6 )
-vframes = 2
-hframes = 16
-frame = 16
-
-[node name="robot_demo" type="Sprite" parent="."]
-position = Vector2( 87.2149, 390 )
-texture = ExtResource( 5 )
-vframes = 2
-hframes = 16
-frame = 16
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "cutscene6"
 playback_speed = 0.3
 anims/cutscene6 = ExtResource( 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1.67474

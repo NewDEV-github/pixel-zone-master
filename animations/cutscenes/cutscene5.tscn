@@ -8,8 +8,6 @@
 [ext_resource path="res://animations/cutscenes/cutscene5.gd" type="Script" id=6]
 [ext_resource path="res://themes/theme_test.tres" type="Theme" id=7]
 
-
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,9 +33,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -501.085
+margin_left = -452.083
 margin_top = -363.0
-margin_right = 106.905
+margin_right = 155.907
 margin_bottom = 0.000747681
 texture = ExtResource( 5 )
 expand = true
@@ -50,10 +48,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -532.085
+margin_left = -483.083
 margin_top = -353.0
-margin_right = 106.9
-margin_bottom = 0.000183105
+margin_right = 155.902
+margin_bottom = 0.000198364
 texture = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -83,7 +81,6 @@ playback_speed = 0.3
 anims/cutscene5 = ExtResource( 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

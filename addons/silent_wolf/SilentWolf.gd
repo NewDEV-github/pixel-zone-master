@@ -26,6 +26,7 @@ var scores_config = {
 
 var auth_config = {
 	"redirect_to_scene": "res://scenes/Splash.tscn",
+	"email_confirmation_scene": "res://addons/silent_wolf/Auth/ConfirmEmail.tscn",
 	"session_duration_seconds": 0,
 	"saved_session_expiration_days": 30
 }

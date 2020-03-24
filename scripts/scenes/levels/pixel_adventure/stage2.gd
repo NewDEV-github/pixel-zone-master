@@ -19,5 +19,6 @@ func _process(_delta):
 func _on_nextlevel_body_entered(body):
 	if body.name =="Player":
 		remove_child(player_default)
+		game_state._update_data()
 		scene = get_tree().change_scene("res://animations/cutscenes/cutscene2.tscn")
 
