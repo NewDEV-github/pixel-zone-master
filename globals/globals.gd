@@ -93,5 +93,10 @@ func _ready():
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
 	var load_set = beta_2.get_line()
 	auto_load_mod = bool(str(load_set))
+func clear_logs():
+	var dir = Directory.new()
+	dir.open('user://')
+	dir.remove('logs')
+	dir.make_dir('logs')
 func debug_auth_player():
 	print(str(SilentWolf.Auth.logged_in_player))

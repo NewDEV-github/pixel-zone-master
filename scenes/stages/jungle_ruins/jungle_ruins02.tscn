@@ -1,14 +1,12 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/scenes/levels/jungle_ruins/jungle_ruins02.gd" type="Script" id=1]
 [ext_resource path="res://sounds/brazil-fast.ogg" type="AudioStream" id=2]
-[ext_resource path="res://scripts/Light2D.gd" type="Script" id=3]
 [ext_resource path="res://scenes/next_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://titles/jungle_ruins_front.tres" type="TileSet" id=5]
 [ext_resource path="res://titles/jungle_ruins_back.tres" type="TileSet" id=6]
 [ext_resource path="res://scenes/parallax_bg2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://textures/particle.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.041, 42.8948 )
@@ -119,21 +117,5 @@ position = Vector2( 8542.97, 808.734 )
 
 [node name="enemy13" parent="Node" instance=ExtResource( 8 )]
 position = Vector2( 9944.02, 1070.72 )
-
-[node name="Light2D" type="Light2D" parent="."]
-show_behind_parent = true
-position = Vector2( 249, 80.4166 )
-texture = ExtResource( 9 )
-texture_scale = 17.49
-energy = 1.98
-shadow_enabled = true
-script = ExtResource( 3 )
-
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
-polygon = PoolVector2Array( 1597.82, -11.8114, 1714.25, 59.0637, 1845.88, 119.814, 1926.88, 261.564, 1977.5, 443.814, 2053.44, 585.564, 2109.13, 772.877, 2152.48, 1096.51, 2153.88, 1358.52, 1916.75, 1663.8, -1.93591, 1663.8, -1.93591, 2002.99, 960.363, 2002.99, 2133.68, 1982.74, 4447.25, 2239.01, 6867.75, 2233.95, 10799.3, 2233.95, 11351.1, 1190.28, 11027.1, 287.331, 10055.1, 84.8773, 6459, 120.315, 2175.05, 69.6898 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="." method="_on_Area2D3_body_exited"]

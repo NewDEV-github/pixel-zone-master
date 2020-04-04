@@ -82,6 +82,7 @@ func _ready():
 		documents_dir.make_dir('1')
 		documents_dir.make_dir('2')
 	_load()
+	globals.clear_logs()
 	var config_ = ConfigFile.new()
 	config_.set_value("updates", "current_engine version", str(Engine.get_version_info()))
 	config_.save(str(documents) + "/Pixel Zone/.data/updates/config/config.ini")

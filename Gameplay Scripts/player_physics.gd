@@ -1,7 +1,5 @@
 extends KinematicBody2D
-
 class_name PlayerPhysics
-
 export(float) var ACC = 2.8125
 export(float) var DEC = 30
 export(float) var ROLLDEC = 7.5

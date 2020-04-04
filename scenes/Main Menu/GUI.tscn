@@ -568,8 +568,8 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.pck; Modification Files" )
 show_hidden_files = true
-current_dir = "/home/godot/Pulpit/pixel-zone-master"
-current_path = "/home/godot/Pulpit/pixel-zone-master/"
+current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
+current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
 
 [node name="StagesList" type="WindowDialog" parent="Menu"]
 margin_top = 221.0
