@@ -27,6 +27,7 @@ func _get_collected():
 	return collected
 
 func _send_data():
+	google.submit_leaderboard(int(game_state.points), "CgkIisyP4OEeEAIQAQ")
 	debug_auth_player()
 	var playername = SilentWolf.Auth.logged_in_player
 	if not str(playername) == 'Null':
@@ -73,7 +74,17 @@ func on_scene_changed():
 	file.open_encrypted_with_pass('user://save_data.1', File.READ, str(34567865))
 	current_stage = str(file.get_line())
 #	selected_player.restart_position()
+var google = null
+
+#func show_gps_leaderboard():
+#	google.show_leaderboard("CgkIisyP4OEeEAIQAQ")
+
 func _ready():
+#	if OS.get_name() == "Android":
+#		if Engine.has_singleton("GooglePlay"):
+#			google = Engine.get_singleton("GooglePlay")
+#			google.init(get_instance_id()) # use get_instance_id () for Godot 3.X
+#			google.login()
 	SilentWolf.configure({
 		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
 		"game_id": "PixelZone",

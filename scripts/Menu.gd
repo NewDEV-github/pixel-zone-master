@@ -4,6 +4,10 @@ var current_page = null
 var visible_connect
 
 func _ready():
+#	if str(OS.get_name()) == 'Android':
+#		$HBoxContainer/Leaderboard.show()
+#	else:
+#		$HBoxContainer/Leaderboard.hide()
 	visible_connect = connect("visibility_changed", self, "_on_visibility_changed")
 func _on_visibility_changed():
 	get_tree().paused = visible
@@ -21,6 +25,7 @@ func show_page(node):
 	current_page = node
 
 func _on_Quit_pressed():
+	get_tree().paused = false
 	gamestate.end_game()
 	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
 # when preesed "Return" or "No" button in Quit Page

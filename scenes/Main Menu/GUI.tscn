@@ -482,7 +482,6 @@ __meta__ = {
 }
 
 [node name="Character" type="WindowDialog" parent="Menu"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -618,6 +617,43 @@ window_title = "Quit?"
 resizable = true
 dialog_text = "Do you really want to quit?"
 
+[node name="WindowDialog" type="WindowDialog" parent="Menu"]
+visible = true
+margin_left = 270.416
+margin_top = 146.611
+margin_right = 767.416
+margin_bottom = 434.611
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/WindowDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SilentWolf" type="Button" parent="Menu/WindowDialog/HBoxContainer"]
+margin_left = 36.0
+margin_right = 185.0
+margin_bottom = 39.0
+text = "SilentWolf"
+
+[node name="GPSLeaderboard" type="Button" parent="Menu/WindowDialog/HBoxContainer"]
+margin_left = 189.0
+margin_right = 460.0
+margin_bottom = 39.0
+text = "Google Play Services"
+
+[node name="Label" type="Label" parent="Menu/WindowDialog"]
+anchor_right = 1.0
+margin_bottom = 73.0
+text = "Scores from wich
+leaderboard do you want to see?"
+align = 1
+valign = 1
+
 [node name="down" type="Button" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.4 )
@@ -671,5 +707,7 @@ max_ad_content_rate = "MA"
 [connection signal="pressed" from="Menu/SelectCharacter" to="." method="_on_Button_pressed"]
 [connection signal="confirmed" from="Menu/UpdateDialog" to="." method="_on_UpdateDialog_confirmed"]
 [connection signal="confirmed" from="Menu/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
+[connection signal="pressed" from="Menu/WindowDialog/HBoxContainer/SilentWolf" to="." method="_on_SilentWolf_pressed"]
+[connection signal="pressed" from="Menu/WindowDialog/HBoxContainer/GPSLeaderboard" to="." method="_on_GPSLeaderboard_pressed"]
 [connection signal="pressed" from="down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="up" to="." method="_on_up_pressed"]

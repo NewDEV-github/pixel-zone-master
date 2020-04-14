@@ -43,7 +43,8 @@ light_mask = 2
 anchor_bottom = 1.0
 margin_right = 170.0
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Return" type="Button" parent="Menu/HBoxContainer"]
@@ -71,6 +72,21 @@ group = SubResource( 1 )
 text = "KEY_Options"
 flat = true
 
+[node name="Leaderboard" type="Button" parent="Menu/HBoxContainer"]
+visible = false
+light_mask = 2
+margin_top = 302.0
+margin_right = 170.0
+margin_bottom = 449.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_hover = Color( 0.596078, 0.596078, 0.596078, 1 )
+toggle_mode = true
+group = SubResource( 1 )
+text = "Leaderboard"
+flat = true
+
 [node name="Quit" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
 margin_top = 402.0
@@ -94,4 +110,5 @@ id = "Menu"
 [node name="UIScaler" type="Node2D" parent="."]
 [connection signal="pressed" from="Menu/HBoxContainer/Return" to="Menu" method="_on_Return_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Options" to="Menu" method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Quit" to="Menu" method="_on_Quit_pressed"]

@@ -15,3 +15,7 @@ func _on_FPS_Hide():
 	emit_signal("FPSHide")
 func _on_FPS_Show():
 	emit_signal("FPSShow")
+
+
+func _on_Leaderboard_pressed():
+	globals.show_gps_leaderboard()

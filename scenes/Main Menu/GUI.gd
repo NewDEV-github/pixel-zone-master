@@ -230,7 +230,9 @@ func _on_Leaderboard_pressed():
 	if str(os) == 'Android':
 		$Admob.show_interstitial()
 		$Admob.hide_banner()
-	background_load.load_scene(str(auth.get_data()))
+		$Menu/WindowDialog.popup_centered()
+#	else:
+		background_load.load_scene(str(auth.get_data()))
 
 func _on_Lang_item_selected(id):
 	var save = File.new()
@@ -265,3 +267,11 @@ func _on_up_pressed():
 
 func _on_down_pressed():
 	$VScrollBar.value += 5
+
+
+func _on_SilentWolf_pressed():
+	background_load.load_scene(str(auth.get_data()))
+
+
+#func _on_GPSLeaderboard_pressed():
+#	globals.google.show_leaderboard("CgkIisyP4OEeEAIQAQ")
