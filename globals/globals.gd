@@ -27,7 +27,7 @@ func _get_collected():
 	return collected
 
 func _send_data():
-	google.submit_leaderboard(int(game_state.points), "CgkIisyP4OEeEAIQAQ")
+#	google.submit_leaderboard(int(game_state.points), "CgkIisyP4OEeEAIQAQ")
 	debug_auth_player()
 	var playername = SilentWolf.Auth.logged_in_player
 	if not str(playername) == 'Null':

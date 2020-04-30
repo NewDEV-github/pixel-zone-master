@@ -87,7 +87,7 @@ func _on_back3_pressed():
 
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 func _on_Button4_pressed():
-	OS.shell_open("https://masterpolska123.github.io/auth/login")
+	OS.shell_open("https://www.sonadow-dev.ml/auth/login")
 
 func _on_join2_pressed():
 	var os = OS.get_name()

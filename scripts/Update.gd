@@ -13,4 +13,4 @@ func popup():
 
 
 func _on_AcceptDialog_confirmed():
-	OS.shell_open('https://masterpolska123.github.io')
+	OS.shell_open('https://www.sonadow-dev.ml')

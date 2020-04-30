@@ -1,6 +1,7 @@
 extends Control
 var scene
 var config
+var signals
 var leaderboard = {
 		'api_key' : "YZ7CY9acpN9NIZ9ebKXd43NO4FVCJFkR8rkF2cO4",
 		"game_id": "PixelZone",
@@ -15,8 +16,10 @@ func _load():
 	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
+	signals = $LogoScene.connect("finished_anim", self, "_on_godot_finished")
 # warning-ignore:return_value_discarded
-	OS.request_permissions()
+	if str(OS.get_name()) == "Android":
+		OS.request_permissions()
 	var conf = File.new()
 #	if not conf.file_exists('user://game.cfg'):
 #		var con = ConfigFile.new()
@@ -95,8 +98,14 @@ func _ready():
 func adloaded():
 	$Admob.show_banner()
 func interstitialloaded():
-	$Admob.show_interstitial()
+#	$Admob.show_interstitial()
+	pass
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if not str(anim_name) == '':
+	if str(anim_name) == 'intro_part_2':
 		scene = get_tree().change_scene("res://scenes/gui_loader.tscn")
+
+
+func _on_godot_finished():
+#	$VideoPlayer.hide()
+	$AnimationPlayer.play("intro_part_2")

@@ -37,7 +37,8 @@ func _ready():
 func adloaded():
 	$Admob.show_banner()
 func interstitialloaded():
-	$Admob.show_interstitial()
+	#$Admob.show_interstitial()
+	pass
 func _physics_process(delta):
 #	if Input.is_action_just_pressed("console"):
 #		if $console/console.visible == false:

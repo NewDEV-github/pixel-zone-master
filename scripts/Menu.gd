@@ -27,7 +27,8 @@ func show_page(node):
 func _on_Quit_pressed():
 	get_tree().paused = false
 	gamestate.end_game()
-	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
+#	background_load.load_scene('res://scenes/Main Menu/GUI.tscn')
+	get_tree().change_scene('res://scenes/Main Menu/GUI.tscn')
 # when preesed "Return" or "No" button in Quit Page
 func _on_Return_pressed():
 	hide()

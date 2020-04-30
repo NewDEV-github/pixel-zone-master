@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Znelka godot.wav-ba5c19e64491c92e881c6c2e9835a216.sample"
+
+[deps]
+
+source_file="res://animations/Godot Logo/Znelka godot.wav"
+dest_files=[ "res://.import/Znelka godot.wav-ba5c19e64491c92e881c6c2e9835a216.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

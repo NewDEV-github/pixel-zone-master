@@ -19,10 +19,6 @@ func interstitialloaded():
 	pass
 
 func _on_Button2_pressed():
-	if str(OS.get_name()) == 'Android':
-		$Admob.show_interstitial()
 	get_tree().change_scene("res://scenes/Main Menu/GUI.tscn")
 func _on_Button_pressed():
-	if str(OS.get_name()) == 'Android':
-		$Admob.show_interstitial()
 	get_tree().quit()

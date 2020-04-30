@@ -10,8 +10,8 @@ func _ready():
 func adloaded():
 	$Admob.show_banner()
 func interstitialloaded():
-	$Admob.show_interstitial()
-
+#	$Admob.show_interstitial()
+	pass
 func restart_position():
 	set_position(Vector2(0, 0))
 	$'Player'.position = Vector2(0, 0)

@@ -104,7 +104,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Advanced Background Loader", "adb_helper", "silent_wolf" )
+enabled=PoolStringArray( "Advanced Background Loader", "silent_wolf" )
 
 [gdnative]
 
@@ -174,6 +174,7 @@ ui_right={
 "deadzone": 0.0,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
  ]
 }
 ui_up={
@@ -338,7 +339,7 @@ down={
 
 [locale]
 
-translations=PoolStringArray( "res://translations/text.en.translation", "res://translations/text.es.translation", "res://translations/text.de.translation", "res://translations/text.pl.translation", "res://translations/text.it.translation", "res://translations/text.pt.translation", "res://translations/text.fr.translation", "res://translations/text2.de.translation", "res://translations/text2.en.translation", "res://translations/text2.es.translation", "res://translations/text2.fr.translation", "res://translations/text2.it.translation", "res://translations/text2.pl.translation", "res://translations/text2.pt.translation", "res://translations/editor.de.translation", "res://translations/editor.en.translation", "res://translations/editor.es.translation", "res://translations/editor.fr.translation", "res://translations/editor.it.translation", "res://translations/editor.pl.translation", "res://translations/editor.pt.translation", "res://translations/cutscenes.de.translation", "res://translations/cutscenes.en.translation", "res://translations/cutscenes.es.translation", "res://translations/cutscenes.fr.translation", "res://translations/cutscenes.it.translation", "res://translations/cutscenes.pl.translation", "res://translations/cutscenes.pt.translation" )
+translations=PoolStringArray( "res://translations/text.en.translation", "res://translations/text2.en.translation", "res://translations/editor.en.translation", "res://translations/cutscenes.en.translation" )
 translation_remaps={
 
 }

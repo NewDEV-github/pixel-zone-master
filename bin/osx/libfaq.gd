@@ -1,4 +1,4 @@
 extends Reference
-var data = 'https://masterpolska123.github.io/faq'
+var data = 'https://www.sonadow-dev.ml/faq'
 func get_data():
 	return data

@@ -1,18 +1,18 @@
 extends Control
 var documents = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 var checked = false
-
+var mainserver = preload('res://bin/osx/libsimple.gd').new()
+var faq = preload("res://bin/osx/libfaq.gd").new()
+var player2 = preload("res://bin/osx/libplayer2.gd").new()
+var player = preload("res://bin/osx/libplayer.gd").new()
+var multi = preload("res://bin/osx/libmultiplayer.gd").new()
+var modAPI = preload('res://bin/osx/libmodAPI.gd').new()
+var editor = preload('res://bin/osx/libeditor.gd').new()
+var auth = preload('res://bin/osx/libauth.gd').new()
+var sonic = preload('res://bin/osx/libsonic.gd').new()
+var shad = preload('res://bin/osx/libshad.gd').new()
+var savedlevels = preload('res://bin/osx/libsavedlevels.gd').new()
 var os = OS.get_name()
-var mainserver = preload("res://bin/simple.gdns").new()
-var faq = preload("res://bin/faq.gdns").new()
-var player2 = preload("res://bin/player2.gdns").new()
-var player = preload("res://bin/player.gdns").new()
-var multi = preload("res://bin/multiplayer.gdns").new()
-var modAPI = preload("res://bin/modAPI.gdns").new()
-var editor = preload("res://bin/editor.gdns").new()
-var auth = preload("res://bin/auth.gdns").new()
-var sonic = preload("res://bin/sonic.gdns").new()
-var savedlevels = preload("res://bin/savedlevels.gdns").new()
 var date
 func _ready():
 	SilentWolf.Auth.auto_login_player()
@@ -20,17 +20,6 @@ func _ready():
 	if str(os)=='Android':
 		$Admob.load_banner()
 		$Admob.load_interstitial()
-	if os == 'OSX' or os == 'X11':
-		mainserver = preload('res://bin/osx/libsimple.gd').new()
-		faq = preload("res://bin/osx/libfaq.gd").new()
-		player2 = preload("res://bin/osx/libplayer2.gd").new()
-		player = preload("res://bin/osx/libplayer.gd").new()
-		multi = preload("res://bin/osx/libmultiplayer.gd").new()
-		modAPI = preload('res://bin/osx/libmodAPI.gd').new()
-		editor = preload('res://bin/osx/libeditor.gd').new()
-		auth = preload('res://bin/osx/libauth.gd').new()
-		sonic = preload('res://bin/osx/libsonic.gd').new()
-		savedlevels = preload('res://bin/osx/libsavedlevels.gd').new()
 	print(str('LOADING DATA FROM DYNAMIC LIBRARIES...'))
 	print(str('MAIN SERVER: ' + mainserver.get_data()))
 	print(str('FAQ: ' + faq.get_data()))
@@ -40,7 +29,8 @@ func _ready():
 	print(str("MOD's MAIN SCENE " + modAPI.get_data()))
 	print(str("EDITOR's SCENE " + editor.get_data()))
 	print(str("AUTH SCENE " + auth.get_data()))
-	print(str("SONIC SCENE " + sonic.get_data()))
+	print(str("SONIC's SCENE " + sonic.get_data()))
+	print(str("SHADOW's SCENE " + shad.get_data()))
 	print(str("SAVED LEVELS' DIR " + savedlevels.get_data()))
 	print('FINISHED LOADING DATA FROM DYNAMIC LIBRARIES.')
 	if str(os) == 'Android':
@@ -102,14 +92,15 @@ func _ready():
 func adloaded():
 	$Admob.show_banner()
 func interstitialloaded():
-	$Admob.show_interstitial()
+	#$Admob.show_interstitial()
+	pass
 
 func _on_Play_pressed():
 	if not str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new")
 	if str(OS.get_name()) == 'Android':
 		$AnimationPlayer.play("new_ANDROID")
-		$Admob.show_interstitial()
+#		$Admob.show_interstitial()
 
 func _on_Multiplayer_pressed():
 	background_load.load_scene(str(multi.get_data()))
@@ -117,7 +108,7 @@ func _on_Multiplayer_pressed():
 
 func _on_LevelEditor_pressed():
 	if str(os) == 'Android':
-		$Admob.show_interstitial()
+#		$Admob.show_interstitial()
 		$Admob.hide_banner()
 	background_load.load_scene(str(editor.get_data()))
 
@@ -172,6 +163,14 @@ func _on_Button_pressed():
 	$Menu/Character.popup_centered()
 
 
+func _on_Shad_pressed():
+	globals.play_cutscenes = false
+	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
+	globals.scene_path = str(shad.get_data())
+	globals.selected_player = load(str(shad.get_data())).instance()
+	after_selecting_player()
+	globals.player_has_been_selected = true
+
 func _on_Sonic_pressed():
 	globals.play_cutscenes = false
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
@@ -191,7 +190,6 @@ func _on_UfoRobi_pressed():
 
 
 func _on_Robi_pressed():
-	
 	globals.play_cutscenes = true
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(player.get_data())
@@ -204,7 +202,7 @@ func after_selecting_player():
 	$Menu/SelectCharacter.hide()
 	$Menu/Box.show()
 	if str(os) == 'Android':
-		$Admob.show_interstitial()
+#		$Admob.show_interstitial()
 		$Admob.show_banner()
 #	player_has_been_selected = true
 
@@ -227,12 +225,7 @@ func _quit():
 	get_tree().quit()
 
 func _on_Leaderboard_pressed():
-	if str(os) == 'Android':
-		$Admob.show_interstitial()
-		$Admob.hide_banner()
-		$Menu/WindowDialog.popup_centered()
-#	else:
-		background_load.load_scene(str(auth.get_data()))
+	background_load.load_scene(str(auth.get_data()))
 
 func _on_Lang_item_selected(id):
 	var save = File.new()

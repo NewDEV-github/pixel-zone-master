@@ -1,7 +1,7 @@
 extends KinematicBody2D
 func restart_position():
 	set_position(Vector2(0, 0))
-	$'Player'.position = Vector2(0, 0)
+	$'Player'.position = Vector2(100, 100)
 	$'PlayerCamera'.set_position(Vector2(144, 90))
 func _ready():
 	if str(OS.get_name()) == 'Android':
@@ -9,10 +9,12 @@ func _ready():
 		$Admob.load_interstitial()
 #		$Admob.connect("banner_loaded", self, 'adloaded')
 #		$Admob.connect("interstitial_loaded", self, 'interstitialloaded')
+	restart_position()
 func adloaded():
 	$Admob.show_banner()
 func interstitialloaded():
-	$Admob.show_interstitial()
+#	$Admob.show_interstitial()
+	pass
 
 
 

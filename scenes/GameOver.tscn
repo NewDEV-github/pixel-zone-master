@@ -119,10 +119,6 @@ texture_scale = 25.54
 [node name="Admob" type="Node" parent="."]
 script = ExtResource( 4 )
 is_real = true
-banner_id = "ca-app-pub-3142193952770678/7369767442"
-interstitial_id = "ca-app-pub-3142193952770678/9337455234"
-rewarded_id = "ca-app-pub-3142193952770678/8372051443"
-child_directed = true
 max_ad_content_rate = "MA"
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

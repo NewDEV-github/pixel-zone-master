@@ -23,12 +23,12 @@ func _process(_delta):
 	tab_container.set_tab_title(0, "KEY_G_A")
 	tab_container.set_tab_title(1, "KEY_CON_TAB")
 	tab_container.set_tab_title(2, "KEY_THEME")
-	tab_container.set_tab_title(3, "KEY_LANG")
-	tab_container.set_tab_title(4, "KEY_CONTROLLER")
+	tab_container.set_tab_title(3, "KEY_CONTROLLER")
 	if not str(os) == 'Android':
-		$TabContainer.set_tab_disabled(4, false)
+		$TabContainer.set_tab_disabled(3, false)
 	else:
-		$TabContainer.set_tab_disabled(4, true)
+		$TabContainer.set_tab_disabled(3, true)
+
 func _on_ApplyButton_pressed():
 	hide()
 
@@ -50,11 +50,9 @@ func _ready():
 	
 	
 	if str(os) == 'Android':
-		$"TabContainer/Controller Test/joypads".hide()
-		$"TabContainer/Controller Test/Control".show()
+		$"TabContainer/Controller Test".hide()
 	if not str(os) == 'Android':
-		$"TabContainer/Controller Test/joypads".show()
-		$"TabContainer/Controller Test/Control".hide()
+		$"TabContainer/Controller Test/".show()
 		
 		
 #	var beta = File.new()
@@ -97,16 +95,14 @@ func _on_ItemList_item_selected(index):
 	if index == 0:
 		path = "res://sounds/music.ogg"
 	if index == 1:
-		path = "res://sounds/jungle_ruins.ogg"
-	if index == 2:
 		path = "res://sounds/brazil-fast.ogg"
-	if index == 3:
+	if index == 2:
 		path = 'res://sounds/Ice_Cap_Adventure.ogg'
-	if index == 4:
+	if index == 3:
 		path = "res://sounds/hill.ogg"
-	if index == 5:
+	if index == 4:
 		path = 'res://sounds/sci-fi.ogg'
-	if index == 6:
+	if index == 5:
 		path = 'res://sounds/Castlemania.ogg'
 	
 	AudioServer.set_bus_mute(1, true)
@@ -184,3 +180,7 @@ func _on_DataClear_pressed():
 	var data_dir = Directory.new()
 	if data.file_exists(str(documents)+ "/Pixel Zone/.data/name.save"):
 		data_dir.remove(str(documents)+ "/Pixel Zone/.data/name.save")
+
+
+func _on_Open_pressed():
+	$"TabContainer/Controller Test/WindowDialog".popup_centered()

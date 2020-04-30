@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
 [ext_resource path="res://scenes/OptionsPage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=4]
 [ext_resource path="res://globals/LevelBGMPlayer.gd" type="Script" id=5]
+[ext_resource path="res://textures/menu_bg.png" type="Texture" id=6]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -25,17 +26,24 @@ self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 64.0
+margin_bottom = -72.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsPage" parent="Menu" instance=ExtResource( 3 )]
-visible = false
-margin_left = 212.0
-margin_top = 0.0
-margin_right = -21.0
-margin_bottom = 0.0
+[node name="menu_bg" type="TextureRect" parent="Menu"]
+self_modulate = Color( 1, 1, 1, 0.470588 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -242.0
+margin_bottom = 683.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Menu"]
 modulate = Color( 1, 0.956863, 0.956863, 1 )
@@ -50,7 +58,7 @@ __meta__ = {
 [node name="Return" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
 margin_right = 170.0
-margin_bottom = 197.0
+margin_bottom = 152.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -60,9 +68,9 @@ flat = true
 
 [node name="Options" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
-margin_top = 201.0
+margin_top = 156.0
 margin_right = 170.0
-margin_bottom = 398.0
+margin_bottom = 308.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -89,9 +97,9 @@ flat = true
 
 [node name="Quit" type="Button" parent="Menu/HBoxContainer"]
 light_mask = 2
-margin_top = 402.0
+margin_top = 312.0
 margin_right = 170.0
-margin_bottom = 600.0
+margin_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
@@ -106,6 +114,13 @@ volume_db = -10.0
 autoplay = true
 script = ExtResource( 5 )
 id = "Menu"
+
+[node name="OptionsPage" parent="Menu" instance=ExtResource( 3 )]
+visible = false
+margin_left = 220.0
+margin_top = -29.0
+margin_right = -2.0
+margin_bottom = 58.0
 
 [node name="UIScaler" type="Node2D" parent="."]
 [connection signal="pressed" from="Menu/HBoxContainer/Return" to="Menu" method="_on_Return_pressed"]

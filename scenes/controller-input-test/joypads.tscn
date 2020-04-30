@@ -524,6 +524,9 @@ margin_left = 10.1249
 margin_top = 6.75
 margin_right = 50.1249
 margin_bottom = 46.75
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="weak_label" type="Label" parent="vibration"]
 visible = false

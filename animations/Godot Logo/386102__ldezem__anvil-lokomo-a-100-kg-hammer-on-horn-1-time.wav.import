@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/386102__ldezem__anvil-lokomo-a-100-kg-hammer-on-horn-1-time.wav-bf2961498066a6bb3cb28467e7352cc4.sample"
+
+[deps]
+
+source_file="res://animations/Godot Logo/386102__ldezem__anvil-lokomo-a-100-kg-hammer-on-horn-1-time.wav"
+dest_files=[ "res://.import/386102__ldezem__anvil-lokomo-a-100-kg-hammer-on-horn-1-time.wav-bf2961498066a6bb3cb28467e7352cc4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
