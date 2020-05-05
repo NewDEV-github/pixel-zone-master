@@ -1,4 +1,4 @@
-Copyright 2019 Karol Tomaszewski
+Copyright 2019 - 2020 Sonadow DEV
 
 Pixel Zone - MIT License
 
