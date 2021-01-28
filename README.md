@@ -1,8 +1,8 @@
-Pixel Zone is a simple 2d platformer made by Sonadow DEV for godot 3.2.
+Pixel Zone is a simple 2d platformer made by NewDEV for godot 3.2.
 
-Want to contact me? Write an e-mail to karoltomaszewskimusic@gmail.com
+Want to contact me? Write an e-mail to support@new-dev.ml
 
-Support - karoltomaszewskimusic@gmail.com and https://www.sonadow-dev.ml/faq/
+Support - support@new-dev.ml and https://new-dev.ml
 
 
 Pixel Zone's official website - https://www.pixelzone.ml/
