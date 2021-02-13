@@ -53,19 +53,19 @@ jobs:
           sudo mkdir -p builds/{x11-32-standard,x11-64-standard,win-32-standard,win-64-standard,osx-standard}
       - name: Export x11-64
         run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-64" $GITHUB_WORKSPACE/builds/x11-64-standard/FoxyAdventure.x86_64
+          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-64" $GITHUB_WORKSPACE/builds/x11-64-standard/PixelZone.x86_64
       - name: Export x11-32
         run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-32" $GITHUB_WORKSPACE/builds/x11-32-standard/FoxyAdventure.x86
+          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-32" $GITHUB_WORKSPACE/builds/x11-32-standard/PixelZone.x86
       - name: Export osx
         run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "osx" $GITHUB_WORKSPACE/builds/osx-standard/FoxyAdventure.zip
+          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "osx" $GITHUB_WORKSPACE/builds/osx-standard/PixelZone.zip
       - name: Export win-32
         run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-32" $GITHUB_WORKSPACE/builds/win-32-standard/FoxyAdventure.exe
+          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-32" $GITHUB_WORKSPACE/builds/win-32-standard/PixelZone.exe
       - name: Export win-64
         run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-64" $GITHUB_WORKSPACE/builds/win-64-standard/FoxyAdventure.exe
+          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-64" $GITHUB_WORKSPACE/builds/win-64-standard/PixelZone.exe
           tree -a
       - name: ZIP Builds
         run: |
