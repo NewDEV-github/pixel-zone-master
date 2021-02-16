@@ -8,6 +8,7 @@ func _on_Area2D_body_entered(body):
 var player_default = globals.selected_player
 
 func _ready():
+	globals.run_rpc("Hill 01")
 	add_child(Object(player_default))
 	globals._set_player_pos(0,0)
 	player_default.restart_position()
