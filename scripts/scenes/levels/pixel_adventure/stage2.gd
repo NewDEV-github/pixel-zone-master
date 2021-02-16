@@ -2,6 +2,7 @@ extends Node
 var scene
 var player_default = globals.selected_player
 func _ready():
+	globals.run_rpc("Pixel Adventure 02")
 	add_child(Object(player_default))
 	globals._set_player_pos(0,0)
 	player_default.restart_position()
