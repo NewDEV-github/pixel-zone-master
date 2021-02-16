@@ -7,6 +7,7 @@ var scene
 # Called when the node enters the scene tree for the first time.
 var player_default = globals.selected_player
 func _ready():
+	globals.run_rpc("Sci-fi 02")
 	add_child(Object(player_default))
 	globals._set_player_pos(0,0)
 	player_default.restart_position()
