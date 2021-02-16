@@ -165,6 +165,7 @@ func _on_Button_pressed():
 
 
 func _on_Shad_pressed():
+	globals.current_character_name = "Shadow The Hedgehog"
 	globals.play_cutscenes = false
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(shad.get_data())
@@ -173,6 +174,7 @@ func _on_Shad_pressed():
 	globals.player_has_been_selected = true
 
 func _on_Sonic_pressed():
+	globals.current_character_name = "Sonic The Hedgehog"
 	globals.play_cutscenes = false
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(sonic.get_data())
@@ -181,6 +183,7 @@ func _on_Sonic_pressed():
 	globals.player_has_been_selected = true
 
 func _on_UfoRobi_pressed():
+	globals.current_character_name = "Ufo Robi"
 	globals.play_cutscenes = true
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(player2.get_data())
@@ -191,6 +194,7 @@ func _on_UfoRobi_pressed():
 
 
 func _on_Robi_pressed():
+	globals.current_character_name = "Robi"
 	globals.play_cutscenes = true
 	$Menu/Character/VBoxContainer/HBoxContainer/infoLabel.set_text('Loading...')
 	globals.scene_path = str(player.get_data())
