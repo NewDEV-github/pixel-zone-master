@@ -15,6 +15,7 @@ var savedlevels = preload('res://bin/osx/libsavedlevels.gd').new()
 var os = OS.get_name()
 var date
 func _ready():
+	globals.run_rpc("", true)
 	SilentWolf.Auth.auto_login_player()
 	get_tree().paused = false
 	if str(os)=='Android':
