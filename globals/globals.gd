@@ -6,6 +6,7 @@ var collected = 0 setget _set_collected, _get_collected
 var auto_load_mod = true
 var current_stage = ''
 var play_cutscenes
+var current_character_name = ""
 var player_has_been_selected = false
 var activities: Discord.ActivityManager
 var users: Discord.UserManager
@@ -146,13 +147,13 @@ func _ready():
 	beta_2.open(str(documents)+ "/Pixel Zone/.data/settings/advanced.save", File.READ)
 	var load_set = beta_2.get_line()
 	auto_load_mod = bool(str(load_set))
-func run_rpc(stage:String, character:String, is_in_menu=false):
+func run_rpc(stage:String, is_in_menu=false):
 	if Discord.Core != null:
 		if os_rpc.has(OS.get_name()):
 			print("Starting RPC...")
 			var activity: = Discord.Activity.new()
 			if not is_in_menu:
-				activity.details = "Playing as %s" % [character]
+				activity.details = "Playing as %s" % [current_character_name]
 				activity.state = "At %s" % [stage]
 			elif is_in_menu:
 				activity.details = "At main menu"
