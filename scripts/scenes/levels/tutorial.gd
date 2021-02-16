@@ -10,6 +10,7 @@ func _on_Area2D_body_entered(body):
 		a.close()
 		scene = get_tree().change_scene("res://scenes/stages/pixel_adventure/stage.tscn")
 func _ready():
+	globals.run_rpc("tutorial")
 	var a = File.new()
 	a.open(str(documents) + "/Pixel Zone/.data/tut.save", File.WRITE)
 	var data = "46 61 6c 73 65"
