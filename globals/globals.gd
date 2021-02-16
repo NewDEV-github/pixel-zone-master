@@ -127,7 +127,7 @@ func _ready():
 	if os_rpc.has(OS.get_name()):
 		core = Discord.Core.new()
 		var result: int = core.create(
-			729429191489093702,
+			811151251810025482,
 			Discord.CreateFlags.DEFAULT
 		)
 		print("Created Discord Core: ", enum_to_string(Discord.Result, result))
