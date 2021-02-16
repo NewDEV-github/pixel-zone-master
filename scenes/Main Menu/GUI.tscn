@@ -498,7 +498,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer"]
 margin_right = 756.0
-margin_bottom = 245.0
+margin_bottom = 495.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -507,7 +507,7 @@ __meta__ = {
 
 [node name="Robi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_right = 235.0
-margin_bottom = 245.0
+margin_bottom = 495.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Robi"
@@ -515,7 +515,7 @@ text = "Robi"
 [node name="infoLabel" type="Label" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 239.0
 margin_right = 517.0
-margin_bottom = 245.0
+margin_bottom = 495.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 text = "KEY_PLAYER_SELECT"
@@ -524,12 +524,13 @@ align = 1
 [node name="UfoRobi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 521.0
 margin_right = 756.0
-margin_bottom = 245.0
+margin_bottom = 495.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Ufo Robi"
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="Menu/Character/VBoxContainer"]
+visible = false
 margin_top = 249.0
 margin_right = 756.0
 margin_bottom = 495.0
@@ -546,6 +547,7 @@ I didn't own them!"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer/HBoxContainer2"]
+visible = false
 margin_top = 77.0
 margin_right = 756.0
 margin_bottom = 246.0
@@ -569,14 +571,15 @@ text = "Shadow"
 [node name="ModLoader" type="FileDialog" parent="Menu"]
 margin_right = 683.0
 margin_bottom = 429.0
+rect_min_size = Vector2( 150, 52.5 )
 window_title = "Otwórz plik"
 resizable = true
 mode = 0
 access = 2
 filters = PoolStringArray( "*.pck; Modification Files" )
 show_hidden_files = true
-current_dir = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master"
-current_path = "C:/Users/karol/OneDrive/Dokumenty/pixel-zone-master/"
+current_dir = "/Users/karol/OneDrive/Dokumenty/GitHub/pixel-zone-master"
+current_path = "/Users/karol/OneDrive/Dokumenty/GitHub/pixel-zone-master/"
 
 [node name="StagesList" type="WindowDialog" parent="Menu"]
 margin_top = 221.0
@@ -610,6 +613,7 @@ margin_left = 98.0822
 margin_top = 24.5205
 margin_right = 461.082
 margin_bottom = 296.521
+rect_min_size = Vector2( 150, 52.5 )
 window_title = ""
 resizable = true
 dialog_text = "Click OK to go to our website and allow
@@ -621,6 +625,7 @@ dialog_autowrap = true
 [node name="QuitDialog" type="ConfirmationDialog" parent="Menu"]
 margin_right = 308.0
 margin_bottom = 102.0
+rect_min_size = Vector2( 150, 52.5 )
 window_title = "Quit?"
 resizable = true
 dialog_text = "Do you really want to quit?"
@@ -694,6 +699,7 @@ __meta__ = {
 script = ExtResource( 3 )
 is_real = true
 max_ad_content_rate = "MA"
+
 [connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
 [connection signal="pressed" from="Menu/Box/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Menu/Box/Multiplayer" to="." method="_on_Multiplayer_pressed"]

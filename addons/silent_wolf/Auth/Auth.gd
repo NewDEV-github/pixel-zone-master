@@ -359,8 +359,8 @@ func _on_ValidateSession_request_completed( result, response_code, headers, body
 			if response.success:
 				set_player_logged_in(response.player_name)
 				complete_session_check(logged_in_player)
-			else:
-				complete_session_check(response.error)
+#			else:k
+#				complete_session_check(response.error)
 
 func setup_complete_session_check_wait_timer():
 	complete_session_check_wait_timer = Timer.new()

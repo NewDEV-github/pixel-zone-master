@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Gameplay Scripts/character_animator.gd"
 }, {
+"base": "Reference",
+"class": "Discord",
+"language": "GDScript",
+"path": "res://bin/gdsdk/discord.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "Admob": "res://admob-lib/icon.png",
 "AudioPlayer": "",
 "CharacterAnimator": "",
+"Discord": "",
 "Enemy": "",
 "GitAPI": "",
 "Options_Page": "",
@@ -341,7 +347,6 @@ down={
 
 translations=PoolStringArray( "res://translations/text.en.translation", "res://translations/text2.en.translation", "res://translations/editor.en.translation", "res://translations/cutscenes.en.translation" )
 translation_remaps={
-
 }
 locale_filter=[ 1, [ "ar", "en", "es", "ms", "pl", "pl_PL" ] ]
 
