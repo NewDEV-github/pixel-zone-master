@@ -17,8 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   godot-build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-18.04
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,43 +29,10 @@ jobs:
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - name: Download Godot and export templates
+      - name: Build everything
         run: |
-          sudo apt install unzip
-          sudo apt install tree
-          echo *** Downloading Godot Binary ***
-          wget https://downloads.tuxfamily.org/godotengine/3.2.4/rc1/Godot_v3.2.4-rc1_linux_headless.64.zip
-          echo *** Downloading Godot Server Export Templates ***
-          wget https://downloads.tuxfamily.org/godotengine/3.2.4/rc1/Godot_v3.2.4-rc1_export_templates.tpz
-          echo *** Unzipping Godot Binary ***
-          unzip Godot_v3.2.4-rc1_linux_headless.64.zip
-          echo *** Unzipping Godot Server Export Templates ***
-          unzip Godot_v3.2.4-rc1_export_templates.tpz
-          echo *** Installing Godot Server Export Templates ***
-          cd /home/runner/
-          sudo mkdir -p .local/share/godot
-          cd .local/share/godot
-          sudo mkdir -p templates/3.2.4.rc1
-          sudo cp -r $GITHUB_WORKSPACE/templates/* templates/3.2.4.rc1
-          echo *** Exporting Files ***
-          cd $GITHUB_WORKSPACE
-          sudo mkdir -p builds/{x11-32-standard,x11-64-standard,win-32-standard,win-64-standard,osx-standard}
-      - name: Export x11-64
-        run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-64" $GITHUB_WORKSPACE/builds/x11-64-standard/PixelZone.x86_64
-      - name: Export x11-32
-        run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "x11-32" $GITHUB_WORKSPACE/builds/x11-32-standard/PixelZone.x86
-      - name: Export osx
-        run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "osx" $GITHUB_WORKSPACE/builds/osx-standard/PixelZone.zip
-      - name: Export win-32
-        run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-32" $GITHUB_WORKSPACE/builds/win-32-standard/PixelZone.exe
-      - name: Export win-64
-        run: |
-          sudo ./Godot_v3.2.4-rc1_linux_headless.64 --path "." --export "win-64" $GITHUB_WORKSPACE/builds/win-64-standard/PixelZone.exe
-          tree -a
+          sudo chmod +x ./build_game.sh
+          ./build_game.sh
       - name: ZIP Builds
         run: |
           cd $GITHUB_WORKSPACE/builds/win-64-standard
