@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/scenes/OptionsPage/OptionsPage.gd" type="Script" id=1]
 [ext_resource path="res://ubuntu-font-family/UB22C3.tres" type="DynamicFont" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scripts/scenes/OptionsPage/GraphicsBox.gd" type="Script" id=4]
 [ext_resource path="res://scripts/scenes/OptionsPage/FPSBox.gd" type="Script" id=5]
 [ext_resource path="res://scripts/scenes/OptionsPage/LPMBox.gd" type="Script" id=6]
-[ext_resource path="res://scenes/pad_settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/scenes/OptionsPage/VolumeBar.gd" type="Script" id=9]
 [ext_resource path="res://scripts/scenes/OptionsPage/MusicBar.gd" type="Script" id=10]
@@ -645,257 +644,6 @@ margin_bottom = 537.0
 custom_fonts/font = ExtResource( 2 )
 text = "KEY_Theme_NOT"
 
-[node name="Controller Test" type="Tabs" parent="TabContainer"]
-visible = false
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 49.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="Control" type="Control" parent="TabContainer/Controller Test"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controller Test/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="pause" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_right = 1016.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TabContainer/Controller Test/Control/VBoxContainer/pause"]
-margin_top = 5.0
-margin_right = 41.0
-margin_bottom = 19.0
-text = "PAUSE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/pause"]
-margin_left = 45.0
-margin_right = 103.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="y" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/pause"]
-margin_left = 107.0
-margin_right = 165.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scale" type="HSlider" parent="TabContainer/Controller Test/Control/VBoxContainer/pause"]
-margin_left = 169.0
-margin_right = 185.0
-margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="jump" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_top = 28.0
-margin_right = 1016.0
-margin_bottom = 52.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="TabContainer/Controller Test/Control/VBoxContainer/jump"]
-margin_top = 5.0
-margin_right = 41.0
-margin_bottom = 19.0
-text = "JUMP  "
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/jump"]
-margin_left = 45.0
-margin_right = 103.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="y" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/jump"]
-margin_left = 107.0
-margin_right = 165.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scale" type="HSlider" parent="TabContainer/Controller Test/Control/VBoxContainer/jump"]
-margin_left = 169.0
-margin_right = 185.0
-margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="shoot" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_top = 56.0
-margin_right = 1016.0
-margin_bottom = 80.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="TabContainer/Controller Test/Control/VBoxContainer/shoot"]
-margin_top = 5.0
-margin_right = 46.0
-margin_bottom = 19.0
-text = "SHOOT"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/shoot"]
-margin_left = 50.0
-margin_right = 108.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="y" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/shoot"]
-margin_left = 112.0
-margin_right = 170.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scale" type="HSlider" parent="TabContainer/Controller Test/Control/VBoxContainer/shoot"]
-margin_left = 174.0
-margin_right = 190.0
-margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="left" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_top = 84.0
-margin_right = 1016.0
-margin_bottom = 108.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="TabContainer/Controller Test/Control/VBoxContainer/left"]
-margin_top = 5.0
-margin_right = 40.0
-margin_bottom = 19.0
-text = "LEFT   "
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/left"]
-margin_left = 44.0
-margin_right = 102.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="y" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/left"]
-margin_left = 106.0
-margin_right = 164.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scale" type="HSlider" parent="TabContainer/Controller Test/Control/VBoxContainer/left"]
-margin_left = 168.0
-margin_right = 184.0
-margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="right" type="HBoxContainer" parent="TabContainer/Controller Test/Control/VBoxContainer"]
-margin_top = 112.0
-margin_right = 1016.0
-margin_bottom = 136.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="TabContainer/Controller Test/Control/VBoxContainer/right"]
-margin_top = 5.0
-margin_right = 40.0
-margin_bottom = 19.0
-text = "RIGHT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/right"]
-margin_left = 44.0
-margin_right = 102.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="y" type="LineEdit" parent="TabContainer/Controller Test/Control/VBoxContainer/right"]
-margin_left = 106.0
-margin_right = 164.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scale" type="HSlider" parent="TabContainer/Controller Test/Control/VBoxContainer/right"]
-margin_left = 168.0
-margin_right = 184.0
-margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WindowDialog" parent="TabContainer/Controller Test" instance=ExtResource( 7 )]
-
-[node name="Open" type="Button" parent="TabContainer/Controller Test"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -164.5
-margin_top = -18.5
-margin_right = 164.5
-margin_bottom = 18.5
-custom_fonts/font = ExtResource( 2 )
-text = "Open Controller Settings"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ApplyButton" type="Button" parent="."]
 light_mask = 2
 anchor_left = 0.5
@@ -920,6 +668,7 @@ autoplay = true
 bus = "Custom Music"
 script = ExtResource( 14 )
 id = "Level"
+
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/FPSBox" method="_on_CheckButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox/CheckButton" to="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/VBoxContainer/LPMBox" method="_on_CheckButton_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics & Audio/HBoxContainer/GraphicsBox/Advanced" to="." method="_on_Advanced_pressed"]
@@ -932,5 +681,4 @@ id = "Level"
 [connection signal="pressed" from="TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/AutoLoadMods" to="." method="_on_AutoLoadMods_pressed"]
 [connection signal="pressed" from="TabContainer/Theme/VBoxContainer/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="item_selected" from="TabContainer/Theme/CustomTheme/ThemeList" to="." method="_on_ThemeList_item_selected"]
-[connection signal="pressed" from="TabContainer/Controller Test/Open" to="." method="_on_Open_pressed"]
 [connection signal="pressed" from="ApplyButton" to="." method="_on_ApplyButton_pressed"]

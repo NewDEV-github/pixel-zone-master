@@ -322,7 +322,7 @@ func complete_session_check(return_value=null):
 	SWLogger.debug("emitting signal....")
 	emit_signal("sw_session_check_complete", return_value)
 		
-func validate_player_session(lookup, validator, scene=get_tree().get_current_scene()):
+func validate_player_session(lookup, validator, scene=get_tree().current_scene):
 	ValidateSession = HTTPRequest.new()
 	wrValidateSession = weakref(ValidateSession)
 	if OS.get_name() != "HTML5":

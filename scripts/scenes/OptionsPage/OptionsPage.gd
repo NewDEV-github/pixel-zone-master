@@ -49,10 +49,6 @@ func _ready():
 	
 	
 	
-	if str(os) == 'Android':
-		$"TabContainer/Controller Test".hide()
-	if not str(os) == 'Android':
-		$"TabContainer/Controller Test/".show()
 		
 		
 #	var beta = File.new()
@@ -108,7 +104,7 @@ func _on_ItemList_item_selected(index):
 	AudioServer.set_bus_mute(1, true)
 	$Custom_Music.set_stream(load(path))
 	$Custom_Music.play()
-	$"TabContainer/Graphics & Audio/HBoxContainer/MusicBox/LineEdit".set_text(path)
+	$"TabContainer/Graphics & Audio/WindowDialog2/VBoxContainer/LineEdit".set_text(path)
 	$"TabContainer/Graphics & Audio/WindowDialog".hide()
 
 var checked = false

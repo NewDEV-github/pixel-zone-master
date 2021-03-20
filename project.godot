@@ -114,7 +114,7 @@ enabled=PoolStringArray( "Advanced Background Loader", "silent_wolf" )
 
 [gdnative]
 
-singletons=[ "res://git_api.gdnlib" ]
+singletons=[ "res://addons/videodecoder.gdnlib", "res://git_api.gdnlib" ]
 
 [importer_defaults]
 
@@ -367,7 +367,6 @@ quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
-quality/2d/use_pixel_snap=true
 threads/thread_model=2
 vram_compression/import_etc=true
 quality/shadows/filter_mode.mobile=1
@@ -377,3 +376,4 @@ quality/shading/force_vertex_shading=true
 quality/shading/force_lambert_over_burley=true
 quality/shading/force_blinn_over_ggx=true
 quality/depth/hdr.mobile=true
+quality/2d/use_pixel_snap=true

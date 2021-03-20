@@ -16,6 +16,16 @@ func _load():
 	TranslationServer.set_locale(str(loaded_lang))
 
 func _ready():
+	var stream = VideoStreamGDNative.new()
+	var file = "res://animations/intro_vp8.webm"#supports for now
+	print(file)
+	stream.set_file(file)
+	var vp = $VideoPlayer
+	vp.stream = stream
+	vp.play()
+	yield($VideoPlayer, "finished")
+	$VideoPlayer.hide()
+	$AnimationPlayer.play("intro")
 	signals = $LogoScene.connect("finished_anim", self, "_on_godot_finished")
 # warning-ignore:return_value_discarded
 	if str(OS.get_name()) == "Android":

@@ -15,6 +15,9 @@ var savedlevels = preload('res://bin/osx/libsavedlevels.gd').new()
 var os = OS.get_name()
 var date
 func _ready():
+	var file = File.new()
+	if file.file_exists("user://dlcs/foxypack.pck"):
+		ProjectSettings.load_resource_pack("user://dlcs/foxypack.pck")
 	globals.run_rpc("", true)
 	SilentWolf.Auth.auto_login_player()
 	get_tree().paused = false
@@ -49,7 +52,6 @@ func _ready():
 	else:
 		$Menu/Box.hide()
 		$Menu/SelectCharacter.show()
-	var file = File.new()
 	file.open('user://date.dat', File.READ)
 	var currentline = str(file.get_line())
 	date = currentline

@@ -498,7 +498,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer"]
 margin_right = 756.0
-margin_bottom = 495.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -507,7 +507,7 @@ __meta__ = {
 
 [node name="Robi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_right = 235.0
-margin_bottom = 495.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Robi"
@@ -515,7 +515,7 @@ text = "Robi"
 [node name="infoLabel" type="Label" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 239.0
 margin_right = 517.0
-margin_bottom = 495.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 text = "KEY_PLAYER_SELECT"
@@ -524,13 +524,12 @@ align = 1
 [node name="UfoRobi" type="Button" parent="Menu/Character/VBoxContainer/HBoxContainer"]
 margin_left = 521.0
 margin_right = 756.0
-margin_bottom = 495.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Ufo Robi"
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="Menu/Character/VBoxContainer"]
-visible = false
 margin_top = 249.0
 margin_right = 756.0
 margin_bottom = 495.0
@@ -547,7 +546,6 @@ I didn't own them!"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Character/VBoxContainer/HBoxContainer2"]
-visible = false
 margin_top = 77.0
 margin_right = 756.0
 margin_bottom = 246.0
